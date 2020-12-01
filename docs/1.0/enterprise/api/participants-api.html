@@ -1735,6 +1735,136 @@
             </span>
               </div>
                           </li>
+            <li id="CampaignManager" class="nav-item" data-depth="2">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html">Campaign Manager</a>
+                      <button class="nav-toggle"></button>
+            </span>
+              </div>
+                <ul class="nav-list">
+            <li id="CreateCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_create_campaign">Create Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="UpdateCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_update_campaign">Update Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="DeleteCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_delete_campaign">Delete Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetListofCampaigns" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_list_of_campaigns">Get List of Campaigns</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetSingleCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_single_campaign">Get Single Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetListofCredits" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_list_of_credits">Get List of Credits</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetSingleCredit" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_single_credit">Get Single Credit</a>
+
+            </span>
+              </div>
+                          </li>
+  </ul>
+            </li>
   </ul>
             </li>
   </ul>
@@ -1767,8 +1897,6 @@
                           </ul>
               <ul class="nav-list">
               <ul class="nav-list">
-                                                  </ul>
-              <ul class="nav-list">
                                                                                                               <ul class="nav-list">
                                                   </ul>
               <ul class="nav-list">
@@ -1784,6 +1912,16 @@
                                                                                                   </ul>
                           <ul class="nav-list">
                                                                                                               </ul>
+              <ul class="nav-list">
+              <ul class="nav-list">
+                                                                          </ul>
+              <ul class="nav-list">
+                                                  </ul>
+                                                  <ul class="nav-list">
+                          </ul>
+              <ul class="nav-list">
+                                      </ul>
+  </ul>
   </ul>
               <ul class="nav-list">
               <ul class="nav-list">
@@ -2012,7 +2150,7 @@ Not supported</p>
         <button class="sample-code-button scsIndex-139" onclick="openLanguage('Java', 139)">Java</button>
       </div>
       <div id="Curl-139" class="sample-language-139">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.xml  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.json  \
    -d 'Mute=true' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
@@ -2029,7 +2167,7 @@ const CALL_SID = 'my_CALL_SID'
 
 request.({
       method: 'POST',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.xml',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.json',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
       form: {
          'Mute': 'true'
@@ -2064,7 +2202,7 @@ params = urlencode({
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.xml',
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.json',
       params, headers=headers)
 res = conn.getresponse()
 
@@ -2090,7 +2228,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Conferences/" + CONFERENCE_SID + "/Participants/" + CALL_SID + ".xml");
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Conferences/" + CONFERENCE_SID + "/Participants/" + CALL_SID + ".json");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("POST");
@@ -2135,7 +2273,7 @@ public class JavaSampleClass {
         <button class="sample-code-button scsIndex-140" onclick="openLanguage('Java', 140)">Java</button>
       </div>
       <div id="Curl-140" class="sample-language-140">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.xml  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.json  \
    -d 'Mute=false' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
@@ -2152,7 +2290,7 @@ const CALL_SID = 'my_CALL_SID'
 
 request.({
       method: 'POST',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.xml',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.json',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
       form: {
          'Mute': 'false'
@@ -2187,7 +2325,7 @@ params = urlencode({
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.xml',
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Conferences/' + CONFERENCE_SID + '/Participants/' + CALL_SID + '.json',
       params, headers=headers)
 res = conn.getresponse()
 
@@ -2213,7 +2351,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Conferences/" + CONFERENCE_SID + "/Participants/" + CALL_SID + ".xml");
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Conferences/" + CONFERENCE_SID + "/Participants/" + CALL_SID + ".json");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("POST");

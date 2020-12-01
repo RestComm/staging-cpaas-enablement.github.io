@@ -1733,6 +1733,136 @@
             </span>
               </div>
                           </li>
+            <li id="CampaignManager" class="nav-item" data-depth="2">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html">Campaign Manager</a>
+                      <button class="nav-toggle"></button>
+            </span>
+              </div>
+                <ul class="nav-list">
+            <li id="CreateCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_create_campaign">Create Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="UpdateCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_update_campaign">Update Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="DeleteCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_delete_campaign">Delete Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetListofCampaigns" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_list_of_campaigns">Get List of Campaigns</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetSingleCampaign" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_single_campaign">Get Single Campaign</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetListofCredits" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_list_of_credits">Get List of Credits</a>
+
+            </span>
+              </div>
+                          </li>
+            <li id="GetSingleCredit" class="nav-item" data-depth="3">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html#_get_single_credit">Get Single Credit</a>
+
+            </span>
+              </div>
+                          </li>
+  </ul>
+            </li>
   </ul>
             </li>
   </ul>
@@ -1765,8 +1895,6 @@
                           </ul>
               <ul class="nav-list">
               <ul class="nav-list">
-                                                  </ul>
-              <ul class="nav-list">
                                                                                                               <ul class="nav-list">
                                                   </ul>
               <ul class="nav-list">
@@ -1782,6 +1910,16 @@
                                                                                                   </ul>
                           <ul class="nav-list">
                                                                                                               </ul>
+              <ul class="nav-list">
+              <ul class="nav-list">
+                                                                          </ul>
+              <ul class="nav-list">
+                                                  </ul>
+                                                  <ul class="nav-list">
+                          </ul>
+              <ul class="nav-list">
+                                      </ul>
+  </ul>
   </ul>
               <ul class="nav-list">
               <ul class="nav-list">
@@ -1943,6 +2081,23 @@ Although Recording Sids in Recording URLs are essentially long random strings th
 <p><strong>/2012-04-24/Accounts/{AccountSid}/Calls/{CallSid}/Recordings</strong></p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The resource <strong>/2012-04-24/Accounts/{AccountSid}/Calls/{CallSid}/Recordings</strong> is <strong>deprecated</strong> and will be removed in the near future.</p>
+</div>
+<div class="paragraph">
+<p>Users are encouraged to use <strong>/2012-04-24/Accounts/{AccountSid}/Recordings?CallSid={CallSid}</strong> queries instead.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2638,7 +2793,7 @@ public class JavaSampleClass {
         <button class="sample-code-button scsIndex-145" onclick="openLanguage('Java', 145)">Java</button>
       </div>
       <div id="Curl-145" class="sample-language-145">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/ACCOUNT_SID/Recordings.xml?SortBy=DateCreated:asc'  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/ACCOUNT_SID/Recordings.json?SortBy=DateCreated:asc'  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -2651,7 +2806,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.xml?SortBy=DateCreated:asc'',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.json?SortBy=DateCreated:asc'',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -2673,7 +2828,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.xml?SortBy=DateCreated:asc'',
+conn.request("GET", '/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.json?SortBy=DateCreated:asc'',
       headers=headers)
 res = conn.getresponse()
 
@@ -2697,7 +2852,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/" + ACCOUNT_SID + "/Recordings.xml?SortBy=DateCreated:asc'");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/" + ACCOUNT_SID + "/Recordings.json?SortBy=DateCreated:asc'");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
