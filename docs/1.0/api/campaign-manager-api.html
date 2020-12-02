@@ -3083,7 +3083,7 @@
 <h2 id="_intoduction"><a class="anchor" href="#_intoduction"></a>Intoduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Telestax Campaign Manager allows Communications Providers to deliver SMS campaign management solutions to Business Customers. Communication Providers can manage credits and users with different roles and capabilities while enabling Business Customers to send the same SMS to a list of phone numbers. For more information, access the <a href="../turnkey-applications/campaign-manager-overview.adoc">General Doc</a>.</p>
+<p>Telestax Campaign Manager allows Communications Providers to deliver SMS campaign management solutions to Business Customers. Communication Providers can manage credits and users with different roles and capabilities while enabling Business Customers to send the same SMS to a list of phone numbers. For more information, access the <a href="../turnkey-applications/campaign-manager-overview.html">general documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>This document covers the API(s) that are available to Communications Providers, thus helping to manage Business Customers, Users, and Credits while keeping track of usage.</p>
@@ -3458,7 +3458,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  https://cloud.restcomm.com/campaignmanager/enterprises \
+  https://yourdomain.com/campaignmanager/enterprises \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -3665,7 +3665,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <div class="listingblock">
 <div class="content">
 <pre>curl -X PUT \
-  https://cloud.restcomm.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f1274f  \
+  https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f1274f  \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -3846,7 +3846,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="listingblock">
 <div class="content">
 <pre>curl -X DELETE \
-  https://cloud.restcomm.com/numbermasking/enterprises/ENb6eb071d21124dbab20b095c25f1274f   \
+  https://yourdomain.com/numbermasking/enterprises/ENb6eb071d21124dbab20b095c25f1274f   \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</pre>
@@ -4157,7 +4157,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  https://cloud.restcomm.com/campaignmanager/enterprise/search?name=Test Enterprise 7 \
+  https://yourdomain.com/campaignmanager/enterprise/search?name=Test Enterprise 7 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</pre>
@@ -4324,7 +4324,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  https://cloud.restcomm.com/campaignmanager/enterprise/search/ENd32f9955825543d5a7e4d1bdb9f56b5b \
+  https://yourdomain.com/campaignmanager/enterprise/search/ENd32f9955825543d5a7e4d1bdb9f56b5b \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</pre>
@@ -4699,7 +4699,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  https://cloud.restcomm.com/campaignmanager/user  \
+  https://yourdomain.com/campaignmanager/user  \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \

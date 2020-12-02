@@ -1975,7 +1975,7 @@
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Telestax Campaign Manager allows you to send the same SMS to hundreds of thousands of phone numbers within minutes. For more details, please review the <a href="../turnkey-applications/campaign-manager-overview.adoc">General Doc</a>.</p>
+<p>Campaign Manager allows you to send the same SMS to hundreds of thousands of phone numbers within minutes. For more details, please review the <a href="../turnkey-applications/campaign-manager-overview.html">general documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>This document covers the API(s) that are available to you to manage campaigns and get information on credits added to the account to  track the usage of the service.</p>
@@ -2228,7 +2228,7 @@
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  https://cloud.restcomm.com/campaignmanager/campaigns \
+  https://yourdomain.com/campaignmanager/campaigns \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -2423,7 +2423,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X PUT \
-  https://cloud.restcomm.com/campaignmanager/campaigns/CPb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/campaigns/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -2601,7 +2601,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X DELETE \
-  https://cloud.restcomm.com/campaignmanager/campaigns/CPb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/campaigns/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</code></pre>
@@ -2878,7 +2878,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  https://cloud.restcomm.com/campaignmanager/campaigns/search?name=test \
+  https://yourdomain.com/campaignmanager/campaigns/search?name=test \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</pre>
@@ -3042,7 +3042,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X DELETE \
-  https://cloud.restcomm.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</code></pre>
@@ -3275,7 +3275,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET \https://cloud.restcomm.com/campaignmanager/credits/search?enterprriseSid=EN6c9dfebda23b403a959a99112437e785 \
+<pre>curl -X GET \https://yourdomain.com/campaignmanager/credits/search?enterprriseSid=EN6c9dfebda23b403a959a99112437e785 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</pre>
@@ -3433,7 +3433,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  https://cloud.restcomm.com/campaignmanager/credits/search/ENCee320039e3e647eaa7df7cef5e3d6b55 \
+  https://yourdomain.com/campaignmanager/credits/search/ENCee320039e3e647eaa7df7cef5e3d6b55 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</pre>
