@@ -3251,51 +3251,7 @@ https://cloud.restcomm.com/messageexchange/enterprise/EN263d95d2bafa4e4a9e6a5563
 <h2 id="_delete_mx_mappings"><a class="anchor" href="#_delete_mx_mappings"></a>Delete MX Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Delete MX Mapping  will delete mapping for
-Jabber Address  with SMS enabled number and
-deleting the number with the network carrier.</p>
-</div>
-<div class="sect2">
-<h3 id="_lifecycle_of_number_deleting"><a class="anchor" href="#_lifecycle_of_number_deleting"></a>Lifecycle of number Deleting</h3>
-<div class="paragraph">
-<p>Calling DELETE MX Mapping endpoint initiates
-deleting numbers with the network carrier,
-delete number in Restcomm and deletes
-corresponding mapping in Message exchange.
-Below diagram explains various state of Mapping
-and possible transition from one state to another.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/message-exchange-uc-one/delete_mapping_state_diagram.png" alt="Delete mapping state diagram">
-</div>
-</div>
-<div class="paragraph">
-<p>As soon as a delete mapping request is raised,
-the message exchange (MX) solution will
-immediately send back HTTP 200 OK Response
-with status of mapping as <strong>“BEING_DELETED”</strong>.
-Now there will be two cases either the
-number is successfully deleted in the carrier
-network or it is failed.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Case 1: Number is successfully deleted,
-then the system will delete the number
- in Restcomm and corresponding mapping
- in MX solution.</p>
-</li>
-<li>
-<p>Case 2: Deleting number failed,
-then the mapping status will be
- updated back to <strong>“SUCCESS”</strong> and
- the respective failed reason will be
- stored for that order in deleteFailReason field.</p>
-</li>
-</ul>
-</div>
+<p>Delete MX Mapping  will delete mapping between Jabber Address  and SMS enabled number.</p>
 </div>
 <div class="sect2">
 <h3 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h3>

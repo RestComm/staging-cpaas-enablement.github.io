@@ -3310,83 +3310,7 @@
 <h2 id="_create_mx_mappings"><a class="anchor" href="#_create_mx_mappings"></a>Create MX Mappings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Create MX Mapping  will add mapping
-for Jabber Address with SMS enabled
-number and provision the number with
-the network carrier.</p>
-</div>
-<div class="sect2">
-<h3 id="_lifecycle_of_number_mapping"><a class="anchor" href="#_lifecycle_of_number_mapping"></a>Lifecycle of number mapping</h3>
-<div class="paragraph">
-<p>Calling Create MX Mapping endpoint
-initiates SMS enabling number,
-provisioning number in Restcomm and
-creates corresponding mapping in Message exchange.
-However this process is asynchronous.
-Below diagram explains various state of
-Mapping and possible transition from
-one state to another.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../../_images/message-exchange-uc-one/create_mapping_state_diagram.png" alt="create mapping state diagram">
-</div>
-</div>
-<div class="paragraph">
-<p>As soon as a create mapping request is raised,
-the message exchange (MX) solution will
-immediately send back HTTP 200 OK Response
-with status of mapping as <strong>“PROCESSING”</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Now there will be two cases either the number
-is successfully provisioned on the network
-carrier or it is failed.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Case 1: Number is successfully SMS enabled,
-then system will provision the number in Restcomm
-by either adding a new number or updating
-existing number, the status of mapping
-will be updated to <strong>“SUCCESS”</strong> if there is
-any failure from Restcomm the <strong>“deleteFailReason”</strong>
-field will be updated with the corresponding
-error message for that mapping.</p>
-</li>
-<li>
-<p>Case 2: SMS enabling of number failed,
-then the mapping status will be updated to
-<strong>“FAILED”</strong> and the respective failed
-reason will be stored for that order
-in deleteFailReason field.
-In this case number won&#8217;t be provisioned
-on restcomm. Create mapping endpoint can
-be called again.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Number provisioning
-is asynchronous process so user can
-call the create mapping API multiple times
-for the same number and jabber address
-until one of the order status updates to <strong>“SUCCESS”</strong>
-and once one of the provisioning is <strong>“SUCCESS”</strong>
-eventually all the other provisioning requests
-with same number will be marked with
-status as  <strong>“FAILED”</strong>
-</td>
-</tr>
-</table>
-</div>
+<p>Create MX Mapping  will add mapping between Jabber Address and SMS enabled number.</p>
 </div>
 <div class="sect2">
 <h3 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h3>
@@ -3532,14 +3456,6 @@ status as  <strong>“FAILED”</strong>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">domain</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Domain name that is setup for this mapping.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smsEnableProvisionStatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status of create mapping as explained in <a href="create-operation.html#_lifecycle_of_number_mapping">Lifecycle of number mapping</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smsEnableProvisionFailMessage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reason message if creation of mapping <strong>FAILED</strong> Or also if mapping was <strong>SUCCESSFUL</strong> but number was not Provisioned in Restcomm for whatever reason.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
