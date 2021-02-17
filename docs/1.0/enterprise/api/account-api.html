@@ -1999,17 +1999,17 @@
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-87 is-active" onclick="openLanguage('Curl', 87)">Curl</button>
-        <button class="sample-code-button scsIndex-87" onclick="openLanguage('Nodejs', 87)">Nodejs</button>
-        <button class="sample-code-button scsIndex-87" onclick="openLanguage('Python', 87)">Python</button>
-        <button class="sample-code-button scsIndex-87" onclick="openLanguage('Java', 87)">Java</button>
+        <button class="sample-code-button scsIndex-79 is-active" onclick="openLanguage('Curl', 79)">Curl</button>
+        <button class="sample-code-button scsIndex-79" onclick="openLanguage('Nodejs', 79)">Nodejs</button>
+        <button class="sample-code-button scsIndex-79" onclick="openLanguage('Python', 79)">Python</button>
+        <button class="sample-code-button scsIndex-79" onclick="openLanguage('Java', 79)">Java</button>
       </div>
-      <div id="Curl-87" class="sample-language-87">
+      <div id="Curl-79" class="sample-language-79">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID.json  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-87" class="sample-language-87" style="display:none">
+      <div id="Nodejs-79" class="sample-language-79" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -2028,7 +2028,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-87" class="sample-language-87" style="display:none">
+      <div id="Python-79" class="sample-language-79" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -2048,7 +2048,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-87" class="sample-language-87" style="display:none">
+      <div id="Java-79" class="sample-language-79" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -2124,6 +2124,33 @@ public class JavaSampleClass {
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distributed_request_processing"><a class="anchor" href="#_distributed_request_processing"></a>Distributed Request Processing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> platform has a distributed microservice architecture, that enables linear scalability during traffic growth and handles a high volume of REST API requests, voice calls, and SMS messages. Each architecture component handles different types of requests.</p>
+</div>
+<div class="paragraph">
+<p>When you modify the provisioning data via the Management REST APIs, up to few minutes are needed for the update to reflect the changes in all call processing units that handle calls and SMS. Provisioning data modifications are done using the HTTP POST, PUT and DELETE methods. The POST method updates records immediately with no delay during the operation.</p>
+</div>
+<div class="paragraph">
+<p>Distributed request processing is available for the following Management APIs, as well as the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Console.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="account-api.html">Accounts</a></p>
+</li>
+<li>
+<p><a href="clients-api.html">Clients</a></p>
+</li>
+<li>
+<p><a href="incoming-phone-numbers-api.html">Incoming Phone Numbers</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
