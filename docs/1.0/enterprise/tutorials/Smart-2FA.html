@@ -2102,7 +2102,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">495</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Invalid Limit Name:  XXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invalid Limit Name: XXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Send API is called with Limits name that is not defined.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Send API</p></td>
 </tr>
@@ -2149,12 +2149,12 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Example to Send OTP with Limits</p>
+<p>Example of sending OTP with limits:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-https://cloud.restcomm.com/2fa/send \
+https://yourdomain.com/2fa/send \
 --user  ' \{your_account_SID}:\{your_account_token}' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json' \
@@ -2163,7 +2163,7 @@ https://cloud.restcomm.com/2fa/send \
 "from" : "XXXXXXXXXXX",
 "to" : "ZZZZZZZZZZZ",
 "body": "Your verification code is: \{code}",
-"limits" : { "limit_on_phone": "+919960639901" }
+"limits" : { "limit_on_phone": "+1205XXXXXXX" }
 }'</pre>
 </div>
 </div>
@@ -2208,15 +2208,15 @@ https://cloud.restcomm.com/2fa/send \
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">service</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of your service.For backward compatibility, this is mandatory if API is called by passing the “number“ instead of “requestId“ explained below.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of your service. For backward compatibility, this is mandatory if the API is called by passing the <code>number</code> instead of <code>requestId</code> as explained below.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">requestId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The requestID was received when initiating OTP message.This parameter can be ignored if the service and number attributes are being used. * Not needed if using “number“ to verify the OTP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The requestID was received when initiating the OTP message. This parameter can be ignored if the service and number attributes are being used. It is also not needed if using the <code>number</code> to verify the OTP.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number to which the SMS containing the verification code was sent to.<strong>Not needed if you are using verify via "requestId" or will be ignored even if passed</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number to which the SMS containing the verification code was sent to. Not needed if you are using verify via <code>requestId</code>. The <code>requestId</code> will be ignored even if passed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
@@ -2287,7 +2287,7 @@ https://cloud.restcomm.com/2fa/send \
 <td class="tableblock halign-left valign-top"><p class="tableblock">471</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OTP is already verified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Verify is called for UniqueId which is present in-system but already verified (successfully)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verify is called for UniqueId which is present in-system but already verified successfully</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Verify</p></td>
 </tr>
 <tr>
@@ -2336,7 +2336,7 @@ https://cloud.restcomm.com/2fa/send \
 <h2 id="_control"><a class="anchor" href="#_control"></a>Control</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Control API allows App developers to <strong>cancel</strong> already sent API or <strong>resend</strong> the OTP (resend is in roadmap)</p>
+<p>Control API allows App developers to <strong>cancel</strong> already OTP.</p>
 </div>
 <div class="sect2">
 <h3 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h3>
@@ -2443,7 +2443,7 @@ https://cloud.restcomm.com/2fa/send \
 <td class="tableblock halign-left valign-top"><p class="tableblock">471</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OTP is already verified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cancel is called for UniqueId which is present in-system but already verified (successfully)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cancel is called for UniqueId which is present in-system but already verified successfully</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Control</p></td>
 </tr>
 </tbody>
@@ -2766,7 +2766,7 @@ This allows to filter OTP sent to specific country code.</p></td>
                     "dateCreated": "2021-02-02T16:04:04+0000",
                     "dateUpdated": "2021-02-02T16:04:04+0000",
                     "channel": "sms",
-                    "sender": "19839262826",
+                    "sender": "12224445555",
                     "recipient": "13334748363",
                     "targetSid": "SM3769217bf2fc4b7ea22ad5502bfa492c",
                     "channelStatus": "undelivered",
@@ -2867,7 +2867,7 @@ This allows to filter OTP sent to specific country code.</p></td>
             "dateCreated": "2021-02-02T16:04:04+0000",
             "dateUpdated": "2021-02-02T16:04:04+0000",
             "channel": "sms",
-            "sender": "19839262826",
+            "sender": "12224445555",
             "recipient": "13334748363",
             "targetSid": "SM3769217bf2fc4b7ea22ad5502bfa492c",
             "channelStatus": "undelivered",
@@ -2971,7 +2971,7 @@ Usage records doesn&#8217;t include real time data and can be delayed by maximum
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_examples_otp_usage"><a class="anchor" href="#_examples_otp_usage"></a>Examples -OTP Usage</h4>
+<h4 id="_examples_of_otp_usage"><a class="anchor" href="#_examples_of_otp_usage"></a>Examples of OTP Usage</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -3003,13 +3003,13 @@ Usage records doesn&#8217;t include real time data and can be delayed by maximum
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_call_usage"><a class="anchor" href="#_example_call_usage"></a>Example - Call Usage:</h4>
+<h4 id="_example_of_call_usage"><a class="anchor" href="#_example_of_call_usage"></a>Example of Call Usage</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET \ https://your_custom_domain.com/2fa/usage/records?channel=call&amp;startDate=2019-07-01&amp;endDate=2020-07-23
+<pre>curl -X GET \ https://yourdomain.com/2fa/usage/records?channel=call&amp;startDate=2019-07-01&amp;endDate=2020-07-23
  \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -3039,7 +3039,7 @@ Usage records doesn&#8217;t include real time data and can be delayed by maximum
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_sms_usage"><a class="anchor" href="#_example_sms_usage"></a>Example - SMS Usage</h3>
+<h3 id="_example_of_sms_usage"><a class="anchor" href="#_example_of_sms_usage"></a>Example of SMS Usage</h3>
 <script>
       function openLanguage(language, index) {
         const sampleClasses = document.getElementsByClassName("sample-language-" + index);
@@ -3136,7 +3136,7 @@ public class JavaSampleClass {
 </code></pre>
       </div>
 <div class="paragraph">
-<p>Below is the response returned</p>
+<p>Below is the response returned:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3246,7 +3246,7 @@ public class JavaSampleClass {
 </div>
 </div>
 <div class="paragraph">
-<p>In the above example if you don’t pass “startDate”and “endDate” parameters, 30 records will be shown</p>
+<p>In the above example if you don’t pass <code>startDate</code> and <code>endDate</code> parameters, 30 records will be shown.</p>
 </div>
 <div class="paragraph">
 <p>You can also test your service using <a href="https://www.getpostman.com/">Postman</a> or any other alike client.</p>
@@ -3673,9 +3673,9 @@ If no Limit is defined by Developer or if no Limit is passed when invoking Send 
         "buckets": "[{ \"name\":\"bucket1\", \"max\":\"1\", \"interval\":\"30\"},{ \"name\":\"bucket2\", \"max\":\"2\", \"interval\":\"300\"}]",
         "description": "Limit number of OTP sent per recipient Phone Number",
         "accountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "accountEmail": "<a href="mailto:aditya.dixit@telestax.com">aditya.dixit@telestax.com</a>",
+        "accountEmail": "<a href="mailto:jane@company.com">jane@company.com</a>",
         "targetAccountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "targetAccountEmail": "<a href="mailto:aditya.dixit@telestax.com">aditya.dixit@telestax.com</a>",
+        "targetAccountEmail": "<a href="mailto:alice@company.com">alice@company.com</a>",
         "uri": "/2fa/limits/search/LM29c3cdc8123545a4aa62b7451f1f719d",
         "dateCreated": "2021-02-04T03:52:09.400+0000",
         "dateUpdated": "2021-02-04T03:52:09.400+0000"
@@ -3886,9 +3886,9 @@ Account can update Sub-Account Limits
         "buckets": "[{\"name\":\"bucket1\", \"max\":\"1\", \"interval\":\"30\"},{\"name\":\"bucket2\", \"max\":\"2\", \"interval\":\"300\"}]",
         "description": "limit on Phone Number of receiver blabla",
         "accountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "accountEmail": "aditya.dixit@telestax.com",
+        "accountEmail": "jane@company.com",
         "targetAccountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "targetAccountEmail": "aditya.dixit@telestax.com",
+        "targetAccountEmail": "alice@company.com",
         "uri": "/2fa/limits/search/LMcd3f402bbbf44bda858e3ab8f9bd5d44",
         "dateCreated": "2021-02-04T03:55:02.000+0000",
         "dateUpdated": "2021-02-04T03:56:12.122+0000"
@@ -4051,11 +4051,11 @@ Account can Delete SubAccount Limits
         "sid": "LMcd3f402bbbf44bda858e3ab8f9bd5d44",
         "name": "limit_on_phoneNumberr",
         "buckets": "[{\"name\":\"bucket1\", \"max\":\"1\", \"interval\":\"30\"},{\"name\":\"bucket2\", \"max\":\"2\", \"interval\":\"300\"}]",
-        "description": "limit on Phone Number of receiver blabla",
+        "description": "limit on Phone Number of receiver",
         "accountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "accountEmail": "aditya.dixit@telestax.com",
+        "accountEmail": "alice@company.com",
         "targetAccountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "targetAccountEmail": "aditya.dixit@telestax.com",
+        "targetAccountEmail": "jane@company.com",
         "uri": "/2fa/limits/search/LMcd3f402bbbf44bda858e3ab8f9bd5d44",
         "dateCreated": "2021-02-04T03:55:02.000+0000",
         "dateUpdated": "2021-02-04T03:56:12.000+0000"
@@ -4323,9 +4323,9 @@ If the search API is called without page and pageSize, by default pageSize will 
                 "buckets": "[{\"name\":\"bucket1\",\"max\":\"1\",\"interval\":\"60\"},{\"name\":\"bucket2\",\"max\":\"2\",\"interval\":\"300\"}]",
                 "description": "Set limit on destination phone number to have maximum 1 OTP per min and maximum 2 per 5 mins",
                 "accountSid": "ACdcd5c6fe672b241945f495c4ca1a4966",
-                "accountEmail": "kakalot1@gmail.com",
+                "accountEmail": "jane@company.com",
                 "targetAccountSid": "ACdcd5c6fe672b241945f495c4ca1a4966",
-                "targetAccountEmail": "kakalot1@gmail.com",
+                "targetAccountEmail": "alice@company.com",
                 "uri": "/2fa/limits/search/LMec2561784a7f425e8049c8c27d4250db",
                 "dateCreated": "2020-04-10T00:33:53.000+0000",
                 "dateUpdated": "2020-07-30T13:25:22.000+0000"
@@ -4336,9 +4336,9 @@ If the search API is called without page and pageSize, by default pageSize will 
                 "buckets": "[{\"name\":\"bucket1\",\"max\":\"1\",\"interval\":\"20\"}]",
                 "description": "tesr",
                 "accountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-                "accountEmail": "aditya.dixit@telestax.com",
+                "accountEmail": "jane@company.com",
                 "targetAccountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-                "targetAccountEmail": "aditya.dixit@telestax.com",
+                "targetAccountEmail": "alice@company.com",
                 "uri": "/2fa/limits/search/LMfddc80d59f3549dd9044950e5c0ca7c6",
                 "dateCreated": "2020-12-18T03:29:18.000+0000",
                 "dateUpdated": "2020-12-18T03:29:18.000+0000"
@@ -4472,9 +4472,9 @@ Account can get single Limits of  SubAccount
         "buckets": "[{\"name\":\"bucket1\",\"max\":\"1\",\"interval\":\"20\"}]",
         "description": "tesr",
         "accountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "accountEmail": "aditya.dixit@telestax.com",
+        "accountEmail": "jane@company.com",
         "targetAccountSid": "AC55a9977a50647d2fa38fa1f505206aaf",
-        "targetAccountEmail": "aditya.dixit@telestax.com",
+        "targetAccountEmail": "alice@company.com",
         "uri": "/2fa/limits/search/LMfddc80d59f3549dd9044950e5c0ca7c6",
         "dateCreated": "2020-12-18T03:29:18.000+0000",
         "dateUpdated": "2020-12-18T03:29:18.000+0000"
