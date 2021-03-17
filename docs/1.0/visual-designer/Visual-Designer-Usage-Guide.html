@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Update Operation - Restcomm Docs"></title>
+    <title data-custom-title="Visual Designer Usage Guide - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/message-exchange-for-cisco-uc-one/update-operation.html
+      https://dev.restcomm.com/docs/1.0/visual-designer/Visual-Designer-Usage-Guide.html
     ">
-    <meta name="description" content="The Update operation allows Communication Service Providers (CSP) Account to update existing Enterprise records.">
-    <meta name="keywords" content="message exchange update operation, mx update operation">
+    <meta name="description" content="Web Trigger is an alternative way to start a voice application. It allows establishing a call between a Visual Designer application and a destination address using a simple HTTP request. Any Visual Designer Voice application can be configured to be started using Web Trigger.">
+    <meta name="keywords" content="web trigger, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} web trigger, start a voice app">
     <meta name="generator" content="Antora 1.1.1">
-    <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
-    <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
+    <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
+    <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
     <!-- Not using it for now
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -75,7 +75,7 @@
   <div class="navigation-menu is-active" data-panel="menu">
     <nav class="nav-menu">
       <!-- Not applicable to our Enterprise docs
-    <h3 class="title"><a href="../../index.html">docs</a></h3>
+    <h3 class="title"><a href="../index.html">docs</a></h3>
     -->
         <ul class="nav-list">
           <ul class="nav-list">
@@ -119,30 +119,8 @@
                           <ul class="nav-list">
                                                                                       </ul>
   </ul>
-            <li id="VisualDesigner" class="nav-item" data-depth="1">
-              <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              icomoon3-font-reference-voice
-            "></span>
-                  <span>
-              <a class="nav-link nav-flex-item-text" href="../../enterprise/visual-designer/Visual-Designer-Usage-Guide.html">Visual Designer</a>
-                      <button class="nav-toggle"></button>
-            </span>
-              </div>
-                <ul class="nav-list">
-            <li id="ProductOverview" class="nav-item" data-depth="2">
-              <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-            "></span>
-                  <span>
-              <a class="nav-link nav-flex-item-text" href="../../enterprise/visual-designer/Visual-Designer-Usage-Guide.html">Product Overview</a>
-
-            </span>
-              </div>
-                          </li>
-  </ul>
-            </li>
+              <ul class="nav-list">
+              </ul>
   </ul>
           <ul class="nav-list">
               <ul class="nav-list">
@@ -417,8 +395,30 @@
               <ul class="nav-list">
                           </ul>
                                                                                                                                                                                                   </ul>
-              <ul class="nav-list">
-              </ul>
+            <li id="Visual Designer" class="nav-item is-current-page" data-depth="1">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              icomoon3-font-reference-voice
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="Visual-Designer-Usage-Guide.html">Visual Designer</a>
+                      <button class="nav-toggle"></button>
+            </span>
+              </div>
+                <ul class="nav-list">
+            <li id="Product Overview" class="nav-item is-current-page" data-depth="2">
+              <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+            "></span>
+                  <span>
+              <a class="nav-link nav-flex-item-text" href="Visual-Designer-Usage-Guide.html">Product Overview</a>
+
+            </span>
+              </div>
+                          </li>
+  </ul>
+            </li>
   </ul>
   </ul>
     </nav>
@@ -433,7 +433,7 @@
       <span class="title">docs</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">1.0</a>
+          <a href="../index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -448,731 +448,357 @@
 -->
 <div class="toolbar" role="navigation" style="display: none;">
   <button class="navigation-toggle"></button>
-  <a href="../../index.html" class="home-link"></a>
+  <a href="../index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="../../index.html">docs</a></li>
-    <li class="crumb"><a href="../../turnkey-applications/smart-2fa.html">CSP:Turnkey Apps APIs</a></li>
-    <li class="crumb"><a href="overview.html">CSP:Message Exchange for Cisco UC-One</a></li>
-    <li class="crumb"><a href="update-operation.html">CSP:Update Operation</a></li>
+    <li class="crumb"><a href="../index.html">docs</a></li>
+    <li class="crumb"><a href="Visual-Designer-Usage-Guide.html">CSPVD:Visual Designer</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>Update Operation</h1>
-<div class="sect1">
-<h2 id="_update_enterprise"><a class="anchor" href="#_update_enterprise"></a>Update Enterprise</h2>
+  <h1>Visual Designer Usage Guide</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Update Enterprise allows to update existing Enterprise.</p>
+<p>Web Trigger is an alternative way to start a voice application. It allows establishing a call between an Visual Designer application and a destination address using a simple HTTP request.
+Any Visual Designer voice application can be configured to be started using Web Trigger. The process of doing that is roughly the following:</p>
 </div>
-<div class="sect2">
-<h3 id="_base_resource_uri"><a class="anchor" href="#_base_resource_uri"></a>Base Resource URI</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Create a Voice application in Visual Designer.</p>
+</li>
+<li>
+<p>Enable and configure Web Trigger feature for this application.</p>
+</li>
+<li>
+<p>Start your application by making a request to the WebTrigger URL.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
+<p>Other features of Web Trigger include:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom authentication using an application-specific token.</p>
+</li>
+<li>
+<p>Initialization of Visual Designer variables by using HTTP parameters.</p>
+</li>
+<li>
+<p>Control caller identifier that will be presented to the callee.</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="_update_enterprise_resource_uri"><a class="anchor" href="#_update_enterprise_resource_uri"></a>Update Enterprise Resource URI</h3>
 <div class="paragraph">
-<p>/messageexchange/enterprise/{EnterpriseId}</p>
+<p>Web Trigger relies on the Restcomm Calls REST API to do the actual work. You can find more information on how a call between an RCML application and a destination address is established at <a href="../api/calls-api.html">Restcomm API – Calls</a>.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP PUT: Update Enterprise</p>
+<p>In the following example we will create a sample application that, when
+ trigrred, will establish a call between a Restcomm Client and the application and execute it.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EnterpriseId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise SID that was generated by calling create Enterprise API</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory name of Enterprise. Name must be unique within given CSP Organisation.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="sect2">
-<h3 id="_response_body"><a class="anchor" href="#_response_body"></a>Response Body</h3>
+<div class="sect1">
+<h2 id="_step_1_create_the_voice_application"><a class="anchor" href="#_step_1_create_the_voice_application"></a>Step 1 - Create the Voice application</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Log into Visual Designer and create a new project named TestWebTrigger.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Response Body will carry Code, corresponding message and data of Enterprise if it was  successfully Updated. HTTP response will be 200 OK.</p>
+<p>No need to change anything yet. If you don&#8217;t know what Visual Designer is and how to create an application please have a look at <a href="#">Visual Designer Basic Tasks</a> first.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise data as explained in <a href="create-operation.html#_enterprise_data_parameter">Enterprise Data Parameter</a>.</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<div class="sect2">
-<h3 id="_response_parameters"><a class="anchor" href="#_response_parameters"></a>Response Parameters</h3>
+</div>
+<div class="sect1">
+<h2 id="_step_2_enable_web_trigger"><a class="anchor" href="#_step_2_enable_web_trigger"></a>Step 2 - Enable Web Trigger</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Create Enterprise API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition below are the Error that it can return</p>
+<p>Navigate to <em>Your Project Name</em> &#8594; <em>Web Trigger</em>:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">460</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise name not unique</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Enterprise API is called for enterprise name that is already present for this Organisation. There can be same name Organisation in different Orgs.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Enterprise, Update Enterprise</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">467</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise which  is to be updated  is not found.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Mapping, Update Mapping, Update Enterprise</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example"><a class="anchor" href="#_example"></a>Example</h3>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
-    "name" : "Kohl"
-}</code></pre>
+<img src="../_images/show_web_trigger_form.png" alt="show_web_trigger_form">
 </div>
 </div>
 <div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
+<p>Then, check <em>Enable Web Trigger</em>:</p>
 </div>
-<div class="listingblock">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X PUT \
-  https://cloud.restcomm.com/messageexchange/enterprise/MXEb6eb071d21124dbab20b095c25f1274f \
---user  ' \{your_account_SID}:\{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "name" : "Kohl"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of Enterprise  is successful, below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "data": {
-        "sid": "EN263d95d2bafa4e4a9e6a5563851cd283",
-        "dateUpdated": "2019-10-11T11:12:23+0000",
-        "dateCreated": "2019-10-11T11:11:01+0000",
-        "accountSid": "ACa91f3a070d55122d9ec0069b0be27758",
-        "accountEmail": "subhahu.reddy@telestax.com",
-        "uri": "/messageexchange/enterprise/search/EN263d95d2bafa4e4a9e6a5563851cd283",
-        "name": "Kohl",
-        "mappingsCount": 0
-    },
-    "code": 200,
-    "message": "OK"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of Enterprise fails, corresponding error code and message is returned along with HTTP Error Response</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "errorCode": "460",
-    "message": "Enterprise name not unique",
-    "data": {
-        "name": "Kohl"
-    }
-}</code></pre>
-</div>
+<img src="../_images/WebTrigger_enable.png" alt="web_trigger_enable">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_update_mx_mappings"><a class="anchor" href="#_update_mx_mappings"></a>Update MX Mappings</h2>
+<h2 id="_step_3_register_your_sip_client"><a class="anchor" href="#_step_3_register_your_sip_client"></a>Step 3 - Register your SIP client</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Update MX Mapping  will update mapping between JabberAddress (UC One / XMPP Address)  and SMS enabled number.</p>
+<p>You will need a registered destination address to receive the triggered call.
+Fire up your favourite SIP client and register to your Restcomm instance as <strong>alice</strong>. Default password is <em>1234.</em></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_step_4_trigger_a_call"><a class="anchor" href="#_step_4_trigger_a_call"></a>Step 4 - Trigger a call</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using your favorite REST client make a call to the WebTrigger URL. You can copy it from the configuration form:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/WebTrigger_copy_URL.png" alt="copy_web_trigger_url">
+</div>
+</div>
+<div class="paragraph">
+<p>Before making the request you need to specify a destination for the call in the <code>to</code> parameter. You may use the <em>client</em>
+you just registered. The destination goes in the <code>to</code> parameter of the request:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://this:8080/visual-designer/services/apps/APdc8c1eea063d4a85b64a5bebda8e8c04/start?to=client:alice</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Notice <em>client:</em> prefix in the <code>to</code> parameter.</p>
+</div>
+<div class="paragraph">
+<p>Also, WebTrigger supports Basic HTTP authentication. Use your Restcomm account credentials in order
+to authenticate. In this example we will use <strong>administrator@company.com</strong> / <strong>mypass</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Here is the cURL command to make the request:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ curl -X GET --user 'administrator@company.com:mypass' 'http://this:8080/visual-designer/services/apps/APdc8c1eea063d4a85b64a5bebda8e8c04/start?to=client:alice'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition to specifying the destination of the call, the caller ID may also be specified (optional) using
+the <code>from</code> parameter. Here is the how the trigger URL  will look like when the caller ID  is set to <strong>bob</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>.../start?to=client:alice&amp;from=bob</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point you should be able to trigger a call to your registered client and listen to
+ your application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authenticate_with_application_specific_tokens"><a class="anchor" href="#_authenticate_with_application_specific_tokens"></a>Authenticate with application-specific tokens</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In case you don&#8217;t want to reveal your account credentials to the user of the trigger you can
+use an alternative form of authentication that relies on custom application-specific tokens. To enable it
+you will need to define an arbitrary security token in the configuration form and then use it in the request that
+will trigger the call. If the tokens match the request will be accepted.</p>
+</div>
+<div class="paragraph">
+<p>Here is the configuration form with the <em>application access token</em> set to <strong>MyTopSeCrEt</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/WebTrigger_specify_application_token.png" alt="specify_application_access_token">
+</div>
+</div>
+<div class="paragraph">
+<p>Since there are no Basic HTTP authentication headers involved you may easily trigger the call by typing the WebTrigger URL
+directly in the browser:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://this:8080/visual-designer/services/apps/APdc8c1eea063d4a85b64a5bebda8e8c04/start?to=client:alice&amp;token=MyTopSeCrEt</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Before giving it a try make sure that you have configured
+ <a href="#configure-restcomm-api-credentials">Restcomm API credentials</a> in Visual Designer settings.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_call_source_and_destination_overrides"><a class="anchor" href="#_call_source_and_destination_overrides"></a>Call source and destination overrides</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There can be cases when the destination or the source of a WebTrigger call should be locked
+down to a fixed value and not be controlled from the request. In order to do that <em>overrides</em> can
+be provided in the configuration form as follows:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/WebTrigger_overrides.png" alt="source_dest_overrides">
+</div>
+</div>
+<div class="paragraph">
+<p>Now, the <code>to</code> and <code>form</code> parameters in the HTTP request will be ignored and values in the form
+will be used instead.</p>
 </div>
 <div class="sect2">
-<h3 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h3>
+<h3 id="_configure_api_access_credentials"><a class="anchor" href="#_configure_api_access_credentials"></a>Configure API access credentials</h3>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
+<p>In order to use application-specific tokens Restcomm API credentials should be configured in Visual Designer
+ settings. Visual Designer relies on Restcomm Calls REST API to create the actual call between the
+ application and the destination address. For that, it needs to know the credentials of
+ the Restcomm Account that will make the call.</p>
+</div>
+<div class="paragraph">
+<p>To supply these credentials:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <em>Your Project Name</em> &#8594; <em>Account Settings</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This will bring up the IDE Settings form for the logged user:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/ide_settings_profile_form_complete.png" alt="ide_settings_profile_form_complete">
+</div>
+</div>
+<div class="paragraph">
+<p>Supply the credentials of the Restcomm account that will be used to create the call.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set <strong>Username</strong> to the Restcomm username on whose behalf the calls will be made. In this tutorial we used <em>administrator@company.com</em></p>
+</li>
+<li>
+<p>Set <strong>Password</strong> to the <em>AuthToken</em> of your account displayed in Dashboard.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_variables"><a class="anchor" href="#_adding_variables"></a>Adding variables</h3>
+<div class="paragraph">
+<p>Application behaviour can be further enhanced by adding parameters to your trigger URL.
+All additional parameters will be converted to Visual Designer variables and can be used in your application.</p>
+</div>
+<div class="paragraph">
+<p>Bellow is a personalized greeting of the application using <code>firstname</code> and <code>lastname</code> variables.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/add_variables_to_the_mix.png" alt="add variables to the mix">
+</div>
+</div>
+<div class="paragraph">
+<p>This application will use the <em>firstname</em> and <em>lastname</em> parameters from a trigger URL like the
+following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://this:8080/visual-designer/services/apps/APdc8c1eea063d4a85b64a5bebda8e8c04/start?to=client:alice&amp;firstname=nick&amp;lastname=the+greek</pre>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_update_mx_mappings_resource_uri"><a class="anchor" href="#_update_mx_mappings_resource_uri"></a>Update MX Mappings Resource URI</h4>
+<h4 id="_variable_scope"><a class="anchor" href="#_variable_scope"></a>Variable scope</h4>
 <div class="paragraph">
-<p>/messageexchange/mappings/{mappingId}</p>
+<p>In the example above <code>firstname</code> and <code>lastname</code> parameters defined in the url will result in creating module-scoped
+Visual Designer variables. This means that the variables will be available only in the first module
+execution. To make them last for the whole application lifecycle the 'User parameter scope'
+option in <em>Advanced configuration</em> options should be set to <em>Application</em> as illustrated below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/WebTrigger_application_scoped_vars.png" alt="application_scoped_variables">
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h3>
+<div class="sect3">
+<h4 id="_destination_address_syntax"><a class="anchor" href="#_destination_address_syntax"></a>Destination address syntax</h4>
 <div class="paragraph">
-<p>HTTP PUT: Update mappings.</p>
+<p>Throughout this tutorial we have only used <em>client</em> destinations for the call. Restcomm
+Calls REST API and consequently Visual Designer WebTrigger support four different types of destination
+address. Any of these types can be used as a destination address. Here are some example
+values you can use as destinations either directly in the URL <code>to</code> parameter or as overrides
+ in the configuration form.</p>
 </div>
-<div class="paragraph">
-<p>Note: jabberAddress and externalAddress cannot be updated. If you need to change any of these, you have to delete the existing mapping and recreate a new one.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>client</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>client:alice</p>
+</li>
+<li>
+<p>client:bob</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>sip</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>sip:bob@192.168.1.39:5060</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
+</li>
+<li>
+<p><strong>conference</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>conference:2233</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>number</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>+1234598323</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Make sure you url-encode these values if you specify the <strong>to</strong> destination in the trigger URL!
+</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mappingId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory unique Jabber Address  vs SMS enabled number mapping id that was generated by calling Add Mapping API</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional friendly name of MX user. If not passed its same as jabberAddress record</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional Enterprise id. If user wants to move Mapping from one enterprise to another, pass the enterpriseId of target Enterprise. If not passed, use same as set in original mapping.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">domainSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. If user wants to move Mappings from one domain to another, pass the Domain Sid here to change custom domain. If not passed, use same as set in original mapping.</p></td>
-</tr>
-</tbody>
 </table>
-</div>
-<div class="sect2">
-<h3 id="_response_body_2"><a class="anchor" href="#_response_body_2"></a>Response Body</h3>
-<div class="paragraph">
-<p>Response Body will carry Code, corresponding message and data of Mapping if it was  successfully Updated, HTTP response will be 200 OK.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mappings data as explained in <a href="create-operation.html#_mapping_data_parameter">Mapping Data Parameter</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_response_parameters_2"><a class="anchor" href="#_response_parameters_2"></a>Response Parameters</h3>
-<div class="paragraph">
-<p>Update MX mapping API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">467</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise for which mapping is to be added is not found.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Mapping, Update Mapping, Update Enterprise</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">478</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mapping not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update is called passing MappingId that is not found for give Organisation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Mapping</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">474</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain Id not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain is not found.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Domain, Delete Domain, Search Domain, Add Mapping,</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "name" : "Amit Bhayani New"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>curl -X PUT \
-https://cloud.restcomm.com/messageexchange/mappings/XM00009e272d9047dc858549485b0d0e1f  \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-     "name" : "Amit Bhayani New"
-
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of mapping  is successful, below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "data": {
-        "sid": "XM04f7959a96c34814ba163a4f5c8c7fc1",
-        "dateUpdated": "2019-10-11T11:19:54+0000",
-        "dateCreated": "2019-10-11T11:16:03+0000",
-        "accountSid": "ACa91f3a070d55122d9ec0069b0be27758",
-        "accountEmail": "subhahu.reddy@telestax.com",
-        "uri": "/messageexchange/mappings/search/XM04f7959a96c34814ba163a4f5c8c7fc1",
-        "jabberAddress": "jane.doe@yourcompany.com",
-        "externalAddress": "157133169432",
-        "enterpriseSid": "EN38d48bc7dea7470090c8fc809a69a620",
-        "name": "Amit Bhayani New",
-        "enterpriseName": "testing"
-    },
-    "code": 200,
-    "message": "OK"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of mapping fails, corresponding error code and message will be returned with HTTP Error code.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "errorCode": "474",
-    "message": "Domain Id not found",
-    "data": {
-        "sid": "XM04f7959a96c34814ba163a4f5c8c7fc1",
-        "domainSid": "DO11488d772bab489d9369cae29c8a6803"
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_update_domain"><a class="anchor" href="#_update_domain"></a>Update Domain</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Updating domain to update domain name or certificate</p>
-</div>
-<div class="sect2">
-<h3 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h3>
-<div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_update_domain_resource_uri"><a class="anchor" href="#_update_domain_resource_uri"></a>Update Domain Resource URI</h3>
-<div class="paragraph">
-<p>/messageexchange/domains/{domainId}</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h3>
-<div class="paragraph">
-<p>HTTP PUT: Update Domain</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">domainId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Id generated while creating the domain</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of domain. For example “text.acme.com”</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">certificate</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Full certificate of domain. See further details at <a href="https://www.restcomm.com/docs/message-exchange.html#_use_your_custom_domain" class="bare">https://www.restcomm.com/docs/message-exchange.html#_use_your_custom_domain</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h3>
-<div class="paragraph">
-<p>Response Body will carry Code, corresponding message and data of Domain if it was  successfully Updated, HTTP response will be 200 OK.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">domain data as explained in <a href="create-operation.html#_domain_data_parameter">Domain Data Parameter</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_response_parameters_3"><a class="anchor" href="#_response_parameters_3"></a>Response Parameters</h3>
-<div class="paragraph">
-<p>Update Domain API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition below are the Error that it can return</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">474</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Domain Id not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Domain API is called that is not present in system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Domain</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example_3"><a class="anchor" href="#_example_3"></a>Example:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-	"name":"mycompanynew.com"
-}
-
-From the bash terminal you can run the command below:
-
-curl -X PUT \
-  https://cloud.restcomm.com/messageexchange/domains/DO11488d772bab489d9369cae29c8a6803 \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-	"name":"mycompanynew.com"
-}’</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of Domain  is successful, below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "data": {
-        "sid": "DOe334d1141af84ae6b7e44858d1745609",
-        "dateUpdated": "2019-10-11T11:28:17+0000",
-        "dateCreated": "2019-10-11T11:25:16+0000",
-        "accountSid": "ACa91f3a070d55122d9ec0069b0be27758",
-        "accountEmail": "subhahu.reddy@telestax.com",
-        "uri": "/messageexchange/domains/search/DOe334d1141af84ae6b7e44858d1745609",
-        "name": "mycompanynew.com",
-        "certificate": " -----BEGIN CERTIFICATE----------END CERTIFICATE-----",
-        "mappingsCount": 0
-    },
-    "code": 200,
-    "message": "OK"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of domain fails, below is the response returned. Exact error code and message will depend on error occurred</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-  "errorCode": "468",
-  "message": "Invalid Certificate",
-  "data": {
-    "name": "text.mycompany.com new",
-    "certificate": "-----BEGIN CERTIFICATE---------END CERTIFICATE-----"
-  }
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_update_ip_whitelisting"><a class="anchor" href="#_update_ip_whitelisting"></a>Update IP Whitelisting</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Updating whitelisting allows CSP to change the IP whitelisted.</p>
-</div>
-<div class="sect2">
-<h3 id="_base_resource_uri_4"><a class="anchor" href="#_base_resource_uri_4"></a>Base Resource URI</h3>
-<div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_update_ip_whitelisting_resource_uri"><a class="anchor" href="#_update_ip_whitelisting_resource_uri"></a>Update IP Whitelisting Resource URI</h3>
-<div class="paragraph">
-<p>/messageexchange/whitelist/{whitelistId}</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h3>
-<div class="paragraph">
-<p>HTTP PUT: Update IP Whitelist</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">whitelistid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Id generated while creation of Whitelist Ip</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ipAddress</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IP Address to be whitelisted in IPv4 format only.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h3>
-<div class="paragraph">
-<p>Response Body will carry Code, corresponding message and data of Whitelist IP if it was  successfully Updated, HTTP response will be 200 OK.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whitelist IP data as explained in <a href="create-operation.html#_ip_whitelist_data_parameter">IP Whitelist Data Parameter</a></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_response_parameters_4"><a class="anchor" href="#_response_parameters_4"></a>Response Parameters</h3>
-<div class="paragraph">
-<p>Update Whitelist IP API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition below are the Error that it can return</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error Message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Category</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">475</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whitelist IP Id not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Whitelist IP API is called that is not present in system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Whitelist IP, Delete Whitelist IP</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example_4"><a class="anchor" href="#_example_4"></a>Example:</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-  "ipAddress": "4.3.2.1"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>curl -X PUT \
-  https://cloud.restcomm.com/messageexchange/whitelist/WL9fc6143123d048579f7d5b5d76572e1d \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "ipAddress": "4.3.2.1"
-}’</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of Whitelist  is successful, below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "data": {
-        "sid": "WL98fbe024c1c34794a4034646db503627",
-        "dateUpdated": "2019-10-11T11:07:16+0000",
-        "dateCreated": "2019-10-11T11:06:35+0000",
-        "accountSid": "ACa91f3a070d55122d9ec0069b0be27758",
-        "accountEmail": "subhahu.reddy@telestax.com",
-        "uri": "/messageexchange/whitelist/search/WL98fbe024c1c34794a4034646db503627",
-        "ipAddress": "4.3.2.1"
-    },
-    "code": 200,
-    "message": "OK"
-}</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of whitelist IP fails, below is the response returned. Exact error code and message will depend on error occurred</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>{
-    "errorCode": "461",
-    "message": "Invalid IPv4 Address",
-    "data": {
-        "ipAddress": "4.3.2.1.5"
-    }
-}</code></pre>
 </div>
 </div>
 </div>
@@ -1231,8 +857,8 @@ curl -X PUT \
     <!---->
   </div>
 </footer>
-<script src="../../../../_/js/site.js"></script>
-<script src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
 <!--
 <script>hljs.initHighlighting()</script>
 -->
