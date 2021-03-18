@@ -6,10 +6,10 @@
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
     <title data-custom-title="Web Trigger Overview - Restcomm Docs"></title>
     <link rel="canonical" href="
-      /docs/visual-designer/Using-web-trigger.html
+      /docs/visual-designer/Visual-Designer-Usage-Guide.html
     ">
     <meta name="description" content="Web Trigger is an alternative way to start a voice application. It allows establishing a call between a Visual Designer application and a destination address using a simple HTTP request. Any Visual Designer Voice application can be configured to be started using Web Trigger.">
-    <meta name="keywords" content="web trigger, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;CPaaS&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} web trigger, start a voice app">
+    <meta name="keywords" content="web trigger, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} web trigger, start a voice app">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
@@ -35,7 +35,7 @@
   <!-- TODO: need to improve the variable used to decide displaying this nav -->
   <nav class="navbar-enterprise">
     <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right" style="visibility: hidden;">
+      <button class="navigation-toggle icon-custom-font-right">
       </button>
       <!--
       <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
@@ -57,7 +57,7 @@
   </nav>
 </header>
 <div class="main-wrapper">
-<div class="navigation-container" data-component="docs" data-version="1.0"  style="display: none;">
+<div class="navigation-container" data-component="docs" data-version="1.0" >
   <aside class="navigation">
     <div class="panels">
   <div class="navigation-menu is-active" data-panel="menu">
@@ -144,7 +144,7 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../../index.html">docs</a></li>
-    <li class="crumb"><a href="Using-web-trigger.html">Web Trigger Overview</a></li>
+    <li class="crumb"><a href="Visual-Designer-Usage-Guide.html">EnterpriseVD:Visual Designer</a></li>
   </ul>
 </nav>
 </div>
@@ -186,11 +186,11 @@ Any Visual Designer voice application can be configured to be started using Web 
 </ul>
 </div>
 <div class="paragraph">
-<p>Web Trigger relies on the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Calls REST API to do the actual work. You can find more information on how a call between an RCML application and a destination address is established at <a href="../api/calls-api.html"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> API – Calls</a>.</p>
+<p>Web Trigger relies on the Restcomm Calls REST API to do the actual work. You can find more information on how a call between an RCML application and a destination address is established at <a href="../api/calls-api.html">Restcomm API – Calls</a>.</p>
 </div>
 <div class="paragraph">
 <p>In the following example we will create a sample application that, when
- trigrred, will establish a call between a <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Client and the application and execute it.</p>
+ trigrred, will establish a call between a Restcomm Client and the application and execute it.</p>
 </div>
 </div>
 </div>
@@ -235,7 +235,7 @@ Any Visual Designer voice application can be configured to be started using Web 
 <div class="sectionbody">
 <div class="paragraph">
 <p>You will need a registered destination address to receive the triggered call.
-Fire up your favourite SIP client and register to your <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> instance as <strong>alice</strong>. Default password is <em>1234.</em></p>
+Fire up your favourite SIP client and register to your Restcomm instance as <strong>alice</strong>. Default password is <em>1234.</em></p>
 </div>
 </div>
 </div>
@@ -263,7 +263,7 @@ you just registered. The destination goes in the <code>to</code> parameter of th
 <p>Notice <em>client:</em> prefix in the <code>to</code> parameter.</p>
 </div>
 <div class="paragraph">
-<p>Also, WebTrigger supports Basic HTTP authentication. Use your <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account credentials in order
+<p>Also, WebTrigger supports Basic HTTP authentication. Use your Restcomm account credentials in order
 to authenticate. In this example we will use <strong>administrator@company.com</strong> / <strong>mypass</strong>.</p>
 </div>
 <div class="paragraph">
@@ -323,7 +323,7 @@ directly in the browser:</p>
 </td>
 <td class="content">
 Before giving it a try make sure that you have configured
- <a href="#configure-restcomm-api-credentials"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> API credentials</a> in Visual Designer settings.
+ <a href="#configure-restcomm-api-credentials">Restcomm API credentials</a> in Visual Designer settings.
 </td>
 </tr>
 </table>
@@ -350,10 +350,10 @@ will be used instead.</p>
 <div class="sect2">
 <h3 id="_configure_api_access_credentials"><a class="anchor" href="#_configure_api_access_credentials"></a>Configure API access credentials</h3>
 <div class="paragraph">
-<p>In order to use application-specific tokens <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> API credentials should be configured in Visual Designer
- settings. Visual Designer relies on <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Calls REST API to create the actual call between the
+<p>In order to use application-specific tokens Restcomm API credentials should be configured in Visual Designer
+ settings. Visual Designer relies on Restcomm Calls REST API to create the actual call between the
  application and the destination address. For that, it needs to know the credentials of
- the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Account that will make the call.</p>
+ the Restcomm Account that will make the call.</p>
 </div>
 <div class="paragraph">
 <p>To supply these credentials:</p>
@@ -374,12 +374,12 @@ will be used instead.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Supply the credentials of the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account that will be used to create the call.</p>
+<p>Supply the credentials of the Restcomm account that will be used to create the call.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Set <strong>Username</strong> to the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> username on whose behalf the calls will be made. In this tutorial we used <em>administrator@company.com</em></p>
+<p>Set <strong>Username</strong> to the Restcomm username on whose behalf the calls will be made. In this tutorial we used <em>administrator@company.com</em></p>
 </li>
 <li>
 <p>Set <strong>Password</strong> to the <em>AuthToken</em> of your account displayed in Dashboard.</p>
@@ -427,7 +427,7 @@ option in <em>Advanced configuration</em> options should be set to <em>Applicati
 <div class="sect3">
 <h4 id="_destination_address_syntax"><a class="anchor" href="#_destination_address_syntax"></a>Destination address syntax</h4>
 <div class="paragraph">
-<p>Throughout this tutorial we have only used <em>client</em> destinations for the call. <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span>
+<p>Throughout this tutorial we have only used <em>client</em> destinations for the call. Restcomm
 Calls REST API and consequently Visual Designer WebTrigger support four different types of destination
 address. Any of these types can be used as a destination address. Here are some example
 values you can use as destinations either directly in the URL <code>to</code> parameter or as overrides
