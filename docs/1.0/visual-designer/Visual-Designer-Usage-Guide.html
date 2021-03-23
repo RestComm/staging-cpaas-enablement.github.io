@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Message Exchange for Cisco UC-One Overview - Restcomm Docs"></title>
+    <title data-custom-title="Visual Designer Usage Guide - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/turnkey-applications/message-exchange-for-cisco-uc-one-overview.html
+      https://dev.restcomm.com/docs/1.0/visual-designer/Visual-Designer-Usage-Guide.html
     ">
-    <meta name="description" content="Restcomm Message Exchange for Cisco UC-One helps service providers enable their enterprise customers to send and receive SMS using their Unified Communication (UC) client. Enterprise customers can send either two-way SMS or an SMS to multiple destinations.">
+    <meta name="description" content="Web Trigger is an alternative way to start a voice application. It allows establishing a call between a Visual Designer application and a destination address using a simple HTTP request. Any Visual Designer Voice application can be configured to be started using Web Trigger.">
+    <meta name="keywords" content="web trigger, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} web trigger, start a voice app">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
@@ -47,7 +48,7 @@
   <!-- TODO: need to improve the variable used to decide displaying this nav -->
   <nav class="navbar-enterprise">
     <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right" style="visibility: hidden;">
+      <button class="navigation-toggle icon-custom-font-right">
       </button>
       <!--
       <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
@@ -68,7 +69,7 @@
   </nav>
 </header>
 <div class="main-wrapper">
-<div class="navigation-container" data-component="docs" data-version="1.0"  style="display: none;">
+<div class="navigation-container" data-component="docs" data-version="1.0" >
   <aside class="navigation">
     <div class="panels">
   <div class="navigation-menu is-active" data-panel="menu">
@@ -122,11 +123,11 @@
               </ul>
   </ul>
           <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="API Overview" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -144,11 +145,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="API Endpoint" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -166,11 +167,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Authentication" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -188,11 +189,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Requests" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -210,11 +211,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Responses" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -232,11 +233,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Paging" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -254,11 +255,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Reason Codes Dictionary" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -278,11 +279,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Management APIs" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -300,11 +301,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-                          <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                              <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Accounts" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -322,11 +323,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Retrieve Account" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -344,11 +345,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Account" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -366,11 +367,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Account" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -388,11 +389,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Account" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -410,11 +411,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Account Roles" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -434,11 +435,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Tags" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -456,11 +457,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Tag" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -478,11 +479,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Tag" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -500,11 +501,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Tag list" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -522,11 +523,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Retrieve Tag" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -544,11 +545,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Tag" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -568,11 +569,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Profiles" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -590,11 +591,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Profile" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -612,11 +613,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Profile" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -634,11 +635,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Unlink a Profile from an Account" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -656,11 +657,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Link a Profile to an Organization" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -678,11 +679,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Unlink a Profile to an Organization" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -700,11 +701,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Profiles List" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -722,11 +723,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Paging" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -744,11 +745,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Filtering &amp; Profile Document Inclusion" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -766,11 +767,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Profile Details" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -788,11 +789,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Profile Relationship" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -810,11 +811,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Account Relationship" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -832,11 +833,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Profile" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -856,11 +857,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Applications" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -878,11 +879,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Clients" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -900,11 +901,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create a Client" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -922,11 +923,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete a Client" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -944,11 +945,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Change Client&#8217;s Password" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -966,11 +967,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get a List of Available Clients" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -990,11 +991,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Incoming Phone Numbers" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1012,11 +1013,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="IncomingPhoneNumber Instance Resource" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1034,11 +1035,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="IncomingPhoneNumbers List Resource" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1056,11 +1057,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Local IncomingPhoneNumber Factory Resource" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1078,11 +1079,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Toll-Free IncomingPhoneNumber Factory Resource" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1100,11 +1101,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Mobile IncomingPhoneNumber Factory Resource" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1122,11 +1123,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Attach a phone number to an application" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1144,11 +1145,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete a phone number" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1166,11 +1167,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="List of Phone Numbers" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1188,11 +1189,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Incoming Phone Number Regex Support" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1212,11 +1213,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Notifications" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1234,11 +1235,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Usage Records" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1256,11 +1257,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Audit Logs" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1280,11 +1281,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Voice APIs" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1302,11 +1303,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Calls" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1324,11 +1325,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Call List Resource URI" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1346,11 +1347,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Making a Call" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1368,11 +1369,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Modifying Live Calls" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1390,11 +1391,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Examples" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1412,11 +1413,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="List Filter" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1434,11 +1435,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Paging Information" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1458,11 +1459,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Outgoing Caller ID" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1480,11 +1481,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Conference Management" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1502,11 +1503,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Supported Operations" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1524,11 +1525,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Conference List Resource URI" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1548,11 +1549,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Conference Participants Management" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1570,11 +1571,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Participants List Resource URI" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1594,11 +1595,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Recordings" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1616,11 +1617,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Refers" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1638,11 +1639,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Resource Properties" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1660,11 +1661,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Supported Operations" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1682,11 +1683,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Paging Information" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1706,11 +1707,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SIP Refer Support" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1730,11 +1731,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SMS APIs" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1752,11 +1753,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Outgoing Caller ID" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1774,11 +1775,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Messages" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1796,11 +1797,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Send SMS" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1818,11 +1819,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get SMS List" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1840,11 +1841,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get single SMS Information" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1862,11 +1863,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SMS Attributes" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1886,11 +1887,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Email" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1910,11 +1911,11 @@
                           </li>
               </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Turnkey Apps APIs" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1927,16 +1928,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html">Turnkey Apps APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html">Turnkey Apps APIs</a>
                       <button class="nav-toggle"></button>
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SMS for Microsoft Teams" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1954,11 +1955,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Business Customer" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1976,11 +1977,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Manage Mappings" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1998,11 +1999,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Bot details" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2020,11 +2021,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Messages" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2044,11 +2045,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Smart 2FA" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2061,16 +2062,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html">Smart 2FA</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html">Smart 2FA</a>
                       <button class="nav-toggle"></button>
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Sending One-Time Passwords" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2083,16 +2084,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_sending_one_time_passwords_api_reference">Sending One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_sending_one_time_passwords_api_reference">Sending One-Time Passwords</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Verifying One-Time Passwords" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2105,16 +2106,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_verifying_one_time_passwords_api_reference">Verifying One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_verifying_one_time_passwords_api_reference">Verifying One-Time Passwords</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Cancel One-Time Passwords" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2127,16 +2128,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_cancel_one_time_passwords_api_reference">Cancel One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_cancel_one_time_passwords_api_reference">Cancel One-Time Passwords</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Session Detail Record (SDR)" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2149,16 +2150,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get list of One-Time Passwords" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2171,16 +2172,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_get_list_of_one_time_passwords_api_reference">Get list of One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_get_list_of_one_time_passwords_api_reference">Get list of One-Time Passwords</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get a Single One-Time Password" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2193,16 +2194,16 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_get_single_one_time_passwords_api_reference">Get a Single One-Time Password</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_get_single_one_time_passwords_api_reference">Get a Single One-Time Password</a>
 
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Usage Record One-Time Passwords" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2215,7 +2216,7 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="smart-2fa.html#_usage_record_one_time_passwords_api_reference">Usage Record One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_usage_record_one_time_passwords_api_reference">Usage Record One-Time Passwords</a>
 
             </span>
               </div>
@@ -2226,11 +2227,11 @@
                                                   </ul>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Message Exchange for Cisco UC-One" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2248,11 +2249,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2270,11 +2271,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Read Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2292,11 +2293,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2314,11 +2315,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2336,11 +2337,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Error Codes" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2360,11 +2361,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id=" Message Exchange for Cisco Webex Teams" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2382,11 +2383,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2404,11 +2405,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Read Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2426,11 +2427,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2448,11 +2449,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Operation" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2472,11 +2473,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Call Queuing" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2494,11 +2495,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Queue" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2516,11 +2517,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Queue RCML" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2538,11 +2539,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Enqueue RCML" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2562,11 +2563,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Auto Attendant" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2584,11 +2585,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Enterprise" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2606,11 +2607,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2628,11 +2629,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Announcement" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2650,11 +2651,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Auto Attendant System" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2672,11 +2673,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Menu" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2694,11 +2695,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Schedule" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2716,11 +2717,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Phone Number" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2738,11 +2739,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="HMAC Key" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2762,11 +2763,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Number Masking" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2784,11 +2785,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Task Router" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2806,11 +2807,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Enterprise" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2828,11 +2829,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get a List of Enterprises" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2850,11 +2851,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Single Enterprise" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2872,11 +2873,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Enterprise" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2894,11 +2895,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2916,11 +2917,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get a List of Users" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2938,11 +2939,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get a Single User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2960,11 +2961,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -2982,11 +2983,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete user" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3006,11 +3007,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Campaign Manager" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3028,11 +3029,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Business Customers" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3050,11 +3051,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Business Customer Status" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3072,11 +3073,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Business Customer" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3094,11 +3095,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update Business Customer" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3116,11 +3117,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete Business Customer" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3138,11 +3139,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get List of Business Customers" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3160,11 +3161,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Single Business Customer" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3184,11 +3185,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3206,11 +3207,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="User Role and Status" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3228,11 +3229,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create User" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3250,11 +3251,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Update User" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3272,11 +3273,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Delete User" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3296,11 +3297,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get List of Users" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3318,11 +3319,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Single User" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3340,11 +3341,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Manage Credits" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3362,11 +3363,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Create Credit" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3384,11 +3385,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get List of Credits" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3406,11 +3407,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Single Credit" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3430,11 +3431,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Campaign" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3452,11 +3453,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Campaign Status" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3474,11 +3475,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get List of Campaigns" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3496,11 +3497,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="4">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="4">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Get Single Campaign" class="nav-item" data-depth="4">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3524,11 +3525,11 @@
             </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="RCML" class="nav-item" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3546,11 +3547,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Overview" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3568,11 +3569,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Interacting with Your Application" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3590,11 +3591,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="RCML Verbs" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3614,11 +3615,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Dial" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3636,11 +3637,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Client" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3658,11 +3659,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Conference" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3680,11 +3681,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Number" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3702,11 +3703,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SIP" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3726,11 +3727,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Email" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3748,11 +3749,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Gather" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3770,11 +3771,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Say" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3792,11 +3793,11 @@
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="3">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="3">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SSML Reference" class="nav-item" data-depth="3">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3816,11 +3817,11 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Play" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3838,11 +3839,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="SMS" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3860,11 +3861,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Hangup" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3882,11 +3883,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Pause" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3904,11 +3905,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Redirect" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3926,11 +3927,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Record" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3948,11 +3949,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Reject" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3970,11 +3971,11 @@
             </span>
               </div>
                           </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
+                  </li>
             <li id="Refer" class="nav-item" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3994,12 +3995,12 @@
                           </li>
   </ul>
             </li>
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="1">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item is-current-page" data-depth="1">
+                    <span class="nav-flex-item-icon
+                    icomoon3-font-reference-voice
                 "></span>
-              </li>
-            <li id="Visual Designer" class="nav-item" data-depth="1">
+                  </li>
+            <li id="Visual Designer" class="nav-item is-current-page" data-depth="1">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -4011,17 +4012,17 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Visual-Designer-Usage-Guide.html">Visual Designer</a>
+              <a class="nav-link nav-flex-item-text" href="Visual-Designer-Usage-Guide.html">Visual Designer</a>
                       <button class="nav-toggle"></button>
             </span>
               </div>
                 <ul class="nav-list">
-              <li id="Visual Designer" style="display: none !important;" class="nav-item" data-depth="2">
-                <span class="nav-flex-item-icon
-                  
+                  <li id="Visual Designer" class="nav-item is-current-page" data-depth="2">
+                    <span class="nav-flex-item-icon
+                    
                 "></span>
-              </li>
-            <li id="Product Overview" class="nav-item" data-depth="2">
+                  </li>
+            <li id="Product Overview" class="nav-item is-current-page" data-depth="2">
               <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -4033,7 +4034,7 @@
               
             "></span>
                   <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Visual-Designer-Usage-Guide.html">Product Overview</a>
+              <a class="nav-link nav-flex-item-text" href="Visual-Designer-Usage-Guide.html">Product Overview</a>
 
             </span>
               </div>
@@ -4073,212 +4074,51 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="message-exchange-for-cisco-uc-one-overview.html">Message Exchange for Cisco UC-One Overview</a></li>
+    <li class="crumb"><a href="Visual-Designer-Usage-Guide.html">CSP:Visual Designer</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>Message Exchange for Cisco UC-One Overview</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_understanding_the_message_exchange_for_cisco_uc_one_console_and_provisioning_api">Understanding the Message Exchange for Cisco UC-One Console and Provisioning API</a></li>
-<li><a href="#_overview">Overview</a></li>
-<li><a href="#_prerequisites">Prerequisites</a></li>
-<li><a href="#_federating_your_uc_server">Federating your UC server</a>
-<ul class="sectlevel2">
-<li><a href="#_use_an_already_federated_xmpp_server_and_xmpp_client">Use an already federated XMPP server and XMPP client</a></li>
-</ul>
-</li>
-<li><a href="#_setting_up_your_first_mapping">Setting up your first mapping</a>
-<ul class="sectlevel2">
-<li><a href="#_receiving_an_sms_message_to_your_uc_client">Receiving an SMS/message to your UC client</a></li>
-<li><a href="#_sending_an_sms_message_from_your_uc_client">Sending an SMS/message from your UC client</a></li>
-</ul>
-</li>
-<li><a href="#_use_your_custom_domain">Use your custom domain</a>
-<ul class="sectlevel2">
-<li><a href="#_setting_up_your_custom_domain">Setting up your custom domain</a></li>
-</ul>
-</li>
-<li><a href="#_setting_up_your_domain_with_godaddy">Setting up your domain with GoDaddy</a></li>
-<li><a href="#_setting_up_your_ssl_certificate_with_godaddy">Setting up your SSL certificate with GoDaddy</a>
-<ul class="sectlevel2">
-<li><a href="#_setting_up_a_new_domain_in_message_exchange_for_cisco_uc_one_via_api">Setting up a new domain in Message Exchange for Cisco UC-One via API</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="sect1">
-<h2 id="_understanding_the_message_exchange_for_cisco_uc_one_console_and_provisioning_api"><a class="anchor" href="#_understanding_the_message_exchange_for_cisco_uc_one_console_and_provisioning_api"></a>Understanding the Message Exchange for Cisco UC-One Console and Provisioning API</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To learn more about the Message Exchange for Cisco UC-One Console and Provisioning API, please visit the following getting started guides:</p>
-</div>
-<div class="paragraph">
-<p><a href="message-exchange-for-cisco-uc-one-console.html">Getting Started with the Message Exchange for Cisco UC-One Console</a></p>
-</div>
-<div class="paragraph">
-<p><a href="../api/message-exchange-for-cisco-uc-one/overview.html">Getting Started with the Message Exchange for Cisco UC-One API</a></p>
-</div>
-</div>
-</div>
+  <h1>Visual Designer Usage Guide</h1>
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Restcomm Message Exchange for Cisco UC-One helps service providers enable their enterprise customers to send and receive SMS using their Unified Communication (UC) client. Enterprise customers can send either two-way SMS or an SMS to multiple destinations.</p>
+<p>The Restcomm Visual Designer is an easy to use graphical tool that enables non-programmers to design  and manage telecommunication applications. Drag and drop from a palette of actions to support the development of a wide range of applications. A set or series of actions and operations can be saved as a package to be shared and reused in other, more sophisticated applications and services.</p>
 </div>
 <div class="paragraph">
-<p>If you want to use the Restcomm Message Exchange for Cisco UC-One feature, you will need to complete the following steps:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Federate your UC server with Restcomm Message Exchange for Cisco UC-One</p>
-</li>
-<li>
-<p>Reach out to Telestax Global Support Services (GSS) if you are bringing your own numbers (existing numbers).</p>
-<div class="ulist">
-<ul>
-<li>
-<p>GSS will do the setup from backend to SMS enable your (existing) numbers automatically whenever you create a new mapping.</p>
-</li>
-<li>
-<p>By default, Message Exchange for Cisco UC-One assumes that you will buy a new number from Restcomm unless explicitly configured by GSS.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Create a mapping (via API or UI Console)</p>
-</li>
-<li>
-<p>Start sending messages</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to complete the aforementioned steps, you will need:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>An operational XMPP server on the public internet with valid, CA-issued certificates</p>
-</li>
-<li>
-<p>An open firewall port to your XMPP server, allowing incoming traffic from xmpp.restcomm.com’s IP on port 5269</p>
-</li>
-<li>
-<p>Working knowledge of <a href="https://curl.haxx.se/docs/manpage.html">cURL</a> and a way to make HTTP API calls (either using cURL or Postman; we recommend Postman if you’re not familiar with cURL.)</p>
-</li>
-<li>
-<p>An understanding of Message Exchange for Cisco UC-One API’s or Console on how to add mappings.</p>
-</li>
-<li>
-<p>An activated linke:https://cloud.restcomm.com/#/signup[Restcomm Cloud account].</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_federating_your_uc_server"><a class="anchor" href="#_federating_your_uc_server"></a>Federating your UC server</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Federation is the process of establishing a server-to-server connection between your messaging environment and ours. Once this connection is established, the two servers will manage to stay connected on their own.</p>
+<p>For example, one can start with a simple call flow in which an incoming call to a specific phone number is received and routed to a recorded message. You can then create an interactive voice response (IVR) menu. From the menu, you can allow callers to leave a voicemail, send them an SMS, or forward the call to different phone numbers or agents. In addition, you can use Visual Designer modules to integrate and automate calls to a customer from a third-party platform (CRMs, marketing automation tools, support portals etc). It is also possible to retrieve customer information from a database and send targeted A2P (Application-to-Person) marketing messages by SMS using your favorite programming language.</p>
 </div>
 <div class="paragraph">
-<p>The process of federation is managed by the Telestax Global Support Services (GSS) organization and must be scheduled. Please contact your Telestax sales or GSS representative to schedule your federation interop.</p>
-</div>
-<div class="paragraph">
-<p>Follow the steps below to federate your server:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add your server’s IP addresses to our Whitelist using the Whitelist API as explained the <a href="api/message-exchange-for-cisco-uc-one/create-operation.html#_create_ip_whitelisting">Create IP Whitelisting section</a> of Message Exchange(MX) for Cisco UC-One API documentation.</p>
-</li>
-<li>
-<p>Create DNS SRV records on your DNS servers for our Message Exchange for Cisco UC-One server (cloud-xmpp-server.restcomm.com).</p>
-</li>
-<li>
-<p>Ensure your server is on the public internet and has a firewall port open for port 5269</p>
-</li>
-<li>
-<p>Ensure your firewall is allowing incoming traffic from cloud-xmpp-server.restcomm.com’s IP address</p>
-</li>
-<li>
-<p>From a contact on your server, create a new contact and, for the IM address, enter <a href="mailto:interop@restcomm.com">interop@restcomm.com</a></p>
-</li>
-<li>
-<p>Save the contact record and send a test message to <a href="mailto:interop@restcomm.com">interop@restcomm.com</a>. This will initiate the server federation process. Our technical representatives will verify that the federation has been successfully completed.</p>
-</li>
-</ul>
+<p>The Visual Designer environment makes fast work of prototyping your telecom applications on the Restcomm platform. You do not need to develop a custom client to test your applications. Restcomm comes with a WebRTC Demo, which helps you do that quickly. Diagnostics and logging tools for generated code and call attempts provide clear visibility in the output of each step during the development process.</p>
 </div>
 <div class="sect2">
-<h3 id="_use_an_already_federated_xmpp_server_and_xmpp_client"><a class="anchor" href="#_use_an_already_federated_xmpp_server_and_xmpp_client"></a>Use an already federated XMPP server and XMPP client</h3>
+<h3 id="_who_can_use_visual_designer"><a class="anchor" href="#_who_can_use_visual_designer"></a>Who Can use Visual Designer</h3>
 <div class="paragraph">
-<p>Restcomm Message Exchange for Cisco UC-One has already been federated with a number of public servers. If you don’t have your own UC server to federate with, you can use XMPP.is and register an account there. If you don’t have a UC client, you are able to utilize any XMPP client. Pidgin and Audium have been successfully tested with Restcomm Message Exchange for Cisco UC-One. You can configure either of those clients with the previously created account from XMPP.is.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_setting_up_your_first_mapping"><a class="anchor" href="#_setting_up_your_first_mapping"></a>Setting up your first mapping</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Note: You must have a valid, working <a href="https://www.restcomm.com/sign-up/">Restcomm account</a> in order to complete this step. If you do not have one, you can <a href="https://cloud.restcomm.com/#/signup">sign up</a> here or <a href="https://www.restcomm.com/contact/">contact us</a>.</p>
-</div>
-<div class="paragraph">
-<p>The purpose of an XMPP mapping is to associate a phone number with an existing XMPP contact on your UC server. For example, imagine you have a user with the XMPP address of <a href="mailto:joe@myserver.com">joe@myserver.com</a> and Joe’s desk phone is +1-919-555-1212.</p>
-</div>
-<div class="paragraph">
-<p>An XMPP mapping will tell the Restcomm Message Exchange for Cisco UC-One service to send all inbound SMS messages sent to Joe’s number to <a href="mailto:joe@myserver.com">joe@myserver.com</a>. Additionally, any time Joe sends an outbound SMS from his XMPP account, it will be sent from his phone number.</p>
-</div>
-<div class="paragraph">
-<p>You can set up your mapping in two different ways, either via the Restcomm Message Exchange for Cisco UC-One Console or via the API. For the purposes of this guide, we will use the Restcomm Message Exchange for Cisco UC-One Console and will be using a new number rather than an existing number.</p>
-</div>
-<div class="paragraph">
-<p>Setting up a new mapping
-* Log in to your Restcomm account
-* Create new Mapping as explained in the <a href="message-exchange-for-cisco-uc-one-console.html#_add_a_mapping">Add Mappings section</a> of the Message Exchange for Cisco UC-One Console documentation.</p>
-</div>
-<div class="sect2">
-<h3 id="_receiving_an_sms_message_to_your_uc_client"><a class="anchor" href="#_receiving_an_sms_message_to_your_uc_client"></a>Receiving an SMS/message to your UC client</h3>
-<div class="paragraph">
-<p>Once you’ve completed all of the steps above, you’re ready to test. Login to your UC client as your test user (in our case <a href="mailto:joe@myserver.com">joe@myserver.com</a>)., Then, using your mobile phone, send a text message to the number you added to Restcomm.</p>
-</div>
-<div class="paragraph">
-<p>You should then see the message appear in your UC client.</p>
+<p>Visual Designer can be used by anyone at your organization to create their own applications or use ready-made ones from the Template Gallery.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sending_an_sms_message_from_your_uc_client"><a class="anchor" href="#_sending_an_sms_message_from_your_uc_client"></a>Sending an SMS/message from your UC client</h3>
-<div class="paragraph">
-<p>To send an SMS message from your UC client, perform the following steps:</p>
-</div>
+<h3 id="_visual_designer_features"><a class="anchor" href="#_visual_designer_features"></a>Visual Designer Features</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Add a contact to your contact list in your UC client as you would normally.</p>
+<p>Design and customize an application</p>
 </li>
 <li>
-<p>In the IM Address field, enter the address in the format of <a href="mailto:phoneNumber@restcomm.com">phoneNumber@restcomm.com</a> or, if you have a custom domain, <a href="mailto:phoneNumber@yourdomain.com">phoneNumber@yourdomain.com</a>. For example, if your cell phone number is 19195551212, then you would enter <a href="mailto:19195551212@restcomm.com">19195551212@restcomm.com</a> for the IM Address of the contact.</p>
+<p>Execute an application via inbound voice call, SMS, or webhook</p>
 </li>
 <li>
-<p>Once the contact is added, send a message from your client to the new contact.</p>
+<p>Import and export an application</p>
 </li>
 <li>
-<p>Restcomm Message Exchange for Cisco UC-One will convert the message from a UC message to SMS and route it to the number provided.</p>
+<p>Create and pass application or module variables</p>
 </li>
 <li>
-<p>The message will appear on the destination handset.</p>
+<p>Make routing decision based on a variable value</p>
+</li>
+<li>
+<p>Monitor and troubleshoot application modules through the application log</p>
 </li>
 </ul>
 </div>
@@ -4286,180 +4126,935 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_your_custom_domain"><a class="anchor" href="#_use_your_custom_domain"></a>Use your custom domain</h2>
+<h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting Started</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Restcomm message exchange supports usage of custom domains. For example you can use <a href="mailto:phoneNumber@mycompany.com">phoneNumber@mycompany.com</a> instead of <a href="mailto:phoneNumber@restcomm.com">phoneNumber@restcomm.com</a></p>
+<p>You can start using Visual Designer by navigating to <code>your Restcomm Console</code> &#8594; <code>Applications</code> &#8594; <code>+Add New App</code> then clicking on the <code>Create Visual Designer application</code> button.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
 </div>
 <div class="sect2">
-<h3 id="_setting_up_your_custom_domain"><a class="anchor" href="#_setting_up_your_custom_domain"></a>Setting up your custom domain</h3>
+<h3 id="_main_components"><a class="anchor" href="#_main_components"></a>Main Components</h3>
 <div class="paragraph">
-<p>In order to use your custom domain with Restcomm message exchange, you need to:</p>
+<p>Below you can find out more about the main components of Visual Designer and how they can be in handy for you.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Provide a valid certificate obtained by a trusted third party organization</p>
-<div class="ulist">
-<ul>
-<li>
-<p>You should provide a full chain certificate in PEM format, that obtains Root CA and intermediate CAs</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>You have to create a DNS SRV record pointing to Restcomm Message Exchange for Cisco UC-One. For example, the DNS SRV record for xmpp.mycompany.com should look like:</p>
-<div class="literalblock">
-<div class="content">
-<pre>_xmpp-server._tcp.xmpp.mycompany.com. 1 1 5269 cloud-xmpp-server.restcomm.com.</pre>
+<div class="sect3">
+<h4 id="_application"><a class="anchor" href="#_application"></a>Application</h4>
+<div class="paragraph">
+<p>An Application is the main Visual Designer entity. It represents your project and consists of modules and verbs. There are two types of applications you can build - Voice, SMS. Each application can have as many modules and verbs as you would like.</p>
 </div>
 </div>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="_modules"><a class="anchor" href="#_modules"></a>Modules</h4>
+<div class="paragraph">
+<p>Modules are the main Application components. Each one of those consists of a minimum one verb. There is no limit on the amount of modules used within an application as long as their names are unique. Modules are collections of programming statements and commands that use the Restcomm APIs. This means that programmers can reuse the commands and APIs available with other programming languages as desired. In addition, it is easy to incorporate input and output from external services.</p>
 </div>
-<div class="admonitionblock warning">
+</div>
+<div class="sect3">
+<h4 id="_verbs"><a class="anchor" href="#_verbs"></a>Verbs</h4>
+<div class="paragraph">
+<p>Verbs are the main Module’s components. A verb can trigger a single or multiple actions within a Visual Designer application. For example, a Collect verb can play an announcement to the user and also collect DTMF input. Often one and the same verb can be used multiple times within the same application module. Most of the verbs have a set of required configuration settings you must set up in order for those to be executed.</p>
+</div>
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Pay attention to _ or . characters since they are important for DNS SRV records
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-DNS Records propagation might take some time to complete.
+If required configuration fields are left undefinedunset, the application will be saved with validation errors and will not function properly.
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_setting_up_your_domain_with_godaddy"><a class="anchor" href="#_setting_up_your_domain_with_godaddy"></a>Setting up your domain with GoDaddy</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_actions"><a class="anchor" href="#_actions"></a>Actions</h4>
 <div class="paragraph">
-<p>For simplicity, let’s assume your domain is testxmpp.com and for UC-One you use sub-domain text.testxmpp.com. The next step is to make sure you set DNS SRV for your subdomain to point to our XMPP server (<code>cloud-xmpp-server.restcomm.com</code>). Below is a screenshot on how to set up DNS SRV on GoDaddy.</p>
+<p>Actions are triggered when an application is executed. The number of actions varies based on the verb(s) used in an application module. In some cases multiple actions may be triggered for a single application module. For example, a DTMF input can be gathered using the Collect verb and assigned to an application wide variable.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/message-exchange-uc-one/setting_your_DNS_SRV.png" alt="Message Exchange for Cisco UC-One - Setting Up a Your DNS SRV Record">
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_setting_up_your_ssl_certificate_with_godaddy"><a class="anchor" href="#_setting_up_your_ssl_certificate_with_godaddy"></a>Setting up your SSL certificate with GoDaddy</h2>
+<h2 id="_designing_your_visual_designer_application"><a class="anchor" href="#_designing_your_visual_designer_application"></a>Designing Your Visual Designer Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Prior to using white labeling, you must:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Set up an SSL Certificate for the sub-domain.</p>
-</li>
-<li>
-<p>Upload a full chain of the certificate using the <a href="message-exchange-for-cisco-uc-one-console.html#_add_domains">Message Exchange for Cisco UC-One Console UI</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Make sure the order of the SSL Certificate chain is as follows: your domain certificate, your private key, authority issuing your certificate, root certificate.</p>
-</div>
-<div class="paragraph">
-<p>For simplicity let’s assume your domain is testxmpp.com and for UC-One you are using the following sub-domain: text.testxmpp.com. In the steps below, we will explain how to generate a private key and  certificate using OpenSSL.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Generate an openssl key
-(GSS bought a domain on Godaddy text.textxmpp.com)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>$ openssl genrsa -out text.testxmpp.com.key 2048</code></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Create your CSR or certification request file (notice the password below is just an example, please use your own strong password)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>$ openssl req -new -key text.testxmpp.com.key -out text.testxmpp.com.csr</code></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/message-exchange-uc-one/Creating_CSR_certification_request_file.png" alt="Message Exchange for Cisco UC-One - Creating CSR certification request">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Copy the content of the newly created text.testxmpp.com.csr and paste it into the Godaddy CSR enrollment form.</p>
-</li>
-<li>
-<p>When you receive the confirmation, download the certificate zip file from you Godaddy Dashboard</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/message-exchange-uc-one/Downloading_the_certificate_zip_file.png" alt="Message Exchange for Cisco UC-One - Download the certificate zip file">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The content of the certificate zip file for Tomcat should look like the one below:</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/message-exchange-uc-one/Content_of_the_certificate_zip_file.png" alt="Message Exchange for Cisco UC-One - Content of the certificate zip">
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Combine the certificate from Godaddy with the openssl key you generated in step one</p>
-</li>
-</ul>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>$ cat '/home/charles/Downloads/text.testxmpp.com/51e1fbfeeae30fdb.crt' '/home/charles/telestax/text.testxmpp.com.key' '/home/charles/Downloads/text.testxmpp.com/gd_bundle-g2-g1.crt' &gt; text.testxmpp.combined.pem....</pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The newly created text.testxmpp.combined.pem will contain the certificate you need in order to create a new domain mapping in the <a href="message-exchange-for-cisco-uc-one.html#_add_domains">Console UI</a>. Copy and paste the content of the combine.pem to the <a href="message-exchange-for-cisco-uc-one-console.html#_add_domains">Console UI</a>.</p>
-</li>
-<li>
-<p>If the mapping and the certificate are valid, you will see a confirmation message that the domain was successfully added.</p>
-</li>
-</ul>
+<p>The variety of verbs inside Visual Designer makes it possible to build applications that cover various business functions. Before diving into the designing process make sure to first get familiar with theeach of the verbs capabilities. That will help you determine the right application design and save you time while designing.</p>
 </div>
 <div class="sect2">
-<h3 id="_setting_up_a_new_domain_in_message_exchange_for_cisco_uc_one_via_api"><a class="anchor" href="#_setting_up_a_new_domain_in_message_exchange_for_cisco_uc_one_via_api"></a>Setting up a new domain in Message Exchange for Cisco UC-One via API</h3>
-<div class="paragraph">
-<p>Find out more about setting up a new domain using the Message Exchange for Cisco UC-One API at <a href="api/message-exchange-for-cisco-uc-one/create-operation.html#_create_domain">Create Domain API</a> documentation page.</p>
+<h3 id="_visual_designer_verbs"><a class="anchor" href="#_visual_designer_verbs"></a>Visual Designer Verbs</h3>
+
 </div>
+<div class="sect2">
+<h3 id="_say_verb"><a class="anchor" href="#_say_verb"></a>Say Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>The Say verb is one of the most commonly used within voice applications. It lets you play an announcement to the user. You can select the Language and voice type (male/female) for it, as well the number of times you want the announcement to be repeated. Say can be used alone or in combination with Collect.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_play_verb"><a class="anchor" href="#_play_verb"></a>Play Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Play verb allows you to play media files to the application user. You can choose between playing .wav files uploaded directly within your application or select one from the ready made URL wav files library.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you choose to play a media file uploaded within your project, beware of the required media file format: .wav file, 16 bit rate mono.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_collect_verb"><a class="anchor" href="#_collect_verb"></a>Collect Verb</h3>
+<div class="paragraph">
+<p>The Collect verb makes it easy to create IVR menus, gather DTMF input from the caller, and execute a followup application module.</p>
+</div>
+<div class="paragraph">
+<p>DTMF input can be gathered in two ways: by assigning the digit pressed to an application or module available variable, or by mapping it to an application module that will be executed next.</p>
+</div>
+<div class="paragraph">
+<p><strong>Assigning DTMF Input to a Variable</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Drag and drop a Say verb inside Collect. Use the Say verb to create an announcement with options that will be played to the caller.</p>
+</li>
+<li>
+<p>Click on the gear icon and select the language in which you would like the announcement to be played.</p>
+</li>
+<li>
+<p>Set the number of times you would like the announcement to be played in the <code>Repeat # times</code> field. Leave it blank if you would like to play it only once.</p>
+</li>
+<li>
+<p>Under <code>Create a menu or collect digits</code> section, choose to <code>Collect digits.</code></p>
+</li>
+<li>
+<p>Next, you need to give a name to the variable under which the DTMF will be stored. Enter the desired variable name in the <code>Assign to</code> field. Define the variable <code>Scope.</code> You can either make it available for the whole application or for this particular application module.</p>
+</li>
+<li>
+<p>Once the input is gathered and stored under a variable, the app will proceed to a <code>Continue to</code> module. Make sure to select the proper followup module from the <code>Continue to</code> drop down.</p>
+</li>
+<li>
+<p>Optionally you can play a message to the caller if no input has been received.</p>
+</li>
+<li>
+<p>In addition, you may specify a <code>Validation pattern</code>. Either as an array of values to validate from or using a regex expression. You can set the validation pattern type from the drop-down next to the <code>Validation pattern</code> input field.</p>
+</li>
+<li>
+<p>If the validation pattern fails, a message can be played to the caller. That can be added under the <code>Say if invalid</code> field.</p>
+</li>
+<li>
+<p>In some cases you may want to let the caller end the call by pressing a particular digit. You can specify that under the <code>Finish on key</code> field. When that digit is pressed, the application will stop executing further modules and the call will be disconnected.</p>
+</li>
+<li>
+<p>Sometimes the caller may press more digits at once than the available options. That will lead to the call being disconnected. To avoid that, you can limit the number of digits pressed under the <code>Number of digits</code> field.</p>
+</li>
+<li>
+<p>Optionally you can set a module <code>Timeout</code> in seconds. If the caller does not press a digit during that time, the call will disconnect.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p><strong>Collecting DTMF Input</strong></p>
+</div>
+<div class="paragraph">
+<p>This step assumes that you have already specified the Say announcement to be played to the caller inside Collect. Set the desired language and number of times you would like the announcement to be played.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Under the <code>Create a menu or collect digits</code> section, choose <code>Menu.</code></p>
+</li>
+<li>
+<p>Next, map Digit option to the Target module which will be executed next once the DTMF is received.</p>
+</li>
+<li>
+<p>Make sure to map all the Digit options with their corresponding Targets. If a Target is left blank, the application will not execute further and the call will be disconnected.</p>
+</li>
+<li>
+<p>You can play a message to the caller if no input has been received.</p>
+</li>
+<li>
+<p>In addition, you may play a message to the user if the Validation fails. You can enter that in the <code>Say if invalid</code> field.</p>
+</li>
+<li>
+<p>In some cases you may want to let the caller end the call by pressing a particular digit. You can specify that under the <code>Finish on key</code> field. When that digit is pressed the application will stop executing further modules and the call will be disconnected.</p>
+</li>
+<li>
+<p>Sometimes the caller may press more digits at once than the available options. That will lead to the call being disconnected. To avoid that, you can limit the number of digits pressed under the <code>Number of digits</code> field.</p>
+</li>
+<li>
+<p>Optionally you can set a module <code>Timeout</code> in seconds. If the caller does not press a digit during that time the call will disconnect.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When using Collect make sure to properly map digits option with Targets and set Continue to modules when necessary. Missing digits mappings will result in errors while trying to save your application and malfunction of the application.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_dial_verb"><a class="anchor" href="#_dial_verb"></a>Dial Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>The Dial verb helps you connect a caller to another party. You can dial a phone number, client, SIP URI, or a conference room. When the dialed party answers the call, the two call participants are connected and may communicate until one of them disconnects.</p>
+</div>
+<div class="paragraph">
+<p>A call will end if:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the called party does not pick up</p>
+</li>
+<li>
+<p>the called party is busy</p>
+</li>
+<li>
+<p>The dialed number is invalid or out of reach</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Before Connect</strong></p>
+</div>
+<div class="paragraph">
+<p>Within the Dial verb you may want to set a Say message from another application module to be played to the caller while waiting to be connected.</p>
+</div>
+<div class="paragraph">
+<p><strong>StatusCallBack</strong></p>
+</div>
+<div class="paragraph">
+<p>You may set a StatusCallBack URL or module to pass along the status of the Dial attempt. For more information about the possible Dial attempt statuses, please check out the Dial RCML documentation.</p>
+</div>
+<div class="paragraph">
+<p><strong>Caller ID</strong></p>
+</div>
+<div class="paragraph">
+<p>When dialing a number you may want to set a Caller ID to be displayed to the called party. For example, if you are dialing +12223334444 with Caller ID +16667778888, the called party will see +16667778888 as caller ID of the incoming call. The Caller ID can take the value of a phone number, as well as any core or custom Visual Designer variable.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Restcomm does not support setting of Caller ID for Clients and SIP URIs.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Timeout</strong></p>
+</div>
+<div class="paragraph">
+<p>With Dial you can set a dial connection timeout in seconds. When the specified period of time expires, the connection is terminated.</p>
+</div>
+<div class="paragraph">
+<p><strong>Time limit</strong></p>
+</div>
+<div class="paragraph">
+<p>Time limit helps you set the length of a call in seconds. When the specified period of time expires, the call is terminated.</p>
+</div>
+<div class="paragraph">
+<p><strong>Continue to</strong></p>
+</div>
+<div class="paragraph">
+<p>You may want to execute another application module once the call is completed. To do that you can simply choose the desired module from the Continue to drop-down menu.</p>
+</div>
+<div class="paragraph">
+<p><strong>Record</strong>
+If you would like to record calls you can select the <code>Yes</code> option from the Record drop down.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Recording of Conference calls is not supported.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Ringback tone</strong></p>
+</div>
+<div class="paragraph">
+<p>The Ringback tone lets you change the default dial tone to a .wav file hosted in your application or public service.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_redirect_verb"><a class="anchor" href="#_redirect_verb"></a>Redirect Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>The Redirect verb lets you redirect the user to another application module or a URL application. The allowed methods for URL applications are POST and GET. Redirect can be used in both Voice and SMS applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hangup_verb"><a class="anchor" href="#_hangup_verb"></a>Hangup Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Hang up allows you to disconnect the call. If used as a first verb in your application it will result in answering the call and immediately hanging up after. If you would like the call to be unanswered, use the Reject verb instead.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reject_verb"><a class="anchor" href="#_reject_verb"></a>Reject Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Reject lets you reject a call for a particular reason. Possible options include: busy, rejected, forbidden, anonymity_disallowed, address_incomplete, no_route, service_unavailable, unwanted. Reject can be used when you do not want to answer a call and avoid additional billing of your account.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pause_verb"><a class="anchor" href="#_pause_verb"></a>Pause Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Pause makes it possible to add a pause in seconds between different Say announcements.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sms_verb"><a class="anchor" href="#_sms_verb"></a>SMS Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>SMS makes it possible to send a message from one phone number or client to another. If the text of the message exceeds 163 characters, the text is concatenated. Optionally you can set a Status callback URL.This verb can be used both in Voice and SMS applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_email_verb"><a class="anchor" href="#_email_verb"></a>Email Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Email verb enables you to send emails via your Visual Designer application. You can set the email body, subject, sender, and recipient email addresses. Optionally you can add CC and BCC recipients. Email can be used in both Voice and SMS applications.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_record_verb"><a class="anchor" href="#_record_verb"></a>Record Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>You may wish to record voice messages while you are unable to pick up the phone. Record lets you play a beep before the recording starts. You can put a timeout and maximum length of the messages in seconds. In addition, you can set the finish on key. When the user presses it the recording will end. Optionally you can specify Continue to module. For example, when you would like voicemail to be sent to your email address.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_control_verb"><a class="anchor" href="#_control_verb"></a>Control Verb</h3>
+<div class="paragraph">
+<p>The Control verb performs basic tasks based on a set of conditions. It is the equivalent of if-then control structure in developer terms. Control consists of conditions and actions. If the conditions are met, the actions are executed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_conditions"><a class="anchor" href="#_conditions"></a>Conditions</h3>
+<div class="paragraph">
+<p>You can create conditions using multiple operators or regex expressions.</p>
+</div>
+<div class="paragraph">
+<p>Available operators include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Equal</p>
+</li>
+<li>
+<p>Not equal</p>
+</li>
+<li>
+<p>Greater</p>
+</li>
+<li>
+<p>Greater or equal</p>
+</li>
+<li>
+<p>Less</p>
+</li>
+<li>
+<p>Less or equal</p>
+</li>
+<li>
+<p>Regex match</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>You can compare two operands either as a text (ABCD) or as numbers (1234). For numeric comparison, the operands shall be convertible to numbers. Floats are supported. For text based comparisons any operand will work. You can switch between comparison types using the ABCD/123 link right after the operands input fields.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Be aware while working with operands that numbers or text will not always render the same result. For example 4 is not greater than 05. At the same time '4' is greater than '05'. Make sure to always use the correct comparison type.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Regex Match</strong></p>
+</div>
+<div class="paragraph">
+<p>Regex match attempts to match a string (or a portion of it) to the regular expression specified in the pattern parameter. If a match is found it evaluates to true.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p><strong>Handling Multiple Conditions</strong></p>
+</div>
+<div class="paragraph">
+<p>More than one condition can be evaluated within the Control element. When multiple conditions are set, each one of them will be evaluated individually and the results will be combined to determine the status of the whole complex condition. This can be achieved in two ways. Either All conditions should stand (AND operation) or Any condition should stand (OR operation).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In case no condition is present, the Control element will evaluate to true and the following actions will be executed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Actions</strong></p>
+</div>
+<div class="paragraph">
+<p>Actions represent a number of tasks that are sequentially executed if the condition(s) evaluate to true. Three types of actions are available to use: Assign, Capture, and Continue to.</p>
+</div>
+<div class="paragraph">
+<p><strong>Capture</strong></p>
+</div>
+<div class="paragraph">
+<p>You can capture part of a string according to a specified regex pattern and assign the captured value to a variable. Make sure to use a pair of parentheses to designate the captured segment. The use of a single pair parenthesis is obligatory inside the pattern parameter. In addition, only literal regex patterns are supported.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p><strong>Assign</strong></p>
+</div>
+<div class="paragraph">
+<p>The Assign action lets you create a variable and assign a value to it once the Conditions are sequentially executed. It can be available either within the same application module or the whole application.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p><strong>Continue to</strong></p>
+</div>
+<div class="paragraph">
+<p>With the help of Continue to you can specify which application module shall be executed next.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Make sure to only include a single Continue to action in a Control element and always make it last. If Continue to is not last, the action specified afterward will not be executed. The application will continue to another module instead. You can alter the order of actions using the reorder button on the right of the action row.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_external_service_verb"><a class="anchor" href="#_external_service_verb"></a>External Service Verb</h3>
+<div class="paragraph">
+<p>External Service is one of the most complex Visual Designer verbs. It can be used as a tool for making HTTP requests to external services and processing their responses. The following functionalities are supported within Visual Designer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>GET or POST request methods</p>
+</li>
+<li>
+<p>JSON or web form content types</p>
+</li>
+<li>
+<p>HTTP or HTTPS schemes</p>
+</li>
+<li>
+<p>Basic HTTP authentication</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_external_service_get_request"><a class="anchor" href="#_external_service_get_request"></a>External Service GET Request</h4>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>By default all requests are using the GET method. Note that name-value parameter is user defined. Such parameters are appended in the query when the request is made. It is a good practice to keep the service parameters in their own fields rather than putting them directly in the Service Url field.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_request_example"><a class="anchor" href="#_request_example"></a>Request Example</h4>
+<div class="paragraph">
+<p>GET /services/simpleGetRequest?name=foo HTTP/1.1
+Host: yourdomain.com
+Response: HTTP/1.1 200 OK
+Variable Expansion
+Both Service Url and Value fields support variable expansion. That means that all $variables and references to them will be replaced by their actual value before the request is being made.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Here the $firstname variable will be expanded to its actual content.</p>
+</div>
+<div class="paragraph">
+<p>$firstname → name</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_external_service_post_request"><a class="anchor" href="#_external_service_post_request"></a>External Service POST Request</h4>
+<div class="paragraph">
+<p>To change the default request method you will have to modify the External Service advanced settings. You can access those by clicking on the gear icon below the <code>add service parameter</code> button. Select POST from the Method drop down. Then set the content type to www-form or json. If you wish, you can manually add the POST body in the text area below.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Note that the service parameters will be ignored if url-encoded request body is provided. If you are entering a JSON body, make sure to use double quotes. For example:
+<code>{"firstname":"$firstname","lastname":"bar"}</code>. Visual Designer cannot differentiate between the various JSON types. Therefore it runs a search and replace. The goal is to ensure that a valid JSON expression is generated in the end.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_request_example_2"><a class="anchor" href="#_request_example_2"></a>Request Example</h4>
+<div class="paragraph">
+<p>POST /services/simplePostRequest HTTP/1.1
+Content-Type: application/x-www-form-urlencoded</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>firstname=foo&amp;lastname=bar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Response
+HTTP/1.1 200 OK</p>
+</div>
+<div class="paragraph">
+<p>Using Basic HTTP Authentication</p>
+</div>
+<div class="paragraph">
+<p>If a service is using basic HTTP authentication, you will need to additionally provide user credentials, such as username and password as shown below.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_handling_service_http_errors"><a class="anchor" href="#_handling_service_http_errors"></a>Handling Service HTTP Errors</h4>
+<div class="paragraph">
+<p>In case your external service is failing you may want to notify the caller about that. You can create an additional application module to be executed when the error occurs.</p>
+</div>
+<div class="paragraph">
+<p>To do that you can create a new module named Service Error Announcement. Drag and drop a Say verb into it and enter the announcement inside.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Next, get back to your external service module and navigate to the Error &amp; Timeouts section. Select the Service Error Announcement module from the On HTTP Error drop down. Optionally you can set Timeout in seconds after which this announcement will be played to the caller in case of external service failure. Lastly you may want to create an application module with another announcement to be played when Connection errors and Timeouts occur.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_log_verb"><a class="anchor" href="#_log_verb"></a>Log Verb</h3>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Log verb is designed to help you troubleshoot Visual Designer applications. It allows you to add text, refer to application or module variables, and see if those are properly captured in the application logs. If properly captured, you shall see the corresponding variable values printed in the logs. This module can be added to any application module and can be used in both Voice and SMS applications.</p>
+</div>
+<div class="sect3">
+<h4 id="_accessing_visual_designer_application_logs"><a class="anchor" href="#_accessing_visual_designer_application_logs"></a>Accessing Visual Designer Application Logs</h4>
+<div class="paragraph">
+<p>In order to start capturing Application logs you shall first enable that option from the Application settings. To do that, navigate to your <code>application name</code> &#8594; <code>Settings</code>. Go to the <code>Application logging</code> section and click on the check box next to <code>Enable</code>. Next, select what types of logs you would like to gather. Possible options include: RCML and External Service request and responses. Click <code>Save</code>.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Once the application logging is enabled you will be able to see logs for each execution of your application. You can access the logs console by navigating to <code>your application name</code> &#8594; <code>Log</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_deleting_visual_designer_application_logs"><a class="anchor" href="#_deleting_visual_designer_application_logs"></a>Deleting Visual Designer Application Logs</h4>
+<div class="paragraph">
+<p>You can delete your application logs by clicking on the <code>Reset</code> button in the Logs console screen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_visual_designer_variables"><a class="anchor" href="#_visual_designer_variables"></a>Visual Designer Variables</h3>
+<div class="paragraph">
+<p>While designing your application you may use Restcomm core variables to retrieve user information, as well as refer to custom variables introduced within modules that store values and pass those from one module to another.</p>
+</div>
+<div class="sect3">
+<h4 id="_core_variables"><a class="anchor" href="#_core_variables"></a>Core Variables</h4>
+<div class="paragraph">
+<p>The Visual Designer core variables are system-defined and can be accessed within most of the Visual Designer verbs by navigating to the Lookup variable dropdown. They can be easily recognized within the customly introduced ones by the <code>core_</code> prefix of their names. Below you can find more about each variable and what information it retrieves.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variable Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_AccountSid</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_ApiVersion</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the body text of an SMS message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_CallerName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the caller name (if specified)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_CallSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the caller Sid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_CallStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the call status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_CallTimestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the call time stamp</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_DialCallDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the call duration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_DialCallSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the Dial call Sid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_DialCallStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the Dial call status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_DialRingDuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the Dial ring duration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_Digits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the DTMF input</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_Direction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the direction of the call</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_ForwardedFrom</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves information about from where the call was forwarded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retri</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eves the Caller phone number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_InstanceId</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_PublicRecordingUrl</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the public URL of a call recording</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_RecordingDuration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the duration of the call recording</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_ReferTarget</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_SmsSid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the SMS Sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_SmsStatus</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the SMS status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_To</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieves the Callee phone number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_Transferee</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">core_Transferor</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_custom_variables"><a class="anchor" href="#_custom_variables"></a>Custom Variables</h4>
+<div class="paragraph">
+<p>Custom variables are Visual Designer application variables defined by the user. They can be used to collect, store, and retrieve data within a particular module or the whole application. Each variable has to have a unique name. When the scope of the custom variable is set to the whole application, it can be referred to in any of the follow up application modules.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Make sure to reference a custom variable only after its value is set or received as input. If you attempt to retrieve it earlier than that, your application will malfunction and you will not be able to execute the desired application flow.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_application_settings"><a class="anchor" href="#_additional_application_settings"></a>Additional Application Settings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_application_diagram"><a class="anchor" href="#_application_diagram"></a>Application Diagram</h3>
+<div class="paragraph">
+<p>The Visual Designer application diagram is a graphical representation of an application flow. It outlines the connection between the application modules and what their triggering actions are.</p>
+</div>
+<div class="paragraph">
+<p>You can access an application diagram by navigating to its name inside Visual Designer and then clicking on the Diagram option.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_url"><a class="anchor" href="#_application_url"></a>Application URL</h3>
+<div class="paragraph">
+<p>The Application URL is the direct URL under which you can access a particular Visual Designer application. It has the following format and can be found by navigating to your application name &#8594; App URL.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://yourdomain.com/visual-designer/services/apps/AP60XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/controller" class="bare">https://yourdomain.com/visual-designer/services/apps/AP60XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/controller</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_web_trigger"><a class="anchor" href="#_web_trigger"></a>Web Trigger</h3>
+<div class="paragraph">
+<p>Web Trigger offers you an alternative way to start a voice application. It allows establishing a call between the application and a destination address using a simple HTTP request.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Web Trigger is not available to use with SMS applications.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Follow the steps below to enable Web Trigger for your voice application:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open your voice application in Visual Designer.</p>
+</li>
+<li>
+<p>Navigate to your <code>application name</code> &#8594; <code>Web Trigger</code>.</p>
+</li>
+<li>
+<p>Click on the <code>Enable</code> checkbox button.</p>
+</li>
+<li>
+<p>If you would like to authenticate the requests with your Restcomm account credentials, leave the Application access token field empty. Alternatively, enter your access token that will be used as an additional request parameter.</p>
+</li>
+<li>
+<p>Optionally you can override the call source and destination addresses of the call by filling out the To and From fields.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The To and From fields are using the RCML Dial syntax. For example: +12223334444 or  sip:+<a href="mailto:15556667777@yourdomain.com">15556667777@yourdomain.com</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <code>Advanced configuration</code> gear icon. From the <code>User parameter scope</code> drop down, select the application scope for which the From and To parameters will be overridden (either for the whole application or an application module). If left blank those will be overwritten for the whole application.</p>
+</li>
+<li>
+<p>Click on the <code>Save</code> button.</p>
+</li>
+<li>
+<p>Then Save your application changes.</p>
+</li>
+<li>
+<p>Now you can start your application by making a request to the WebTrigger URL using the following format:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>https://yourdomain.com:443/visual-designer/services/apps/APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/start?from=+12223334444&amp;to=+15556667777&amp;token=yourtoken</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_application_settings"><a class="anchor" href="#_application_settings"></a>Application Settings</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_application_management"><a class="anchor" href="#_application_management"></a>Application Management</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_importing_an_application"><a class="anchor" href="#_importing_an_application"></a>Importing an Application</h3>
+<div class="paragraph">
+<p>To import an application navigate to the <code>Restcomm Console</code> &#8594; <code>Applications</code> &#8594; <code>+ Add New App</code>. Choose to import a Visual Designer Application. Give your application a name, then click <code>Import</code>. You will be redirected to your application in Visual Designer.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exporting_an_application"><a class="anchor" href="#_exporting_an_application"></a>Exporting an Application</h3>
+<div class="paragraph">
+<p>To export an application, navigate to the <code>Restcomm Console</code> &#8594; <code>Applications</code>. Choose the application you intend to import from the application list. Click on the <code>download</code> button next to the application name. A .ZIP file of your application will be downloaded to your machine.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deleting_an_application"><a class="anchor" href="#_deleting_an_application"></a>Deleting an Application</h3>
+<div class="paragraph">
+<p>To delete a Visual Designer application, navigate to the <code>Restcomm Console</code> &#8594; <code>Applications</code>. Click on the application you would like to delete and then hit the <code>Delete Application</code> button. You will see a warning screen similar to the one below.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The delete action cannot be undone. Once you delete the application you will not be able to restore it.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_learn_more"><a class="anchor" href="#_learn_more"></a>Learn More</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Find out more about RCML and how it can help bring additional functionality to communications applications.</p>
+</div>
+<div class="paragraph">
+<p>Visit the REST API documentation to discover the various types of requests and how to use them to take new ideas from concept to reality.</p>
 </div>
 </div>
 </div>
