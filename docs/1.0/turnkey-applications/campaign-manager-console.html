@@ -3169,13 +3169,19 @@
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Telestax Campaign Manager allows Communications Providers to deliver SMS campaign management solutions to Business Customers. Manage credits and users with different roles and capabilities, while enabling Business Customers to send  the same SMS to a list of phone numbers. For more information, access the <a href="campaign-manager-overview.html">General Doc</a>.</p>
+<p>Telestax Campaign Manager allows Communications Providers to deliver SMS and Voice campaign management solutions to Business Customers. Manage credits and users with different roles and capabilities, while enabling Business Customers to send  the same SMS or Voice calls to a list of phone numbers. For more information, access the <a href="campaign-manager-overview.html">General Doc</a>.</p>
 </div>
 <div class="paragraph">
 <p>This document contains information for Communications Providers regarding the Campaign Manager UI Console.</p>
 </div>
 <div class="paragraph">
 <p>To learn more about the API, please refer to the <a href="../api/campaign-manager-api.html">Getting Started with the Campaign Manager API Guide</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_accessing_the_campaign_manager_console"><a class="anchor" href="#_accessing_the_campaign_manager_console"></a>Accessing the Campaign Manager Console</h3>
+<div class="paragraph">
+<p>To access the Campaign Manager Console, please navigate to <a href="https://yourdomain.com/campaignmanagerconsole/" class="bare">https://yourdomain.com/campaignmanagerconsole/</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -3184,14 +3190,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>Communications Providers serve Business Customers. Through their own Accounts, Communications Providers can create, manage, or delete Business Customer Sub Accounts. By setting up Sub Accounts for Business Customers, the Communications Provider can easily manage billing and invoices for a specific Business Customer.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_accessing_the_campaign_manager_console"><a class="anchor" href="#_accessing_the_campaign_manager_console"></a>Accessing the Campaign Manager Console</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To access the Campaign Manager Console, please navigate to <a href="https://yourdomain.com/campaignmanagerconsole/" class="bare">https://yourdomain.com/campaignmanagerconsole/</a></p>
 </div>
 <div class="sect2">
 <h3 id="_business_customers_list"><a class="anchor" href="#_business_customers_list"></a>Business Customers List</h3>
@@ -3227,7 +3225,20 @@
 <p>Enter the password for the Admin. This will be set in the Restcomm core platform.</p>
 </li>
 <li>
-<p>Enter the throttle value which represents SMS/sec. If not specified, the default value is to use  the maximum SMS/sec at a given point in time.</p>
+<p>Enter the throttle value as explained below</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>smsPerSecond</strong> : represents SMS/sec. 0 is used to represent the maximum SMS/sec at a given point in time.</p>
+</li>
+<li>
+<p><strong>callsPerSecond</strong> : represents calls/sec. 0 is used to represent the maximum calls/sec at a given point in time.</p>
+</li>
+<li>
+<p><strong>concurrentCalls</strong> : Number of concurrent calls allowed at any given point in time. 0 is used to represent  unlimited.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>When you are finished, click Save.</p>
@@ -3329,6 +3340,18 @@ The Enterprise name and Email ID must be unique.
 <div class="paragraph">
 <p>To delete a Business Customer click on the customer’s name from the list of Business Customers and click the Delete button on the bottom of the screen. Once the account is deleted it cannot be undone.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Once a Business Customer is deleted, all the users of that Enterprise are also CLOSED in Restcomm.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -3354,7 +3377,7 @@ The Enterprise name and Email ID must be unique.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_user"><a class="anchor" href="#_create_user"></a>Create User</h3>
+<h3 id="_add_user"><a class="anchor" href="#_add_user"></a>Add User</h3>
 <div class="paragraph">
 <p>Follow the steps below to add a user:</p>
 </div>
@@ -3367,7 +3390,7 @@ The Enterprise name and Email ID must be unique.
 <p>Enter a name for the new user</p>
 </li>
 <li>
-<p>Enter an email address for this  user</p>
+<p>Enter an email address for this user</p>
 </li>
 <li>
 <p>Enter a password for the user</p>
@@ -3385,6 +3408,18 @@ The Enterprise name and Email ID must be unique.
 </td>
 <td class="content">
 The user&#8217;s Email ID must be unique.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If the role of User is CP_Administrator, you can add smsPerSecond, callsPerSecond and concurrentCalls throttling values for this user. These values should match with Restcomm core platform throttling.
 </td>
 </tr>
 </table>
@@ -3427,6 +3462,17 @@ The user&#8217;s Email ID must be unique.
 <img src="../_images/campaign-manager/create-user.png" alt="create user">
 </div>
 </div>
+<div class="sect3">
+<h4 id="_add_new_user_for_enterprise"><a class="anchor" href="#_add_new_user_for_enterprise"></a>Add new user for Enterprise</h4>
+<div class="paragraph">
+<p>To add a new user for an Enterprise, go to the Business Customer List tab by clicking on the “Enterprise” tab as mentioned in <a href="#_business_customers_list">Business Customers List</a>. Click on “Users” to list all the Users for that Enterprise. Click on “Add User” button to add new Enterprise User</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/create-bc-user.png" alt="create enterprise user">
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_edit_user"><a class="anchor" href="#_edit_user"></a>Edit User</h3>
@@ -3464,7 +3510,55 @@ The user&#8217;s Email ID must be unique.
 <h2 id="_credit"><a class="anchor" href="#_credit"></a>Credit</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Credits are needed to create a campaign successfully. 1 credit is equal to 1 SMS i.e., if a particular business customer has 100 credits he can only send 100 SMS. Communication Providers can add or remove credits from the sub account of  their business customers.</p>
+<p>Credits are needed to create a campaign successfully. Communications Providers can add or remove credits from the Sub Accounts of  their Business Customers.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Whenever Campaign is scheduled, equivalent Credit is deducted.</p>
+</li>
+<li>
+<p>If there is not enough Credit available, scheduling of Campaign will fail.</p>
+</li>
+<li>
+<p>If Scheduled Campaign is cancelled, equivalent Credit is added back.</p>
+</li>
+<li>
+<p>Once a Campaign progresses to InProgress state, Credit cannot be reversed, no matter what.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>One credit is equal to 1 SMS or 1 Voice call.</p>
+</li>
+<li>
+<p>For example,if a particular Business Customer has 100 credits, that customer can only send 100 SMS Segments or 100 Voice calls.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_manage_credits"><a class="anchor" href="#_manage_credits"></a>Manage Credits</h3>
@@ -3611,11 +3705,14 @@ The user&#8217;s Email ID must be unique.
 <li>
 <p><strong>End Date</strong>: Display Campaigns created on or before this date.</p>
 </li>
+<li>
+<p><strong>Channel</strong>: Display Campaigns with channel matching the selected value.</p>
+</li>
 </ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/campaign-manager/search-campaign.png" alt="search campaign">
+<img src="../_images/campaign-manager/search-campaign-csp.png" alt="search campaign">
 </div>
 </div>
 <div class="sect3">
