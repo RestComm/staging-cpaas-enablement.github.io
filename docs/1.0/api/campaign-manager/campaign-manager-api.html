@@ -3170,7 +3170,7 @@
 <h2 id="_intoduction"><a class="anchor" href="#_intoduction"></a>Intoduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Telestax Campaign Manager allows Communications Providers to deliver SMS campaign management solutions to Business Customers. Communication Providers can manage credits and users with different roles and capabilities while enabling Business Customers to send the same SMS to a list of phone numbers. For more information, access the <a href="../turnkey-applications/campaign-manager-overview.html">general documentation</a>.</p>
+<p>Telestax Campaign Manager allows Communications Providers to deliver SMS and Voice campaign management solutions to Business Customers. Communication Providers can manage credits and users with different roles and capabilities while enabling Business Customers to send the same SMS or Voice call to a list of phone numbers. For more information, access the <a href="../turnkey-applications/campaign-manager-overview.html">general documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>This document covers the API(s) that are available to Communications Providers, thus helping to manage Business Customers, Users, and Credits while keeping track of usage.</p>
@@ -3181,7 +3181,7 @@
 <h2 id="_business_customers"><a class="anchor" href="#_business_customers"></a>Business Customers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Communications Providers manage Business Customers. They can create, update, read, and delete Business Customer accounts. The logical grouping of Business Customer accounts under a Communications Provider helps in managing the billing and invoices for the Business Customers.</p>
+<p>Communications Providers manage Business Customers (also known as Enterprise). They can create, update, read, and delete Business Customer accounts. The logical grouping of Business Customer accounts under a Communications Provider helps in managing the billing and invoices for the Business Customers.</p>
 </div>
 <div class="sect2">
 <h3 id="_business_customer_status"><a class="anchor" href="#_business_customer_status"></a>Business Customer Status</h3>
@@ -3303,7 +3303,8 @@ Eventually once <code>CLOSED</code> all resources associated with Business Custo
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseAdmin</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer User data  explained in the table below  that will be assigned as the admin of this business customer.A subaccount will be created on Restcomm with these values.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer User data  explained in the table below  that will be assigned as the admin of this business customer.<br>
+A subaccount will be created on Restcomm with these values.</p></td>
 </tr>
 </tfoot>
 <tbody>
@@ -3313,8 +3314,13 @@ Eventually once <code>CLOSED</code> all resources associated with Business Custo
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">configuration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Represents SMS/sec throttling assigned to the  Business Customer. If not passed, the default is to use maximum throttling available at a given point of time. Configuration should be passed as JSON String body like below
-<code>"configuration": "{\"campaignManager\": {\"throttle\": \"10\"}}"</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Represents throttling for SMS and Voice assigned to the  Business Customer. If not passed, the default is to use maximum throttling available at a given point of time.<br></p>
+<p class="tableblock">Configuration should be passed as JSON String body like below<br>
+<code>{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}</code><br></p>
+<p class="tableblock">* smsPerSrcond : SMS per second throttling applied to this Business Customer<br>
+* callsPerSecond : Call per second throttling applied to this Business Customer <br>
+* concurrentCalls : Number of concurrent calls allowed at a given point in time.<br></p>
+<p class="tableblock">If the value passed is 0 or any negative number, it will be considered as unlimited.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
@@ -3329,7 +3335,7 @@ Eventually once <code>CLOSED</code> all resources associated with Business Custo
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When a Business Customer is added, that account will have 0 credits. Please review the <code>Manage Credits</code> section to manage credits for Business Customers.
+When a Business Customer is added, that account will have 0 credits. Please review the <code><a href="#_manage_credits">Manage Credits</a></code> section to manage credits for Business Customers.
 </td>
 </tr>
 </table>
@@ -3464,11 +3470,11 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">configuration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration for the Business Customer. As of today only <code>throttle</code> is supported which is SMS/sec.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration for the Business Customer. As of today only <code>throttle</code> is supported.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status of the Business Customer as explained in Business Customer Status section.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status of the Business Customer as explained in <a href="#_business_customer_status">Business Customer Status</a> section.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseAdminEmail</p></td>
@@ -3520,6 +3526,13 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <td class="tableblock halign-left valign-top"><p class="tableblock">User already exists</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Business Customer, Update Business Customer</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4002</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Role cannot be assigned to an enterprise</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User is trying to add a CSP Admin account as  BC_TURNKEY_ADMINISTRATOR which is prohibited.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create Business Customer, Update Business Customer</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -3530,7 +3543,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <div class="content">
 <pre>{
    "name":"Test Enterprise 7",
-   "configuration":"{\"campaignManager\": {\"throttle\": \"10\"}}",
+   "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
    "enterpriseAdmin":{
       "emailId":"EntpUser1@testent7.com",
       "password":"Telestax@123",
@@ -3551,7 +3564,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
   -H 'Content-Type: application/json' \
   -d '{
        "name": "Test Enterprise 7",
-    "configuration": "{\"campaignManager\": {\"throttle\": \"10\"}}",
+    "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
     "enterpriseAdmin": {
         "emailId": "EntpUser1@testent7.com",
         "password": "Telestax@123",
@@ -3574,7 +3587,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
       "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
       "name":"Test Enterprise 7",
       "credit":0,
-      "configuration":"{\"campaignManager\": {\"throttle\": \"10\"}}",
+      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
       "status":"ACTIVE",
       "enterpriseAdminSid":"RCS7e9130b1534e45ca96c5a840fd47e645",
       "enterpriseAdminEmail":"EntpUser1@testent7.com"
@@ -3594,7 +3607,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
    "message":"Enterprise name not unique",
    "data":{
       "name":"Test Enterprise 7",
-      "configuration":"{\"campaignManager\": {\"throttle\": \"10\"}}",
+      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
       "enterpriseAdmin":{
          "emailId":"EntpUser1@testent7.com",
          "password":"Telestax@123",
@@ -3651,12 +3664,11 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MOptional name of Business Customer. Names must be unique within a given Communication Provider  Organisation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional name of Business Customer. Names must be unique within a given Communication Provider  Organisation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">configuration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. SMS/sec throttling assigned to the  Business Customer. If not passed or 0, the default is to use maximum throttling available at a given point of time. Configuration should be passed as JSON String body like below
-<code>"configuration": "{\"campaignManager\": {\"throttle\": \"10\"}}"</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. As explained in <code>configuration</code> <a href="#_request_parameters">Request Parameter</a> of Create Business Customer</p></td>
 </tr>
 </tbody>
 </table>
@@ -3683,7 +3695,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer data as explained in the Data Parameter of Create Business Customer.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer data as explained in the <a href="#_data_parameter">Data Parameter</a> of Create Business Customer.</p></td>
 </tr>
 </tfoot>
 <tbody>
@@ -3742,7 +3754,8 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "configuration": "{\"campaignManager\": {\"throttle\": \"2\"}}"
+      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}"
+
 }</pre>
 </div>
 </div>
@@ -3757,8 +3770,9 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{
-         "configuration": "{\"campaignManager\": {\"throttle\": \"2\"}}"
-}’</pre>
+           "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}"
+
+}'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3776,7 +3790,7 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
       "uri":"/campaignmanager/enterprises/search/ENb6eb071d21124dbab20b095c25f1274f",
       "name":"Test Enterprise 7",
       "credit":0,
-      "configuration":"{\"campaignManager\": {\"throttle\": \"2\"}}",
+        "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
       "status":"ACTIVE",
       "enterpriseAdminSid":"RCS7e9130b1534e45ca96c5a840fd47e645",
       "enterpriseAdminEmail":"EntpUser1@testent7.com"
@@ -3806,6 +3820,18 @@ If a new Sub Account being added is already present in Restcomm Core, that Sub A
 <h3 id="_delete_business_customer"><a class="anchor" href="#_delete_business_customer"></a>Delete Business Customer</h3>
 <div class="paragraph">
 <p>This endpoint will be used to delete an existing Business Customer.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Once a Business Customer is deleted, all the users of that Enterprise are also CLOSED in Restcomm.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h4>
@@ -3880,7 +3906,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer data as explained in the Data Parameter of Create Business Customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer data as explained in the <a href="#_data_parameter">Data Parameter</a> of Create Business Customer</p></td>
 </tr>
 </tfoot>
 <tbody>
@@ -3954,7 +3980,7 @@ Deleting a Business Customer will mark status as CLOSED.
       "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
       "name":"Test Enterprise 7",
       "credit":0,
-      "configuration":"{\"campaignManager\": {\"throttle\": \"2\"}}",
+      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
       "status":"ACTIVE",
       "enterpriseAdminSid":"RCS7e9130b1534e45ca96c5a840fd47e645",
       "enterpriseAdminEmail":"EntpUser1@testent7.com"
@@ -4137,7 +4163,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in Data parameters in create business customer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data contains array of <code>result</code> and parameters as explained below</p></td>
 </tr>
 </tfoot>
 <tbody>
@@ -4150,33 +4176,6 @@ Deleting a Business Customer will mark status as CLOSED.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
-</table>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4051</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer SID doesn’t exist in the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Business Customer, Delete Business Customer, Get Business Customer</p></td>
-</tr>
-</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -4267,7 +4266,7 @@ Deleting a Business Customer will mark status as CLOSED.
             "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
             "name":"Test Enterprise 7",
             "credit":0,
-            "configuration":"{\"campaignManager\": {\"throttle\": \"2\"}}",
+            "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
             "status":"ACTIVE",
             "enterpriseAdminSid":"RCS7e9130b1534e45ca96c5a840fd47e645",
             "enterpriseAdminEmail":"EntpUser1@testent7.com"
@@ -4336,7 +4335,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect3">
 <h4 id="_response_body_5"><a class="anchor" href="#_response_body_5"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will contain code, corresponding message and data of Business Customer if it was successfully deleted. The HTTP response will be 201 Created (OK).</p>
+<p>The response body will contain code, corresponding message and data of Business Customer if it was successfully searched. The HTTP response will be 201 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. All parameters are listed below.</p>
@@ -4369,6 +4368,9 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>It can also return an Error Coder and corresponding HTTP Error as mentioned in Common Response Error Codee. In addition, the following are the Errors that it can return.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -4400,7 +4402,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect3">
 <h4 id="_data_parameter_2"><a class="anchor" href="#_data_parameter_2"></a>Data Parameter</h4>
 <div class="paragraph">
-<p>Same as explained in Data Parameter of Create Business Customer.</p>
+<p>Same as explained in <a href="#_data_parameter">Data Parameter</a> of Create Business Customer.</p>
 </div>
 </div>
 <div class="sect3">
@@ -4432,7 +4434,7 @@ Deleting a Business Customer will mark status as CLOSED.
       "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
       "name":"Test Enterprise 7",
       "credit":0,
-      "configuration":"{\"campaignManager\": {\"throttle\": \"2\"}}",
+      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
       "status":"ACTIVE",
       "enterpriseAdminSid":"RCS7e9130b1534e45ca96c5a840fd47e645",
       "enterpriseAdminEmail":"EntpUser1@testent7.com"
@@ -4598,7 +4600,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Possible values are as explained in status section of User.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Possible values are as explained in <a href="#_user_role_and_status">User Role and Status</a> section.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
@@ -4608,9 +4610,14 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">throttle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. SMS/sec throttling assigned to only CP_ADMINISTRATOR role users. If not passed, the default is -1 which means use maximum throttling available at a given point of time.</p>
-<p class="tableblock">For example XXX as a Communications Provider has a limit with its own Service Provider on how many SMS/Sec they can do. The “throttle” set here for CP_ADMINISTRATOR  makes sure this limit is adhered to.</p>
-<p class="tableblock">It’s set at CP_ADMINISTRATOR level and not Organisation level because BYOC is set at user level and for example XXX can have another CP_ADMINISTRATOR  pointing to another Service Provider.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Represents throttling for SMS and Voice assigned  to only CP_ADMINISTRATOR role users. If not passed, the default is to use maximum throttling available at a given point of time.<br></p>
+<p class="tableblock">Configuration should be passed as JSON String body like below<br>
+<code>{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}</code><br></p>
+<p class="tableblock">* smsPerSrcond : SMS per second throttling applied to this user<br></p>
+<p class="tableblock">* callsPerSecond : Call per second throttling applied to this user<br></p>
+<p class="tableblock">* concurrentCalls : Not used as of today. <br></p>
+<p class="tableblock">For example you as a Communications Provider has a limit with your Service Provider or SMSC on how many SMS/Sec you can do. The “throttle” set here for CP_ADMINISTRATOR  makes sure this limit is adhered to.</p>
+<p class="tableblock">It’s set at CP_ADMINISTRATOR level and not Organisation level because BYOC is set at user level and for example you can have another CP_ADMINISTRATOR  pointing to another Service Provider.</p></td>
 </tr>
 </tbody>
 </table>
@@ -4696,7 +4703,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <td class="tableblock halign-left valign-top"><p class="tableblock">Email ID of the User.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Role of the User.</p></td>
 </tr>
 <tr>
@@ -4708,7 +4715,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">throttle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SMS/sec throttling assigned to only the  CP Administrator. If not passed, the  default is -1,  which means use maximum throttling available at a given point of time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throttling for CP_ADMINISTRATOR role as explained in <a href="#_request_parameters_5">Request Parameters</a> above</p></td>
 </tr>
 </tbody>
 </table>
@@ -4754,6 +4761,20 @@ Deleting a Business Customer will mark status as CLOSED.
 <td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise not found</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer for which user is to be added is not found.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create User, Update User</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not Authorize to add User with Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User is not allow to add another user with higher or equal the user’s role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create User, Update User</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4051</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise is missing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Business Customer is missing when creating Business Customer user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create User, Update User</p></td>
 </tr>
 <tr>
@@ -4892,7 +4913,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Role of the user as explained in User Role and Status section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role of the user as explained in <a href="#_user_role_and_status">User Role and Status</a> section</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
@@ -4902,7 +4923,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">throttle</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. SMS/sec throttling assigned to only this CP Administrator . If not passed, the default  is -1 which means use maximum throttling available at the given point of time.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Throttling assigned to only this CP Administrator . For more details see <a href="#_request_parameters_5">Request Parameter</a> of Create User</p></td>
 </tr>
 </tbody>
 </table>
@@ -4965,7 +4986,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4050</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4005</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User not found</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User SID doesn’t exist in the system</p></td>
@@ -5067,7 +5088,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect3">
 <h4 id="_delete_business_customer_resource_uri_2"><a class="anchor" href="#_delete_business_customer_resource_uri_2"></a>Delete Business Customer Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/users/{UserSid}</p>
+<p>/campaignmanager/users/{userSid}</p>
 </div>
 </div>
 <div class="sect3">
@@ -5091,7 +5112,7 @@ Deleting a Business Customer will mark status as CLOSED.
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">userSid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SID of the user to be deleted</p></td>
 </tr>
 </tfoot>
@@ -5103,7 +5124,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Deleting User will mark status as CLOSED.
+Deleting User will mark status as CLOSED in Restcomm.
 </td>
 </tr>
 </table>
@@ -5330,7 +5351,7 @@ Get User</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Users that match email text, partially or fully.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that have the particular role.</p></td>
 </tr>
 <tr>
@@ -5338,7 +5359,7 @@ Get User</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional Parameter. Only show users for the particular Business Customer.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Users that have the particular status.</p></td>
 </tr>
 <tr>
@@ -5651,6 +5672,54 @@ Get User</p></td>
 <div class="paragraph">
 <p>Credit is always associated with a  Business Customer.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Whenever Campaign is scheduled, equivalent Credit is deducted.</p>
+</li>
+<li>
+<p>If there is not enough Credit available, scheduling of Campaign will fail.</p>
+</li>
+<li>
+<p>If Scheduled Campaign is cancelled, equivalent Credit is added back.</p>
+</li>
+<li>
+<p>Once a Campaign progresses to InProgress state, Credit cannot be reversed, no matter what.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>One credit is equal to 1 SMS segment or 1 Voice call.</p>
+</li>
+<li>
+<p>For example,if a particular Business Customer has 100 credits, that customer can only send 100 SMS Segments or 100 Voice calls.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_create_credit"><a class="anchor" href="#_create_credit"></a>Create Credit</h3>
 <div class="paragraph">
@@ -5708,33 +5777,6 @@ Get User</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Whenever Campaign is scheduled, equivalent Credit is deducted.</p>
-</li>
-<li>
-<p>If there is not enough Credit available, scheduling of Campaign will fail.</p>
-</li>
-<li>
-<p>If <code>Scheduled</code> Campaign is cancelled, equivalent Credit is added back.</p>
-</li>
-<li>
-<p>Once a Campaign progresses to <code>InProgress</code> state, Credit cannot be reversed, no matter what.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_response_body_11"><a class="anchor" href="#_response_body_11"></a>Response Body</h4>
