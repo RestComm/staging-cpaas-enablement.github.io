@@ -2547,7 +2547,11 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects?name=\{YourApplicationName}&amp;kind=\{ApplicationKind}&amp;template=\{ApplicationTemplateId}' \</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects?name=\{YourApplicationName}&amp;kind=\{ApplicationKind}&amp;template=\{ApplicationTemplateId}\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \</pre>
 </div>
 </div>
 </div>
@@ -2584,7 +2588,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid} \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -2823,7 +2830,11 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/build?type=voice'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/build?type=voice\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \</pre>
 </div>
 </div>
 </div>
@@ -2879,8 +2890,14 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters' \
---data-raw '{name: "AppParameter", description: "A Visual Designer application parameter."}'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    name: "AppParameter", description: "A Visual Designer application parameter."
+  }’</pre>
 </div>
 </div>
 </div>
@@ -2905,7 +2922,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/parameters \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -2966,7 +2986,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters/\{#ApplicationParameterName}'</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters/\{#ApplicationParameterName}'
+ -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -2989,11 +3010,17 @@
 </div>
 <div class="sect2">
 <h3 id="_example_request_7"><a class="anchor" href="#_example_request_7"></a>Example Request</h3>
+<div class="paragraph">
+<p><strong>HTTP POST</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs' \
---header 'Content-Type: text/plain' \
---data-binary '@/Users/src/test/resources/workspace-migration-scenarios/mixed/workspace/AP670c33bf0b6748f09eaec97030af36f3/wavs/beep.wav'</pre>
+<pre>curl -X POST \
+ https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs \
+ --user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: text/plain' \
+  -d '@/Users/src/test/resources/workspace-migration-scenarios/mixed/workspace/AP670c33bf0b6748f09eaec97030af36f3/wavs/beep.wav'</pre>
 </div>
 </div>
 </div>
@@ -3032,7 +3059,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/wavs \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3091,7 +3121,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs?filename=alert.wav' \</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs?filename=alert.wav' \
+    -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -3135,7 +3166,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs/beep.wav' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/wavs/beep.wav \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3160,7 +3194,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/apps/\{ApplicationSid}/log \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3204,7 +3241,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'
+   -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -3229,7 +3267,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/settings'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/settings \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3292,10 +3333,17 @@
 </div>
 <div class="sect2">
 <h3 id="_example_request_14"><a class="anchor" href="#_example_request_14"></a>Example Request</h3>
+<div class="paragraph">
+<p><strong>HTTP POST</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/settings' \
---data-raw '{logging: true, loggingRCML: true, loggingES: true}'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/settings\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{logging: true, loggingRCML: true, loggingES: true}’</pre>
 </div>
 </div>
 </div>
@@ -3320,7 +3368,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/{ApplicationSid}/settings' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/settings \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3353,7 +3404,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/templates'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/templates \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3421,7 +3475,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/templates/\{ApplicationTemplateId}' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/templates/\{ApplicationTemplateId} \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -3461,7 +3518,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/config' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/config \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -5329,7 +5389,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/archive' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/archive \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -5373,10 +5436,12 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://company.com/restcomm/2012-04-24/Accounts/\{AccountsSid}/Applications/\{ApplicationSid}.json' \
---header 'Authorization: Basic QUM2MTE0OGViOWQ2MTI4MTc1MGNjYzBlMTNjNjA5NGZlMTo3MGZkZGUzMThiODk5Yzk4MjIwNDVjNGFlNTRlYWRjZQ==' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'FriendlyName=IVR'</pre>
+<pre>curl -X PUT \
+ <a href="https://company.com/restcomm/2012-04-24/Accounts/\{AccountsSid}/Applications/\{ApplicationSid}.json" class="bare">https://company.com/restcomm/2012-04-24/Accounts/\{AccountsSid}/Applications/\{ApplicationSid}.json</a> \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d-urlencode 'FriendlyName=IVR'</pre>
 </div>
 </div>
 </div>
@@ -5432,7 +5497,8 @@ This action cannot be undone. Once an application is deleted you will not be abl
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \
+ -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
