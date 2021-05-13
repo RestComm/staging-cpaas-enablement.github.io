@@ -4016,6 +4016,9 @@
 <div class="sect1">
 <h2 id="_create_a_visual_designer_application"><a class="anchor" href="#_create_a_visual_designer_application"></a>Create a Visual Designer Application</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Creates a Visual Designer application.</p>
+</div>
 <div class="sect2">
 <h3 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h3>
 <div class="paragraph">
@@ -4056,7 +4059,11 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects?name=\{YourApplicationName}&amp;kind=\{ApplicationKind}&amp;template=\{ApplicationTemplateId}' \</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects?name=\{YourApplicationName}&amp;kind=\{ApplicationKind}&amp;template=\{ApplicationTemplateId}\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \</pre>
 </div>
 </div>
 </div>
@@ -4093,7 +4100,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid} \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4320,7 +4330,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Can be <code>voice</code> or <code>sms</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -4332,7 +4342,11 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/build?type=voice'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/build?type=voice\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \</pre>
 </div>
 </div>
 </div>
@@ -4347,7 +4361,7 @@
 <div class="sect2">
 <h3 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/parameters</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4388,8 +4402,14 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters' \
---data-raw '{name: "AppParameter", description: "A Visual Designer application parameter."}'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    name: "AppParameter", description: "A Visual Designer application parameter."
+  }’</pre>
 </div>
 </div>
 </div>
@@ -4399,12 +4419,12 @@
 <h2 id="_get_application_parameters"><a class="anchor" href="#_get_application_parameters"></a>Get Application Parameters</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Retrieves a list of all application paramaeters that can be configured by the user.</p>
+<p>Retrieves a list of all application parameters that can be configured by the user.</p>
 </div>
 <div class="sect2">
 <h3 id="_resource_uri_5"><a class="anchor" href="#_resource_uri_5"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/parameters</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4414,7 +4434,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/parameters \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4465,7 +4488,7 @@
 <div class="sect2">
 <h3 id="_resource_uri_6"><a class="anchor" href="#_resource_uri_6"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters/{ApplicationParameterName}</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/parameters/{ApplicationParameterName}</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4475,7 +4498,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/parameters/\{#ApplicationParameterName}'</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/parameters/\{#ApplicationParameterName}'
+ -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -4487,7 +4511,7 @@
 <div class="sect2">
 <h3 id="_resource_uri_7"><a class="anchor" href="#_resource_uri_7"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/wavs</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4498,11 +4522,17 @@
 </div>
 <div class="sect2">
 <h3 id="_example_request_7"><a class="anchor" href="#_example_request_7"></a>Example Request</h3>
+<div class="paragraph">
+<p><strong>HTTP POST</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs' \
---header 'Content-Type: text/plain' \
---data-binary '@/Users/desipepova/Downloads/telestax-telscale-restcomm-02e86456c4b3/restcomm/restcomm.testsuite/src/test/resources/workspace-migration-scenarios/mixed/workspace/AP670c33bf0b6748f09eaec97030af36f3/wavs/beep.wav'</pre>
+<pre>curl -X POST \
+ https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs \
+ --user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: text/plain' \
+  -d '@/Users/src/test/resources/workspace-migration-scenarios/mixed/workspace/AP670c33bf0b6748f09eaec97030af36f3/wavs/beep.wav'</pre>
 </div>
 </div>
 </div>
@@ -4525,10 +4555,13 @@
 <div class="sect1">
 <h2 id="_get_a_list_of_application_media_files"><a class="anchor" href="#_get_a_list_of_application_media_files"></a>Get a List of Application Media Files</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Retrieves a list of the media files uploaded to an application.</p>
+</div>
 <div class="sect2">
 <h3 id="_resource_uri_8"><a class="anchor" href="#_resource_uri_8"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/wavs</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4538,7 +4571,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/wavs \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4562,14 +4598,17 @@
 <div class="sect1">
 <h2 id="_delete_application_media_file"><a class="anchor" href="#_delete_application_media_file"></a>Delete Application Media File</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Deletes media files previously uploaded to an application.</p>
+</div>
 <div class="sect2">
 <h3 id="_resource_uri_9"><a class="anchor" href="#_resource_uri_9"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs?filename={YourMediaFileName}.fileExtension</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/wavs?filename={YourMediaFileName}.fileExtension</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_request_paramaters"><a class="anchor" href="#_request_paramaters"></a>Request Paramaters</h3>
+<h3 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4594,29 +4633,8 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs?filename=alert.wav' \</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_play_an_application_file_resource"><a class="anchor" href="#_play_an_application_file_resource"></a>Play an Application File Resource</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_10"><a class="anchor" href="#_resource_uri_10"></a>Resource URI</h3>
-<div class="paragraph">
-<p><strong>/visual-designer/services/apps/{ApplicationSid}/resources/\{MediaFileName.extension}</strong></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_example_request_10"><a class="anchor" href="#_example_request_10"></a>Example Request</h3>
-<div class="paragraph">
-<p><strong>HTTP GET</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/resources/11-09-2017_00-03_msg7025.wav'</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/wavs?filename=alert.wav' \
+    -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -4625,10 +4643,60 @@
 <div class="sect1">
 <h2 id="_play_an_application_media_file"><a class="anchor" href="#_play_an_application_media_file"></a>Play an Application Media File</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Plays an application media file.</p>
+</div>
+<div class="sect2">
+<h3 id="_resource_uri_10"><a class="anchor" href="#_resource_uri_10"></a>Resource URI</h3>
+<div class="paragraph">
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/media/{YourMediaFileName}.fileExtension</strong></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filename</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of your file along with its extension. For example: alert.wav</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_example_request_10"><a class="anchor" href="#_example_request_10"></a>Example Request</h3>
+<div class="paragraph">
+<p><strong>HTTP GET</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/wavs/beep.wav \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_application_logs"><a class="anchor" href="#_get_application_logs"></a>Get Application Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Retrieves applications logs if available including RCML and external service logs.</p>
+</div>
 <div class="sect2">
 <h3 id="_resource_uri_11"><a class="anchor" href="#_resource_uri_11"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/media/{YourMediaFileName}.fileExtension</strong></p>
+<p><strong>visual-designer/services/apps/{ApplicationSid}/log</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4638,29 +4706,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/wavs/beep.wav' \</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_get_application_logs"><a class="anchor" href="#_get_application_logs"></a>Get Application Logs</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_12"><a class="anchor" href="#_resource_uri_12"></a>Resource URI</h3>
-<div class="paragraph">
-<p><strong>visual-designer/services/apps/{ApplicationSid}/log</strong></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_example_request_12"><a class="anchor" href="#_example_request_12"></a>Example Request</h3>
-<div class="paragraph">
-<p><strong>HTTP GET</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/apps/\{ApplicationSid}/log \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4688,20 +4737,24 @@
 <div class="sect1">
 <h2 id="_delete_application_logs"><a class="anchor" href="#_delete_application_logs"></a>Delete Application Logs</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Deletes application logs.</p>
+</div>
 <div class="sect2">
-<h3 id="_resource_uri_13"><a class="anchor" href="#_resource_uri_13"></a>Resource URI</h3>
+<h3 id="_resource_uri_12"><a class="anchor" href="#_resource_uri_12"></a>Resource URI</h3>
 <div class="paragraph">
 <p><strong>/visual-designer/services/apps/{ApplicationSid}/log</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_13"><a class="anchor" href="#_example_request_13"></a>Example Request</h3>
+<h3 id="_example_request_12"><a class="anchor" href="#_example_request_12"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP DELETE</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/apps/\{ApplicationSid}/log'
+   -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -4714,19 +4767,22 @@
 <p>Retrieves a list of the application settings such the Text-to-Speech (TTS) and logging settings.</p>
 </div>
 <div class="sect2">
-<h3 id="_resource_uri_14"><a class="anchor" href="#_resource_uri_14"></a>Resource URI</h3>
+<h3 id="_resource_uri_13"><a class="anchor" href="#_resource_uri_13"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings</strong></p>
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/settings</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_14"><a class="anchor" href="#_example_request_14"></a>Example Request</h3>
+<h3 id="_example_request_13"><a class="anchor" href="#_example_request_13"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/settings \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4743,14 +4799,17 @@
 <div class="sect1">
 <h2 id="_modify_application_settings"><a class="anchor" href="#_modify_application_settings"></a>Modify Application Settings</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_15"><a class="anchor" href="#_resource_uri_15"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings</strong></p>
+<p>Modifies a Visual Designer application settings such as various types of application logging.</p>
+</div>
+<div class="sect2">
+<h3 id="_resource_uri_14"><a class="anchor" href="#_resource_uri_14"></a>Resource URI</h3>
+<div class="paragraph">
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/settings</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h3>
+<h3 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4785,11 +4844,18 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_15"><a class="anchor" href="#_example_request_15"></a>Example Request</h3>
+<h3 id="_example_request_14"><a class="anchor" href="#_example_request_14"></a>Example Request</h3>
+<div class="paragraph">
+<p><strong>HTTP POST</strong></p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings' \
---data-raw '{logging: true, loggingRCML: true, loggingES: true}'</pre>
+<pre>curl -X POST \
+  https://company.com/visual-designer/services/projects/\{ApplicationSid}/settings\
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -d '{logging: true, loggingRCML: true, loggingES: true}’</pre>
 </div>
 </div>
 </div>
@@ -4798,20 +4864,26 @@
 <div class="sect1">
 <h2 id="_get_application_settings_2"><a class="anchor" href="#_get_application_settings_2"></a>Get Application Settings</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_16"><a class="anchor" href="#_resource_uri_16"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings</strong></p>
+<p>Retrieves a list of a Visual Designer application settings.</p>
+</div>
+<div class="sect2">
+<h3 id="_resource_uri_15"><a class="anchor" href="#_resource_uri_15"></a>Resource URI</h3>
+<div class="paragraph">
+<p><strong>/visual-designer/services/projects/{ApplicationSid}/settings</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_16"><a class="anchor" href="#_example_request_16"></a>Example Request</h3>
+<h3 id="_example_request_15"><a class="anchor" href="#_example_request_15"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/APaec3fc23def4480296598a6a37f94c57/settings' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/settings \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4826,22 +4898,28 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_a_list_of_application_templates_from_the_template_gallery"><a class="anchor" href="#_get_a_list_of_application_templates_from_the_template_gallery"></a>Get a List of Application Templates from the Template Gallery</h2>
+<h2 id="_list_application_templates_from_the_template_gallery"><a class="anchor" href="#_list_application_templates_from_the_template_gallery"></a>List Application Templates from the Template Gallery</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Retrieves a list of all available templates from the Visual Designer Template Gallery.</p>
+</div>
 <div class="sect2">
-<h3 id="_resource_uri_17"><a class="anchor" href="#_resource_uri_17"></a>Resource URI</h3>
+<h3 id="_resource_uri_16"><a class="anchor" href="#_resource_uri_16"></a>Resource URI</h3>
 <div class="paragraph">
 <p><strong>/visual-designer/services/templates</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_17"><a class="anchor" href="#_example_request_17"></a>Example Request</h3>
+<h3 id="_example_request_16"><a class="anchor" href="#_example_request_16"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/templates'</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/templates \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4893,20 +4971,26 @@
 <div class="sect1">
 <h2 id="_get_a_specific_application_template_from_the_template_gallery"><a class="anchor" href="#_get_a_specific_application_template_from_the_template_gallery"></a>Get a Specific Application Template from the Template Gallery</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_18"><a class="anchor" href="#_resource_uri_18"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong>/visual-designer/services/templates/TLfa6f0582b7b04930a25a5e763d3e3480</strong></p>
+<p>Retrieves a specific application template from the Template Gallery including the text-to-speech (TTS) and automated speech recognition (ASR) settings.</p>
+</div>
+<div class="sect2">
+<h3 id="_resource_uri_17"><a class="anchor" href="#_resource_uri_17"></a>Resource URI</h3>
+<div class="paragraph">
+<p><strong>/visual-designer/services/templates/{TemplateSid}</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_18"><a class="anchor" href="#_example_request_18"></a>Example Request</h3>
+<h3 id="_example_request_17"><a class="anchor" href="#_example_request_17"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/templates/\{ApplicationTemplateId}' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/templates/\{ApplicationTemplateId} \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -4928,22 +5012,28 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_visual_designer_configuration"><a class="anchor" href="#_get_visual_designer_configuration"></a>Get Visual Designer Configuration</h2>
+<h2 id="_get_visual_designer_configuration_details"><a class="anchor" href="#_get_visual_designer_configuration_details"></a>Get Visual Designer Configuration Details</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Retrieves the configuration settings of Visual Designer.</p>
+</div>
 <div class="sect2">
-<h3 id="_resource_uri_19"><a class="anchor" href="#_resource_uri_19"></a>Resource URI</h3>
+<h3 id="_resource_uri_18"><a class="anchor" href="#_resource_uri_18"></a>Resource URI</h3>
 <div class="paragraph">
 <p><strong>/visual-designer/services/config</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_19"><a class="anchor" href="#_example_request_19"></a>Example Request</h3>
+<h3 id="_example_request_18"><a class="anchor" href="#_example_request_18"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/config' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/config \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -6799,19 +6889,22 @@
 <p>This API endpoint lets you download a <code>.zip</code> archive of your Visual Designer application.</p>
 </div>
 <div class="sect2">
-<h3 id="_resource_uri_20"><a class="anchor" href="#_resource_uri_20"></a>Resource URI</h3>
+<h3 id="_resource_uri_19"><a class="anchor" href="#_resource_uri_19"></a>Resource URI</h3>
 <div class="paragraph">
 <p><strong>/visual-designer/services/projects/{ApplicationSid}/archive</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_20"><a class="anchor" href="#_example_request_20"></a>Example Request</h3>
+<h3 id="_example_request_19"><a class="anchor" href="#_example_request_19"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP GET</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://company.com/visual-designer/services/projects/\{ApplicationSid}/archive' \</pre>
+<pre>curl -X GET \https://yourdomain.com/visual-designer/services/projects/\{ApplicationSid}/archive \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json'</pre>
 </div>
 </div>
 </div>
@@ -6824,13 +6917,13 @@
 <p>You can rename your application at any given point of time by passing a new friendly name as a request parameter.</p>
 </div>
 <div class="sect2">
-<h3 id="_resource_uri_21"><a class="anchor" href="#_resource_uri_21"></a>Resource URI</h3>
+<h3 id="_resource_uri_20"><a class="anchor" href="#_resource_uri_20"></a>Resource URI</h3>
 <div class="paragraph">
-<p><a href="https://company.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Applications/APdfa054f5dcd64c6d8ccf67e7020c8607.json" class="bare">https://company.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Applications/APdfa054f5dcd64c6d8ccf67e7020c8607.json</a></p>
+<p><a href="https://company.com/restcomm/2012-04-24/Accounts/{AccountsSid}/Applications/{ApplicationSid}.json" class="bare">https://company.com/restcomm/2012-04-24/Accounts/{AccountsSid}/Applications/{ApplicationSid}.json</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h3>
+<h3 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -6849,16 +6942,18 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="_example_request_21"><a class="anchor" href="#_example_request_21"></a>Example Request</h3>
+<h3 id="_example_request_20"><a class="anchor" href="#_example_request_20"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP PUT</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://company.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Applications/\{ApplicationSid}.json' \
---header 'Authorization: Basic QUM2MTE0OGViOWQ2MTI4MTc1MGNjYzBlMTNjNjA5NGZlMTo3MGZkZGUzMThiODk5Yzk4MjIwNDVjNGFlNTRlYWRjZQ==' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'FriendlyName=IVR'</pre>
+<pre>curl -X PUT \
+ <a href="https://company.com/restcomm/2012-04-24/Accounts/\{AccountsSid}/Applications/\{ApplicationSid}.json" class="bare">https://company.com/restcomm/2012-04-24/Accounts/\{AccountsSid}/Applications/\{ApplicationSid}.json</a> \
+--user  ' {your_account_SID}:{your_account_token}' \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d-urlencode 'FriendlyName=IVR'</pre>
 </div>
 </div>
 </div>
@@ -6867,14 +6962,14 @@
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "sid": "APdfa054f5dcd64c6d8ccf67e7020c8607",
+    "sid": "APdfa054f5dcd64c6d8ccf67e702XXXXXX",
     "date_created": "Tue, 26 Jun 2018 14:02:59 +0000",
     "date_updated": "Tue, 6 Apr 2021 07:43:43 +0000",
     "friendly_name": "IVR",
-    "account_sid": "AC61148eb9d61281750ccc0e13c6094fe1",
+    "account_sid": "AC61148eb9d6128175XXXXXXXXXXXXXXXX",
     "api_version": "2012-04-24",
     "voice_caller_id_lookup": false,
-    "uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Applications/APdfa054f5dcd64c6d8ccf67e7020c8607.json",
+    "uri": "/2012-04-24/Accounts/AC61148eb9d6128175XXXXXXXXXXXXXXXX/Applications/APdfa054f5dcd64c6d8ccf67e702XXXXXX.json",
     "rcml_url": "/visual-designer/services/apps/APdfa054f5dcd64c6d8ccf67e7020c8607/controller",
     "kind": "voice"
 }</pre>
@@ -6887,7 +6982,7 @@
 <h2 id="_delete_a_visual_designer_application"><a class="anchor" href="#_delete_a_visual_designer_application"></a>Delete a Visual Designer Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Lets you delete a Visual Designer application.</p>
+<p>Deletes a Visual Designer application.</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -6902,19 +6997,20 @@ This action cannot be undone. Once an application is deleted you will not be abl
 </table>
 </div>
 <div class="sect2">
-<h3 id="_resource_uri_22"><a class="anchor" href="#_resource_uri_22"></a>Resource URI</h3>
+<h3 id="_resource_uri_21"><a class="anchor" href="#_resource_uri_21"></a>Resource URI</h3>
 <div class="paragraph">
 <p><strong>/visual-designer/services/projects/{ApplicationSid}</strong></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_22"><a class="anchor" href="#_example_request_22"></a>Example Request</h3>
+<h3 id="_example_request_21"><a class="anchor" href="#_example_request_21"></a>Example Request</h3>
 <div class="paragraph">
 <p><strong>HTTP DELETE</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \</pre>
+<pre>curl -X DELETE 'https://company.com/visual-designer/services/projects/\{ApplicationSid}' \
+ -u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
