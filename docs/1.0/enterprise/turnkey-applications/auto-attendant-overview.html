@@ -2700,6 +2700,7 @@
 <li><a href="#_overview">Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_what_is_auto_attendant_aa">What is Auto Attendant (AA)?</a></li>
+<li><a href="#_advantages_of_span_class_sps_text_non_sps_link_data_orig_text_cpaas_data_parm_text_application_name_data_default_text_infer_from_domain_cpaas_span_auto_attendant">Advantages of <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Auto Attendant</a></li>
 </ul>
 </li>
 <li><a href="#_understanding_the_span_class_sps_text_non_sps_link_data_orig_text_cpaas_data_parm_text_application_name_data_default_text_infer_from_domain_cpaas_span_auto_attendant_api_and_console">Understanding the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Auto Attendant API and Console</a></li>
@@ -2740,9 +2741,9 @@
 <div class="paragraph">
 <p>Callers can then make a selection by pressing the appropriate key.</p>
 </div>
-<div class="paragraph">
-<p>Advantages of <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Auto Attendant</p>
 </div>
+<div class="sect2">
+<h3 id="_advantages_of_span_class_sps_text_non_sps_link_data_orig_text_cpaas_data_parm_text_application_name_data_default_text_infer_from_domain_cpaas_span_auto_attendant"><a class="anchor" href="#_advantages_of_span_class_sps_text_non_sps_link_data_orig_text_cpaas_data_parm_text_application_name_data_default_text_infer_from_domain_cpaas_span_auto_attendant"></a>Advantages of <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Auto Attendant</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2761,7 +2762,7 @@
 <p><strong>Reduced Waiting Time</strong>:  Callers who know the extension number of the person they want to call can dial this number at any time. AA then connects the caller directly to the requested extension.</p>
 </li>
 <li>
-<p><strong>API-Based Integration</strong>: Easily integrate the AA system with an existing CRM or thirdparty system.</p>
+<p><strong>API-Based Integration</strong>: Easily integrate the AA system with an existing CRM or third party system.</p>
 </li>
 </ul>
 </div>
@@ -2823,48 +2824,6 @@
 <!--
 <script>hljs.initHighlighting()</script>
 -->
-<!--
-  Tried to get this chunk into js/05-countly.js but it has some issues with the async loading so fell back to putting it here
-  where it works for some reason
--->
-  <!-- Only enable countly if the key is set -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/countly-sdk-web/latest/countly.min.js'></script>
-  <script>
-    var Countly = Countly || {}
-    Countly.q = Countly.q || []
-
-    // provide countly initialization parameters
-    Countly.app_key = '078fe985e67633be9b5569e0de287850d9194ca7'
-    Countly.url = 'https://restcomm.count.ly'
-
-    Countly.q.push(['track_sessions'])
-    Countly.q.push(['track_pageview'])
-    Countly.q.push(['track_clicks'])
-    Countly.q.push(['track_errors'])
-    Countly.q.push(['track_links'])
-    Countly.q.push(['track_forms'])
-    Countly.q.push(['collect_from_forms'])
-
-    // send event
-    Countly.q.push(['add_event', {
-      key: 'Restcomm CSPs Documentation',
-      segmentation: {},
-    }]);
-
-    // load countly script asynchronously
-    (function () {
-      var cly = document.createElement('script')
-      cly.type = 'text/javascript'
-      cly.async = true
-      // enter url of script here
-      cly.src = 'https://cdn.jsdelivr.net/countly-sdk-web/latest/countly.min.js'
-      cly.onload = function () {
-        Countly.init()
-      }
-      var s = document.getElementsByTagName('script')[0]
-      s.parentNode.insertBefore(cly, s)
-    })()
-  </script>
 
   </body>
 </html>

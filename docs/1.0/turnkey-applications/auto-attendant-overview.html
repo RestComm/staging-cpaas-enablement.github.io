@@ -4088,17 +4088,19 @@
 <p><strong>Customizable Menus</strong>: Business Customers can define and set up different menus and announcements for specific business hours, closures, and special occasions. Business Customers can also customize the Ringback Tone (RBT) so the caller hears either an audio announcement or traditional ringback tones.</p>
 </li>
 <li>
-<p><strong>User Experience</strong>: Business Customers can easily create and color code different schedules for their organization based on a simple drag-and-drop tool that helps them to visualize the whole system at once.
-Professional Presentation: Business Customers can project a professional image with a high-quality voice recording or by using text-to-speech (TTS) for their AA greeting.</p>
+<p><strong>User Experience</strong>: Business Customers can easily create and color code different schedules for their organization based on a simple drag-and-drop tool that helps them to visualize the whole system at once.</p>
+</li>
+<li>
+<p><strong>Professional Presentation</strong>: Business Customers can project a professional image with a high-quality voice recording or by using text-to-speech (TTS) for their AA greeting.</p>
 </li>
 <li>
 <p><strong>Smart Routing</strong>: Business Customers can collect necessary inputs from the caller and then route the call to a contact center, instead of a one-size-fits-all approach.</p>
 </li>
 <li>
-<p><strong>Reduced Waiting Time</strong>:  Callers who know the extension number of the person they want to call can dial the number at any time. AA then connects the caller directly to the requested extension.</p>
+<p><strong>Reduced Waiting Time</strong>: Callers who know the extension number of the person they want to call can dial the number at any time. AA then connects the caller directly to the requested extension.</p>
 </li>
 <li>
-<p><strong>API-Based Integration</strong>:  Both the Communications Provider and Business Customers can easily integrate the AA system with an existing CRM or third-party systems.</p>
+<p><strong>API-Based Integration</strong>: Both the Communications Provider and Business Customers can easily integrate the AA system with an existing CRM or third-party systems.</p>
 </li>
 </ul>
 </div>
@@ -4173,48 +4175,6 @@ Professional Presentation: Business Customers can project a professional image w
 <!--
 <script>hljs.initHighlighting()</script>
 -->
-<!--
-  Tried to get this chunk into js/05-countly.js but it has some issues with the async loading so fell back to putting it here
-  where it works for some reason
--->
-  <!-- Only enable countly if the key is set -->
-  <script type='text/javascript' src='https://cdn.jsdelivr.net/countly-sdk-web/latest/countly.min.js'></script>
-  <script>
-    var Countly = Countly || {}
-    Countly.q = Countly.q || []
-
-    // provide countly initialization parameters
-    Countly.app_key = '078fe985e67633be9b5569e0de287850d9194ca7'
-    Countly.url = 'https://restcomm.count.ly'
-
-    Countly.q.push(['track_sessions'])
-    Countly.q.push(['track_pageview'])
-    Countly.q.push(['track_clicks'])
-    Countly.q.push(['track_errors'])
-    Countly.q.push(['track_links'])
-    Countly.q.push(['track_forms'])
-    Countly.q.push(['collect_from_forms'])
-
-    // send event
-    Countly.q.push(['add_event', {
-      key: 'Restcomm CSPs Documentation',
-      segmentation: {},
-    }]);
-
-    // load countly script asynchronously
-    (function () {
-      var cly = document.createElement('script')
-      cly.type = 'text/javascript'
-      cly.async = true
-      // enter url of script here
-      cly.src = 'https://cdn.jsdelivr.net/countly-sdk-web/latest/countly.min.js'
-      cly.onload = function () {
-        Countly.init()
-      }
-      var s = document.getElementsByTagName('script')[0]
-      s.parentNode.insertBefore(cly, s)
-    })()
-  </script>
 <!-- UserBack Tool -->
 <script>
     Userback = window.Userback || {};
