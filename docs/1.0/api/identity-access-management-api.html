@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="REST API Overview - Restcomm Docs"></title>
+    <title data-custom-title="Identity Access Management API - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/overview.html
+      https://dev.restcomm.com/docs/1.0/api/identity-access-management-api.html
     ">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
@@ -80,7 +80,7 @@
   </ul>
           <ul class="nav-list">
               <li id="API Overview"
-                  class="nav-item is-current-page"
+                  class="nav-item"
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -114,7 +114,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_api_endpoint">API Endpoint</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_api_endpoint">API Endpoint</a>
 
             </span>
                 </div>
@@ -134,7 +134,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_authentication">Authentication</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_authentication">Authentication</a>
 
             </span>
                 </div>
@@ -154,7 +154,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_requests">Requests</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_requests">Requests</a>
 
             </span>
                 </div>
@@ -174,7 +174,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_responses">Responses</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_responses">Responses</a>
 
             </span>
                 </div>
@@ -194,7 +194,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_paging">Paging</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_paging">Paging</a>
 
             </span>
                 </div>
@@ -3996,77 +3996,132 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="overview.html">CSP:API Overview</a></li>
+    <li class="crumb"><a href="identity-access-management-api.html">Identity Access Management API</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>REST API Overview</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> REST APIs power the <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> Communications Platform as a Service (CPaaS) and represent wide range of operations that enable you to create programmable Voice and SMS applications. You can use the REST APIs to create enterprise application that focus on your users needs. The REST APIs are implemented on the HTTP protocol, so you can use them with your preferred programming language and tools.</p>
-</div>
-</div>
-</div>
+  <h1>Identity Access Management API</h1>
 <div class="sect1">
-<h2 id="_rest_api_capabilities"><a class="anchor" href="#_rest_api_capabilities"></a>REST API Capabilities</h2>
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A REST API client should support the following:</p>
+<p>The Identity Access Management (IAM) API enables Communications Providers to:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>HTTPS and basic authentication</p>
+<p>create and manage users under their Restcomm organization&#8217;s primary account, as well as define a permission set for each user</p>
 </li>
 <li>
-<p>HTTP GET, POST, PUT and DELETE requests</p>
-</li>
-<li>
-<p>Ability to set and read request and response headers</p>
-</li>
-<li>
-<p>XML or JSON responses</p>
+<p>create Restcomm subaccounts for their Business Customers</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_api_endpoint"><a class="anchor" href="#_api_endpoint"></a>API Endpoint</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The base for all the API urls is: <strong><code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24">https://$DOMAIN/restcomm/2012-04-24</span></code></strong></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_supported_http_methods"><a class="anchor" href="#_supported_http_methods"></a>Supported HTTP Methods</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>GET</strong>: Lists or reads objects and includes the information needed to perform any Read operations on the object. Sample use: list all of the applications under your <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> account.</p>
-</div>
-<div class="paragraph">
-<p><strong>POST/PUT</strong>: Creates or updates objects. Most requests using the POST/PUT method require JSON/XML in the request body. Sample use: modify a Client under your <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> account.</p>
-</div>
-<div class="paragraph">
-<p><strong>DELETE</strong>: Removes objects. Sample use: delete an application or client under your <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> account.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of today Communications Providers can only set user permissions to enable or disable access to each one of the Turnkey Applications. In the future the Identity Access Management API will allow CPs to set a broader set of permissions targeting the various platform&#8217;s functionalities.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h2>
+<h2 id="_users_management"><a class="anchor" href="#_users_management"></a>Users Management</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> APIs use basic HTTP authentication to restrict access to API endpoints to authenticated users only. After you sign up with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>, you can find your Account SID and Auth Token by navigating to <code>your profile</code> &#8594; <code>Account</code> in the <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> Console.</p>
+<p>Communications Providers can create, update, retrieve and delete users.</p>
 </div>
+<div class="sect2">
+<h3 id="_user_resource_uri"><a class="anchor" href="#_user_resource_uri"></a>User Resource URI</h3>
 <div class="paragraph">
-<p><span class="image"><img src="../_images/Restcomm_AccountSID_and_Token.png" alt="Account SID and Token"></span></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users.json</strong></p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_resource_properties"><a class="anchor" href="#_resource_properties"></a>Resource Properties</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies the Restcomm account under which a user is going to be created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the new user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address associated with the new user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PhoneNumber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The phone number associated with the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The role assigned to the user.</p>
+<p class="tableblock">Possible values for users created under the Communications Provider account include:<br>
+- CP/Administrator<br>
+- CP/Developer<br>
+- CP/Provisioning Agent<br></p>
+<p class="tableblock">Possible values for users created under the Business Customer account include:<br>
+- BC/Administrator<br>
+- BC/Developer<br>
+- BC/Provisioning Agent</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies the newly created user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The status of the newly created user. Possible values are: unconfirmed, active, inactive. By default, newly created users have <code>unconfirmed</code> status. Once they confirm their email address the status gets changed to <code>active</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date and time when the user was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date and time when the user was lastly updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The uri for this user, relative to <code><a href="https://yourdomain.com/restcomm/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json" class="bare">https://yourdomain.com/restcomm/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json</a></code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_create_a_user"><a class="anchor" href="#_create_a_user"></a>Create a User</h3>
 <div class="paragraph">
-<p>You then need to use these credentials in your request&#8217;s Authorization header using <code>Basic</code> authentication type (i.e. <code>Authorization: Basic &lt;base64-encoded AccountSID:AuthToken&gt;</code>). Here&#8217;s how you would use an HTTP client to authenticate with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>:</p>
+<p><strong>HTTP POST</strong> Creates a new user under the specified Restcomm account.</p>
 </div>
+<div class="sect3">
+<h4 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h4>
+<div class="paragraph">
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users.json</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <script>
       function openLanguage(language, index) {
         const sampleClasses = document.getElementsByClassName("sample-language-" + index);
@@ -4086,56 +4141,73 @@
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-57 is-active" onclick="openLanguage('Curl', 57)">Curl</button>
-        <button class="sample-code-button scsIndex-57" onclick="openLanguage('Nodejs', 57)">Nodejs</button>
-        <button class="sample-code-button scsIndex-57" onclick="openLanguage('Python', 57)">Python</button>
-        <button class="sample-code-button scsIndex-57" onclick="openLanguage('Java', 57)">Java</button>
+        <button class="sample-code-button scsIndex-43 is-active" onclick="openLanguage('Curl', 43)">Curl</button>
+        <button class="sample-code-button scsIndex-43" onclick="openLanguage('Nodejs', 43)">Nodejs</button>
+        <button class="sample-code-button scsIndex-43" onclick="openLanguage('Python', 43)">Python</button>
+        <button class="sample-code-button scsIndex-43" onclick="openLanguage('Java', 43)">Java</button>
       </div>
-      <div id="Curl-57" class="sample-language-57">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID.json  \
+      <div id="Curl-43" class="sample-language-43">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Users.json  \
+   -d 'Name=Jane Doe' \
+   -d 'Email=jane.doe@company.com' \
+   -d 'Role=CP/Administrator' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-57" class="sample-language-57" style="display:none">
+      <div id="Nodejs-43" class="sample-language-43" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
 const ACCOUNT_SID = 'my_ACCOUNT_SID';
 const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '.json',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+request.({
+      method: 'POST',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Users.json',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
+      form: {
+         'Name': 'Jane Doe',
+         'Email': 'jane.doe@company.com',
+         'Role': 'CP/Administrator'
+      }
    },
    function (error, response, body) {
       // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
       ...
-   }
-);
+});
 </code></pre>
       </div>
-      <div id="Python-57" class="sample-language-57" style="display:none">
+      <div id="Python-43" class="sample-language-43" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
+from urllib.parse import urlencode
 
 # Provide your Account Sid and Auth Token from your Console Account page
 ACCOUNT_SID = 'my_ACCOUNT_SID'
 AUTH_TOKEN = 'my_AUTH_TOKEN'
 
 userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+headers = { 'Authorization' : 'Basic %s' %  userAndPass,
+    'Content-type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/plain' }
+
+# Update POST parameters accordingly
+params = urlencode({
+   'Name': 'Jane Doe',
+   'Email': 'jane.doe@company.com',
+   'Role': 'CP/Administrator'
+})
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '.json',
-      headers=headers)
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Users.json',
+      params, headers=headers)
 res = conn.getresponse()
 
 # Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
 ...
 </code></pre>
       </div>
-      <div id="Java-57" class="sample-language-57" style="display:none">
+      <div id="Java-43" class="sample-language-43" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4151,10 +4223,18 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + ".json");
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Users.json");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("GET");
+      conn.setRequestMethod("POST");
+      conn.setDoOutput(true);
+      DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+
+      // Update POST parameters accordingly
+      os.writeBytes("Name=Jane Doe&" +
+        "Email=jane.doe@company.com&" +
+        "Role=CP/Administrator");
+      os.close();
 
       // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
       ...
@@ -4162,164 +4242,139 @@ public class JavaSampleClass {
 }
 </code></pre>
       </div>
+<div class="listingblock">
+<div class="content">
+<pre>curl --location --request POST 'https://frontend-tests-org.restcomm.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users.json' \
+--header 'Authorization: Basic QUMyNWI2ZWEyZjA0Y2E1N2M3NWU2ZTBlNmFlZjliNjljOTozMjYxZDc2ZjFkODRhYzRmZjIxMGIxZTRmYTNiMjMwMQ==' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'Name=Jane Doe' \
+--data-urlencode 'Email=jane.doe@company.com' \
+--data-urlencode 'Role=CP/Developer'</pre>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_requests"><a class="anchor" href="#_requests"></a>Requests</h2>
-<div class="sectionbody">
+</div>
+<div class="sect3">
+<h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"sid": "USaff6a6dec30047d58d0f08edf5f46f0f",
+"name": "Jane Doe",
+"email": "jane.doe@company.com",
+"phone_number": null,
+"role": "CP/Administrator",
+"account_sid": "AC25b6ea2f04ca57c75e6e0e6aef9b69c9",
+"status": "unconfirmed",
+"date_created": "Tue, 8 Jun 2021 07:31:23 +0000",
+"date_updated": "Tue, 8 Jun 2021 07:31:23 +0000",
+"uri": "/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_a_user"><a class="anchor" href="#_update_a_user"></a>Update a User</h3>
 <div class="paragraph">
-<p>API resources are accessed via HTTPS requests utilizing UTF-8 format. Data passed to the API through <code>POST</code> and <code>PUT</code> requests should use urlencoded format (i.e. <code>Content Type: application/x-www-form-urlencoded</code>).</p>
+<p><strong>HTTP PUT</strong> Updates a user under the specified Restcomm account.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_responses"><a class="anchor" href="#_responses"></a>Responses</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h4>
 <div class="paragraph">
-<p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> can return its API responses either in <code>.json</code> or <code>.xml</code> format depending on the suffix of the url the request was made on. For example a request sent to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls.json">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls.json</span></code> will yield a <code>.json</code> response, while a request sent to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls.xml">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls.xml</span></code> will yield an <code>.xml</code> response.</p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl --location --request PUT 'https://frontend-tests-org.restcomm.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json' \
+--header 'Authorization: Basic QUMyNWI2ZWEyZjA0Y2E1N2M3NWU2ZTBlNmFlZjliNjljOTozMjYxZDc2ZjFkODRhYzRmZjIxMGIxZTRmYTNiMjMwMQ==' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'PhoneNumber=+122233331111'</pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_paging"><a class="anchor" href="#_paging"></a>Paging</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"sid": "USaff6a6dec30047d58d0f08edf5f46f0f",
+"name": "Jane Doe",
+"email": "jane.doe@company.com",
+"phone_number": "+12223334444",
+"role": "CP/Administrator",
+"account_sid": "AC25b6ea2f04ca57c75e6e0e6aef9b69c9",
+"status": "unconfirmed",
+"date_created": "Tue, 8 Jun 2021 07:31:23 +0000",
+"date_updated": "Tue, 8 Jun 2021 07:31:23 +0000",
+"uri": "/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_retrieve_a_user_information"><a class="anchor" href="#_retrieve_a_user_information"></a>Retrieve a User Information</h3>
 <div class="paragraph">
-<p>Some <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> APIs support pagination by accepting as query parameters the page number we interested in as well as the page size. The following query parameters are supported:</p>
+<p><strong>HTTP GET</strong> Retrieves information about a specific.</p>
 </div>
-<table class="tableblock frame-top grid-rows spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of SMS records to return, starting from 0.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="sect3">
+<h4 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h4>
 <div class="paragraph">
-<p>For example, the following request will return the first page of results with a size of 10 items:</p>
-</div>
-      <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-58 is-active" onclick="openLanguage('Curl', 58)">Curl</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Nodejs', 58)">Nodejs</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Python', 58)">Python</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Java', 58)">Java</button>
-      </div>
-      <div id="Curl-58" class="sample-language-58">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/SMS/Messages.json?Page=0&PageSize=10  \
-   -u 'YourAccountSid:YourAuthToken'
-</code></pre>
-      </div>
-      <div id="Nodejs-58" class="sample-language-58" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
-
-// Provide your Account Sid and Auth Token from your Console Account page
-const ACCOUNT_SID = 'my_ACCOUNT_SID';
-const AUTH_TOKEN = 'my_AUTH_TOKEN';
-
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/SMS/Messages.json?Page=0&PageSize=10',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
-   },
-   function (error, response, body) {
-      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
-      ...
-   }
-);
-</code></pre>
-      </div>
-      <div id="Python-58" class="sample-language-58" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
-from base64 import b64encode
-
-# Provide your Account Sid and Auth Token from your Console Account page
-ACCOUNT_SID = 'my_ACCOUNT_SID'
-AUTH_TOKEN = 'my_AUTH_TOKEN'
-
-userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
-
-conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/SMS/Messages.json?Page=0&PageSize=10',
-      headers=headers)
-res = conn.getresponse()
-
-# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
-...
-</code></pre>
-      </div>
-      <div id="Java-58" class="sample-language-58" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
-import java.util.Base64;
-
-public class JavaSampleClass {
-   // Provide your Account Sid and Auth Token from your Console Account page
-   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
-   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
-
-
-   public static void main(String[] args) throws Exception {
-      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
-      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
-
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/SMS/Messages.json?Page=0&PageSize=10");
-      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-      conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("GET");
-
-      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
-      ...
-  }
-}
-</code></pre>
-      </div>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json</strong></p>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_distributed_request_processing"><a class="anchor" href="#_distributed_request_processing"></a>Distributed Request Processing</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl --location --request GET 'https://frontend-tests-org.restcomm.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USb0b76d2f398348cfa9b18022f81d26d3.json' \
+--header 'Authorization: Basic QUMyNWI2ZWEyZjA0Y2E1N2M3NWU2ZTBlNmFlZjliNjljOTozMjYxZDc2ZjFkODRhYzRmZjIxMGIxZTRmYTNiMjMwMQ=='</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_response_3"><a class="anchor" href="#_example_response_3"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"sid": "USaff6a6dec30047d58d0f08edf5f46f0f",
+"name": "Jane Doe",
+"email": "jane.doe@company.com",
+"phone_number": "+12223334444",
+"role": "CP/Administrator",
+"account_sid": "AC25b6ea2f04ca57c75e6e0e6aef9b69c9",
+"status": "unconfirmed",
+"date_created": "Tue, 8 Jun 2021 07:31:23 +0000",
+"date_updated": "Tue, 8 Jun 2021 07:31:23 +0000",
+"uri": "/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_a_user"><a class="anchor" href="#_delete_a_user"></a>Delete a User</h3>
 <div class="paragraph">
-<p>The Restcomm platform has a distributed microservice architecture, that enables linear scalability during traffic growth and handles a high volume of REST API requests, voice calls, and SMS messages. Each architecture component handles different types of requests.</p>
+<p><strong>HTTP DELETE</strong> Deletes a user under the specified Restcomm account.</p>
 </div>
+<div class="sect3">
+<h4 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h4>
 <div class="paragraph">
-<p>When you modify the provisioning data via the Management REST APIs, up to few minutes are needed for the update to reflect the changes in all call processing units that handle calls and SMS. Provisioning data modifications are done using the HTTP POST, PUT and DELETE methods. The POST method updates records immediately with no delay during the operation.</p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}</strong></p>
 </div>
-<div class="paragraph">
-<p>Distributed request processing is available for the following Management APIs, as well as the Restcomm Console.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="account-api.html">Accounts</a></p>
-</li>
-<li>
-<p><a href="tags-api.html">Tags</a></p>
-</li>
-<li>
-<p><a href="profile-api.html">Profiles</a></p>
-</li>
-<li>
-<p><a href="clients-api.html">Clients</a></p>
-</li>
-<li>
-<p><a href="incoming-phone-numbers-api.html">Incoming Phone Numbers</a></p>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl --location --request DELETE 'https://frontend-tests-org.restcomm.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/US7a3bb92e6a5543d9b2fab8e8e278ccce' \
+--header 'Authorization: Basic QUMyNWI2ZWEyZjA0Y2E1N2M3NWU2ZTBlNmFlZjliNjljOTozMjYxZDc2ZjFkODRhYzRmZjIxMGIxZTRmYTNiMjMwMQ=='</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
