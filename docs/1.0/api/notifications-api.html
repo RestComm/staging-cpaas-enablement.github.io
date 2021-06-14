@@ -4145,90 +4145,6 @@
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-50 is-active" onclick="openLanguage('Curl', 50)">Curl</button>
-        <button class="sample-code-button scsIndex-50" onclick="openLanguage('Nodejs', 50)">Nodejs</button>
-        <button class="sample-code-button scsIndex-50" onclick="openLanguage('Python', 50)">Python</button>
-        <button class="sample-code-button scsIndex-50" onclick="openLanguage('Java', 50)">Java</button>
-      </div>
-      <div id="Curl-50" class="sample-language-50">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Notifications.json  \
-   -u 'YourAccountSid:YourAuthToken'
-</code></pre>
-      </div>
-      <div id="Nodejs-50" class="sample-language-50" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
-
-// Provide your Account Sid and Auth Token from your Console Account page
-const ACCOUNT_SID = 'my_ACCOUNT_SID';
-const AUTH_TOKEN = 'my_AUTH_TOKEN';
-
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Notifications.json',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
-   },
-   function (error, response, body) {
-      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
-      ...
-   }
-);
-</code></pre>
-      </div>
-      <div id="Python-50" class="sample-language-50" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
-from base64 import b64encode
-
-# Provide your Account Sid and Auth Token from your Console Account page
-ACCOUNT_SID = 'my_ACCOUNT_SID'
-AUTH_TOKEN = 'my_AUTH_TOKEN'
-
-userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
-
-conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Notifications.json',
-      headers=headers)
-res = conn.getresponse()
-
-# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
-...
-</code></pre>
-      </div>
-      <div id="Java-50" class="sample-language-50" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
-import java.util.Base64;
-
-public class JavaSampleClass {
-   // Provide your Account Sid and Auth Token from your Console Account page
-   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
-   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
-
-
-   public static void main(String[] args) throws Exception {
-      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
-      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
-
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Notifications.json");
-      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-      conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("GET");
-
-      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
-      ...
-  }
-}
-</code></pre>
-      </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_example_get_response"><a class="anchor" href="#_example_get_response"></a>Example GET Response</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_json_get_response"><a class="anchor" href="#_json_get_response"></a>JSON GET Response</h3>
-      <div class="sample-code-bar">
         <button class="sample-code-button scsIndex-51 is-active" onclick="openLanguage('Curl', 51)">Curl</button>
         <button class="sample-code-button scsIndex-51" onclick="openLanguage('Nodejs', 51)">Nodejs</button>
         <button class="sample-code-button scsIndex-51" onclick="openLanguage('Python', 51)">Python</button>
@@ -4279,6 +4195,90 @@ res = conn.getresponse()
 </code></pre>
       </div>
       <div id="Java-51" class="sample-language-51" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Notifications.json");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestMethod("GET");
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_get_response"><a class="anchor" href="#_example_get_response"></a>Example GET Response</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_json_get_response"><a class="anchor" href="#_json_get_response"></a>JSON GET Response</h3>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-52 is-active" onclick="openLanguage('Curl', 52)">Curl</button>
+        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Nodejs', 52)">Nodejs</button>
+        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Python', 52)">Python</button>
+        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Java', 52)">Java</button>
+      </div>
+      <div id="Curl-52" class="sample-language-52">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Notifications.json  \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-52" class="sample-language-52" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+
+request({
+      method: 'GET',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Notifications.json',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+   }
+);
+</code></pre>
+      </div>
+      <div id="Python-52" class="sample-language-52" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Notifications.json',
+      headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-52" class="sample-language-52" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4383,17 +4383,17 @@ public class JavaSampleClass {
 <p>The example below will only return Notifications triggered from a given call sid.</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-52 is-active" onclick="openLanguage('Curl', 52)">Curl</button>
-        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Nodejs', 52)">Nodejs</button>
-        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Python', 52)">Python</button>
-        <button class="sample-code-button scsIndex-52" onclick="openLanguage('Java', 52)">Java</button>
+        <button class="sample-code-button scsIndex-53 is-active" onclick="openLanguage('Curl', 53)">Curl</button>
+        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Nodejs', 53)">Nodejs</button>
+        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Python', 53)">Python</button>
+        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Java', 53)">Java</button>
       </div>
-      <div id="Curl-52" class="sample-language-52">
+      <div id="Curl-53" class="sample-language-53">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Notifications.json?CallSid=CA5EB00000000000000000000000000002  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-52" class="sample-language-52" style="display:none">
+      <div id="Nodejs-53" class="sample-language-53" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4412,7 +4412,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-52" class="sample-language-52" style="display:none">
+      <div id="Python-53" class="sample-language-53" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4432,7 +4432,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-52" class="sample-language-52" style="display:none">
+      <div id="Java-53" class="sample-language-53" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4494,17 +4494,17 @@ public class JavaSampleClass {
 <p>The example below will only return Messages sent from client Alice.</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-53 is-active" onclick="openLanguage('Curl', 53)">Curl</button>
-        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Nodejs', 53)">Nodejs</button>
-        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Python', 53)">Python</button>
-        <button class="sample-code-button scsIndex-53" onclick="openLanguage('Java', 53)">Java</button>
+        <button class="sample-code-button scsIndex-54 is-active" onclick="openLanguage('Curl', 54)">Curl</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Nodejs', 54)">Nodejs</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Python', 54)">Python</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Java', 54)">Java</button>
       </div>
-      <div id="Curl-53" class="sample-language-53">
+      <div id="Curl-54" class="sample-language-54">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Notifications.json?ErrorCode=1  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-53" class="sample-language-53" style="display:none">
+      <div id="Nodejs-54" class="sample-language-54" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4523,7 +4523,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-53" class="sample-language-53" style="display:none">
+      <div id="Python-54" class="sample-language-54" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4543,7 +4543,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-53" class="sample-language-53" style="display:none">
+      <div id="Java-54" class="sample-language-54" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4638,17 +4638,17 @@ public class JavaSampleClass {
 <p>The command below will return a single item from the list of notifications using the PageSize parameter</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-54 is-active" onclick="openLanguage('Curl', 54)">Curl</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Nodejs', 54)">Nodejs</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Python', 54)">Python</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Java', 54)">Java</button>
+        <button class="sample-code-button scsIndex-55 is-active" onclick="openLanguage('Curl', 55)">Curl</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Nodejs', 55)">Nodejs</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Python', 55)">Python</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Java', 55)">Java</button>
       </div>
-      <div id="Curl-54" class="sample-language-54">
+      <div id="Curl-55" class="sample-language-55">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Notifications.json?PageSize=1  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-54" class="sample-language-54" style="display:none">
+      <div id="Nodejs-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4667,7 +4667,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-54" class="sample-language-54" style="display:none">
+      <div id="Python-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4687,7 +4687,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-54" class="sample-language-54" style="display:none">
+      <div id="Java-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4855,17 +4855,17 @@ public class JavaSampleClass {
 <p>The command below will return notifications sorted by the creation date in ascending order using SortBy parameter:</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-55 is-active" onclick="openLanguage('Curl', 55)">Curl</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Nodejs', 55)">Nodejs</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Python', 55)">Python</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Java', 55)">Java</button>
+        <button class="sample-code-button scsIndex-56 is-active" onclick="openLanguage('Curl', 56)">Curl</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Nodejs', 56)">Nodejs</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Python', 56)">Python</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Java', 56)">Java</button>
       </div>
-      <div id="Curl-55" class="sample-language-55">
+      <div id="Curl-56" class="sample-language-56">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/ACCOUNT_SID/Notifications.json?SortBy=DateCreated:asc  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-55" class="sample-language-55" style="display:none">
+      <div id="Nodejs-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4884,7 +4884,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-55" class="sample-language-55" style="display:none">
+      <div id="Python-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4904,7 +4904,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-55" class="sample-language-55" style="display:none">
+      <div id="Java-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
