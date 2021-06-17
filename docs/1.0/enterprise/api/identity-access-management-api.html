@@ -2919,7 +2919,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>create and manage users under their Restcomm account, as well as define a permission set for each user</p>
+<p>create and manage users under their <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account, as well as define a permission set for each user</p>
 </li>
 </ul>
 </div>
@@ -2953,7 +2953,7 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies the Restcomm account under which a user is going to be created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account under which a user is going to be created.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
@@ -3001,7 +3001,7 @@ Possible values for users created under the Business Customer account include:<b
 <div class="sect2">
 <h3 id="_create_a_user"><a class="anchor" href="#_create_a_user"></a>Create a User</h3>
 <div class="paragraph">
-<p><strong>HTTP POST</strong> Creates a new user under the specified Restcomm account.</p>
+<p><strong>HTTP POST</strong> Creates a new user under the specified <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account.</p>
 </div>
 <div class="sect3">
 <h4 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h4>
@@ -3030,12 +3030,12 @@ Possible values for users created under the Business Customer account include:<b
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-117 is-active" onclick="openLanguage('Curl', 117)">Curl</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Nodejs', 117)">Nodejs</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Python', 117)">Python</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Java', 117)">Java</button>
+        <button class="sample-code-button scsIndex-38 is-active" onclick="openLanguage('Curl', 38)">Curl</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Nodejs', 38)">Nodejs</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Python', 38)">Python</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Java', 38)">Java</button>
       </div>
-      <div id="Curl-117" class="sample-language-117">
+      <div id="Curl-38" class="sample-language-38">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Users.json  \
    -d 'Name=Jane Doe' \
    -d 'Email=jane.doe@company.com' \
@@ -3043,7 +3043,7 @@ Possible values for users created under the Business Customer account include:<b
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-117" class="sample-language-117" style="display:none">
+      <div id="Nodejs-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3066,7 +3066,7 @@ request.({
 });
 </code></pre>
       </div>
-      <div id="Python-117" class="sample-language-117" style="display:none">
+      <div id="Python-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 from urllib.parse import urlencode
@@ -3096,7 +3096,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-117" class="sample-language-117" style="display:none">
+      <div id="Java-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
