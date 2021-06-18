@@ -2903,20 +2903,69 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_overview">Overview</a></li>
-<li><a href="#_user_roles_and_permission_for_communications_providers">User Roles and Permission for Communications Providers</a></li>
-<li><a href="#_user_roles_and_permission_for_business_customers">User Roles and Permission for Business Customers</a></li>
+<li><a href="#_overview">Overview</a>
+<ul class="sectlevel2">
+<li><a href="#_account_and_user_roles">Account and User Roles</a></li>
+<li><a href="#_user_permissions">User Permissions</a></li>
+</ul>
+</li>
+<li><a href="#_understanding_the_user_roles_and_permission_for_communications_providers">Understanding the User Roles and Permission for Communications Providers</a></li>
+<li><a href="#_understanding_the_user_roles_and_permission_for_business_customers">Understanding the User Roles and Permission for Business Customers</a></li>
+<li><a href="#_understanding_the_identity_access_management_api">Understanding the Identity Access Management API</a></li>
 </ul>
 </div>
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Identity Access Management allows Communications Providers and their Business Customers to create and manage Users with specific Roles and Permissions under their Restcomm account.</p>
+</div>
+<div class="paragraph">
+<p>Communications Providers can either create users under their Restcomm primary account, or create subaccounts for their Business Customers. Each Business Customer subaccount can create users independently.</p>
+</div>
+<div class="sect2">
+<h3 id="_account_and_user_roles"><a class="anchor" href="#_account_and_user_roles"></a>Account and User Roles</h3>
+<div class="paragraph">
+<p>There are three types of roles that can be assigned to an account: Administrator, Provisioning Agent and Developer. You can find out more about roles <a href="accounts.html#_creating_a_sub_account_using_the_restcomm_console">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Communications Providers Users can have either CP Administrator, CP Developer or CP ProvisioningAgent role. Business Customers Users can take BC Administrator, BC Developer, BC ProvisioningAgent, BC Turnkey Applications Administrator or Turnkey Applications Developer.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_permissions"><a class="anchor" href="#_user_permissions"></a>User Permissions</h3>
+<div class="paragraph">
+<p>The user permissions represent the level of user access to various Platform and Turnkey Applications resources.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_user_roles_and_permission_for_communications_providers"><a class="anchor" href="#_user_roles_and_permission_for_communications_providers"></a>User Roles and Permission for Communications Providers</h2>
+<h2 id="_understanding_the_user_roles_and_permission_for_communications_providers"><a class="anchor" href="#_understanding_the_user_roles_and_permission_for_communications_providers"></a>Understanding the User Roles and Permission for Communications Providers</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The diagram below outlines the relationship between the Communications Provider&#8217;s Restcomm Primary Account and the users created under it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only Users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/IAM_for_CPs.png" alt="IAM for CPs">
+</div>
+</div>
+<div class="paragraph">
+<p>The following table specifies the Communications Provider user permissions to the Platform and Turnkey Applications resources based on their role.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
@@ -2981,7 +3030,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Role Access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">* Communications Provider Administrator<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Communications Provider Administrator<br>
 - Communications Provider Developer<br>
 - Communications Provider Provisioning Agent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3344,8 +3393,31 @@ Enterprise Credit</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_user_roles_and_permission_for_business_customers"><a class="anchor" href="#_user_roles_and_permission_for_business_customers"></a>User Roles and Permission for Business Customers</h2>
+<h2 id="_understanding_the_user_roles_and_permission_for_business_customers"><a class="anchor" href="#_understanding_the_user_roles_and_permission_for_business_customers"></a>Understanding the User Roles and Permission for Business Customers</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The diagram below outlines the relationship between the Business Customer&#8217;s Restcomm Subaccount and the users created under it.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only Subaccounts with an <code>Administrator</code> role are allowed to create other subaccounts under them. Only Users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/IAM_for_BCs.png" alt="IAM for BCs">
+</div>
+</div>
+<div class="paragraph">
+<p>The following table specifies the Business Customer user permissions to the Platform and Turnkey Applications resources based on their role.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3782,6 +3854,14 @@ All endpoints all levels</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_the_identity_access_management_api"><a class="anchor" href="#_understanding_the_identity_access_management_api"></a>Understanding the Identity Access Management API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="api/identity-access-management-api.adoc">Getting Started with the Identity Access Management API</a></p>
+</div>
 </div>
 </div>
 </article>
