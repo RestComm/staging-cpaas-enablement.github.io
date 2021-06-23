@@ -4377,7 +4377,7 @@ Subscriber and Management Profiles can only be created by the CP Administrators.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only CSP Admin is allowed to modify/create a Profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed to modify/create a Profile</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">400 Bad Request</p></td>
@@ -4598,7 +4598,7 @@ Renaming of headers names is possible by adding a "headerTranslationMap" into a 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CSPADMIN_SID:CSPADMIN_TOKEN' \
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
  https://&lt;ORGANIZATION&gt;.restcomm.com/restcomm/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://&lt;ORGANIZATION&gt;.restcomm.com/restcomm/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4700,7 +4700,7 @@ Renaming of headers names is possible by adding a "headerTranslationMap" into a 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Subscriber Profiles can only be modified by the CSP Administrators that created them.
+Subscriber Profiles can only be modified by the CP Administrators that created them.
 </td>
 </tr>
 </table>
@@ -4723,7 +4723,7 @@ Subscriber Profiles can only be modified by the CSP Administrators that created 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only CSP Admin is allowed to modify a Profile. DefaultProfile can’t be modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed to modify a Profile. DefaultProfile can’t be modified</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">404 Not Found</p></td>
@@ -4785,7 +4785,7 @@ Subscriber Profiles can only be modified by the CSP Administrators that created 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only CSP Admin is allowed for the association operation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed for the association operation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">404 Not Found</p></td>
@@ -4953,7 +4953,7 @@ To run this command you will first need to retrieve the Organization ID by query
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Subscriber Profiles can be read by the CSP Administrator who created them.
+Subscriber Profiles can be read by the CP Administrator who created them.
 </td>
 </tr>
 </table>
@@ -5184,7 +5184,7 @@ Subscriber Profiles can be read by the CSP Administrator who created them.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only CSP Admin is allowed to query Profiles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed to query Profiles</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">404 Not Found</p></td>
@@ -5506,7 +5506,7 @@ Access to reading a Profile’s specific relationships is subject to the same ru
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Subscriber Profiles can only be deleted by the CSP Administrator who created them except the Default Subscriber Profile (i.e. PR2a61d1839442571eb2eb88262064d1f9) that cannot be deleted by anyone.
+Subscriber Profiles can only be deleted by the CP Administrator who created them except the Default Subscriber Profile (i.e. PR2a61d1839442571eb2eb88262064d1f9) that cannot be deleted by anyone.
 </td>
 </tr>
 </table>
@@ -5529,7 +5529,7 @@ Subscriber Profiles can only be deleted by the CSP Administrator who created the
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only CSP Admin is allowed to remove. DefaultProfile can’t be deleted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed to remove. DefaultProfile can’t be deleted</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">404 Not Found</p></td>
