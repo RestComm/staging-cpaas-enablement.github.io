@@ -2903,9 +2903,11 @@
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_overview">Overview</a>
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_accounts_and_user_roles">Accounts and User Roles</a>
 <ul class="sectlevel2">
-<li><a href="#_account_and_user_roles">Account and User Roles</a></li>
+<li><a href="#_primary_accounts_subaccounts">Primary Accounts &amp; Subaccounts</a></li>
+<li><a href="#_user_roles">User Roles</a></li>
 <li><a href="#_user_permissions">User Permissions</a></li>
 </ul>
 </li>
@@ -2923,8 +2925,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Before you get started, please make sure that your Restcomm organization has Identity Access Management (IAM) enabled. If you are not sure about that, get in touch with your designated account manager. If IAM is disabled for
-your organization, please have a look at the <a href="accounts.html">Enterprise Accounts documentation</a> instead.
+Before you get started, please make sure that your CPaaS organization has Identity Access Management (IAM) enabled. If you are not sure about that, get in touch with your designated account manager. If IAM is not yet enabled for your organization, please have a look at the <a href="accounts.html">Enterprise Accounts documentation</a> instead.
 </td>
 </tr>
 </table>
@@ -2935,18 +2936,81 @@ your organization, please have a look at the <a href="accounts.html">Enterprise 
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Identity Access Management allows Communications Providers and their Business Customers to create and manage Users with specific Roles and Permissions under their Restcomm account.</p>
+<p>Identity Access Management allows Communications Providers and their Business Customers to create and manage Users with specific Roles and Permissions under their CPaaS accounts.</p>
 </div>
 <div class="paragraph">
-<p>Communications Providers can either create users under their Restcomm primary account, or create subaccounts for their Business Customers. Each Business Customer subaccount can create users independently.</p>
+<p>Communications Providers can create users with different roles under their CPaaS primary account. In addition, they can set up subaccounts for their Business Customers. Each Business Customer subaccount can create users and set their roles independently.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/iam-accounts-hierarchy.png" alt="IAM Accounts Hierarchy">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_accounts_and_user_roles"><a class="anchor" href="#_accounts_and_user_roles"></a>Accounts and User Roles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_primary_accounts_subaccounts"><a class="anchor" href="#_primary_accounts_subaccounts"></a>Primary Accounts &amp; Subaccounts</h3>
+<div class="paragraph">
+<p>Primary Account’s Administrator users can create subaccounts for their Business Customers under the same CPaaS organization. They can also create and manage users on the behalf of each Business Customer subaccount.</p>
+</div>
+<div class="paragraph">
+<p>Administrators can also enable or disable their access to Platform and Turnkey Applications resources.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of today Communications Providers can enable or disable access for their Business Customers to each one of the Turnkey Applications. In the future the Identity Access Management API will allow CPs to set a broader set of permissions targeting the various platform functionalities.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_account_and_user_roles"><a class="anchor" href="#_account_and_user_roles"></a>Account and User Roles</h3>
+<h3 id="_user_roles"><a class="anchor" href="#_user_roles"></a>User Roles</h3>
 <div class="paragraph">
-<p>There are three types of roles that can be assigned to an account: Administrator, Provisioning Agent and Developer. You can find out more about roles <a href="accounts.html#_creating_a_sub_account_using_the_restcomm_console">here</a>.</p>
+<p>A user role represents a set of permissions the user has to various Platform and Turnkey Applications resources.</p>
 </div>
 <div class="paragraph">
-<p>Communications Providers Users can have either CP Administrator, CP Developer or CP ProvisioningAgent role. Business Customers Users can take BC Administrator, BC Developer, BC ProvisioningAgent, BC Turnkey Applications Administrator or Turnkey Applications Developer.</p>
+<p>Communications Providers’ users can have any following roles:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrator</p>
+</li>
+<li>
+<p>Developer</p>
+</li>
+<li>
+<p>ProvisioningAgent</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Business Customers Users can have any of the roles below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Administrator</p>
+</li>
+<li>
+<p>Developer</p>
+</li>
+<li>
+<p>Turnkey Applications Administrator</p>
+</li>
+<li>
+<p>Turnkey Applications Developer.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -2962,18 +3026,6 @@ your organization, please have a look at the <a href="accounts.html">Enterprise 
 <div class="sectionbody">
 <div class="paragraph">
 <p>The diagram below outlines the relationship between the Communications Provider&#8217;s Restcomm Primary Account and the users created under it.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Only Users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.
-</td>
-</tr>
-</table>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3422,7 +3474,12 @@ Enterprise Credit</p></td>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only Subaccounts with an <code>Administrator</code> role are allowed to create other subaccounts under them. Only Users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.
+<div class="paragraph">
+<p>Only users with an <code>Administrator</code> role are allowed to create other users under the same subaccount.<br></p>
+</div>
+<div class="paragraph">
+<p>Only users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.</p>
+</div>
 </td>
 </tr>
 </table>
