@@ -4298,6 +4298,147 @@
 <div class="paragraph">
 <p>The Profile API allows different types of profiles to be provisioned.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_management_profile"><a class="anchor" href="#_management_profile"></a>Management Profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Communications Providers can control the access of their Business Customers to various Platform and Turnkey Applications resources through the creation of Management profiles.</p>
+</div>
+<div class="paragraph">
+<p>The management profile REST API is only accessible by the CP administrator account. Where the created profiles will only be accessible by the corresponding CP account.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of today Communications Providers can enable or disable access of their Business Customers to the Turnkey Applications. In the future the REST API will allow CPs to manage a wider range of functionalities.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_create_a_management_profile"><a class="anchor" href="#_create_a_management_profile"></a>Create a Management Profile</h3>
+<div class="paragraph">
+<p>This operation will return <code>Sid</code> of the newly created Profile in the response headers.</p>
+</div>
+<div class="paragraph">
+<p><code><strong>POST /restcomm/2012-04-24/Profiles</strong></code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_headers"><a class="anchor" href="#_response_headers"></a>Response Headers</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profile Sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Sid of the created profile.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_resource_schemas"><a class="anchor" href="#_resource_schemas"></a>Resource Schemas</h3>
+<div class="paragraph">
+<p>For more information about resource schemas details, please have a look at <a href="https://yourcompany.com/restcomm/2012-04-24/Profiles/schemas/rc-management-schema.json" class="bare">https://yourcompany.com/restcomm/2012-04-24/Profiles/schemas/rc-management-schema.json</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_status"><a class="anchor" href="#_response_status"></a>Response Status</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">201 Created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Profile created. Body contains Profile JSON document</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">403 Forbidden</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only CP Admin is allowed to modify/create a Profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">400 Bad Request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body contains a Profile not compliant with schema</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
+<div class="paragraph">
+<p>The following example request will create a management profile with access to specific Turnkey Applications.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+By default, the access to the Turnkey Applications of a given Business Customer is disabled. The Communications Provider has to explicitly grant that by creating a management profile and associating it with a given Business Customer in order for them to start using the Turnkey Applications.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ curl -X POST \
+    https://yourdomain.com/restcomm/2012-04-24/Profiles \
+    -H 'Accept: */*' \
+    -H 'Authorization: Basic YourAccountSid:YourAuthToken' \
+    -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/restcomm/2012-04-24/Profiles/schemas/rc-management-schema.json"' \
+    -d '{
+        "featureEnablement": {
+        "autoAttendant": {},
+        "numberMasking": {},
+        "taskRouter": {},
+        "smart2FA": {},
+        "callQueue": {},
+        "campaignManager": {}
+        }
+    }'</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_link_a_management_profile_to_a_business_customer"><a class="anchor" href="#_link_a_management_profile_to_a_business_customer"></a>Link a Management Profile to a Business Customer</h3>
+<div class="paragraph">
+<p>This operation links the newly created management profile to a Business Customer account. If the operation is successful, the Business Customer can start using the Turnkey Application they were given access to.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ curl -X PUT \
+    https://yourdomain.com/restcomm/2012-04-24/Profiles/{ProfileSid} \
+    -H 'Authorization: Basic YourAccountSid:YourAuthToken' \
+    -H 'Link: &lt;https://yourdomain.com/restcomm/2012-04-24/Accounts/{BCaccountSid}&gt;;rel=related' \
+    -H 'X-Provisioning-Operation: LINK'</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_network_profile"><a class="anchor" href="#_network_profile"></a>Network Profile</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The Network Profile is managed by the CSP administrator and is used for configuring behaviour like call &amp; SMS routing with Bring Your Own Carrier (BYOC) and Media Session Control. The Network Profile type is Subscriber.</p>
 </div>
@@ -4336,108 +4477,6 @@ You can check which Network Profiles, Accounts and Organizations are associated 
 </table>
 </div>
 <div class="sect2">
-<h3 id="_access_control"><a class="anchor" href="#_access_control"></a>Access Control</h3>
-<div class="paragraph">
-<p>Communications Providers can control the access of their Business Customers to various Platform and Turnkey Applications resources through the creation of Management profiles.</p>
-</div>
-<div class="paragraph">
-<p>For Management profiles, the Profiles REST API is only accessible by a CP administrator account. Where the created Profiles will only be accessible by the corresponding CP account.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of today Communications Providers can enable or disable access of their Business Customers to the Turnkey Applications. In the future the REST API will allow CPs to manage a wider range of functionalities.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_create_a_management_profile"><a class="anchor" href="#_create_a_management_profile"></a>Create a Management Profile</h4>
-<div class="paragraph">
-<p>This operation will return <code>Sid</code> of the newly created Profile in the response headers.</p>
-</div>
-<div class="paragraph">
-<p><code><strong>POST /restcomm/2012-04-24/Profiles</strong></code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_response_headers"><a class="anchor" href="#_response_headers"></a>Response Headers</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Profile Sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Sid of the created profile.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
-<div class="paragraph">
-<p>The following example request will enable a set of Turnkey Applications for a given Business Customer.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-By default the access to the Turnkey Applications of a given Business Customer is disabled. The Communications Provider has to explicitly grant that in order for the Business Customer to start using  the Turnkey Applications.
-</td>
-</tr>
-</table>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ curl -X POST \
-https://yourdomain.com/restcomm/2012-04-24/Profiles \
--H 'Accept: */*' \
--H 'Authorization: Basic &lt;CP credentials&gt;' \
--H 'Content-Type: application/instance+json;schema="https://yourdomain.com/restcomm/2012-04-24/Profiles/schemas/rc-management-schema.json"' \
--d '{
-"featureEnablement": {
-"autoAttendant": {},
-"numberMasking": {},
-"taskRouter": {},
-"smart2FA": {},
-"callQueue": {},
-"campaignManager": {}
-}
-}
-'</pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_link_a_management_profile_to_a_business_customer"><a class="anchor" href="#_link_a_management_profile_to_a_business_customer"></a>Link a Management Profile to a Business Customer</h4>
-<div class="paragraph">
-<p>This operation links the newly created management profile to a Business Customer account.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ curl -X PUT \
-https://yourdomain.com/restcomm/2012-04-24/Profiles/{ProfileSid} \
--H 'Authorization: Basic &lt;CP creds&gt;' \
--H 'Link: &lt;https://yourdomain.com/restcomm/2012-04-24/Accounts/{BC accountSid}&gt;;rel=related' \
--H 'X-Provisioning-Operation: LINK'</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
 <h3 id="_default_profiles"><a class="anchor" href="#_default_profiles"></a>Default Profiles</h3>
 <div class="paragraph">
 <p>The Default Network Profile is pre-provisioned in the system, and can’t be modified from the REST API. The Default Network Profile Sid is "PR2a61d1839442571eb2eb88262064d1f9"</p>
@@ -4450,7 +4489,7 @@ https://yourdomain.com/restcomm/2012-04-24/Profiles/{ProfileSid} \
 </div>
 </div>
 <div class="sect2">
-<h3 id="_resource_schemas"><a class="anchor" href="#_resource_schemas"></a>Resource Schemas</h3>
+<h3 id="_resource_schemas_2"><a class="anchor" href="#_resource_schemas_2"></a>Resource Schemas</h3>
 <div class="paragraph">
 <p>For more information about resource schemas details, please have a look at <a href="https://&lt;ORG&gt;.restcomm.com/restcomm/2012-04-24/Profiles/schemas/rc-subscriber-schema.json" class="bare">https://&lt;ORG&gt;.restcomm.com/restcomm/2012-04-24/Profiles/schemas/rc-subscriber-schema.json</a></p>
 </div>
@@ -4498,7 +4537,7 @@ Subscriber and Management Profiles can only be created by the CP Administrators.
 </table>
 </div>
 <div class="sect2">
-<h3 id="_response_status"><a class="anchor" href="#_response_status"></a>Response Status</h3>
+<h3 id="_response_status_2"><a class="anchor" href="#_response_status_2"></a>Response Status</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4844,7 +4883,7 @@ Subscriber Profiles can only be modified by the CP Administrators that created t
 </table>
 </div>
 <div class="sect2">
-<h3 id="_response_status_2"><a class="anchor" href="#_response_status_2"></a>Response Status</h3>
+<h3 id="_response_status_3"><a class="anchor" href="#_response_status_3"></a>Response Status</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5305,7 +5344,7 @@ Subscriber Profiles can be read by the CP Administrator who created them.
 </table>
 </div>
 <div class="sect2">
-<h3 id="_response_status_3"><a class="anchor" href="#_response_status_3"></a>Response Status</h3>
+<h3 id="_response_status_4"><a class="anchor" href="#_response_status_4"></a>Response Status</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5650,7 +5689,7 @@ Subscriber Profiles can only be deleted by the CP Administrator who created them
 </table>
 </div>
 <div class="sect2">
-<h3 id="_response_status_4"><a class="anchor" href="#_response_status_4"></a>Response Status</h3>
+<h3 id="_response_status_5"><a class="anchor" href="#_response_status_5"></a>Response Status</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
