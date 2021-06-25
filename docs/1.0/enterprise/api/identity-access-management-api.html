@@ -2999,6 +2999,448 @@ Possible values for users created under the Business Customer account include:<b
 </table>
 </div>
 <div class="sect2">
+<h3 id="_user_roles_and_permissions"><a class="anchor" href="#_user_roles_and_permissions"></a>User Roles and Permissions</h3>
+<div class="paragraph">
+<p>The following table specifies the Business Customer user permissions to the Platform and Turnkey Applications resources based on their role.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"></td>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Capability Availability at that Account Hierarchy Level</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Administrator</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Developer</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications Administrator</strong></p></td>
+<td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications Developer</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Platform Resources</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account Settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API Credentials</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Audit API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Feature Access Control Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role Access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Business Customer Administrator<br>
+- Business Customer Developer<br>
+- Business Customer Turnkey Applications Administrator <br>
+- Business Customer Turnkey Applications Developer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">- Business Customer Turnkey Applications Administrator<br>
+- Business Customer Turnkey Applications Developer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whitelabeling Settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BYOC Settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manage Enterprise Accounts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communications Partner Organization/Account Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Turnkey Applications Enablement Management</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manage Applications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manage Numbers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manage SIP/WebRTC Clients</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P. SMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">P. Voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Call Logs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMS Logs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMS Logs Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recordings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recordings Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Notifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OutgoingCallerIDs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visual Designer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Auto Attendant</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Provisioning (GET, POST, PUT, DELETE)<br>
+AA-Announcement (CSP_ADMIN or SUPER_ADMIN or BG_ADMIN or AA_ADMIN)<br>
+AA-Menu<br>
+AA-Schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-System(CSP_ADMIN or SUPER_ADMIN) AA-Phone Number AA-Single Sign On</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA- Usage Records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Enterprise And User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Search and Usage record all endpoints all levels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Number Masking</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Provisioning(GET, POST, PUT, DELETE)<br>
+NM-User (CSP_ADMIN or SUPER_ADMIN or ENTERPRISE_ADMIN)<br>
+NM-Application<br>
+NM-Context<br>
+NM-Interaction<br>
+NM-Masked Number<br>
+NM-Participant<br>
+NM-Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Usage records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Enterprise And User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM- Search and Usage record all endpoints all levels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Task Router</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Provisioning (GET, POST, PUT, DELETE)<br>
+TR-Workspace<br>
+TR-WorkFlow<br>
+TR-TaskQueue<br>
+TR-Activity<br>
+TR-Worker<br>
+TR-Reservation<br>
+TR-Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Usage Records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Enterprise And User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR- Search and Usage record all endpoints all levels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Smart 2FA</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Traffic<br>
+send/verify/cancel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Limit Provision<br>
+2FA-WorkFlow provision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Usage Records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Search and Usage record all endpoints all levels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Campaign Manager</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign Manager-Provisioning (GET, POST, PUT, DELETE)<br>
+Enterprise<br>
+Users<br>
+Enterprise Credit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaigns (GET, POST, PUT, DELETE)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Search and Usage Records<br>
+All endpoints all levels</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
 <h3 id="_create_a_user"><a class="anchor" href="#_create_a_user"></a>Create a User</h3>
 <div class="paragraph">
 <p><strong>HTTP POST</strong> Creates a new user under the specified <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account.</p>
@@ -3030,12 +3472,12 @@ Possible values for users created under the Business Customer account include:<b
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-117 is-active" onclick="openLanguage('Curl', 117)">Curl</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Nodejs', 117)">Nodejs</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Python', 117)">Python</button>
-        <button class="sample-code-button scsIndex-117" onclick="openLanguage('Java', 117)">Java</button>
+        <button class="sample-code-button scsIndex-38 is-active" onclick="openLanguage('Curl', 38)">Curl</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Nodejs', 38)">Nodejs</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Python', 38)">Python</button>
+        <button class="sample-code-button scsIndex-38" onclick="openLanguage('Java', 38)">Java</button>
       </div>
-      <div id="Curl-117" class="sample-language-117">
+      <div id="Curl-38" class="sample-language-38">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Users.json  \
    -d 'Name=Jane Doe' \
    -d 'Email=jane.doe@company.com' \
@@ -3043,7 +3485,7 @@ Possible values for users created under the Business Customer account include:<b
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-117" class="sample-language-117" style="display:none">
+      <div id="Nodejs-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3066,7 +3508,7 @@ request.({
 });
 </code></pre>
       </div>
-      <div id="Python-117" class="sample-language-117" style="display:none">
+      <div id="Python-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 from urllib.parse import urlencode
@@ -3096,7 +3538,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-117" class="sample-language-117" style="display:none">
+      <div id="Java-38" class="sample-language-38" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
