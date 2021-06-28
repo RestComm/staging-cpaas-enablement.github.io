@@ -3052,7 +3052,7 @@ As of today Communications Providers can enable or disable access for their Busi
 <td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><span class="White"><strong>ProvisioningAgent</strong></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="5" style="background-color: #ecf6f6;"><p class="tableblock"><span class="White"><strong>Platform Resources</strong></span></p></td>
+<td class="tableblock halign-left valign-top" colspan="5" style="background-color: #ecf6f6;"><p class="tableblock"><span class="White"><strong>Platform Resources</strong></span> <a id="platform-resources-for-communications-providers"></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Account Settings</p></td>
@@ -3232,17 +3232,13 @@ As of today Communications Providers can enable or disable access for their Busi
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="5" style="background-color: #ecf6f6;"><p class="tableblock"><span class="White"><strong>Turnkey Applications</strong></span></p></td>
+<td class="tableblock halign-left valign-top" colspan="5" style="background-color: #ecf6f6;"><p class="tableblock"><span class="White"><strong>Turnkey Applications</strong></span> <a id="turnkey-applications-for-communications-providers"></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Message Exchange</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MX-Provisioning (GET, POSТ, PUT, DELETE)<br>
-MX-Domain<br>
-MX-Enterprise (ProvisioningAgent)<br>
-MX-White List<br>
-MX-XMPP Mapping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MX-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3263,7 +3259,7 @@ MX-XMPP Mapping</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MX Traffic Routing Provisioning MX-Network Carrier Config (SUPPORT or SUPER_ADMIN)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MX Traffic Routing Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3273,19 +3269,14 @@ MX-XMPP Mapping</p></td>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Auto Attendant</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Provisioning (GET, POST, PUT, DELETE)<br>
-AA-Announcement (CSP_ADMIN or SUPER_ADMIN or BG_ADMIN or AA_ADMIN)<br>
-AA-Menu<br>
-AA-Schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA-System (CSP_ADMIN or SUPER_ADMIN)<br>
-AA-Phone Number<br>
-AA-Single Sign On</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-System</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3313,17 +3304,34 @@ AA-Single Sign On</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Number Masking</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Provisioning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Usage Records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Enterprise And User</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Task Router</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Provisioning (GET, POST, PUT, DELETE)<br>
-TR-Workspace<br>
-TR-WorkFlow<br>
-TR-TaskQueue<br>
-TR-Activity<br>
-TR-Worker<br>
-TR-Reservation<br>
-TR-Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3354,11 +3362,7 @@ TR-Task</p></td>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Message Exchange for Cisco Webex</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WEBEX-Provisioning (GET, POST, PUT, DELETE)<br>
-WEBEX-Message<br>
-WEBEX-Bot<br>
-WEBEX-Mapping<br>
-WEBEX-Enterprise</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WEBEX-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3379,13 +3383,6 @@ WEBEX-Enterprise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WEBEX- Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Webex Traffic Routing Provisoning Webex-Network Carrier Config (SUPPORT or SUPER_ADMIN)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3404,7 +3401,8 @@ send/verify/cancel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Limit Provision  2FA-WorkFlow provision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Limit Provisioning<br>
+2FA-WorkFlow Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3418,44 +3416,28 @@ send/verify/cancel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2FA- Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" colspan="5"><p class="tableblock"><strong>Campaign Manager</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign Manager-Provisioning (GET, POST, PUT, DELETE)<br>
-Enterprise Users<br>
-Enterprise Credit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign Manager-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaigns(GET-POST-PUT-DELETE)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaigns</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage Records</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search and Usage Records All enpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 </tbody>
 </table>
@@ -3511,7 +3493,7 @@ Enterprise Credit</p></td>
 <td class="tableblock halign-left valign-top" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications Developer</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Platform Resources</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Platform Resources</strong> <a id="platform-resources-for-business-customers"></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Account Settings</p></td>
@@ -3718,16 +3700,13 @@ Enterprise Credit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications</strong></p></td>
+<td class="tableblock halign-left valign-top" colspan="6" style="background-color: #ecf6f6;"><p class="tableblock"><strong>Turnkey Applications</strong> <a id="turnkey-applications-for-business-customers"></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Auto Attendant</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Provisioning (GET, POST, PUT, DELETE)<br>
-AA-Announcement (CSP_ADMIN or SUPER_ADMIN or BG_ADMIN or AA_ADMIN)<br>
-AA-Menu<br>
-AA-Schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3735,7 +3714,7 @@ AA-Schedule</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA-System(CSP_ADMIN or SUPER_ADMIN) AA-Phone Number AA-Single Sign On</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-System</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3743,7 +3722,7 @@ AA-Schedule</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA- Usage Records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Usage Records</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3759,25 +3738,10 @@ AA-Schedule</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AA-Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Number Masking</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Provisioning(GET, POST, PUT, DELETE)<br>
-NM-User (CSP_ADMIN or SUPER_ADMIN or ENTERPRISE_ADMIN)<br>
-NM-Application<br>
-NM-Context<br>
-NM-Interaction<br>
-NM-Masked Number<br>
-NM-Participant<br>
-NM-Phone Number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NM-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3801,25 +3765,10 @@ NM-Phone Number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NM- Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Task Router</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Provisioning (GET, POST, PUT, DELETE)<br>
-TR-Workspace<br>
-TR-WorkFlow<br>
-TR-TaskQueue<br>
-TR-Activity<br>
-TR-Worker<br>
-TR-Reservation<br>
-TR-Task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TR-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3843,14 +3792,6 @@ TR-Task</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TR- Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Smart 2FA</strong></p></td>
 </tr>
 <tr>
@@ -3863,8 +3804,8 @@ send/verify/cancel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Limit Provision<br>
-2FA-WorkFlow provision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Limit Provisioning<br>
+2FA-WorkFlow Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3880,21 +3821,10 @@ send/verify/cancel</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2FA-Search and Usage record all endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top" colspan="6"><p class="tableblock"><strong>Campaign Manager</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign Manager-Provisioning (GET, POST, PUT, DELETE)<br>
-Enterprise<br>
-Users<br>
-Enterprise Credit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign Manager-Provisioning</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3902,7 +3832,7 @@ Enterprise Credit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaigns (GET, POST, PUT, DELETE)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaigns</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read/write</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
@@ -3910,20 +3840,11 @@ Enterprise Credit</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Usage records</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Usage Records</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">read only</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Search and Usage Records<br>
-All endpoints all levels</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no access</p></td>
 </tr>
 </tbody>
