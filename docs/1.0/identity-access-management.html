@@ -2906,14 +2906,15 @@
 <li><a href="#_overview">Overview</a></li>
 <li><a href="#_accounts_and_user_roles">Accounts and User Roles</a>
 <ul class="sectlevel2">
-<li><a href="#_primary_accounts_subaccounts">Primary Accounts &amp; Subaccounts</a></li>
+<li><a href="#_primary_accounts_sub_accounts">Primary Accounts &amp; Sub Accounts</a></li>
 <li><a href="#_user_roles">User Roles</a></li>
 <li><a href="#_user_permissions">User Permissions</a></li>
 </ul>
 </li>
-<li><a href="#_understanding_the_user_roles_and_permission_for_communications_providers">Understanding the User Roles and Permission for Communications Providers</a></li>
-<li><a href="#_understanding_the_user_roles_and_permission_for_business_customers">Understanding the User Roles and Permission for Business Customers</a></li>
-<li><a href="#_understanding_the_profile_and_identity_access_management_apis">Understanding the Profile and Identity Access Management APIs</a></li>
+<li><a href="#_understanding_the_user_roles_and_permissions_for_communications_providers">Understanding the User Roles and Permissions for Communications Providers</a></li>
+<li><a href="#_understanding_the_user_roles_and_permissions_for_business_customers">Understanding the User Roles and Permissions for Business Customers</a></li>
+<li><a href="#_business_customers_turnkey_applications_access_control">Business Customers’ Turnkey Applications Access Control</a></li>
+<li><a href="#_api_definition">API Definition</a></li>
 </ul>
 </div>
 <div id="preamble">
@@ -2925,7 +2926,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Before you get started, please make sure that your CPaaS organization has Identity Access Management (IAM) enabled. If IAM is not yet enabled for your organization, please have a look at the <a href="accounts.html">Enterprise Accounts documentation</a> instead.
+Before you get started, please make sure that your CPaaS organization has Identity Access Management (IAM) enabled. If IAM is not yet enabled for your organization, please contact your Account Manager to enable it and review the <a href="accounts.html">Enterprise Accounts documentation.</a>
 </td>
 </tr>
 </table>
@@ -2936,10 +2937,22 @@ Before you get started, please make sure that your CPaaS organization has Identi
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Identity Access Management allows Communications Providers and their Business Customers to create and manage users with specific roles and permissions under their CPaaS accounts.</p>
+<p>Identity Access Management allows Communications Providers (CPs) and their Business Customers to create and manage users with specific roles and permissions to manage access to their CPaaS account’s resources.</p>
 </div>
 <div class="paragraph">
-<p>Communications Providers can create users with different roles under their primary account. In addition, they can set up subaccounts for their Business Customers. Each Business Customer subaccount can create users and set their roles independently.</p>
+<p>Communications Providers can create users with different roles under their Primary Account. In addition, they can set up Sub Accounts for their Business Customers. Each Business Customer Sub Account can create users and set their roles independently.</p>
+</div>
+<div class="paragraph">
+<p>To access assigned resources via the available CPaaS APIs, each user can create API Access Keys. Access keys are long-term credentials for an IAM user. Access keys consist of two parts: an access key ID and a secret access key.</p>
+</div>
+<div class="paragraph">
+<p>Like a username and password, users must use both the access key ID and secret access key together to authenticate API requests. Manage access keys as securely as would be done for username and password.</p>
+</div>
+<div class="paragraph">
+<p>When users create an access key pair, they need to save the access key ID and secret access key in a secure location. The secret access key is available only once, at the time of creation. If a secret access key is lost, it must be deleted and a new one should be created.</p>
+</div>
+<div class="paragraph">
+<p>Users can create, modify and delete their access keys and have a maximum of two access keys at any given time. This allows users to rotate the active keys according to security best practices.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -2952,21 +2965,9 @@ Before you get started, please make sure that your CPaaS organization has Identi
 <h2 id="_accounts_and_user_roles"><a class="anchor" href="#_accounts_and_user_roles"></a>Accounts and User Roles</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_primary_accounts_subaccounts"><a class="anchor" href="#_primary_accounts_subaccounts"></a>Primary Accounts &amp; Subaccounts</h3>
+<h3 id="_primary_accounts_sub_accounts"><a class="anchor" href="#_primary_accounts_sub_accounts"></a>Primary Accounts &amp; Sub Accounts</h3>
 <div class="paragraph">
-<p>Primary Account’s Administrator users can create subaccounts for their Business Customers under the same CPaaS organization. They can also create and manage users on the behalf of the Business Customer&#8217;s subaccount and enable or disable their access to Platform and Turnkey Applications resources.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As of today Communications Providers can enable or disable access for their Business Customers to each one of the Turnkey Applications. In the future the Identity Access Management API will allow CPs to set a broader set of permissions targeting the various platform functionalities.
-</td>
-</tr>
-</table>
+<p>Primary Account Administrator (CP) users can create Sub Accounts for their Business Customers under the same CPaaS organization. They can also create and manage users on behalf of the Business Customer’s sub account and enable or disable their access to Platform and Turnkey Applications resources.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2975,7 +2976,7 @@ As of today Communications Providers can enable or disable access for their Busi
 <p>A user role represents a set of permissions the user has to various Platform and Turnkey Applications resources.</p>
 </div>
 <div class="paragraph">
-<p>Communications Provider&#8217;s users can have any of the following roles:</p>
+<p>A Communications Provider’s users can have any of the following roles:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2991,7 +2992,7 @@ As of today Communications Providers can enable or disable access for their Busi
 </ul>
 </div>
 <div class="paragraph">
-<p>Business Customer&#8217;s users can have any of the roles below:</p>
+<p>A Business Customer&#8217;s users can have any of the roles below:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3019,10 +3020,10 @@ As of today Communications Providers can enable or disable access for their Busi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_understanding_the_user_roles_and_permission_for_communications_providers"><a class="anchor" href="#_understanding_the_user_roles_and_permission_for_communications_providers"></a>Understanding the User Roles and Permission for Communications Providers</h2>
+<h2 id="_understanding_the_user_roles_and_permissions_for_communications_providers"><a class="anchor" href="#_understanding_the_user_roles_and_permissions_for_communications_providers"></a>Understanding the User Roles and Permissions for Communications Providers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The diagram below outlines the relationship between the Communications Provider&#8217;s CPaaS Primary Account and the users created under it.</p>
+<p>The diagram below outlines the relationship between the Communications Provider’s CPaaS Primary Account and the users created under it.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -3441,10 +3442,10 @@ send/verify/cancel</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_understanding_the_user_roles_and_permission_for_business_customers"><a class="anchor" href="#_understanding_the_user_roles_and_permission_for_business_customers"></a>Understanding the User Roles and Permission for Business Customers</h2>
+<h2 id="_understanding_the_user_roles_and_permissions_for_business_customers"><a class="anchor" href="#_understanding_the_user_roles_and_permissions_for_business_customers"></a>Understanding the User Roles and Permissions for Business Customers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The diagram below outlines the relationship between the Business Customer&#8217;s CPaaS Subaccount and the users created under it.</p>
+<p>The diagram below outlines the relationship between the Business Customer’s CPaaS Sub Account and the users created under it.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3454,7 +3455,7 @@ send/verify/cancel</p></td>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Be aware that only users with an <code>Administrator</code> role are allowed to create other users under the same subaccount.<br></p>
+<p>Be aware that only users with an <code>Administrator</code> role are allowed to create other users under the same sub account.</p>
 </div>
 <div class="paragraph">
 <p>Only users with an <code>Administrator</code> role can have full access to the Platform and Turnkey Applications resources.</p>
@@ -3467,6 +3468,42 @@ send/verify/cancel</p></td>
 <div class="content">
 <img src="_images/IAM_for_BCs.png" alt="IAM for BCs">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_business_customers_turnkey_applications_access_control"><a class="anchor" href="#_business_customers_turnkey_applications_access_control"></a>Business Customers’ Turnkey Applications Access Control</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Communications Providers can manage access to Turnkey Applications for their Business Customers through a  Management profile that can be associated with their Sub Accounts under their CPaaS organization.</p>
+</div>
+<div class="paragraph">
+<p>As depicted in the following diagram, Communications Providers can set up Profiles featuring access to different combinations of Turnkey Applications. The Profiles can then be assigned to specified Business Customers.</p>
+</div>
+<div class="paragraph">
+<p>You can find out more information on how to set this up at the Profiles API documentation.</p>
+</div>
+<div class="paragraph">
+<p><a href="api/profile-api.html">Profiles API documentation.</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/FAC.png" alt="Turnkey FAC">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>As of today, Communications Providers can enable or disable access for their Business Customers to each one of the Turnkey Applications through the <a href="api/profile-api.html">Profiles API </a>. In the future the Identity Access Management API and web UI will allow CPs to choose from a broader set of permissions targeting the various platform functionalities.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>The following table specifies the Business Customer user permissions to the Platform and Turnkey Applications resources based on their role.</p>
@@ -3849,14 +3886,8 @@ send/verify/cancel</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_understanding_the_profile_and_identity_access_management_apis"><a class="anchor" href="#_understanding_the_profile_and_identity_access_management_apis"></a>Understanding the Profile and Identity Access Management APIs</h2>
+<h2 id="_api_definition"><a class="anchor" href="#_api_definition"></a>API Definition</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>In order for your Business Customers to start using Identity Access Management, a Management profile should be associated with their subaccount under your CPaaS organization.</p>
-</div>
-<div class="paragraph">
-<p>You can find out more information on how to set this up at the <a href="api/profile-api.html">Profiles API</a> documentation.</p>
-</div>
 <div class="paragraph">
 <p><a href="api/identity-access-management-api.html">Getting Started with the Identity Access Management API</a></p>
 </div>
