@@ -4037,6 +4037,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">call screening url</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">positive integer in seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">call screening timeout</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code>, <code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
@@ -4067,6 +4073,10 @@
 <li>
 <p><strong>url.</strong> The 'url' attribute allows you to specify a url for a RCML document that will run on the called party&#8217;s end, after he/she answers, but before the parties are connected. You can use this RCML to privately play or say information to the called party, or provide a chance to decline the phone call using &lt;Gather&gt; and &lt;Hangup&gt;. The current caller will continue to hear ringing while the RCML document executes on the other end. RCML documents executed in this manner are not allowed to contain the &lt;Dial&gt; verb.</p>
 </li>
+<li>
+<p><strong>timeout</strong> The 'timeout' allows you to specify the limit in seconds that call screening waits for the called party to accept the call.
+Default value 60 seconds</p>
+</li>
 </ul>
 </div>
 <div class="sect3">
@@ -4088,11 +4098,6 @@
 </div>
 <div class="paragraph">
 <p>The <strong>&lt;Number&gt;</strong> noun specifies a PSTN Number to dial. You can use multiple <strong>&lt;Number&gt;</strong> nouns within a <strong>&lt;Dial&gt;</strong> verb to simultaneously attempt a connection with many numbers at once. The first number to accept the incoming connection is connected to the call and the other connection attempts are canceled.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/status-callback-events-dial.png" alt="Outbound Dial call events diagram">
-</div>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>

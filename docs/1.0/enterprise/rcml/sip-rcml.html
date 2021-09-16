@@ -2738,6 +2738,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">call screening url</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">positive integer in seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60 seconds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">call screening timeout</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code>, <code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
@@ -2770,6 +2776,13 @@
 </div>
 </div>
 <div class="sect3">
+<h4 id="_timeout"><a class="anchor" href="#_timeout"></a>timeout</h4>
+<div class="paragraph">
+<p>The 'timeout' allows you to specify the limit in seconds that call screening waits for the called party to accept the call.
+Default value 60 seconds</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="_method"><a class="anchor" href="#_method"></a>method</h4>
 <div class="paragraph">
 <p>The 'method' attribute allows you to specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting the URL in the 'url' attribute. The default one is POST.</p>
@@ -2788,11 +2801,6 @@
 </div>
 <div class="paragraph">
 <p>The <strong>&lt;Sip&gt;</strong> noun specifies a sip uri to dial. You can use multiple <strong>&lt;Sip&gt;</strong> nouns within a <strong>&lt;Dial&gt;</strong> verb to simultaneously attempt a connection with many sip uris at once. The first sip uri to accept the incoming connection is connected to the call and the other connection attempts are canceled.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/status-callback-events-dial.png" alt="Outbound Dial call events diagram">
-</div>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
