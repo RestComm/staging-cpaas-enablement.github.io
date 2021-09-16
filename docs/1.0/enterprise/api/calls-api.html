@@ -8,6 +8,8 @@
     <link rel="canonical" href="
       /docs/api/calls-api.html
     ">
+    <meta name="description" content="A Call represents a connection between a phone or user agent and our platform.">
+    <meta name="keywords" content="make calls, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} calls">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
@@ -2791,7 +2793,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">https://$DOMAIN/restcomm/2012-04-24/</span>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <a href="https://$DOMAIN/restcomm/2012-04-24/" class="bare">https://$DOMAIN/restcomm/2012-04-24/</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2891,6 +2893,11 @@
 </div>
 <div class="paragraph">
 <p>The <strong>StatusCallbackEvent</strong> attribute allows you to specify which events <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should webhook on. To specify multiple events separate them with a comma like this: <code>initiated,ringing,answered,completed</code>. If a StatusCallback is provided and no status callback events are specified the completed event will be sent by default.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/status-callback-events-dial.png" alt="Outbound Dial call events diagram">
+</div>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -3610,7 +3617,7 @@ public class JavaSampleClass {
 <p>Bob wants to transfer the call to Alice and sends the request to Controller (application server)</p>
 </li>
 <li>
-<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</span></code> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
+<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <a href="https://DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID" class="bare">https://DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</a> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
 </li>
 <li>
 <p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> process this Live Call Modification request and redirects the incoming call to the new RCML application (to the new URL)</p>
@@ -3632,7 +3639,7 @@ public class JavaSampleClass {
 <p>Will prepare new POST Live Call Modification request for the incoming call to be connected to the new url (that will dial to the conference)</p>
 </li>
 <li>
-<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: - <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</span>` - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
+<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: <a href="https://DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls" class="bare">https://DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</a> - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
 </li>
 <li>
 <p>Later application server can create more outgoing call requests, similar to the one above, to invite other clients or sip URLs or PSTN numbers to this conference call</p>
@@ -4878,7 +4885,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">{
+<pre>{
   "page": 0,
   "num_pages": 0,
   "page_size": 50,
@@ -4893,7 +4900,7 @@ public class JavaSampleClass {
   "last_page_uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls?Page=0&amp;PageSize=50&amp;Limit=10000",
   "calls": [
     {
-      "sid": "IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com",
+      "sid": "<a href="mailto:IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com">IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com</a>",
       "InstanceId": "IDd3ae1cc61f6c4a03be0cc4e4c89f3f50",
       "date_created": "Tue, 7 Apr 2020 11:10:15 +0000",
       "date_updated": "Tue, 7 Apr 2020 11:10:26 +0000",
@@ -4915,7 +4922,7 @@ public class JavaSampleClass {
       }
     },
     {
-      "sid": "ID308543a39dfd49b7a7231df9622763d8-CA7f995ee40d8a43074d57da0154458a14@sip.nexmo.com",
+      "sid": "<a href="mailto:ID308543a39dfd49b7a7231df9622763d8-CA7f995ee40d8a43074d57da0154458a14@sip.nexmo.com">ID308543a39dfd49b7a7231df9622763d8-CA7f995ee40d8a43074d57da0154458a14@sip.nexmo.com</a>",
       "InstanceId": "ID308543a39dfd49b7a7231df9622763d8",
       "date_created": "Tue, 7 Apr 2020 11:08:48 +0000",
       "date_updated": "Tue, 7 Apr 2020 11:09:00 +0000",
@@ -4937,7 +4944,7 @@ public class JavaSampleClass {
       }
     },
     {
-      "sid": "ID248a2ae179cc490a9b5eb892af609ce8-CA0dac2985006971c722ab398103a34a4f@sip.nexmo.com",
+      "sid": "<a href="mailto:ID248a2ae179cc490a9b5eb892af609ce8-CA0dac2985006971c722ab398103a34a4f@sip.nexmo.com">ID248a2ae179cc490a9b5eb892af609ce8-CA0dac2985006971c722ab398103a34a4f@sip.nexmo.com</a>",
       "InstanceId": "ID248a2ae179cc490a9b5eb892af609ce8",
       "date_created": "Mon, 6 Apr 2020 21:33:39 +0000",
       "date_updated": "Mon, 6 Apr 2020 21:34:12 +0000",
@@ -4959,7 +4966,7 @@ public class JavaSampleClass {
       }
     }
   ]
-}</code></pre>
+}</pre>
 </div>
 </div>
 </div>
@@ -5099,7 +5106,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">{
+<pre>{
   "page": 0,
   "num_pages": 75,
   "page_size": 1,
@@ -5110,11 +5117,11 @@ public class JavaSampleClass {
   "uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls",
   "first_page_uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls?Page=0&amp;PageSize=1&amp;Limit=10000",
   "previous_page_uri": "null",
-  "next_page_uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls?Page=1&amp;PageSize=1&amp;AfterSid=IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com&amp;Limit=10000",
+  "next_page_uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls?Page=1&amp;PageSize=1&amp;AfterSid=<a href="mailto:IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com">IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com</a>&amp;Limit=10000",
   "last_page_uri": "/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Calls?Page=75&amp;PageSize=1&amp;Limit=10000",
   "calls": [
     {
-      "sid": "IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com",
+      "sid": "<a href="mailto:IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com">IDd3ae1cc61f6c4a03be0cc4e4c89f3f50-CA0ae517906fecddfe264e95094f78f9fe@sip.nexmo.com</a>",
       "InstanceId": "IDd3ae1cc61f6c4a03be0cc4e4c89f3f50",
       "date_created": "Tue, 7 Apr 2020 11:10:15 +0000",
       "date_updated": "Tue, 7 Apr 2020 11:10:26 +0000",
@@ -5136,7 +5143,7 @@ public class JavaSampleClass {
       }
     }
   ]
-}</code></pre>
+}</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5224,7 +5231,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">{
+<pre>{
   "page": 0,
   "num_pages": 44,
   "page_size": 10,
@@ -5240,7 +5247,7 @@ public class JavaSampleClass {
   "calls": [
         ...
   ]
-}</code></pre>
+}</pre>
 </div>
 </div>
 </div>
@@ -5425,7 +5432,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">{
+<pre>{
   "page": 0,
   "num_pages": 1,
   "page_size": 50,
@@ -5436,7 +5443,7 @@ public class JavaSampleClass {
   "uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls",
   "first_page_uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=0&amp;PageSize=50&amp;Limit=10000",
   "previous_page_uri": "null",
-  "next_page_uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=1&amp;PageSize=50&amp;AfterSid=ID463178db235c4f5d88dcaa2e93c891ea-CA77a54b061666eabb5cf2cfb56f7552c8@sip.nexmo.com&amp;Limit=10000",
+  "next_page_uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=1&amp;PageSize=50&amp;AfterSid=<a href="mailto:ID463178db235c4f5d88dcaa2e93c891ea-CA77a54b061666eabb5cf2cfb56f7552c8@sip.nexmo.com">ID463178db235c4f5d88dcaa2e93c891ea-CA77a54b061666eabb5cf2cfb56f7552c8@sip.nexmo.com</a>&amp;Limit=10000",
   "last_page_uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Calls?Page=1&amp;PageSize=50&amp;Limit=10000",
   "calls": [
     {
@@ -5506,7 +5513,7 @@ public class JavaSampleClass {
       }
     }
   ]
-}</code></pre>
+}</pre>
 </div>
 </div>
 </div>
