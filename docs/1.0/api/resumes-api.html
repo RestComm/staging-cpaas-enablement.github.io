@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Recordings - Restcomm Docs"></title>
+    <title data-custom-title="Resumes - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/recordings-api.html
+      https://dev.restcomm.com/docs/1.0/api/resumes-api.html
     ">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
@@ -1420,7 +1420,7 @@
   </ul>
               </li>
               <li id="Recordings"
-                  class="nav-item is-current-page"
+                  class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3996,29 +3996,21 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="voice-category.html">CSP:Voice APIs</a></li>
-    <li class="crumb"><a href="recordings-api.html">CSP:Recordings</a></li>
+    <li class="crumb"><a href="resumes-api.html">Resumes</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>Recordings</h1>
-<div class="sect1">
-<h2 id="_recordings"><a class="anchor" href="#_recordings"></a>Recordings</h2>
+  <h1>Resumes</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Recordings are generated when you use the <strong>&lt;Record&gt;</strong> verb. Those recordings are hosted with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> for you to retrieve. The Recordings list resource represents the set of an account&#8217;s recordings.</p>
-</div>
-<div class="sect2">
-<h3 id="_recording_resource_uri"><a class="anchor" href="#_recording_resource_uri"></a>Recording Resource URI</h3>
-<div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Recordings/{RecordingSid}</strong></p>
+<p>Resumes records are generated when you are using the <a href="../rcml/resume-rcml.html"><strong>&lt;Hold&gt;</strong> verb</a>. Those records are hosted
+with <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> and are
+available for you to retrieve.</p>
 </div>
 <div class="paragraph">
-<p>To download the audio file just append <strong>.wav</strong> after the <strong>RecordingSid.</strong></p>
-</div>
-<div class="paragraph">
-<p>The URLs that contain the actual audio recordings are accessible by everyone without the need to authenticate with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>. This is per design to allow for your apps to easily access the recordings without revealing your credentials. The same is NOT true for the resource to retrieve the list of recordings so unauthenticated users cannot access the RecordingSid and hence not able to download the actual recording.</p>
+<p>The Resume records list resource represents a set of an account&#8217;s Resume records.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -4027,14 +4019,24 @@
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-Although Recording Sids in Recording URLs are essentially long random strings that are very difficult to guess, you still need to make sure that they don&#8217;t fall in the wrong hands
+The Resumes API endpoint supports JSON output only.
 </td>
 </tr>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_resource_properties"><a class="anchor" href="#_resource_properties"></a>Resource Properties</h3>
+</div>
+<div class="sect1">
+<h2 id="_resumes_resource_uri"><a class="anchor" href="#_resumes_resource_uri"></a>Resumes Resource URI</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Resumes/{Sid}</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resource_properties"><a class="anchor" href="#_resource_properties"></a>Resource Properties</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4048,118 +4050,56 @@ Although Recording Sids in Recording URLs are essentially long random strings th
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies this recording.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date that this recording was created.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateUpdated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date that this recording was last updated.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the Account that created this recording.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CallSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the call during which the recording was made.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The length of the recording, in seconds.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ApiVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">api_version</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The API version in use during the recording.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm">https://$DOMAIN/restcomm</span></code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date this record was created in RFC2822 format.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FileUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm">https://$DOMAIN/restcomm</span></code>. It can be used to access the WAV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies this record.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The S3 URI for this recording - Exists ONLY IF Amazon S3 integration is enabled and security level is NONE-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">org_sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the Organization which belongs to the Account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the Account that created this record.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">call_sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the call where the operation was executed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The status of the resume procedure. Possible values are: resumed, failed, no-answer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sip_response_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SIP response code received in response to the SIP re-INVITE request sent by <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> to the SIP endpoint.  If the re-invite is not replied to and times out, the value will be 408.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this record, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm">https://$DOMAIN/restcomm</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h3>
-<div class="paragraph">
-<p><strong>HTTP GET.</strong> Returns the representation of a Recording resource, including the properties above.</p>
-</div>
-<div class="paragraph">
-<p><strong>HTTP DELETE</strong>. Removes the recording from the account.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="sect1">
-<h2 id="_recording_list_resource"><a class="anchor" href="#_recording_list_resource"></a>Recording List Resource</h2>
+<h2 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_recording_list_resource_uri"><a class="anchor" href="#_recording_list_resource_uri"></a>Recording List Resource URI</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Recordings</strong></p>
-</li>
-<li>
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Calls/{CallSid}/Recordings</strong></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Unlike the Recording instance resource described above, the list of recordings IS protected by your account credentials like most parts of this API. You must use HTTP basic auth to access the Recordings list resource.*
-</td>
-</tr>
-</table>
+<h3 id="_http_get"><a class="anchor" href="#_http_get"></a>HTTP GET</h3>
+<div class="paragraph">
+<p>Returns the representation of a Resume resource, including the properties above.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h3>
-<div class="sect3">
-<h4 id="_http_get"><a class="anchor" href="#_http_get"></a>HTTP GET</h4>
-<div class="paragraph">
-<p>Returns the list representation of all the Recording resources for this Account, including the properties above.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_http_delete"><a class="anchor" href="#_http_delete"></a>HTTP DELETE</h4>
-<div class="paragraph">
-<p>Deletes a recording that belongs to this Account.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_how_to_record_a_message"><a class="anchor" href="#_how_to_record_a_message"></a>How to Record a Message</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Go to the RCML section to learn how to record a message.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_get_list_of_recordings"><a class="anchor" href="#_get_list_of_recordings"></a>Get List of Recordings</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Here&#8217;s how you can list your recordings:</p>
-</div>
+<h3 id="_listing_a_single_hold_record"><a class="anchor" href="#_listing_a_single_hold_record"></a>Listing a Single Hold Record</h3>
 <script>
       function openLanguage(language, index) {
         const sampleClasses = document.getElementsByClassName("sample-language-" + index);
@@ -4179,17 +4119,17 @@ Unlike the Recording instance resource described above, the list of recordings I
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-63 is-active" onclick="openLanguage('Curl', 63)">Curl</button>
-        <button class="sample-code-button scsIndex-63" onclick="openLanguage('Nodejs', 63)">Nodejs</button>
-        <button class="sample-code-button scsIndex-63" onclick="openLanguage('Python', 63)">Python</button>
-        <button class="sample-code-button scsIndex-63" onclick="openLanguage('Java', 63)">Java</button>
+        <button class="sample-code-button scsIndex-71 is-active" onclick="openLanguage('Curl', 71)">Curl</button>
+        <button class="sample-code-button scsIndex-71" onclick="openLanguage('Nodejs', 71)">Nodejs</button>
+        <button class="sample-code-button scsIndex-71" onclick="openLanguage('Python', 71)">Python</button>
+        <button class="sample-code-button scsIndex-71" onclick="openLanguage('Java', 71)">Java</button>
       </div>
-      <div id="Curl-63" class="sample-language-63">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Recordings.json  \
+      <div id="Curl-71" class="sample-language-71">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-63" class="sample-language-63" style="display:none">
+      <div id="Nodejs-71" class="sample-language-71" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4198,7 +4138,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -4208,7 +4148,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-63" class="sample-language-63" style="display:none">
+      <div id="Python-71" class="sample-language-71" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4220,7 +4160,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db',
       headers=headers)
 res = conn.getresponse()
 
@@ -4228,7 +4168,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-63" class="sample-language-63" style="display:none">
+      <div id="Java-71" class="sample-language-71" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4244,7 +4184,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Recordings.json");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -4260,97 +4200,57 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-decode:true hljs" data-lang="decode:true">{"page":0,"num_pages":0,"page_size":50,"total":34,"start":"0","end":"34","uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json","first_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=0&amp;PageSize=50","previous_page_uri":"null","next_page_uri":"null","last_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=0&amp;PageSize=50","recordings":
-    [
-        {
-            "sid":"RF50675909d9c94acda36f0e119b6cb431",
-            "date_created":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "date_updated":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "account_sid":"ACae6e420f425248d6a26948c17a9e2acf",
-            "call_sid":"CAfe9ce46f104f4beeb10c83a5ddd2be66",
-            "duration":"14.70275",
-            "api_version":"2012-04-24",
-            "uri":"/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/RE50675909d9c94acda36f0e119b6cb431.json",
-            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
-        },
-        ...
-    ]
+<pre class="highlightjs highlight"><code class="language-decode:true hljs" data-lang="decode:true">{
+  "api_version": "2012-04-24",
+  "sid": "RMc377eb0e657e415383de087ab38797db",
+  "date_created": "2021-03-09T12:03:00.787Z",
+  "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "org_sid": "ORfe81fe8a3d5f4d5391e901db0bf5755d",
+  "call_sid": "IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49",
+  "status": "resumed",
+  "sip_response_code": 200,
+  "uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db"
 }</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<strong>&lt;Sid&gt;</strong> holds the file name of the recorded message. The recording Sid.<strong>wav</strong> is available in the file system only.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>If you want to return the recording url you will need to parse the <strong>&lt;Uri&gt;/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/REb4c03af76cdc4a27aad0d9d759e119bc&lt;/Uri&gt;</strong> response from <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> and add the extension .<strong>wav</strong></p>
-</div>
-<div class="paragraph">
-<p>The <strong>&lt;Uri&gt;</strong> holds the http URI that can be used for playback or to download the recorded message.
-Here is how to access the file using http <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav">https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav</span>`</code></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_list_filter"><a class="anchor" href="#_list_filter"></a>List Filter</h2>
+<h2 id="_hold_list_resource"><a class="anchor" href="#_hold_list_resource"></a>Hold List Resource</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_refers_list_resource_uri"><a class="anchor" href="#_refers_list_resource_uri"></a>Refers List Resource URI</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>. The following GET query string parameters allow you to limit the list returned. Note, parameters are case-sensitive:</p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Resumes</strong></p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">StartTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only show recordings that were made on this date/time or later, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example <code>2018-10-05T22:45:32</code>) or, if you want to omit the time, YYYY-MM-DD (for example <code>2018-10-05</code>). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.  A 400 response will be returned if syntax is invalid</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">EndTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only show recordings that were made on this date/time or earlier, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example <code>2018-10-06T02:10:03</code>) or, if you want to omit the time, YYYY-MM-DD (for example <code>2018-10-06</code>). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.  A 400 response will be returned if syntax is invalid</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CallSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only show recordings that have been started from this CallSid</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_filter_using_the_callsid_parameter"><a class="anchor" href="#_filter_using_the_callsid_parameter"></a>Filter using the CallSid parameter.</h3>
+<h3 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h3>
+<div class="sect3">
+<h4 id="_http_get_2"><a class="anchor" href="#_http_get_2"></a>HTTP GET</h4>
 <div class="paragraph">
-<p>The example below will only return Recordings that has been started from this CallSid</p>
+<p>Returns the list representation of all the Resume records resources for a given account, including the properties above.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_a_list_of_resume_records"><a class="anchor" href="#_getting_a_list_of_resume_records"></a>Getting a List of Resume Records</h2>
+<div class="sectionbody">
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-64 is-active" onclick="openLanguage('Curl', 64)">Curl</button>
-        <button class="sample-code-button scsIndex-64" onclick="openLanguage('Nodejs', 64)">Nodejs</button>
-        <button class="sample-code-button scsIndex-64" onclick="openLanguage('Python', 64)">Python</button>
-        <button class="sample-code-button scsIndex-64" onclick="openLanguage('Java', 64)">Java</button>
+        <button class="sample-code-button scsIndex-72 is-active" onclick="openLanguage('Curl', 72)">Curl</button>
+        <button class="sample-code-button scsIndex-72" onclick="openLanguage('Nodejs', 72)">Nodejs</button>
+        <button class="sample-code-button scsIndex-72" onclick="openLanguage('Python', 72)">Python</button>
+        <button class="sample-code-button scsIndex-72" onclick="openLanguage('Java', 72)">Java</button>
       </div>
-      <div id="Curl-64" class="sample-language-64">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Recordings.json?CallSid=CAfe9ce46f104f5beeb10c83a5dad2be66  \
+      <div id="Curl-72" class="sample-language-72">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-64" class="sample-language-64" style="display:none">
+      <div id="Nodejs-72" class="sample-language-72" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4359,7 +4259,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json?CallSid=CAfe9ce46f104f5beeb10c83a5dad2be66',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -4369,7 +4269,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-64" class="sample-language-64" style="display:none">
+      <div id="Python-72" class="sample-language-72" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4381,7 +4281,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json?CallSid=CAfe9ce46f104f5beeb10c83a5dad2be66',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes',
       headers=headers)
 res = conn.getresponse()
 
@@ -4389,7 +4289,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-64" class="sample-language-64" style="display:none">
+      <div id="Java-72" class="sample-language-72" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4405,7 +4305,189 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Recordings.json?CallSid=CAfe9ce46f104f5beeb10c83a5dad2be66");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestMethod("GET");
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
+<div class="paragraph">
+<p>The response will be similar to the one below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-decode:true hljs" data-lang="decode:true">{
+ "page":0,
+ "num_pages":0,
+ "page_size":50,
+ "total":34,
+ "start":"0",
+ "end":"34",
+ "uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes",
+ "first_page_uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?Page=0&amp;PageSize=50",
+ "previous_page_uri":"null",
+ "next_page_uri":"null",
+ "last_page_uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?Page=0&amp;PageSize=50",
+ "resumes":
+    [
+        {
+            "api_version": "2012-04-24",
+            "sid": "RMc377eb0e657e415383de087ab38797db",
+            "date_created": "2021-03-09T12:03:00.787Z",
+            "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "org_sid": "ORfe81fe8a3d5f4d5391e901db0bf5755d",
+            "call_sid": "IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49",
+            "status": "resumed",
+            "sip_response_code": 200,
+            "uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db"
+        },
+        ...
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_filter"><a class="anchor" href="#_list_filter"></a>List Filter</h3>
+<div class="sect3">
+<h4 id="_http_get_3"><a class="anchor" href="#_http_get_3"></a>HTTP GET</h4>
+<div class="paragraph">
+<p>The following GET query string parameters allow you to limit the list returned.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Parameters are case-sensitive.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters records with a particular statues</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">resumed, failed, no-answer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SipResponseCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters records that received a given SIP response code received in response to the SIP re-INVITE request sent to the SIP endpoint.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StartTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters records created on this date or later. Timezone is assumed to be UTC.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YYYY-MM-DDTHH:MM:SS (eg 2018-10-05T22:45:32) or YYYY-MM-DD (eg 2018-10-05)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filters records created on this date or earlier. Timezone is assumed to be UTC.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">YYYY-MM-DDTHH:MM:SS (eg 2018-10-05T22:45:32) or YYYY-MM-DD (eg 2018-10-05)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CallSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Filter records that were executed in the context of a Call</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">example: IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_filtering_by_callsid_parameter"><a class="anchor" href="#_filtering_by_callsid_parameter"></a>Filtering by CallSid Parameter</h3>
+<div class="paragraph">
+<p>The example below will return Resume records that have been executed for a particular Call.</p>
+</div>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-73 is-active" onclick="openLanguage('Curl', 73)">Curl</button>
+        <button class="sample-code-button scsIndex-73" onclick="openLanguage('Nodejs', 73)">Nodejs</button>
+        <button class="sample-code-button scsIndex-73" onclick="openLanguage('Python', 73)">Python</button>
+        <button class="sample-code-button scsIndex-73" onclick="openLanguage('Java', 73)">Java</button>
+      </div>
+      <div id="Curl-73" class="sample-language-73">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49  \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-73" class="sample-language-73" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+
+request({
+      method: 'GET',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+   }
+);
+</code></pre>
+      </div>
+      <div id="Python-73" class="sample-language-73" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("GET", '/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49',
+      headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-73" class="sample-language-73" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -4421,20 +4503,31 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-lang:xml hljs" data-lang="lang:xml">{"page":0,"num_pages":0,"page_size":50,"total":17,"start":"0","end":"17","uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json","first_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=0&amp;PageSize=50","previous_page_uri":"null","next_page_uri":"null","last_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=0&amp;PageSize=50","recordings":
+<pre class="highlightjs highlight"><code class="language-lang:xml hljs" data-lang="lang:xml">{
+ "page":0,
+ "num_pages":0,
+ "page_size":50,
+ "total":34,
+ "start":"0",
+ "end":"34",
+ "uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes",
+ "first_page_uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49&amp;Page=0&amp;PageSize=50",
+ "previous_page_uri":"null",
+ "next_page_uri":"null",
+ "last_page_uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49&amp;Page=0&amp;PageSize=50",
+ "resumes":
     [
         {
-            "sid":"RF50675909d9c94acda36f0e119b6cb431",
-            "date_created":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "date_updated":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "account_sid":"ACae6e420f425248d6a26948c17a9e2acf",
-            "call_sid":"CAfe9ce46f104f5beeb10c83a5dad2be66",
-            "duration":"14.70275",
-            "api_version":"2012-04-24",
-            "uri":"/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/RE50675909d9c94acda36f0e119b6cb431.json",
-            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
-        },
-        ...
+            "api_version": "2012-04-24",
+            "sid": "RMc377eb0e657e415383de087ab38797db",
+            "date_created": "2021-03-09T12:03:00.787Z",
+            "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+            "org_sid": "ORfe81fe8a3d5f4d5391e901db0bf5755d",
+            "call_sid": "IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49",
+            "status": "resumed",
+            "sip_response_code": 200,
+            "uri": "/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Resumes/RMc377eb0e657e415383de087ab38797db"
+        }
     ]
 }</code></pre>
 </div>
@@ -4446,418 +4539,7 @@ public class JavaSampleClass {
 <h2 id="_paging_information"><a class="anchor" href="#_paging_information"></a>Paging Information</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>HTTP GET.</strong> The following GET query string parameters allow you to limit the list returned. Note, parameters are case-sensitive:</p>
-</div>
-<div class="sect2">
-<h3 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The current page number. Zero-indexed, so the first page is 0. A 400 response will be returned if this page doesn&#8217;t exist</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">How many items are in each page</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example"><a class="anchor" href="#_example"></a>Example.</h3>
-<div class="paragraph">
-<p>The command below will return a single item from the list of recordings using the PageSize parameter</p>
-</div>
-      <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-65 is-active" onclick="openLanguage('Curl', 65)">Curl</button>
-        <button class="sample-code-button scsIndex-65" onclick="openLanguage('Nodejs', 65)">Nodejs</button>
-        <button class="sample-code-button scsIndex-65" onclick="openLanguage('Python', 65)">Python</button>
-        <button class="sample-code-button scsIndex-65" onclick="openLanguage('Java', 65)">Java</button>
-      </div>
-      <div id="Curl-65" class="sample-language-65">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Recordings.json?PageSize=1  \
-   -u 'YourAccountSid:YourAuthToken'
-</code></pre>
-      </div>
-      <div id="Nodejs-65" class="sample-language-65" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
-
-// Provide your Account Sid and Auth Token from your Console Account page
-const ACCOUNT_SID = 'my_ACCOUNT_SID';
-const AUTH_TOKEN = 'my_AUTH_TOKEN';
-
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json?PageSize=1',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
-   },
-   function (error, response, body) {
-      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
-      ...
-   }
-);
-</code></pre>
-      </div>
-      <div id="Python-65" class="sample-language-65" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
-from base64 import b64encode
-
-# Provide your Account Sid and Auth Token from your Console Account page
-ACCOUNT_SID = 'my_ACCOUNT_SID'
-AUTH_TOKEN = 'my_AUTH_TOKEN'
-
-userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
-
-conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Recordings.json?PageSize=1',
-      headers=headers)
-res = conn.getresponse()
-
-# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
-...
-</code></pre>
-      </div>
-      <div id="Java-65" class="sample-language-65" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
-import java.util.Base64;
-
-public class JavaSampleClass {
-   // Provide your Account Sid and Auth Token from your Console Account page
-   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
-   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
-
-
-   public static void main(String[] args) throws Exception {
-      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
-      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
-
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Recordings.json?PageSize=1");
-      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-      conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("GET");
-
-      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
-      ...
-  }
-}
-</code></pre>
-      </div>
-<div class="paragraph">
-<p>The result of the <strong>PageSize</strong> parameter</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-lang:xml hljs" data-lang="lang:xml">{"page":0,"num_pages":34,"page_size":1,"total":34,"start":"0","end":"0","uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json","first_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=0&amp;PageSize=1","previous_page_uri":"null","next_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=1&amp;PageSize=1&amp;AfterSid=RF50675909d9c94acda36f0e119b6cb431","last_page_uri":"/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings.json?Page=34&amp;PageSize=1","recordings":
-    [
-        {
-            "sid":"RF50675909d9c94acda36f0e119b6cb431",
-            "date_created":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "date_updated":"Mon, 6 Jan 2014 08:51:07 +0900",
-            "account_sid":"ACae6e420f425248d6a26948c17a9e2acf",
-            "call_sid":"CAfe9ce46f104f5beeb10c83a5dad2be66",
-            "duration":"14.70275",
-            "api_version":"2012-04-24",
-            "uri":"/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/RE50675909d9c94acda36f0e119b6cb431.json",
-            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
-        }
-    ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_additional_paging_information"><a class="anchor" href="#_additional_paging_information"></a>Additional Paging Information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The API returns URIs to the next, previous, first and last pages of the returned list as shown in the table below:</p>
-</div>
-<div class="sect2">
-<h3 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the current page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Firstpageuri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for the first page of this list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Nextpageuri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for the next page of this list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Previouspageuri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for the previous page of this list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lastpageuri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for the last page of this list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">NumPages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total number of pages.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total number of items in the list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The position in the overall list of the first item in this page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">End</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The position in the overall list of the last item in this page.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>HTTP GET.</strong> You can use the <strong>SortBy</strong> GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: <strong>SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;</strong>. If no direction parameter is provided, then the listing of recordings is sorted by the attribute in ascending order. A 400 response will be returned if syntax is invalid. Below you can find the possible attributes you can sort by:</p>
-</div>
-<div class="sect2">
-<h3 id="_sortby_attributes"><a class="anchor" href="#_sortby_attributes"></a>SortBy Attributes</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by date at which the recording was created</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Duration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the duration of the recording</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CallSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the CallSid of the recording, which points to the call to which the recording is related to</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h3>
-<div class="paragraph">
-<p>The command below will return recordings sorted by the creation date in ascending order using SortBy parameter:</p>
-</div>
-      <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-66 is-active" onclick="openLanguage('Curl', 66)">Curl</button>
-        <button class="sample-code-button scsIndex-66" onclick="openLanguage('Nodejs', 66)">Nodejs</button>
-        <button class="sample-code-button scsIndex-66" onclick="openLanguage('Python', 66)">Python</button>
-        <button class="sample-code-button scsIndex-66" onclick="openLanguage('Java', 66)">Java</button>
-      </div>
-      <div id="Curl-66" class="sample-language-66">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/ACCOUNT_SID/Recordings.xml?SortBy=DateCreated:asc'  \
-   -u 'YourAccountSid:YourAuthToken'
-</code></pre>
-      </div>
-      <div id="Nodejs-66" class="sample-language-66" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
-
-// Provide your Account Sid and Auth Token from your Console Account page
-const ACCOUNT_SID = 'my_ACCOUNT_SID';
-const AUTH_TOKEN = 'my_AUTH_TOKEN';
-
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.xml?SortBy=DateCreated:asc'',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
-   },
-   function (error, response, body) {
-      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
-      ...
-   }
-);
-</code></pre>
-      </div>
-      <div id="Python-66" class="sample-language-66" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
-from base64 import b64encode
-
-# Provide your Account Sid and Auth Token from your Console Account page
-ACCOUNT_SID = 'my_ACCOUNT_SID'
-AUTH_TOKEN = 'my_AUTH_TOKEN'
-
-userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
-
-conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings.xml?SortBy=DateCreated:asc'',
-      headers=headers)
-res = conn.getresponse()
-
-# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
-...
-</code></pre>
-      </div>
-      <div id="Java-66" class="sample-language-66" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
-import java.util.Base64;
-
-public class JavaSampleClass {
-   // Provide your Account Sid and Auth Token from your Console Account page
-   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
-   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
-
-
-   public static void main(String[] args) throws Exception {
-      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
-      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
-
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/" + ACCOUNT_SID + "/Recordings.xml?SortBy=DateCreated:asc'");
-      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-      conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("GET");
-
-      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
-      ...
-  }
-}
-</code></pre>
-      </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_delete_a_recording"><a class="anchor" href="#_delete_a_recording"></a>Delete a Recording</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_recording_delete_resource_uri"><a class="anchor" href="#_recording_delete_resource_uri"></a>Recording Delete Resource URI</h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Recordings/{RecordingSid}</strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>From the bash terminal, you can run the command below:</p>
-</div>
-      <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-67 is-active" onclick="openLanguage('Curl', 67)">Curl</button>
-        <button class="sample-code-button scsIndex-67" onclick="openLanguage('Nodejs', 67)">Nodejs</button>
-        <button class="sample-code-button scsIndex-67" onclick="openLanguage('Python', 67)">Python</button>
-        <button class="sample-code-button scsIndex-67" onclick="openLanguage('Java', 67)">Java</button>
-      </div>
-      <div id="Curl-67" class="sample-language-67">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X DELETE https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/ACCOUNT_SID/Recordings/RECORDING_SID'  \
-   -u 'YourAccountSid:YourAuthToken'
-</code></pre>
-      </div>
-      <div id="Nodejs-67" class="sample-language-67" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
-
-// Provide your Account Sid and Auth Token from your Console Account page
-const ACCOUNT_SID = 'my_ACCOUNT_SID';
-const AUTH_TOKEN = 'my_AUTH_TOKEN';
-// Provide additional path parameters if applicable
-const RECORDING_SID = 'my_RECORDING_SID'
-
-request({
-      method: 'DELETE',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings/' + RECORDING_SID + ''',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
-   },
-   function (error, response, body) {
-      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
-      ...
-   }
-);
-</code></pre>
-      </div>
-      <div id="Python-67" class="sample-language-67" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
-from base64 import b64encode
-
-# Provide your Account Sid and Auth Token from your Console Account page
-ACCOUNT_SID = 'my_ACCOUNT_SID'
-AUTH_TOKEN = 'my_AUTH_TOKEN'
-// Provide additional path parameters if applicable
-RECORDING_SID = 'my_RECORDING_SID'
-
-userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
-
-conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("DELETE", '/restcomm/2012-04-24/"Accounts/' + ACCOUNT_SID + '/Recordings/' + RECORDING_SID + ''',
-      headers=headers)
-res = conn.getresponse()
-
-# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
-...
-</code></pre>
-      </div>
-      <div id="Java-67" class="sample-language-67" style="display:none">
-        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
-import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
-import java.util.Base64;
-
-public class JavaSampleClass {
-   // Provide your Account Sid and Auth Token from your Console Account page
-   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
-   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
-   // Provide additional path parameters if applicable
-   public static final String RECORDING_SID = "my_RECORDING_SID"
-
-   public static void main(String[] args) throws Exception {
-      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
-      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
-
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/"Accounts/" + ACCOUNT_SID + "/Recordings/" + RECORDING_SID + "'");
-      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
-      conn.setRequestProperty("Authorization", "Basic " + encoded);
-      conn.setRequestMethod("DELETE");
-
-      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
-      ...
-  }
-}
-</code></pre>
-      </div>
+<p>The request supports standard paging information. For more details, please visit the <a href="calls-api.html#_paging_information">Paging Information</a> documentation.</p>
 </div>
 </div>
 </div>
