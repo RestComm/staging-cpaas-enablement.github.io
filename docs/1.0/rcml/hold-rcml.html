@@ -1419,6 +1419,26 @@
                               </li>
   </ul>
               </li>
+              <li id="Hold"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/holds-api.html">Hold</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Recordings"
                   class="nav-item"
                   data-depth="2">
@@ -3861,6 +3881,46 @@
             </span>
                 </div>
                               </li>
+              <li id="Hold"
+                  class="nav-item is-current-page"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="hold-rcml.html">Hold</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Resume"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="resume-rcml.html">Resume</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Hangup"
                   class="nav-item"
                   data-depth="2">
@@ -3996,7 +4056,8 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="hold-rcml.html">Hold</a></li>
+    <li class="crumb"><a href="overview.html">CSP:RCML</a></li>
+    <li class="crumb"><a href="hold-rcml.html">CSP:Hold</a></li>
   </ul>
 </nav>
 </div>
@@ -4007,8 +4068,7 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>During a programmable SIP call, the RCML &lt;Hold&gt; Verb instructs <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>
-to put the remote party on hold with silence or music on hold.
-Calls wait on hold until the call is resumed via the &lt;Resume&gt; verb.</p>
+to put the remote party on hold with silence or music on hold. Calls wait on hold until the call is resumed via the &lt;Resume&gt; verb.</p>
 </div>
 <div class="paragraph">
 <p>The &lt;Hold&gt; feature can be invoked via REST API as well.</p>
@@ -4164,6 +4224,23 @@ will also send the <a href="https://www.restcomm.com/docs/rcml/overview.html#_re
 <pre>&lt;Response&gt;
    &lt;Hold action="/myHoldAction" method="POST"/&gt;
 &lt;/Response&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hold_call_flows"><a class="anchor" href="#_hold_call_flows"></a>Hold Call Flows</h3>
+<div class="paragraph">
+<p>The following flow diagrams illustrate the possible call flow scenarios for the RCML <strong>&lt;Hold&gt;</strong> verb.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_successful_hold"><a class="anchor" href="#_successful_hold"></a>Successful Hold</h3>
+<div class="paragraph">
+<p>The diagram below outlines dialing to a Restcomm IVR. After the subscriber press a digit, call is held to the destination subscriber.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/hold_successful.png" alt="Successful Hold Call Flow">
 </div>
 </div>
 </div>
