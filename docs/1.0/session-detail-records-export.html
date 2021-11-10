@@ -2985,8 +2985,12 @@
 <li><a href="#_directory_convention">Directory Convention</a></li>
 <li><a href="#_authentication">Authentication</a></li>
 <li><a href="#_retention_policy">Retention Policy</a></li>
-<li><a href="#_sdr_types">SDR Types</a></li>
-<li><a href="#_sdr_provisioning_setting_and_enablement">SDR Provisioning Setting and Enablement</a></li>
+<li><a href="#_sdr_types">SDR Types</a>
+<ul class="sectlevel2">
+<li><a href="#_supported_sdr_types_and_corresponding_apis">Supported SDR types and corresponding APIs</a></li>
+</ul>
+</li>
+<li><a href="#_sdr_provisioning_settings_and_enablement">SDR Provisioning Settings and Enablement</a></li>
 <li><a href="#_csv_settings">CSV Settings</a></li>
 <li><a href="#_example">Example</a></li>
 </ul>
@@ -3022,21 +3026,21 @@
 <h2 id="_directory_convention"><a class="anchor" href="#_directory_convention"></a>Directory Convention</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The files are uploaded following a time rotation convention. This convention allows generating files with predictable names, so simple scripts can be created to download all content without requiring listing files. The convention follows the following pattern "&lt;SDR-Type&gt;/yyyy/mm/dd/&lt;SDR-Type&gt;-yyyy-mm-dd-hh.gzip":</p>
+<p>The files are uploaded following a time rotation convention. This convention allows generating files with predictable names, so simple scripts can be created to download all content without requiring listing files. The convention follows the following pattern <code>"&lt;SDR-Type&gt;/yyyy/mm/dd/&lt;SDR-Type&gt;-yyyy-mm-dd-hh.gzip"</code>:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>"yyyy" Is the year</p>
+<p><code>"yyyy"</code> Is the year</p>
 </li>
 <li>
-<p>"mm" Is the month of the year ranging from "01" to "12".</p>
+<p><code>"mm"</code> Is the month of the year ranging from "01" to "12".</p>
 </li>
 <li>
-<p>"dd" Is the day of the month ranging from "01" to "31" (depending on the number of days in the month)</p>
+<p><code>"dd"</code> Is the day of the month ranging from "01" to "31" (depending on the number of days in the month)</p>
 </li>
 <li>
-<p>"hh" Is the hour of the day ranging from "00" to "23"</p>
+<p><code>"hh"</code> Is the hour of the day ranging from "00" to "23"</p>
 </li>
 </ul>
 </div>
@@ -3054,7 +3058,7 @@
 <h2 id="_retention_policy"><a class="anchor" href="#_retention_policy"></a>Retention Policy</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The SDR Export functionality automatically removes files older than 6 months.</p>
+<p>The SDR Export functionality automatically removes files older than six months.</p>
 </div>
 </div>
 </div>
@@ -3064,53 +3068,56 @@
 <div class="paragraph">
 <p>The Type columns supported are based on the corresponding representation at the API level. The CSV column names are based on the corresponding JSON representation. Nested fields are separated by "." character.</p>
 </div>
-<div class="paragraph">
-<p>List of supported SDR types and corresponding APIs:</p>
-</div>
+<div class="sect2">
+<h3 id="_supported_sdr_types_and_corresponding_apis"><a class="anchor" href="#_supported_sdr_types_and_corresponding_apis"></a>Supported SDR types and corresponding APIs</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>"conferences" Conferences API</p>
+<p>"calls" <a href="api/calls-api.html" class="page">Calls API</a></p>
 </li>
 <li>
-<p>"gathers_dtmf" Gathers DTMF API</p>
+<p>"conferences" <a href="api/conferences-api.html" class="page">Conferences API</a></p>
 </li>
 <li>
-<p>"gathers_speech" Gathers Speech API</p>
+<p>"gathers_dtmf" <a href="rcml/gather-rcml.html" class="page">Gather DTMF API</a></p>
 </li>
 <li>
-<p>"holds" Holds API</p>
+<p>"gathers_speech" <a href="rcml/gather-rcml.html" class="page">Gather Speech API</a></p>
 </li>
 <li>
-<p>"pauses" Pauses API</p>
+<p>"holds" <a href="api/holds-api.html" class="page">Hold API</a></p>
 </li>
 <li>
-<p>"plays" Plays API</p>
+<p>"pauses" <a href="rcml/pause-rcml.html" class="page">Pause API</a></p>
 </li>
 <li>
-<p>"recordings" Recordings API</p>
+<p>"plays" <a href="rcml/play-rcml.html" class="page">Play API</a></p>
 </li>
 <li>
-<p>"refers" Refers API</p>
+<p>"recordings" <a href="api/recordings-api.html" class="page">Recording API</a></p>
 </li>
 <li>
-<p>"resumes" Resumes API</p>
+<p>"refers" <a href="api/refers-api.html" class="page">Refers API</a></p>
 </li>
 <li>
-<p>"says" Says API</p>
+<p>"resumes" <a href="api/resumes-api.html" class="page">Resume API</a></p>
 </li>
 <li>
-<p>"sms_messages" SMS API</p>
+<p>"says" <a href="rcml/say-rcml.html" class="page">Say API</a></p>
+</li>
+<li>
+<p>"sms_messages" <a href="api/sms-api.html" class="page">SMS API</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_sdr_provisioning_setting_and_enablement"><a class="anchor" href="#_sdr_provisioning_setting_and_enablement"></a>SDR Provisioning Setting and Enablement</h2>
+<h2 id="_sdr_provisioning_settings_and_enablement"><a class="anchor" href="#_sdr_provisioning_settings_and_enablement"></a>SDR Provisioning Settings and Enablement</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In order to enable SDRs Export for your Organization, please contact support.</p>
+<p>In order to enable SDRs Export for your Organization, please <a href="https://www.telestax.com/contact/">contact your account manager</a>.</p>
 </div>
 </div>
 </div>
@@ -3118,7 +3125,7 @@
 <h2 id="_csv_settings"><a class="anchor" href="#_csv_settings"></a>CSV Settings</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Depending on which billing system you use, you may need to change the default CSV separator and columns to be included. In that case, please contact support.</p>
+<p>Depending on which billing system you use, you may need to change the default CSV separator and columns to be included. In that case, please <a href="https://www.telestax.com/contact/">contact our support team</a>.</p>
 </div>
 </div>
 </div>
@@ -3134,10 +3141,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>When prompted for a password enter the corresponding Account Token.</p>
-</div>
-<div class="paragraph">
-<p>This example is based on the Linux <code>sftp</code> tool.</p>
+<p>When prompted for a password enter the corresponding Account Token. This example is based on the Linux <code>sftp</code> tool.</p>
 </div>
 </div>
 </div>
