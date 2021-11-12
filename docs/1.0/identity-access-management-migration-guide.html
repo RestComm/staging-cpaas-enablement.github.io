@@ -3064,7 +3064,8 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC9deec0905f5c5aa8f9e40ca03b54e071/Users' \
---header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
+--header "Accept: application/json"
+-u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3126,7 +3127,8 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/ACbf4e39a26964a12972da1d31c3b07f7a/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header "Accept: application/json"
+-u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -3180,7 +3182,7 @@ This request requires basic authorization utilizing the user’s email address a
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-The role and password/AuthToken at the account level are deprecated once your organization is migrated to IAM. Modifying those through the Console UI will not take effect on the Users or their API keys.
+The role and password/AuthToken at the account level are deprecated once your Account is migrated to IAM. Modifying those through the Console UI will not take effect on the Users or their API keys.
 </td>
 </tr>
 </table>
@@ -3206,7 +3208,7 @@ The Account SID should be used as account identifier when making API requests. U
 <p>Every user has up to five password attempts. Each additional incorrect attempt will lock out the user for a small period of time that can increase to maximum 15 minutes.</p>
 </div>
 <div class="paragraph">
-<p>If you forget your password, and you would like to recover it, please contact our support team.</p>
+<p>If you forget your password, and you would like to reset it, please contact our support team.</p>
 </div>
 </div>
 </div>
@@ -3214,7 +3216,7 @@ The Account SID should be used as account identifier when making API requests. U
 <h2 id="_enabling_iam_for_a_business_customer"><a class="anchor" href="#_enabling_iam_for_a_business_customer"></a>Enabling IAM for a Business Customer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Communications Providers can enable IAM for their Business Customers (Subaccounts) by making a request to any API endpoint using the Business Customer’s Subbaccount SID and AuthToken. You can retrieve a list of your Business Customers and their SIDs and tokens by making a request to the Accounts API endpoint, or by navigating to the Subaccounts page in the Console.</p>
+<p>Communications Providers can trigger IAM migration for their Business Customers (Subaccounts) by making a request to any API endpoint using the Business Customer’s Subbaccount SID and AuthToken. You can retrieve a list of your Business Customers and their SIDs and tokens by making a request to the Accounts API endpoint, or by navigating to the Subaccounts page in the Console.</p>
 </div>
 <div class="paragraph">
 <p>After the migration a user will be created with the corresponding role as the migrated Subbaccount.</p>
@@ -3248,7 +3250,8 @@ When a Developer Subaccount is migrated, there will be only a BC/Developer user 
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET https://yourcompany.com/restcomm/2012-04-24/Accounts  \
--u 'YourAccountSid:YourAuthToken'</pre>
+--header "Accept: application/json"
+-u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -3343,7 +3346,8 @@ You must use the email and password to create the first API key. But using the e
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header "Accept: application/json"
+-u 'YourUsername:YourPassword'</pre>
 </div>
 </div>
 <div class="paragraph">
