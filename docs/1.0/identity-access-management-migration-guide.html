@@ -3011,7 +3011,7 @@
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-All API requests can only be authenticated by your Account SID and AuthToken.
+All API requests can only be authenticated by your Account SID and AuthToken, unless explicitly stated otherwise.
 </td>
 </tr>
 </table>
@@ -3030,7 +3030,7 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <h2 id="_accounts_migration_steps"><a class="anchor" href="#_accounts_migration_steps"></a>Accounts Migration Steps</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The IAM migration process contains a couple of steps that apply for both the main Account and Subaccounts of your CPaaS organization.</p>
+<p>The IAM migration process contains a couple of steps that apply for both the main Account and Sub Accounts of your CPaaS organization.</p>
 </div>
 <div class="paragraph">
 <p>When IAM is enabled by our service team, any incoming request will automatically trigger the migration process for the authenticated account.</p>
@@ -3216,10 +3216,10 @@ The Account SID should be used as account identifier when making API requests. U
 <h2 id="_enabling_iam_for_a_business_customer"><a class="anchor" href="#_enabling_iam_for_a_business_customer"></a>Enabling IAM for a Business Customer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Communications Providers can trigger IAM migration for their Business Customers (Subaccounts) by making a request to any API endpoint using the Business Customer’s Subbaccount SID and AuthToken. You can retrieve a list of your Business Customers and their SIDs and tokens by making a request to the Accounts API endpoint, or by navigating to the Subaccounts page in the Console.</p>
+<p>Communications Providers can trigger IAM migration for their Business Customers (Sub Accounts) by making a request to any API endpoint using the Business Customer’s Sub Account SID and AuthToken. You can retrieve a list of your Business Customers and their SIDs and tokens by making a request to the Accounts API endpoint, or by navigating to the Sub Accounts page in the Console.</p>
 </div>
 <div class="paragraph">
-<p>After the migration a user will be created with the corresponding role as the migrated Subbaccount.</p>
+<p>After the migration a user will be created with the corresponding role as the migrated Sub Account.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3228,7 +3228,7 @@ The Account SID should be used as account identifier when making API requests. U
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-When a Developer Subaccount is migrated, there will be only a BC/Developer user under it. If you would like to grant full permission to the Subbaccount, you will need to create a new user with BC/Administrator role.
+When a Developer Sub Account is migrated, there will be only a BC/Developer user under it. If you would like to grant full permission to the Sub Account, you will need to create a new user with BC/Administrator role.
 </td>
 </tr>
 </table>
@@ -3239,10 +3239,10 @@ When a Developer Subaccount is migrated, there will be only a BC/Developer user 
 <h2 id="_retrieving_a_list_of_migrated_business_customers"><a class="anchor" href="#_retrieving_a_list_of_migrated_business_customers"></a>Retrieving a List of Migrated Business Customers</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Communications Providers can verify if a Business Customer is migrated by making a request to the Subbaccount Users API endpoint. If a Subbaccount has not been migrated you will get a response without any Users.</p>
+<p>Communications Providers can verify if a Business Customer is migrated by making a request to the Sub Account Users API endpoint. If a Sub Account has not been migrated you will get a response without any Users.</p>
 </div>
 <div class="paragraph">
-<p>Subaccounts that have been migrated will have the BC type assigned to them. Not migrated Subbaccounts will have Full type assigned them.</p>
+<p>Sub Accounts that have been migrated will have the BC type assigned to them. Not migrated Sub Accounts will have Full type assigned them.</p>
 </div>
 <div class="paragraph">
 <p><strong>Example Request</strong></p>
