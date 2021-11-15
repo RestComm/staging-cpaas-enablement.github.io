@@ -3036,12 +3036,12 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <p>When IAM is enabled by our service team, any incoming request will automatically trigger the migration process for the authenticated account.</p>
 </div>
 <div class="paragraph">
-<p>Once the account migration is completed you will have access to the following.</p>
+<p>Once the account migration is completed you will have access to the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>A main account user with <a href="identity-access-management.html#_understanding_the_user_roles_and_permissions_for_communications_providers"><code>CP/Administrator</code></a> role and corresponding credentials (email and password) is created. You can use them to access the CPaaS Platform UIs.</p>
+<p>A main account user with <a href="identity-access-management.html#_understanding_the_user_roles_and_permissions_for_communications_providers"><code>CP/Administrator</code></a> role and corresponding account credentials (email and password) is created. You can use them to access the CPaaS Platform UIs.</p>
 </li>
 <li>
 <p>An API key is generated with your existing AccountSID and AuthToken as credentials. You can use them to access the APIs.</p>
@@ -3051,7 +3051,7 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <div class="ulist">
 <ul>
 <li>
-<p>Users <code>/accounts/accountSid/Users</code></p>
+<p>Users <code>/Accounts/accountSid/Users</code></p>
 </li>
 </ul>
 </div>
@@ -3117,7 +3117,7 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <div class="ulist">
 <ul>
 <li>
-<p>API Keys <code>/accounts/AccountSids/Users/UserSid/apiKeys</code></p>
+<p>API Keys <code>/Accounts/AccountSids/Users/UserSid/APIKeys</code></p>
 </li>
 </ul>
 </div>
@@ -3138,7 +3138,7 @@ All API requests can only be authenticated by your Account SID and AuthToken.
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-This request requires basic authorization utilizing the user’s email address and password.
+This request requires basic authorization utilizing the parent user’s email address and password.
 </td>
 </tr>
 </table>
@@ -3323,7 +3323,7 @@ When a Developer Subaccount is migrated, there will be only a BC/Developer user 
 <h2 id="_creating_business_customer_accounts_when_iam_migration_is_completed"><a class="anchor" href="#_creating_business_customer_accounts_when_iam_migration_is_completed"></a>Creating Business Customer Accounts when IAM Migration is Completed</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>When your organization’s IAM migration has been completed, all newly created Business Customer accounts will also have IAM enabled but will not have an API key generated automatically for accessing the APIs.</p>
+<p>After your organization’s IAM migration has been completed, all newly created Business Customer accounts will also be IAM enabled but will not have an API key generated automatically for accessing the APIs.</p>
 </div>
 <div class="paragraph">
 <p>The Business Customer account should issue a request to the API Keys endpoint in order to create a new API key. Once the key is generated, all API requests shall use the API key credentials.</p>
