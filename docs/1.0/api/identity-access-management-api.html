@@ -4480,7 +4480,7 @@
 <div class="sect3">
 <h4 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users</strong></p>
 </div>
 </div>
 <div class="sect3">
@@ -4517,7 +4517,8 @@
 </table>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json'  \
+<pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f'  \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'Name=Jane Doe' \
@@ -4554,7 +4555,7 @@
 <div class="sect3">
 <h4 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}</strong></p>
 </div>
 </div>
 <div class="sect3">
@@ -4598,7 +4599,8 @@
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f.json' \
+<pre>curl --location --request PUT 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'PhoneNumber=+12223334444'</pre>
@@ -4633,14 +4635,15 @@
 <div class="sect3">
 <h4 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC9deec0905f5c5aa8f9e40ca03b54e071/Users.json' \
+<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC9deec0905f5c5aa8f9e40ca03b54e071/Users' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -4700,14 +4703,15 @@
 <div class="sect3">
 <h4 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USb0b76d2f398348cfa9b18022f81d26d3.json' \
+<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USb0b76d2f398348cfa9b18022f81d26d3' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -4748,6 +4752,7 @@
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request DELETE 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/US7a3bb92e6a5543d9b2fab8e8e278ccce' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -4764,7 +4769,7 @@
 <div class="sect2">
 <h3 id="_api_keys_resource_uri"><a class="anchor" href="#_api_keys_resource_uri"></a>API Keys Resource URI</h3>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys</strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -4824,14 +4829,15 @@
 <div class="sect3">
 <h4 id="_resource_uri_6"><a class="anchor" href="#_resource_uri_6"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_example_request_5"><a class="anchor" href="#_example_request_5"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys.json' \
+<pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword'</pre>
 </div>
 </div>
@@ -4874,14 +4880,15 @@ The first API Key creation requires basic authorization utilizing the user’s e
 <div class="sect3">
 <h4 id="_resource_uri_7"><a class="anchor" href="#_resource_uri_7"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys/{ApiKeySid}.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys/{APIKeySid}</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_example_request_6"><a class="anchor" href="#_example_request_6"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef.json' \
+<pre>curl --location --request PUT 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'Status=inactive'</pre>
@@ -4932,7 +4939,8 @@ This request requires basic authorization utilizing the user’s email address a
 <h4 id="_example_request_7"><a class="anchor" href="#_example_request_7"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/ACbf4e39a26964a12972da1d31c3b07f7a/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys.json' \
+<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/ACbf4e39a26964a12972da1d31c3b07f7a/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword'</pre>
 </div>
 </div>
@@ -4987,14 +4995,15 @@ This request requires basic authorization utilizing the user’s email address a
 <div class="sect3">
 <h4 id="_resource_uri_9"><a class="anchor" href="#_resource_uri_9"></a>Resource URI</h4>
 <div class="paragraph">
-<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys/{ApiKeySid}.json</strong></p>
+<p><strong>/2012-04-24/Accounts/{AccountSid}/Users/{UserSid}/APIKeys/{APIKeySid}</strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_example_request_8"><a class="anchor" href="#_example_request_8"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef.json' \
+<pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword'</pre>
 </div>
 </div>
@@ -5043,7 +5052,8 @@ This request requires basic authorization utilizing the user’s email address a
 <h4 id="_example_request_9"><a class="anchor" href="#_example_request_9"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK763360e88c0048a594f6bde046804698..json' \
+<pre>curl --location --request DELETE 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK763360e88c0048a594f6bde046804698' \
+--header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword'</pre>
 </div>
 </div>

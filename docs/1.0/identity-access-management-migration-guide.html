@@ -3064,7 +3064,7 @@ All API requests can only be authenticated by your Account SID and AuthToken, un
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Users' \
---header "Accept: application/json"
+--header 'Accept: application/json' \
 -u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -3127,7 +3127,7 @@ All API requests can only be authenticated by your Account SID and AuthToken, un
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request GET 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys' \
---header "Accept: application/json"
+--header 'Accept: application/json' \
 -u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -3250,7 +3250,7 @@ When a Developer Sub Account is migrated, there will be only a BC/Developer user
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET https://yourcompany.com/restcomm/2012-04-24/Accounts  \
---header "Accept: application/json"
+--header 'Accept: application/json' \
 -u 'YourAPIKeyValue:YourAPIKeySecret'</pre>
 </div>
 </div>
@@ -3346,7 +3346,7 @@ You must use the email and password to create the first API key. But using the e
 <div class="listingblock">
 <div class="content">
 <pre>curl --location --request POST 'https://yourcompany.com/restcomm/2012-04-24/Accounts/AC61148eb9d61281750ccc0e13c6094fe1/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys' \
---header "Accept: application/json"
+--header 'Accept: application/json' \
 -u 'YourUsername:YourPassword'</pre>
 </div>
 </div>
