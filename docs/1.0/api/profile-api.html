@@ -4397,7 +4397,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Management Profile, that allows access to specific features for each Sub Account.</p>
+<p>Management Profile, that allows to control access for the Communications Provider to specific features and applications for each Sub Account.</p>
 </li>
 <li>
 <p>Subscriber Profile, that allows Communications Providers to set their preferable BYOC and Media Session Control settings for each Sub Account’s Calls and SMS traffic.</p>
@@ -4428,7 +4428,7 @@ In the future the REST API will allow Communications Providers to manage a wider
 <div class="sect2">
 <h3 id="_subscriber_profile"><a class="anchor" href="#_subscriber_profile"></a>Subscriber Profile</h3>
 <div class="paragraph">
-<p>Communications Providers (Primary Accounts) can create and manage Subscriber Profiles for their Business Customers (Sub Accounts) in order to configure calls and SMS routing with BYOC as well as Media Session Control.</p>
+<p>Subscriber Profiles enables Communications Providers to configure calls and SMS routing with BYOC as well as Media Session Control for their Business Customers.</p>
 </div>
 </div>
 </div>
@@ -4438,14 +4438,12 @@ In the future the REST API will allow Communications Providers to manage a wider
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_profiles_associations"><a class="anchor" href="#_profiles_associations"></a>Profiles Associations</h3>
-<div class="paragraph">
-<p>Each Organization and every Sub Account is always associated with one Management and one Subscriber Profile.</p>
-</div>
+
 </div>
 <div class="sect2">
 <h3 id="_default_profiles"><a class="anchor" href="#_default_profiles"></a>Default Profiles</h3>
 <div class="paragraph">
-<p>Upon creation, new Sub Accounts are always set up to use a System Default Management and Subscriber Profile (controlled by Telestax). However, Communications Providers can change them to new Default Profiles that contain the preferable Turnkey Applications (for Management Profile) and BYOC and Media Session Control settings (for Subscriber Profile).</p>
+<p>Upon creation, new Sub Accounts are always set up to use a System Default Management and Subscriber Profile (controlled by Telestax).  Communications Providers can override the Default Subscriber Profile  with a new default one that contains  BYOC and Media Session Control settings.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4476,10 +4474,10 @@ The System Default Management Profile allows access to all Turnkey Applications 
 <div class="sect2">
 <h3 id="_profile_inheritance"><a class="anchor" href="#_profile_inheritance"></a>Profile Inheritance</h3>
 <div class="paragraph">
-<p>While overriding the System Default Profile, the Organization will be associated with the new Default Profile and their Business Customers (Sub Accounts) will inherit the same. Every new Sub Account will inherit the Default Management and Subscriber Profiles until a Communications Provider’s Administrator changes them by associating another Profile to this specific Sub Account.</p>
+<p>When overriding the System Default Profile, the Organization will be associated with the new Default Profile and their Business Customers (Sub Accounts) will inherit the same. Every new Sub Account will inherit the Default Management and Subscriber Profiles until a Communications Provider’s Administrator changes them by associating another Profile to this specific Sub Account.</p>
 </div>
 <div class="paragraph">
-<p>During session creation, the service logic will find the associated Profile by checking the following criteria in this order:</p>
+<p>At key points during processing (i.e. authorization for Management Profiles, and session creation for Subscriber Profiles) the effective/active Profile will be computed by checking in the following order, until a Profile is found:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4487,8 +4485,7 @@ The System Default Management Profile allows access to all Turnkey Applications 
 <p>Profile associated with the specific Sub Account.</p>
 </li>
 <li>
-<p>Default Profile Associated with the corresponding organization of the Sub-Account
-System Default Profile</p>
+<p>Default Profile Associated with the corresponding organization of the Sub-Account</p>
 </li>
 </ul>
 </div>
@@ -4503,6 +4500,9 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>This lookup process facilitates an inheritance model where more specific Profiles can be created to override more generic ones. When overriding the System Default Profile, the Organization will be associated with the new Default Profile and their Business Customers (Sub Accounts) will inherit the same. Every new Sub Account will inherit the Default Management and Subscriber Profiles until a Communications Provider’s Administrator changes them by associating another Profile to this specific Sub Account.</p>
 </div>
 </div>
 </div>
@@ -4548,10 +4548,13 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 <div class="ulist">
 <ul>
 <li>
-<p>The Primary Account Administrator (CP/Administrator) can create and edit the Management Profiles while the users with other types of roles (CP/Developer and CP/ProvisioningAgent) can only view them.</p>
+<p>The Primary Account Administrator (CP/Administrator) can create and edit Management Profiles while the users with other types of roles (CP/Developer and CP/ProvisioningAgent) can only view them.</p>
 </li>
 <li>
-<p>Sub Account users  can only view the Management Profiles.</p>
+<p>The Primary Account Administrator (CP/Administrator) can assign/unassign their Management Profiles to Business Customer child Accounts”</p>
+</li>
+<li>
+<p>Sub Account users can only view Management Profiles.</p>
 </li>
 </ul>
 </div>
@@ -4561,7 +4564,10 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 <div class="ulist">
 <ul>
 <li>
-<p>The Primary Account Administrator  (CP/Administrators) can create and make changes to the Subscriber Profiles while the users with other types of roles (CP/Developer and CP/ProvisioningAgent) can only view.</p>
+<p>The Primary Account Administrator (CP/Administrators) can create and edit the Subscriber Profiles while the users with other types of roles (CP/Developer and CP/ProvisioningAgent) can only view.</p>
+</li>
+<li>
+<p>The Primary Account Administrator (CP/Administrator) can assign/unassign their Subscriber Profiles to Business Customer child Accounts</p>
 </li>
 <li>
 <p>Sub Account users have no access to the Subscriber Profiles.</p>
@@ -4597,6 +4603,18 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 </div>
 <div class="paragraph">
 <p>After successful creation the profileSid of the new Profile is returned in the Location response header.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Subscriber and Management Profiles can only be created by the CP Administrator.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_response_status"><a class="anchor" href="#_response_status"></a>Response Status</h3>
@@ -4647,44 +4665,44 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 <div class="sect2">
 <h3 id="_subscriber_profile_examples"><a class="anchor" href="#_subscriber_profile_examples"></a>Subscriber Profile Examples</h3>
 <div class="sect3">
-<h4 id="_1_add_a_new_subscriber_profile"><a class="anchor" href="#_1_add_a_new_subscriber_profile"></a>1. Add a new Subscriber Profile</h4>
+<h4 id="_add_a_new_subscriber_profile"><a class="anchor" href="#_add_a_new_subscriber_profile"></a>Add a new Subscriber Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
- https://yourdomain.com/api/2012-04-24/Profiles \
- -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
- -d '{
-   "multiProvider": {
-       "outbound-voice": [
-           {
-               "name": "network profile 1",
-               "proxy": [
-                   {
-                       "uri": "10.0.0.1:5060",
-                       "headers": []
-                   }
-               ]
-           }
-       ],
-       "outbound-sms": [
-           {
-               "name": "network profile 1"
-               "sessionType": "CLIENT",
-               "serverIpAddress": "10.0.1.1:5555",
-               "systemId": "id1",
-               "password": "pass1",
-               "version": "3.4",
-           },
-           {
-               "name": "network profile 1"
-               "sessionType": "CLIENT",
-               "serverIpAddress": "10.0.1.2:5555",
-               "systemId": "id2",
-               "password": "pass2",
-               "version": "3.4",
-           }
-       ]
-   }
+https://yourdomain.com/api/2012-04-24/Profiles \
+-H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+-d '{
+  "multiProvider": {
+      "outbound-voice": [
+          {
+              "name": "network profile 1",
+              "proxy": [
+                  {
+                      "uri": "10.0.0.1:5060",
+                      "headers": []
+                  }
+              ]
+          }
+      ],
+      "outbound-sms": [
+          {
+              "name": "network profile 1"
+              "sessionType": "CLIENT",
+              "serverIpAddress": "10.0.1.1:5555",
+              "systemId": "id1",
+              "password": "pass1",
+              "version": "3.4",
+          },
+          {
+              "name": "network profile 1"
+              "sessionType": "CLIENT",
+              "serverIpAddress": "10.0.1.2:5555",
+              "systemId": "id2",
+              "password": "pass2",
+              "version": "3.4",
+          }
+      ]
+  }
 }'</pre>
 </div>
 </div>
@@ -4702,37 +4720,45 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "multiProvider": {
-        "outbound-voice": [
-            {
-                "name": "profile X",
-                "proxy": [
-                    {
-                        "uri": "127.0.0.1:8080",
-                        "headers": []
-                    }
-                ]
-            }
-        ]
-    }
+   "multiProvider": {
+       "outbound-voice": [
+           {
+               "name": "profile X",
+               "proxy": [
+                   {
+                       "uri": "127.0.0.1:8080",
+                       "headers": []
+                   }
+               ]
+           }
+       ]
+   }
 }</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_2_establishing_media_connection_when_the_remote_node_is_behind_nat_white_list_of_nodes_ip_addresses_sip_inbound"><a class="anchor" href="#_2_establishing_media_connection_when_the_remote_node_is_behind_nat_white_list_of_nodes_ip_addresses_sip_inbound"></a>2. Establishing media connection when the remote node is behind NAT (White list of nodes IP addresses, SIP inbound)</h4>
+<h4 id="_establishing_media_connection_when_the_remote_node_is_behind_nat_whitelist_of_nodes_ip_addresses_sip_inbound"><a class="anchor" href="#_establishing_media_connection_when_the_remote_node_is_behind_nat_whitelist_of_nodes_ip_addresses_sip_inbound"></a>Establishing media connection when the remote node is behind NAT (Whitelist of nodes IP addresses, SIP inbound)</h4>
 <div class="paragraph">
 <p>This functionality helps you enhance your security levels by whitelisting a range of IP addresses allowed to communicate with CPaaS Infrastructure. The feature is disabled by default. It can be enabled when needed by adding the "mediaRemoteWhitelist" parameter to the "sessionControl" subschema of the Subscriber Profile. You need to specify one or more IP addresses that (and only that) will be allowed to initiate connections under this profile. IP addresses may be present in the form of a single address (like 192.168.1.1) or as a range (like 192.168.2.0/24).</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+
+ https://yourdomain.com/api/2012-04-24/Profiles \
+
+ -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+
+ -d '{
+
     "sessionControl": {
         "mediaRemoteWhitelist": [
             "192.168.1.1", "192.168.2.0/24"
         ]
     }
-}</pre>
+
+}'</pre>
 </div>
 </div>
 </div>
@@ -4741,11 +4767,14 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 <div class="sect4">
 <h5 id="_enabling_dns_resolution"><a class="anchor" href="#_enabling_dns_resolution"></a>Enabling DNS Resolution:</h5>
 <div class="paragraph">
-<p>By default the usage of DNS resolution for calls is disabled. To enable it, you need to add a "dns_resolve" addition of the "multiProvider.outbound-voice.proxy.uri" Subscriber Profile parameter.</p>
+<p>By default, the usage of DNS resolution for calls is disabled. To enable it, you need to add a "dns_resolve" addition of the "multiProvider.outbound-voice.proxy.uri" Subscriber Profile parameter.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+ https://yourdomain.com/api/2012-04-24/Profiles \
+ -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+ -d '{
     "multiProvider": {
         "outbound-voice": [
             {
@@ -4759,7 +4788,7 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
             }
         ],
     },
-}</pre>
+}'</pre>
 </div>
 </div>
 </div>
@@ -4770,12 +4799,15 @@ You can check which the Subscriber/Management Profiles with which Accounts and o
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+ https://yourdomain.com/api/2012-04-24/Profiles \
+ -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+ -d '{
     "sessionControl": {
         "resolveRequestUri": "resolve(default)|keep",
         "resolveToHeader" : "resolve(default)|keep"
     }
-}</pre>
+}'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4807,7 +4839,11 @@ If not specified, both extensions default to resolve to maintain backwards compa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{"multiProvider": {
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+ https://yourdomain.com/api/2012-04-24/Profiles \
+ -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+ -d '{
+"multiProvider": {
   "outbound-voice":[
     {
       "proxy":[
@@ -4822,7 +4858,9 @@ If not specified, both extensions default to resolve to maintain backwards compa
       ]
     }
   ]
-}</pre>
+}
+
+}'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4830,7 +4868,10 @@ If not specified, both extensions default to resolve to maintain backwards compa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+ https://yourdomain.com/api/2012-04-24/Profiles \
+ -H 'Content-Type: application/instance+json;schema="https://yourdomain.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
+ -d '{
     "multiProvider": {
         "outbound-sms": [
             {
@@ -4842,7 +4883,8 @@ If not specified, both extensions default to resolve to maintain backwards compa
             }
         ]
     }
-}</pre>
+
+}'</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4904,9 +4946,9 @@ If not specified, both extensions default to resolve to maintain backwards compa
 </div>
 </div>
 <div class="sect2">
-<h3 id="_subscriber_profile_examples_2"><a class="anchor" href="#_subscriber_profile_examples_2"></a>Subscriber Profile Examples</h3>
+<h3 id="_management_profile_examples"><a class="anchor" href="#_management_profile_examples"></a>Management Profile Examples</h3>
 <div class="sect3">
-<h4 id="_1_add_a_new_management_profile"><a class="anchor" href="#_1_add_a_new_management_profile"></a>1. Add a new Management Profile</h4>
+<h4 id="_add_a_new_management_profile"><a class="anchor" href="#_add_a_new_management_profile"></a>Add a new Management Profile</h4>
 <div class="paragraph">
 <p>The following example request will create a Management Profile with access to specific Turnkey Applications.</p>
 </div>
@@ -4963,7 +5005,7 @@ When a Sub Account is created by default, that account has access to all the Tur
 <p>Updates that affect the document of the actual Profile, like updating the BYOC section of a subscriber profile, so that another Network Profile IP address is used, or updating the Turnkey Applications of a Management Profile so that a different set of Applications are allowed (described in <a href="profile-api.html#_update_profile">this section</a>)</p>
 </li>
 <li>
-<p>Updates that link/unlink the Profile to an Account or Organization in order to configure them (described in subsection <a href="profile-api.html#_linkunlink_profile_to_accountorganization">Link/Unlink Profile to Account/Organization</a>)</p>
+<p>Updates that link/unlink the Profile to an Account or Organization in order to enable them (described in subsection <a href="profile-api.html#_linkunlink_profile_to_accountorganization">Link/Unlink Profile to Account/Organization</a>)</p>
 </li>
 </ul>
 </div>
@@ -5017,6 +5059,18 @@ Subscriber and Management Profiles can only be modified by the CP Administrator.
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Subscriber or Management Profile association operation may be performed against a particular Account or Organization. This operation will use HTTP 1.1 LINK/UNLINK methods, and the target resource should be populated in a Link header, using "related" as "rel" attribute. Only one Link header is supported. To associate a single Profile with multiple Accounts/Organizations, multiple requests will be required.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Subscriber and Management Profiles can only be linked by the CP Administrator. Subscriber Profiles can be linked either to the Organization (i.e. default) or to the Sub-Account. Management Profiles can only be linked to the Sub-Account
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_request_headers"><a class="anchor" href="#_request_headers"></a>Request Headers</h3>
@@ -5075,45 +5129,45 @@ Subscriber and Management Profiles can only be modified by the CP Administrator.
 <div class="sect2">
 <h3 id="_update_profile_json_document_examples"><a class="anchor" href="#_update_profile_json_document_examples"></a>Update Profile JSON document examples</h3>
 <div class="sect3">
-<h4 id="_1_update_subscriber_profile"><a class="anchor" href="#_1_update_subscriber_profile"></a>1. Update Subscriber Profile</h4>
+<h4 id="_update_subscriber_profile"><a class="anchor" href="#_update_subscriber_profile"></a>Update Subscriber Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X PUT \
-  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "multiProvider": {
-        "outbound-voice": [
-            {
-                "name": "test",
-                "proxy": [
-                    {
-                        "uri": "1.2.3.9",
-                        "headers": []
-                    }
-                ]
-            }
-        ]
-    }
+ https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+ -H 'Content-Type: application/json' \
+ -d '{
+   "multiProvider": {
+       "outbound-voice": [
+           {
+               "name": "test",
+               "proxy": [
+                   {
+                       "uri": "1.2.3.9",
+                       "headers": []
+                   }
+               ]
+           }
+       ]
+   }
 }'</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_2_update_management_profile"><a class="anchor" href="#_2_update_management_profile"></a>2. Update Management Profile</h4>
+<h4 id="_update_management_profile"><a class="anchor" href="#_update_management_profile"></a>Update Management Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X PUT \
-  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRd956d32af34847dbb952273f61070c9e \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "featureEnablement": {
-    "numberMasking": {},
-    "taskRouter": {},
-    "callQueue": {},
-    "autoAttendant": {},
-    "smart2FA": {}
-  }
+ https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRd956d32af34847dbb952273f61070c9e \
+ -H 'Content-Type: application/json' \
+ -d '{
+ "featureEnablement": {
+   "numberMasking": {},
+   "taskRouter": {},
+   "callQueue": {},
+   "autoAttendant": {},
+   "smart2FA": {}
+ }
 }'</pre>
 </div>
 </div>
@@ -5134,21 +5188,21 @@ Subscriber and Management Profiles can only be modified by the CP Administrator.
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "multiProvider": {
-    "outbound-voice": [
-      {
-        "name": "Test ABC",
-        "proxy": [
-          {
-            "uri": "sip.acme.com:5060",
-            "username": "yourusername",
-            "password": "yourpassword",
-            "headers": []
-          }
-        ]
-      }
-    ]
-  }
+ "multiProvider": {
+   "outbound-voice": [
+     {
+       "name": "Test ABC",
+       "proxy": [
+         {
+           "uri": "sip.acme.com:5060",
+           "username": "yourusername",
+           "password": "yourpassword",
+           "headers": []
+         }
+       ]
+     }
+   ]
+ }
 }</pre>
 </div>
 </div>
@@ -5157,7 +5211,7 @@ Subscriber and Management Profiles can only be modified by the CP Administrator.
 <h4 id="_2_unlink_a_profile_from_an_account"><a class="anchor" href="#_2_unlink_a_profile_from_an_account"></a>2. Unlink a Profile from an Account</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-HTTP-Method-Override:UNLINK" -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf&gt;;rel=related"</pre>
+<pre>curl -X PUT  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H " X-Provisioning-Operation:UNLINK " -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf&gt;;rel=related"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5166,38 +5220,30 @@ Subscriber and Management Profiles can only be modified by the CP Administrator.
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "multiProvider": {
-    "outbound-voice": [
-      {
-        "name": "Test ABC",
-        "proxy": [
-          {
-            "uri": "sip.acme.com:5060",
-            "username": "yourusername",
-            "password": "yourpassword",
-            "headers": []
-          }
-        ]
-      }
-    ]
-  }
+ "multiProvider": {
+   "outbound-voice": [
+     {
+       "name": "Test ABC",
+       "proxy": [
+         {
+           "uri": "sip.acme.com:5060",
+           "username": "yourusername",
+           "password": "yourpassword",
+           "headers": []
+         }
+       ]
+     }
+   ]
+ }
 }</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>To work with Amazon API GW you need to use the new link header:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X PUT  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-Provisioning-Operation:UNLINK" -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf&gt;;rel=related"</pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_3_link_a_profile_to_an_organization"><a class="anchor" href="#_3_link_a_profile_to_an_organization"></a>3. Link a Profile to an Organization</h4>
+<h4 id="_link_a_profile_to_an_organization"><a class="anchor" href="#_link_a_profile_to_an_organization"></a>Link a Profile to an Organization</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-HTTP-Method-Override:LINK" -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
+<pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-Provisioning-Operation:LINK" -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -5212,17 +5258,9 @@ To run this command you will first need to retrieve the Organization ID by query
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>To work with Amazon API GW you need to use the new link header:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-Provisioning-Operation:LINK" -H "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
-</div>
-</div>
 </div>
 <div class="sect3">
-<h4 id="_3_unlink_a_profile_from_an_organization"><a class="anchor" href="#_3_unlink_a_profile_from_an_organization"></a>3. Unlink a Profile from an Organization</h4>
+<h4 id="_unlink_a_profile_from_an_organization"><a class="anchor" href="#_unlink_a_profile_from_an_organization"></a>Unlink a Profile from an Organization</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 -H "X-HTTP-Method-Override:UNLINK" -H  "Link:&lt;https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
@@ -5271,10 +5309,10 @@ To run this command you will first need to retrieve the Organization ID by query
 <div class="ulist">
 <ul>
 <li>
-<p>Subscriber Profiles can be read by the CP Administrator who created them</p>
+<p>Subscriber Profiles can be listed by the CP Administrator who created them</p>
 </li>
 <li>
-<p>Management Profiles can be read by any role</p>
+<p>Management Profiles can be listed by the CP Administrator</p>
 </li>
 </ul>
 </div>
@@ -5398,7 +5436,7 @@ To run this command you will first need to retrieve the Organization ID by query
 <div class="sect2">
 <h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
 <div class="sect3">
-<h4 id="_1_get_first_page_of_10_subscriber_profiles_including_the_document"><a class="anchor" href="#_1_get_first_page_of_10_subscriber_profiles_including_the_document"></a>1. Get first page of 10 Subscriber Profiles, including the document</h4>
+<h4 id="_get_first_page_of_10_subscriber_profiles_including_the_document"><a class="anchor" href="#_get_first_page_of_10_subscriber_profiles_including_the_document"></a>Get first page of 10 Subscriber Profiles, including the document</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles?Page=0&amp;PageSize=10&amp;Type=Subscriber&amp;include-doc</pre>
@@ -5410,48 +5448,48 @@ To run this command you will first need to retrieve the Organization ID by query
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "page": 0,
-    "num_pages": 1,
-    "page_size": 10,
-    "total": 9,
-    "start": "0",
-    "end": "8",
-    "uri": "/2012-04-24/Profiles",
-    "first_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
-    "previous_page_uri": "null",
-    "next_page_uri": "null",
-    "last_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
-    "profiles": [
-        {
-            "uri": "https://{yourOrganization}.restcomm.com/restcomm/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
-            "dateUpdated": 1578645711000,
-            "dateCreated": 1578645711000,
-            "sid": "PRbb9004d053f84c2caafe31c1de4eff21",
-            "document": {
-                "multiProvider": {
-                    "outbound-voice": [
-                        {
-                            "name": "Foo Profile",
-                            "proxy": [
-                                {
-                                    "uri": "10.0.0.1",
-                                    "username": "",
-                                    "password": "",
-                                }
-                            ]
-                        }
-                    ],
-                    "outbound-sms": [
-                        {
-                            "destination_network_id": "104"
-                        }
-                    ]
-                }
-            },
-            "type": "Subscriber"
-        },
-        ...
-    ]
+   "page": 0,
+   "num_pages": 1,
+   "page_size": 10,
+   "total": 9,
+   "start": "0",
+   "end": "8",
+   "uri": "/2012-04-24/Profiles",
+   "first_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
+   "previous_page_uri": "null",
+   "next_page_uri": "null",
+   "last_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
+   "profiles": [
+       {
+           "uri": "https://{yourOrganization}.restcomm.com/restcomm/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
+           "dateUpdated": 1578645711000,
+           "dateCreated": 1578645711000,
+           "sid": "PRbb9004d053f84c2caafe31c1de4eff21",
+           "document": {
+               "multiProvider": {
+                   "outbound-voice": [
+                       {
+                           "name": "Foo Profile",
+                           "proxy": [
+                               {
+                                   "uri": "10.0.0.1",
+                                   "username": "",
+                                   "password": "",
+                               }
+                           ]
+                       }
+                   ],
+                   "outbound-sms": [
+                       {
+                           "destination_network_id": "104"
+                       }
+                   ]
+               }
+           },
+           "type": "Subscriber"
+       },
+       ...
+   ]
 }</pre>
 </div>
 </div>
@@ -5467,6 +5505,27 @@ To run this command you will first need to retrieve the Organization ID by query
 </div>
 <div class="paragraph">
 <p>Returns the representation of a Profile resource. All roles are allowed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Subscriber Profiles can be read by the CP Administrator who created them</p>
+</li>
+<li>
+<p>Management Profiles can be read by any role</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_query_parameters"><a class="anchor" href="#_query_parameters"></a>Query Parameters</h3>
@@ -5555,44 +5614,44 @@ To run this command you will first need to retrieve the Organization ID by query
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "multiProvider": {
-        "outbound-voice": [
-            {
-                "name": "np350",
-                "proxy": [
-                    {
-                        "uri": "10.0.0.1:5060;dns_resolve",
-                        "username":"xxx",
-                        "password":"yyy",
-                        "match":"subs2.restcomm.com"
-                        "headers": [
-                            {
-                                "headerName":"From",
-                                "key":"otg",
-                                "value":"D1SIPI"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "outbound-sms": [
-            {
-                "name": "np350",
-                "serverIpAddress": "10.0.0.2:5060",
-                "version": "3.4",
-                "systemId": "esme",
-                "password": "pass",
-                "sessionType": "CLIENT",
-                "destination_network_id": "900022"
-            }
-        ]
-    },
-    "sessionControl": {
-        "mediaRemoteWhitelist": [
-            "192.168.1.1", "192.168.1.2"
-        ]
-    }
+   "multiProvider": {
+       "outbound-voice": [
+           {
+               "name": "np350",
+               "proxy": [
+                   {
+                       "uri": "10.0.0.1:5060;dns_resolve",
+                       "username":"xxx",
+                       "password":"yyy",
+                       "match":"subs2.restcomm.com"
+                       "headers": [
+                           {
+                               "headerName":"From",
+                               "key":"otg",
+                               "value":"D1SIPI"
+                           }
+                       ]
+                   }
+               ]
+           }
+       ],
+       "outbound-sms": [
+           {
+               "name": "np350",
+               "serverIpAddress": "10.0.0.2:5060",
+               "version": "3.4",
+               "systemId": "esme",
+               "password": "pass",
+               "sessionType": "CLIENT",
+               "destination_network_id": "900022"
+           }
+       ]
+   },
+   "sessionControl": {
+       "mediaRemoteWhitelist": [
+           "192.168.1.1", "192.168.1.2"
+       ]
+   }
 }</pre>
 </div>
 </div>
@@ -5683,7 +5742,7 @@ Access to reading a Profile’s relationships is subject to the same rules as wh
 <div class="sect2">
 <h3 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h3>
 <div class="sect3">
-<h4 id="_1_get_the_account_relationships_of_a_profile"><a class="anchor" href="#_1_get_the_account_relationships_of_a_profile"></a>1. Get the Account relationships of a Profile</h4>
+<h4 id="_get_the_account_relationships_of_a_profile"><a class="anchor" href="#_get_the_account_relationships_of_a_profile"></a>Get the Account relationships of a Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships</pre>
@@ -5695,38 +5754,38 @@ Access to reading a Profile’s relationships is subject to the same rules as wh
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "page": 0,
-    "num_pages": 1,
-    "page_size": 50,
-    ...
-    "relationships": [
-        {
-            "account": {
-                "sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-                "friendly_name": "enterprise3",
-                "email_address": "enterprise3@telestax.com",
-                ...
-            },
-            "target_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-            "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
-            "source_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-            ...
-        },
-        {
-            "account": {
-                "sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
-                "organization": "ORa3c664cc679c4ff0a1837ddfa67b88c9",
-                "owner_account_sid": "ACd239d5cab74caaa43a594772e4724687",
-                "friendly_name": "enterpris01",
-                "email_address": "enterpris01@telestax.com",
-                ...
-            },
-            "target_sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
-            "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
-            "source_sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
-            ...
-        }
-    ]
+   "page": 0,
+   "num_pages": 1,
+   "page_size": 50,
+   ...
+   "relationships": [
+       {
+           "account": {
+               "sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+               "friendly_name": "enterprise3",
+               "email_address": "enterprise3@telestax.com",
+               ...
+           },
+           "target_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+           "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
+           "source_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+           ...
+       },
+       {
+           "account": {
+               "sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
+               "organization": "ORa3c664cc679c4ff0a1837ddfa67b88c9",
+               "owner_account_sid": "ACd239d5cab74caaa43a594772e4724687",
+               "friendly_name": "enterpris01",
+               "email_address": "enterpris01@telestax.com",
+               ...
+           },
+           "target_sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
+           "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
+           "source_sid": "AC75a537c3dcc7780e1cf02bf5c9807501",
+           ...
+       }
+   ]
 }</pre>
 </div>
 </div>
@@ -5789,7 +5848,7 @@ Access to reading a Profile’s specific relationships is subject to the same ru
 <div class="sect2">
 <h3 id="_examples_4"><a class="anchor" href="#_examples_4"></a>Examples</h3>
 <div class="sect3">
-<h4 id="_1_get_details_for_the_relationship_of_an_account_to_a_profile"><a class="anchor" href="#_1_get_details_for_the_relationship_of_an_account_to_a_profile"></a>1. Get details for the relationship of an Account to a Profile</h4>
+<h4 id="_get_details_for_the_relationship_of_an_account_to_a_profile"><a class="anchor" href="#_get_details_for_the_relationship_of_an_account_to_a_profile"></a>Get details for the relationship of an Account to a Profile</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships/AC5c80b0a09d5cf87c4394539c8ebaa48f</pre>
@@ -5801,16 +5860,16 @@ Access to reading a Profile’s specific relationships is subject to the same ru
 <div class="listingblock">
 <div class="content">
 <pre>{
-    "account": {
-        "sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-        "friendly_name": "enterprise3",
-        "email_address": "enterprise3@telestax.com",
-        ...
-    },
-    "target_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-    "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
-    "source_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
-    ...
+   "account": {
+       "sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+       "friendly_name": "enterprise3",
+       "email_address": "enterprise3@telestax.com",
+       ...
+   },
+   "target_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+   "profile_sid": "PRebdc5dd54a5347f9ae0a6ed00512b934",
+   "source_sid": "AC5c80b0a09d5cf87c4394539c8ebaa48f",
+   ...
 }</pre>
 </div>
 </div>
@@ -5834,7 +5893,7 @@ Access to reading a Profile’s specific relationships is subject to the same ru
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Subscriber Profiles can be deleted by any CP administrator of the same Primary Account. The System Default Subscriber Profile (i.e. PR2a61d1839442571eb2eb88262064d1f9) cannot be deleted by anyone.
+Subscriber and Management Profiles can be deleted by any CP administrator of the same Primary Account.
 </td>
 </tr>
 </table>
@@ -5869,7 +5928,7 @@ Subscriber Profiles can be deleted by any CP administrator of the same Primary A
 <div class="sect2">
 <h3 id="_examples_5"><a class="anchor" href="#_examples_5"></a>Examples</h3>
 <div class="sect3">
-<h4 id="_1_delete_a_subscriber_profile"><a class="anchor" href="#_1_delete_a_subscriber_profile"></a>1. Delete a Subscriber Profile</h4>
+<h4 id="_delete_a_subscriber_profile"><a class="anchor" href="#_delete_a_subscriber_profile"></a>Delete a Subscriber Profile</h4>
 <div class="paragraph">
 <p>To delete a Subscriber Profile, run the following command:</p>
 </div>
@@ -5909,8 +5968,7 @@ Subscriber Profiles can be deleted by any CP administrator of the same Primary A
 <p><a href="clients-api.html">Clients</a></p>
 </li>
 <li>
-<p><a href="incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
-{"mode":"full","isActive":false}</p>
+<p><a href="incoming-phone-numbers-api.html">Incoming Phone Numbers</a></p>
 </li>
 </ul>
 </div>
