@@ -5256,7 +5256,7 @@ To run this command you will first need to retrieve the Organization ID by query
 <p>Subscriber Profiles can be listed by the CP Administrator who created them</p>
 </li>
 <li>
-<p>Management Profiles can be listed by the CP Administrator</p>
+<p>Management Profiles can be listed by the corresponding authenticated account</p>
 </li>
 </ul>
 </div>
@@ -5405,7 +5405,7 @@ To run this command you will first need to retrieve the Organization ID by query
    "last_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
    "profiles": [
        {
-           "uri": "https://{yourOrganization}.restcomm.com/restcomm/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
+           "uri": "https://yourorganization.com/restcomm/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
            "dateUpdated": 1578645711000,
            "dateCreated": 1578645711000,
            "sid": "PRbb9004d053f84c2caafe31c1de4eff21",
@@ -5587,7 +5587,6 @@ To run this command you will first need to retrieve the Organization ID by query
                "systemId": "esme",
                "password": "pass",
                "sessionType": "CLIENT",
-               "destination_network_id": "900022"
            }
        ]
    },
@@ -5864,7 +5863,7 @@ Subscriber and Management Profiles can be deleted by any CP administrator of the
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">404 Not Found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Target Profile SID is missing or Link is not found</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target Profile SID is missing</p></td>
 </tr>
 </tbody>
 </table>
