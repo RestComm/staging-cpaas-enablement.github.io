@@ -4404,6 +4404,40 @@
 </li>
 </ul>
 </div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Permissions and Inheritance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subscriber Profile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Management Profile</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communications Provider can create/write</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communications Provider can assign to Organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Communications Provider inherits from Organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignee (not the owner) can read</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="_management_profile"><a class="anchor" href="#_management_profile"></a>Management Profile</h3>
 <div class="paragraph">
@@ -4422,7 +4456,7 @@ In the future the REST API will allow Communications Providers to manage a wider
 </table>
 </div>
 <div class="paragraph">
-<p>The Management Profile REST API is only accessible by the Primary Account and any Administrator of this account can create and manage the Profiles.</p>
+<p>The Profile REST API and Management Profile are only accessible by the Primary Account. Any Administrator of this account can create and manage the Profiles.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4496,7 +4530,7 @@ The System Default Management Profile allows access to all Turnkey Applications 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can check which the Subscriber/Management Profiles with which Accounts and organizations are associated by retrieving them through their respective API Endpoints and inspecting the Link Response Headers.
+You can check which are the effective Profiles for a given account and organization by retrieving them through their respective API Endpoints and inspecting the Link Response Headers. In addition, you can use the Profiles REST API endpoint to find out which profile is associated with a given account and organization.
 </td>
 </tr>
 </table>
@@ -4745,19 +4779,14 @@ https://yourorganization.com/api/2012-04-24/Profiles \
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
-
  https://yourorganization.com/api/2012-04-24/Profiles \
-
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
-
  -d '{
-
     "sessionControl": {
         "mediaRemoteWhitelist": [
             "192.168.1.1", "192.168.2.0/24"
         ]
     }
-
 }'</pre>
 </div>
 </div>
