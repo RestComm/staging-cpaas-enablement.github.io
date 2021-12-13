@@ -525,46 +525,6 @@
             </span>
                 </div>
                               </li>
-              <li id="Create Management Profile"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="#_create_a_management_profile">Create Management Profile</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="Link Management Profile"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="#_link_a_management_profile_to_a_business_customer">Link Management Profile</a>
-
-            </span>
-                </div>
-                              </li>
               <li id="Create Profile"
                   class="nav-item"
                   data-depth="3">
@@ -620,7 +580,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_unlink_a_profile_from_an_account">Unlink a Profile from an Account</a>
+              <a class="nav-link nav-flex-item-text" href="#_unlink_a_profile_from_an_organization">Unlink a Profile from an Account</a>
 
             </span>
                 </div>
@@ -1031,6 +991,26 @@
                               </li>
   </ul>
               </li>
+              <li id="Identity Access Management Reason Codes"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="iam-reason-codes.html">Identity Access Management Reason Codes</a>
+
+            </span>
+                </div>
+                              </li>
   </ul>
               </li>
               <li id="Applications"
@@ -4392,15 +4372,15 @@
 <h2 id="_profile_types"><a class="anchor" href="#_profile_types"></a>Profile Types</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Profile API allows different Types of Profiles to be provisioned. A Sub Account has always one, and only one, Profile of each Type associated with it. There are currently two Profile Types which can be managed by the Communications Providers:</p>
+<p>The Profile API allows different Types of Profiles to be provisioned. A Sub Account has always one, and only one, Profile of each Type associated with it. There are currently two Profile Types that can be managed by the Communications Providers:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Management Profile, that allows Communications Providers to control access to specific features and applications for each Sub Account.</p>
+<p>Management Profile, which allows Communications Providers to control access to specific features and applications for each Sub Account.</p>
 </li>
 <li>
-<p>Subscriber Profile, that allows Communications Providers to set their preferable BYOC and Media Session Control settings for each Sub Account&#8217;s Calls and SMS traffic.</p>
+<p>Subscriber Profile, which allows Communications Providers to set their preferable BYOC and Media Session Control settings for each Sub Account&#8217;s Calls and SMS traffic.</p>
 </li>
 </ul>
 </div>
@@ -4444,7 +4424,7 @@
 <div class="sect2">
 <h3 id="_management_profile"><a class="anchor" href="#_management_profile"></a>Management Profile</h3>
 <div class="paragraph">
-<p>Only the Administrators of Primary Account can create and manage Management Profiles. Any other account which is assigned to the Management Profile can read its contents.</p>
+<p>Only the Administrators of the Primary Account can create and manage Management Profiles. Any other account which is assigned to the Management Profile can read its contents.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4453,7 +4433,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In the future the REST API will allow Communications Providers to manage a wider range of functionalities.
+In the future, the REST API will allow Communications Providers to manage a wider range of functionalities.
 </td>
 </tr>
 </table>
@@ -4533,7 +4513,7 @@ The System Default Management Profile allows access to all Turnkey Applications 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can check which are the effective Profiles for a given account and organization by retrieving them through their respective API Endpoints and inspecting the Link Response Headers. In addition, you can use the Profiles REST API endpoint to find out which profile is associated with a given account and organization.
+You can check which are the effective Profiles for a given account and organization by retrieving them through their respective API Endpoints and inspecting the Link Response Headers. In addition, you can use the Profiles REST API endpoint to find out with which accounts and organizations a profile is associated.
 </td>
 </tr>
 </table>
@@ -4588,7 +4568,7 @@ You can check which are the effective Profiles for a given account and organizat
 <p>The Primary Account Administrator (CP/Administrator) can create and edit Management Profiles while the users with other types of roles (CP/Developer and CP/ProvisioningAgent) can only view them.</p>
 </li>
 <li>
-<p>The Primary Account Administrator (CP/Administrator) can assign/unassign their Management Profiles to Business Customer child Accounts”</p>
+<p>The Primary Account Administrator (CP/Administrator) can assign/unassign their Management Profiles to Business Customer child Accounts</p>
 </li>
 <li>
 <p>Sub Account users can only read the Management Profile assigned to them</p>
@@ -4705,7 +4685,7 @@ Subscriber and Management Profiles can only be created by the CP Administrator.
 <h4 id="_add_a_new_subscriber_profile"><a class="anchor" href="#_add_a_new_subscriber_profile"></a>Add a new Subscriber Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
 https://yourorganization.com/api/2012-04-24/Profiles \
 -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
 -d '{
@@ -4748,7 +4728,7 @@ https://yourorganization.com/api/2012-04-24/Profiles \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>https://yourorganization.com/api/2012-04-24/Profiles/PR10fbd31f5ac54acbb1d00f175213e42b</pre>
+<pre>Location: https://yourorganization.com/api/2012-04-24/Profiles/PR10fbd31f5ac54acbb1d00f175213e42b</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -4760,17 +4740,35 @@ https://yourorganization.com/api/2012-04-24/Profiles \
    "multiProvider": {
        "outbound-voice": [
            {
-               "name": "profile X",
+               "name": "network profile 1",
                "proxy": [
                    {
-                       "uri": "127.0.0.1:8080",
+                       "uri": "10.0.0.1:5060",
                        "headers": []
                    }
                ]
            }
+ ],
+       "outbound-sms": [
+           {
+               "name": "network profile 1"
+               "sessionType": "CLIENT",
+               "serverIpAddress": "10.0.1.1:5555",
+               "systemId": "id1",
+               "password": "pass1",
+               "version": "3.4",
+           },
+           {
+               "name": "network profile 1"
+               "sessionType": "CLIENT",
+               "serverIpAddress": "10.0.1.2:5555",
+               "systemId": "id2",
+               "password": "pass2",
+               "version": "3.4",
+           }
        ]
    }
-}</pre>
+}'</pre>
 </div>
 </div>
 </div>
@@ -4781,7 +4779,7 @@ https://yourorganization.com/api/2012-04-24/Profiles \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
  https://yourorganization.com/api/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4803,7 +4801,7 @@ https://yourorganization.com/api/2012-04-24/Profiles \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
  https://yourorganization.com/api/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4831,7 +4829,7 @@ https://yourorganization.com/api/2012-04-24/Profiles \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
  https://yourorganization.com/api/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4871,7 +4869,7 @@ If not specified, both extensions default to resolve to maintain backwards compa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
  https://yourorganization.com/api/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4900,7 +4898,7 @@ If not specified, both extensions default to resolve to maintain backwards compa
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST -u 'CPADMIN_SID:CPADMIN_TOKEN' \
+<pre>curl -X POST -u 'apiKeyValue:apiKeySecret' \
  https://yourorganization.com/api/2012-04-24/Profiles \
  -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-subscriber-schema.json"' \
  -d '{
@@ -4997,10 +4995,9 @@ When a Sub Account is created by default, that account has access to all the Tur
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ curl -X POST \
+<pre>$ curl -X POST -u 'apiKeyValue:apiKeySecret' \
     https://yourorganization.com/api/2012-04-24/Profiles \
     -H 'Accept: application/json' \
-    -u 'apiKeyValue:apiKeySecret' \
     -H 'Content-Type: application/instance+json;schema="https://yourorganization.com/api/2012-04-24/Profiles/schemas/rc-management-schema.json"' \
     -d '{
         "featureEnablement": {
@@ -5163,8 +5160,8 @@ Subscriber and Management Profiles can only be linked by the CP Administrator. S
 <h4 id="_update_subscriber_profile"><a class="anchor" href="#_update_subscriber_profile"></a>Update Subscriber Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT \
- https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+<pre>curl -X PUT -u ‘user:pass’ \
+ https://yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
  -H 'Content-Type: application/json' \
  -d '{
    "multiProvider": {
@@ -5188,8 +5185,8 @@ Subscriber and Management Profiles can only be linked by the CP Administrator. S
 <h4 id="_update_management_profile"><a class="anchor" href="#_update_management_profile"></a>Update Management Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT \
- https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRd956d32af34847dbb952273f61070c9e \
+<pre>curl -X PUT -u ‘user:pass’ \
+ https://yourorganization.com/restcomm/2012-04-24/Profiles/PRd956d32af34847dbb952273f61070c9e \
  -H 'Content-Type: application/json' \
  -d '{
  "featureEnablement": {
@@ -5221,7 +5218,8 @@ Subscriber and Management Profiles can only be linked by the CP Administrator. S
 <h4 id="_2_unlink_a_profile_from_an_account"><a class="anchor" href="#_2_unlink_a_profile_from_an_account"></a>2. Unlink a Profile from an Account</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+<pre>curl -X PUT  https://yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+  -u ‘user:pass’ \
   -H " X-Provisioning-Operation:UNLINK " \
   -H "Link:&lt;https://yourorganization.com/restcomm/2012-04-24/Accounts/ACae6e420f4252XXXXXXXXXXXXXXXXXXXX&gt;;rel=related"</pre>
 </div>
@@ -5231,7 +5229,8 @@ Subscriber and Management Profiles can only be linked by the CP Administrator. S
 <h4 id="_link_a_profile_to_an_organization"><a class="anchor" href="#_link_a_profile_to_an_organization"></a>Link a Profile to an Organization</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123  \
+<pre>curl -X PUT https://yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123  \
+  -u ‘user:pass’ \
   -H "X-Provisioning-Operation:LINK" \
   -H "Link:&lt;https://yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
 </div>
@@ -5253,7 +5252,8 @@ To run this command you will first need to retrieve the Organization ID by query
 <h4 id="_unlink_a_profile_from_an_organization"><a class="anchor" href="#_unlink_a_profile_from_an_organization"></a>Unlink a Profile from an Organization</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+<pre>curl -X PUT https://yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e420f425248d6a26948c17a9e2123 \
+  -u ‘user:pass’ \
   -H "X-HTTP-Method-Override:UNLINK" \
   -H  "Link:&lt;https://yourorganization.com/restcomm/2012-04-24/Organizations/ORafbe225ad37541eba518a74248f0ac4c&gt;;rel=related"</pre>
 </div>
@@ -5427,7 +5427,8 @@ To run this command you will first need to retrieve the Organization ID by query
 <h4 id="_get_first_page_of_10_subscriber_profiles_including_the_document"><a class="anchor" href="#_get_first_page_of_10_subscriber_profiles_including_the_document"></a>Get first page of 10 Subscriber Profiles, including the document</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles?Page=0&amp;PageSize=10&amp;Type=Subscriber&amp;include-doc</pre>
+<pre>curl -X GET  https://yourorganization.com/restcomm/2012-04-24/Profiles?Page=0&amp;PageSize=10&amp;Type=Subscriber&amp;include-doc \
+ -u ‘user:pass’ \</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5449,7 +5450,7 @@ To run this command you will first need to retrieve the Organization ID by query
    "last_page_uri": "/2012-04-24/Profiles?Page=0&amp;PageSize=10",
    "profiles": [
        {
-           "uri": "https://yourorganization.com/restcomm/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
+           "uri": "https://yourorganization.com/api/2012-04-24/Profiles/PRbb9004d053f84c2caafe31c1de4eff21",
            "dateUpdated": 1578645711000,
            "dateCreated": 1578645711000,
            "sid": "PRbb9004d053f84c2caafe31c1de4eff21",
@@ -5488,7 +5489,7 @@ To run this command you will first need to retrieve the Organization ID by query
 <h2 id="_get_specific_profile_details"><a class="anchor" href="#_get_specific_profile_details"></a>Get Specific Profile Details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code><strong>GET /restcomm/2012-04-24/Profiles/{profileSid}</strong></code></p>
+<p><code><strong>GET /api/2012-04-24/Profiles/{profileSid}</strong></code></p>
 </div>
 <div class="paragraph">
 <p>Returns the representation of a Profile resource. All roles are allowed.</p>
@@ -5503,10 +5504,10 @@ To run this command you will first need to retrieve the Organization ID by query
 <div class="ulist">
 <ul>
 <li>
-<p>Subscriber Profiles can be read by the CP Administrator who created them</p>
+<p>Subscriber Profiles can be read by the Communications Provider</p>
 </li>
 <li>
-<p>Management Profiles can be read by any role</p>
+<p>Management Profiles can be read by the Communications Provider and by the Business Customers associated with it</p>
 </li>
 </ul>
 </div>
@@ -5592,7 +5593,8 @@ To run this command you will first need to retrieve the Organization ID by query
 <h4 id="_1_get_information_about_a_subscriber_profile"><a class="anchor" href="#_1_get_information_about_a_subscriber_profile"></a>1. Get information about a Subscriber Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET  https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e425f4f5218d3a2194ac1aa9ea6f1</pre>
+<pre>curl -X GET  https://yourorganization.com/api/2012-04-24/Profiles/PRae6e425f4f5218d3a2194ac1aa9ea6f1 \
+ -u ‘user:pass’ \</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5649,7 +5651,7 @@ To run this command you will first need to retrieve the Organization ID by query
 <h2 id="_get_profile_relationships"><a class="anchor" href="#_get_profile_relationships"></a>Get Profile Relationships</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code><strong>GET /restcomm/2012-04-24/Profiles/{profileSid}/relationships</strong></code></p>
+<p><code><strong>GET /api/2012-04-24/Profiles/{profileSid}/relationships</strong></code></p>
 </div>
 <div class="paragraph">
 <p>The /relationships sub-path of a specific Profile will return all the Accounts (the full Account representation is included) which are directly or indirectly linked to (using) that Profile.</p>
@@ -5731,7 +5733,8 @@ Access to reading a Profile&#8217;s relationships is subject to the same rules a
 <h4 id="_get_the_account_relationships_of_a_profile"><a class="anchor" href="#_get_the_account_relationships_of_a_profile"></a>Get the Account relationships of a Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships</pre>
+<pre>curl -X GET https://yourorganization.com/api/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships \
+  -u ‘user:pass’ \</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5783,7 +5786,7 @@ Access to reading a Profile&#8217;s relationships is subject to the same rules a
 <h2 id="_get_specific_account_relationship_details"><a class="anchor" href="#_get_specific_account_relationship_details"></a>Get Specific Account Relationship details</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code><strong>GET /restcomm/2012-04-24/Profiles/{profileSid}/relationships/{accountSid}</strong></code></p>
+<p><code><strong>GET /api/2012-04-24/Profiles/{profileSid}/relationships/{accountSid}</strong></code></p>
 </div>
 <div class="paragraph">
 <p>Retrieve a specific Account relationship to a Profile.</p>
@@ -5837,7 +5840,8 @@ Access to reading a Profile&#8217;s specific relationships is subject to the sam
 <h4 id="_get_details_for_the_relationship_of_an_account_to_a_profile"><a class="anchor" href="#_get_details_for_the_relationship_of_an_account_to_a_profile"></a>Get details for the relationship of an Account to a Profile</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships/AC5c80b0a09d5cf87c4394539c8ebaa48f</pre>
+<pre>curl -X GET https://ourorganization.com/api/2012-04-24/Profiles/PRebdc5dd54a5347f9ae0a6ed00512b934/relationships/AC5c80b0a09d5cf87c4394539c8ebaa48f \
+ -u ‘user:pass’ \</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5867,7 +5871,7 @@ Access to reading a Profile&#8217;s specific relationships is subject to the sam
 <h2 id="_delete_profile"><a class="anchor" href="#_delete_profile"></a>Delete Profile</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><code><strong>DELETE /restcomm/2012-04-24/Profiles/{profileSid}</strong></code></p>
+<p><code><strong>DELETE /api/2012-04-24/Profiles/{profileSid}</strong></code></p>
 </div>
 <div class="paragraph">
 <p>Removes an existing Profile and any existing association with Accounts/Organizations</p>
@@ -5920,7 +5924,8 @@ Subscriber and Management Profiles can be deleted by any CP administrator of the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X DELETE https://&lt;accountSid&gt;:&lt;authToken&gt;@yourorganization.com/restcomm/2012-04-24/Profiles/PRae6e425f4f5218d3a2194ac1aa9ea6f1</pre>
+<pre>curl -X DELETE https://yourorganization.com/api/2012-04-24/Profiles/PRae6e425f4f5218d3a2194ac1aa9ea6f1 \
+ -u ‘user:pass’ \</pre>
 </div>
 </div>
 </div>

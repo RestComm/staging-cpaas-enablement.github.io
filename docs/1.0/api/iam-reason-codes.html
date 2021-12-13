@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Restcomm SIP Refer support - Restcomm Docs"></title>
+    <title data-custom-title="Identity Access Management Reason Codes Dictionary - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/SIP-Refer-Support.html
+      https://dev.restcomm.com/docs/1.0/api/iam-reason-codes.html
     ">
-    <meta name="description" content="Learn how to send text messages from Visual Designer to a Jitsi SIP phone.">
-    <meta name="keywords" content="sip refer">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
@@ -994,7 +992,7 @@
   </ul>
               </li>
               <li id="Identity Access Management Reason Codes"
-                  class="nav-item"
+                  class="nav-item is-current-page"
                   data-depth="3">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1830,7 +1828,7 @@
                 </div>
                               </li>
               <li id="SIP Refer Support"
-                  class="nav-item is-current-page"
+                  class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -4344,94 +4342,139 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="voice-category.html">CSP:Voice APIs</a></li>
-    <li class="crumb"><a href="SIP-Refer-Support.html">CSP:SIP Refer Support</a></li>
+    <li class="crumb"><a href="management-apis-overview.html">CSP:Management APIs</a></li>
+    <li class="crumb"><a href="identity-access-management-api.html">CSP:Identity Access Management <strong>Early Access</strong></a></li>
+    <li class="crumb"><a href="iam-reason-codes.html">CSP:Identity Access Management Reason Codes</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> SIP Refer support</h1>
+  <h1>Identity Access Management Reason Codes Dictionary</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Restcomm true now supports RFC5589 flow 6.1 SIP Refer that allows clients to transfer calls.</p>
+<p>Restcomm will provide a reason code along with a short description for failed Identity Access Management API calls.</p>
 </div>
 <div class="paragraph">
-<p>This new feature enables usage of blind transfer capabilities in desk phones and other SIP clients such as Linphone.</p>
+<p>Reason code, and a relevant description will be provided in the HTTP response.</p>
 </div>
 <div class="paragraph">
-<p>The feature is supported for calls that were created using the Dial verb and was tested with Yealink SIP-T21P E2, Cisco SPA525G and Polycom SoundPoint IP 335 deskphones.</p>
-</div>
-<div class="paragraph">
-<p>Currently call transfer is not supported on peer to peer calls.</p>
+<p>4XX reason codes are reserved for client specific error codes. 5XX reason codes are reserved for internal server error codes.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_example"><a class="anchor" href="#_example"></a>Example</h2>
+<h2 id="_reason_code_families"><a class="anchor" href="#_reason_code_families"></a>Reason Code Families</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Let’s start with the simple scenario involving three parties: Alice, Bob and Carol. Alice calls Bob and Bob wants to connect Alice to Carol. Bob presses the Blind Transfer button on his desk phone and types Carol’s number. His phone hungs up and Alice should be connected to Carol. There is also a possibility that Carol will not answer timely or will be busy talking with somebody else. In that case, it’s needed to connect Alice to Bob again, and this is easy to implement with existing Restcomm features as we’ll see later.</p>
+<table id="ReasonCodes_Families" class="tableblock frame-all grid-all spread Reason-Codes-Families">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Code family</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code-family">
+<p>4xx</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Client Side Error</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code-family">
+<p>5xx</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Internal Server Error</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="paragraph">
-<p>For the described scenario, we will need two incoming phone numbers:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Number A which is the number that Alice will call to connect to Bob. This number points to Visual Designer application that dials Bob. For this Number we need to set the refer url application</p>
-</li>
-<li>
-<p>Number B will be used by Bob as a transfer target during the call transfer. This Number points to an Visual Designer application that dials Carol.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The number A has additional property called Refer URL which could be either Visual Designer application name or any other URL and is used to point to the refer application that will be executed during the call transfer. So configuration for number A should look like this:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/Restcomm_SIP_Refer.png" alt="Incoming Phone Number SIP Refer URL">
-</div>
-</div>
-<div class="paragraph">
-<p>During call transfer, Restcomm will check the SIP Refer request in order to extract the call transfer details and will create the following new parameters:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Transferor. Transferor is the one that initates the transfer</p>
-</li>
-<li>
-<p>Transferee. Transferee is the one that gets transfered</p>
-</li>
-<li>
-<p>ReferTarget. Is the transfer target</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The above new parameters will be part of the HTTP request that Restcomm will do download the RCML and so at Visual Designer you can use the following new core variables:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>$core_Transferor</p>
-</li>
-<li>
-<p>$core_Transferee</p>
-</li>
-<li>
-<p>$core_ReferTarget</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the Visual Designer application for number B that will be executed after call transfer can use <code>&lt;Dial&gt;&lt;Number&gt;$core_ReferTarget&lt;/Number&gt;&lt;/Dial&gt;</code> so what ever Bob dialed during the call transfered it will be in the Dial verb of the Refer application.</p>
-</div>
-<div class="paragraph">
-<p>Call flow exceptions such as no answer, failed etc, should be handled the usual way, by using Dial Action or verbs after Dial.</p>
-</div>
+<div class="sect1">
+<h2 id="_identity_access_management_specific_reason_codes"><a class="anchor" href="#_identity_access_management_specific_reason_codes"></a>Identity Access Management Specific Reason Codes</h2>
+<div class="sectionbody">
+<table id="ReasonCodes_Specific_Reason_Codes" class="tableblock frame-all grid-all spread Restcomm-Specific-Reason-Codes">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Code</th>
+<th class="tableblock halign-center valign-top">Protocol</th>
+<th class="tableblock halign-left valign-top">Text</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code">
+<p>400</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph">
+<p>REST</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Client Side Error</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Bad request. The input provided was invalid (eg, invalid format, exceeded max length, etc).</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code">
+<p>401</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph">
+<p>REST</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Client Side Error</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Authorization information is missing or invalid.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code">
+<p>404</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph">
+<p>REST</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Client Side Error</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>A user with the specified UserSid/AccountSid was not found or is not authorized to perform this action.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph">
+<p>The AccountSid used is invalid, and the list of Users associated with this Account cannot be retrieved.</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code">
+<p>409</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>REST</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Client Side Error</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </article>
