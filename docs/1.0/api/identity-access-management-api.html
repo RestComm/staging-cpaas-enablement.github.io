@@ -4349,34 +4349,6 @@
 </div>
 <article class="doc fix-anchor-links-position">
   <h1>Identity Access Management API</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_overview">Overview</a></li>
-<li><a href="#_user_management">User Management</a>
-<ul class="sectlevel2">
-<li><a href="#_user_resource_uri">User Resource URI</a></li>
-<li><a href="#_resource_properties">Resource Properties</a></li>
-<li><a href="#_create_a_user">Create a User</a></li>
-<li><a href="#_update_a_user">Update a User</a></li>
-<li><a href="#_retrieve_a_user_list">Retrieve a User List</a></li>
-<li><a href="#_retrieve_user_information">Retrieve User Information</a></li>
-<li><a href="#_delete_a_user">Delete a User</a></li>
-</ul>
-</li>
-<li><a href="#_api_keys_management">API Keys Management</a>
-<ul class="sectlevel2">
-<li><a href="#_api_keys_resource_uri">API Keys Resource URI</a></li>
-<li><a href="#_resource_properties_2">Resource Properties</a></li>
-<li><a href="#_create_an_api_key">Create an API Key</a></li>
-<li><a href="#_update_an_api_key">Update an API Key</a></li>
-<li><a href="#_retrieve_a_list_of_api_keys">Retrieve a list of API Keys</a></li>
-<li><a href="#_retrieve_an_api_key">Retrieve an API Key</a></li>
-<li><a href="#_delete_an_api_key">Delete an API Key</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
@@ -4525,13 +4497,13 @@
 </table>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f'  \
+<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f'  \
 --header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'Name=Jane Doe' \
 --data-urlencode 'Email=jane.doe@company.com' \
---data-urlencode 'Role=CP/Administrator'</pre>
+--data-urlencode 'Role=CP/Administrator'</code></pre>
 </div>
 </div>
 </div>
@@ -4607,11 +4579,11 @@
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f' \
+<pre class="highlightjs highlight"><code>curl --location --request PUT 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f' \
 --header 'Accept: application/json' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'PhoneNumber=+12223334444'</pre>
+--data-urlencode 'PhoneNumber=+12223334444'</code></pre>
 </div>
 </div>
 </div>
@@ -4650,9 +4622,9 @@
 <h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC9deec0905f5c5aa8f9e40ca03b54e071/Users' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC9deec0905f5c5aa8f9e40ca03b54e071/Users' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</code></pre>
 </div>
 </div>
 </div>
@@ -4718,9 +4690,9 @@
 <h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USb0b76d2f398348cfa9b18022f81d26d3' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USb0b76d2f398348cfa9b18022f81d26d3' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</code></pre>
 </div>
 </div>
 </div>
@@ -4759,9 +4731,9 @@
 <h4 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/US7a3bb92e6a5543d9b2fab8e8e278ccce' \
+<pre class="highlightjs highlight"><code>curl --location --request DELETE 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/US7a3bb92e6a5543d9b2fab8e8e278ccce' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</pre>
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret'</code></pre>
 </div>
 </div>
 </div>
@@ -4856,9 +4828,9 @@ Accounts and Users that have been migrated from the legacy to the new Identity A
 <h4 id="_example_request_5"><a class="anchor" href="#_example_request_5"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request POST 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys' \
+<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header 'Authorization: Basic YourUsername:YourPassword'</code></pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -4907,11 +4879,11 @@ The first API Key creation requires basic authorization utilizing the user’s e
 <h4 id="_example_request_6"><a class="anchor" href="#_example_request_6"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request PUT 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
+<pre class="highlightjs highlight"><code>curl --location --request PUT 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
 --header 'Accept: application/json' \
 --header 'Authorization: Basic YourUsername:YourPassword' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'Status=inactive'</pre>
+--data-urlencode 'Status=inactive'</code></pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -4959,9 +4931,9 @@ This request requires basic authorization utilizing the user’s email address a
 <h4 id="_example_request_7"><a class="anchor" href="#_example_request_7"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/ACbf4e39a26964a12972da1d31c3b07f7a/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/ACbf4e39a26964a12972da1d31c3b07f7a/Users/USbd2e168c5cca4ea6857bba36e187ff09/APIKeys' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header 'Authorization: Basic YourUsername:YourPassword'</code></pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -5022,9 +4994,9 @@ This request requires basic authorization utilizing the user’s email address a
 <h4 id="_example_request_8"><a class="anchor" href="#_example_request_8"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK2f8f4d0d36324c1a84a58bffdd4897ef' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header 'Authorization: Basic YourUsername:YourPassword'</code></pre>
 </div>
 </div>
 <div class="admonitionblock caution">
@@ -5072,9 +5044,9 @@ This request requires basic authorization utilizing the user’s email address a
 <h4 id="_example_request_9"><a class="anchor" href="#_example_request_9"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl --location --request DELETE 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK763360e88c0048a594f6bde046804698' \
+<pre class="highlightjs highlight"><code>curl --location --request DELETE 'https://yourcompany.com/api/2012-04-24/Accounts/AC25b6ea2f04ca57c75e6e0e6aef9b69c9/Users/USaff6a6dec30047d58d0f08edf5f46f0f/APIKeys/AK763360e88c0048a594f6bde046804698' \
 --header 'Accept: application/json' \
---header 'Authorization: Basic YourUsername:YourPassword'</pre>
+--header 'Authorization: Basic YourUsername:YourPassword'</code></pre>
 </div>
 </div>
 </div>
