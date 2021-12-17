@@ -4425,7 +4425,7 @@
 <p>REST</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Client Side Error</p>
+<p>Bad request</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>Bad request. The input provided was invalid (eg, invalid format, exceeded max length, etc).</p>
@@ -4439,10 +4439,24 @@
 <p>REST</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Client Side Error</p>
+<p>Unauthorized</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>Authorization information is missing or invalid.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph csp-reason-code">
+<p>403</p>
+</div></div></td>
+<td class="tableblock halign-center valign-top"><div><div class="paragraph">
+<p>REST</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Forbidden</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Account or User resource does not exist or is not accessible.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -4453,10 +4467,10 @@
 <p>REST</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>A user with the specified UserSid/AccountSid was not found or is not authorized to perform this action.</p>
+<p>Not found</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>The AccountSid used is invalid, and the list of Users associated with this Account cannot be retrieved.</p>
+<p>A user with the specified UserSid/AccountSid was not found or is not authorized to perform this action.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -4467,7 +4481,7 @@
 <p>REST</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Client Side Error</p>
+<p>Conflict</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>Occurs when more than 2 API Keys are created</p>
