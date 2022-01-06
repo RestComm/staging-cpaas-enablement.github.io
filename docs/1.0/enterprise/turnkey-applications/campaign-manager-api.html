@@ -5981,10 +5981,20 @@ Get Announcement</p></td>
 <h2 id="_do_not_disturb_dnd"><a class="anchor" href="#_do_not_disturb_dnd"></a>Do Not Disturb (DND)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The DND feature allows the Business Customers to:
-- Define Opt-Out Database
-- Define many explicit Opt-In Databases
-- Allow applying Opt-Out and/or Opt-In database while setting up campaigns</p>
+<p>The DND feature allows the Business Customers to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define Opt-Out Database</p>
+</li>
+<li>
+<p>Define many explicit Opt-In Databases</p>
+</li>
+<li>
+<p>Allow applying Opt-Out and/or Opt-In database while setting up campaigns</p>
+</li>
+</ul>
 </div>
 <div class="sect2">
 <h3 id="_create_opt_out_list"><a class="anchor" href="#_create_opt_out_list"></a>Create Opt-Out List</h3>
@@ -6133,9 +6143,9 @@ Get Announcement</p></td>
 <h5 id="_create_opt_out_database"><a class="anchor" href="#_create_opt_out_database"></a>Create Opt-Out Database</h5>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "file":"&lt;path to file having the phone numbers separated by new line&gt;"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6143,12 +6153,12 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://company.com/campaignmanager/dnd/optout\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
-  -F file="@/Users/workspace/Solutions/OptOut/MXOrgTest2-Ent2-Numbers.csv" \</pre>
+  -F file="@/Users/workspace/Solutions/OptOut/MXOrgTest2-Ent2-Numbers.csv" \</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6156,14 +6166,14 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "name":"Opt-Out",
         "enterpriseSid":"EN909628cbd8e9429899c0b474f2e96423"
     },
     "code":200,
     "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -6326,11 +6336,11 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X DELETE \
+<pre class="highlightjs highlight"><code>curl -X DELETE \
   https://company.com/campaignmanager/dnd/optout/OT38cbd6deddda44cebcaaf1e06e78ca3e \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \</pre>
+  -H 'Content-Type: application/json' \</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6338,7 +6348,7 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "sid":"OT38cbd6deddda44cebcaaf1e06e78ce3e",
         "name":"Opt-Out","number":"918278362878",
@@ -6347,7 +6357,7 @@ Get Announcement</p></td>
     },
     "code":200,
     "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6355,11 +6365,11 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "491",
     "message": "OptOut Sid not found",
     "data": "OT38cbd6deddda44cebcaaf1e06e78ce3e"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -6589,11 +6599,11 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://company.com/campaignmanager/dnd/optout/search?page=0&amp;pageSize=10&amp;sortBy=datecreated:desc
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</pre>
+  -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6601,7 +6611,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "result":[
             {
@@ -6623,7 +6633,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
         },
         "code":200,
         "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -6721,11 +6731,11 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "491",
     "message": "OptOut Sid not found",
     "data": "OT5fd7e2a4efa14c2f90bd986f197d86fd"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -6888,9 +6898,9 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <h5 id="_create_opt_out_database_2"><a class="anchor" href="#_create_opt_out_database_2"></a>Create Opt-Out Database</h5>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "file":"&lt;path to file having the phone numbers separated by new line&gt;"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6898,13 +6908,13 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://company.com/campaignmanager/dnd/optin\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -F name="test-Opt-In"\
-  -F file="@/Users/workspace/Solutions/OptIn/MXOrgTest2-Ent2-Numbers.csv" \</pre>
+  -F file="@/Users/workspace/Solutions/OptIn/MXOrgTest2-Ent2-Numbers.csv" \</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6912,14 +6922,14 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "name":"test-Opt-In",
         "enterpriseSid":"EN909628cbd8e9429899c0b474f2e96423"
     },
     "code":200,
     "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -7082,11 +7092,11 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X DELETE \
+<pre class="highlightjs highlight"><code>curl -X DELETE \
   https://company.com/campaignmanager/dnd/optin/OT38cbd6deddda44cebcaaf1e06e78ca3e \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \</pre>
+  -H 'Content-Type: application/json' \</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -7094,7 +7104,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "sid":"OT38cbd6deddda44cebcaaf1e06e78ce3e",
         "name":"test-Opt-In","number":"918278362878",
@@ -7103,7 +7113,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
     },
     "code":200,
     "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -7111,11 +7121,11 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "491",
     "message": "OptIn Sid not found",
     "data": "OT38cbd6deddda44cebcaaf1e06e78ce3e"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -7349,11 +7359,11 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://company.com/campaignmanager/dnd/optin/search?page=0&amp;pageSize=10&amp;sortBy=datecreated:desc
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</pre>
+  -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -7361,7 +7371,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data":{
         "result":[
             {
@@ -7390,7 +7400,7 @@ If the search API is called without page and pageSize, by default pageSize will 
         },
         "code":200,
         "message":"OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -7488,11 +7498,11 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "491",
     "message": "OptIn Sid not found",
     "data": "OT54523f57449d4be285cd93e84e3a66e9"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
