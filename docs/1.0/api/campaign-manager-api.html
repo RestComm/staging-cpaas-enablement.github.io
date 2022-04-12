@@ -3371,88 +3371,6 @@
             </span>
                 </div>
                               </li>
-              <li id="Manage Credits"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="campaign-manager/campaign-manager-api.html#_manage_credits">Manage Credits</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="Create Credit"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="campaign-manager/campaign-manager-api.html#_create_credit">Create Credit</a>
-                        <button class="nav-toggle"></button>
-            </span>
-                </div>
-                  <ul class="nav-list">
-              <li id="Get List of Credits"
-                  class="nav-item"
-                  data-depth="4">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="campaign-manager/campaign-manager-api.html#_get_list_of_credits">Get List of Credits</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="Get Single Credit"
-                  class="nav-item"
-                  data-depth="4">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="campaign-manager/campaign-manager-api.html#_get_single_credit">Get Single Credit</a>
-
-            </span>
-                </div>
-                              </li>
-  </ul>
-              </li>
               <li id="Campaign"
                   class="nav-item"
                   data-depth="3">
@@ -4669,7 +4587,7 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <div class="sect3">
 <h4 id="_response_body"><a class="anchor" href="#_response_body"></a>Response Body</h4>
 <div class="paragraph">
-<p>The Response Body will carry code, corresponding message, and data of the Business Customer if created successfully. HTTP response will be 201 Created (OK).</p>
+<p>The Response Body will carry code, corresponding message, and data of the Business Customer if created successfully. HTTP response will be 200 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are listed below.</p>
@@ -4804,7 +4722,7 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4001</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">400</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User not unique</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Email not unique</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">User already exists</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Business Customer, Update Business Customer</p></td>
 </tr>
@@ -5384,7 +5302,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect3">
 <h4 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h4>
 <div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the attributes listed below:</p>
+<p>You can use the sortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: sortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the attributes listed below:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -5895,7 +5813,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect3">
 <h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will contain code, corresponding message, and data of Business Customer if it was successfully created. The HTTP response will be 201 Created (OK).</p>
+<p>The response body will contain code, corresponding message, and data of Business Customer if it was successfully created. The HTTP response will be 200 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are listed below.</p>
@@ -6642,7 +6560,7 @@ Get User</p></td>
 <div class="sect3">
 <h4 id="_sorting_information_2"><a class="anchor" href="#_sorting_information_2"></a>Sorting Information</h4>
 <div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
+<p>You can use the sortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: sortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -7085,7 +7003,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_sorting_information_3"><a class="anchor" href="#_sorting_information_3"></a>Sorting Information</h4>
 <div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. ou can sort by the following attributes:</p>
+<p>You can use the sortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: sortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. ou can sort by the following attributes:</p>
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes"><a class="anchor" href="#_sort_attributes"></a>Sort Attributes</h5>

@@ -3077,12 +3077,20 @@ If startTime is not passed, Campaign is scheduled immediately</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The prefix for country code for source/origin address, Campaign Manager application will automatically generate random source address with specific prefix. <code>fromPrefix</code> is mandatory if <code>fromFile</code> parameter is not passed.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fromFile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The source/origin phone address. Multipart File values can  be passed as new line separated. In case of multiple values passed, each address will be used as round robin for the given number of <code>to</code> addresses. <code>fromFile</code> is mandatory if <code>fromPrefix</code> is not passed. In case both are passed <code>fromPrefix</code> is ignored.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optInListSid (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The sid of an optIn list.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">toFile</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The destination address. Multipart File values can  be passed as new lines separated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optOutListSid (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The sid of an optOut list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fromListSid (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The sid of a from numbers list (if using country prefix).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">toListSid (string)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of a from numbers list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">channel</p></td>
@@ -3786,11 +3794,9 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "code":486,
-  "message”: “Campaign not found
-   “data”:{
-        “sid":"CPb6eb071d21124dbab20b095c25f1274f"
-  }
+  "errorCode": "486",
+  "message": "Enterprise Campaign not found",
+  "data": "EC7d7722a7d54e4a76bbd8522ef89fd078xx"
 }</pre>
 </div>
 </div>
@@ -3906,7 +3912,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h4>
 <div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
+<p>You can use the sortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: sortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes"><a class="anchor" href="#_sort_attributes"></a>Sort Attributes</h5>
@@ -4465,7 +4471,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">521</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Announcement Language Not Found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Passed invalid language for say Announcement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement language is not supported</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Announcement</p></td>
 </tr>
 </tbody>
@@ -5401,7 +5407,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_sorting_information_2"><a class="anchor" href="#_sorting_information_2"></a>Sorting Information</h4>
 <div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. Below you can find the possible attributes you can sort by:</p>
+<p>You can use the sortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: sortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. Below you can find the possible attributes you can sort by:</p>
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes_2"><a class="anchor" href="#_sort_attributes_2"></a>Sort Attributes</h5>
