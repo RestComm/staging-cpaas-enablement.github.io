@@ -2975,503 +2975,9 @@
 <div class="paragraph">
 <p>This document covers the API(s) that are available to you to manage campaigns and get information on credits added to the account to  track the usage of the service.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_credit"><a class="anchor" href="#_credit"></a>Credit</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>You can search all the credits added by <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> to your business. Credits help you to create campaigns and send SMS/Voice to your own customers or audience. This model is pre-paid to make sure that cost will never overrun the budget you have available.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Whenever Campaign is scheduled, equivalent Credit is deducted.</p>
-</li>
-<li>
-<p>If there is not enough Credit available, scheduling of Campaign will fail.</p>
-</li>
-<li>
-<p>If a Scheduled Campaign is cancelled, the equivalent Credit is added back.</p>
-</li>
-<li>
-<p>Once a Campaign progresses to InProgress state, Credit cannot be reversed, no matter what.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>*One credit equals 1 SMS or 1 Voice call.</p>
-</div>
-<div class="paragraph">
-<p>*For example,if you have 100 credits, you can only send 100 SMS Segments or 100 Voice calls.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_get_list_of_credits"><a class="anchor" href="#_get_list_of_credits"></a>Get List of Credits</h3>
-<div class="paragraph">
-<p>This endpoint will be used to get a current list of credits.</p>
-</div>
-<div class="sect3">
-<h4 id="_base_resource_uri"><a class="anchor" href="#_base_resource_uri"></a>Base Resource URI</h4>
-<div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_get_list_of_credit_resource_uri"><a class="anchor" href="#_get_list_of_credit_resource_uri"></a>Get List of Credit Resource URI</h4>
-<div class="paragraph">
-<p>/campaignmanager/credits/search</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h4>
-<div class="paragraph">
-<p>HTTP Get: Get list of Credits for a  Business Customer</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_paging"><a class="anchor" href="#_paging"></a>Paging</h4>
-<div class="paragraph">
-<p>The following paging parameters are supported.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Participants records to return, starting from 0.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If the search API is called without page and pageSize, by default pageSize will be 10 and page will be 0 to avoid retrieving all data in a single API call.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_filtering"><a class="anchor" href="#_filtering"></a>Filtering</h4>
-<div class="paragraph">
-<p>The following filtering parameters are supported:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits  that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits that are either <code>credit</code> which means added or <code>debit</code> which means reduced.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h4>
-<div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. Below you can find the possible attributes you can sort by:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by created date</p></td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_response_body"><a class="anchor" href="#_response_body"></a>Response Body</h4>
-<div class="paragraph">
-<p>The response body will carry code, corresponding message and data of the Credit if it was successfully fetched. HTTP response will be 200 OK.</p>
-</div>
-<div class="paragraph">
-<p>The response returned is the JSON body as shown in the example below. Parameters are as explained below:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Actual data in form of a list that matches the filter criteria. Data as explained in "Data Parameter" below.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">num_pages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of pages</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Size of the page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of records matching the given criteria.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Start offset of the current page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">end</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">End offset of the current page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">firstPageUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI to access first page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">previous_page_uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI to access previous page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nextPageUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI to access next page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI of current page</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect4">
-<h5 id="_data_parameters"><a class="anchor" href="#_data_parameters"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID of the Business Customer.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique sid of Credit</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when this Credit was created.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateUpdated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when this Credit was updated.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of Account that added/reduced this credit.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountEmail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email corresponding to accountSid</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description passed in request</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">credit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit that was added (+ve value) or reduced (-ve value)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_example"><a class="anchor" href="#_example"></a>Example</h4>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X GET \https://yourdomain.com/campaignmanager/credits/search?enterprriseSid=EN6c9dfebda23b403a959a99112437e785 \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-   "page":0,
-   "num_pages":3,
-   "page_size":2,
-   "total":6,
-   "start":0,
-   "end":1,
-   "uri":"/campaignmanager/credits/search",
-    "first_page_uri":"/ campaignmanager/credits/search?pageSize=2&amp;page=0",
-   "previous_page_uri":null,
-   "next_page_uri":"/ campaignmanager/credits/search?pageSize=2&amp;page=1",
-   "data":[
-       {
-                "sid": "ENCee320039e3e647eaa7df7cef5e3d6b55",
-                "dateUpdated": "2020-08-31T07:36:21+0000",
-                "dateCreated": "2020-08-31T07:36:21+0000",
-                "accountSid": "ACb06dc1c0b555df46a02ccaea1cb11bc1",
-                "accountEmail": "cpadmin@company.com",
-                "description": "SMS credits",
-                "credit": 1000
-            },
-            {
-                "sid": "ENCec4ef69e91294de48862db3772ab2959",
-                "dateUpdated": "2020-08-31T07:42:53+0000",
-                "dateCreated": "2020-08-31T07:42:53+0000",
-                "accountSid": "ACb06dc1c0b555df46a02ccaea1cb11bc1",
-                "accountEmail": "cpadmin@company.com",
-                "credit": 100
-            },
-            {
-                "sid": "ENC79acd62882a245aab15045a962a216e4",
-                "dateUpdated": "2020-08-31T07:44:20+0000",
-                "dateCreated": "2020-08-31T07:44:20+0000",
-                "accountSid": "ACb06dc1c0b555df46a02ccaea1cb11bc1",
-                "accountEmail": "cpadmin@company.com",
-                "description": "Reducing by 10 on 31 Aug 2020, 1:24PM",
-                "credit": -10
-            }
-  ]
-}</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_get_single_credit"><a class="anchor" href="#_get_single_credit"></a>Get Single Credit</h3>
-<div class="paragraph">
-<p>The Single Credit search API allows users to retrieve a specific Credit.</p>
-</div>
-<div class="sect3">
-<h4 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h4>
-<div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_get_single_user_resource_uri"><a class="anchor" href="#_get_single_user_resource_uri"></a>Get Single User Resource URI</h4>
-<div class="paragraph">
-<p>/campaignmanager/credits/search/{creditSid}</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h4>
-<div class="paragraph">
-<p>HTTP Get: Get Specific Credit</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creditSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID to uniquely identify a Credit</p></td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_response_body_2"><a class="anchor" href="#_response_body_2"></a>Response Body</h4>
-<div class="paragraph">
-<p>The Response Body will carry the Code, corresponding message, and data of the Credit if it was successfully searched. HTTP response will be 200 OK.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">472</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit SID doesn&#8217;t exist in the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Credit</p></td>
-</tr>
-</tfoot>
-</table>
-<div class="paragraph">
-<p>The response returned is the JSON body as shown in the example below. Parameters are listed below.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit data as explained in the Data Parameter of List Credit.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occurred or success message</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h4>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X GET \
-  https://yourdomain.com/campaignmanager/credits/search/ENCee320039e3e647eaa7df7cef5e3d6b55 \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-         "code":”200”,
-         "message":"OK",
-         “data”:
-            {
-                "sid": "ENCee320039e3e647eaa7df7cef5e3d6b55",
-                "dateUpdated": "2020-08-31T07:36:21+0000",
-                "dateCreated": "2020-08-31T07:36:21+0000",
-                "accountSid": "ACb06dc1c0b555df46a02ccaea1cb11bc1",
-                "accountEmail": "cpadmin@company.com",
-                "description": "SMS credits",
-                "credit": 1000
-            }
-}</pre>
-</div>
-</div>
-</div>
+<p>///campaignmanager/credits/search
+///campaignmanager/credits/search/{creditSid}</p>
 </div>
 </div>
 </div>
@@ -3520,7 +3026,7 @@
 <p>The Create Campaign API is used to create SMS/ VOICE Campaigns.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri"><a class="anchor" href="#_base_resource_uri"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -3532,13 +3038,13 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h4>
+<h4 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP POST: Create Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h4>
+<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3604,7 +3110,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h4>
+<h4 id="_response_body"><a class="anchor" href="#_response_body"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will contain the code, corresponding message, and data of the Application if it was successfully created. HTTP response will be 201 Created(OK).</p>
 </div>
@@ -3640,7 +3146,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_data_parameters_2"><a class="anchor" href="#_data_parameters_2"></a>Data Parameters</h5>
+<h5 id="_data_parameters"><a class="anchor" href="#_data_parameters"></a>Data Parameters</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3769,7 +3275,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_3"><a class="anchor" href="#_example_3"></a>Example</h4>
+<h4 id="_example"><a class="anchor" href="#_example"></a>Example</h4>
 <div class="sect4">
 <h5 id="_sms_campaign_example"><a class="anchor" href="#_sms_campaign_example"></a>SMS Campaign Example</h5>
 <div class="listingblock">
@@ -3916,7 +3422,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <p>This endpoint will be used to update existing campaigns. Only campaigns with a status of Scheduled can be updated. If the status of the campaign changes to any other, updating is no longer possible.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_4"><a class="anchor" href="#_base_resource_uri_4"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -3928,13 +3434,13 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h4>
+<h4 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP PUT: Update Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h4>
+<h4 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3964,7 +3470,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h4>
+<h4 id="_response_body_2"><a class="anchor" href="#_response_body_2"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. HTTP response will be 200 OK.</p>
 </div>
@@ -4047,7 +3553,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_4"><a class="anchor" href="#_example_4"></a>Example</h4>
+<h4 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>{
@@ -4119,7 +3625,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <p>This endpoint will be used to delete existing campaigns. Only campaigns with a status of Scheduled can be deleted. If the status of the campaign changes to any other, deleting is no longer possible.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_5"><a class="anchor" href="#_base_resource_uri_5"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -4131,13 +3637,13 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_5"><a class="anchor" href="#_supported_operations_5"></a>Supported Operations</h4>
+<h4 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP DELETE: Delete Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h4>
+<h4 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4158,7 +3664,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_5"><a class="anchor" href="#_response_body_5"></a>Response Body</h4>
+<h4 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. HTTP response will be 200 OK.</p>
 </div>
@@ -4224,7 +3730,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </tfoot>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">463</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">486</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Campaign not found</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Campaign SID doesn&#8217;t exist in the system or probably assigned to some other Organization where existing user doesn&#8217;t have permission to access.</p></td>
@@ -4234,7 +3740,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_5"><a class="anchor" href="#_example_5"></a>Example</h4>
+<h4 id="_example_3"><a class="anchor" href="#_example_3"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -4253,23 +3759,24 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>{
-"code":200,
-"message":"OK",
-“data”:
-   {
-        “sid":"CPb6eb071d21124dbab20b095c25f1274f",
-        “name”:”TestUpdatedCampaign”,
-        "dateCreated":"2019-12-22 09:53:51",
-        "dateUpdated":"2019-12-30 09:53:51",
-        “startTime”:”2020-02-01 09:53:51”,
-        “enterpriseSid” :”ENb6eb071d21124dbab20b095c25f1274f”,
-        “total”:”4”,
-        “status”:”Scheduled”,
-        “fromPrefix”:”91”,
-        “to”:”919960639903,919960639904,919960639905,919960639906”
-        “body”:”Hello World. This is 2nd Jan 2020!”
-        "uri":/campaignmanager/enterprise/campaign/search/CPb6eb071d21124dbab20b095c25f1274f"
-     }
+    "data": {
+        "sid": "EC0261a2e790a5459baffbad446401e3d0",
+        "dateUpdated": "2022-01-20T04:43:02+0000",
+        "dateCreated": "2022-01-20T04:43:02+0000",
+        "accountSid": "AC6f252df6a8b94dea37a62092ae202e4a",
+        "accountEmail": "jane.doe@company.com",
+        "uri": "/campaignmanager/campaigns/search/EC0261a2e790a5459baffbad446401e3d0",
+        "name": "ACME Campaign",
+        "startTime": "2022-01-21T04:43:04+0000",
+        "enterpriseSid": "EN0a30aaedf0094dc8acb72f5de160cf7e",
+        "total": 1,
+        "status": "canceled",
+        "fromPrefix": "",
+        "channel": "sms",
+        "dialTimeout": 30
+    },
+    "code": 200,
+    "message": "OK"
 }</code></pre>
 </div>
 </div>
@@ -4279,7 +3786,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "code":463,
+  "code":486,
   "message”: “Campaign not found
    “data”:{
         “sid":"CPb6eb071d21124dbab20b095c25f1274f"
@@ -4295,7 +3802,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <p>This endpoint will be used to retrieve a list of campaigns.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_6"><a class="anchor" href="#_base_resource_uri_6"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_4"><a class="anchor" href="#_base_resource_uri_4"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -4307,13 +3814,13 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_6"><a class="anchor" href="#_supported_operations_6"></a>Supported Operations</h4>
+<h4 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: List Campaigns</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_paging_2"><a class="anchor" href="#_paging_2"></a>Paging</h4>
+<h4 id="_paging"><a class="anchor" href="#_paging"></a>Paging</h4>
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
@@ -4355,7 +3862,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_filtering_2"><a class="anchor" href="#_filtering_2"></a>Filtering</h4>
+<h4 id="_filtering"><a class="anchor" href="#_filtering"></a>Filtering</h4>
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
@@ -4397,7 +3904,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_sorting_information_2"><a class="anchor" href="#_sorting_information_2"></a>Sorting Information</h4>
+<h4 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h4>
 <div class="paragraph">
 <p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
 </div>
@@ -4434,7 +3941,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
+<h4 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message, and data of Campaigns if it was successfully fetched. HTTP response will be 200 OK.</p>
 </div>
@@ -4495,7 +4002,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_6"><a class="anchor" href="#_example_6"></a>Example</h4>
+<h4 id="_example_4"><a class="anchor" href="#_example_4"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -4565,7 +4072,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <p>The Single Campaign search API allows users to retrieve specific Campaigns.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_7"><a class="anchor" href="#_base_resource_uri_7"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_5"><a class="anchor" href="#_base_resource_uri_5"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -4577,13 +4084,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_7"><a class="anchor" href="#_supported_operations_7"></a>Supported Operations</h4>
+<h4 id="_supported_operations_5"><a class="anchor" href="#_supported_operations_5"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Specific Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h4>
+<h4 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4604,7 +4111,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_7"><a class="anchor" href="#_response_body_7"></a>Response Body</h4>
+<h4 id="_response_body_5"><a class="anchor" href="#_response_body_5"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry Code, corresponding message, and data of User if it was successfully searched. HTTP response will be 200 OK.</p>
 </div>
@@ -4668,7 +4175,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_7"><a class="anchor" href="#_example_7"></a>Example</h4>
+<h4 id="_example_5"><a class="anchor" href="#_example_5"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -4723,7 +4230,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <p>This API will create an Announcement for an Enterprise.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_8"><a class="anchor" href="#_base_resource_uri_8"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_6"><a class="anchor" href="#_base_resource_uri_6"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -4735,13 +4242,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_8"><a class="anchor" href="#_supported_operations_8"></a>Supported Operations</h4>
+<h4 id="_supported_operations_6"><a class="anchor" href="#_supported_operations_6"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP POST: Add announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h4>
+<h4 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4793,7 +4300,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_8"><a class="anchor" href="#_response_body_8"></a>Response Body</h4>
+<h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully created. HTTP response will be 200 Created (OK).</p>
 </div>
@@ -4829,7 +4336,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_data_parameters_3"><a class="anchor" href="#_data_parameters_3"></a>Data Parameters</h5>
+<h5 id="_data_parameters_2"><a class="anchor" href="#_data_parameters_2"></a>Data Parameters</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4966,7 +4473,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_8"><a class="anchor" href="#_example_8"></a>Example</h4>
+<h4 id="_example_6"><a class="anchor" href="#_example_6"></a>Example</h4>
 <div class="sect4">
 <h5 id="_create_text_to_speech_announcement"><a class="anchor" href="#_create_text_to_speech_announcement"></a>Create Text To Speech Announcement</h5>
 <div class="listingblock">
@@ -5114,7 +4621,7 @@ After this you need to call Upload Announcement API endpoint to upload the Audio
 <p>This API will upload an audio file for the announcement.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_9"><a class="anchor" href="#_base_resource_uri_9"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_7"><a class="anchor" href="#_base_resource_uri_7"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -5126,13 +4633,13 @@ After this you need to call Upload Announcement API endpoint to upload the Audio
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_9"><a class="anchor" href="#_supported_operations_9"></a>Supported Operations</h4>
+<h4 id="_supported_operations_7"><a class="anchor" href="#_supported_operations_7"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP POST: Upload audio file</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h4>
+<h4 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5161,7 +4668,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_9"><a class="anchor" href="#_response_body_9"></a>Response Body</h4>
+<h4 id="_response_body_7"><a class="anchor" href="#_response_body_7"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully uploaded. HTTP response will be 200 Created  (OK).</p>
 </div>
@@ -5197,7 +4704,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_data_parameters_4"><a class="anchor" href="#_data_parameters_4"></a>Data Parameters</h5>
+<h5 id="_data_parameters_3"><a class="anchor" href="#_data_parameters_3"></a>Data Parameters</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5281,7 +4788,7 @@ error occurred while uploading file to s3</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_9"><a class="anchor" href="#_example_9"></a>Example</h4>
+<h4 id="_example_7"><a class="anchor" href="#_example_7"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl --location --request POST 'https://company.com/autoattendant/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
@@ -5334,7 +4841,7 @@ error occurred while uploading file to s3</p></td>
 <p>Update announcement will update an existing announcement</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_10"><a class="anchor" href="#_base_resource_uri_10"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_8"><a class="anchor" href="#_base_resource_uri_8"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -5346,13 +4853,13 @@ error occurred while uploading file to s3</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_10"><a class="anchor" href="#_supported_operations_10"></a>Supported Operations</h4>
+<h4 id="_supported_operations_8"><a class="anchor" href="#_supported_operations_8"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP PUT: Update announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_8"><a class="anchor" href="#_request_parameters_8"></a>Request Parameters</h4>
+<h4 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5404,7 +4911,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_10"><a class="anchor" href="#_response_body_10"></a>Response Body</h4>
+<h4 id="_response_body_8"><a class="anchor" href="#_response_body_8"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announce data if update was successful.</p>
 </div>
@@ -5494,7 +5001,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_10"><a class="anchor" href="#_example_10"></a>Example</h4>
+<h4 id="_example_8"><a class="anchor" href="#_example_8"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>{
@@ -5569,12 +5076,56 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect2">
+<h3 id="_get_a_list_of_available_announcements"><a class="anchor" href="#_get_a_list_of_available_announcements"></a>Get a List of Available Announcements</h3>
+<div class="paragraph">
+<p>Get all announcements endpoint will retrieve a list of all available announcements.</p>
+</div>
+<div class="sect3">
+<h4 id="_get_a_list_of_available_announcement_resource_uri"><a class="anchor" href="#_get_a_list_of_available_announcement_resource_uri"></a>Get a List of Available Announcement Resource URI</h4>
+<div class="paragraph">
+<p>/campaignmanager/announcement/getAll</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X 'GET' \
+'https://company.com/campaignmanager/announcement/getAll' \
+-H 'accept: /'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"data": [
+  {
+    "name": "1111",
+    "id": "ANbf55e3ae7bba4312b8e0bc2af1c7d2a2",
+    "item": { "type": "play" }
+    },
+  {
+    "name": "2222222222222",
+    "id": "AN200ddcd54f6347bfb3b2d19492c1c38b",
+    "item": {"type": "say" }
+],
+"code": 200,
+"message": "OK"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_delete_announcement"><a class="anchor" href="#_delete_announcement"></a>Delete Announcement</h3>
 <div class="paragraph">
 <p>Delete announcement will delete an existing announcement</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_11"><a class="anchor" href="#_base_resource_uri_11"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_9"><a class="anchor" href="#_base_resource_uri_9"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -5586,13 +5137,13 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
+<h4 id="_supported_operations_9"><a class="anchor" href="#_supported_operations_9"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP DELETE: Delete announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
+<h4 id="_request_parameters_8"><a class="anchor" href="#_request_parameters_8"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5613,7 +5164,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_11"><a class="anchor" href="#_response_body_11"></a>Response Body</h4>
+<h4 id="_response_body_9"><a class="anchor" href="#_response_body_9"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announcement data if delete was successful.</p>
 </div>
@@ -5691,7 +5242,7 @@ Get Announcement</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_11"><a class="anchor" href="#_example_11"></a>Example</h4>
+<h4 id="_example_9"><a class="anchor" href="#_example_9"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -5750,7 +5301,7 @@ Get Announcement</p></td>
 <p>This endpoint will be used to get list of announcements</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_12"><a class="anchor" href="#_base_resource_uri_12"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_10"><a class="anchor" href="#_base_resource_uri_10"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -5762,13 +5313,13 @@ Get Announcement</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_12"><a class="anchor" href="#_supported_operations_12"></a>Supported Operations</h4>
+<h4 id="_supported_operations_10"><a class="anchor" href="#_supported_operations_10"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Get Announcement list</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_paging_3"><a class="anchor" href="#_paging_3"></a>Paging</h4>
+<h4 id="_paging_2"><a class="anchor" href="#_paging_2"></a>Paging</h4>
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
@@ -5810,7 +5361,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_filtering_3"><a class="anchor" href="#_filtering_3"></a>Filtering</h4>
+<h4 id="_filtering_2"><a class="anchor" href="#_filtering_2"></a>Filtering</h4>
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
@@ -5848,7 +5399,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_sorting_information_3"><a class="anchor" href="#_sorting_information_3"></a>Sorting Information</h4>
+<h4 id="_sorting_information_2"><a class="anchor" href="#_sorting_information_2"></a>Sorting Information</h4>
 <div class="paragraph">
 <p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. Below you can find the possible attributes you can sort by:</p>
 </div>
@@ -5881,7 +5432,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_body_12"><a class="anchor" href="#_response_body_12"></a>Response Body</h4>
+<h4 id="_response_body_10"><a class="anchor" href="#_response_body_10"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and data of Announcement if it was successfully fetched. HTTP response will be 200 OK.</p>
 </div>
@@ -5917,7 +5468,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_data_parameters_5"><a class="anchor" href="#_data_parameters_5"></a>Data parameters</h5>
+<h5 id="_data_parameters_4"><a class="anchor" href="#_data_parameters_4"></a>Data parameters</h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5977,7 +5528,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_12"><a class="anchor" href="#_example_12"></a>Example</h4>
+<h4 id="_example_10"><a class="anchor" href="#_example_10"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -6046,7 +5597,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <p>Single Announcement search API allows users to retrieve specific announcements.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_13"><a class="anchor" href="#_base_resource_uri_13"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_11"><a class="anchor" href="#_base_resource_uri_11"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
 </div>
@@ -6058,7 +5609,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_13"><a class="anchor" href="#_supported_operations_13"></a>Supported Operations</h4>
+<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Specific announcement</p>
 </div>
@@ -6099,7 +5650,7 @@ Get Announcement</p></td>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_13"><a class="anchor" href="#_example_13"></a>Example</h4>
+<h4 id="_example_11"><a class="anchor" href="#_example_11"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>

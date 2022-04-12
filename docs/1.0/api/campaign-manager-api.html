@@ -4825,11 +4825,11 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <div class="content">
 <pre>{
    "name":"Jane Doe",
-   "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
+   "configuration": "{\"campaignManager\":{\"throttle\":{\"smsPerSecond\":10, \"callsPerSecond\":25, \"concurrentCalls\":5}}}",
    "enterpriseAdmin":{
-      "emailId":"JaneDoe@company.com",
-      "password":"J@n3D0e2021",
-      "name":"Jane Doe"
+     "emailId":"jane.doe@company.com",
+     "password":"J@n3D0e2021",
+     "name":"Jane_Does_Enterprise"
    }
 }</pre>
 </div>
@@ -4885,17 +4885,9 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <div class="listingblock">
 <div class="content">
 <pre>{
-   "code":4050,
-   "message":"Enterprise name not unique",
-   "data":{
-      "name":"Jane Doe",
-      "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}",
-      "enterpriseAdmin":{
-         "emailId":"jane.doe@company.com",
-         "password":"J@n3D0e2021",
-         "name":"Jane Doe"
-      }
-   }
+  "errorCode": "4050",
+  "message": "Enterprise name not unique",
+  "data": "EnterpriseRahul"
 }</pre>
 </div>
 </div>
@@ -4958,7 +4950,7 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <div class="sect3">
 <h4 id="_response_body_2"><a class="anchor" href="#_response_body_2"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will contain code, corresponding message and data of Business Customer if it was successfully updated. The HTTP response will be 201 Created (OK).</p>
+<p>The response body will contain code, corresponding message and data of Business Customer if it was successfully updated. The HTTP response will be 200 (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. All parameters are listed below.</p>
@@ -5088,11 +5080,9 @@ If you are trying to add a new subaccount that is already present in the Restcom
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "code":4050,
-  "message":"Enterprise name not unique",
-   “data”:{
-      "name": "Jane Doe"
-  }
+  "errorCode": "4050",
+  "message": "Enterprise name not unique",
+  "data": "Jane Doe's Enterprise"
 }</pre>
 </div>
 </div>
@@ -5278,11 +5268,9 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="listingblock">
 <div class="content">
 <pre>{
-"code":4051,
-"message":"Enterprise Not Found",
-“data”:{
-“sid” :” ENb6eb071d21124dbab20b095c25f1274f”
-   }
+  "errorCode": "4051",
+  "message": "Enterprise not found",
+  "data": "ENd1c2456b6874aaa9f73d41c1301d395"
 }</pre>
 </div>
 </div>
@@ -5870,7 +5858,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Full name of the user being added.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Full name of the user being added.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">email ID</p></td>
@@ -6949,697 +6937,6 @@ Get User</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_manage_credits"><a class="anchor" href="#_manage_credits"></a>Manage Credits</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Credit is always associated with a Business Customer.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Whenever Campaign is scheduled, equivalent Credit is deducted.</p>
-</li>
-<li>
-<p>If there is not enough Credit available, scheduling of Campaign will fail.</p>
-</li>
-<li>
-<p>If Scheduled Campaign is cancelled, equivalent Credit is added back.</p>
-</li>
-<li>
-<p>Once a Campaign progresses to InProgress state, Credit cannot be reversed, no matter what.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>One credit is equal to 1 SMS segment or 1 Voice call.</p>
-</li>
-<li>
-<p>For example,if a particular Business Customer has 100 credits, that customer can only send 100 SMS Segments or 100 Voice calls.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_create_credit"><a class="anchor" href="#_create_credit"></a>Create Credit</h3>
-<div class="paragraph">
-<p>This endpoint will be used to create new Credits for an existing Business Customer. Via this API call, a Communications Provider can Add or Reduce credits for a  Business Customer.</p>
-</div>
-<div class="sect3">
-<h4 id="_base_resource_uri_11"><a class="anchor" href="#_base_resource_uri_11"></a>Base Resource URI</h4>
-<div class="paragraph">
-<p><code>https://your_custom_domain.com</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_add_credit_resource_uri"><a class="anchor" href="#_add_credit_resource_uri"></a>Add Credit Resource URI</h4>
-<div class="paragraph">
-<p><code>/campaignmanager/credits</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
-<div class="paragraph">
-<p>HTTP Post: Create new Credits for a Business Customer</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Description explaining why this credit is added or reduced for later reference.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Business Customer for which Credit is getting created.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addCredit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Credit that must be added to existing Credit. Either addCredit or reduceCredit should be mandatorily passed. If both are passed, <code>addCredit</code> takes precedence and <code>reduceCredit</code> is ignored.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reduceCredit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Credit that must be reduced from existing Credit. If the reduced amount is lower than existing Credit, credit can go to negative number.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_response_body_11"><a class="anchor" href="#_response_body_11"></a>Response Body</h4>
-<div class="paragraph">
-<p>The Response Body will carry the Code, corresponding message, and data of the Business Customer if it was  successfully updated. HTTP response will be 200 OK.</p>
-</div>
-<div class="paragraph">
-<p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit data as explained in the Data Parameter below.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occurred or success message</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect4">
-<h5 id="_data_parameter_4"><a class="anchor" href="#_data_parameter_4"></a>Data Parameter</h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID of the Business Customer.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique SID of Credit</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when the Credit was created.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateUpdated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when the Credit was updated.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of Account that added/reduced this credit.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountEmail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email corresponding to accountSid</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Description passed in request</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">credit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit that was added (+ve value) or reduced (-ve value)</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The add Credit API can also return the Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition, the following Errors can be returned.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">addCredit or reduceCredit parameter is missing</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Add Credit or Reduce Credit parameter is not specified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Credit</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4051</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Enterprise not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BBusiness Customer SID doesn’t exist in the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Credit, Update Business Customer,
-Delete Business Customer,
-Get Business Customer</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_example_11"><a class="anchor" href="#_example_11"></a>Example</h4>
-<div class="listingblock">
-<div class="content">
-<pre>{
-    "addCredit" :"10000"
-    "description" :"Customer recharged for 10,000 units on 1 Aug 2020"
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X POST \
-  https://cloud.restcomm.com/campaignmanager/credits/ENb6eb071d21124dbab20b095c25f1274f  \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{
-        "addCredit" : "10000"
-“description”:”Customer recharged for 10,000 units on 1 Aug 2020”
-}’</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update of Credit  is successful, below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-   "data":{
-      "sid":"ENCec4ef69e91294de48862db3772ab2959",
-      "dateUpdated":"2020-08-31T07:42:53+0000",
-      "dateCreated":"2020-08-31T07:42:53+0000",
-      "accountSid":"ACb06dc1c0b555df46a02ccaea1cb11bc1",
-      "accountEmail":"cspadmin@compny.com",
-      "credit":100,
-      "description":"Customer recharged for 10,000 units on 1 Aug 2020",
-      "uri":"/campaignmanager/credit/search/ENCec4ef69e91294de48862db3772ab2959"
-   },
-   "code":200,
-   "message":"OK"
-}</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>If update fails, below response is returned with corresponding HTTP Error Code.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-  "code":4051,
-  "message":"Enterprise not found",
-  "data": "ENfda064f487ff4309b8b306d25adc6"
-  }</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_get_list_of_credits"><a class="anchor" href="#_get_list_of_credits"></a>Get List of Credits</h3>
-<div class="paragraph">
-<p>This endpoint will be used to get list of Credits for the Business Customer.</p>
-</div>
-<div class="sect3">
-<h4 id="_base_resource_uri_12"><a class="anchor" href="#_base_resource_uri_12"></a>Base Resource URI</h4>
-<div class="paragraph">
-<p><code>https://your_custom_domain.com</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_get_list_of_credit_resource_uri"><a class="anchor" href="#_get_list_of_credit_resource_uri"></a>Get List of Credit Resource URI</h4>
-<div class="paragraph">
-<p><code>/campaignmanager/credits/search</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_supported_operations_12"><a class="anchor" href="#_supported_operations_12"></a>Supported Operations</h4>
-<div class="paragraph">
-<p>HTTP Get: Get list of Credits for a  Business Customer</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_paging_3"><a class="anchor" href="#_paging_3"></a>Paging</h4>
-<div class="paragraph">
-<p>The following paging parameters are supported.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Participants records to return, starting from 0.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If the search API is called without page and pageSize, by default pageSize will be 10 and page will be 0 to avoid retrieving all data in a single API call.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_filtering_3"><a class="anchor" href="#_filtering_3"></a>Filtering</h4>
-<div class="paragraph">
-<p>The following filtering parameters are supported:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits  that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Retrieve list of Credits for given Business Customer SID.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits that are either <code>credit</code> which means added or <code>debit</code> which means reduced.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_sorting_information_3"><a class="anchor" href="#_sorting_information_3"></a>Sorting Information</h4>
-<div class="paragraph">
-<p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. You can sort by the following attributes:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by created date</p></td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_response_body_12"><a class="anchor" href="#_response_body_12"></a>Response Body</h4>
-<div class="paragraph">
-<p>The Response Body will carry Code, corresponding message and data of the Credit if it was successfully fetched. HTTP response will be 200 OK.</p>
-</div>
-<div class="paragraph">
-<p>The response returned is the JSON body as shown in the example below. Parameters are as explained below:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Actual data in form of a list that matches the filter criteria. Data as explained in Data Parameter in create Credit.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">total</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total Number of records</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of records to return.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">numPages</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Total number of pages</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starting offset of page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">end</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ending offset of page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">firstPageUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records in First page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">nextPageUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records in next page</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_example_12"><a class="anchor" href="#_example_12"></a>Example</h4>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X GET \https://cloud.restcomm.com/campaignmanager/credits/search?enterprriseSid=EN6c9dfebda23b403a959a99112437e785 \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-    "data": {
-        "result": [
-            {
-                "sid": "ENCd05ad50a49e445f5a4924f9862a5a6aa",
-                "dateUpdated": "2020-09-04T07:57:44+0000",
-                "dateCreated": "2020-09-04T07:57:44+0000",
-                "accountSid": "ACb06dc1c0b555df46a02ccaea1cb11bc1",
-                "accountEmail": "cspadmin@company.com",
-                "uri": "/campaignmanager/credits/ENCd05ad50a49e445f5a4924f9862a5a6aa",
-                "description": "initial credits on 4th",
-                "enterpriseSid": "ENc165d92e63f14fdf84666a9b8a57c805",
-                "credit": 500
-            }
-        ],
-        "pageSize": 10,
-        "total": 1,
-        "page": 0,
-        "numPages": 1,
-        "start": 0,
-        "end": 0,
-        "firstPageUri": "/campaignmanager/credits/search/?enterpriseSid=ENc165d92e63f14fdf84666a9b8a57c805&amp;pageSize=10&amp;page=0",
-        "uri": "/campaignmanager/credits/search/?enterpriseSid=ENc165d92e63f14fdf84666a9b8a57c805&amp;pageSize=10&amp;page=0"
-    },
-    "code": 200,
-    "message": "OK"
-}</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_get_single_credit"><a class="anchor" href="#_get_single_credit"></a>Get Single Credit</h3>
-<div class="paragraph">
-<p>The Single Credit search API allows users to retrieve a specific Credit.</p>
-</div>
-<div class="sect3">
-<h4 id="_base_resource_uri_13"><a class="anchor" href="#_base_resource_uri_13"></a>Base Resource URI</h4>
-<div class="paragraph">
-<p><code>https://your_custom_domain.com</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_get_single_user_resource_uri_2"><a class="anchor" href="#_get_single_user_resource_uri_2"></a>Get Single User Resource URI</h4>
-<div class="paragraph">
-<p><code>/campaignmanager/credits/search/{creditSid}</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_supported_operations_13"><a class="anchor" href="#_supported_operations_13"></a>Supported Operations</h4>
-<div class="paragraph">
-<p>HTTP Get: Get Specific Credit</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_request_parameters_10"><a class="anchor" href="#_request_parameters_10"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creditSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID to uniquely identify a Credit</p></td>
-</tr>
-</tfoot>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_response_body_13"><a class="anchor" href="#_response_body_13"></a>Response Body</h4>
-<div class="paragraph">
-<p>The Response Body will carry the Code, corresponding message, and data of the Credit if it was  successfully searched. HTTP response will be 200 OK.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">472</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit not found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit SID doesn’t exist in the system</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Get Credit</p></td>
-</tr>
-</tfoot>
-</table>
-<div class="paragraph">
-<p>The response returned is the JSON body as shown in the example below. Parameters are listed below.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit data as explained in the Data Parameter of Create Credit.</p></td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occurred or success message</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_example_13"><a class="anchor" href="#_example_13"></a>Example</h4>
-<div class="paragraph">
-<p>From the bash terminal you can run the command below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X GET \
-  https://cloud.restcomm.com/campaignmanager/credits/search/ENCee320039e3e647eaa7df7cef5e3d6b55 \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Below is the response returned:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-    "data": {
-        "sid": "ENC3807ff7ff73e46e7a9c9a95af3d85189",
-        "dateUpdated": "2020-09-04T09:58:57+0000",
-        "dateCreated": "2020-09-04T09:58:57+0000",
-        "accountSid": ACb06dc1c0b555df46a02ccaea1cb11bc1",
-        "accountEmail": "cspadmin@company.com",
-        "uri": "/campaignmanager/credits/ENC3807ff7ff73e46e7a9c9a95af3d85189",
-        "description": "initial credits",
-        "enterpriseSid": "EN671a5f2c6c5c4e88b814bdc23ca389bc",
-        "credit": 500
-    },
-    "code": 200,
-    "message": "OK"
-}</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_campaign"><a class="anchor" href="#_campaign"></a>Campaign</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -7684,7 +6981,7 @@ Get Business Customer</p></td>
 <p>This endpoint will be used to retrieve a list of existing campaigns.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_14"><a class="anchor" href="#_base_resource_uri_14"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_11"><a class="anchor" href="#_base_resource_uri_11"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><code>https://your_custom_domain.com</code></p>
 </div>
@@ -7696,13 +6993,13 @@ Get Business Customer</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_14"><a class="anchor" href="#_supported_operations_14"></a>Supported Operations</h4>
+<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: List Campaigns</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_paging_4"><a class="anchor" href="#_paging_4"></a>Paging</h4>
+<h4 id="_paging_3"><a class="anchor" href="#_paging_3"></a>Paging</h4>
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
@@ -7744,7 +7041,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_filtering_4"><a class="anchor" href="#_filtering_4"></a>Filtering</h4>
+<h4 id="_filtering_3"><a class="anchor" href="#_filtering_3"></a>Filtering</h4>
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
@@ -7786,7 +7083,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_sorting_information_4"><a class="anchor" href="#_sorting_information_4"></a>Sorting Information</h4>
+<h4 id="_sorting_information_3"><a class="anchor" href="#_sorting_information_3"></a>Sorting Information</h4>
 <div class="paragraph">
 <p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here’s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. ou can sort by the following attributes:</p>
 </div>
@@ -7919,7 +7216,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_14"><a class="anchor" href="#_example_14"></a>Example</h4>
+<h4 id="_example_11"><a class="anchor" href="#_example_11"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
@@ -7941,28 +7238,31 @@ If the search API is called without page and pageSize, by default pageSize will 
     "data": {
         "result": [
             {
-        "sid": "EC2f1e91bcdeb346519612a96dd31dcd53",
-        "dateUpdated": "2020-01-01T11:40:15+0000",
-        "dateCreated": "2020-01-01T11:40:15+0000",
-        "accountSid": "AC9f5746bbeba827841634b106f23e7395",
-        "accountEmail": "teste1@testent7.com",
-        "uri": "/campaignmanager/campaigns/search/EC2f1e91bcdeb346519612a96dd31dcd53",
-        "name": "Test Data 1",
-        "startTime": "2020-01-01T22:45:32+0000",
-        "enterpriseSid": "ENfda064f487ff4309b8b306d25adc0a86",
-        "total": 1,
-        "status": "cancelled",
-        "fromPrefix": "+91"
-    },
+                "sid": "EC87eea72ac73541a39ebac4cc9f78f128",
+                "dateUpdated": "2022-01-11T06:18:17+0000",
+                "dateCreated": "2022-01-11T06:18:16+0000",
+                "accountSid": "ACee5c7ea406642a5543786da456784af6",
+                "accountEmail": "great.shetty@mavenir.com",
+                "uri": "/campaignmanager/campaigns/search/EC87eea72ac73541a39ebac4cc9f78f128",
+                "name": "Camp",
+                "startTime": "2022-01-11T06:18:16+0000",
+                "endTime": "2022-01-11 06:18:17.0",
+                "enterpriseSid": "EN197e3342e96b432ba4dc1bb3d2d84e40",
+                "total": 1,
+                "status": "completed",
+                "fromPrefix": "",
+                "channel": "sms",
+                "dialTimeout": 30
+            }
         ],
         "pageSize": 10,
-        "total": 1,
+        "total": 9,
         "page": 0,
         "numPages": 1,
         "start": 0,
-        "end": 0,
-        "firstPageUri": "/campaignmanager/campaigns/search/?pageSize=10&amp;page=0",
-        "uri": "/campaignmanager/campaigns/search/?pageSize=10&amp;page=0"
+        "end": 8,
+        "firstPageUri": "/campaignmanager/campaigns/search/?name=Camp&amp;pageSize=10&amp;page=0",
+        "uri": "/campaignmanager/campaigns/search/?name=Camp&amp;pageSize=10&amp;page=0"
     },
     "code": 200,
     "message": "OK"
@@ -7977,7 +7277,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <p>The Single Campaign search API allows users to retrieve specific Campaigns.</p>
 </div>
 <div class="sect3">
-<h4 id="_base_resource_uri_15"><a class="anchor" href="#_base_resource_uri_15"></a>Base Resource URI</h4>
+<h4 id="_base_resource_uri_12"><a class="anchor" href="#_base_resource_uri_12"></a>Base Resource URI</h4>
 <div class="paragraph">
 <p><code>https://your_custom_domain.com</code></p>
 </div>
@@ -7989,13 +7289,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_15"><a class="anchor" href="#_supported_operations_15"></a>Supported Operations</h4>
+<h4 id="_supported_operations_12"><a class="anchor" href="#_supported_operations_12"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Specific Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_11"><a class="anchor" href="#_request_parameters_11"></a>Request Parameters</h4>
+<h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -8083,7 +7383,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_example_15"><a class="anchor" href="#_example_15"></a>Example</h4>
+<h4 id="_example_12"><a class="anchor" href="#_example_12"></a>Example</h4>
 <div class="paragraph">
 <p>From the bash terminal you can run the command below:</p>
 </div>
