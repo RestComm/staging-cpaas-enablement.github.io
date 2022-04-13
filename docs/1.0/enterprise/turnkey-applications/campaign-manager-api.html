@@ -3642,6 +3642,152 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect2">
+<h3 id="_estimate_volume_estimate_credits_used"><a class="anchor" href="#_estimate_volume_estimate_credits_used"></a>Estimate Volume (Estimate Credits Used)</h3>
+<div class="sect3">
+<h4 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h4>
+<div class="paragraph">
+<p><code>/campaignmanager/campaigns/estimateVolume</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h4>
+<div class="paragraph">
+<p>HTTP GET: Get an estimate of the number of credits (volume) that will be used when running this campaign.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optInListSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The Sid of an OptIn list.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">channel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. SMS/voice or email. depending on the type of campaign.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">toListSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the "to list", must be a SID of a list that is of type "TO_LIST".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional but mandatory if the channel type is SMS. The SMS body.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">optOutListSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional but mandatory if "optInListSid" is provided. The Sid of an OptOut list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h4>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message and validation data.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The volume amount (how many credits) will be used.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message describing the error if an error occurred, or a success message when the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_estimating_a_campaign_volume"><a class="anchor" href="#_estimating_a_campaign_volume"></a>Estimating a Campaign Volume</h4>
+<div class="paragraph">
+<p>The following section will walk you through the process of estimating the volume (amount of credits) used while running a campaign.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have provided an OptOut list, the same will be retrieved from the system.</p>
+</li>
+<li>
+<p>If you have provided an OptIn list, the same will be retrieved from the system, and then the items from the OptIn list will be excluded from the OptOut List.</p>
+</li>
+<li>
+<p>When the To List is retrieved from the system, the items from the OptOut list are excluded from the To List.</p>
+</li>
+<li>
+<p>The final Recipients List = (ToList) - (OptOut - OptIn)</p>
+</li>
+<li>
+<p>The Body section of the campaign is checked to see if it contains templated text (like "Hello $(name)).</p>
+</li>
+<li>
+<p>Each recipient line is re-formatted to replace parameters from the columns in the CSV file.</p>
+</li>
+<li>
+<p>When each line has its text finalized, the number of SMS sections for that line is calculated.</p>
+</li>
+<li>
+<p>Lastly, the sum of all lines is returned to the user.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl GET \
+  'http://company.com/campaignmanager/campaigns/estimateVolume?toListSid=NG4c29f7433b704b779745f9cc957c2e1c&amp;channel=sms&amp;body=smsBody&amp;optOutListSid=NG4707f15292ac4b1caf1b99dcacd2401d&amp;optInListSid=NG9644de50345e4cd5b6f41fd772e56643' \
+  --user  ' {your_account_SID}:{your_account_token}' \
+   -H 'Cache-Control: no-cache' \
+   -H 'Content-Type: application/json'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "data": 90000,
+  "code": 200,
+  "message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_delete_campaign"><a class="anchor" href="#_delete_campaign"></a>Delete Campaign</h3>
 <div class="paragraph">
 <p>This endpoint will be used to delete existing campaigns.Only campaigns with a status of Scheduled can be deleted.If the status of the campaign changes to any other, deleting is no longer possible.</p>
@@ -3659,13 +3805,13 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h4>
+<h4 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP DELETE: Delete Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h4>
+<h4 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3686,7 +3832,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h4>
+<h4 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. HTTP response will be 200 OK.</p>
 </div>
@@ -3834,7 +3980,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h4>
+<h4 id="_supported_operations_5"><a class="anchor" href="#_supported_operations_5"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: List Campaigns</p>
 </div>
@@ -3961,7 +4107,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h4>
+<h4 id="_response_body_5"><a class="anchor" href="#_response_body_5"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message, and data of Campaigns if it was successfully fetched. HTTP response will be 200 OK.</p>
 </div>
@@ -4104,13 +4250,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_5"><a class="anchor" href="#_supported_operations_5"></a>Supported Operations</h4>
+<h4 id="_supported_operations_6"><a class="anchor" href="#_supported_operations_6"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Specific Campaign</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h4>
+<h4 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4131,7 +4277,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_5"><a class="anchor" href="#_response_body_5"></a>Response Body</h4>
+<h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry Code, corresponding message, and data of User if it was successfully searched. HTTP response will be 200 OK.</p>
 </div>
@@ -4262,13 +4408,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_6"><a class="anchor" href="#_supported_operations_6"></a>Supported Operations</h4>
+<h4 id="_supported_operations_7"><a class="anchor" href="#_supported_operations_7"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP POST: Add announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h4>
+<h4 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4320,7 +4466,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
+<h4 id="_response_body_7"><a class="anchor" href="#_response_body_7"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully created. HTTP response will be 200 Created (OK).</p>
 </div>
@@ -4653,13 +4799,13 @@ After this you need to call Upload Announcement API endpoint to upload the Audio
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_7"><a class="anchor" href="#_supported_operations_7"></a>Supported Operations</h4>
+<h4 id="_supported_operations_8"><a class="anchor" href="#_supported_operations_8"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP POST: Upload audio file</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h4>
+<h4 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4688,7 +4834,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_7"><a class="anchor" href="#_response_body_7"></a>Response Body</h4>
+<h4 id="_response_body_8"><a class="anchor" href="#_response_body_8"></a>Response Body</h4>
 <div class="paragraph">
 <p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully uploaded. HTTP response will be 200 Created  (OK).</p>
 </div>
@@ -4873,13 +5019,13 @@ error occurred while uploading file to s3</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_8"><a class="anchor" href="#_supported_operations_8"></a>Supported Operations</h4>
+<h4 id="_supported_operations_9"><a class="anchor" href="#_supported_operations_9"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP PUT: Update announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h4>
+<h4 id="_request_parameters_8"><a class="anchor" href="#_request_parameters_8"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -4931,7 +5077,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_8"><a class="anchor" href="#_response_body_8"></a>Response Body</h4>
+<h4 id="_response_body_9"><a class="anchor" href="#_response_body_9"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announce data if update was successful.</p>
 </div>
@@ -5107,7 +5253,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
+<h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X 'GET' \
@@ -5117,7 +5263,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
+<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
 <div class="listingblock">
 <div class="content">
 <pre>{
@@ -5157,13 +5303,13 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_9"><a class="anchor" href="#_supported_operations_9"></a>Supported Operations</h4>
+<h4 id="_supported_operations_10"><a class="anchor" href="#_supported_operations_10"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP DELETE: Delete announcement</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_request_parameters_8"><a class="anchor" href="#_request_parameters_8"></a>Request Parameters</h4>
+<h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -5184,7 +5330,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </table>
 </div>
 <div class="sect3">
-<h4 id="_response_body_9"><a class="anchor" href="#_response_body_9"></a>Response Body</h4>
+<h4 id="_response_body_10"><a class="anchor" href="#_response_body_10"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announcement data if delete was successful.</p>
 </div>
@@ -5333,7 +5479,7 @@ Get Announcement</p></td>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_10"><a class="anchor" href="#_supported_operations_10"></a>Supported Operations</h4>
+<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Get Announcement list</p>
 </div>
@@ -5452,7 +5598,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_response_body_10"><a class="anchor" href="#_response_body_10"></a>Response Body</h4>
+<h4 id="_response_body_11"><a class="anchor" href="#_response_body_11"></a>Response Body</h4>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and data of Announcement if it was successfully fetched. HTTP response will be 200 OK.</p>
 </div>
@@ -5629,7 +5775,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h4>
+<h4 id="_supported_operations_12"><a class="anchor" href="#_supported_operations_12"></a>Supported Operations</h4>
 <div class="paragraph">
 <p>HTTP GET: Specific announcement</p>
 </div>
