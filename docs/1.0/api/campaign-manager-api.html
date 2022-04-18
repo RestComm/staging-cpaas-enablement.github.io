@@ -7343,6 +7343,957 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_numbers_list"><a class="anchor" href="#_numbers_list"></a>Numbers list</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_base_resource_uri_13"><a class="anchor" href="#_base_resource_uri_13"></a>Base Resource URI</h3>
+<div class="paragraph">
+<p><code>https://your_custom_domain.com</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_numbers_list_resource_uri"><a class="anchor" href="#_create_numbers_list_resource_uri"></a>Create Numbers List Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_13"><a class="anchor" href="#_supported_operations_13"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP POST: Create numbers list</p>
+</div>
+<div class="sect3">
+<h4 id="_request_parameters_10"><a class="anchor" href="#_request_parameters_10"></a>Request Parameters</h4>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The type of list to create. Such as: "to_list", "from_list", "opt_in" or "opt_out".</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">numbersFile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">File containing the list of numbers (.txt or .csv).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the NumbersList item.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description of the item.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_response_body_11"><a class="anchor" href="#_response_body_11"></a>Response Body</h4>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message and validation data.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Response data object as described below.</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_response_example"><a class="anchor" href="#_response_example"></a>Response Example</h4>
+<div class="paragraph">
+<p>If the NumbersList item was successfully created, the following response is returned.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "data": {
+    "numbersGroup": {
+     "sid": "NG8eeb901bf85b41e0b20d8edce0f644be",
+     "dateUpdated": "2022-02-27T16:57:04+0200",
+     "dateCreated": "2022-02-27T16:57:04+0200",
+     "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
+     "accountEmail": "mail@gmail.com",
+     "uri": "/campaignmanager/numbersGroup/search/NG8eeb901bf85b41e0b20d8edce0f644be",
+     "name": "moshe31",
+     "description": "cohen3",
+     "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
+     "status": "ready",
+     "groupType": "to_list",
+     "fileType": "csv",
+     "lineCount": 1
+    }
+  },
+  "code": 200,
+  "message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_numbers_validation"><a class="anchor" href="#_numbers_validation"></a>Numbers Validation</h3>
+<div class="paragraph">
+<p>The phone numbers validation happens on three levels: <a href="#_basic_validation">Basic validation</a>, <a href="#_csv_validation">CSV Validation</a> file validation and <a href="#_saving_validation">Saving Validation</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="_basic_validation"><a class="anchor" href="#_basic_validation"></a>Basic validation</h4>
+<div class="paragraph">
+<p>The following section outlines the aspects of basic phone numbers validation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The file containing the phone numbers must not be empty.</p>
+</li>
+<li>
+<p>The file containing the phone numbers shall not be bigger than 100 MB or shall not contain more than 1,000,000 lines.</p>
+</li>
+<li>
+<p>The recipients numbers may contain only digits, <code>+</code> and <code>–</code> signs.</p>
+</li>
+<li>
+<p>The <code>+</code> sign can only be the first character of the line.</p>
+</li>
+<li>
+<p>Surplus spaces at the beginning or end of the line will be trimmed.</p>
+</li>
+<li>
+<p>Any <code>–</code> sign will be trimmed and replaced with an empty string.</p>
+</li>
+<li>
+<p>Any space in the middle of a phone number will be trimmed and replaced with an empty string.</p>
+</li>
+<li>
+<p>Empty lines will be removed.</p>
+</li>
+<li>
+<p>Phone numbers must contain minimum 7 characters.</p>
+</li>
+<li>
+<p>Phone numbers must contain maximum 15 characters.</p>
+</li>
+<li>
+<p>When all extra spaces and symbols are trimmed, an extra check is performed to remove duplicate phone numbers.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_csv_validation"><a class="anchor" href="#_csv_validation"></a>CSV Validation</h4>
+<div class="paragraph">
+<p>The following section outlines the aspects of CSV file validation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The CSV file must contain a header line.</p>
+</li>
+<li>
+<p>The header line must contain a <code>number</code> column.</p>
+</li>
+<li>
+<p>Each header cell&#8217;s name will be trimmed, if spaces are found in the beginning or end of its value.</p>
+</li>
+<li>
+<p>Each CSV line must contain the same number of columns as the header line does</p>
+</li>
+<li>
+<p>Each CSV row will be limited to 255 characters.</p>
+</li>
+<li>
+<p>A cell value will be trimmed if spaces are found in the beginning or end of it.</p>
+</li>
+<li>
+<p>The phone number in the <code>number</code> column is validated via <a href="#_basic_validation">Basic validation</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_saving_validation"><a class="anchor" href="#_saving_validation"></a>Saving Validation</h4>
+<div class="paragraph">
+<p>The following section outlines the aspects of a Saving validation.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All surplus lines are removed.</p>
+</li>
+<li>
+<p>All surplus spaces are removed.</p>
+</li>
+<li>
+<p>Corrected file is zipped and saved.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete_existing_numbers_list"><a class="anchor" href="#_delete_existing_numbers_list"></a>Delete Existing Numbers List</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_14"><a class="anchor" href="#_supported_operations_14"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP DELETE: delete a list by Id</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_body_12"><a class="anchor" href="#_response_body_12"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_example_2"><a class="anchor" href="#_response_example_2"></a>Response Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "code": 200,
+  "message": "ok"
+  "data" :"
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validations"><a class="anchor" href="#_validations"></a>Validations</h3>
+<div class="paragraph">
+<p>In case the list is being used by future campaign the call will fail</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_existing_numbers_lists"><a class="anchor" href="#_list_existing_numbers_lists"></a>List Existing Numbers Lists</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>curl --location --request GET 'http://localhost:8081/campaignmanager/numbersGroup/search?name=test&amp;fileType=csv' \
+--header 'authorization: Basic &lt;credentials&gt;'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_15"><a class="anchor" href="#_supported_operations_15"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP GET: Get available list by provided criteria.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters_11"><a class="anchor" href="#_request_parameters_11"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of list to get ToNumbers/FromNumbers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name or part of name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One of the values from Status Enum (validating,invalid,uploading,ready,failed)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">txt/csv</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include items after this date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include items before this date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EnterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of enterprise</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to_list,from_list,opt_in,opt_out</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sortBy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"name:desc","name:asc",<br>
+"status:asc","status:desc",<br>
+"fileType:asc","fileType:desc",<br>
+"groupType:asc","groupType:desc",<br>
+"startTime:asc","startTime:desc",<br>
+"dateUpdated:asc","dateUpdated:desc",<br>
+"dateCreated:desc","dateCreated:asc"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">default 10 / max 100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_13"><a class="anchor" href="#_response_body_13"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of "NumbersList" items as described below</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_example_3"><a class="anchor" href="#_response_example_3"></a>Response Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+"data": {
+"result": [
+{
+       "sid": "NG201fe58f01e84b65a3eae83e59d91e0f",
+       "dateUpdated": "2022-02-27T16:23:38+0200",
+       "dateCreated": "2022-02-27T16:23:38+0200",
+       "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
+       "accountEmail": "mail@gmail.com",
+       "uri": "/campaignmanager/numbersGroup/search/NG201fe58f01e84b65a3eae83e59d91e0f",
+       "name": "moshe3",
+       "description": "cohen",
+       "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
+       "status": "ready",
+       "groupType": "to_list",
+       "fileType": "csv",
+       "lineCount": 1
+},
+{
+       "sid": "NG6920c8fd66d4402cbf2959117193885a",
+       "dateUpdated": "2022-02-27T16:07:47+0200",
+       "dateCreated": "2022-02-27T16:07:47+0200",
+       "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
+       "accountEmail": "hope123@gmail.com",
+       "uri": "/campaignmanager/numbersGroup/search/NG6920c8fd66d4402cbf2959117193885a",
+       "name": "moshe2",
+       "description": "cohen",
+       "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
+       "status": "ready",
+       "groupType": "to_list",
+       "fileType": "csv",
+       "lineCount": 1
+},
+],
+"pageSize": 10,
+"total": 2,
+"page": 0,
+"numPages": 1,
+"start": 0,
+"end": 5,
+"firstPageUri": "/campaignmanager/numbersGroup/search/?pageSize=10&amp;page=0",
+"uri": "/campaignmanager/numbersGroup/search/?pageSize=10&amp;page=0"
+},
+"code": 200,
+"message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_list_a_single_numbers_list"><a class="anchor" href="#_list_a_single_numbers_list"></a>List a Single Numbers List</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_16"><a class="anchor" href="#_supported_operations_16"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP GET: Get available list by provided criteria.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters"><a class="anchor" href="#_path_parameters"></a>Path Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sid of list to fetch</p></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_14"><a class="anchor" href="#_response_body_14"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_example_4"><a class="anchor" href="#_response_example_4"></a>Response Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+   "data": {
+      "sid": "NG26cc39225eb248ddac440f4975bfc32c",
+      "dateUpdated": "2022-02-27T11:11:04+0200",
+      "dateCreated": "2022-02-27T11:11:04+0200",
+      "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
+      "accountEmail": "hope123@gmail.com",
+      "uri": "/campaignmanager/numbersGroup/search/NG26cc39225eb248ddac440f4975bfc32c",
+      "name": "test list csv",
+      "description": "test",
+      "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
+      "status": "ready",
+      "groupType": "to_list",
+      "fileType": "csv",
+      "lineCount": 100
+   },
+   "code": 200,
+   "message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_update_numbers_list"><a class="anchor" href="#_update_numbers_list"></a>Update Numbers List</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_17"><a class="anchor" href="#_supported_operations_17"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP PUT:  update description of existing list</p>
+</div>
+<div class="paragraph">
+<p>note that file content can be replaced only if the number list was in invalid state</p>
+</div>
+<div class="paragraph">
+<p>if numbers list is in ready state user can not replace the file</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters_2"><a class="anchor" href="#_path_parameters_2"></a>Path Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of the list to fetch.</p></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_request_example"><a class="anchor" href="#_request_example"></a>Request example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>curl --location --request PUT 'http://&lt;server url&gt;/campaignmanager/numbersGroup/NG5b4f5d57f4a14e15b119b8286587ed5f?description=somedescription&amp;name=newName' \
+--header 'Authorization: Basic &lt;auth data&gt;' \
+--form 'file=@"/C:/Users/user/Downloads/test.txt"'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_response_body_15"><a class="anchor" href="#_response_body_15"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_example_5"><a class="anchor" href="#_response_example_5"></a>Response Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+   "data": {
+      "sid": "NG26cc39225eb248ddac440f4975bfc32c",
+      "dateUpdated": "2022-02-27T11:11:04+0200",
+      "dateCreated": "2022-02-27T11:11:04+0200",
+      "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
+      "accountEmail": "hope123@gmail.com",
+      "uri": "/campaignmanager/numbersGroup/search/NG26cc39225eb248ddac440f4975bfc32c",
+      "name": "test list csv",
+      "description": "new description",
+      "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
+      "status": "ready",
+      "groupType": "to_list",
+      "fileType": "csv",
+      "lineCount": 100
+   },
+   "code": 200,
+   "message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_list_content"><a class="anchor" href="#_download_list_content"></a>Download list content</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri_5"><a class="anchor" href="#_resource_uri_5"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/download/{listSid}</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_18"><a class="anchor" href="#_supported_operations_18"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP GET: Get the content of the list (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters_3"><a class="anchor" href="#_path_parameters_3"></a>Path Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of list to download</p></td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_16"><a class="anchor" href="#_response_body_16"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body return the content of the blob (application/octet-stream</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_preview_list_content"><a class="anchor" href="#_preview_list_content"></a>Preview list content</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri_6"><a class="anchor" href="#_resource_uri_6"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/preview/{listSid}</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_19"><a class="anchor" href="#_supported_operations_19"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP GET: get a preview (few lines) from the numbers group</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_path_parameters_4"><a class="anchor" href="#_path_parameters_4"></a>Path Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of list to download</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters_12"><a class="anchor" href="#_request_parameters_12"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rowsCount</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of lines to get from the numbers list file. default is 10, maximum is 50</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_17"><a class="anchor" href="#_response_body_17"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lines from the numbers file</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_numbers_lists_names"><a class="anchor" href="#_get_numbers_lists_names"></a>Get Numbers Lists names</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_resource_uri_7"><a class="anchor" href="#_resource_uri_7"></a>Resource URI</h3>
+<div class="paragraph">
+<p><code>/campaignmanager/numbersLists/listGroups</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supported_operations_20"><a class="anchor" href="#_supported_operations_20"></a>Supported Operations</h3>
+<div class="paragraph">
+<p>HTTP POST: get the list of groups. both regular lists and also DND lists</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters_13"><a class="anchor" href="#_request_parameters_13"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">groupTypeList</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array of group types  ["to_list", "from_list", "opt_in", "opt_out"]</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_18"><a class="anchor" href="#_response_body_18"></a>Response Body</h3>
+<div class="paragraph">
+<p>The Response Body will carry Code, corresponding message</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sub-error code for response</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A message describing the error if occurred, or a success message if the operation is successful.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map between list type and the names of lists for this type</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_response_body_example"><a class="anchor" href="#_response_body_example"></a>Response Body Example</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "data": {
+    "opt_out": [
+      {
+        "name": "me",
+        "id": "NG5ac47d81bd214f0dbb65c3924669d24d",
+        "item": {
+          "sid": "NG3bc2937e9437441c85078248f6fb5a06",
+          "lineCount": 1
+        }
+      }
+    ],
+    "to_list": [
+      {
+        "name": "972544285626",
+        "id": "NG69bf3bb1b5304c73a8b68a3cd2ffdf05",
+        "item": {
+          "sid": "NG7d5797254fb94fec82dd034b590669b0",
+          "lineCount": 1
+        }
+      },
+      {
+        "name": "asdfasdf",
+        "id": "NG0645c739e31040879a1c916ec8998600",
+        "item": {
+          "sid": "NG735cc1f2b7b744eabf8129dfced0880a",
+          "lineCount": 1
+        }
+      }
+    ],
+    "opt_in": [],
+    "from_list": [
+      {
+        "name": "manual-me",
+        "id": "NG762149f9ba8c4bb284635d9b3df0e9c6",
+        "item": {
+          "sid": "NGa510b155151c4618b41c991b0a8bc8c8",
+          "lineCount": 1
+        }
+      }
+    ]
+  },
+  "code": 200,
+  "message": "OK"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </article>
   </main>
 </div>
