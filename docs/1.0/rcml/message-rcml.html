@@ -4498,7 +4498,7 @@
 <p>The <strong>&lt;Message&gt;</strong> verb sends an A2P message to any of the supported Channels (SMS, MMS, Webex Teams, Microsoft Teams, XMPP).</p>
 </div>
 <div class="paragraph">
-<p>Omnichannel allows sending simple text and media attachments. Depending on the target Channel different capabilities will be supported. Those capabilities will limit the following characteristics:</p>
+<p>Omnichannel allows sending simple text and media attachments. Depending on the target Channel different capabilities will be supported. Those capabilities will define the following characteristics:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4514,7 +4514,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>If the message doesn&#8217;t comply with the Channel constraint, it will be marked as failed, and no billing will be applied to this message.</p>
+<p>If the message doesn&#8217;t comply with the Channel constraint, it will be marked as failed, and no billing will be applied for it.</p>
 </div>
 </div>
 </div>
@@ -4537,12 +4537,12 @@
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the recipient of message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the recipient of the message.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the sender of message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the sender of the message.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
@@ -4570,13 +4570,13 @@
 <div class="sect2">
 <h3 id="_to"><a class="anchor" href="#_to"></a>to</h3>
 <div class="paragraph">
-<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the caller. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is "mms:+15558675311"</p>
+<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the caller. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558675311"</code>.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_from"><a class="anchor" href="#_from"></a>from</h3>
 <div class="paragraph">
-<p>The 'from' attribute represents an Omnichannel URI. When sending a Message during an incoming call, 'from' defaults to the calling party. When sending a Message during an outgoing call, 'from' defaults to the called party. If the CPaaS application is expecting the target user to reply to this A2P message, the <code>From</code> should match a corresponding IncomingPhoneNumber identity.</p>
+<p>The 'from' attribute represents an Omnichannel URI. When sending a Message during an incoming call, 'from' defaults to the calling party. When sending a Message during an outgoing call, 'from' defaults to the called party. If the CPaaS application is expecting the target user to reply to this A2P message, the <code>From</code> should match a corresponding <a href="../api/incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">IncomingPhoneNumber</a> identity.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4653,17 +4653,17 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MessageStatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Last status known for this message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The last status known for this message.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delivered</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">From address of the message (message sender)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From address of the message (message sender).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543212</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">To address of the message (message receiver)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To address of the message (message receiver).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543213</p></td>
 </tr>
 <tr>
@@ -4698,11 +4698,11 @@
 <div class="sect2">
 <h3 id="_omnichannel_uris"><a class="anchor" href="#_omnichannel_uris"></a>Omnichannel URIs</h3>
 <div class="paragraph">
-<p>Omnichannel API is built on top of URI concept. URIs create a different namespace for the different supported channels,
-immediately providing a proper unique identifier per Channel.</p>
+<p>The Omnichannel API is built on a top of the URI concept.URIs create a separate namespace for the different supported channels,
+providing an unique identifier per Channel.</p>
 </div>
 <div class="paragraph">
-<p>At this moment these are the following URIs supported:</p>
+<p>The following URIs supported:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -4758,7 +4758,7 @@ The <strong>&lt;Media&gt;</strong> noun element must also contain an attribute "
 </div>
 </div>
 <div class="paragraph">
-<p>The next RCML example showcases how you can use <code>From</code>, <code>To</code> and <code>statusCallback</code>.</p>
+<p>The next RCML example showcases how you can use <code>From</code>, <code>To</code> and <code>statusCallback</code> parameters to send a message.</p>
 </div>
 <div class="listingblock">
 <div class="content">
