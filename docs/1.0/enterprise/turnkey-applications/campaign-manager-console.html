@@ -3380,21 +3380,11 @@
 <img src="../_images/campaign-manager/campaign-manager-console-tabs.png" alt="Account Details">
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Campaigns</strong>: Here you can create campaigns and see the details and status of newly created or older campaigns.</p>
-</li>
-<li>
-<p><strong>Announcements</strong>: Here you can create announcements for your voice campaigns and view older announcements.</p>
-</li>
-<li>
-<p><strong>Number Lists</strong>: Here you can create lists of numbers which are required for your campaigns.</p>
-</li>
-<li>
-<p><strong>Do Not Disturb (DND)</strong>: Here you can create Do Not Disturb lists and select them optionally during the campaign creation.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p><strong>Campaigns</strong>: Here you can create campaigns and see the details and status of newly created or older campaigns.
+<strong>Announcements</strong>: Here you can create announcements for your voice campaigns and view older announcements.
+<strong>Number Lists</strong>: Here you can create lists of numbers which are required for your campaigns.
+<strong>Do Not Disturb (DND)</strong>: Here you can create Do Not Disturb lists and select them optionally during the campaign creation.</p>
 </div>
 </div>
 </div>
@@ -3468,23 +3458,11 @@ This is not required for SMS campaigns.
 <p>Select a Language of TTS from the Language drop-down list</p>
 </li>
 <li>
-<p>Select Voice. Options depend upon the TTS providers as below:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Google: Male and Female</p>
-</li>
-<li>
-<p>AWS Polly: Male and Female</p>
-</li>
-<li>
-<p>Acapela: Man and Woman</p>
-</li>
-<li>
-<p>Voicerss: Female(only)</p>
-</li>
-</ul>
-</div>
+<p>Select Voice. Options depend upon the TTS providers as below:
+Google: Male and Female
+AWS Polly: Male and Female
+Acapela: Man and Woman
+Voicerss: Female(only)</p>
 </li>
 <li>
 <p>Enter the text in the Body field that you want to convert to speech.</p>
@@ -3500,21 +3478,11 @@ This is not required for SMS campaigns.
 <div class="paragraph">
 <p>The newly created announcement displays the following information:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Name: This column can be sorted in the ascending or descending alphabetical order.</p>
-</li>
-<li>
-<p>Last Update: This column can be sorted in the ascending or descending order of the last updated date.</p>
-</li>
-<li>
-<p>Type: This column can be sorted on the type of announcement.</p>
-</li>
-<li>
-<p>Description</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Name: This column can be sorted in the ascending or descending alphabetical order.
+Last Update: This column can be sorted in the ascending or descending order of the last updated date.
+Type: This column can be sorted on the type of announcement.
+Description</p>
 </div>
 <div class="paragraph">
 <p>If you have many announcements, the following search filters enable you to easily search for announcements:</p>
@@ -3681,17 +3649,9 @@ Once uploaded and validated list content cannot be changed, though it is possibl
 <p>Description</p>
 </li>
 <li>
-<p>Status:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Ready – list was validated properly and is ready for use</p>
-</li>
-<li>
-<p>Invalid – list failed validation criteria and cannot be used, as is. User should download results file to review and fix validation errors. Once fixed, the file can be uploaded again, iteratively, till fully validated</p>
-</li>
-</ul>
-</div>
+<p>Status:
+Ready – list was validated properly and is ready for use
+Invalid – list failed validation criteria and cannot be used, as is. User should download results file to review and fix validation errors. Once fixed, the file can be uploaded again, iteratively, till fully validated</p>
 </li>
 </ul>
 </div>
@@ -3735,38 +3695,14 @@ Once uploaded and validated list content cannot be changed, though it is possibl
 <div class="paragraph">
 <p>Uploaded files are verified as follows:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>File type –</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>For To Lists: only csv, txt, and zip files are allowed (zip must include csv or txt file). csv files need to be used for Message Template SMS campaigns.</p>
-</li>
-<li>
-<p>For From Lists: only txt and zip files are allowed (zip must include txt file).</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>File size – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.</p>
-</li>
-<li>
-<p>File content – file must contain consecutive entries, blank or duplicate entries are invalid</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>txt file – must consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.</p>
-</li>
-<li>
-<p>csv file – must include top row of variable titles. ‘numbers’ column is mandatory. ‘numbers’ column should consist only of numeric entries, single column, up to 15 digits per entry, and + prefix is allowed. Other columns are checked only for blank entries.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<div class="paragraph">
+<p><strong>File type</strong>
+ - For To Lists: only csv, txt, and zip files are allowed (zip must include csv or txt file). csv files need to be used for Message Template SMS campaigns.
+ - For From Lists: only txt and zip files are allowed (zip must include txt file).
+<strong>File size</strong> – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.
+<strong>File content</strong> – file must contain consecutive entries, blank or duplicate entries are invalid
+ - txt file – must consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.
+ - csv file – must include top row of variable titles. ‘numbers’ column is mandatory. ‘numbers’ column should consist only of numeric entries, single column, up to 15 digits per entry, and + prefix is allowed. Other columns are checked only for blank entries.</p>
 </div>
 <div class="paragraph">
 <p>In case the file content doesn’t meet the above criteria, Campaign Manager will flag the file as invalid and will allow user to download the results file. When you click on a list that is Invalid the List details window appears as shown in the example below:</p>
@@ -3871,8 +3807,10 @@ Once uploaded and validated list content cannot be changed, though it is possibl
 <div class="paragraph">
 <p>In case the file content doesn’t meet the above criteria, Campaign Manager will flag the file as invalid and will allow user to download the results file (an example is shown below).</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="../_images/campaign-manager/dnd-list-details.png" alt="dnd list details"></span>]</p>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/dnd-list-details.png" alt="dnd list details">
+</div>
 </div>
 <div class="paragraph">
 <p>Click on the download icon and you can view the errors. Once fixed, user can reload the file, till valid upload is accomplished.</p>
@@ -3897,18 +3835,10 @@ Once uploaded, and validated, list content cannot be changed, though it’s poss
 <div class="paragraph">
 <p>Uploaded files are verified as follows:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>File type – only txt and zip files are allowed (zip must include txt file)</p>
-</li>
-<li>
-<p>File size – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.</p>
-</li>
-<li>
-<p>File content – file must contain consecutive entries; blank or duplicate entries are invalid. The file should consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p><strong>File type</strong> – only txt and zip files are allowed (zip must include txt file)
+<strong>File size</strong> – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.
+<strong>File content</strong> – file must contain consecutive entries; blank or duplicate entries are invalid. The file should consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.</p>
 </div>
 </div>
 </div>
@@ -3919,21 +3849,31 @@ Once uploaded, and validated, list content cannot be changed, though it’s poss
 <p>To search for DND lists in the DND tab, select Opt-Out Lists or Opt-In Lists to view the respective lists. You can use the following search filters:</p>
 </div>
 <div class="paragraph">
-<p>· Start Date: Enter a date to display all the lists created on or after this date.
-· End Date: Enter a date to display all list created on or before this date
-· List name: Enter an Opt-Out List name or Opt-In List name to search for lists matching the entered name.</p>
+<p><strong>Start Date</strong>: Enter a date to display all the lists created on or after this date.
+<strong>End Date</strong>: Enter a date to display all list created on or before this date
+<strong>List name</strong>: Enter an Opt-Out List name or Opt-In List name to search for lists matching the entered name.</p>
 </div>
 <div class="paragraph">
 <p>Click on a list in the DND tab. The List details appears in a pop-up window.</p>
 </div>
 <div class="paragraph">
-<p>image:</p>
+<p>image::[]</p>
 </div>
-<div class="paragraph">
-<p><strong>Edit List</strong>: Edit the Name and Description of the list and click Save.
-<strong>Download List</strong>: Click on the download icon to download the list.
-<strong>Preview List</strong>: Click on the eye icon to preview the list.
-<strong>Delete List</strong>: Click on Delete to delete the list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit List: Edit the Name and Description of the list and click Save.</p>
+</li>
+<li>
+<p>Download List: Click on the download icon to download the list.</p>
+</li>
+<li>
+<p>Preview List: Click on the eye icon to preview the list.</p>
+</li>
+<li>
+<p>Delete List: Click on Delete to delete the list.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3953,9 +3893,13 @@ Once uploaded, and validated, list content cannot be changed, though it’s poss
 </li>
 <li>
 <p>DND in case you are planning to exclude numbers from your campaign</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p>In the Campaign tab, click Create Campaign.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -4001,10 +3945,12 @@ For SMS campaigns, Campaign Manager enables you to create customized message to 
 <p>Your campaign message could be like: “Hi ${name}, reward points of ${reward points} has been added to your ShopXYZ account linked to your phone number ${phone number}. Shop before your reward points expire.” Each variable that you select from the drop-down while typing your campaign message appears as ${variable}.</p>
 </div>
 <div class="paragraph">
-<p><strong>Voice</strong>: There are 3 ways to set up a voice campaign as described below:
-* Announcement: This is the simplest way where you need to select a predefined announcement from the Choose Announcement drop-down list. Once Campaign is in progress, the receiver of the call will hear this announcement. Refer Create Announcement.
-* Application: Allows selection of Visual Designer application. This option is intended to support a more sophisticated call flow where you want to collect the DTMF from the end user or want to get a call connected to 3rd party.
-* RCML URL: Allows using your own hosted RCML application. Enter the URL link to the RCML application. You need to select GET or POST according to the preferred API method. Refer RCML Documentation for more details.</p>
+<p><strong>Voice</strong>: There are 3 ways to set up a voice campaign as described below:</p>
+</div>
+<div class="paragraph">
+<p><strong>Announcement</strong>: This is the simplest way where you need to select a predefined announcement from the Choose Announcement drop-down list. Once Campaign is in progress, the receiver of the call will hear this announcement. Refer Create Announcement.
+<strong>Application</strong>: Allows selection of Visual Designer application. This option is intended to support a more sophisticated call flow where you want to collect the DTMF from the end user or want to get a call connected to 3rd party.
+<strong>RCML URL</strong>: Allows using your own hosted RCML application. Enter the URL link to the RCML application. You need to select GET or POST according to the preferred API method. Refer RCML Documentation for more details.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -4066,21 +4012,11 @@ Opt-In file can be added only if Opt-Out file was chosen.
 <div class="paragraph">
 <p>Once you successfully create a campaign, the following information is displayed:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Name: This column can be sorted in the ascending or descending alphabetical order.</p>
-</li>
-<li>
-<p>Scheduled Date: This column can be sorted in the ascending or descending order of the created date.</p>
-</li>
-<li>
-<p>Channel: This column can be sorted by the type of campaign: SMS/voice.</p>
-</li>
-<li>
-<p>Status: This column can be sorted by the campaign status.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Name: This column can be sorted in the ascending or descending alphabetical order.
+Scheduled Date: This column can be sorted in the ascending or descending order of the created date.
+Channel: This column can be sorted by the type of campaign: SMS/voice.
+Status: This column can be sorted by the campaign status.</p>
 </div>
 <div class="paragraph">
 <p>When you have many campaigns, you can easily search for campaigns using the following search filters:</p>
@@ -4100,48 +4036,20 @@ Opt-In file can be added only if Opt-Out file was chosen.
 <p>Campaign Sid: Displays the campaign that matches the entered campaign Sid value.</p>
 </li>
 <li>
-<p>Status: Displays all the campaigns that match the selected status. The following statuses are available:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All status</p>
+<p>Status: Displays all the campaigns that match the selected status. The following statuses are available:
+All status
+Initiating: System is processing the Campaign for launch
+Scheduled: Campaign has initiated and now pending its schedule to launch
+In Progress: Campaign is in progress, sending SMSs or calling the To Numbers
+Completed: Campaign has completed successfully
+Failed: Campaign was disrupted either due to internal system error or if your Restcomm account was deleted by your Communications Provider while the campaign was In Progress.
+Canceled: Campaign was canceled</p>
 </li>
 <li>
-<p>Initiating: System is processing the Campaign for launch</p>
-</li>
-<li>
-<p>Scheduled: Campaign has initiated and now pending its schedule to launch</p>
-</li>
-<li>
-<p>In Progress: Campaign is in progress, sending SMSs or calling the To Numbers</p>
-</li>
-<li>
-<p>Completed: Campaign has completed successfully</p>
-</li>
-<li>
-<p>Failed: Campaign was disrupted either due to internal system error or if your Restcomm account was deleted by your Communications Provider while the campaign was In Progress.</p>
-</li>
-<li>
-<p>Canceled: Campaign was canceled</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Channel: Displays the campaigns that match the selected channel. The following options are available:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>All Channel</p>
-</li>
-<li>
-<p>SMS</p>
-</li>
-<li>
-<p>Voice</p>
-</li>
-</ul>
-</div>
+<p>Channel: Displays the campaigns that match the selected channel. The following options are available:
+All Channel
+SMS
+Voice</p>
 </li>
 </ul>
 </div>
