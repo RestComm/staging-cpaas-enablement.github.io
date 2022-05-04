@@ -4371,16 +4371,18 @@
 <ul class="sectlevel1">
 <li><a href="#_console_overview">Console Overview</a></li>
 <li><a href="#_enterprises">Enterprises</a></li>
-<li><a href="#_adding_an_enterprise">Adding an enterprise</a></li>
+<li><a href="#_adding_an_enterprise">Adding an Enterprise</a></li>
 <li><a href="#_editing_an_enterprise">Editing an Enterprise</a></li>
+<li><a href="#_deleting_an_enterprise">Deleting an Enterprise</a></li>
 <li><a href="#_campaign">Campaign</a></li>
+<li><a href="#_advanced_search">Advanced Search</a></li>
 <li><a href="#_campaign_details">Campaign Details</a></li>
 </ul>
 </div>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>CPaaS Campaign Manager Console allows Communications Providers to create, manage, or delete enterprises (business customers) through their own Restcomm account.</p>
+<p>CPaaS Campaign Manager Console allows Communications Providers  to create, manage, or delete enterprises (business customers) through their own Restcomm account.</p>
 </div>
 <div class="paragraph">
 <p>This document contains information for Communications Providers regarding the Campaign Manager Console.</p>
@@ -4396,14 +4398,19 @@
 <div class="paragraph">
 <p>The user’s drop-down at the top right corner of the console provides an option to view your account details or sign out. Next to it is a link to visit Documentation.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/account-details.png" alt="Account Details">
+</div>
+</div>
+<div class="paragraph">
 <p>The Campaign Manager console contains two tabs:</p>
-</dd>
-<dt class="hdlist1">image</dt>
-<dd>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/console-tabs.png" alt="Console Tabs">
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -4413,9 +4420,6 @@
 <p><strong>Campaigns</strong>: Here you can view campaigns created under all the enterprises that were created by this account.</p>
 </li>
 </ul>
-</div>
-</dd>
-</dl>
 </div>
 </div>
 </div>
@@ -4463,13 +4467,13 @@
 <div class="paragraph">
 <p>Define the above filter fields and click Search to view the desired enterprises. Click Clear all if you want to clear the filter fields.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/console-search.png" alt="Console Search">
+</div>
+</div>
+<div class="paragraph">
 <p>The Enterprise page provides the option of displaying 10, 20, or 50 items in a single page. You can select this number from the Items per page drop-down list located at bottom of the page.</p>
-</dd>
-</dl>
 </div>
 <div class="paragraph">
 <p>The following page navigation options can be used while viewing the enterprise list:</p>
@@ -4493,7 +4497,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_adding_an_enterprise"><a class="anchor" href="#_adding_an_enterprise"></a>Adding an enterprise</h2>
+<h2 id="_adding_an_enterprise"><a class="anchor" href="#_adding_an_enterprise"></a>Adding an Enterprise</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To add an enterprise, do the following:</p>
@@ -4502,14 +4506,18 @@
 <ul>
 <li>
 <p>Click on the Add Enterprise button in the Enterprise page. Add Enterprise window appears as shown below:</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
-<p>Enter the name of the new enterprise.</p>
-</dd>
-</dl>
+</li>
+</ul>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/add-enterprise.png" alt="Add Enterprise">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter the name of the new enterprise.</p>
 </li>
 <li>
 <p>Enter an administrator name for the enterprise. .</p>
@@ -4553,6 +4561,18 @@ Whenever a Communications Provider adds a new Sub Account for a Business Custome
 </tr>
 </table>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The Enterprise name and Administrator Email address must be unique.
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4560,9 +4580,6 @@ Whenever a Communications Provider adds a new Sub Account for a Business Custome
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>The Enterprise name and Administrator Email address must be unique.</p>
-</div>
 <div class="literalblock">
 <div class="content">
 <pre> Passwords should meet the following criteria:
@@ -4601,14 +4618,16 @@ Whenever a Communications Provider adds a new Sub Account for a Business Custome
 <div class="paragraph">
 <p>Click Save after making the required changes.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
-<p>== Deleting an Enterprise</p>
-</dd>
-</dl>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/edit-enterprise.png" alt="edit enterprise">
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deleting_an_enterprise"><a class="anchor" href="#_deleting_an_enterprise"></a>Deleting an Enterprise</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To delete an enterprise, click on the enterprise. The enterprise details appear in a pop-up window. Click on the Delete button on the bottom of the window. This action cannot be undone. Once the account is deleted you will not be able to restore it.</p>
 </div>
@@ -4632,11 +4651,14 @@ When an enterprise is deleted, the Admin user of that enterprise are CLOSED in <
 <div class="paragraph">
 <p>The Campaign page lists all the campaigns created by enterprises under this account.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-<dd>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/campaigns-list.png" alt="campaigns list">
+</div>
+</div>
+<div class="paragraph">
 <p>You can search campaigns based on the following filter parameters:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -4694,10 +4716,19 @@ When an enterprise is deleted, the Admin user of that enterprise are CLOSED in <
 </li>
 </ul>
 </div>
-</dd>
-<dt class="hdlist1">image</dt>
-<dd>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_search"><a class="anchor" href="#_advanced_search"></a>Advanced Search</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/advanced-search.png" alt="Advanced Search">
+</div>
+</div>
+<div class="paragraph">
 <p>The Campaign page provides advanced search to narrow down the search to a specific campaign. Click on Advanced Search to get the following additional filter parameters:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -4708,9 +4739,6 @@ When an enterprise is deleted, the Admin user of that enterprise are CLOSED in <
 </li>
 </ul>
 </div>
-</dd>
-</dl>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -4719,10 +4747,10 @@ When an enterprise is deleted, the Admin user of that enterprise are CLOSED in <
 <div class="paragraph">
 <p>To view the details of a campaign, click on a campaign. A pop-up window displays all the details of the campaign as shown below.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">image</dt>
-</dl>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/campaign-details.png" alt="campaign details">
+</div>
 </div>
 </div>
 </div>
