@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Available Phone Numbers - Restcomm Docs"></title>
+    <title data-custom-title="Message - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/available-phone-numbers-api.html
+      https://dev.restcomm.com/docs/1.0/api/messages-api.html
     ">
-    <meta name="description" content="The AvailablePhoneNumbers subresources lets you search for incoming local and toll-free phone numbers that are available for you to purchase.">
-    <meta name="keywords" content="#{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} available phone numbers api, available phone numbers api, phone numbers api, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} phone numbers">
+    <meta name="description" content="A Message represents an inbound or outbound omnichannel message. Using this API you can do things like:">
+    <meta name="keywords" content="send omnichannel message, omnichannel message api, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;CPaaS&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} omnichannel message api, omnichannel message rest api">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
@@ -2054,7 +2054,7 @@
   </ul>
               </li>
               <li id="Omnichannel"
-                  class="nav-item"
+                  class="nav-item is-current-page"
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -4484,359 +4484,25 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="available-phone-numbers-api.html">Available Phone Numbers</a></li>
+    <li class="crumb"><a href="sms-category.html">CSP:SMS APIs</a></li>
+    <li class="crumb"><a href="messages-api.html">CSP:Omnichannel</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>Available Phone Numbers</h1>
-<div class="sect1">
-<h2 id="_availablephonenumbers"><a class="anchor" href="#_availablephonenumbers"></a>AvailablePhoneNumbers</h2>
+  <h1>Message</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>AvailablePhoneNumbers</strong> subresources lets you search for incoming local and toll-free phone numbers that are available for you to purchase.<strong>AvailablePhoneNumbers</strong> List Resource URI. <strong>/2012-04-24/Accounts/{AccountSid}/AvailablePhoneNumbers/US/Local</strong> Searching For Numbers.When using <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> the way to search for new phone numbers is by searching the <strong>AvailablePhoneNumbers</strong> list resource and providing the desired area code as a filter.</p>
-</div>
-<div class="sect2">
-<h3 id="_resource_properties"><a class="anchor" href="#_resource_properties"></a>Resource Properties</h3>
-<div class="paragraph">
-<p>The following properties are available for phone numbers from the US and Canada:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FriendlyName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A nicely-formatted version of the phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PhoneNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number, in E.164 (i.e. "+1") format.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Lata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The LATA of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RateCenter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The rate center of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Latitude</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The latitude coordinate of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Longitude</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The longitude coordinate of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Region</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The two-letter state or province abbreviation of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PostalCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The postal (zip) code of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IsoCountry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO country code</a> of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Capabilities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a set of boolean properties that indicate whether a phone number can receive calls or messages. Possible capabilities are <code>Voice</code>, <code>SMS</code>, and <code>MMS</code> with each having a value of either <code>true</code> or <code>false</code>.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The following properties are available for phone numbers outside the US and Canada:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FriendlyName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A nicely-formatted version of the phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PhoneNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number, in [E.164] (i.e. "+44") format.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IsoCountry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO country code</a> of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Capabilities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a set of boolean properties that indicate whether a phone number can receive calls or messages. Possible capabilities are <code>Voice</code>, <code>SMS</code>, and <code>MMS</code> with each having a value of either <code>true</code> or <code>false</code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_address_requirement_values"><a class="anchor" href="#_address_requirement_values"></a>Address Requirement Values</h3>
-<div class="paragraph">
-<p>The following are the possible values for the <code>address_required</code> property.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Status</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An Address is not required for this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your account must have an Address, but it can be anywhere in the world.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">local</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your account must have an Address within the phone number&#8217;s country.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">foreign</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your account must have an Address outside the phone number&#8217;s country.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_availablephonenumber_toll_free_instance_resource"><a class="anchor" href="#_availablephonenumber_toll_free_instance_resource"></a>AvailablePhoneNumber Toll-Free Instance Resource</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Some DID providers allow toll-free numbers from the US, Canada, and the UK.</p>
-</div>
-<div class="sect2">
-<h3 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h3>
-<div class="paragraph">
-<p>An AvailablePhoneNumber toll-free instance resource has no URI. You cannot make requests directly to AvailablePhoneNumber instance resources. Instead, make a request to the toll-free list subresource and then choose a number from the list.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_availablephonenumber_toll_free_instance_attributes"><a class="anchor" href="#_availablephonenumber_toll_free_instance_attributes"></a>AvailablePhoneNumber Toll-Free Instance Attributes</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FriendlyName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A nicely-formatted version of the phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PhoneNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number, in E.164 (i.e. "+1") format.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IsoCountry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO country code</a> of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Capabilities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a set of boolean properties that indicate whether a phone number can receive calls or messages. Possible capabilities are <code>Voice</code>, <code>SMS</code>, and <code>MMS</code> with each having a value of either <code>true</code> or <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AddressRequirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This indicates whether the phone number requires you or your customer to have an Address registered with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>. Possible values are <code>none</code>, <code>any</code>, <code>local</code>, or <code>foreign</code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_availablephonenumber_mobile_instance_resource"><a class="anchor" href="#_availablephonenumber_mobile_instance_resource"></a>AvailablePhoneNumber Mobile Instance Resource</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h3>
-<div class="paragraph">
-<p>An AvailablePhoneNumber mobile instance resource has no URI. You cannot make requests directly to AvailablePhoneNumber instance resources. Instead, make a request to the mobile list subresource and then choose a number from the list.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_availablephonenumber_mobile_instance_attributes"><a class="anchor" href="#_availablephonenumber_mobile_instance_attributes"></a>AvailablePhoneNumber Mobile Instance Attributes</h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FriendlyName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A nicely-formatted version of the phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PhoneNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The phone number, in E.164 (i.e. "+1") format.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IsoCountry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO country code</a> of this phone number.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Capabilities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is a set of boolean properties that indicate whether a phone number can receive calls or messages. Possible capabilities are <code>Voice</code>, <code>SMS</code>, and <code>MMS</code> with each having a value of either <code>true</code> or <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AddressRequirements</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This indicates whether the phone number requires you or your customer to have an Address registered with <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>. Possible values are <code>none</code>, <code>any</code>, <code>local</code>, or <code>foreign</code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_availablephonenumbers_local_list_subresource"><a class="anchor" href="#_availablephonenumbers_local_list_subresource"></a>AvailablePhoneNumbers Local List Subresource</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h3>
-<div class="listingblock">
-<div class="content">
-<pre>/2012-04-24//Accounts/\{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local</pre>
-</div>
+<p>A <strong>Message</strong> represents an omnichannel message (WhatsApp, RCS, SMS, MMS, etc.).Using this API you can send a message to multiple channels and get notified of its delivery status.</p>
 </div>
 <div class="paragraph">
-<p>{IsoCountryCode} is a country code in ISO 3166-1 alpha-2 format. For example, the IsoCountryCode for Canada is <code>CA</code>. See Supported Countries for a full list of countries and IsoCountryCodes supported by <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>.</p>
+<p>In addition to text messages, Omnichannel API allows you to send media content attachments such as pictures, audio, and other file types.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_http_get"><a class="anchor" href="#_http_get"></a>HTTP GET</h3>
 <div class="paragraph">
-<p>Returns a list of local AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.</p>
+<p>Channel providers support different messaging capabilities.If a request is not supported by a specific Channel provider,
+the message will be marked as failed, and proper callback will be invoked.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_basic_list_filters"><a class="anchor" href="#_basic_list_filters"></a>Basic List Filters</h3>
-<div class="paragraph">
-<p>The following basic GET query string parameters allow you to filter the list of numbers returned by <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>. Note, parameters are case-sensitive.</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AreaCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Find phone numbers in the specified area code. (US and Canada only)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Contains</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A pattern to match phone numbers on. Valid characters are <code>'<strong>'</code> and <code>[0-9a-zA-Z]</code>. The <code>'</strong>'</code> character will match any single digit.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SmsEnabled</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This indicates whether the phone numbers can receive text messages. Possible values are <code>true</code> or <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MmsEnabled</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This indicates whether the phone numbers can receive MMS messages. Possible values are <code>true</code> or <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VoiceEnabled</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This indicates whether the phone numbers can receive calls. Possible values are <code>true</code> or <code>false</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ExcludeAllAddressRequired</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the response includes phone numbers which require any Address. Possible values are <code>true</code> or <code>false</code>. If not specified, the default is <code>false</code>, and results could include phone numbers with an Address required.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ExcludeLocalAddressRequired</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the response includes phone numbers which require a local Address. Possible values are <code>true</code> or <code>false</code>. If not specified, the default is <code>false</code>, and results could include phone numbers with a local Address required.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ExcludeForeignAddressRequired</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Indicates whether the response includes phone numbers which require a foreign Address. Possible values are <code>true</code> or <code>false</code>. If not specified, the default is <code>false</code>, and results could include phone numbers with a foreign Address required.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beta</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Include phone numbers new to the <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> platform. Possible values are either <code>true</code> or <code>false</code>. Default is <code>true</code>.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_supported_operations"><a class="anchor" href="#_supported_operations"></a>Supported Operations</h3>
-<div class="sect3">
-<h4 id="_http_get_2"><a class="anchor" href="#_http_get_2"></a>HTTP GET.</h4>
-<div class="paragraph">
-<p>Returns the representation of an <strong>AvailablePhoneNumber</strong> resource, including the properties above.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Property</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AreaCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A three digit area code inside the U.S.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_querying_available_phone_numbers"><a class="anchor" href="#_querying_available_phone_numbers"></a>Querying Available Phone Numbers</h2>
-<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -4844,14 +4510,175 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You need to be using <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> Cloud or setup the DID Provider in <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> in order to be able to use this feature. See the Tutorial section.
+In order to use the Omnichannel API you need to open a Support ticket for your account to be activated.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Here is an example, the <strong>AreaCode</strong> is any valid United States Code</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_omnichannel_uris"><a class="anchor" href="#_omnichannel_uris"></a>Omnichannel URIs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Omnichannel API is built on a top of the URI concept.URIs create a separate namespace for the different supported channels,
+providing an unique identifier per Channel.</p>
+</div>
+<div id="_supported_omnichannel_uris" class="paragraph">
+<p>The following URIs are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"mms:&lt;pstnNumber&gt;"</p>
+</li>
+<li>
+<p>"sms:&lt;pstnNumber&gt;"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_send_message"><a class="anchor" href="#_send_message"></a>Send Message</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>POST /api/2012-04-24/Accounts/{accountSid}/Messages</code></p>
+</div>
+<div class="paragraph">
+<p>Sends a new omnichannel Message and returns its representation.The request contains a JSON body with the following content.</p>
+</div>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">JSON Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Required) Message sender id. This parameter contains a <a href="#_supported_omnichannel_uris">channel URI</a>, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Required) Message Recipient id. This parameter contains a <a href="#_supported_omnichannel_uris">channel URI</a>, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Text body of the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status_callback</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) A URL for the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Platform to send webhook requests to notify on any message delivery status event. For more information check out <a href="#_status_callback">Status Callback section</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status_callback_method</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) <code>GET</code>, <code>POST</code>. Default <code>POST</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">media_list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) An optional array of media attachments.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">media_list.url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP URL pointing to the media attachment.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">media_list.content_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The MIME type for the media attachment.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_status_callback"><a class="anchor" href="#_status_callback"></a>status_callback</h3>
+<div class="paragraph">
+<p>The <strong>status_callback</strong> body parameter lets you to specify a URL where you can receive events in the form of HTTP POST requests (webhooks) with updates of the Message delivery status from the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Platform. Those requests can contain <a href="#_status_callback_http_parameters">the following</a> body parameters:</p>
+</div>
+<div class="sect3">
+<h4 id="_status_callback_method"><a class="anchor" href="#_status_callback_method"></a>status_callback_method</h4>
+<div class="paragraph">
+<p>The <strong>status_callback_method</strong> attribute allows you to specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting the URL in the StatusCallback attribute. The default method is POST.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_status_callback_http_parameters"><a class="anchor" href="#_status_callback_http_parameters"></a>Status Callback HTTP Parameters</h4>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Body Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MessageSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message Sid that triggered this status callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MessageStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updated status for the Message. Possible values are:  sent, failed, delivered, undelivered. For more details please refer to <a href="#_events">the events</a> description below.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ErrorCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error code associated with the sent Message. The exact format of the error may depend on the provider (only present if an error occurred).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account that sent the Message that triggered this status callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sender id of the Message that triggered this status callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recipient id of the Message that triggered this status callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the Message that triggered this status callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaUrl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url of the media content attached in the message. This is an array parameter</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MIME type of media content attached in the message. This is an array parameter</p></td>
+</tr>
+</tbody>
+</table>
+<div id="_events" class="paragraph">
+<p>The following two events are supported, in the provided order:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Sent status event</strong>, indicating whether <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> managed to successfully forward the Message to the provider for further routing. The status is reflected on the <code>MessageStatus</code> attribute described above and can be either <strong>sent</strong> on success or <strong>failed</strong> on failure. In case of failure no delivery status event is sent.</p>
+</li>
+<li>
+<p><strong>Delivery status event</strong>, indicating whether the provider managed to successfully deliver the Message to the destination, given that the status event was previously <strong>sent</strong>. The status is reflected on the <code>MessageStatus</code> attribute described above and can be <strong>delivered</strong>, <strong>undelivered</strong> or <strong>failed</strong></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
+<div class="paragraph">
+<p>Send a Message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and also use a status callback URL so that you are notified of the Message delivery status in the provided callback URL. Make sure the provided callback URL is reachable from the internet.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <script>
       function openLanguage(language, index) {
         const sampleClasses = document.getElementsByClassName("sample-language-" + index);
@@ -4871,56 +4698,67 @@ You need to be using <span class="sps-text non-sps-link" data-orig-text="Restcom
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-16 is-active" onclick="openLanguage('Curl', 16)">Curl</button>
-        <button class="sample-code-button scsIndex-16" onclick="openLanguage('Nodejs', 16)">Nodejs</button>
-        <button class="sample-code-button scsIndex-16" onclick="openLanguage('Python', 16)">Python</button>
-        <button class="sample-code-button scsIndex-16" onclick="openLanguage('Java', 16)">Java</button>
+        <button class="sample-code-button scsIndex-58 is-active" onclick="openLanguage('Curl', 58)">Curl</button>
+        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Nodejs', 58)">Nodejs</button>
+        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Python', 58)">Python</button>
+        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Java', 58)">Java</button>
       </div>
-      <div id="Curl-16" class="sample-language-16">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/AvailablePhoneNumbers/US/Local.json?AreaCode=305  \
+      <div id="Curl-58" class="sample-language-58">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+   -d '{' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-16" class="sample-language-16" style="display:none">
+      <div id="Nodejs-58" class="sample-language-58" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
 const ACCOUNT_SID = 'my_ACCOUNT_SID';
 const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
-request({
-      method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/AvailablePhoneNumbers/US/Local.json?AreaCode=305',
-      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+request.({
+      method: 'POST',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
+      form: {
+         '{': 'undefined'
+      }
    },
    function (error, response, body) {
       // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
       ...
-   }
-);
+});
 </code></pre>
       </div>
-      <div id="Python-16" class="sample-language-16" style="display:none">
+      <div id="Python-58" class="sample-language-58" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
+from urllib.parse import urlencode
 
 # Provide your Account Sid and Auth Token from your Console Account page
 ACCOUNT_SID = 'my_ACCOUNT_SID'
 AUTH_TOKEN = 'my_AUTH_TOKEN'
 
 userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
-headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+headers = { 'Authorization' : 'Basic %s' %  userAndPass,
+    'Content-type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/plain' }
+
+# Update POST parameters accordingly
+params = urlencode({
+   '{': 'undefined'
+})
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/AvailablePhoneNumbers/US/Local.json?AreaCode=305',
-      headers=headers)
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages',
+      params, headers=headers)
 res = conn.getresponse()
 
 # Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
 ...
 </code></pre>
       </div>
-      <div id="Java-16" class="sample-language-16" style="display:none">
+      <div id="Java-58" class="sample-language-58" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4936,7 +4774,311 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/AvailablePhoneNumbers/US/Local.json?AreaCode=305");
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestMethod("POST");
+      conn.setDoOutput(true);
+      DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+
+      // Update POST parameters accordingly
+      os.writeBytes("{");
+      os.close();
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
+</div>
+<div class="sect3">
+<h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "sid": "SM5dd70f7ea54e47f1a49749debeec3f7f",
+  "date_created":"Thu, 19 Nov 2015 07:21:35 -0500",
+  "date_updated":"Thu, 19 Nov 2015 07:21:35 -0500",
+  "account_sid":"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "from":"mms:+19876543212",
+  "to":"mms:+13216549878",
+  "body":"Test Message",
+  "status":"queued",
+  "direction":"outbound-api",
+  "api_version":"2012-04-24",
+  "uri":"/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM5dd70f7ea54e47f1a49749debeec3f7f.json",
+  "media_list": [
+  		{"url":"https://example.com/image.jpeg","content-type":"image/jpeg"},
+  		{"url":"https://example.com/image1.mp3","content-type":"audio/mp3"}]
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_message_list"><a class="anchor" href="#_get_message_list"></a>Get Message List</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>GET /api/2012-04-24/Accounts/{accountSid}/Messages</code></p>
+</div>
+<div class="paragraph">
+<p>Returns a list of omnichannel message records corresponding to the messages sent or received from the provided AccountSid, subject to the provided paging, filtering and sorting URL query parameters.
+Only messages that reached a final Status will be retrieved.</p>
+</div>
+<div class="sect2">
+<h3 id="_paging"><a class="anchor" href="#_paging"></a>Paging</h3>
+<div class="paragraph">
+<p>The following paging parameters are supported</p>
+</div>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of omnichannel message records to return, starting from 0. A 400 response will be returned if this page doesn&#8217;t exist.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_paging_information"><a class="anchor" href="#_additional_paging_information"></a>Additional Paging Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The API returns URIs to the next, previous, first and last pages of the returned list as shown in the table below.</p>
+</div>
+<div class="sect2">
+<h3 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the current page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Firstpageuri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the first page of this list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nextpageuri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the next page of this list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Previouspageuri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the previous page of this list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lastpageuri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI of the last page of this list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NumPages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The total number of pages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Total</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The total number of items in the list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position in the overall list of the first item in this page.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The position in the overall list of the last item in this page.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_filtering"><a class="anchor" href="#_filtering"></a>Filtering</h3>
+<div class="paragraph">
+<p>The following filtering parameters are supported</p>
+</div>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages addressed to this recipient id. This is supported by a prefix search.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages sent from this sender id. This is supported by a prefix search.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">StartTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages that were sent or received on this date/time or later, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example <code>2018-10-05T22:45:32</code>) or, if you want to omit the time, YYYY-MM-DD (for example <code>2018-10-05</code>). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.  A 400 response will be returned if syntax is invalid.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages that were sent or received on this date/time or earlier, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example <code>2018-10-06T02:10:03</code>) or, if you want to omit the time, YYYY-MM-DD (for example <code>2018-10-06</code>). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.  A 400 response will be returned if syntax is invalid.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages with a given status value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ErrorCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages with a given error code value.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages with a given body. The match will use a full-text search logic.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h3>
+<div class="paragraph">
+<p>The following sorting parameters are available. In order to use those you need to utilize the <strong>SortBy</strong> query parameter to determine which attribute you want to sort by and in which direction. Direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here is the proper format: <strong>SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;</strong>. If no direction parameter is provided, then the listing of messages is sorted by the attribute in ascending order. A 400 response will be returned if the syntax is invalid.</p>
+</div>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Query Parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateCreated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by date on which the message was sent.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the party that initiated the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the party that received the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the direction of the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by the status of the message.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_examples_2"><a class="anchor" href="#_examples_2"></a>Examples</h3>
+<div class="paragraph">
+<p>The command below will return the first page of records corresponding to omnichannel messages sent from 'sms:+19876543212' to 'sms:+13216549878' between 2018-05-30 and 2018-06-09, sorted by the creation date in ascending order.</p>
+</div>
+<div class="sect3">
+<h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-59 is-active" onclick="openLanguage('Curl', 59)">Curl</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Nodejs', 59)">Nodejs</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Python', 59)">Python</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Java', 59)">Java</button>
+      </div>
+      <div id="Curl-59" class="sample-language-59">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-59" class="sample-language-59" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+
+request({
+      method: 'GET',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+   }
+);
+</code></pre>
+      </div>
+      <div id="Python-59" class="sample-language-59" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+      headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-59" class="sample-language-59" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -4947,48 +5089,286 @@ public class JavaSampleClass {
 }
 </code></pre>
       </div>
-<div class="paragraph">
-<p>The <strong>AvailablePhoneNumbers</strong> subresources let you search for incoming local and toll-free phone numbers that are available for you to purchase.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>AvailablePhoneNumbers List Resource URI. /<strong>2012-04-24/Accounts/{AccountSid}/AvailablePhoneNumbers/US/Local</strong></p>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+    "page": 0,
+    "page_size": 10,
+    "total": 2,
+    ...
+    "messages": [
+        {
+            "sid": "SM350df10671b64616a3bb92981967cecb",
+            "date_created": "Thu, 31 May 2018 16:10:32 +0000",
+            "date_updated": "Thu, 31 May 2018 16:10:32 +0000",
+            "account_sid": "&lt;accountSid&gt;",
+            "from": "sms:+19876543212",
+            "to": "sms:+13216549878",
+            "body": "Hello 13216549878",
+            "status": "sent",
+            "direction": "outbound-api",
+            "api_version": "2012-04-24",
+            "uri": "/2012-04-24/Accounts/&lt;accountSid&gt;/Messages/SM350df10671b64616a3bb92981967cecb.json"
+        },
+        ...
+    ]
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_a_single_message_information"><a class="anchor" href="#_get_a_single_message_information"></a>Get a Single Message Information</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>GET /api/2012-04-24/Accounts/{accountSid}/Messages/{MessageSid}</code></p>
 </div>
 <div class="paragraph">
-<p>Searching For Numbers. When using <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> the way to search for new phone numbers is by searching the <strong>AvailablePhoneNumbers</strong> list resource and providing the desired area code as a filter.</p>
+<p>Returns detailed information for a single omnichannel message identified by the MessageSid path parameter in the URL.</p>
 </div>
 <div class="sect2">
-<h3 id="_supported_operations_2"><a class="anchor" href="#_supported_operations_2"></a>Supported Operations</h3>
-<div class="sect3">
-<h4 id="_http_get_3"><a class="anchor" href="#_http_get_3"></a>HTTP GET</h4>
+<h3 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h3>
 <div class="paragraph">
-<p>Returns the representation of an <strong>AvailablePhoneNumber</strong> resource, including the properties above.</p>
+<p>Retrieve the information of the omnichannel message record with a Sid <code>SM55ce5cf07b9649c283cbacab4dae56a9</code>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<div class="sect2">
+<h3 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h3>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-60 is-active" onclick="openLanguage('Curl', 60)">Curl</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Nodejs', 60)">Nodejs</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Python', 60)">Python</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Java', 60)">Java</button>
+      </div>
+      <div id="Curl-60" class="sample-language-60">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages/MESSAGE_SID.json  \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-60" class="sample-language-60" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+// Provide additional path parameters if applicable
+const MESSAGE_SID = 'my_MESSAGE_SID'
+
+request({
+      method: 'GET',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '.json',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+   }
+);
+</code></pre>
+      </div>
+      <div id="Python-60" class="sample-language-60" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+// Provide additional path parameters if applicable
+MESSAGE_SID = 'my_MESSAGE_SID'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass }
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '.json',
+      headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-60" class="sample-language-60" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+   // Provide additional path parameters if applicable
+   public static final String MESSAGE_SID = "my_MESSAGE_SID"
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages/" + MESSAGE_SID + ".json");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestMethod("GET");
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
+</div>
+<div class="sect2">
+<h3 id="_example_response_3"><a class="anchor" href="#_example_response_3"></a>Example Response</h3>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "sid": "SM6c13cca264f940a4b4573a49e8bdf917",
+  "date_created": "Thu, 4 Jul 2019 07:02:28 +0000",
+  "date_updated": "Thu, 4 Jul 2019 07:02:33 +0000",
+  "date_sent": "2019-07-04T07:02:28.000Z",
+  "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+  "from": "sms:+4916543360736",
+  "to": "sms:+4915739360736",
+  "body":"Another test from <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>",
+  "status": "delivered",
+  "direction": "outbound-api",
+  "num_segments": 1,
+  "api_version": "2012-04-24",
+  "uri": "2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM6c13cca264f940a4b4573a49e8bdf917.json"
+}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_message_attributes"><a class="anchor" href="#_message_attributes"></a>Message Attributes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The attributes of the omnichannel message resource are as follows:</p>
+</div>
+<table class="tableblock frame-top grid-rows spread">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Property</th>
+<th class="tableblock halign-left valign-top">Attribute</th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AreaCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A three digit area code inside the U.S.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies the Message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateCreated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this Message was created.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateUpdated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this Message was last updated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DateSent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which the message was sent or received by <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The AccountSid that sent or received this message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sender id that sent the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Recipient id that received the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The status of this message. Possible values are: <code>queued</code>, <code>sent</code>, <code>failed</code>, <code>received</code>, <code>delivered</code> and <code>undelivered</code>. For more information on the statuses please refer to <a href="#_status_description">Status Description</a> section.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Direction</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The direction of this message. Possible values are <code>incoming</code>, <code>outbound-api</code>, <code>outbound-call</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ApiVersion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The API version <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> used to handle the message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The suffix for the HTTP resource, relative to the base organization url. For example when creating an message using the endpoint \&lt;&lt;, the Uri will be <code>/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM03dd468462814f20a28ea7be4cffac29.json</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides more information about failure reason in case message status is <strong>failed</strong> or <strong>undelivered</strong>. If not, it will be null.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error_message</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Similar to <strong>error_code</strong>, but providing human-readable text.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">num_segments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If the message is sent to PSTN and requires segmentation because of length, this will indicate number of segments. This is not available in POST response.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="_status_description"><a class="anchor" href="#_status_description"></a>Status Description</h3>
+<div class="paragraph">
+<p>Here is a detailed breakdown of the Status attribute describing the current status of the omnichannel message.</p>
 </div>
+<table class="tableblock frame-top grid-rows spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Status</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">queued</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> has queued the message pending transmission.Applies to outbound messages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> has already sent the message to the provider.Applies to outbound messages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Message failed processing either on the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> or provider’s side.The reason could be that the message was expired, rejected or deleted by the provider.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">received</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> has received the message.Applies to inbound message.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delivered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The provider has delivered the message to the user&#8217;s terminal. Applies to outbound messages.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undelivered</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The provider couldn’t deliver the message to the user’s Messages endpoint. Applies to outbound messages.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

@@ -2052,6 +2052,26 @@
                               </li>
   </ul>
               </li>
+              <li id="Omnichannel"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html">Omnichannel</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Email"
                   class="nav-item"
                   data-depth="2">
@@ -4248,6 +4268,26 @@
             </span>
                 </div>
                               </li>
+              <li id="Message"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Hold"
                   class="nav-item"
                   data-depth="2">
@@ -4462,12 +4502,9 @@
 <li><a href="#_sending_an_sms_message_to_new_number_from_webex_teams">Sending an SMS/message to new Number from  Webex Teams</a></li>
 </ul>
 </li>
-<li><a href="#_creating_a_bot">Creating a Bot</a></li>
-<li><a href="#_creating_guest_issuer">Creating Guest Issuer</a></li>
-<li><a href="#_provisioning_bot_and_guest_issuer">Provisioning Bot and Guest Issuer</a>
+<li><a href="#_create_bot_for_enterprise">Create Bot for Enterprise</a>
 <ul class="sectlevel2">
-<li><a href="#_at_enterprise_level">At Enterprise Level</a></li>
-<li><a href="#_at_csp_level">At CSP Level</a></li>
+<li><a href="#_mapping_bot_access_token_with_the_enterprise">Mapping Bot Access Token With the enterprise</a></li>
 </ul>
 </li>
 <li><a href="#_understanding_the_restcomm_cisco_webex_teams_console_and_api">Understanding the Restcomm Cisco Webex Teams Console and API</a></li>
@@ -4485,10 +4522,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Create Bot and Guest Issuer as described in <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_a_bot">Creating a Bot</a> and <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_guest_issuer">Creating Guest Issuer</a> sections.</p>
-</li>
-<li>
-<p>Provision the Bot and Guest Issuer as described in <a href="message-exchange-for-cisco-webex-teams-overview.html#_provisioning_bot_and_guest_issuer">Provisioning Bot and Guest Issuer</a> section.</p>
+<p>Create Bot for each of the Enterprises and map the Bot Access Token to the Enterprise as explained in <a href="message-exchange-for-cisco-webex-teams-overview.html#_create_bot_for_enterprise">Create Bot for Enterprise</a> documentation.</p>
 </li>
 <li>
 <p>Create a mapping (via the API or the user interface of the Console)</p>
@@ -4577,7 +4611,7 @@ You must have a valid, working Restcomm account in order to complete this step. 
 <p>Before creating a mapping, you need to create an Enterprise. This is a very important step as Cisco Webex Bot has a one-to-one mapping with the Enterprise.</p>
 </li>
 <li>
-<p>Create Bot and Guest Issuer as explained in <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_a_bot">Creating a Bot</a> and <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_guest_issuer">Creating Guest Issuer</a> sections.</p>
+<p>Create Bot (for each enterprise) as explained in the <a href="message-exchange-for-cisco-webex-teams-overview.html#_create_bot_for_enterprise">Create a Bot for Enterprise</a> documentation.</p>
 </li>
 </ul>
 </div>
@@ -4585,7 +4619,7 @@ You must have a valid, working Restcomm account in order to complete this step. 
 <div class="sect2">
 <h3 id="_receiving_an_sms_message_in_webex_teams"><a class="anchor" href="#_receiving_an_sms_message_in_webex_teams"></a>Receiving an SMS/message in Webex Teams</h3>
 <div class="paragraph">
-<p>Once you’ve completed all the steps above, you’re ready to test.</p>
+<p>Once you’ve completed all of the steps above, you’re ready to test.</p>
 </div>
 <div class="paragraph">
 <p>To begin, send a message from a PSTN number to the mapped number. You should see the message appearing in the Webex Teams space. The message should appear in a new space if you are receiving a message for the first time. All subsequent messages will appear in the same space. The default space name is set to “Phone Number:xxx”, where <code>phone number</code> is the sender&#8217;s number and <code>xxx</code> is the name provided while creating the mapping. You can rename the space to something more meaningful, for example, “Ryan’s Mobile Phone:Group 1”.</p>
@@ -4601,24 +4635,8 @@ You must have a valid, working Restcomm account in order to complete this step. 
 <li>
 <p>In newly created space, refer to the Bot with “@” prefix and then type your message.</p>
 </li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you have Guest Issuer details provisioned at the Enterprise or CSP level, you don’t have to use the “@” prefix and you can directly type the message.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>Hit enter and your message will be sent as SMS to the recipient&#8217;s mobile number.</p>
+<p>Hit enter and your message will be sent as SMS to the recepient&#8217;s mobile number.</p>
 </li>
 </ul>
 </div>
@@ -4631,13 +4649,13 @@ If you have Guest Issuer details provisioned at the Enterprise or CSP level, you
 <div class="ulist">
 <ul>
 <li>
-<p>Add newly created Bot as Contact in your Cisco Webex if not done earlier. This is a one-time process.</p>
+<p>Add newly created Bot as Contact in your Cisco Webex if not done earlier. This is a one time process.</p>
 </li>
 <li>
 <p>Send any private message to this Bot</p>
 </li>
 <li>
-<p>It should respond with Card that allows you to enter the receiving party’s phone number</p>
+<p>It should respond back with Card that allows you to enter the receiving party’s phone number</p>
 <div class="ulist">
 <ul>
 <li>
@@ -4647,29 +4665,13 @@ If you have Guest Issuer details provisioned at the Enterprise or CSP level, you
 </div>
 </li>
 <li>
-<p>Enter the recipient&#8217;s phone number and hit <code>Submit</code>. It should create a new space with “recipient&#8217;s phone number:Mapping name” as Space name</p>
+<p>Enter the recepient&#8217;s phone number and hit <code>Submit</code>. It should create a new space with “recepient&#8217;s phone number:Mapping name” as Space name</p>
 </li>
 <li>
 <p>In newly created space, refer to the Bot with “@” prefix and then type your message.</p>
 </li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you have Guest Issuer details provisioned at the Enterprise or CSP level, you don’t have to use the “@” prefix and you can directly type the message.
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>Hit <code>enter</code> and your message will be sent as an SMS to the mobile number of the recipient.</p>
+<p>Hit <code>enter</code> and your message will be sent as an SMS to the mobile number of the recepient.</p>
 </li>
 </ul>
 </div>
@@ -4677,7 +4679,7 @@ If you have Guest Issuer details provisioned at the Enterprise or CSP level, you
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_a_bot"><a class="anchor" href="#_creating_a_bot"></a>Creating a Bot</h2>
+<h2 id="_create_bot_for_enterprise"><a class="anchor" href="#_create_bot_for_enterprise"></a>Create Bot for Enterprise</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -4685,7 +4687,7 @@ If you have Guest Issuer details provisioned at the Enterprise or CSP level, you
 <p>Visit  <a href="https://developer.webex.com/" class="bare">https://developer.webex.com/</a> then click on <strong>Start Building Apps</strong>.</p>
 </li>
 <li>
-<p>Login with the Webex for Developers credentials.</p>
+<p>Login with the webex teams for developers credentials.</p>
 </li>
 <li>
 <p>Click on <strong>Create a New App</strong>.</p>
@@ -4697,121 +4699,146 @@ If you have Guest Issuer details provisioned at the Enterprise or CSP level, you
 <p>Fill the basic details of the bot such as “Bot Name”, “Bot Username”, “Icon”, “Description” then click <strong>Add Bot</strong>.</p>
 </li>
 <li>
-<p>Once the Bot is successfully created, you will get Bot’s “Access Token”.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Ensure you copy the Access Token for future use.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_creating_guest_issuer"><a class="anchor" href="#_creating_guest_issuer"></a>Creating Guest Issuer</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Visit <a href="https://developer.webex.com/" class="bare">https://developer.webex.com/</a> then click on Start Building Apps.</p>
-</li>
-<li>
-<p>Login with the “Webex for Developers” credentials.</p>
-</li>
-<li>
-<p>Click on Create a New App.</p>
-</li>
-<li>
-<p>Click on Create Guest Issuer.</p>
-</li>
-<li>
-<p>Enter the Guest Issuer name and click on Add Guest Issuer.</p>
-</li>
-<li>
-<p>Once the Guest Issuer is successfully created, you will get the Guest Issuer ID and Guest Issuer Shared Secret from the Credentials section.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Ensure you copy the Guest Issuer ID and Guest Issuer Shared Secret for future use.
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_provisioning_bot_and_guest_issuer"><a class="anchor" href="#_provisioning_bot_and_guest_issuer"></a>Provisioning Bot and Guest Issuer</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>To provision you need the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Bot Access Token: This is a mandatory field. Refer <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_a_bot">Creating a Bot</a></p>
-</li>
-<li>
-<p>Guest Issuer ID and Guest Issuer Shared Secret: These are optional fields. Refer <a href="message-exchange-for-cisco-webex-teams-overview.html#_creating_guest_issuer">Creating Guest Issuer</a></p>
+<p>You will get “Bot’s Access Token”, “Bot Id”</p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_at_enterprise_level"><a class="anchor" href="#_at_enterprise_level"></a>At Enterprise Level</h3>
+<h3 id="_mapping_bot_access_token_with_the_enterprise"><a class="anchor" href="#_mapping_bot_access_token_with_the_enterprise"></a>Mapping Bot Access Token With the enterprise</h3>
 <div class="paragraph">
-<p>To provision a Bot and Guest Issuer at enterprise level we have to call the below API or add it via UI as explained in the  <a href="message-exchange-for-cisco-webex-teams-console.html#_adding_an_enterprise">Adding Enterprise Cisco WebEx Console documentation</a>.</p>
+<p>Once bot is created in Webex we will get bot access token
+To map a Bot with an enterprise we have to call the below API or add it via UI as explained in the <a href="message-exchange-for-cisco-webex-teams-console.html#_adding_an_enterprise">Adding Enterprise Cisco WebEx Console documentation</a>.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X POST \
-https://cloud.restcomm.com/webex/webexbot/access \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
--d'{
- “accessToken”:“MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692”,
- “guestIssuerId”:“Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL09SR0FOSVpBVElPTi81ZWQ1MDdiOS1mOTlhLTRmNmEtODYzZC05lMTJiNmNhYWY”,
- “guestIssuerSharedSecret”:“X51qRosrQm/QMBzGWO/rtN9FC22bKUk4zaxfwu70=”
- “username":”Customer Service Bot”,
- “enterpriseSid”:“WEMe8f1bac1cf0f45d199d3a4d55aacc13a”,
-}</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_at_csp_level"><a class="anchor" href="#_at_csp_level"></a>At CSP Level</h3>
-<div class="paragraph">
-<p>To map a Bot and Guest Issuer at the CSP level we have to call the below API or add it via UI as explained in the <a href="message-exchange-for-cisco-webex-teams-console.html#_provisioning_bot_and_guest_issuer_at_csp_level">Adding Enterprise Cisco WebEx Console documentation</a>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>curl -X POST \
-https://cloud.restcomm.com/webex/csp/webexbot/access \
---user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
--d'{
- “accessToken”:“MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692”,
- “guestIssuerId”:“Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL09SR0FOSVpBVElPTi81ZWQ1MDdiOS1mOTlhLTRmNmEtODYzZC05lMTJiNmNhYWY”,
- “guestIssuerSharedSecret”:“X51qRosrQm/QMBzGWO/rtN9FC22bKUk4zaxfwu70=”
- “username":”CSP Bot”
-}</pre>
-</div>
-</div>
+<script>
+      function openLanguage(language, index) {
+        const sampleClasses = document.getElementsByClassName("sample-language-" + index);
+        for (const sampleClass of sampleClasses) {
+          sampleClass.style.display = "none";
+        }
+        document.getElementById(language + '-' + index).style.display = "block";
+
+        // first, disable the previously selected tab title
+        const previouslyActive = document.getElementsByClassName('scsIndex-' + index + ' is-active')
+        if (previouslyActive.length > 0) {
+          previouslyActive[0].classList.toggle('is-active')
+        }
+
+        // then, enable the newly selected title
+        event.target.classList.toggle('is-active')
+      }
+      </script>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-97 is-active" onclick="openLanguage('Curl', 97)">Curl</button>
+        <button class="sample-code-button scsIndex-97" onclick="openLanguage('Nodejs', 97)">Nodejs</button>
+        <button class="sample-code-button scsIndex-97" onclick="openLanguage('Python', 97)">Python</button>
+        <button class="sample-code-button scsIndex-97" onclick="openLanguage('Java', 97)">Java</button>
+      </div>
+      <div id="Curl-97" class="sample-language-97">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/webex/webexbot/access.json \
+   -H 'Cache-Control: no-cache' \
+   -H 'Content-Type: application/json' \
+   -d 'accessToken=MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692' \
+   -d 'username=Customer Service Bot' \
+   -d 'enterpriseSid=WEMe8f1bac1cf0f45d199d3a4d55aacc13a' \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-97" class="sample-language-97" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+
+request.({
+      method: 'POST',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/webex/webexbot/access.json',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
+      headers: {
+          'Cache-Control': 'no-cache',
+          'Content-Type': 'application/json'
+      },
+      form: {
+         'accessToken': 'MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692',
+         'username': 'Customer Service Bot',
+         'enterpriseSid': 'WEMe8f1bac1cf0f45d199d3a4d55aacc13a'
+      }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+});
+</code></pre>
+      </div>
+      <div id="Python-97" class="sample-language-97" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+from urllib.parse import urlencode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass,
+    'Cache-Control': 'no-cache',
+    'Content-Type': 'application/json',
+    'Content-type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/plain' }
+
+# Update POST parameters accordingly
+params = urlencode({
+   'accessToken': 'MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692',
+   'username': 'Customer Service Bot',
+   'enterpriseSid': 'WEMe8f1bac1cf0f45d199d3a4d55aacc13a'
+})
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("POST", '/restcomm/2012-04-24/webex/webexbot/access.json',
+      params, headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-97" class="sample-language-97" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/webex/webexbot/access.json");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestProperty("Cache-Control", "no-cache");
+      conn.setRequestProperty("Content-Type", "application/json");
+      conn.setRequestMethod("POST");
+      conn.setDoOutput(true);
+      DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+
+      // Update POST parameters accordingly
+      os.writeBytes("accessToken=MjJjNDcxZjctZWZmYi00NGZmLWIzMzMtZWM3MWUxMjkyNzhlOGNkYjFkMWQtNjcx_PF84_fafbe78f-1599-4cb6-a070-f078ecbc0692&" +
+        "username=Customer Service Bot&" +
+        "enterpriseSid=WEMe8f1bac1cf0f45d199d3a4d55aacc13a");
+      os.close();
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
 </div>
 </div>
 </div>
