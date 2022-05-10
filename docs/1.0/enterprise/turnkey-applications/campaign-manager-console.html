@@ -3381,9 +3381,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Campaigns</strong>: Here you can create campaigns and see the details and status of newly created or older campaigns.
-<strong>Announcements</strong>: Here you can create announcements for your voice campaigns and view older announcements.
-<strong>Number Lists</strong>: Here you can create lists of numbers which are required for your campaigns.
+<p><strong>Campaigns</strong>: Here you can create campaigns and see the details and status of newly created or older campaigns.<br>
+<strong>Announcements</strong>: Here you can create announcements for your voice campaigns and view older announcements.<br>
+<strong>Number Lists</strong>: Here you can create lists of numbers which are required for your campaigns.<br>
 <strong>Do Not Disturb (DND)</strong>: Here you can create Do Not Disturb lists and select them optionally during the campaign creation.</p>
 </div>
 </div>
@@ -3649,8 +3649,8 @@ Once uploaded and validated list content cannot be changed, though it is possibl
 <p>Description</p>
 </li>
 <li>
-<p>Status:
-Ready – list was validated properly and is ready for use
+<p>Status:<br>
+Ready – list was validated properly and is ready for use<br>
 Invalid – list failed validation criteria and cannot be used, as is. User should download results file to review and fix validation errors. Once fixed, the file can be uploaded again, iteratively, till fully validated</p>
 </li>
 </ul>
@@ -3696,20 +3696,20 @@ Invalid – list failed validation criteria and cannot be used, as is. User shou
 <p>Uploaded files are verified as follows:</p>
 </div>
 <div class="paragraph">
-<p><strong>File type</strong>
- - For To Lists: only csv, txt, and zip files are allowed (zip must include csv or txt file). csv files need to be used for Message Template SMS campaigns.
- - For From Lists: only txt and zip files are allowed (zip must include txt file).
-<strong>File size</strong> – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.
-<strong>File content</strong> – file must contain consecutive entries, blank or duplicate entries are invalid
- - txt file – must consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.
- - csv file – must include top row of variable titles. ‘numbers’ column is mandatory. ‘numbers’ column should consist only of numeric entries, single column, up to 15 digits per entry, and + prefix is allowed. Other columns are checked only for blank entries.</p>
+<p><strong>File type</strong><br>
+ - For To Lists: only csv, txt, and zip files are allowed (zip must include csv or txt file). csv files need to be used for Message Template SMS campaigns.<br>
+ - For From Lists: only txt and zip files are allowed (zip must include txt file).<br>
+<strong>File size</strong> – file can have up to 1M entries (i.e., rows). Uploaded file (zip, txt or csv) size allowed up to 10MB. If zip file is used, internal file (txt or csv) not limited in size, though, subject to zip file size up to 10MB.<br>
+<strong>File content</strong> – file must contain consecutive entries, blank or duplicate entries are invalid<br>
+ - txt file – must consist only numeric entries, single column, up to 15 digits per entry, + prefix is allowed.<br>
+ - csv file – must include top row of variable titles. ‘numbers’ column is mandatory. ‘numbers’ column should consist only of numeric entries, single column, up to 15 digits per entry, and + prefix is allowed. Other columns are checked only for blank entries.<br></p>
 </div>
 <div class="paragraph">
 <p>In case the file content doesn’t meet the above criteria, Campaign Manager will flag the file as invalid and will allow user to download the results file. When you click on a list that is Invalid the List details window appears as shown in the example below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/campaign-manager/invalid-list-details.png" alt="invalid list details">
+<img src="../_images/campaign-manager/numbers-file-validation.png" alt="numbers file validation">
 </div>
 </div>
 <div class="paragraph">
@@ -3760,8 +3760,10 @@ Invalid – list failed validation criteria and cannot be used, as is. User shou
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>image</p>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/dnd-list.png" alt="dnd list">
+</div>
 </div>
 <div class="paragraph">
 <p>The steps to create both lists are similar. To create Opt-Out or Opt-In List, do the following:</p>
@@ -3784,10 +3786,10 @@ Invalid – list failed validation criteria and cannot be used, as is. User shou
 <div class="ulist">
 <ul>
 <li>
-<p>Enter a list name and optionally a description. Ensure the lists have unique names for user co</p>
+<p>Enter a list name and optionally a description. Ensure the lists have unique names for user convenience and to prevent mismatches.</p>
 </li>
 <li>
-<p>Select one of the following radio buttons:</p>
+<p>Select one of the following radio buttons:<br></p>
 <div class="ulist">
 <ul>
 <li>
@@ -3809,7 +3811,7 @@ Invalid – list failed validation criteria and cannot be used, as is. User shou
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/campaign-manager/dnd-list-details.png" alt="dnd list details">
+<img src="../_images/campaign-manager/flagged-file.png" alt="flagged file">
 </div>
 </div>
 <div class="paragraph">
@@ -3856,8 +3858,10 @@ Once uploaded, and validated, list content cannot be changed, though it’s poss
 <div class="paragraph">
 <p>Click on a list in the DND tab. The List details appears in a pop-up window.</p>
 </div>
-<div class="paragraph">
-<p>image::[]</p>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/dnd-list-details.png" alt="dnd list details">
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -4013,9 +4017,9 @@ Opt-In file can be added only if Opt-Out file was chosen.
 <p>Once you successfully create a campaign, the following information is displayed:</p>
 </div>
 <div class="paragraph">
-<p>Name: This column can be sorted in the ascending or descending alphabetical order.
-Scheduled Date: This column can be sorted in the ascending or descending order of the created date.
-Channel: This column can be sorted by the type of campaign: SMS/voice.
+<p>Name: This column can be sorted in the ascending or descending alphabetical order.<br>
+Scheduled Date: This column can be sorted in the ascending or descending order of the created date.<br>
+Channel: This column can be sorted by the type of campaign: SMS/voice.<br>
 Status: This column can be sorted by the campaign status.</p>
 </div>
 <div class="paragraph">
@@ -4036,19 +4040,19 @@ Status: This column can be sorted by the campaign status.</p>
 <p>Campaign Sid: Displays the campaign that matches the entered campaign Sid value.</p>
 </li>
 <li>
-<p>Status: Displays all the campaigns that match the selected status. The following statuses are available:
-All status
-Initiating: System is processing the Campaign for launch
-Scheduled: Campaign has initiated and now pending its schedule to launch
-In Progress: Campaign is in progress, sending SMSs or calling the To Numbers
-Completed: Campaign has completed successfully
-Failed: Campaign was disrupted either due to internal system error or if your Restcomm account was deleted by your Communications Provider while the campaign was In Progress.
+<p>Status: Displays all the campaigns that match the selected status. The following statuses are available:<br>
+All status<br>
+Initiating: System is processing the Campaign for launch<br>
+Scheduled: Campaign has initiated and now pending its schedule to launch<br>
+In Progress: Campaign is in progress, sending SMSs or calling the To Numbers<br>
+Completed: Campaign has completed successfully<br>
+Failed: Campaign was disrupted either due to internal system error or if your Restcomm account was deleted by your Communications Provider while the campaign was In Progress.<br>
 Canceled: Campaign was canceled</p>
 </li>
 <li>
-<p>Channel: Displays the campaigns that match the selected channel. The following options are available:
-All Channel
-SMS
+<p>Channel: Displays the campaigns that match the selected channel. The following options are available:<br>
+All Channel<br>
+SMS<br>
 Voice</p>
 </li>
 </ul>
