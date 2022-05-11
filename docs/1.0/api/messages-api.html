@@ -4958,11 +4958,11 @@ Only messages that reached a final Status will be retrieved.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages addressed to this recipient id. This is supported by a prefix search.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages addressed to this recipient id. This field supports prefix search, which lets you filter the records per specific channel as well.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages sent from this sender id. This is supported by a prefix search.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only show messages sent from this sender id. This field supports prefix search, which lets you filter the records per specific channel as well.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">StartTime</p></td>
@@ -4986,6 +4986,132 @@ Only messages that reached a final Status will be retrieved.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
+<div class="paragraph">
+<p>The following example filters MMS records sent to phone numbers starting with <code>+1</code> prefix.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You will need to use a URL encoded format when specifying the phone number prefix in the API request. For example, <code>mms:+1</code> encodes to <code>mms:%2B1%25</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X GET https://company.com.com/api/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages.json?To=mms:%2B1%25</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"page": 0,
+"num_pages": 0,
+"page_size": 10,
+"total": 5,
+"limit": 5000,
+"start": "0",
+"end": "5",
+"uri": "/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages",
+"first_page_uri": "/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages?Page\u003d0\u0026PageSize\u003d10\u0026Limit\u003d5000",
+"previous_page_uri": "null",
+"next_page_uri": "null",
+"last_page_uri": "/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages?Page\u003d0\u0026PageSize\u003d10\u0026Limit\u003d5000",
+"messages": [
+{
+"sid": "SM47dd8750872b4d0db873346993ce3527",
+"date_created": "Tue, 10 May 2022 12:33:28 +0000",
+      "date_updated": "Tue, 10 May 2022 12:33:28 +0000",
+      "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+      "from": "mms:+12012496964",
+      "to": "mms:+18016649552",
+      "body": "echo:",
+      "status": "delivered",
+      "direction": "outbound-call",
+      "num_segments": 1,
+      "price": "0.0",
+      "price_unit": "USD",
+      "api_version": "2012-04-24",
+      "uri": "2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages/SM47dd8750872b4d0db873346993ce3527.json"
+    },
+    {
+      "sid": "SMe4798df9b634400c9410d8fbddd8f8ce",
+      "date_created": "Tue, 10 May 2022 12:33:25 +0000",
+      "date_updated": "Tue, 10 May 2022 12:33:25 +0000",
+      "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+      "from": "mms:+18016649552",
+      "to": "mms:+12012496964",
+      "body": "",
+      "status": "received",
+      "direction": "inbound",
+      "num_segments": 1,
+      "price": "0.0",
+      "price_unit": "USD",
+      "api_version": "2012-04-24",
+      "uri": "/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages/SMe4798df9b634400c9410d8fbddd8f8ce.json"
+    },
+    {
+      "sid": "SM3222fbf5237a40b88a5ef3a88d118498",
+      "date_created": "Tue, 10 May 2022 12:31:24 +0000",
+      "date_updated": "Tue, 10 May 2022 12:31:25 +0000",
+      "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+      "from": "mms:+12012496964",
+      "to": "mms:+16696002375",
+      "body": "echo: test form CPaaS",
+      "status": "delivered",
+      "direction": "outbound-call",
+      "num_segments": 1,
+      "price": "0.0",
+      "price_unit": "USD",
+      "api_version": "2012-04-24",
+      "uri": "2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages/SM3222fbf5237a40b88a5ef3a88d118498.json"
+    },
+    {
+      "sid": "SM1d022f995d834e27ae8b8fd0d16dd032",
+      "date_created": "Tue, 10 May 2022 12:31:21 +0000",
+      "date_updated": "Tue, 10 May 2022 12:31:21 +0000",
+      "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+      "from": "mms:+16696002375",
+      "to": "mms:+12012496964",
+      "body": "Hello World!",
+      "status": "received",
+      "direction": "inbound",
+      "num_segments": 1,
+      "price": "0.0",
+      "price_unit": "USD",
+      "api_version": "2012-04-24",
+      "uri": "/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages/SM1d022f995d834e27ae8b8fd0d16dd032.json"
+    },
+    {
+      "sid": "SMb8951311a7df40bcbafad1294718c415",
+      "date_created": "Tue, 10 May 2022 11:55:37 +0000",
+      "date_updated": "Tue, 10 May 2022 11:55:51 +0000",
+      "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+      "from": "mms:+12012496964",
+      "to": "mms:+18016649552",
+      "body": "Hello from CPaaS Omnichannel MMS Channel",
+      "status": "delivered",
+      "direction": "outbound-api",
+      "num_segments": 1,
+      "price": "0.0",
+      "price_unit": "USD",
+      "api_version": "2012-04-24",
+      "uri": "2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/SMS/Messages/SMb8951311a7df40bcbafad1294718c415.json"
+    }
+  ]
+}</pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h3>
@@ -5033,7 +5159,7 @@ Only messages that reached a final Status will be retrieved.</p>
 <p>The command below will return the first page of records corresponding to omnichannel messages sent from 'sms:+19876543212' to 'sms:+13216549878' between 2018-05-30 and 2018-06-09, sorted by the creation date in ascending order.</p>
 </div>
 <div class="sect3">
-<h4 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h4>
+<h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
       <div class="sample-code-bar">
         <button class="sample-code-button scsIndex-59 is-active" onclick="openLanguage('Curl', 59)">Curl</button>
         <button class="sample-code-button scsIndex-59" onclick="openLanguage('Nodejs', 59)">Nodejs</button>
@@ -5113,7 +5239,7 @@ public class JavaSampleClass {
       </div>
 </div>
 <div class="sect3">
-<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
+<h4 id="_example_response_3"><a class="anchor" href="#_example_response_3"></a>Example Response</h4>
 <div class="listingblock">
 <div class="content">
 <pre>{
@@ -5160,7 +5286,7 @@ public class JavaSampleClass {
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h3>
+<h3 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h3>
       <div class="sample-code-bar">
         <button class="sample-code-button scsIndex-60 is-active" onclick="openLanguage('Curl', 60)">Curl</button>
         <button class="sample-code-button scsIndex-60" onclick="openLanguage('Nodejs', 60)">Nodejs</button>
@@ -5245,7 +5371,7 @@ public class JavaSampleClass {
       </div>
 </div>
 <div class="sect2">
-<h3 id="_example_response_3"><a class="anchor" href="#_example_response_3"></a>Example Response</h3>
+<h3 id="_example_response_4"><a class="anchor" href="#_example_response_4"></a>Example Response</h3>
 <div class="listingblock">
 <div class="content">
 <pre>{
