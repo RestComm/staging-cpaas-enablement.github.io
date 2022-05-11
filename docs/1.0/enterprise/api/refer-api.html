@@ -1345,12 +1345,12 @@
                               </li>
   </ul>
               </li>
-              <li id="SMS"
+              <li id="MessagesAPIs"
                   class="nav-item"
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              icomoon3-font-reference-sms
+              
               
               
               
@@ -1359,7 +1359,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sms-category.html">SMS</a>
+              <a class="nav-link nav-flex-item-text" href="messages-api-overview.html">Messages APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1378,14 +1378,52 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sms-api.html">Messages</a>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html">Messages</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="SMSAPIs"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-category.html">SMS APIs</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="SMS"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              icomoon3-font-reference-sms
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html">SMS</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
                   <ul class="nav-list">
               <li id="SendSMS"
                   class="nav-item"
-                  data-depth="3">
+                  data-depth="4">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -1404,7 +1442,7 @@
                               </li>
               <li id="GetSMSList"
                   class="nav-item"
-                  data-depth="3">
+                  data-depth="4">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -1423,7 +1461,7 @@
                               </li>
               <li id="GetsingleSMSInformation"
                   class="nav-item"
-                  data-depth="3">
+                  data-depth="4">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -1442,7 +1480,7 @@
                               </li>
               <li id="SMSAttributes"
                   class="nav-item"
-                  data-depth="3">
+                  data-depth="4">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
@@ -1459,6 +1497,8 @@
             </span>
                 </div>
                               </li>
+  </ul>
+              </li>
   </ul>
               </li>
               <li id="Email"
@@ -1748,6 +1788,25 @@
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="../rcml/sms-rcml.html">SMS</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Message"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message</a>
 
             </span>
                 </div>
@@ -3096,17 +3155,17 @@ The Refers API endpoint supports JSON output only.
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-172 is-active" onclick="openLanguage('Curl', 172)">Curl</button>
-        <button class="sample-code-button scsIndex-172" onclick="openLanguage('Nodejs', 172)">Nodejs</button>
-        <button class="sample-code-button scsIndex-172" onclick="openLanguage('Python', 172)">Python</button>
-        <button class="sample-code-button scsIndex-172" onclick="openLanguage('Java', 172)">Java</button>
+        <button class="sample-code-button scsIndex-175 is-active" onclick="openLanguage('Curl', 175)">Curl</button>
+        <button class="sample-code-button scsIndex-175" onclick="openLanguage('Nodejs', 175)">Nodejs</button>
+        <button class="sample-code-button scsIndex-175" onclick="openLanguage('Python', 175)">Python</button>
+        <button class="sample-code-button scsIndex-175" onclick="openLanguage('Java', 175)">Java</button>
       </div>
-      <div id="Curl-172" class="sample-language-172">
+      <div id="Curl-175" class="sample-language-175">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers/RFc377eb0e657e415383de087ab38797db  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-172" class="sample-language-172" style="display:none">
+      <div id="Nodejs-175" class="sample-language-175" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3125,7 +3184,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-172" class="sample-language-172" style="display:none">
+      <div id="Python-175" class="sample-language-175" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3145,7 +3204,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-172" class="sample-language-172" style="display:none">
+      <div id="Java-175" class="sample-language-175" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -3218,17 +3277,17 @@ public class JavaSampleClass {
 <h2 id="_getting_a_list_of_refer_records"><a class="anchor" href="#_getting_a_list_of_refer_records"></a>Getting a List of Refer Records</h2>
 <div class="sectionbody">
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-173 is-active" onclick="openLanguage('Curl', 173)">Curl</button>
-        <button class="sample-code-button scsIndex-173" onclick="openLanguage('Nodejs', 173)">Nodejs</button>
-        <button class="sample-code-button scsIndex-173" onclick="openLanguage('Python', 173)">Python</button>
-        <button class="sample-code-button scsIndex-173" onclick="openLanguage('Java', 173)">Java</button>
+        <button class="sample-code-button scsIndex-176 is-active" onclick="openLanguage('Curl', 176)">Curl</button>
+        <button class="sample-code-button scsIndex-176" onclick="openLanguage('Nodejs', 176)">Nodejs</button>
+        <button class="sample-code-button scsIndex-176" onclick="openLanguage('Python', 176)">Python</button>
+        <button class="sample-code-button scsIndex-176" onclick="openLanguage('Java', 176)">Java</button>
       </div>
-      <div id="Curl-173" class="sample-language-173">
+      <div id="Curl-176" class="sample-language-176">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-173" class="sample-language-173" style="display:none">
+      <div id="Nodejs-176" class="sample-language-176" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3247,7 +3306,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-173" class="sample-language-173" style="display:none">
+      <div id="Python-176" class="sample-language-176" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3267,7 +3326,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-173" class="sample-language-173" style="display:none">
+      <div id="Java-176" class="sample-language-176" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -3383,17 +3442,17 @@ Parameters are case-sensitive.
 <p>The example below will return Refer records that have been initiated from this CallSid.</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-174 is-active" onclick="openLanguage('Curl', 174)">Curl</button>
-        <button class="sample-code-button scsIndex-174" onclick="openLanguage('Nodejs', 174)">Nodejs</button>
-        <button class="sample-code-button scsIndex-174" onclick="openLanguage('Python', 174)">Python</button>
-        <button class="sample-code-button scsIndex-174" onclick="openLanguage('Java', 174)">Java</button>
+        <button class="sample-code-button scsIndex-177 is-active" onclick="openLanguage('Curl', 177)">Curl</button>
+        <button class="sample-code-button scsIndex-177" onclick="openLanguage('Nodejs', 177)">Nodejs</button>
+        <button class="sample-code-button scsIndex-177" onclick="openLanguage('Python', 177)">Python</button>
+        <button class="sample-code-button scsIndex-177" onclick="openLanguage('Java', 177)">Java</button>
       </div>
-      <div id="Curl-174" class="sample-language-174">
+      <div id="Curl-177" class="sample-language-177">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-174" class="sample-language-174" style="display:none">
+      <div id="Nodejs-177" class="sample-language-177" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3412,7 +3471,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-174" class="sample-language-174" style="display:none">
+      <div id="Python-177" class="sample-language-177" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3432,7 +3491,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-174" class="sample-language-174" style="display:none">
+      <div id="Java-177" class="sample-language-177" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

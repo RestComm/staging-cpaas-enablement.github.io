@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="Number - Restcomm Docs"></title>
+    <title data-custom-title="Message - Restcomm Docs"></title>
     <link rel="canonical" href="
-      /docs/rcml/number-rcml.html
+      /docs/rcml/message-rcml.html
     ">
-    <meta name="description" content="The &amp;lt;Number&amp;gt; noun specifies a phone number to dial. You can use multiple *&amp;lt;Number&amp;gt;* nouns within a *&amp;lt;Dial&amp;gt;* verb to simultaneously call all of them at once. The first call to pick up is connected to the current call and the rest are hung up.">
-    <meta name="keywords" content="#{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;CPaaS&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} number, rcml number, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} dial verb">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
@@ -1660,7 +1658,7 @@
                 </div>
                               </li>
               <li id="Number"
-                  class="nav-item is-current-page"
+                  class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -1795,7 +1793,7 @@
                 </div>
                               </li>
               <li id="Message"
-                  class="nav-item"
+                  class="nav-item is-current-page"
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3022,111 +3020,148 @@
   <ul>
     <li class="crumb"><a href="../../index.html">docs</a></li>
     <li class="crumb"><a href="overview.html">Enterprise:RCML</a></li>
-    <li class="crumb"><a href="dial-rcml.html">Enterprise:Dial</a></li>
-    <li class="crumb"><a href="number-rcml.html">Enterprise:Number</a></li>
+    <li class="crumb"><a href="message-rcml.html">Enterprise:Message</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>Number</h1>
+  <h1>Message</h1>
 <div class="sect1">
-<h2 id="_number"><a class="anchor" href="#_number"></a>Number</h2>
+<h2 id="_message"><a class="anchor" href="#_message"></a>Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>&lt;Number&gt;</strong> noun specifies a phone number to dial. You can use multiple <strong>&lt;Number&gt;</strong> nouns within a <strong>&lt;Dial&gt;</strong> verb to simultaneously call all of them at once. The first call to pick up is connected to the current call and the rest are hung up.</p>
+<p>The <strong>&lt;Message&gt;</strong> verb sends an outbound message to any of the supported Channels (SMS, MMS, Webex Teams, Microsoft Teams, XMPP).</p>
+</div>
+<div class="paragraph">
+<p>Omnichannel allows sending simple text and media attachments. Depending on the target Channel different capabilities will be supported. Those capabilities will define the following characteristics:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Text maximum length</p>
+</li>
+<li>
+<p>Media maximum size</p>
+</li>
+<li>
+<p>Media content type</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the message doesn&#8217;t comply with the Channel constraint, it will be marked as failed, and no billing will be applied for it.</p>
 </div>
 <div class="sect2">
-<h3 id="_number_attributes"><a class="anchor" href="#_number_attributes"></a>Number Attributes</h3>
+<h3 id="_omnichannel_uris"><a class="anchor" href="#_omnichannel_uris"></a>Omnichannel URIs</h3>
+<div class="paragraph">
+<p>The Omnichannel API is built on a top of the URI concept. URIs create a separate namespace for the different supported channels,
+providing an unique identifier per Channel.</p>
+</div>
+<div class="paragraph">
+<p>The following URIs are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"mms:&lt;pstnNumber&gt;"</p>
+</li>
+<li>
+<p>"sms:&lt;pstnNumber&gt;"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_message_attributes"><a class="anchor" href="#_message_attributes"></a>Message Attributes</h2>
+<div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Allowed Values</th>
-<th class="tableblock halign-left valign-top">Default Value</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Allowed value</th>
+<th class="tableblock halign-left valign-top">Default value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">call screening url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the recipient of the message, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timeout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">positive integer in seconds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">60 seconds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">call screening timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the sender of the message, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">action</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A relative or absolute URL address.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">None</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code>, <code>POST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">method for call screening url</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">statusCallbackEvent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>initiated</code>, <code>ringing</code>, <code>answered</code>, <code>completed</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">initiated,ringing,answered,completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Event triggers for status callback</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET, POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">statusCallback</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">any url</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">statusCallback url</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">statusCallbackMethod</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET</code>, <code>POST</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>POST</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">method for statusCallback url</p></td>
 </tr>
 </tbody>
 </table>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>url.</strong> The 'url' attribute allows you to specify a url for a RCML document that will run on the called party&#8217;s end, after he/she answers, but before the parties are connected. You can use this RCML to privately play or say information to the called party, or provide a chance to decline the phone call using &lt;Gather&gt; and &lt;Hangup&gt;. The current caller will continue to hear ringing while the RCML document executes on the other end. RCML documents executed in this manner are not allowed to contain the &lt;Dial&gt; verb.</p>
-</li>
-<li>
-<p><strong>timeout</strong> The 'timeout' allows you to specify the limit in seconds that call screening waits for the called party to accept the call.
-Default value 60 seconds</p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_to"><a class="anchor" href="#_to"></a>to</h3>
+<div class="paragraph">
+<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the calling party. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558675311"</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_from"><a class="anchor" href="#_from"></a>from</h3>
+<div class="paragraph">
+<p>The 'from' attribute represents an Omnichannel URI. When sending a Message during an incoming call, 'from' defaults to the calling party. When sending a Message during an outgoing call, 'from' defaults to the called party. If the CPaaS application is expecting the target user to reply to this outbound message, the <code>From</code> should match a corresponding <a href="../api/incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">IncomingPhoneNumber</a> identity.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_action"><a class="anchor" href="#_action"></a>action</h3>
+<div class="paragraph">
+<p>The 'action' attribute takes a URL address as an argument. After processing the &lt;Message&gt; verb, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will make a GET or POST request to this URL with the form parameters 'MessageStatus' and 'MessageSid'. Using an 'action' URL, your application can receive synchronous notification that the message was successfully enqueued or not.</p>
+</div>
+<div class="paragraph">
+<p>If you provide an 'action' URL, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will use the RCML received in your response to the 'action' URL request to continue the current call. Any RCML verbs occurring after an &lt;Message&gt; which specifies an 'action' attribute are unreachable. If no 'action' is provided, &lt;Message&gt; will finish and <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will move on to the next RCML verb in the document. If there is no next verb, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will end the phone call.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_method"><a class="anchor" href="#_method"></a>method</h3>
+<div class="paragraph">
+<p>The 'method' attribute represents the value 'GET' or 'POST'. This tells <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> whether to request the 'action' URL via HTTP GET or POST method. This attribute is modeled after the HTML form 'method' attribute.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_statuscallback"><a class="anchor" href="#_statuscallback"></a>statusCallback</h3>
+<div class="paragraph">
+<p>The <strong>statusCallback</strong> attribute allows you to specify a URL for <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> to send webhook requests to on each event of message delivery (triggered by status callbacks).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_statuscallbackmethod"><a class="anchor" href="#_statuscallbackmethod"></a>statusCallbackMethod</h3>
+<div class="paragraph">
+<p>The <strong>statusCallbackMethod</strong> attribute lets you specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting the URL in the statusCallback attribute. The default is POST.</p>
 </div>
 <div class="sect3">
-<h4 id="_method"><a class="anchor" href="#_method"></a>method</h4>
-<div class="paragraph">
-<p>The 'method' attribute allows you to specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting the URL in the 'url' attribute. The default is POST.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_statuscallbackevent"><a class="anchor" href="#_statuscallbackevent"></a>statusCallbackEvent</h4>
-<div class="paragraph">
-<p>When dialing out to a PSTN Number using &lt;Dial&gt;, an outbound call is initiated. The call transitions from the initiated state to the ringing state when the phone starts ringing. It transitions to the answered state when the call is picked up, and finally to the completed state when the call is over. With <strong>statusCallbackEvent</strong>, you can subscribe to receive webhooks for the different call progress events: initiated, ringing, answered, or completed for a given call.</p>
-</div>
-<div class="paragraph">
-<p>The <strong>statusCallbackEvent</strong> attribute allows you to specify which events <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should webhook on. To specify multiple events separate them with a comma: <code>initiated,ringing,answered,completed</code>. If a statusCallback is provided and no status callback events are specified the completed event will be sent by default.</p>
-</div>
-<div class="paragraph">
-<p>As opposed to creating an outbound call via the API, outbound calls created using &lt;Dial&gt; are initiated right away and never queued. The following shows a timeline of possible call events that can be returned and the different call statuses that a &lt;Dial&gt; leg may experience:</p>
-</div>
-<div class="paragraph">
-<p>The <strong>&lt;Number&gt;</strong> noun specifies a PSTN Number to dial. You can use multiple <strong>&lt;Number&gt;</strong> nouns within a <strong>&lt;Dial&gt;</strong> verb to simultaneously attempt a connection with many numbers at once. The first number to accept the incoming connection is connected to the call and the other connection attempts are canceled.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/status-callback-events-dial.png" alt="Outbound Dial call events diagram">
-</div>
-</div>
+<h4 id="_statuscallback_events"><a class="anchor" href="#_statuscallback_events"></a>statusCallback Events</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3135,97 +3170,135 @@ Default value 60 seconds</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Event</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Possible statuses</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">initiated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>initiated</code> event is fired when <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> starts dialing the call with CallStatus <code>initiated</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ringing</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>ringing</code> event is fired when the call starts ringing with CallStatus <code>ringing</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">answered</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>answered</code> event is fired when the call is answered with CallStatus <code>in-progress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sent</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>completed</code> event is fired when the call is completed regardless of the termination status with CallStatus <code>busy</code>, <code>completed</code>, <code>failed</code>, or <code>no-answer</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">failed, delivered, undelivered</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_statuscallback"><a class="anchor" href="#_statuscallback"></a>statusCallback</h4>
-<div class="paragraph">
-<p>The <strong>statusCallback</strong> attribute allows you to specify a URL for <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> to send webhook requests to on each event specified in the statusCallbackEvent attribute.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_statuscallbackmethod"><a class="anchor" href="#_statuscallbackmethod"></a>statusCallbackMethod</h4>
-<div class="paragraph">
-<p>The <strong>statusCallbackMethod</strong> attribute allows you to specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting the URL in the statusCallback attribute. The default is POST.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_status_callback_http_parameters"><a class="anchor" href="#_status_callback_http_parameters"></a>Status Callback HTTP Parameters</h4>
-<div class="paragraph">
-<p>The <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> parameters passed to your application in its asynchronous request to the StatusCallback URL include all parameters passed in a synchronous request to retrieve RCML when <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> receives a call to one of your numbers. The full list of <a href="overview.html#_request_parameters">Request Parameters</a> can be found in the RCML Voice Request documentation.</p>
-</div>
-<div class="paragraph">
-<p>When the call progress events are fired, the Status Callback request also passes these additional parameters:</p>
-</div>
+<h4 id="_statuscallback_parameters"><a class="anchor" href="#_statuscallback_parameters"></a>StatusCallback Parameters</h4>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Parameter</th>
 <th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CallDuration</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The duration in seconds of the just-completed call. Only present in the <code>completed</code> event.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MessageSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Sid of the message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMc5b1b09cf2b14ffe985461c3587f4c38</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The timestamp when the event was fired, given as UTC in <a href="http://php.net/manual/en/class.datetime.php#datetime.constants.rfc2822">RFC 2822</a> format.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MessageStatus</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The last status known for this message.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delivered</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CallbackSource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A string that describes the source of the webhook. This is provided to help disambiguate why the webhook was made. On Status Callbacks, this value is always <strong><code>call-progress-events</code>.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From address of the message (message sender).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543212</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SequenceNumber</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The order in which the events were fired, starting from <code>0</code>. Although events are fired in order, they are made as separate HTTP requests and there is no guarantee they will arrive in the same order.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To address of the message (message receiver).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543213</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ParentCallSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A unique identifier for the parent call.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The message body.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hello world</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Account Sid.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACa272717421604a9d924a5837aa23711b</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ErrorCode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error code, if any. This parameter is optional.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30001</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaUrl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There will be as many occurrences as media were attached.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://company.com/pic.jpg" class="bare">http://company.com/pic.jpg</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There will be as many occurrences as media were attached.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">image/jpeg</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_including_proprietary_sip_headers"><a class="anchor" href="#_including_proprietary_sip_headers"></a>Including proprietary SIP headers</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nesting"><a class="anchor" href="#_nesting"></a>Nesting</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This noun lets you customize proprietary SIP headers to be included in the outgoing SIP message. Those include the following SIP URI params syntax.</p>
+<p>The <strong>&lt;Message&gt;</strong> verb allows combination of <strong>&lt;Body&gt;</strong> and <strong>&lt;Media&gt;</strong> nouns. Only a single Body noun will be allowed. Multiple Media nouns are allowed.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>&lt;Body&gt;</strong> noun element contains the text of the message you want to send.</p>
+</div>
+<div class="paragraph">
+<p>The <strong>&lt;Media&gt;</strong> noun element contains an URL of a media content to be sent.
+The <strong>&lt;Media&gt;</strong> noun element must also contain an attribute "contentType", for example "image/jpeg" of the media content.</p>
+</div>
+<div class="paragraph">
+<p>If both of <strong>&lt;Body&gt;</strong> and <strong>&lt;Media&gt;</strong> nouns are absent then the server will get the <strong>&lt;Message&gt;</strong> element value as a message text (for backward compatibility).</p>
+</div>
+<div class="paragraph">
+<p>The <strong>&lt;Body&gt;</strong> noun element must be before of all <strong>&lt;Media&gt;</strong> nouns.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below is an example of how you can use the &lt;Message&gt; verb.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;Response&gt;
-    &lt;Number&gt;+131313?X-Custom-Header1=1234&amp;X-Custom-Header2=4321&lt;/Number&gt;
+<pre>&lt;Response&gt;
+    &lt;Message&gt;
+        &lt;Body&gt;Hello World!&lt;/Body&gt;
+        &lt;Media contentType="image/jpeg"&gt;http://company.com/pic.jpg&lt;/Media&gt;
+    &lt;/Message&gt;
 &lt;/Response&gt;</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>The next RCML example showcases how you can use <code>From</code>, <code>To</code> and <code>statusCallback</code> parameters to send a message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;Response&gt;
+    &lt;Message from="sms:+19876543212" to="sms:+13216549878" statusCallback="http://status.callback.url" statusCallbackMethod="POST"&gt;
+        &lt;Body&gt;Hello World !!!&lt;/Body&gt;
+    &lt;/Message&gt;
+&lt;/Response&gt;</pre>
 </div>
 </div>
 </div>
