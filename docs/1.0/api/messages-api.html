@@ -1951,6 +1951,26 @@
             </span>
                 </div>
                   <ul class="nav-list">
+              <li id="Overview"
+                  class="nav-item is-current-page"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html">Overview</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Channel Identities"
                   class="nav-item"
                   data-depth="2">
@@ -4493,7 +4513,7 @@
             </span>
                 </div>
                               </li>
-              <li id="Message"
+              <li id="Message - BETA"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4508,7 +4528,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message - BETA</a>
 
             </span>
                 </div>
@@ -4709,7 +4729,7 @@
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
     <li class="crumb"><a href="messages-api-overview.html">CSP:Messages API - BETA</a></li>
-    <li class="crumb"><a href="#_channel_identities">CSP:Channel Identities</a></li>
+    <li class="crumb"><a href="messages-api.html">CSP:Overview</a></li>
   </ul>
 </nav>
 </div>
@@ -4718,13 +4738,10 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Message</strong> represents a sent or received message on any of the supported channels (SMS, MMS, WhatsApp, RCS, etc.). Using the API you can send a message to multiple channels and get notified of its delivery status.</p>
+<p>A <strong>Message</strong> entity represents a sent or received message on any of the supported channels. Using this API you can send a message to multiple channels and get notified of its delivery status.</p>
 </div>
 <div class="paragraph">
-<p>In addition to text messages, the Messages API allows you to send rich media content such as pictures, audio, and other file types. See full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
-</div>
-<div class="paragraph">
-<p>Channel providers support different messaging capabilities. If a request is not supported by a specific Channel provider, the message status will be marked as failed, and the relevant callback URL will be invoked.</p>
+<p>A message can include various capabilities such as text body, pictures, audio, and other file types. See all supported channels and full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4733,7 +4750,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In order to use the Messages API you need to open a Support ticket for your account to be activated.
+In order to use the Messages API you need to open a support ticket for your account to be activated.
 </td>
 </tr>
 </table>
@@ -4744,7 +4761,7 @@ In order to use the Messages API you need to open a Support ticket for your acco
 <h2 id="_channel_identities"><a class="anchor" href="#_channel_identities"></a>Channel Identities</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Messages API is built on a top of the Channel Identity following the URI concept. URIs create a separate namespace for the different supported channels, thus providing an unique identity per Channel for the subscriber or business.</p>
+<p>The Messages API is built following the URI concept. URIs create a separate namespace for the different supported channels, thus providing an unique identity per Channel for the subscriber or business.</p>
 </div>
 <div id="_supported_omnichannel_uris" class="paragraph">
 <p>The following URIs are currently supported. More will be added as new channels become available:</p>
@@ -4768,7 +4785,19 @@ In order to use the Messages API you need to open a Support ticket for your acco
 <p><code>POST /api/2012-04-24/Accounts/{accountSid}/Messages</code></p>
 </div>
 <div class="paragraph">
-<p>Sends a new omnichannel Message and returns its representation.The request contains a JSON body with the following content.</p>
+<p>Sends a new message to a channel and returns its representation.The request contains a JSON body with the following content.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Channel providers support different capabilities. If a capability is not supported by a specific channel provider, the message status will be marked as failed, and the relevant callback URL will be invoked.
+</td>
+</tr>
+</table>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -4789,7 +4818,7 @@ channel. This parameter contains
 a <a href="messages-api.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
 "&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS CHannel.</p></td>
+number +15553131414 on the SMS channel.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
@@ -4798,29 +4827,29 @@ channel. This parameter contains
 a <a href="messages-api.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
 "&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS CHannel.</p></td>
+number +15553131414 on the SMS channel.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Text body of the message. On some channels some
 restrictions may exist related to length of messages and splitting of
-long messages</p></td>
+long messages.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status_callback</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The status_callback body parameter lets you
 to specify a URL where you can receive events in the form of HTTP POST
-requests (webhooks) with updates of the Message delivery status from
-the CPaaS Platform. Those requests can
+requests (webhooks) with updates of the message delivery status from
+the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Platform. Those requests can
 contain <a href="messages-api.html#_status_callback_http_parameters">the
-following</a> body parameters</p></td>
+following</a> body parameters.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status_callback_method</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) The status_callback_method attribute
-allows you to specify which HTTP method CPaaS should use when requesting
+allows you to specify which HTTP method <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> should use when requesting
 the URL in the status_callback attribute. Possible values are GET, POST.
-Default GET.</p></td>
+The default method is GET.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">media_list</p></td>
@@ -4839,7 +4868,7 @@ Default GET.</p></td>
 <div class="sect2">
 <h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
 <div class="paragraph">
-<p>Send a Message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and also use a status callback URL so that you are notified of the Message delivery status in the provided callback URL.Make sure the provided callback URL is reachable from the internet.</p>
+<p>Send a message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and use a status callback URL so that you are notified of the message delivery status in the provided callback URL. Make sure the provided callback URL is reachable from the internet.</p>
 </div>
 <div class="sect3">
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
@@ -4873,7 +4902,7 @@ Default GET.</p></td>
    -d 'to=mms:+13216549878' \
    -d 'text=Test Message' \
    -d 'status_callback=http://status.callback.url' \
-   -d 'media_list=[{' \
+   -d 'media_list=' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -4893,7 +4922,7 @@ request.({
          'to': 'mms:+13216549878',
          'text': 'Test Message',
          'status_callback': 'http://status.callback.url',
-         'media_list': '[{'
+         'media_list': ''
       }
    },
    function (error, response, body) {
@@ -4922,7 +4951,7 @@ params = urlencode({
    'to': 'mms:+13216549878',
    'text': 'Test Message',
    'status_callback': 'http://status.callback.url',
-   'media_list': '[{'
+   'media_list': ''
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
@@ -4962,7 +4991,7 @@ public class JavaSampleClass {
         "to=mms:+13216549878&" +
         "text=Test Message&" +
         "status_callback=http://status.callback.url&" +
-        "media_list=[{");
+        "media_list=");
       os.close();
 
       // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
@@ -5011,12 +5040,12 @@ public class JavaSampleClass {
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MessageSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the Message that triggered this status
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique identifier of the message which triggered this status
 callback request.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MessageStatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Updated status for the Message. Possible values are:
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updated status for the message. Possible values are:
 sending, sent, failed, delivered, undelivered. For more details please
 refer
 to <a href="messages-api.html#_status_callback_events">the
@@ -5024,13 +5053,13 @@ events</a> description below.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ErrorCode</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Error code associated with the sent Message. The exact
+<td class="tableblock halign-left valign-top"><p class="tableblock">Error code associated with the sent message. The exact
 format of the error may depend on the provider (only present if an error
 occurred).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account that sent the Message that
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account which sent the message that
 triggered this status callback request.</p></td>
 </tr>
 <tr>
@@ -5045,17 +5074,17 @@ triggered this status callback request. Example:. "sms:+15553131414".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the Message that triggered this status callback
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the message which triggered this status callback
 request.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MediaUrl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">url of the media content attached in the message.This is an
+<td class="tableblock halign-left valign-top"><p class="tableblock">url of the media content attached in the message. This is an
 array parameter</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MediaType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MIME type of media content attached in the message.This is
+<td class="tableblock halign-left valign-top"><p class="tableblock">MIME type of media content attached in the message. This is
 an array parameter</p></td>
 </tr>
 </tbody>
@@ -5069,28 +5098,25 @@ an array parameter</p></td>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Sending status event, indicating that CPaaS is trying to send the
+<p>Sending status event, indicating that <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> is trying to send the
 message to the channel provider for further routing</p>
 </li>
 <li>
-<p>Sent status event, indicating whether CPaaS managed to successfully
-forward the Message to the channel provider for further routing.The
-status is reflected on the MessageStatus attribute described above and
-can be either sent on success or failed on failure.In case of failure
-no delivery status event is sent.</p>
+<p>Sent status event, indicating whether <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> managed to successfully
+forward the message to the channel provider for further routing.The
+status is reflected on the <code>MessageStatus</code> attribute described above and
+can be either <code>sent</code> on success or <code>failed</code> on failure.</p>
 </li>
 <li>
-<p>Delivery status event, indicating whether the channel provider managed
-to successfully deliver the Message to the destination, given that the
-status event was previously sent. The status is reflected on
-the MessageStatus attribute described above and can
-be delivered, undelivered or failed</p>
+<p>Delivery status event, indicating whether the channel provider managed to successfully deliver the message to the destination, given that the status event was previously sent. The status is reflected on
+the <code>`MessageStatus</code> attribute described above and can
+be <code>delivered</code>, <code>undelivered</code> or <code>failed</code>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p>For more information on the statuses please refer
-to  <a href="messages-api.html#_status_description">Status
+to <a href="messages-api.html#_status_description">Status
 Description</a> section.</p>
 </div>
 </div>
@@ -5137,7 +5163,7 @@ Description</a> section.</p>
 <h2 id="_receive_message"><a class="anchor" href="#_receive_message"></a>Receive Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To be able to receive messages, the phone number should be provisioned in <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> first and linked to an application.</p>
+<p>To be able to receive messages, the phone number should be provisioned in <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> and linked to an application.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -5146,7 +5172,7 @@ Description</a> section.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-It may be required for the number to be provisioned and verified first with the channel provider, through an out-of-band process outside of the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> organization.Please contact your account manager to find out more about the process and set up the number properly.
+Some channel providers require to have the number provisioned and verified by them first. This action is taking place outside the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> platform. Please contact your account manager to find out more about the process and set it up properly.
 </td>
 </tr>
 </table>
@@ -5161,13 +5187,13 @@ It may be required for the number to be provisioned and verified first with the 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As currently in Beta, the phone number is provisioned with SmsUrl reusing the existing capabilities and as a SIP Number.This may be a subject of change before moving to General Availability.
+As the Message API is currently in Beta, the phone number is provisioned as a SIP number with SmsUrl reusing the existing capabilities. This will be subject to change before moving to General Availability.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>When a message is sent from a customer to the number previously provisioned, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send an HTTP callback to the SMSUrl provided in the Incoming Phone Number with the following request parameters that your application can use to decide how to process the inbound message received:</p>
+<p>When a message is sent from a customer to the number previously provisioned, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send an HTTP callback to the SMSUrl provided in the <a href="../api/incoming-phone-numbers-api.html">Incoming Phone Number</a> with the following request parameters. Based on those your application can decide how to process the inbound message.  For example, you can reply with another message through the <a href="../rcml/message-rcml.html">Message Verb RCML</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_incoming_message_request_parameters"><a class="anchor" href="#_incoming_message_request_parameters"></a>Incoming Message Request Parameters</h3>
@@ -5185,19 +5211,19 @@ As currently in Beta, the phone number is provisioned with SmsUrl reusing the ex
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account that sent the Message that triggered this callback request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account that sent the message that triggered this callback request</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that triggered this callback request.Example:. "sms:+15553131414".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that triggered this callback request. Example: "sms:+15553131414".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that triggered this callback request. Example:. "sms:+15553131414"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that triggered this callback request. Example: "sms:+15553131414"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the Message that triggered this callback request.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the message which triggered this callback request.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">MediaUrl</p></td>
@@ -5231,11 +5257,7 @@ For channels that support it the message will be marked as read as soon as the H
 <p><code>GET /api/2012-04-24/Accounts/{accountSid}/Messages</code></p>
 </div>
 <div class="paragraph">
-<p>Returns a list of omnichannel message records corresponding to the
-messages sent or received from the provided AccountSid, subject to the
-provided paging, filtering and sorting URL query parameters. Only
-messages that reached a Delivery Status (delivered, undelivered, failed)
-will be retrieved.</p>
+<p>Returns a list of message records corresponding to the messages sent or received from the provided AccountSid, subject to the provided paging, filtering and sorting URL query parameters. Only messages that reached a Delivery Status (delivered, undelivered, failed) will be retrieved.</p>
 </div>
 <div class="sect2">
 <h3 id="_paging"><a class="anchor" href="#_paging"></a>Paging</h3>
@@ -5269,8 +5291,7 @@ from 0. A 400 response will be returned if this page doesn’t exist.</p></td>
 <div class="sect2">
 <h3 id="_additional_paging_information"><a class="anchor" href="#_additional_paging_information"></a>Additional Paging Information</h3>
 <div class="paragraph">
-<p>The API returns URIs to the next, previous, first and last pages of the
-returned list as shown in the table below.</p>
+<p>The API returns URIs to the next, previous, first and last pages of the returned list as shown in the table below.</p>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
@@ -5574,7 +5595,7 @@ public class JavaSampleClass {
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
       "from": "mms:+12012496964",
       "to": "mms:+18016649552",
-      "body": "Hello from CPaaS Omnichannel MMS Channel",
+      "body": "Hello from CPaaS MMS Channel",
       "status": "delivered",
       "direction": "outbound-api",
       "num_segments": 1,
@@ -5592,7 +5613,7 @@ public class JavaSampleClass {
 <div class="sect2">
 <h3 id="_sorting_information"><a class="anchor" href="#_sorting_information"></a>Sorting Information</h3>
 <div class="paragraph">
-<p>The following sorting parameters are available. In order to use those you need to utilize the <strong>SortBy</strong> query parameter to determine which attribute you want to sort by and in which direction. Direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here is the proper format: <strong>SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;</strong>. If no direction parameter is provided, then the listing of messages is sorted by the attribute in ascending order. A 400 response will be returned if the syntax is invalid.</p>
+<p>The following sorting parameters are available. To use those you need to utilize the <strong>SortBy</strong> query parameter to determine which attribute you want to sort by and in which direction. Direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here is the proper format: <strong>SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;</strong>. If no direction parameter is provided, then the listing of messages is sorted by the attribute in ascending order. A 400 response will be returned if the syntax is invalid.</p>
 </div>
 <table class="tableblock frame-top grid-rows spread">
 <colgroup>
@@ -5753,7 +5774,7 @@ public class JavaSampleClass {
 <p><code>GET /api/2012-04-24/Accounts/{accountSid}/Messages/{MessageSid}</code></p>
 </div>
 <div class="paragraph">
-<p>Returns detailed information for a single omnichannel message identified by the MessageSid path parameter in the URL.</p>
+<p>Returns detailed information for a single omnichannel message identified by the <code>MessageSid</code> path parameter in the URL.</p>
 </div>
 <div class="sect2">
 <h3 id="_examples_4"><a class="anchor" href="#_examples_4"></a>Examples</h3>
@@ -5894,11 +5915,11 @@ public class JavaSampleClass {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this Message was created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this message was created.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DateUpdated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this Message was last updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this message was last updated.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DateSent</p></td>
@@ -5953,7 +5974,7 @@ public class JavaSampleClass {
 <div class="sect2">
 <h3 id="_status_description"><a class="anchor" href="#_status_description"></a>Status Description</h3>
 <div class="paragraph">
-<p>Here is a detailed breakdown of the Status attribute describing the status of the omnichannel message.</p>
+<p>Here is a detailed breakdown of the <code>Status</code> attribute describing the status of the omnichannel message.</p>
 </div>
 <table class="tableblock frame-top grid-rows spread">
 <colgroup>

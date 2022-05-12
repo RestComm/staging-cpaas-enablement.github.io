@@ -1951,6 +1951,26 @@
             </span>
                 </div>
                   <ul class="nav-list">
+              <li id="Overview"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html">Overview</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Channel Identities"
                   class="nav-item"
                   data-depth="2">
@@ -4493,7 +4513,7 @@
             </span>
                 </div>
                               </li>
-              <li id="Message"
+              <li id="Message - BETA"
                   class="nav-item is-current-page"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4508,7 +4528,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="message-rcml.html">Message</a>
+              <a class="nav-link nav-flex-item-text" href="message-rcml.html">Message - BETA</a>
 
             </span>
                 </div>
@@ -4709,7 +4729,7 @@
   <ul>
     <li class="crumb"><a href="../index.html">docs</a></li>
     <li class="crumb"><a href="overview.html">CSP:RCML</a></li>
-    <li class="crumb"><a href="message-rcml.html">CSP:Message</a></li>
+    <li class="crumb"><a href="message-rcml.html">CSP:Message - BETA</a></li>
   </ul>
 </nav>
 </div>
@@ -4719,46 +4739,34 @@
 <h2 id="_message"><a class="anchor" href="#_message"></a>Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>&lt;Message&gt;</strong> verb sends an outbound message to any of the supported Channels (SMS, MMS, Webex Teams, Microsoft Teams, XMPP).</p>
+<p>The <strong>&lt;Message&gt;</strong> verb allows your application to instruct <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> to send an outbound message to any of the supported Channels listed in the <a href="../api/messages-api-overview.html">Messages API Overview</a>.</p>
 </div>
 <div class="paragraph">
-<p>Omnichannel allows sending simple text and media attachments. Depending on the target Channel different capabilities will be supported. Those capabilities will define the following characteristics:</p>
+<p>A message can include various capabilities such as text body, pictures, audio, and other file types. See all supported channels and full list of capabilities per channel in the <a href="../api/messages-api-overview.html">Messages API Overview</a>.</p>
+</div>
+<div class="paragraph">
+<p>If the message doesn’t comply with the Channel constraint, it will be marked as failed, and no billing will be applied for it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_channel_identities"><a class="anchor" href="#_channel_identities"></a>Channel Identities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Messages API is built on a top of the Channel Identity following the URI concept. URIs create a separate namespace for the different supported channels, thus providing an unique identity per Channel for the subscriber or business.</p>
+</div>
+<div id="_supported_omnichannel_uris" class="paragraph">
+<p>The following URIs are currently supported. More will be added as new channels become available:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Text maximum length</p>
+<p>"mms:&lt;Number in e164 format&gt;"</p>
 </li>
 <li>
-<p>Media maximum size</p>
-</li>
-<li>
-<p>Media content type</p>
+<p>"sms:&lt;Number in e164 format&gt;"</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>If the message doesn&#8217;t comply with the Channel constraint, it will be marked as failed, and no billing will be applied for it.</p>
-</div>
-<div class="sect2">
-<h3 id="_omnichannel_uris"><a class="anchor" href="#_omnichannel_uris"></a>Omnichannel URIs</h3>
-<div class="paragraph">
-<p>The Omnichannel API is built on a top of the URI concept. URIs create a separate namespace for the different supported channels,
-providing an unique identifier per Channel.</p>
-</div>
-<div class="paragraph">
-<p>The following URIs are supported:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>"mms:&lt;pstnNumber&gt;"</p>
-</li>
-<li>
-<p>"sms:&lt;pstnNumber&gt;"</p>
-</li>
-</ul>
-</div>
 </div>
 </div>
 </div>
@@ -4780,13 +4788,23 @@ providing an unique identifier per Channel.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the recipient of the message, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific
+channel. This attribute contains
+a <a href="message-rcml.html#_supported_omnichannel_uris">channel
+URI</a>, relative to the channel in the following format
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
+number +15553131414 on the SMS CHannel.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Omnichannel URI identifying the sender of the message, relative to <code>"&lt;channelName&gt;:&lt;pstnNumber&gt;"</code>. E.g. <code>"sms:+15553131414&gt;"</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific
+channel. This attribute contains
+a <a href="message-rcml.html#_supported_omnichannel_uris">channel
+URI</a>, relative to the channel in the following format
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
+number +15553131414 on the SMS CHannel.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
@@ -4801,7 +4819,9 @@ providing an unique identifier per Channel.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">statusCallback</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">any url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A URL where you can receive events in the form of HTTP POST
+requests (webhooks) with updates of the Message delivery status from
+the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Platform.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">none</p></td>
 </tr>
 <tr>
@@ -4859,7 +4879,7 @@ providing an unique identifier per Channel.</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Event</th>
-<th class="tableblock halign-left valign-top">Possible statuses</th>
+<th class="tableblock halign-left valign-top">Possible status</th>
 </tr>
 </thead>
 <tbody>
@@ -4951,11 +4971,11 @@ providing an unique identifier per Channel.</p>
 <p>The <strong>&lt;Body&gt;</strong> noun element contains the text of the message you want to send.</p>
 </div>
 <div class="paragraph">
-<p>The <strong>&lt;Media&gt;</strong> noun element contains an URL of a media content to be sent.
+<p>The <strong>&lt;Media&gt;</strong> noun element contains a URL of a media content to be sent.
 The <strong>&lt;Media&gt;</strong> noun element must also contain an attribute "contentType", for example "image/jpeg" of the media content.</p>
 </div>
 <div class="paragraph">
-<p>If both of <strong>&lt;Body&gt;</strong> and <strong>&lt;Media&gt;</strong> nouns are absent then the server will get the <strong>&lt;Message&gt;</strong> element value as a message text (for backward compatibility).</p>
+<p>If the <strong>&lt;Body&gt;</strong> and the <strong>&lt;Media&gt;</strong> nouns are absent then the server will get the <strong>&lt;Message&gt;</strong> element value as a message text (for backward compatibility).</p>
 </div>
 <div class="paragraph">
 <p>The <strong>&lt;Body&gt;</strong> noun element must be before of all <strong>&lt;Media&gt;</strong> nouns.</p>
