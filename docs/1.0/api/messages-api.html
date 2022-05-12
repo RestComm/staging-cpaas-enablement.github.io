@@ -4902,7 +4902,7 @@ The default method is GET.</p></td>
    -d 'to=mms:+13216549878' \
    -d 'text=Test Message' \
    -d 'status_callback=http://status.callback.url' \
-   -d 'media_list= [' \
+   -d 'media_list=\{' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -4922,7 +4922,7 @@ request.({
          'to': 'mms:+13216549878',
          'text': 'Test Message',
          'status_callback': 'http://status.callback.url',
-         'media_list': ' ['
+         'media_list': '\{'
       }
    },
    function (error, response, body) {
@@ -4951,7 +4951,7 @@ params = urlencode({
    'to': 'mms:+13216549878',
    'text': 'Test Message',
    'status_callback': 'http://status.callback.url',
-   'media_list': ' ['
+   'media_list': '\{'
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
@@ -4991,7 +4991,7 @@ public class JavaSampleClass {
         "to=mms:+13216549878&" +
         "text=Test Message&" +
         "status_callback=http://status.callback.url&" +
-        "media_list= [");
+        "media_list=\{");
       os.close();
 
       // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
