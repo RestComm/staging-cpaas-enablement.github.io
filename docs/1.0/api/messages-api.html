@@ -2031,7 +2031,7 @@
             </span>
                 </div>
                               </li>
-              <li id="Receive a Message"
+              <li id="Receive Message"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -2046,11 +2046,33 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_receive_a_message">Receive a Message</a>
+              <a class="nav-link nav-flex-item-text" href="#_receive_message">Receive Message</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="Incoming Message Request Parameters"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_incoming_message_request_parameters">Incoming Message Request Parameters</a>
 
             </span>
                 </div>
                               </li>
+  </ul>
+              </li>
               <li id="Get Message List"
                   class="nav-item"
                   data-depth="2">
@@ -4696,13 +4718,13 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <strong>Message</strong> represents a sent or received message on any of the supported channels (SMS, MMS, WhatsApp, RCS, etc.).Using the API you can send a message to multiple channels and get notified of its delivery status.</p>
+<p>A <strong>Message</strong> represents a sent or received message on any of the supported channels (SMS, MMS, WhatsApp, RCS, etc.). Using the API you can send a message to multiple channels and get notified of its delivery status.</p>
 </div>
 <div class="paragraph">
-<p>In addition to text messages, the Messages API allows you to send rich media content such as pictures, audio, and other file types.See full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
+<p>In addition to text messages, the Messages API allows you to send rich media content such as pictures, audio, and other file types. See full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
 </div>
 <div class="paragraph">
-<p>Channel providers support different messaging capabilities.If a request is not supported by a specific Channel provider, the message status will be marked as failed, and the relevant callback URL will be invoked.</p>
+<p>Channel providers support different messaging capabilities. If a request is not supported by a specific Channel provider, the message status will be marked as failed, and the relevant callback URL will be invoked.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4847,7 +4869,11 @@ Default GET.</p></td>
       </div>
       <div id="Curl-58" class="sample-language-58">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
-   -d '{' \
+   -d 'from=mms:+19876543212' \
+   -d 'to=mms:+13216549878' \
+   -d 'text=Test Message' \
+   -d 'status_callback=http://status.callback.url' \
+   -d 'media_list=[{' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -4863,7 +4889,11 @@ request.({
       url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
       form: {
-         '{': 'undefined'
+         'from': 'mms:+19876543212',
+         'to': 'mms:+13216549878',
+         'text': 'Test Message',
+         'status_callback': 'http://status.callback.url',
+         'media_list': '[{'
       }
    },
    function (error, response, body) {
@@ -4888,7 +4918,11 @@ headers = { 'Authorization' : 'Basic %s' %  userAndPass,
 
 # Update POST parameters accordingly
 params = urlencode({
-   '{': 'undefined'
+   'from': 'mms:+19876543212',
+   'to': 'mms:+13216549878',
+   'text': 'Test Message',
+   'status_callback': 'http://status.callback.url',
+   'media_list': '[{'
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
@@ -4924,7 +4958,11 @@ public class JavaSampleClass {
       DataOutputStream os = new DataOutputStream(conn.getOutputStream());
 
       // Update POST parameters accordingly
-      os.writeBytes("{");
+      os.writeBytes("from=mms:+19876543212&" +
+        "to=mms:+13216549878&" +
+        "text=Test Message&" +
+        "status_callback=http://status.callback.url&" +
+        "media_list=[{");
       os.close();
 
       // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
@@ -5096,7 +5134,7 @@ Description</a> section.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_receive_a_message"><a class="anchor" href="#_receive_a_message"></a>Receive a Message</h2>
+<h2 id="_receive_message"><a class="anchor" href="#_receive_message"></a>Receive Message</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To be able to receive messages, the phone number should be provisioned in <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> first and linked to an application.</p>
@@ -5131,6 +5169,46 @@ As currently in Beta, the phone number is provisioned with SmsUrl reusing the ex
 <div class="paragraph">
 <p>When a message is sent from a customer to the number previously provisioned, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send an HTTP callback to the SMSUrl provided in the Incoming Phone Number with the following request parameters that your application can use to decide how to process the inbound message received:</p>
 </div>
+<div class="sect2">
+<h3 id="_incoming_message_request_parameters"><a class="anchor" href="#_incoming_message_request_parameters"></a>Incoming Message Request Parameters</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Parameter Name</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Account Sid of the account that sent the Message that triggered this callback request</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that triggered this callback request.Example:. "sms:+15553131414".</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that triggered this callback request. Example:. "sms:+15553131414"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text body of the Message that triggered this callback request.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaUrl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url of the media content attached in the message</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MediaType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MIME type of media content attached in the message</p></td>
+</tr>
+</tbody>
+</table>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -5142,6 +5220,7 @@ For channels that support it the message will be marked as read as soon as the H
 </td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -5335,7 +5414,7 @@ You will need to use a URL encoded format when specifying the phone number prefi
         <button class="sample-code-button scsIndex-59" onclick="openLanguage('Java', 59)">Java</button>
       </div>
       <div id="Curl-59" class="sample-language-59">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages.json?To=mms:%2B1%25  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?To=mms:%2B1%25  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -5348,7 +5427,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?To=mms:%2B1%25',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?To=mms:%2B1%25',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -5370,7 +5449,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?To=mms:%2B1%25',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?To=mms:%2B1%25',
       headers=headers)
 res = conn.getresponse()
 
@@ -5394,7 +5473,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages.json?To=mms:%2B1%25");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages?To=mms:%2B1%25");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -5564,7 +5643,7 @@ public class JavaSampleClass {
         <button class="sample-code-button scsIndex-60" onclick="openLanguage('Java', 60)">Java</button>
       </div>
       <div id="Curl-60" class="sample-language-60">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -5577,7 +5656,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -5599,7 +5678,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
       headers=headers)
 res = conn.getresponse()
 
@@ -5623,7 +5702,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages.json?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -5691,7 +5770,7 @@ public class JavaSampleClass {
         <button class="sample-code-button scsIndex-61" onclick="openLanguage('Java', 61)">Java</button>
       </div>
       <div id="Curl-61" class="sample-language-61">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages/MESSAGE_SID.json  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages/MESSAGE_SID  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
@@ -5706,7 +5785,7 @@ const MESSAGE_SID = 'my_MESSAGE_SID'
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '.json',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -5730,7 +5809,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '.json',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages/' + MESSAGE_SID + '',
       headers=headers)
 res = conn.getresponse()
 
@@ -5755,7 +5834,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages/" + MESSAGE_SID + ".json");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages/" + MESSAGE_SID + "");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
