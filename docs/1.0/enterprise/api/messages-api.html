@@ -762,6 +762,25 @@
             </span>
                 </div>
                               </li>
+              <li id="EnableIncomingMMSforanApplication"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Deleteaphonenumber"
                   class="nav-item"
                   data-depth="3">
@@ -3320,8 +3339,8 @@ Channel providers support different capabilities. If a capability is not support
 channel. This parameter contains
 a <a href="messages-api.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
-"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS channel.</p></td>
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553XXXXXX" means the e164
+number +15553XXXXXX on the SMS channel.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
@@ -3329,8 +3348,8 @@ number +15553131414 on the SMS channel.</p></td>
 channel. This parameter contains
 a <a href="messages-api.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
-"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS channel.</p></td>
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553XXXXXX" means the e164
+number +15553XXXXXX on the SMS channel.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
@@ -3371,15 +3390,15 @@ The default method is GET.</p></td>
 <div class="sect2">
 <h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
 <div class="paragraph">
-<p>Send a message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and use a status callback URL so that you are notified of the message delivery status in the provided callback URL. Make sure the provided callback URL is reachable from the internet.</p>
+<p>Send a message with media attachment, from <code>mms:+19876XXXXXX</code> to <code>mms:+13216XXXXXX</code> and use a status callback URL so that you are notified of the message delivery status in the provided callback URL. Make sure the provided callback URL is reachable from the internet.</p>
 </div>
 <div class="sect3">
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST <a href="https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages" class="bare">https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages</a>  \
--d 'from=mms:+19876543212' \
--d 'to=mms:+13216549878' \
+-d 'from=mms:+19876XXXXXX' \
+-d 'to=mms:+13216XXXXXX' \
 -d 'text=Test Message' \
 -d 'status_callback=http://status.callback.url' \
 -d 'media_list=[{"url":"https://example.com/image.jpeg","content-type":"image/jpeg"}]' \
@@ -3396,8 +3415,8 @@ The default method is GET.</p></td>
   "date_created":"Thu, 19 Nov 2015 07:21:35 -0500",
   "date_updated":"Thu, 19 Nov 2015 07:21:35 -0500",
   "account_sid":"ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  "from":"mms:+19876543212",
-  "to":"mms:+13216549878",
+  "from":"mms:+19876XXXXXX",
+  "to":"mms:+13216XXXXXX",
   "body":"Test Message",
   "status":"queued",
   "direction":"outbound-api",
@@ -3449,12 +3468,12 @@ triggered this status callback request.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that
-triggered this status callback request. Example:. "sms:+15553131414".</p></td>
+triggered this status callback request. Example:. "sms:+15553XXXXXX".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that
-triggered this status callback request. Example:. "sms:+15553131414".</p></td>
+triggered this status callback request. Example:. "sms:+15553XXXXXX".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
@@ -3562,7 +3581,7 @@ Some channel providers require to have the number provisioned and verified by th
 </table>
 </div>
 <div class="paragraph">
-<p>Please follow the <a href="../apiincoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Incoming Phone Numbers</a> instructions to provision a new SMS or MMS omnichannel number and bind it to an application.</p>
+<p>Please follow the <a href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Incoming Phone Numbers</a> instructions to provision a new SMS or MMS omnichannel number and bind it to an application.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3599,11 +3618,11 @@ As the Message API is currently in Beta, the phone number is provisioned as a SI
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that triggered this callback request. Example: "sms:+15553131414".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message sender on a specific channel that triggered this callback request. Example: "sms:+15553XXXXXX".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that triggered this callback request. Example: "sms:+15553131414"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The identity of the message recipient on a specific channel that triggered this callback request. Example: "sms:+15553XXXXXX"</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
@@ -3831,17 +3850,17 @@ You will need to use a URL encoded format when specifying the phone number prefi
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-152 is-active" onclick="openLanguage('Curl', 152)">Curl</button>
-        <button class="sample-code-button scsIndex-152" onclick="openLanguage('Nodejs', 152)">Nodejs</button>
-        <button class="sample-code-button scsIndex-152" onclick="openLanguage('Python', 152)">Python</button>
-        <button class="sample-code-button scsIndex-152" onclick="openLanguage('Java', 152)">Java</button>
+        <button class="sample-code-button scsIndex-153 is-active" onclick="openLanguage('Curl', 153)">Curl</button>
+        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Nodejs', 153)">Nodejs</button>
+        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Python', 153)">Python</button>
+        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Java', 153)">Java</button>
       </div>
-      <div id="Curl-152" class="sample-language-152">
+      <div id="Curl-153" class="sample-language-153">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?To=mms:%2B1%25  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-152" class="sample-language-152" style="display:none">
+      <div id="Nodejs-153" class="sample-language-153" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3860,7 +3879,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-152" class="sample-language-152" style="display:none">
+      <div id="Python-153" class="sample-language-153" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3880,7 +3899,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-152" class="sample-language-152" style="display:none">
+      <div id="Java-153" class="sample-language-153" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -3931,8 +3950,8 @@ public class JavaSampleClass {
 "date_created": "Tue, 10 May 2022 12:33:28 +0000",
       "date_updated": "Tue, 10 May 2022 12:33:28 +0000",
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
-      "from": "mms:+12012496964",
-      "to": "mms:+18016649552",
+      "from": "mms:+12012XXXXXX",
+      "to": "mms:+18016XXXXXX",
       "body": "echo:",
       "status": "delivered",
       "direction": "outbound-call",
@@ -3947,8 +3966,8 @@ public class JavaSampleClass {
       "date_created": "Tue, 10 May 2022 12:33:25 +0000",
       "date_updated": "Tue, 10 May 2022 12:33:25 +0000",
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
-      "from": "mms:+18016649552",
-      "to": "mms:+12012496964",
+      "from": "mms:+18016XXXXXX",
+      "to": "mms:+12012XXXXXX",
       "body": "",
       "status": "received",
       "direction": "inbound",
@@ -3963,8 +3982,8 @@ public class JavaSampleClass {
       "date_created": "Tue, 10 May 2022 12:31:24 +0000",
       "date_updated": "Tue, 10 May 2022 12:31:25 +0000",
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
-      "from": "mms:+12012496964",
-      "to": "mms:+16696002375",
+      "from": "mms:+12012XXXXXX",
+      "to": "mms:+16696XXXXXX",
       "body": "echo: test form CPaaS",
       "status": "delivered",
       "direction": "outbound-call",
@@ -3979,8 +3998,8 @@ public class JavaSampleClass {
       "date_created": "Tue, 10 May 2022 12:31:21 +0000",
       "date_updated": "Tue, 10 May 2022 12:31:21 +0000",
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
-      "from": "mms:+16696002375",
-      "to": "mms:+12012496964",
+      "from": "mms:+16696XXXXXX",
+      "to": "mms:+12012XXXXXX",
       "body": "Hello World!",
       "status": "received",
       "direction": "inbound",
@@ -3995,8 +4014,8 @@ public class JavaSampleClass {
       "date_created": "Tue, 10 May 2022 11:55:37 +0000",
       "date_updated": "Tue, 10 May 2022 11:55:51 +0000",
       "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
-      "from": "mms:+12012496964",
-      "to": "mms:+18016649552",
+      "from": "mms:+12012XXXXXX",
+      "to": "mms:+18016XXXXXX",
       "body": "Hello from CPaaS MMS Channel",
       "status": "delivered",
       "direction": "outbound-api",
@@ -4055,22 +4074,22 @@ public class JavaSampleClass {
 <div class="sect2">
 <h3 id="_examples_3"><a class="anchor" href="#_examples_3"></a>Examples</h3>
 <div class="paragraph">
-<p>The command below will return the first page of records corresponding to omnichannel messages sent from 'sms:+19876543212' to 'sms:+13216549878' between 2018-05-30 and 2018-06-09, sorted by the creation date in ascending order.</p>
+<p>The command below will return the first page of records corresponding to omnichannel messages sent from 'sms:+19876XXXXXX' to 'sms:+13216XXXXXX' between 2018-05-30 and 2018-06-09, sorted by the creation date in ascending order.</p>
 </div>
 <div class="sect3">
 <h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-153 is-active" onclick="openLanguage('Curl', 153)">Curl</button>
-        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Nodejs', 153)">Nodejs</button>
-        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Python', 153)">Python</button>
-        <button class="sample-code-button scsIndex-153" onclick="openLanguage('Java', 153)">Java</button>
+        <button class="sample-code-button scsIndex-154 is-active" onclick="openLanguage('Curl', 154)">Curl</button>
+        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Nodejs', 154)">Nodejs</button>
+        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Python', 154)">Python</button>
+        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Java', 154)">Java</button>
       </div>
-      <div id="Curl-153" class="sample-language-153">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
+      <div id="Curl-154" class="sample-language-154">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?From=sms:+19876XXXXXX&To=sms:+13216XXXXXX&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-153" class="sample-language-153" style="display:none">
+      <div id="Nodejs-154" class="sample-language-154" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4079,7 +4098,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request({
       method: 'GET',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876XXXXXX&To=sms:+13216XXXXXX&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN }
    },
    function (error, response, body) {
@@ -4089,7 +4108,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-153" class="sample-language-153" style="display:none">
+      <div id="Python-154" class="sample-language-154" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4101,7 +4120,7 @@ userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("
 headers = { 'Authorization' : 'Basic %s' %  userAndPass }
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
+conn.request("GET", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages?From=sms:+19876XXXXXX&To=sms:+13216XXXXXX&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc',
       headers=headers)
 res = conn.getresponse()
 
@@ -4109,7 +4128,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-153" class="sample-language-153" style="display:none">
+      <div id="Java-154" class="sample-language-154" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4125,7 +4144,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages?From=sms:+19876543212&To=sms:+13216549878&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc");
+      URL url = new URL("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages?From=sms:+19876XXXXXX&To=sms:+13216XXXXXX&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("GET");
@@ -4152,9 +4171,9 @@ public class JavaSampleClass {
             "date_created": "Thu, 31 May 2018 16:10:32 +0000",
             "date_updated": "Thu, 31 May 2018 16:10:32 +0000",
             "account_sid": "&lt;accountSid&gt;",
-            "from": "sms:+19876543212",
-            "to": "sms:+13216549878",
-            "body": "Hello 13216549878",
+            "from": "+sms:+19876XXXXXX",
+            "to": "sms:+13216XXXXXX",
+            "body": "Hello 13216XXXXXX",
             "status": "sent",
             "direction": "outbound-api",
             "api_version": "2012-04-24",
@@ -4187,17 +4206,17 @@ public class JavaSampleClass {
 <div class="sect2">
 <h3 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h3>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-154 is-active" onclick="openLanguage('Curl', 154)">Curl</button>
-        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Nodejs', 154)">Nodejs</button>
-        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Python', 154)">Python</button>
-        <button class="sample-code-button scsIndex-154" onclick="openLanguage('Java', 154)">Java</button>
+        <button class="sample-code-button scsIndex-155 is-active" onclick="openLanguage('Curl', 155)">Curl</button>
+        <button class="sample-code-button scsIndex-155" onclick="openLanguage('Nodejs', 155)">Nodejs</button>
+        <button class="sample-code-button scsIndex-155" onclick="openLanguage('Python', 155)">Python</button>
+        <button class="sample-code-button scsIndex-155" onclick="openLanguage('Java', 155)">Java</button>
       </div>
-      <div id="Curl-154" class="sample-language-154">
+      <div id="Curl-155" class="sample-language-155">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages/MESSAGE_SID  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-154" class="sample-language-154" style="display:none">
+      <div id="Nodejs-155" class="sample-language-155" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -4218,7 +4237,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-154" class="sample-language-154" style="display:none">
+      <div id="Python-155" class="sample-language-155" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -4240,7 +4259,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-154" class="sample-language-154" style="display:none">
+      <div id="Java-155" class="sample-language-155" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -4280,7 +4299,7 @@ public class JavaSampleClass {
   "date_sent": "2019-07-04T07:02:28.000Z",
   "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "from": "sms:+4916543360736",
-  "to": "sms:+4915739360736",
+  "to": "sms:+4915739XXXXXX",
   "body":"Another test from <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span>",
   "status": "delivered",
   "direction": "outbound-api",

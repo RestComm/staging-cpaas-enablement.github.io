@@ -761,6 +761,25 @@
             </span>
                 </div>
                               </li>
+              <li id="EnableIncomingMMSforanApplication"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Deleteaphonenumber"
                   class="nav-item"
                   data-depth="3">
@@ -3295,8 +3314,8 @@
 channel. This attribute contains
 a <a href="message-rcml.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
-"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS CHannel.</p></td>
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553XXXXXX" means the e164
+number +15553XXXXXX on the SMS CHannel.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
@@ -3305,8 +3324,8 @@ number +15553131414 on the SMS CHannel.</p></td>
 channel. This attribute contains
 a <a href="message-rcml.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
-"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553131414" means the e164
-number +15553131414 on the SMS CHannel.</p></td>
+"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553XXXXXX" means the e164
+number +15553XXXXXX on the SMS CHannel.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See below</p></td>
 </tr>
 <tr>
@@ -3336,7 +3355,7 @@ the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="a
 <div class="sect2">
 <h3 id="_to"><a class="anchor" href="#_to"></a>to</h3>
 <div class="paragraph">
-<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the calling party. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558675311"</code>.</p>
+<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the calling party. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558XXXXXX"</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3425,12 +3444,12 @@ the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">From address of the message (message sender).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543212</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876XXXXXX</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">To address of the message (message receiver).</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876543213</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sms:+19876XXXXXX</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
@@ -3506,7 +3525,7 @@ The <strong>&lt;Media&gt;</strong> noun element must also contain an attribute "
 <div class="listingblock">
 <div class="content">
 <pre>&lt;Response&gt;
-    &lt;Message from="sms:+19876543212" to="sms:+13216549878" statusCallback="http://status.callback.url" statusCallbackMethod="POST"&gt;
+    &lt;Message from="sms:+19876XXXXXX" to="sms:+13216XXXXXX" statusCallback="http://status.callback.url" statusCallbackMethod="POST"&gt;
         &lt;Body&gt;Hello World !!!&lt;/Body&gt;
     &lt;/Message&gt;
 &lt;/Response&gt;</pre>
