@@ -3336,7 +3336,7 @@ the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="a
 <div class="sect2">
 <h3 id="_to"><a class="anchor" href="#_to"></a>to</h3>
 <div class="paragraph">
-<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the calling party. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558675311"</code>.</p>
+<p>The 'to' attribute represents an Omnichannel URI. <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send a message to this channel identity. When sending a message during an incoming call, 'to' defaults to the calling party. When sending a Message during an outgoing call, 'to' defaults to the called party. The value of 'to' must be an Omnichannel URI. An example of MMS uri is: <code>"mms:+15558675311"</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3348,10 +3348,10 @@ the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="a
 <div class="sect2">
 <h3 id="_action"><a class="anchor" href="#_action"></a>action</h3>
 <div class="paragraph">
-<p>The 'action' attribute takes a URL address as an argument. After processing the &lt;Message&gt; verb, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will make a GET or POST request to this URL with the form parameters 'MessageStatus' and 'MessageSid'. Using an 'action' URL, your application can receive synchronous notification that the message was successfully enqueued or not.</p>
+<p>The 'action' attribute takes a URL address as an argument. After processing the &lt;Message&gt; verb, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will make a GET or POST request to this URL with the form parameters 'MessageStatus' and 'MessageSid'. Using an 'action' URL, your application can receive synchronous notification that the message was successfully enqueued or not.</p>
 </div>
 <div class="paragraph">
-<p>If you provide an 'action' URL, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will use the RCML received in your response to the 'action' URL request to continue the current call. Any RCML verbs occurring after an &lt;Message&gt; which specifies an 'action' attribute are unreachable. If no 'action' is provided, &lt;Message&gt; will finish and <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will move on to the next RCML verb in the document. If there is no next verb, <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> will end the phone call.</p>
+<p>If you provide an 'action' URL, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will use the RCML received in your response to the 'action' URL request to continue the current call. Any RCML verbs occurring after an &lt;Message&gt; which specifies an 'action' attribute are unreachable. If no 'action' is provided, &lt;Message&gt; will finish and <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will move on to the next RCML verb in the document. If there is no next verb, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will end the phone call.</p>
 </div>
 </div>
 <div class="sect2">
