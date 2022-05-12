@@ -2031,6 +2031,26 @@
             </span>
                 </div>
                               </li>
+              <li id="Receive a Message"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_receive_a_message">Receive a Message</a>
+
+            </span>
+                </div>
+                              </li>
               <li id="Get Message List"
                   class="nav-item"
                   data-depth="2">
@@ -4679,7 +4699,7 @@
 <p>A <strong>Message</strong> represents a sent or received message on any of the supported channels (SMS, MMS, WhatsApp, RCS, etc.).Using the API you can send a message to multiple channels and get notified of its delivery status.</p>
 </div>
 <div class="paragraph">
-<p>In addition to text messages, the Messages API allows you to send rich media content such as pictures, audio, and other file types. See full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
+<p>In addition to text messages, the Messages API allows you to send rich media content such as pictures, audio, and other file types.See full list of capabilities per channel in the <a href="messages-api-overview.html">Messages API - Overview</a>.</p>
 </div>
 <div class="paragraph">
 <p>Channel providers support different messaging capabilities.If a request is not supported by a specific Channel provider, the message status will be marked as failed, and the relevant callback URL will be invoked.</p>
@@ -4726,7 +4746,7 @@ In order to use the Messages API you need to open a Support ticket for your acco
 <p><code>POST /api/2012-04-24/Accounts/{accountSid}/Messages</code></p>
 </div>
 <div class="paragraph">
-<p>Sends a new omnichannel Message and returns its representation. The request contains a JSON body with the following content.</p>
+<p>Sends a new omnichannel Message and returns its representation.The request contains a JSON body with the following content.</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -4797,7 +4817,7 @@ Default GET.</p></td>
 <div class="sect2">
 <h3 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h3>
 <div class="paragraph">
-<p>Send a Message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and also use a status callback URL so that you are notified of the Message delivery status in the provided callback URL. Make sure the provided callback URL is reachable from the internet.</p>
+<p>Send a Message with media attachment, from <code>mms:+19876543212</code> to <code>mms:+13216549878</code> and also use a status callback URL so that you are notified of the Message delivery status in the provided callback URL.Make sure the provided callback URL is reachable from the internet.</p>
 </div>
 <div class="sect3">
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
@@ -4826,7 +4846,7 @@ Default GET.</p></td>
         <button class="sample-code-button scsIndex-58" onclick="openLanguage('Java', 58)">Java</button>
       </div>
       <div id="Curl-58" class="sample-language-58">
-        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages.json  \
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
    -d '{' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
@@ -4840,7 +4860,7 @@ const AUTH_TOKEN = 'my_AUTH_TOKEN';
 
 request.({
       method: 'POST',
-      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages',
       auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
       form: {
          '{': 'undefined'
@@ -4872,7 +4892,7 @@ params = urlencode({
 })
 
 conn = HTTPSConnection('mycompany.restcomm.com')
-conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages.json',
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/Messages',
       params, headers=headers)
 res = conn.getresponse()
 
@@ -4896,7 +4916,7 @@ public class JavaSampleClass {
       String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
       String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
 
-      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages.json");
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/Messages");
       HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
       conn.setRequestProperty("Authorization", "Basic " + encoded);
       conn.setRequestMethod("POST");
@@ -5072,6 +5092,56 @@ Description</a> section.</p>
 </tbody>
 </table>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_receive_a_message"><a class="anchor" href="#_receive_a_message"></a>Receive a Message</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To be able to receive messages, the phone number should be provisioned in <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> first and linked to an application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It may be required for the number to be provisioned and verified first with the channel provider, through an out-of-band process outside of the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> organization.Please contact your account manager to find out more about the process and set up the number properly.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Please follow the <a href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Incoming Phone Numbers</a> instructions to provision a new SMS or MMS omnichannel number and bind it to an application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As currently in Beta, the phone number is provisioned with SmsUrl reusing the existing capabilities and as a SIP Number.This may be a subject of change before moving to General Availability.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When a message is sent from a customer to the number previously provisioned, <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will send an HTTP callback to the SMSUrl provided in the Incoming Phone Number with the following request parameters that your application can use to decide how to process the inbound message received:</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For channels that support it the message will be marked as read as soon as the HTTP callback was replied to with a success response (200 OK), or failed otherwise.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -5709,7 +5779,7 @@ public class JavaSampleClass {
   "account_sid": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "from": "sms:+4916543360736",
   "to": "sms:+4915739360736",
-  "body":"Another test from <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>",
+  "body":"Another test from <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span>",
   "status": "delivered",
   "direction": "outbound-api",
   "num_segments": 1,
@@ -5753,7 +5823,7 @@ public class JavaSampleClass {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">DateSent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which the message was sent or received by <span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which the message was sent or received by <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AccountSid</p></td>
