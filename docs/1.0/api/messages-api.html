@@ -4872,6 +4872,19 @@ The default method is GET.</p></td>
 </div>
 <div class="sect3">
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
+<div class="paragraph">
+<p> <details><summary> 
+ :
+ </summary><div> </p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>samplecode::[httpMethod="POST",urlSuffix="Accounts/#(account_sid)/Messages",bodyParameters="from=mms:+19876XXXXXX&amp;to=mms:+13216XXXXXX&amp;text=Test Message&amp;status_callback=http://status.callback.url&amp;media_list=\{"url":"https://example.com/image1.mp3","content-type":"audio/mp3"},\{"url":"https://example.com/image1.mp3","content-type":"audio/mp3"}"]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p> </div></details> </p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST <a href="https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages" class="bare">https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages</a>  \
