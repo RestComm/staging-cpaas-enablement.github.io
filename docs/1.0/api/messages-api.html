@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="A Message represents an inbound or outbound omnichannel message. Using this API you can do things like:">
     <meta name="keywords" content="send omnichannel message, omnichannel message api, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;CPaaS&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} omnichannel message api, omnichannel message rest api">
-    <meta name="generator" content="Antora 1.1.1">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -2317,6 +2317,26 @@
                               </li>
   </ul>
               </li>
+              <li id="Error Codes"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+
+            </span>
+                </div>
+                              </li>
   </ul>
               </li>
               <li id="Email"
@@ -4799,7 +4819,7 @@ Channel providers support different capabilities. If a capability is not support
 </tr>
 </table>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4907,7 +4927,7 @@ The default method is GET.</p></td>
 </div>
 <div class="sect3">
 <h4 id="_status_callback_http_parameters"><a class="anchor" href="#_status_callback_http_parameters"></a>Status Callback HTTP Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5006,7 +5026,7 @@ Description</a> section.</p>
 <div class="paragraph">
 <p>Receive Delivery Status Callback for a message that was delivered to the end user.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5078,7 +5098,7 @@ As the Message API is currently in Beta, the phone number is provisioned as a SI
 </div>
 <div class="sect2">
 <h3 id="_incoming_message_request_parameters"><a class="anchor" href="#_incoming_message_request_parameters"></a>Incoming Message Request Parameters</h3>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5145,7 +5165,7 @@ For channels that support it the message will be marked as read as soon as the H
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5176,7 +5196,7 @@ from 0. A 400 response will be returned if this page doesn’t exist.</p></td>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5233,7 +5253,7 @@ from 0. A 400 response will be returned if this page doesn’t exist.</p></td>
 <div class="paragraph">
 <p>The following filtering parameters are supported.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5514,7 +5534,7 @@ public class JavaSampleClass {
 <div class="paragraph">
 <p>The following sorting parameters are available. To use those you need to utilize the <strong>SortBy</strong> query parameter to determine which attribute you want to sort by and in which direction. Direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here is the proper format: <strong>SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;</strong>. If no direction parameter is provided, then the listing of messages is sorted by the attribute in ascending order. A 400 response will be returned if the syntax is invalid.</p>
 </div>
-<table class="tableblock frame-top grid-rows spread">
+<table class="tableblock frame-top grid-rows stripes-none stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5796,7 +5816,7 @@ public class JavaSampleClass {
 <div class="paragraph">
 <p>The attributes of the omnichannel message resource are as follows:</p>
 </div>
-<table class="tableblock frame-top grid-rows spread">
+<table class="tableblock frame-top grid-rows stripes-none stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5875,7 +5895,7 @@ public class JavaSampleClass {
 <div class="paragraph">
 <p>Here is a detailed breakdown of the <code>Status</code> attribute describing the status of the omnichannel message.</p>
 </div>
-<table class="tableblock frame-top grid-rows spread">
+<table class="tableblock frame-top grid-rows stripes-none stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
