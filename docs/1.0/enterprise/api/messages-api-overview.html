@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en" class="enterprise-persona">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="SDR Gather DTMF - Restcomm Docs"></title>
+    <title data-custom-title="Messages API Overview - Restcomm Docs"></title>
     <link rel="canonical" href="
-      /docs/1.0/sdr/sdr-gather-dtmf.html
+      /docs/api/messages-api-overview.html
     ">
+    <meta name="keywords" content="cpaas management, cpaas management apis">
     <meta name="generator" content="Antora 1.1.1">
     <link rel="icon" type="image/png" href=""/>
-    <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
+    <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
     <!-- Not using it for now
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -18,7 +19,7 @@
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
       </head>
-  <body class="article" >
+  <body class="article" style="display: none">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -61,7 +62,7 @@
   <div class="navigation-menu is-active" data-panel="menu">
     <nav class="nav-menu">
       <!-- Not applicable to our Enterprise docs
-    <h3 class="title"><a href="../index.html">docs</a></h3>
+    <h3 class="title"><a href="../../index.html">docs</a></h3>
     -->
         <ul class="nav-list">
           <ul class="nav-list">
@@ -73,13 +74,13 @@
               
               
               
-              icomoon3-font-reference-api
+              
               
               
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html">REST API</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html">REST API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -98,7 +99,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html">Overview</a>
 
             </span>
                 </div>
@@ -117,7 +118,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html#_api_endpoint">API Endpoint</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_api_endpoint">API Endpoint</a>
 
             </span>
                 </div>
@@ -136,7 +137,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html#_authentication">Authentication</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_authentication">Authentication</a>
 
             </span>
                 </div>
@@ -155,7 +156,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html#_requests">Requests</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_requests">Requests</a>
 
             </span>
                 </div>
@@ -174,7 +175,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html#_responses">Responses</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_responses">Responses</a>
 
             </span>
                 </div>
@@ -193,7 +194,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/overview.html#_paging">Paging</a>
+              <a class="nav-link nav-flex-item-text" href="overview.html#_paging">Paging</a>
 
             </span>
                 </div>
@@ -212,7 +213,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/reasoncodes.html">Reason Codes Dictionary</a>
+              <a class="nav-link nav-flex-item-text" href="reasoncodes.html">Reason Codes Dictionary</a>
 
             </span>
                 </div>
@@ -230,10 +231,10 @@
               
               
               
-              icomoon3-font-reference-management
+              
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/management-apis-overview.html">Management APIs</a>
+              <a class="nav-link nav-flex-item-text" href="management-apis-overview.html">Management APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -252,7 +253,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/account-api.html">Accounts</a>
+              <a class="nav-link nav-flex-item-text" href="account-api.html">Accounts</a>
 
             </span>
                 </div>
@@ -271,7 +272,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-overview.html">Identity Access Management <strong>Early Access</strong></a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-overview.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -290,7 +291,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-overview.html">Identity Access Management Overview</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-overview.html">Identity Access Management Overview</a>
 
             </span>
                 </div>
@@ -309,7 +310,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html">Identity Access Management API</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html">Identity Access Management API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -328,7 +329,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_user_management">User Management</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_user_management">User Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -347,7 +348,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_create_a_user">Create a User</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_create_a_user">Create a User</a>
 
             </span>
                 </div>
@@ -366,7 +367,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_update_a_user">Update a User</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_update_a_user">Update a User</a>
 
             </span>
                 </div>
@@ -385,7 +386,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_retrieve_user_information">Retrieve a User</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_retrieve_user_information">Retrieve a User</a>
 
             </span>
                 </div>
@@ -404,7 +405,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_delete_a_user">Delete a User</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_delete_a_user">Delete a User</a>
 
             </span>
                 </div>
@@ -425,7 +426,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_api_keys_management">API Keys Management</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_api_keys_management">API Keys Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -444,7 +445,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_create_an_api_key">Create an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_create_an_api_key">Create an API Key</a>
 
             </span>
                 </div>
@@ -463,7 +464,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_update_an_api_key">Update an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_update_an_api_key">Update an API Key</a>
 
             </span>
                 </div>
@@ -482,7 +483,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_retrieve_an_api_key">Retrieve an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_retrieve_an_api_key">Retrieve an API Key</a>
 
             </span>
                 </div>
@@ -501,7 +502,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/identity-access-management-api.html#_delete_an_api_key">Delete an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-api.html#_delete_an_api_key">Delete an API Key</a>
 
             </span>
                 </div>
@@ -526,7 +527,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/applications-api.html">Applications</a>
+              <a class="nav-link nav-flex-item-text" href="applications-api.html">Applications</a>
 
             </span>
                 </div>
@@ -545,7 +546,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/clients-api.html">Clients</a>
+              <a class="nav-link nav-flex-item-text" href="clients-api.html">Clients</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -564,7 +565,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/clients-api.html#_create_a_client">Create a Client</a>
+              <a class="nav-link nav-flex-item-text" href="clients-api.html#_create_a_client">Create a Client</a>
 
             </span>
                 </div>
@@ -583,7 +584,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/clients-api.html#_delete_a_client">Delete a Client</a>
+              <a class="nav-link nav-flex-item-text" href="clients-api.html#_delete_a_client">Delete a Client</a>
 
             </span>
                 </div>
@@ -602,7 +603,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/clients-api.html#_change_clients_password">Change Client&#8217;s Password</a>
+              <a class="nav-link nav-flex-item-text" href="clients-api.html#_change_clients_password">Change Client&#8217;s Password</a>
 
             </span>
                 </div>
@@ -621,7 +622,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/clients-api.html#_get_list_of_available_clients">Get a List of Available Clients</a>
+              <a class="nav-link nav-flex-item-text" href="clients-api.html#_get_list_of_available_clients">Get a List of Available Clients</a>
 
             </span>
                 </div>
@@ -642,7 +643,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -661,7 +662,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Instance_Resource">IncomingPhoneNumber Instance Resource</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Instance_Resource">IncomingPhoneNumber Instance Resource</a>
 
             </span>
                 </div>
@@ -680,7 +681,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Resource">IncomingPhoneNumbers List Resource</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Resource">IncomingPhoneNumbers List Resource</a>
 
             </span>
                 </div>
@@ -699,7 +700,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Local_IncomingPhoneNumber_Factory_Resource">Local IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Local_IncomingPhoneNumber_Factory_Resource">Local IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -718,7 +719,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Toll_Free_IncomingPhoneNumber_Factory_Resource">Toll-Free IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Toll_Free_IncomingPhoneNumber_Factory_Resource">Toll-Free IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -737,7 +738,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Mobile_IncomingPhoneNumber_Factory_Resource">Mobile IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Mobile_IncomingPhoneNumber_Factory_Resource">Mobile IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -756,7 +757,26 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Attach_phone_number_to_an_app">Attach a phone number to an application</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Attach_phone_number_to_an_app">Attach a phone number to an application</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="EnableIncomingMMSforanApplication"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
 
             </span>
                 </div>
@@ -775,7 +795,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Delete_Number">Delete a phone number</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Delete_Number">Delete a phone number</a>
 
             </span>
                 </div>
@@ -794,7 +814,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Phone_Numbers">List of Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Phone_Numbers">List of Phone Numbers</a>
 
             </span>
                 </div>
@@ -813,7 +833,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Phone_Number_Regex_Support">Incoming Phone Number Regex Support</a>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#IncomingPhoneNumber_Phone_Number_Regex_Support">Incoming Phone Number Regex Support</a>
 
             </span>
                 </div>
@@ -834,7 +854,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/notifications-api.html">Notifications</a>
+              <a class="nav-link nav-flex-item-text" href="notifications-api.html">Notifications</a>
 
             </span>
                 </div>
@@ -853,7 +873,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/usage-records-api.html">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="usage-records-api.html">Usage Records</a>
 
             </span>
                 </div>
@@ -866,7 +886,7 @@
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
-              icomoon3-font-reference-voice
+              
               
               
               
@@ -874,7 +894,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/voice-category.html">Voice</a>
+              <a class="nav-link nav-flex-item-text" href="voice-category.html">Voice</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -893,7 +913,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html">Calls</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html">Calls</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -912,7 +932,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_call_list_resource_uri">Call List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_call_list_resource_uri">Call List Resource URI</a>
 
             </span>
                 </div>
@@ -931,7 +951,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_making_a_call_to_a_sip_account">Making a Call</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_making_a_call_to_a_sip_account">Making a Call</a>
 
             </span>
                 </div>
@@ -950,7 +970,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_modifying_live_calls">Modifying Live Calls</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_modifying_live_calls">Modifying Live Calls</a>
 
             </span>
                 </div>
@@ -969,7 +989,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_examples">Examples</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_examples">Examples</a>
 
             </span>
                 </div>
@@ -988,7 +1008,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_list_filter">List Filter</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_list_filter">List Filter</a>
 
             </span>
                 </div>
@@ -1007,7 +1027,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/calls-api.html#_paging_information">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="calls-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1028,7 +1048,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/conferences-api.html">Conference Management</a>
+              <a class="nav-link nav-flex-item-text" href="conferences-api.html">Conference Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1047,7 +1067,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/conferences-api.html#_supported_operations">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="conferences-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1066,7 +1086,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/conferences-api.html#_conference_list_resource_uri">Conference List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="conferences-api.html#_conference_list_resource_uri">Conference List Resource URI</a>
 
             </span>
                 </div>
@@ -1087,7 +1107,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/participants-api.html">Conference Participants Management</a>
+              <a class="nav-link nav-flex-item-text" href="participants-api.html">Conference Participants Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1106,7 +1126,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/participants-api.html#_participant_list_resource_uri">Participants List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="participants-api.html#_participant_list_resource_uri">Participants List Resource URI</a>
 
             </span>
                 </div>
@@ -1127,7 +1147,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/gather-dtmf-api.html">Gather DTMF</a>
+              <a class="nav-link nav-flex-item-text" href="gather-dtmf-api.html">Gather DTMF</a>
 
             </span>
                 </div>
@@ -1146,7 +1166,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/gather-speech-api.html">Gather Speech</a>
+              <a class="nav-link nav-flex-item-text" href="gather-speech-api.html">Gather Speech</a>
 
             </span>
                 </div>
@@ -1165,7 +1185,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/say-api.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="say-api.html">Say</a>
 
             </span>
                 </div>
@@ -1184,7 +1204,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/play-api.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="play-api.html">Play</a>
 
             </span>
                 </div>
@@ -1203,7 +1223,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/holds-api.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="holds-api.html">Hold</a>
 
             </span>
                 </div>
@@ -1222,7 +1242,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/recordings-api.html">Recordings</a>
+              <a class="nav-link nav-flex-item-text" href="recordings-api.html">Recordings</a>
 
             </span>
                 </div>
@@ -1241,7 +1261,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/refer-api.html">Refers</a>
+              <a class="nav-link nav-flex-item-text" href="refer-api.html">Refers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1260,7 +1280,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/refer-api.html#_resource_properties">Resource Properties</a>
+              <a class="nav-link nav-flex-item-text" href="refer-api.html#_resource_properties">Resource Properties</a>
 
             </span>
                 </div>
@@ -1279,7 +1299,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/refer-api.html#_supported_operations">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="refer-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1298,7 +1318,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/refer-api.html#_paging_information">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="refer-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1319,7 +1339,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/resumes-api.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="resumes-api.html">Resume</a>
 
             </span>
                 </div>
@@ -1338,165 +1358,47 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/SIP-Refer-Support.html">SIP Refer Support</a>
+              <a class="nav-link nav-flex-item-text" href="SIP-Refer-Support.html">SIP Refer Support</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="SMS"
-                  class="nav-item"
-                  data-depth="1">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              icomoon3-font-reference-sms
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-category.html">SMS</a>
-                        <button class="nav-toggle"></button>
-            </span>
-                </div>
-                  <ul class="nav-list">
-              <li id="Messages"
-                  class="nav-item"
-                  data-depth="2">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-api.html">Messages</a>
-                        <button class="nav-toggle"></button>
-            </span>
-                </div>
-                  <ul class="nav-list">
-              <li id="SendSMS"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-api.html#_send_sms">Send SMS</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="GetSMSList"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-api.html#_get_sms_list">Get SMS List</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="GetsingleSMSInformation"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-api.html#_get_single_sms_information">Get single SMS Information</a>
-
-            </span>
-                </div>
-                              </li>
-              <li id="SMSAttributes"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/sms-api.html#_sms_attributes">SMS Attributes</a>
-
-            </span>
-                </div>
-                              </li>
-  </ul>
-              </li>
-              <li id="Email"
-                  class="nav-item"
-                  data-depth="2">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/email-api.html">Email</a>
-
-            </span>
-                </div>
-                              </li>
-  </ul>
-              </li>
-              <li id="RCML"
-                  class="nav-item"
+              <li id="MessagesAPI-BETA"
+                  class="nav-item is-current-page"
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
               
-              icomoon3-font-reference-rcml
+              
               
               
               
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/overview.html">RCML</a>
+              <a class="nav-link nav-flex-item-text" href="messages-api-overview.html">Messages API - BETA</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="MessagesAPI-BETA"
+                  class="nav-item is-current-page"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api-overview.html">Messages API - BETA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1515,7 +1417,376 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/overview.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html">Overview</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="ChannelIdentities"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_channel_identities">Channel Identities</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="SendMessage"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_send_message">Send Message</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="StatusCallbackParameters"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_status_callback_http_parameters">Status Callback Parameters</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="StatusCallbackEvents"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_status_callback_events">Status Callback Events</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="ReceiveMessage"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_receive_message">Receive Message</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="IncomingMessageRequestParameters"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_incoming_message_request_parameters">Incoming Message Request Parameters</a>
+
+            </span>
+                </div>
+                              </li>
+  </ul>
+              </li>
+              <li id="GetMessageList"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_get_message_list">Get Message List</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetSingleMessage"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_get_a_single_message_information">Get Single Message</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="MessageAttributes"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_message_attributes">Message Attributes</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="StatusDescription"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="messages-api.html#_status_description">Status Description</a>
+
+            </span>
+                </div>
+                              </li>
+  </ul>
+              </li>
+              <li id="SMS"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-category.html">SMS</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="Messages"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html">Messages</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="SendSMS"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_send_sms">Send SMS</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetSMSList"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_get_sms_list">Get SMS List</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetsingleSMSInformation"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_get_single_sms_information">Get single SMS Information</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="SMSAttributes"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_sms_attributes">SMS Attributes</a>
+
+            </span>
+                </div>
+                              </li>
+  </ul>
+              </li>
+  </ul>
+              </li>
+              <li id="Email"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="email-api.html">Email</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="RCML"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">RCML</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="Overview"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">Overview</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1534,7 +1805,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/overview.html#_how_wlparamreplacetextmodespsparmtextapplication_nametextcpaasdefaulttextinfer_from_domain_interacts_with_your_application">Interacting with Your Application</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_how_wlparamreplacetextmodespsparmtextapplication_nametextcpaasdefaulttextinfer_from_domain_interacts_with_your_application">Interacting with Your Application</a>
 
             </span>
                 </div>
@@ -1553,7 +1824,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/overview.html#_the_rcml_verbs">RCML Verbs</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_the_rcml_verbs">RCML Verbs</a>
 
             </span>
                 </div>
@@ -1574,7 +1845,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/dial-rcml.html">Dial</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/dial-rcml.html">Dial</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1593,7 +1864,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/client-rcml.html">Client</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/client-rcml.html">Client</a>
 
             </span>
                 </div>
@@ -1612,7 +1883,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/conference-rcml.html">Conference</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/conference-rcml.html">Conference</a>
 
             </span>
                 </div>
@@ -1631,7 +1902,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/number-rcml.html">Number</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/number-rcml.html">Number</a>
 
             </span>
                 </div>
@@ -1650,7 +1921,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/sip-rcml.html">SIP</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sip-rcml.html">SIP</a>
 
             </span>
                 </div>
@@ -1671,7 +1942,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/email-rcml.html">Email</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/email-rcml.html">Email</a>
 
             </span>
                 </div>
@@ -1690,7 +1961,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/gather-rcml.html">Gather</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/gather-rcml.html">Gather</a>
 
             </span>
                 </div>
@@ -1709,7 +1980,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/say-rcml.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/say-rcml.html">Say</a>
 
             </span>
                 </div>
@@ -1728,7 +1999,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/play-rcml.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/play-rcml.html">Play</a>
 
             </span>
                 </div>
@@ -1738,7 +2009,7 @@
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              icomoon3-font-reference-sms
+              
               
               
               
@@ -1747,7 +2018,26 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/sms-rcml.html">SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sms-rcml.html">SMS</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Message-Beta"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message - Beta</a>
 
             </span>
                 </div>
@@ -1766,7 +2056,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/hold-rcml.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hold-rcml.html">Hold</a>
 
             </span>
                 </div>
@@ -1785,7 +2075,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/resume-rcml.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/resume-rcml.html">Resume</a>
 
             </span>
                 </div>
@@ -1804,7 +2094,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/hangup-rcml.html">Hangup</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hangup-rcml.html">Hangup</a>
 
             </span>
                 </div>
@@ -1823,7 +2113,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/pause-rcml.html">Pause</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/pause-rcml.html">Pause</a>
 
             </span>
                 </div>
@@ -1842,7 +2132,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/redirect-rcml.html">Redirect</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/redirect-rcml.html">Redirect</a>
 
             </span>
                 </div>
@@ -1861,7 +2151,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/record-rcml.html">Record</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/record-rcml.html">Record</a>
 
             </span>
                 </div>
@@ -1880,7 +2170,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/reject-rcml.html">Reject</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/reject-rcml.html">Reject</a>
 
             </span>
                 </div>
@@ -1899,7 +2189,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/rcml/refer-rcml.html">Refer</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/refer-rcml.html">Refer</a>
 
             </span>
                 </div>
@@ -1915,12 +2205,12 @@
               
               
               
-              icomoon3-font-reference-api
+              
               
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html">Visual Designer API</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html">Visual Designer API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1939,7 +2229,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_list_application_templates_from_the_template_gallery">List Application Templates</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_list_application_templates_from_the_template_gallery">List Application Templates</a>
 
             </span>
                 </div>
@@ -1958,7 +2248,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_a_specific_application_template_from_the_template_gallery">:List a Specific Application Template</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_a_specific_application_template_from_the_template_gallery">:List a Specific Application Template</a>
 
             </span>
                 </div>
@@ -1977,7 +2267,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_create_a_visual_designer_application">Create a Visual Designer Application</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_create_a_visual_designer_application">Create a Visual Designer Application</a>
 
             </span>
                 </div>
@@ -1996,7 +2286,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_application_details">Get Application Details</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_application_details">Get Application Details</a>
 
             </span>
                 </div>
@@ -2015,7 +2305,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_save_application_changes">Save Application Changes</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_save_application_changes">Save Application Changes</a>
 
             </span>
                 </div>
@@ -2034,7 +2324,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_create_application_parameters">Create Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_create_application_parameters">Create Application Parameters</a>
 
             </span>
                 </div>
@@ -2053,7 +2343,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_application_parameters">List Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_application_parameters">List Application Parameters</a>
 
             </span>
                 </div>
@@ -2072,7 +2362,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_delete_application_parameters">Delete Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_delete_application_parameters">Delete Application Parameters</a>
 
             </span>
                 </div>
@@ -2091,7 +2381,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_upload_application_media_files">Upload Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_upload_application_media_files">Upload Application Media Files</a>
 
             </span>
                 </div>
@@ -2110,7 +2400,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_a_list_of_application_media_files">List Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_a_list_of_application_media_files">List Application Media Files</a>
 
             </span>
                 </div>
@@ -2129,7 +2419,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_play_an_application_media_file">Play Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_play_an_application_media_file">Play Application Media Files</a>
 
             </span>
                 </div>
@@ -2148,7 +2438,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_delete_application_media_file">Delete Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_delete_application_media_file">Delete Application Media Files</a>
 
             </span>
                 </div>
@@ -2167,7 +2457,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_application_logs">Get Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_application_logs">Get Application Logs</a>
 
             </span>
                 </div>
@@ -2186,7 +2476,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_delete_application_logs">Delete Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_delete_application_logs">Delete Application Logs</a>
 
             </span>
                 </div>
@@ -2205,7 +2495,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_application_settings">Get Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_application_settings">Get Application Settings</a>
 
             </span>
                 </div>
@@ -2224,7 +2514,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_modify_application_settings">Modify Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_modify_application_settings">Modify Application Settings</a>
 
             </span>
                 </div>
@@ -2243,7 +2533,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_rename_a_visual_designer_application">Rename an Application</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_rename_a_visual_designer_application">Rename an Application</a>
 
             </span>
                 </div>
@@ -2262,7 +2552,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_delete_a_visual_designer_application">Delete an Application</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_delete_a_visual_designer_application">Delete an Application</a>
 
             </span>
                 </div>
@@ -2281,7 +2571,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/visual-designer-api.html#_get_visual_designer_configuration_details">Get Visual Designer Configuration</a>
+              <a class="nav-link nav-flex-item-text" href="visual-designer-api.html#_get_visual_designer_configuration_details">Get Visual Designer Configuration</a>
 
             </span>
                 </div>
@@ -2298,11 +2588,11 @@
               
               
               
-              icomoon3-font-reference-solutions
+              
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/turnkey-applications/index.html">Turnkey Apps APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/index.html">Turnkey Apps APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2321,7 +2611,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html">Smart 2FA</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html">Smart 2FA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2340,7 +2630,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_send">Sending One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_send">Sending One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2359,7 +2649,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_verify">Verifying One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_verify">Verifying One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2378,7 +2668,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_control">Cancel One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_control">Cancel One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2397,7 +2687,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
 
             </span>
                 </div>
@@ -2416,7 +2706,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_get_list_of_one_time_passwords__api_reference">Get list of One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_list_of_one_time_passwords__api_reference">Get list of One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2435,7 +2725,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_get_single_one_time_passwords__api_reference">Get a Single One-Time Password</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_single_one_time_passwords__api_reference">Get a Single One-Time Password</a>
 
             </span>
                 </div>
@@ -2454,7 +2744,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_usage_record_one_time_passwords__api_reference">Usage Record One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_usage_record_one_time_passwords__api_reference">Usage Record One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2473,7 +2763,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_common_response_error_code">Common Response Error Code</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_common_response_error_code">Common Response Error Code</a>
 
             </span>
                 </div>
@@ -2492,7 +2782,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_limit">Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_limit">Limit</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2511,7 +2801,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_create_limit">Create Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_create_limit">Create Limit</a>
 
             </span>
                 </div>
@@ -2530,7 +2820,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_update_limit">Update Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_update_limit">Update Limit</a>
 
             </span>
                 </div>
@@ -2549,7 +2839,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_delete_limit">Delete Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_delete_limit">Delete Limit</a>
 
             </span>
                 </div>
@@ -2568,7 +2858,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/tutorials/Smart-2FA.html#_get_list_of_limits">Get List of Limits</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_list_of_limits">Get List of Limits</a>
 
             </span>
                 </div>
@@ -2591,7 +2881,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/call-queueing-api.html">Call Queuing</a>
+              <a class="nav-link nav-flex-item-text" href="call-queueing-api.html">Call Queuing</a>
 
             </span>
                 </div>
@@ -2610,7 +2900,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html">Auto Attendant</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html">Auto Attendant</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2629,7 +2919,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_users">Users</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_users">Users</a>
 
             </span>
                 </div>
@@ -2648,7 +2938,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_announcement">Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_announcement">Announcement</a>
 
             </span>
                 </div>
@@ -2667,7 +2957,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_auto_attendant_system">Auto Attendant System</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_auto_attendant_system">Auto Attendant System</a>
 
             </span>
                 </div>
@@ -2686,7 +2976,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_menu">Menu</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_menu">Menu</a>
 
             </span>
                 </div>
@@ -2705,7 +2995,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_schedule">Schedule</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_schedule">Schedule</a>
 
             </span>
                 </div>
@@ -2724,7 +3014,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_phone_number">Phone Number</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_phone_number">Phone Number</a>
 
             </span>
                 </div>
@@ -2743,7 +3033,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_usage_records">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_usage_records">Usage Records</a>
 
             </span>
                 </div>
@@ -2762,7 +3052,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/auto-attendant-api.html#_third_party_integration">Third Party Integration</a>
+              <a class="nav-link nav-flex-item-text" href="auto-attendant-api.html#_third_party_integration">Third Party Integration</a>
 
             </span>
                 </div>
@@ -2783,7 +3073,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html">Number Masking</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html">Number Masking</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2802,7 +3092,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_application">Application</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_application">Application</a>
 
             </span>
                 </div>
@@ -2821,7 +3111,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_masked_numbers">Mask Number Pool</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_masked_numbers">Mask Number Pool</a>
 
             </span>
                 </div>
@@ -2840,7 +3130,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_context">Context</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_context">Context</a>
 
             </span>
                 </div>
@@ -2859,7 +3149,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_participants">Participants</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_participants">Participants</a>
 
             </span>
                 </div>
@@ -2878,7 +3168,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_interactions">Interactions</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_interactions">Interactions</a>
 
             </span>
                 </div>
@@ -2897,7 +3187,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/number-masking-api.html#_usage_records">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="number-masking-api.html#_usage_records">Usage Records</a>
 
             </span>
                 </div>
@@ -2918,7 +3208,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../enterprise/api/task-router-api.html">Task Router</a>
+              <a class="nav-link nav-flex-item-text" href="task-router-api.html">Task Router</a>
 
             </span>
                 </div>
@@ -2941,7 +3231,7 @@
       <span class="title">docs</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../index.html">1.0</a>
+          <a href="../../index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -2956,136 +3246,361 @@
 -->
 <div class="toolbar" role="navigation" style="display: none;">
   <button class="navigation-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
+  <a href="../../index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="../index.html">docs</a></li>
-    <li class="crumb"><a href="session-detail-records-export.html">CSP:Session Detail Records (SDRs)</a></li>
-    <li class="crumb"><a href="sdr-gather-dtmf.html">Gather DTMF</a></li>
+    <li class="crumb"><a href="../../index.html">docs</a></li>
+    <li class="crumb"><a href="messages-api-overview.html">Enterprise:Messages API - BETA</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>SDR Gather DTMF</h1>
+  <h1>Messages API Overview</h1>
 <div id="preamble">
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This API is currently in BETA and as such requires that your account is enabled for this API or a specific channel. Please contact your account manager to be granted access and participate in our BETA program.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
-<p>Gather DTMF records are generated when applications execute the <a href="../rcml/gather-rcml.adoc">&lt;Gather&gt;</a> verb.</p>
+<p><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="company_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> will expand the capabilities of the API and always welcomes your feedback.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_format"><a class="anchor" href="#_format"></a>Format</h2>
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A Gather DTMF SDR comprises the following fields.</p>
+<p><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Messages API is an Omnichannel Messaging RESTful API that allows businesses to communicate with customers on their favorite channels thus delivering better and secure customer experiences and engagement increasing brand visibility</p>
 </div>
+<div class="paragraph">
+<p>The Messages API allows you to send outbound messages, also known as Application to Person (A2P) - and/or receive incoming customer messages, also known as Person to Application (P2A) - across various popular messaging channels supported by the platform.</p>
+</div>
+<div class="paragraph">
+<p>Channels that are currently supported by the Messages API and planned to be added are listed below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SMS</p>
+</li>
+<li>
+<p>MMS</p>
+</li>
+<li>
+<p>WhatsApp – Coming Soon</p>
+</li>
+<li>
+<p>RCS Business Messaging – Coming Soon</p>
+</li>
+<li>
+<p>Email – Coming Soon</p>
+</li>
+<li>
+<p>Apple Messages for Business – Coming Soon</p>
+</li>
+<li>
+<p>Push Notifications (Android, iOS, Web) – Coming Soon</p>
+</li>
+<li>
+<p>Facebook Messenger – Coming Soon</p>
+</li>
+<li>
+<p>Twitter DM – Planned</p>
+</li>
+<li>
+<p>WeChat – Planned</p>
+</li>
+<li>
+<p>Line  – Planned</p>
+</li>
+<li>
+<p>Instagram Business  – Planned</p>
+</li>
+<li>
+<p>Telegram  – Planned</p>
+</li>
+<li>
+<p>Viber Business  – Planned</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Additional channels will be supported as they become popular
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This API is meant to be generic so that as new channels are added, the API stays the same and minimum changes are required from a development perspective to integrate them allowing a faster time to market to reach additional customers on their favourite channel. It is also meant to be flexible so that full control over channel specific features can be provided to deliver a powerful rich media experience to customers.</p>
+</div>
+<div class="paragraph">
+<p>The benefits of this approach are that a developer needs to only become familiar with one Messaging API to send and receive messages across all supported channels while offering full control over channel specific features.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_does_the_messages_api_work"><a class="anchor" href="#_how_does_the_messages_api_work"></a>How Does the Messages API Work?</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/messages/omnichannel-workflow.png" alt="Omnichannel Workflow">
+</div>
+</div>
+<div class="paragraph">
+<p>Message body, images, audio, video files and location are message channel features and functions that are relevant for all channels and they are supported through build in transcoding. For others that are specific to a given channel, the API provides the ability to specify an exact layout for the channel feature you are interested in such as WhatsApp Quick Replies, RCS Carousel, &#8230;&#8203;</p>
+</div>
+<div class="sect2">
+<h3 id="_supported_features"><a class="anchor" href="#_supported_features"></a>Supported Features</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_outbound_messaging"><a class="anchor" href="#_outbound_messaging"></a>Outbound Messaging</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.0909%;">
+<col style="width: 9.091%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Channel</th>
+<th class="tableblock halign-left valign-top">Text</th>
+<th class="tableblock halign-left valign-top">Image</th>
+<th class="tableblock halign-left valign-top">Audio</th>
+<th class="tableblock halign-left valign-top">Video</th>
+<th class="tableblock halign-left valign-top">File</th>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Template</th>
+<th class="tableblock halign-left valign-top">Buttons,
+Quick Replies, Suggestions</th>
+<th class="tableblock halign-left valign-top">Product Catalog, Carousel</th>
+<th class="tableblock halign-left valign-top">Contact</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">api_version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The API version in use during the recording.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies this record.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the Account that created this Gather DTMF session.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">org_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the Organization which belongs to the Account.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WhatsApp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">call_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique id of the call during which Gather DTMF was executed.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apple Messages for Business</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date this record was created.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Push Notifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pre_timeout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of time to wait for a DTMF before timing out.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facebook Messenger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_inbound_messaging"><a class="anchor" href="#_inbound_messaging"></a>Inbound Messaging</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Channel</th>
+<th class="tableblock halign-left valign-top">Text</th>
+<th class="tableblock halign-left valign-top">Image</th>
+<th class="tableblock halign-left valign-top">Audio</th>
+<th class="tableblock halign-left valign-top">Video</th>
+<th class="tableblock halign-left valign-top">File</th>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">post_timeout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The amount of time to wait for the next DTMF before timing out.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">action_on_empty_result</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to invoke action if the result is empty.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">digits_count</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The total number of digits that were recognized by the <a href="../rcml/gather-rcml.html">Gather Verb</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WhatsApp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The status of the <a href="../rcml/gather-rcml.html">Gather Verb</a>.</p>
-<p class="tableblock">Allowed values: <code>completed</code>, <code>failed</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Apple Messages for Business</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Message explaining the failure of the operation.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Push Notifications</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/cross.png" alt="Badge Cross with solid fill" width="24" height="24"></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Reason code explaining the failure. Relates to <code>reason.protocol</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Protocol that originated the failure. Relates to <code>reason.code</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI that references the SDR record.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Facebook Messenger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_export_example"><a class="anchor" href="#_export_example"></a>Export Example</h2>
+<h2 id="_get_started"><a class="anchor" href="#_get_started"></a>Get Started</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following example show the contents of a bulk-exported CSV file:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>account_sid,post_timeout,uri,pre_timeout,action_on_empty_result,date_created,digits_count,status,call_sid,org_sid,api_version,sid,reason.message,reason.code,reason.protocol
-"ACab03aae495eb4ca69737aa0d0da73d7f",10,"/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Gathers/GA07050d33847349ca9e30d685cee5b5a1",10,false,"Tue, 26 Apr 2022 19:07:26 +0000",6,completed,"ID00000000000031302e322e39392e3537-CA55350abf3f0446ab9a8e9685482eef89","OR55e4cbe945a14edca5bd157b9ee97bcc",2012-04-24,"GA07050d33847349ca9e30d685cee5b5a1",,0,
-"ACab03aae495eb4ca69737aa0d0da73d7f",10,"/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Gathers/GA07050d33847349ca9e30d685cee5b5a1",10,false,"Tue, 26 Apr 2022 19:07:26 +0000",0,failed,"ID00000000000031302e322e39392e3537-CA55350abf3f0446ab9a8e9685482eef89","OR55e4cbe945a14edca5bd157b9ee97bcc",2012-04-24,"GA07050d33847349ca9e30d685cee5b5a1","RCML Validation Failure",2001,RESTCOMM</code></pre>
-</div>
+<p>To Get Started and engage your customers through an Omnichannel Experience, please head to our <a href="messages-api.html">Messages API Documentation</a>.</p>
 </div>
 </div>
 </div>
@@ -3097,27 +3612,39 @@
     <div class="footer-column-container">
       <div class="footer-column">
           <h5 class="footer-column-title">Platform</h5>
-          <p><a id="footer-voice-link" href="#">Programmable Voice</a></p>
-          <p><a id="footer-sms-link" href="#">Programmable SMS</a></p>
-              </div>
+          <p><a class="footer-products-item" href="/docs/api/voice-category.html">Programmable Voice</a></p>
+          <p><a class="footer-products-item" href="/docs/api/sms-category.html">Programmable SMS</a></p>
+      </div>
       <div class="footer-column">
         <h5 class="footer-column-title">Turnkey Applications</h5>
+        <p><a class="footer-usecase-item" id="Smart2FA" href="/docs/turnkey-applications/Smart-2FA-Overview.html">Smart 2FA</a></p>
+          <p><a class="footer-usecase-item" id="CallQueuing" href="/docs/api/call-queue-api.html">Call Queue</a></p>
+          <p><a class="footer-usecase-item" id="AutoAttendant" href="/docs/solutions/auto-attendant-overview.html">Auto Attendant</a></p>
+          <p><a class="footer-usecase-item" id="NumberMasking" href="/docs/turnkey-applications/number-masking-overview.html">Number Masking</a></p>
+          <p><a class="footer-usecase-item" id="TaskRouter" href="/docs/turnkey-applications/task-router-overview.html">Task Router</a></p>
+          <p><a class="footer-usecase-item" id="CampaignManager" href="/docs/turnkey-applications/campaign-manager-overview.html">Campaign Manager</a></p>
       </div>
       <div class="footer-column">
         <h5 class="footer-column-title">Learn</h5>
 
-          <p><a id="terms-link" href="#">Terms and Conditions</a></p>
-              </div>
+          <p><a id="terms-link" class="non-sps-text sps-link" data-parm-link="terms_link" href="/docs/terms.html" data-default-link="/docs/terms.html">Terms And Conditions</a></p>
+      </div>
       <div class="footer-column">
     <h5 class="footer-column-title">About</h5>
         <p><a class="sps-text sps-link" data-parm-text="company_name" data-parm-link="company_link" href="https://www.telestax.com/about/" data-default-text="About Us" data-default-link="#">ABOUT</a></p>
+  <p><a class="sps-text sps-link" data-parm-text="Contact Us" data-parm-link="contact_link" href="https://www.telestax.com/contact/" data-default-text="Contact Us" data-default-link="#">CONTACT US</a></p>
       </div>
     </div>
+   <div class="footer-bottom-container">
+    <div class="footer-copyright">
+     <p class="footer-copyright-paragraph"><a class="sps-text" data-parm-text="copyright_text" data-default-text="© 2020, All rights reserved.">© 2020, All rights reserved.</a></p>
+    </div>
+   </div>
     <!---->
   </div>
 </footer>
-<script src="../../../_/js/site.js"></script>
-<script src="../../../_/js/vendor/highlight.js"></script>
+<script src="../../../../_/js/site.js"></script>
+<script src="../../../../_/js/vendor/highlight.js"></script>
 <!--
 <script>hljs.initHighlighting()</script>
 -->
