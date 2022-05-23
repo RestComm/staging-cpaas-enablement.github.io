@@ -4830,7 +4830,7 @@ URI</a>, relative to the channel in the following format
 number +15553XXXXXX on the SMS channel.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Text body of the message. On some channels some
 restrictions may exist related to length of messages and splitting of
 long messages.</p></td>
@@ -4877,7 +4877,7 @@ The default method is GET.</p></td>
 <pre>curl -X POST <a href="https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages" class="bare">https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages</a>  \
 -d 'from=mms:+19876XXXXXX' \
 -d 'to=mms:+13216XXXXXX' \
--d 'text=Test Message' \
+-d 'body=Test Message' \
 -d 'status_callback=http://status.callback.url' \
 -d 'media_list=[{"url":"https://example.com/image.jpeg","content-type":"image/jpeg"}]' \
 -u 'YourAccountSid:YourAuthToken'</pre>
