@@ -5522,11 +5522,11 @@ returned:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
   "errorCode": "4050",
   "message": "Enterprise name not unique",
   "data": "EnterpriseRahul"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -5665,9 +5665,9 @@ Business Customer, Delete Business Customer</p></td>
 <h5 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h5>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
 "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5675,14 +5675,14 @@ Business Customer, Delete Business Customer</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X PUT \
+<pre class="highlightjs highlight"><code>curl -X PUT \
 https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f1274f  \
 --user  ' {your_account_SID}:{your_account_token}' \
 -H 'Cache-Control: no-cache' \
 -H 'Content-Type: application/json' \
 -d '{
 "configuration": "{\"campaignManager\":{\"throttle\": {\"smsPerSecond\":\"10\", \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}"
-}'</pre>
+}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -7712,7 +7712,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_supported_operations_15"><a class="anchor" href="#_supported_operations_15"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP POST: get the list of groups. both regular lists and also DND lists</p>
+<p>HTTP POST: Get a list of groups. Both regular and DND lists.</p>
 </div>
 </div>
 <div class="sect2">
@@ -7856,7 +7856,7 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing anno
 <div class="sect3">
 <h4 id="_add_announcement_resource_uri"><a class="anchor" href="#_add_announcement_resource_uri"></a>Add Announcement Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement</p>
+<p><code>/campaignmanager/announcement</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -8095,14 +8095,14 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <h5 id="_create_text_to_speech_announcement"><a class="anchor" href="#_create_text_to_speech_announcement"></a>Create Text To Speech Announcement</h5>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
     "name": "TTS Play 19Mar21-852",
     "type": "say",
     "body": "Hello, we aree giving away 20% discounts on all our merchandise. Hurry offer valid only for next 3 days.",
     "language": "google.ar-XA-Standard-A",
     "voice": "woman"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8110,7 +8110,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://company.com/autoattendant/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -8122,7 +8122,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
     "body": "Hello, we aree giving away 20% discounts on all our merchandise. Hurry offer valid only for next 3 days.",
     "language": "google.ar-XA-Standard-A",
     "voice": "woman"
-}’</pre>
+}’</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8130,7 +8130,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "AN77564ea97c8d4ad1a17a3da3775222dd",
         "dateUpdated": "2021-03-19T06:06:55+0000",
@@ -8146,7 +8146,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
     },
     "code": 200,
     "message": "OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -8154,11 +8154,11 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <h5 id="_create_play_announcement"><a class="anchor" href="#_create_play_announcement"></a>Create Play Announcement</h5>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
     "name": "Ann Play 19mar958",
     "type": "play"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8166,7 +8166,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://company.com/autoattendant/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -8175,7 +8175,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
     "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
     "name": "Ann Play 19mar958",
     "type": "play"
-}’</pre>
+}’</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8183,7 +8183,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "AN14075c11fbb84c049702e0e4560498fb",
         "dateUpdated": "2021-03-19T06:08:28+0000",
@@ -8197,7 +8197,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
     },
     "code": 200,
     "message": "OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -8220,13 +8220,13 @@ If the creation was successful, you will need to call the Upload Announcement AP
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "467",
     "message": "Enterprise not found",
     "data": {
         "sid": "EN838bcdf35f9d421fad3ab516195b873"
     }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -8680,13 +8680,13 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "500",
     "message": "Announcement not found",
     "data": {
         "sid": "ANf1ef82a9fecd4ee2b367e96c98aaf82"
     }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -8706,9 +8706,9 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X 'GET' \
+<pre class="highlightjs highlight"><code>curl -X 'GET' \
 'https://company.com/campaignmanager/announcement/getAll' \
--H 'accept: /'</pre>
+-H 'accept: /'</code></pre>
 </div>
 </div>
 </div>
@@ -8716,7 +8716,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <h4 id="_example_response"><a class="anchor" href="#_example_response"></a>Example Response</h4>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
 "data": [
   {
     "name": "1111",
@@ -8730,7 +8730,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 ],
 "code": 200,
 "message": "OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -8864,11 +8864,11 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X DELETE \
+<pre class="highlightjs highlight"><code>curl -X DELETE \
   https://company.com/campaignmanager/announcement/AN9701e246abfe4b839bcfad37c228ab67 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \</pre>
+  -H 'Content-Type: application/json' \</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8876,7 +8876,7 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "AN9701e246abfe4b839bcfad37c228ab67",
         "dateUpdated": "2021-03-14T02:08:11+0000",
@@ -8892,7 +8892,7 @@ Get Announcement</p></td>
     },
     "code": 200,
     "message": "OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -8900,13 +8900,13 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "507",
     "message": "This Announcement cannot be deleted as it is being used in a campaign.",
     "data": {
         "sid": "AN77564ea97c8d4ad1a17a3da3775222dd"
     }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -9150,11 +9150,11 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://company.com/campaignmanager/announcement/search?sortBy=name:asc&amp;page=0&amp;pageSize=2\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</pre>
+  -H 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -9162,7 +9162,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -9202,7 +9202,7 @@ If the search API is called without page and pageSize, by default pageSize will 
     },
     "code": 200,
     "message": "OK"
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
@@ -9306,13 +9306,13 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "500",
     "message": "Announcement not found",
     "data": {
         "sid": "AN42b3d3e952ff47ecba9d487095a2bc4"
     }
-}</pre>
+}</code></pre>
 </div>
 </div>
 </div>
