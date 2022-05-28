@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       /docs/turnkey-applications/campaign-manager-api.html
     ">
-    <meta name="generator" content="Antora 1.1.1">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -1712,6 +1712,25 @@
                               </li>
   </ul>
               </li>
+              <li id="ErrorCodes"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+
+            </span>
+                </div>
+                              </li>
   </ul>
               </li>
               <li id="Email"
@@ -3193,6 +3212,179 @@
             </span>
                 </div>
                               </li>
+              <li id="CampaignManager"
+                  class="nav-item is-current-page"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="campaign-manager-api.html">Campaign Manager</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="CreateCampaign"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_create_campaign">Create Campaign</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="UpdateCampaign"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_update_campaign">Update Campaign</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="DeleteCampaign"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_delete_campaign">Delete Campaign</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetListofCampaigns"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_get_list_of_campaigns">Get List of Campaigns</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetSingleCampaign"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_get_single_campaign">Get Single Campaign</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetListofCredits"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_get_list_of_credits">Get List of Credits</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="GetSingleCredit"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_get_single_credit">Get Single Credit</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="DoNotDisturb(DND)"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_do_not_disturb_dnd">Do Not Disturb (DND)</a>
+
+            </span>
+                </div>
+                              </li>
+  </ul>
+              </li>
   </ul>
               </li>
   </ul>
@@ -3231,8 +3423,7 @@
   <ul>
     <li class="crumb"><a href="../../index.html">docs</a></li>
     <li class="crumb"><a href="index.html">Enterprise:Turnkey Apps APIs</a></li>
-    <li class="crumb">turnkey-applications//campaign-manager-api.adoc</li>
-    <li class="crumb"><a href="#_do_not_disturb_dnd">Enterprise:Do Not Disturb (DND)</a></li>
+    <li class="crumb"><a href="campaign-manager-api.html">Enterprise:Campaign Manager</a></li>
   </ul>
 </nav>
 </div>
@@ -3327,7 +3518,7 @@
 <div class="paragraph">
 <p>The following paging parameters are supported.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3338,18 +3529,18 @@
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Participants records to return, starting from 0.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="admonitionblock note">
 <table>
@@ -3371,7 +3562,7 @@
 <div class="paragraph">
 <p>The following filtering parameters are supported:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3382,12 +3573,6 @@
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits  that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
@@ -3398,6 +3583,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Credits  that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -3405,7 +3596,7 @@
 <div class="paragraph">
 <p>You can use the SortBy GET query parameter to determine which attribute you want to sort by and in which direction; direction can either be 'asc' for ascending and 'desc' for descending sort ordering. Here&#8217;s the overall format: SortBy=&lt;sorting attribute&gt;:&lt;direction&gt;. If no direction parameter is provided, then the listing of calls is sorted by the attribute in ascending order. Below you can find the possible attributes you can sort by:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3432,7 +3623,7 @@
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are as explained below:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3488,7 +3679,7 @@
 </table>
 <div class="sect4">
 <h5 id="_data_parameters"><a class="anchor" href="#_data_parameters"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3499,12 +3690,6 @@
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID of the Business Customer.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
@@ -3535,6 +3720,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Credit that was added (+ve value) or reduced (-ve value)</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SID of the Business Customer.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -3625,7 +3816,7 @@
 </div>
 <div class="sect3">
 <h4 id="_request_parameters"><a class="anchor" href="#_request_parameters"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3649,7 +3840,7 @@
 <div class="paragraph">
 <p>The Response Body will carry the Code, corresponding message, and data of the Credit if it was successfully searched. HTTP response will be 200 OK.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -3679,7 +3870,7 @@
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are listed below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3690,12 +3881,6 @@
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Credit data as explained in the Data Parameter of List Credit.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -3706,6 +3891,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occurred or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Credit data as explained in the Data Parameter of List Credit.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -3811,7 +4002,7 @@
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_2"><a class="anchor" href="#_request_parameters_2"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3822,12 +4013,6 @@
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dialTimeout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This parameter is used only if the channel is voice. It mentions how many seconds the call should be RINGING before disconnecting the call as explained here. Default is 30 seconds</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -3881,6 +4066,12 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 This parameter is needed only if the channel is voice. For Voice either of rcmlUrl or announcementSid should be passed. If both announcementSid and rcmlUrl is passed, announcementSid takes preference.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dialTimeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This parameter is used only if the channel is voice. It mentions how many seconds the call should be RINGING before disconnecting the call as explained here. Default is 30 seconds</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -3891,7 +4082,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are as explained below:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3902,12 +4093,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the table below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -3918,10 +4103,16 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the table below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_2"><a class="anchor" href="#_data_parameters_2"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3932,12 +4123,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The SMS body applied on this Campaign</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
@@ -3992,11 +4177,17 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">How many seconds the call should be RINGING before disconnecting the call as explained here.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The SMS body applied on this Campaign</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="paragraph">
 <p>The Create Campaign API can also return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition, seen below are the Errors that it can return.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -4013,15 +4204,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">498</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date format is incorrect. Supported format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startDate format is incorrect. Supported date format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Campaign</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">489</p></td>
@@ -4045,6 +4227,15 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Campaign</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">498</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date format is incorrect. Supported format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startDate format is incorrect. Supported date format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create Campaign</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -4227,7 +4418,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_3"><a class="anchor" href="#_request_parameters_3"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4238,18 +4429,18 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Status of campaign can be “canceled” only if existing status is “scheduled”. No other status change is supported as of today.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CampaignSid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unique Campaign Sid that was generated when Campaign was created first time as explained in the "Create Campaign" section</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Status of campaign can be “canceled” only if existing status is “scheduled”. No other status change is supported as of today.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="paragraph">
 <p>No other parameters of Campaigns can be updated apart from status.</p>
@@ -4263,7 +4454,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4274,12 +4465,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -4290,11 +4475,17 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="paragraph">
 <p>Update Campaign API can also return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition, seen below are the Errors that it can return.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -4311,15 +4502,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">487</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign status cannot be updated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">User is trying to change the status of Campaign which is not acceptable as per Campaign State Machine.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">486</p></td>
@@ -4336,6 +4518,15 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">487</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign status cannot be updated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User is trying to change the status of Campaign which is not acceptable as per Campaign State Machine.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -4430,7 +4621,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_4"><a class="anchor" href="#_request_parameters_4"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4457,7 +4648,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4468,12 +4659,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -4484,11 +4669,17 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="paragraph">
 <p>Delete Campaign API can also return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code. In addition, seen below are the Errors that it can return.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -4505,15 +4696,6 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">464</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign status not "Scheduled"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign is in different status than "Scheduled". This means campaign is already started and now it cannot be updated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign, Delete Campaign</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">463</p></td>
@@ -4523,6 +4705,15 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign, Delete Campaign, List Single Campaign</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">464</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign status not "Scheduled"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign is in different status than "Scheduled". This means campaign is already started and now it cannot be updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update Campaign, Delete Campaign</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -4609,7 +4800,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4620,18 +4811,18 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Campaigns records to return, starting from 0.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="admonitionblock note">
 <table>
@@ -4651,7 +4842,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4662,12 +4853,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Contexts that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -4686,6 +4871,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Contexts that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Contexts that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -4695,7 +4886,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes"><a class="anchor" href="#_sort_attributes"></a>Sort Attributes</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4706,12 +4897,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by startTime</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -4722,6 +4907,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sort by status</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by startTime</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -4733,7 +4924,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4744,12 +4935,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Actual data in form of a list that match the filter criteria. Campaign data as explained in the data parameter of create campaign.</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI of current page</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">num_pages</p></td>
@@ -4784,6 +4969,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">URI to access next page</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI of current page</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -4876,7 +5067,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_5"><a class="anchor" href="#_request_parameters_5"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4900,7 +5091,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>The Response Body will carry Code, corresponding message, and data of User if it was successfully searched. HTTP response will be 200 OK.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -4930,7 +5121,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -4941,12 +5132,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -4957,6 +5142,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Campaign data as explained in the data parameter of create campaign.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -5034,7 +5225,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_6"><a class="anchor" href="#_request_parameters_6"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5045,13 +5236,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory if type is “say”.<br>
-Voice of speech. Only possible values are “man” and “woman”</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -5082,6 +5266,13 @@ Text to speech body.</p></td>
 Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory if type is “say”.<br>
+Voice of speech. Only possible values are “man” and “woman”</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -5092,7 +5283,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Each parameters are as explained below</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5103,12 +5294,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement File data as explained in the table below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -5119,10 +5304,16 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement File data as explained in the table below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_3"><a class="anchor" href="#_data_parameters_3"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5133,12 +5324,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Voice of speech. Possible values are “man” or “woman”</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
@@ -5191,6 +5376,12 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voice of speech. Possible values are “man” or “woman”</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect4">
@@ -5198,7 +5389,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="paragraph">
 <p>Create announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5215,15 +5406,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">522</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement voice type should be man or woman.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Passed invalid "voice" for say announcement</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create, Update Announcement</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">467</p></td>
@@ -5254,6 +5436,15 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Announcement</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">522</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement voice type should be man or woman.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Passed invalid "voice" for say announcement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, Update Announcement</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -5425,7 +5616,7 @@ After this you need to call Upload Announcement API endpoint to upload the Audio
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_7"><a class="anchor" href="#_request_parameters_7"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5436,6 +5627,12 @@ After this you need to call Upload Announcement API endpoint to upload the Audio
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">announcementSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Sid to uniquely identify an announcement.</p></td>
+</tr>
+</tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">file</p></td>
@@ -5444,12 +5641,6 @@ Audio file in wav format to be uploaded in the recommended bitrate.<br>
 Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_formats" class="non-sps-text non-sps-link" data-orig-text="Media Server Audio File Format">Media Server Audio File Format</a> to understand more about supported audio file formats.</p></td>
 </tr>
 </tfoot>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">announcementSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Sid to uniquely identify an announcement.</p></td>
-</tr>
-</tbody>
 </table>
 </div>
 <div class="sect3">
@@ -5460,7 +5651,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Each parameters are as explained below</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5471,12 +5662,6 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement File data as explained in the table below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -5487,10 +5672,16 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement File data as explained in the table below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_4"><a class="anchor" href="#_data_parameters_4"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5526,7 +5717,7 @@ Rest of the response parameters are the same as explained in Response Parameter 
 <div class="paragraph">
 <p>Create announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5543,15 +5734,6 @@ Rest of the response parameters are the same as explained in Response Parameter 
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter missing. fileUri need to be passed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter fileUri was not passed</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
@@ -5569,6 +5751,15 @@ error occurred while uploading file to s3</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Upload File</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter missing. fileUri need to be passed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter fileUri was not passed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -5645,7 +5836,7 @@ error occurred while uploading file to s3</p></td>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_8"><a class="anchor" href="#_request_parameters_8"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5656,13 +5847,6 @@ error occurred while uploading file to s3</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory if type is “say”.<br>
-Voice of speech. Only possible values are “man” and “woman”</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">announcementSid</p></td>
@@ -5693,6 +5877,13 @@ Text to speech body.</p></td>
 Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory if type is “say”.<br>
+Voice of speech. Only possible values are “man” and “woman”</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -5700,7 +5891,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announce data if update was successful.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5711,12 +5902,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement data as explained in the data parameter of create Announcement.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -5727,13 +5912,19 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement data as explained in the data parameter of create Announcement.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_response_parameters_3"><a class="anchor" href="#_response_parameters_3"></a>Response Parameters</h5>
 <div class="paragraph">
 <p>Update announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5750,15 +5941,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">4000</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter missing. xxx needs to be passed.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Any Mandatory parameters not passed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Create Announcement</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
@@ -5782,6 +5964,15 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create, Update Announcement</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory parameter missing. xxx needs to be passed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Any Mandatory parameters not passed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create Announcement</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -5885,7 +6076,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5909,7 +6100,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Announcement data if delete was successful.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -5920,12 +6111,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement data as explained in the data parameter of create Announcement.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -5936,13 +6121,19 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement data as explained in the data parameter of create Announcement.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_response_parameters_4"><a class="anchor" href="#_response_parameters_4"></a>Response Parameters</h5>
 <div class="paragraph">
 <p>Delete announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -5959,15 +6150,6 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <th class="tableblock halign-left valign-top">Category</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">507</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This Announcement cannot be deleted as it is being used in a campaign.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement is used in Campaign</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Announcement</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">500</p></td>
@@ -5979,6 +6161,15 @@ Delete Announcement,
 Get Announcement</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">507</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">409</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This Announcement cannot be deleted as it is being used in a campaign.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announcement is used in Campaign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Announcement</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -6064,7 +6255,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6075,18 +6266,18 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Announcements records to return, starting from 0.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="admonitionblock note">
 <table>
@@ -6106,7 +6297,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6117,12 +6308,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
@@ -6137,6 +6322,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -6146,7 +6337,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes_2"><a class="anchor" href="#_sort_attributes_2"></a>Sort Attributes</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6157,18 +6348,18 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by created date</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sort by name</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sort by created date</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -6180,7 +6371,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Each parameters are as explained below</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6191,12 +6382,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -6207,10 +6392,16 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_5"><a class="anchor" href="#_data_parameters_5"></a>Data parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6221,12 +6412,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
@@ -6265,6 +6450,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records in next page</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -6360,7 +6551,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>Search Announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -6489,7 +6680,7 @@ Get Announcement</p></td>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_10"><a class="anchor" href="#_request_parameters_10"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6516,7 +6707,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6527,12 +6718,6 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opt-Out data as explained in the table below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -6543,10 +6728,16 @@ Get Announcement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing the error if such has occurred, or a success message, if successful.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opt-Out data as explained in the table below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_6"><a class="anchor" href="#_data_parameters_6"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6557,18 +6748,18 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-Out belongs to.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Opt-Out name. The default value assigned to the name will be "Opt-Out".</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-Out belongs to.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect4">
@@ -6576,7 +6767,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>Create Opt-Out API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Codes.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -6672,7 +6863,7 @@ Get Announcement</p></td>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_11"><a class="anchor" href="#_request_parameters_11"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6696,7 +6887,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Number data if delete was successful.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6707,12 +6898,6 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number data as explained in the data parameter explained below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -6723,10 +6908,16 @@ Get Announcement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing the error if such has occurred, or success message if successful.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number data as explained in the data parameter explained below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_7"><a class="anchor" href="#_data_parameters_7"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6737,12 +6928,6 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Sid of the enterprise the Opt-Out belongs to.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
@@ -6761,6 +6946,12 @@ Get Announcement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this particular Opt-Out was created.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Sid of the enterprise the Opt-Out belongs to.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect4">
@@ -6768,7 +6959,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>Delete Opt-Out API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code section.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -6870,7 +7061,7 @@ Get Announcement</p></td>
 <div class="paragraph">
 <p>The following paging parameters are supported.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6881,18 +7072,18 @@ Get Announcement</p></td>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Which page of the Opt-Out records to return, starting from 0.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="admonitionblock note">
 <table>
@@ -6912,7 +7103,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>The following filtering parameters are supported:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6923,12 +7114,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">phoneNumber</p></td>
@@ -6939,6 +7124,12 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -6948,7 +7139,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes_3"><a class="anchor" href="#_sort_attributes_3"></a>Sort Attributes</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6976,7 +7167,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -6987,12 +7178,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -7003,10 +7188,16 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occurred or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_8"><a class="anchor" href="#_data_parameters_8"></a>Data parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7017,12 +7208,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
@@ -7057,6 +7242,12 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records in First page</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -7134,7 +7325,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>Search Opt-Out API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -7238,7 +7429,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_12"><a class="anchor" href="#_request_parameters_12"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7249,18 +7440,18 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">file</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Multipart File values can be passed as new lines separated.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Name for the Opt-In Database. If not passed, default is "opt-in".</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Multipart File values can be passed as new lines separated.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -7271,7 +7462,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Each parameters are as explained below</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7282,12 +7473,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Opt-In data as explained in the table below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -7298,10 +7483,16 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Opt-In data as explained in the table below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_9"><a class="anchor" href="#_data_parameters_9"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7312,18 +7503,18 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-In belongs to.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Opt-In name.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-In belongs to.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect4">
@@ -7331,7 +7522,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>Create Opt-In API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -7428,7 +7619,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_13"><a class="anchor" href="#_request_parameters_13"></a>Request Parameters</h4>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7452,7 +7643,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>The response body will carry code, corresponding message and Number data if delete was successful.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7463,12 +7654,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number data as explained in the data parameter explained below.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -7479,10 +7664,16 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if an error occurred or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number data as explained in the data parameter explained below.</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_10"><a class="anchor" href="#_data_parameters_10"></a>Data Parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7493,12 +7684,6 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-In belongs to.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
@@ -7517,6 +7702,12 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Date on which this particular Opt-In was created</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sid of the enterprise the Opt-In belongs to.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect4">
@@ -7524,7 +7715,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>Delete Opt-In API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
@@ -7626,7 +7817,7 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <div class="paragraph">
 <p>The following paging parameters are supported</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7637,18 +7828,18 @@ If the search API is called without <code>page</code> and <code>pageSize</code> 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Which page of Opt-In records to return, starting from 0.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pageSize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of records returned per page</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="admonitionblock note">
 <table>
@@ -7668,7 +7859,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>Following filtering parameters are supported:</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7679,12 +7870,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show numbers that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">phoneNumber</p></td>
@@ -7699,6 +7884,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show numbers that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show numbers that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 <div class="sect3">
@@ -7708,7 +7899,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="sect4">
 <h5 id="_sort_attributes_4"><a class="anchor" href="#_sort_attributes_4"></a>Sort Attributes</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7736,7 +7927,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Each parameters are as explained below</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7747,12 +7938,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">code</p></td>
@@ -7763,10 +7948,16 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Message describing error if error occured or success message</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
+</tr>
+</tfoot>
 </table>
 <div class="sect4">
 <h5 id="_data_parameters_11"><a class="anchor" href="#_data_parameters_11"></a>Data parameters</h5>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -7777,12 +7968,6 @@ If the search API is called without page and pageSize, by default pageSize will 
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
-<tfoot>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
-</tr>
-</tfoot>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
@@ -7817,6 +8002,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records in First page</p></td>
 </tr>
 </tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unique URI that you can call to get records</p></td>
+</tr>
+</tfoot>
 </table>
 </div>
 </div>
@@ -7901,7 +8092,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p>Search Opt-in API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code.</p>
 </div>
-<table class="tableblock frame-all grid-all spread">
+<table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
 <col style="width: 20%;">
