@@ -5194,8 +5194,8 @@ track of their usage.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Communications Providers manage Business Customers (also known as
-Enterprises).They can create, update, read, and delete Business
-Customer accounts.The logical grouping of Business Customer accounts
+Enterprises). They can create, update, read, and delete Business
+Customer accounts. The logical grouping of Business Customer accounts
 under a Communications Provider helps in managing the billing and
 invoices for the Business Customers.</p>
 </div>
@@ -5282,19 +5282,19 @@ still be kept in the database as per the CPaaS retention settings.
 <h3 id="_create_business_customer"><a class="anchor" href="#_create_business_customer"></a>Create Business Customer</h3>
 <div class="paragraph">
 <p>This endpoint is used to create a Business Customer in the Campaign
-Manager application.Create Business Customer will add unique Business
+Manager application. Create Business Customer will add unique Business
 Customer names for a given Communications Provider.</p>
 </div>
 <div class="sect3">
 <h4 id="_base_resource_uri"><a class="anchor" href="#_base_resource_uri"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com/">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_create_business_customer_resource_uri"><a class="anchor" href="#_create_business_customer_resource_uri"></a>Create Business Customer Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/enterprises</p>
+<p><strong><code>/campaignmanager/enterprises</code></strong></p>
 </div>
 </div>
 <div class="sect3">
@@ -5572,8 +5572,7 @@ https://yourdomain.com/campaignmanager/enterprises \
 </div>
 </div>
 <div class="paragraph">
-<p>If creation of Business Customer is successful, below is the response
-returned:</p>
+<p>If the creation of Business Customer is successful, below is the response returned:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5619,13 +5618,13 @@ returned:</p>
 <div class="sect4">
 <h5 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h5>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com/">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com/" class="bare">https://your_custom_domain.com/</a></code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_update_business_customer_resource_uri"><a class="anchor" href="#_update_business_customer_resource_uri"></a>Update Business Customer Resource URI</h5>
 <div class="paragraph">
-<p>/campaignmanager/enterprises/{enterpriseSid}</p>
+<p><strong><code>/campaignmanager/enterprises/{enterpriseSid}</code></strong></p>
 </div>
 </div>
 <div class="sect4">
@@ -5812,19 +5811,19 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 <div class="sect4">
 <h5 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h5>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com/">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_delete_business_customer_resource_uri"><a class="anchor" href="#_delete_business_customer_resource_uri"></a>Delete Business Customer Resource URI</h5>
 <div class="paragraph">
-<p>/campaignmanager/enterprises/{enterpriseSid}</p>
+<p><strong><code>/campaignmanager/enterprises/{enterpriseSid}</code></strong></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_supported_operations_3"><a class="anchor" href="#_supported_operations_3"></a>Supported Operations</h5>
 <div class="paragraph">
-<p>HTTP Delete: Delete Business Customer</p>
+<p><strong>HTTP DELETE</strong>: Delete Business Customer</p>
 </div>
 </div>
 <div class="sect4">
@@ -5988,19 +5987,19 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 <div class="sect4">
 <h5 id="_base_resource_uri_4"><a class="anchor" href="#_base_resource_uri_4"></a>Base Resource URI</h5>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com/">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_get_list_of_business_customer_resource_uri"><a class="anchor" href="#_get_list_of_business_customer_resource_uri"></a>Get List of Business Customer Resource URI</h5>
 <div class="paragraph">
-<p>/campaignmanager/enterprises/search</p>
+<p><strong><code>/campaignmanager/enterprises/search</code></strong></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_supported_operations_4"><a class="anchor" href="#_supported_operations_4"></a>Supported Operations</h5>
 <div class="paragraph">
-<p>HTTP Get: Get Business Customer</p>
+<p><strong>HTTP GET</strong>: Get Business Customer</p>
 </div>
 </div>
 <div class="sect4">
@@ -6074,8 +6073,8 @@ particular status.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Business Customers that were
 created on this date/time or later, given as an ISO-8601 date/time
-string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or,
-if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When
+string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or,
+if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When
 only a date is provided the time is assumed to be at midnight of the
 given date. Note: that the given date/time is inclusive and is assumed
 to be in UTC timezone.</p></td>
@@ -6084,8 +6083,8 @@ to be in UTC timezone.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Business Customers that were
 created on this date/time or earlier, given as an ISO-8601 date/time
-string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or,
-if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When
+string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-06T02:10:03) or,
+if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-06). When
 only a date is provided the time is assumed to be at midnight of the
 given date. Note that the given date/time is inclusive and is assumed to
 be in UTC timezone.</p></td>
@@ -6286,13 +6285,13 @@ below:</p>
 <div class="sect4">
 <h5 id="_get_single_business_customer_resource_uri"><a class="anchor" href="#_get_single_business_customer_resource_uri"></a>Get Single Business Customer Resource URI</h5>
 <div class="paragraph">
-<p><code>/campaignmanager/enterprises/search/{enterpriseId}</code></p>
+<p><strong><code>/campaignmanager/enterprises/search/{enterpriseId}</code></strong></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_supported_operations_5"><a class="anchor" href="#_supported_operations_5"></a>Supported Operations</h5>
 <div class="paragraph">
-<p><strong>HTTP Get</strong>: Get Specific Business Customer</p>
+<p><strong>HTTP GET</strong>: Get Specific Business Customer</p>
 </div>
 </div>
 <div class="sect4">
@@ -6503,19 +6502,19 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing camp
 <div class="sect3">
 <h4 id="_base_resource_uri_6"><a class="anchor" href="#_base_resource_uri_6"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_create_campaign_resource_uri"><a class="anchor" href="#_create_campaign_resource_uri"></a>Create Campaign Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/campaigns</p>
+<p><strong><code>/campaignmanager/campaigns</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_6"><a class="anchor" href="#_supported_operations_6"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP POST: Create Campaign</p>
+<p><strong>HTTP POST</strong>: Create Campaign</p>
 </div>
 </div>
 <div class="sect3">
@@ -6538,7 +6537,7 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing camp
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Date when Campaign is to be started given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. Date when Campaign is to be started given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.<br>
 If startTime is not passed, Campaign is scheduled immediately</p></td>
 </tr>
 <tr>
@@ -6648,15 +6647,15 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dateCreated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign was created given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign was created given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note: that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dateUpdated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign was updated given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign was updated given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign is to be started given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date when Campaign is to be started given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseSid</p></td>
@@ -6741,8 +6740,8 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">498</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Date format is incorrect. Supported format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startDate format is incorrect. Supported date format is ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Date format is incorrect. Supported format is ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">startDate format is incorrect. Supported date format is ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Create Campaign</p></td>
 </tr>
 </tfoot>
@@ -6911,19 +6910,19 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect3">
 <h4 id="_base_resource_uri_7"><a class="anchor" href="#_base_resource_uri_7"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_update_context_resource_uri"><a class="anchor" href="#_update_context_resource_uri"></a>Update Context Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/campaigns/{CampaignSid}</p>
+<p><strong><code>/campaignmanager/campaigns/{CampaignSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_7"><a class="anchor" href="#_supported_operations_7"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP PUT: Update Campaign</p>
+<p><strong>HTTP PUT</strong>: Update Campaign</p>
 </div>
 </div>
 <div class="sect3">
@@ -7126,19 +7125,19 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect3">
 <h4 id="_base_resource_uri_8"><a class="anchor" href="#_base_resource_uri_8"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_update_context_resource_uri_2"><a class="anchor" href="#_update_context_resource_uri_2"></a>Update Context Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/campaigns/{CampaignSid}</p>
+<p><strong><code>/campaignmanager/campaigns/{CampaignSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_8"><a class="anchor" href="#_supported_operations_8"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP DELETE: Delete Campaign</p>
+<p><strong>HTTP DELETE</strong>: Delete Campaign</p>
 </div>
 </div>
 <div class="sect3">
@@ -7300,19 +7299,19 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect4">
 <h5 id="_base_resource_uri_9"><a class="anchor" href="#_base_resource_uri_9"></a>Base Resource URI</h5>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_get_list_of_campaigns_resource_uri"><a class="anchor" href="#_get_list_of_campaigns_resource_uri"></a>Get List of Campaigns Resource URI</h5>
 <div class="paragraph">
-<p>/campaignmanager/campaigns/search</p>
+<p><strong><code>/campaignmanager/campaigns/search</code></strong></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_supported_operations_9"><a class="anchor" href="#_supported_operations_9"></a>Supported Operations</h5>
 <div class="paragraph">
-<p>HTTP GET: List Campaigns</p>
+<p><strong>HTTP GET</strong>: List Campaigns</p>
 </div>
 </div>
 <div class="sect4">
@@ -7391,8 +7390,8 @@ Possible value of status are as explained in campaign status section.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Contexts that were created on
 this date/time or later, given as an ISO-8601 date/time string, like
-YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to
-omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is
+<code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to
+omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is
 provided the time is assumed to be at midnight of the given date. Note
 that the given date/time is inclusive and is assumed to be in UTC
 timezone.</p></td>
@@ -7401,8 +7400,8 @@ timezone.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show Contexts that were created on
 this date/time or earlier, given as an ISO-8601 date/time string, like
-YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to
-omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is
+<code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-06T02:10:03) or, if you want to
+omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-06). When only a date is
 provided the time is assumed to be at midnight of the given date. Note
 that the given date/time is inclusive and is assumed to be in UTC
 timezone.</p></td>
@@ -7603,25 +7602,24 @@ Parameters are as explained below.</p>
 <div class="sect3">
 <h4 id="_get_single_campaign"><a class="anchor" href="#_get_single_campaign"></a>Get Single Campaign</h4>
 <div class="paragraph">
-<p>The Single Campaign search API allows users to retrieve specific
-Campaigns.</p>
+<p>The Single Campaign search API allows users to retrieve specific Campaigns.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_10"><a class="anchor" href="#_base_resource_uri_10"></a>Base Resource URI</h5>
 <div class="paragraph">
-<p><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_get_single_campaign_resource_uri"><a class="anchor" href="#_get_single_campaign_resource_uri"></a>Get Single Campaign Resource URI</h5>
 <div class="paragraph">
-<p><code>/campaignmanager/campaigns/search/{CampaignSid}</code></p>
+<p><strong><code>/campaignmanager/campaigns/search/{CampaignSid}</code></strong></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_supported_operations_10"><a class="anchor" href="#_supported_operations_10"></a>Supported Operations</h5>
 <div class="paragraph">
-<p>HTTP GET: Specific Campaign</p>
+<p><strong>HTTP GET</strong>: Specific Campaign</p>
 </div>
 </div>
 <div class="sect4">
@@ -7774,13 +7772,13 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_create_numbers_list_resource_uri"><a class="anchor" href="#_create_numbers_list_resource_uri"></a>Create Numbers List Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists</code></p>
+<p><strong><code>/campaignmanager/numbersLists</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_11"><a class="anchor" href="#_supported_operations_11"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP POST: Create numbers list</p>
+<p><strong>HTTP POST</strong>: Create numbers list</p>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_9"><a class="anchor" href="#_request_parameters_9"></a>Request Parameters</h4>
@@ -7980,7 +7978,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_supported_operations_12"><a class="anchor" href="#_supported_operations_12"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP DELETE: delete a list by Id</p>
+<p><strong>HTTP DELETE</strong>: delete a list by Id</p>
 </div>
 </div>
 <div class="sect2">
@@ -8042,8 +8040,11 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists</code></p>
+<p><strong><code>/campaignmanager/numbersLists</code></strong></p>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/search?name=test&amp;fileType=csv' \
@@ -8054,7 +8055,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_supported_operations_13"><a class="anchor" href="#_supported_operations_13"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP GET: Get available list by provided criteria.</p>
+<p><strong>HTTP GET</strong>: Get available list by provided criteria.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8221,13 +8222,13 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+<p><strong><code>/campaignmanager/numbersLists/{listSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_14"><a class="anchor" href="#_supported_operations_14"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP GET: Get available list by provided criteria.</p>
+<p><strong>HTTP GET</strong>: Get available list by provided criteria.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8319,13 +8320,13 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+<p><strong><code>/campaignmanager/numbersLists/{listSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_15"><a class="anchor" href="#_supported_operations_15"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP PUT:  update description of existing list</p>
+<p><strong>HTTP PUT</strong>:  update description of existing list</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -8439,13 +8440,13 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_resource_uri_5"><a class="anchor" href="#_resource_uri_5"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/download/{listSid}</code></p>
+<p><strong><code>/campaignmanager/numbersLists/download/{listSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_16"><a class="anchor" href="#_supported_operations_16"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP GET: Get the content of the list (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it</p>
+<p><strong>HTTP GET</strong>: Get the content of the list (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it</p>
 </div>
 </div>
 <div class="sect2">
@@ -8476,7 +8477,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </div>
 </div>
 <div class="sect2">
-<h3 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h3>
+<h3 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/download/NG8e3a7567cb494c8ebf1366b4396ccec3' \
@@ -8493,13 +8494,13 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_resource_uri_6"><a class="anchor" href="#_resource_uri_6"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/preview/{listSid}</code></p>
+<p><strong><code>/campaignmanager/numbersLists/preview/{listSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_17"><a class="anchor" href="#_supported_operations_17"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP GET: get a preview (few lines) from the numbers group</p>
+<p><strong>HTTP GET</strong>: get a preview (few lines) from the numbers group</p>
 </div>
 </div>
 <div class="sect2">
@@ -8579,7 +8580,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </table>
 </div>
 <div class="sect2">
-<h3 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h3>
+<h3 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/preview/NG5b4f5d57f4a14e15b119b8286587ed5f?rowsCount=25' \
@@ -8596,13 +8597,13 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_resource_uri_7"><a class="anchor" href="#_resource_uri_7"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/listGroups</code></p>
+<p><strong><code>/campaignmanager/numbersLists/listGroups</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_18"><a class="anchor" href="#_supported_operations_18"></a>Supported Operations</h3>
 <div class="paragraph">
-<p>HTTP POST: Get a list of groups. Both regular and DND lists.</p>
+<p><strong>HTTP POST</strong>: Get a list of groups. Both regular and DND lists.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8740,19 +8741,19 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing anno
 <div class="sect3">
 <h4 id="_base_resource_uri_12"><a class="anchor" href="#_base_resource_uri_12"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_add_announcement_resource_uri"><a class="anchor" href="#_add_announcement_resource_uri"></a>Add Announcement Resource URI</h4>
 <div class="paragraph">
-<p><code>/campaignmanager/announcement</code></p>
+<p><strong><code>/campaignmanager/announcement</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_19"><a class="anchor" href="#_supported_operations_19"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP POST: Add announcement</p>
+<p><strong>HTTP POST</strong>: Add announcement</p>
 </div>
 </div>
 <div class="sect3">
@@ -8890,7 +8891,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">file_uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span>. It can be used to access the WAV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code>. It can be used to access the WAV file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
@@ -9130,19 +9131,19 @@ If the creation was successful, you will need to call the Upload Announcement AP
 <div class="sect3">
 <h4 id="_base_resource_uri_13"><a class="anchor" href="#_base_resource_uri_13"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_upload_announcement_resource_uri"><a class="anchor" href="#_upload_announcement_resource_uri"></a>Upload Announcement Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/internal/file/announcement/{announcementSid}</p>
+<p><strong><code>/campaignmanager/internal/file/announcement/{announcementSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_20"><a class="anchor" href="#_supported_operations_20"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP POST: Upload audio file</p>
+<p><strong>HTTP POST</strong>: Upload audio file</p>
 </div>
 </div>
 <div class="sect3">
@@ -9226,7 +9227,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span>. It can be used to access the WAV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code>. It can be used to access the WAV file</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9350,19 +9351,19 @@ error occurred while uploading file to s3</p></td>
 <div class="sect3">
 <h4 id="_base_resource_uri_14"><a class="anchor" href="#_base_resource_uri_14"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_update_announcement_resource_uri"><a class="anchor" href="#_update_announcement_resource_uri"></a>Update Announcement Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement/{announcementSid}</p>
+<p><strong><code>/campaignmanager/announcement/{announcementSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_21"><a class="anchor" href="#_supported_operations_21"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP PUT: Update announcement</p>
+<p><strong>HTTP PUT</strong>: Update announcement</p>
 </div>
 </div>
 <div class="sect3">
@@ -9589,11 +9590,11 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect3">
 <h4 id="_get_a_list_of_available_announcement_resource_uri"><a class="anchor" href="#_get_a_list_of_available_announcement_resource_uri"></a>Get a List of Available Announcement Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement/getAll</p>
+<p><strong><code>/campaignmanager/announcement/getAll</code></strong></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
+<h4 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X 'GET' \
@@ -9633,19 +9634,19 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect3">
 <h4 id="_base_resource_uri_15"><a class="anchor" href="#_base_resource_uri_15"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_delete_announcement_resource_uri"><a class="anchor" href="#_delete_announcement_resource_uri"></a>Delete Announcement Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement/{announcementSid}</p>
+<p><strong><code>/campaignmanager/announcement/{announcementSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_22"><a class="anchor" href="#_supported_operations_22"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP DELETE: Delete announcement</p>
+<p><strong>HTTP DELETE</strong>: Delete announcement</p>
 </div>
 </div>
 <div class="sect3">
@@ -9809,19 +9810,19 @@ Get Announcement</p></td>
 <div class="sect3">
 <h4 id="_base_resource_uri_16"><a class="anchor" href="#_base_resource_uri_16"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_get_announcement_list_resource_uri"><a class="anchor" href="#_get_announcement_list_resource_uri"></a>Get Announcement List Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement/search</p>
+<p><strong><code>/campaignmanager/announcement/search</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_23"><a class="anchor" href="#_supported_operations_23"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP GET: Get Announcement list</p>
+<p><strong>HTTP GET</strong>: Get Announcement list</p>
 </div>
 </div>
 <div class="sect3">
@@ -9893,13 +9894,13 @@ If the search API is called without page and pageSize, by default pageSize will 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">startTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or later, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-05T22:45:32) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or later, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-05T22:45:32) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-05). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tbody>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">endTime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like YYYY-MM-DDTHH:MM:SS (for example 2018-10-06T02:10:03) or, if you want to omit the time, YYYY-MM-DD (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional parameter. Only show users that were created on this date/time or earlier, given as an ISO-8601 date/time string, like <code>YYYY-MM-DDTHH:MM:SS</code> (for example 2018-10-06T02:10:03) or, if you want to omit the time, <code>YYYY-MM-DD</code> (for example 2018-10-06). When only a date is provided the time is assumed to be at midnight of the given date. Note that the given date/time is inclusive and is assumed to be in UTC timezone.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -10105,19 +10106,19 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_base_resource_uri_17"><a class="anchor" href="#_base_resource_uri_17"></a>Base Resource URI</h4>
 <div class="paragraph">
-<p><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN">https://$DOMAIN</span></p>
+<p><code><a href="https://your_custom_domain.com" class="bare">https://your_custom_domain.com</a></code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_get_single_announcement_resource_uri"><a class="anchor" href="#_get_single_announcement_resource_uri"></a>Get Single Announcement  Resource URI</h4>
 <div class="paragraph">
-<p>/campaignmanager/announcement/search/{announementSid}</p>
+<p><strong><code>/campaignmanager/announcement/search/{announementSid}</code></strong></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_supported_operations_24"><a class="anchor" href="#_supported_operations_24"></a>Supported Operations</h4>
 <div class="paragraph">
-<p>HTTP GET: Specific announcement</p>
+<p><strong>HTTP GET</strong>: Specific announcement</p>
 </div>
 </div>
 <div class="sect3">
