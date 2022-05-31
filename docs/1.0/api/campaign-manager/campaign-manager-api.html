@@ -5364,7 +5364,7 @@ ACTIVE. Possible values are ACTIVE and INACTIVE.</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseAdmin</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Business Customer user data explained in the table below that will be
+<p>Mandatory. Business Customer user data explained in the table below that will be
 assigned as the admin of this business customer.</p>
 </div>
 <div class="paragraph">
@@ -5377,8 +5377,8 @@ assigned as the admin of this business customer.</p>
 <div class="sect3">
 <h4 id="_response_body"><a class="anchor" href="#_response_body"></a>Response Body</h4>
 <div class="paragraph">
-<p>The Response Body will carry code, corresponding message, and data of
-the Business Customer if created successfully. HTTP response will be 200
+<p>The response body will carry an error code, a corresponding message, and data of
+the Business Customer if created successfully. The HTTP response will be 200
 Created (OK).</p>
 </div>
 <div class="paragraph">
@@ -5445,7 +5445,7 @@ Customer.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of this Business Customer.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Name of this Business Customer.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
@@ -5468,11 +5468,11 @@ Customer Status] section</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseAdminEmail</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Email ID of the Business Customer Admin.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Email ID of the Business Customer Admin.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enterpriseAdminSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Account SID created under <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> for the Business Customer Admin user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Account SID created under <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> for the Business Customer Admin user.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5613,7 +5613,7 @@ https://yourdomain.com/campaignmanager/enterprises \
 <div class="sect3">
 <h4 id="_update_business_customer"><a class="anchor" href="#_update_business_customer"></a>Update Business Customer</h4>
 <div class="paragraph">
-<p>This endpoint can be used to update an existing Business Customer.</p>
+<p>This endpoint is used to update an existing Business Customer.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_2"><a class="anchor" href="#_base_resource_uri_2"></a>Base Resource URI</h5>
@@ -5765,7 +5765,7 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 </div>
 </div>
 <div class="paragraph">
-<p>If creation of the Business Customer is successful, below is the response returned:</p>
+<p>If the creation of the Business Customer is successful, below is the response returned:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -5775,7 +5775,7 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
       "dateUpdated":"2020-09-11T05:23:32+0000",
       "dateCreated":"2020-09-11T05:19:55+0000",
       "accountSid":"ACb06dc1c0b555df46a02ccaea1cb11bc1",
-      "accountEmail":"cspadmin1@nmorgtest1.com",
+      "accountEmail":"cspadmin1@acme.com",
       "uri":"/campaignmanager/enterprises/search/ENb6eb071d21124dbab20b095c25f1274f",
       "name":"Jane Doe",
       "credit":0,
@@ -5806,7 +5806,7 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 <div class="sect3">
 <h4 id="_delete_business_customer"><a class="anchor" href="#_delete_business_customer"></a>Delete Business Customer</h4>
 <div class="paragraph">
-<p>This endpoint will be used to delete an existing Business Customer.</p>
+<p>This endpoint is used to delete an existing Business Customer.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_3"><a class="anchor" href="#_base_resource_uri_3"></a>Base Resource URI</h5>
@@ -5862,7 +5862,7 @@ Deleting a Business Customer will mark status as CLOSED.
 <div class="sect4">
 <h5 id="_response_body_3"><a class="anchor" href="#_response_body_3"></a>Response Body</h5>
 <div class="paragraph">
-<p>Response Body will carry Code, corresponding message, and data of the Business Customer account if it was successfully deleted. HTTP response will be 200 OK.</p>
+<p>The response body will carry an error code, a corresponding message, and data of the Business Customer account if it was successfully deleted. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. All parameters are listed below.</p>
@@ -5951,7 +5951,7 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 "dateUpdated":"2020-09-11T05:23:32+0000",
 "dateCreated":"2020-09-11T05:19:55+0000",
 "accountSid":"ACb06dc1c0b555df46a02ccaea1cb11bc1",
-"accountEmail":"cspadmin1@nmorgtest1.com",
+"accountEmail":"cspadmin1@acme.com",
 "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
 "name":"Jane Doe",
 "credit":0,
@@ -5982,7 +5982,7 @@ https://yourdomain.com/campaignmanager/enterprises/ENb6eb071d21124dbab20b095c25f
 <div class="sect3">
 <h4 id="_get_list_of_business_customers"><a class="anchor" href="#_get_list_of_business_customers"></a>Get List of Business Customers</h4>
 <div class="paragraph">
-<p>This endpoint will be used to search a list of Business Customers.</p>
+<p>This endpoint is used to search a list of Business Customers.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_4"><a class="anchor" href="#_base_resource_uri_4"></a>Base Resource URI</h5>
@@ -6129,7 +6129,7 @@ below:</p>
 <div class="sect4">
 <h5 id="_response_body_4"><a class="anchor" href="#_response_body_4"></a>Response Body</h5>
 <div class="paragraph">
-<p>Response Body will carry Code, corresponding message, and data of the User if it was successfully fetched. HTTP response will be 200 OK.</p>
+<p>The response body will carry an error code, a corresponding message, and data of the User if it was successfully fetched. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are as explained below</p>
@@ -6245,7 +6245,7 @@ below:</p>
       "dateUpdated":"2020-09-11T05:47:58+0000",
       "dateCreated":"2020-09-11T05:19:55+0000",
       "accountSid":"ACb06dc1c0b555df46a02ccaea1cb11bc1",
-      "accountEmail":"cspadmin1@nmorgtest1.com",
+      "accountEmail":"cspadmin1@acme.com",
       "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
       "name":"Jane Doe",
       "credit":0,
@@ -6274,7 +6274,7 @@ below:</p>
 <div class="sect3">
 <h4 id="_get_single_business_customer"><a class="anchor" href="#_get_single_business_customer"></a>Get Single Business Customer</h4>
 <div class="paragraph">
-<p>Single Business Customer search API allows users to retrieve specific Business Customer.</p>
+<p>Single Business Customer search API allows users to retrieve specific Business Customer record.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_5"><a class="anchor" href="#_base_resource_uri_5"></a>Base Resource URI</h5>
@@ -6415,7 +6415,7 @@ Business Customer, Delete Business Customer, Get Business Customer</p></td>
       "dateUpdated":"2020-09-11T05:47:58+0000",
       "dateCreated":"2020-09-11T05:19:55+0000",
       "accountSid":"ACb06dc1c0b555df46a02ccaea1cb11bc1",
-      "accountEmail":"cspadmin1@nmorgtest1.com",
+      "accountEmail":"cspadmin1@acme.com",
       "uri":"/campaignmanager/enterprises/search/ENd32f9955825543d5a7e4d1bdb9f56b5b",
       "name":"Jane Doe",
       "credit":0,
@@ -6473,7 +6473,7 @@ correctly from the initiating state.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The life cycle of Campaign’s Status is as below:</p>
+<p>The life cycle of Campaign’s Status is outlined in the following diagram.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -6485,7 +6485,7 @@ correctly from the initiating state.</p>
 <div class="sect2">
 <h3 id="_create_campaign"><a class="anchor" href="#_create_campaign"></a>Create Campaign</h3>
 <div class="paragraph">
-<p>The Create Campaign API is used to create SMS/VOICE Campaigns. Communications Providers can use it to create a campaign on a behalf of their Business Customers.</p>
+<p>The Create Campaign API is used to create SMS and voice Campaigns. Communications Providers can use it to create a campaign on a behalf of their Business Customers.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6526,8 +6526,8 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing camp
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6590,7 +6590,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="sect3">
 <h4 id="_response_body_6"><a class="anchor" href="#_response_body_6"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will contain the code, corresponding message, and data of the Application if it was successfully created. HTTP response will be 201 Created(OK).</p>
+<p>The response body will contain the code, corresponding message, and data of the Application if it was successfully created. The HTTP response will be 201 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Parameters are as explained below:</p>
@@ -6602,8 +6602,8 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6632,8 +6632,8 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Data Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6706,11 +6706,11 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -6769,12 +6769,12 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://company.com/campaignmanager/campaigns \
+  https://yourdomain.com/campaignmanager/campaigns \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: multipart/form-data' \
-  -F name="Test campaign TTS 18Mar1217" \
-  -F body="Hello World 1" \
+  -F name="My very first TTS campaign" \
+  -F body="Hello World!" \
   -F toFile="@/Users/workspace/Solutions/SMSBlast/MXOrgTest2-Ent2-ToNumbers.csv" \
   -F fromPrefix="91"</code></pre>
 </div>
@@ -6798,7 +6798,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
         "total": 4,
         "status": "initiating",
         "fromPrefix": "91",
-        "body": "Hello World 1",
+        "body": "Hello World!",
     },
     "code": 200,
     "message": "OK"
@@ -6810,7 +6810,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <h5 id="_voice_campaign_example"><a class="anchor" href="#_voice_campaign_example"></a>Voice Campaign Example</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>    "name" : "Test campaign TTS 18Mar1217",
+<pre class="highlightjs highlight"><code>    "name" : "My very first TTS campaign",
     "startTime":"2021-03-18T12:35:46+0530",
     "fromFile":"&lt;path to file having From numbers separated by new line&gt;",
     "toFile":"&lt;path to file having To numbers separated by new line&gt;"
@@ -6825,11 +6825,11 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://company.com/campaignmanager/campaigns \
+  https://yourdomain.com/campaignmanager/campaigns \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: multipart/form-data' \
- -F name="Test campaign TTS 18Mar1217" \
+ -F name="My very first TTS campaign" \
  -F startTime=”2021-03-18T12:35:46+0530” \T
  -F toFile="@/Users/workspace/Solutions/SMSBlast/MXOrgTest2-Ent2-ToNumbers.csv" \
  -F toFile="@/Users/workspace/Solutions/SMSBlast/MXOrgTest2-Ent2-FromNumbers.csv" \
@@ -6851,7 +6851,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
         "accountSid": "ACd29f41f95a13ff47279f8f71ccbbb4fe",
         "accountEmail": "jane.doe@company.com",
         "uri": "/campaignmanager/campaigns/search/ECc28117d340f04f0581d60dc4ca2453ca",
-        "name": "Test campaign TTS 18Mar1217",
+        "name": "My very first TTS campaign",
         "startTime": "2021-03-18T07:05:46+0000",
         "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
         "total": 1,
@@ -6878,7 +6878,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
   "code":489,
   "message”: “startTime is  in the past
    “data”:{
-    "name" : "TestCampaign",
+    "name" : "ACME Campaign",
      “startTime”:”2019-01-01 09:53:51”,
     “fromPrefix”:”91”,
     “to”:”919960639903,919960639904,919960639905,919960639906”
@@ -6893,7 +6893,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <div class="sect2">
 <h3 id="_update_campaign"><a class="anchor" href="#_update_campaign"></a>Update Campaign</h3>
 <div class="paragraph">
-<p>This endpoint will be used to update existing campaigns. Communications Providers can use this endpoint to update campaigns on a behalf of their Business Customers. Only campaigns with a status of <code>Scheduled</code> can be updated. If the status of the campaign changes to any other, updating is no longer possible.</p>
+<p>This endpoint is used to update existing campaigns. Communications Providers can use this endpoint to update campaigns on a behalf of their Business Customers. Only campaigns with a status of <code>Scheduled</code> can be updated. If the status of the campaign changes to any other, updating is no longer possible.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -6934,14 +6934,14 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CampaignSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Campaign Sid that was generated when Campaign was created first time as explained in the "Create Campaign" section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Unique Campaign Sid that was generated when Campaign was created first time as explained in the "Create Campaign" section</p></td>
 </tr>
 </tbody>
 <tfoot>
@@ -6958,7 +6958,7 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect3">
 <h4 id="_response_body_7"><a class="anchor" href="#_response_body_7"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. HTTP response will be 200 OK.</p>
+<p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
@@ -6970,8 +6970,8 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7004,11 +7004,11 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7073,7 +7073,7 @@ Make sure you are using the proper account SID and token when managing campaigns
 “data”:
    {
         “sid":"CPb6eb071d21124dbab20b095c25f1274f",
-        “name”:”TestUpdatedCampaign”,
+        “name”:”AcmeUpdatedCampaign”,
         "dateCreated":"2019-12-22 09:53:51",
         "dateUpdated":"2019-12-29 09:53:51",
         “startTime”:”2020-02-01 09:53:51”,
@@ -7108,7 +7108,7 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect2">
 <h3 id="_delete_campaign"><a class="anchor" href="#_delete_campaign"></a>Delete Campaign</h3>
 <div class="paragraph">
-<p>This endpoint will be used to delete existing campaigns. Communications Providers can use this endpoint to delete campagns on a behalf of their Business Customers. Only campaigns with a status of Scheduled can be deleted.If the status of the campaign changes to any other, deleting is no longer possible.</p>
+<p>This endpoint is used to delete existing campaigns. Communications Providers can use this endpoint to delete campagns on a behalf of their Business Customers. Only campaigns with a status of Scheduled can be deleted.If the status of the campaign changes to any other, deleting is no longer possible.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -7149,14 +7149,14 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CampaignSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Campaign Sid that was generated when Campaign was first created, as explained in Create Campaign section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Unique Campaign Sid that was generated when Campaign was first created, as explained in Create Campaign section</p></td>
 </tr>
 </tfoot>
 </table>
@@ -7164,7 +7164,7 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect3">
 <h4 id="_response_body_8"><a class="anchor" href="#_response_body_8"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. HTTP response will be 200 OK.</p>
+<p>The response body will carry code, corresponding message and data of Application if it was successfully Updated. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Parameters are as explained below.</p>
@@ -7176,8 +7176,8 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7210,11 +7210,11 @@ Make sure you are using the proper account SID and token when managing campaigns
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7294,7 +7294,7 @@ Make sure you are using the proper account SID and token when managing campaigns
 <div class="sect3">
 <h4 id="_get_list_of_campaigns"><a class="anchor" href="#_get_list_of_campaigns"></a>Get List of Campaigns</h4>
 <div class="paragraph">
-<p>This endpoint will be used to retrieve a list of existing campaigns.</p>
+<p>This endpoint is used to retrieve a list of existing campaigns.</p>
 </div>
 <div class="sect4">
 <h5 id="_base_resource_uri_9"><a class="anchor" href="#_base_resource_uri_9"></a>Base Resource URI</h5>
@@ -7452,8 +7452,8 @@ attribute in ascending order. ou can sort by the following attributes:</p>
 <div class="sect4">
 <h5 id="_response_parameters"><a class="anchor" href="#_response_parameters"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Response Body will carry Code, corresponding message, and data of
-Campaigns if it was successfully fetched. HTTP response will be 200 OK.</p>
+<p>The response body will carry an error code, a corresponding message, and data of
+Campaigns if it was successfully fetched. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below.
@@ -7481,12 +7481,12 @@ Parameters are as explained below.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in Data parameters below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A result of the search as explained in the Data parameters section below.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect5">
-<h6 id="_data_parameters_3"><a class="anchor" href="#_data_parameters_3"></a>Data parameters</h6>
+<h6 id="_data_parameters_3"><a class="anchor" href="#_data_parameters_3"></a>Data Parameters</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -7551,7 +7551,7 @@ Parameters are as explained below.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X GET \
-  https://company.com/campaignmanager/campaigns/search?name=test \
+  https://yourdomain.com/campaignmanager/campaigns/search?name=test \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</code></pre>
@@ -7638,7 +7638,7 @@ Parameters are as explained below.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CampaignSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Unique Campaign SID of the campaign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Unique Campaign SID of the campaign</p></td>
 </tr>
 </tbody>
 </table>
@@ -7646,8 +7646,8 @@ Parameters are as explained below.</p>
 <div class="sect4">
 <h5 id="_response_parameters_2"><a class="anchor" href="#_response_parameters_2"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Response Body will carry Code, corresponding message, and data of User
-if it was successfully searched. HTTP response will be 200 OK.</p>
+<p>The response body will carry an error code, a corresponding message, and data of the account
+if it was successfully searched. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below.
@@ -7724,7 +7724,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X DELETE \
-  https://company.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</code></pre>
@@ -7737,19 +7737,19 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="content">
 <pre class="highlightjs highlight"><code>{
 "data": {
-"sid": "EC2f1e91bcdeb346519612a96dd31dcd53",
-"dateUpdated": "2020-01-01T11:40:15+0000",
-"dateCreated": "2020-01-01T11:40:15+0000",
-"accountSid": "AC9f5746bbeba827841634b106f23e7395",
-"accountEmail": "jane.doe@company.com",
-"uri": "/campaignmanager/campaigns/search/EC2f1e91bcdeb346519612a96dd31dcd53",
-"name": "Test Data 1",
-"startTime": "2020-01-01T22:45:32+0000",
-"enterpriseSid": "ENfda064f487ff4309b8b306d25adc0a86",
-"total": 1,
-"status": "cancelled",
-"fromPrefix": "+91"
-},
+    "sid": "EC2f1e91bcdeb346519612a96dd31dcd53",
+    "dateUpdated": "2020-01-01T11:40:15+0000",
+    "dateCreated": "2020-01-01T11:40:15+0000",
+    "accountSid": "AC9f5746bbeba827841634b106f23e7395",
+    "accountEmail": "jane.doe@company.com",
+    "uri": "/campaignmanager/campaigns/search/EC2f1e91bcdeb346519612a96dd31dcd53",
+    "name": "ACME Data",
+    "startTime": "2020-01-01T22:45:32+0000",
+    "enterpriseSid": "ENfda064f487ff4309b8b306d25adc0a86",
+    "total": 1,
+    "status": "cancelled",
+    "fromPrefix": "+91"
+    },
 "code": 200,
 "message": "OK"
 }</code></pre>
@@ -7789,8 +7789,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7800,7 +7800,7 @@ Delete Campaign, List Single Campaign</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the NumbersList item.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. Name of the NumbersList item.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
@@ -7810,7 +7810,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">groupType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The type of list to create. Such as: "to_list", "from_list", "opt_in" or "opt_out".</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The type of list to create. Such as: "to_list", "from_list", "opt_in" or "opt_out".</p></td>
 </tr>
 </tfoot>
 </table>
@@ -7827,8 +7827,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -7865,7 +7865,7 @@ Delete Campaign, List Single Campaign</p></td>
      "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
      "accountEmail": "mail@gmail.com",
      "uri": "/campaignmanager/numbersGroup/search/NG8eeb901bf85b41e0b20d8edce0f644be",
-     "name": "moshe31",
+     "name": "jane1",
      "description": "cohen3",
      "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
      "status": "ready",
@@ -7993,8 +7993,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8010,7 +8010,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Response data object as described below.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8047,8 +8047,8 @@ Delete Campaign, List Single Campaign</p></td>
 <h3 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/search?name=test&amp;fileType=csv' \
---header 'authorization: Basic &lt;credentials&gt;'</code></pre>
+<pre class="highlightjs highlight"><code>curl --location --request GET 'http://yourdomain.com/campaignmanager/numbersGroup/search?name=test&amp;fileType=csv' \
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \</code></pre>
 </div>
 </div>
 </div>
@@ -8067,8 +8067,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8139,8 +8139,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8156,7 +8156,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of "NumbersList" items as described below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of "NumbersList" items as described below.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8175,7 +8175,7 @@ Delete Campaign, List Single Campaign</p></td>
        "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
        "accountEmail": "mail@gmail.com",
        "uri": "/campaignmanager/numbersGroup/search/NG201fe58f01e84b65a3eae83e59d91e0f",
-       "name": "moshe3",
+       "name": "jane",
        "description": "cohen",
        "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
        "status": "ready",
@@ -8240,14 +8240,14 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sid of list to fetch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the list to fetch.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8264,8 +8264,8 @@ Delete Campaign, List Single Campaign</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8298,7 +8298,7 @@ Delete Campaign, List Single Campaign</p></td>
       "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
       "accountEmail": "hope123@gmail.com",
       "uri": "/campaignmanager/numbersGroup/search/NG26cc39225eb248ddac440f4975bfc32c",
-      "name": "test list csv",
+      "name": "ACME CSV List",
       "description": "test",
       "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
       "status": "ready",
@@ -8326,7 +8326,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_supported_operations_15"><a class="anchor" href="#_supported_operations_15"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP PUT</strong>:  update description of existing list</p>
+<p><strong>HTTP PUT</strong>: Update a description of an existing list</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -8335,7 +8335,7 @@ Delete Campaign, List Single Campaign</p></td>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the numbers list file is completed the user cannot replace it.  Invalid and failed files can be replaced.
+If the numbers list file is completed the user cannot replace it. Invalid and failed files can be replaced.
 </td>
 </tr>
 </table>
@@ -8350,14 +8350,14 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of the list to fetch.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the list to fetch.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8366,8 +8366,8 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <h3 id="_request_example"><a class="anchor" href="#_request_example"></a>Request Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request PUT 'http://&lt;server url&gt;/campaignmanager/numbersGroup/NG5b4f5d57f4a14e15b119b8286587ed5f?description=somedescription&amp;name=newName' \
---header 'Authorization: Basic &lt;auth data&gt;' \
+<pre class="highlightjs highlight"><code>curl --location --request PUT 'http://yourdomain.com/campaignmanager/numbersGroup/NG5b4f5d57f4a14e15b119b8286587ed5f?description=somedescription&amp;name=newName' \
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --form 'file=@"/C:/Users/user/Downloads/test.txt"'</code></pre>
 </div>
 </div>
@@ -8384,8 +8384,8 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8401,7 +8401,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8418,7 +8418,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
       "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
       "accountEmail": "hope123@gmail.com",
       "uri": "/campaignmanager/numbersGroup/search/NG26cc39225eb248ddac440f4975bfc32c",
-      "name": "test list csv",
+      "name": "ACME CSV List",
       "description": "new description",
       "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
       "status": "ready",
@@ -8446,7 +8446,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_supported_operations_16"><a class="anchor" href="#_supported_operations_16"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>: Get the content of the list (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it</p>
+<p><strong>HTTP GET</strong>: Get the content of the list (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8458,14 +8458,14 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of list to download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of the list to download.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8480,9 +8480,9 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <h3 id="_example_request_2"><a class="anchor" href="#_example_request_2"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/download/NG8e3a7567cb494c8ebf1366b4396ccec3' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'http://yourdomain.com/campaignmanager/numbersGroup/download/NG8e3a7567cb494c8ebf1366b4396ccec3' \
 
---header 'Authorization: Basic &lt;auth&gt;'</code></pre>
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \</code></pre>
 </div>
 </div>
 </div>
@@ -8500,7 +8500,7 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <div class="sect2">
 <h3 id="_supported_operations_17"><a class="anchor" href="#_supported_operations_17"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>: get a preview (few lines) from the numbers group</p>
+<p><strong>HTTP GET</strong>: Get a preview of the numbers group</p>
 </div>
 </div>
 <div class="sect2">
@@ -8512,14 +8512,14 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sid of list to download</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the list to download.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8533,8 +8533,8 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
@@ -8557,8 +8557,8 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8583,9 +8583,9 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 <h3 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request GET 'http://company.com/campaignmanager/numbersGroup/preview/NG5b4f5d57f4a14e15b119b8286587ed5f?rowsCount=25' \
+<pre class="highlightjs highlight"><code>curl --location --request GET 'http://yourdomain.com/campaignmanager/numbersGroup/preview/NG5b4f5d57f4a14e15b119b8286587ed5f?rowsCount=25' \
 
- --header 'Authorization: &lt;auth&gt;'</code></pre>
+ --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \</code></pre>
 </div>
 </div>
 </div>
@@ -8615,14 +8615,14 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">groupTypeList</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array of group types  ["to_list", "from_list", "opt_in", "opt_out"]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. An array of group types ["to_list", "from_list", "opt_in", "opt_out"]</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8639,8 +8639,8 @@ If the numbers list file is completed the user cannot replace it.  Invalid and f
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8765,8 +8765,8 @@ Make sure you are using the proper <code>enterpriseSid</code> when managing anno
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8810,7 +8810,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect3">
 <h4 id="_response_body_17"><a class="anchor" href="#_response_body_17"></a>Response Body</h4>
 <div class="paragraph">
-<p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully created. HTTP response will be 200 Created (OK).</p>
+<p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully created. The HTTP response will be 200 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Each parameters are as explained below</p>
@@ -8822,8 +8822,8 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8852,8 +8852,8 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Data Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -8919,7 +8919,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect4">
 <h5 id="_response_parameters_3"><a class="anchor" href="#_response_parameters_3"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Create announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
+<p>Create Announcement API will return an error code and a corresponding HTTP error as mentioned in the Common Response Error Code section.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -8931,11 +8931,11 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9002,7 +9002,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://company.com/autoattendant/announcement\
+  https://yourdomain.com/autoattendant/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -9058,7 +9058,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://company.com/autoattendant/announcement\
+  https://yourdomain.com/autoattendant/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -9155,8 +9155,8 @@ If the creation was successful, you will need to call the Upload Announcement AP
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9178,7 +9178,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 <div class="sect3">
 <h4 id="_response_body_18"><a class="anchor" href="#_response_body_18"></a>Response Body</h4>
 <div class="paragraph">
-<p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully uploaded. HTTP response will be 200 Created  (OK).</p>
+<p>The Response Body will carry the Code, corresponding message and data of the Announcement File if it was successfully uploaded. The HTTP response will be 200 Created (OK).</p>
 </div>
 <div class="paragraph">
 <p>The response returned is the JSON body as shown in the example below. Each parameters are as explained below</p>
@@ -9190,7 +9190,7 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
 <th class="tableblock halign-left valign-top">Description</th>
 </tr>
 </thead>
@@ -9220,8 +9220,8 @@ Please visit <a href="https://$DOMAIN/docs/rcml/play-rcml.html#_supported_audio_
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Data Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
@@ -9247,7 +9247,7 @@ Rest of the response parameters are the same as explained in Response Parameter 
 <div class="sect4">
 <h5 id="_response_parameters_4"><a class="anchor" href="#_response_parameters_4"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Create announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
+<p>Create Announcement API will return an error code and a corresponding HTTP error as mentioned in the Common Response Error Code section.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9259,11 +9259,11 @@ Rest of the response parameters are the same as explained in Response Parameter 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9299,9 +9299,9 @@ error occurred while uploading file to s3</p></td>
 <h4 id="_example_12"><a class="anchor" href="#_example_12"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request POST 'https://company.com/autoattendant/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
+<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourdomain.com/autoattendant/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
 --header 'Content-Type: multipart/form-data' \
---header 'Authorization: Basic ***********' \
+--header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --form 'file=@/Users/adityad/Documents/ANd28fddd7f6184a67aacb2dd6c3c00e28.wav'</code></pre>
 </div>
 </div>
@@ -9319,7 +9319,7 @@ error occurred while uploading file to s3</p></td>
         "uri": "/autoattendant/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
         "name": "Sale announcement",
         "description": "Announcement for sale of merchandise",
-        "fileUri": "/autoattendant/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453296.wav",
+        "fileUri": "/campaignmanager/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453296.wav",
         "enterpriseSid": "EN838bcdf35f9d421fad3ab516195b873b"
     },
     "code": 200,
@@ -9375,8 +9375,8 @@ error occurred while uploading file to s3</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9429,8 +9429,8 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9453,7 +9453,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect4">
 <h5 id="_response_parameters_5"><a class="anchor" href="#_response_parameters_5"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Update announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
+<p>Update Announcement API will return an error code and a corresponding HTTP error as mentioned in the Common Response Error Code section.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9465,11 +9465,11 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9527,7 +9527,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X PUT \
-  https://company.com/campaignmanager/announcement/AN77564ea97c8d4ad1a17a3da3775222dd\
+  https://yourdomain.com/campaignmanager/announcement/AN77564ea97c8d4ad1a17a3da3775222dd\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -9598,7 +9598,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X 'GET' \
-'https://company.com/campaignmanager/announcement/getAll' \
+'https://yourdomain.com/campaignmanager/announcement/getAll' \
 -H 'accept: /'</code></pre>
 </div>
 </div>
@@ -9658,14 +9658,14 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">announcementSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SID to uniquely identify an announcement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The SID to uniquely identify an announcement.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9682,8 +9682,8 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9706,7 +9706,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="sect4">
 <h5 id="_response_parameters_6"><a class="anchor" href="#_response_parameters_6"></a>Response Parameters</h5>
 <div class="paragraph">
-<p>Delete announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code</p>
+<p>Delete Announcement API will return an error code and a corresponding HTTP error as mentioned in the Common Response Error Code section.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9718,11 +9718,11 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9756,7 +9756,7 @@ Get Announcement</p></td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X DELETE \
-  https://company.com/campaignmanager/announcement/AN9701e246abfe4b839bcfad37c228ab67 \
+  https://yourdomain.com/campaignmanager/announcement/AN9701e246abfe4b839bcfad37c228ab67 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</code></pre>
@@ -9777,7 +9777,7 @@ Get Announcement</p></td>
         "name": "Ann TTS",
         "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
         "type": "say",
-        "body": "Hello World. This is announcement text to speech test for campaign manager",
+        "body": "Hello World. This is an announcement text to speech test of Campaign Manager",
         "language": "google.ar-XA-Standard-A",
         "voice": "female"
     },
@@ -9805,7 +9805,7 @@ Get Announcement</p></td>
 <div class="sect2">
 <h3 id="_get_list_of_announcement"><a class="anchor" href="#_get_list_of_announcement"></a>Get list of Announcement</h3>
 <div class="paragraph">
-<p>This endpoint will be used to get list of announcements</p>
+<p>This endpoint is used to get a list of announcements.</p>
 </div>
 <div class="sect3">
 <h4 id="_base_resource_uri_16"><a class="anchor" href="#_base_resource_uri_16"></a>Base Resource URI</h4>
@@ -9837,8 +9837,8 @@ Get Announcement</p></td>
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Query Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9879,8 +9879,8 @@ If the search API is called without page and pageSize, by default pageSize will 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Query Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Query Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9919,8 +9919,8 @@ If the search API is called without page and pageSize, by default pageSize will 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9941,7 +9941,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_response_body_21"><a class="anchor" href="#_response_body_21"></a>Response Body</h4>
 <div class="paragraph">
-<p>The response body will carry code, corresponding message and data of Announcement if it was successfully fetched. HTTP response will be 200 OK.</p>
+<p>The response body will carry code, corresponding message and data of Announcement if it was successfully fetched. The HTTP response will be 200 OK.</p>
 </div>
 <div class="paragraph">
 <p>The response returned is JSON body as shown in the example below. Each parameters are as explained below</p>
@@ -9953,8 +9953,8 @@ If the search API is called without page and pageSize, by default pageSize will 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -9970,12 +9970,12 @@ If the search API is called without page and pageSize, by default pageSize will 
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data of search as explained in table below</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data of the search as explained in table below</p></td>
 </tr>
 </tfoot>
 </table>
 <div class="sect4">
-<h5 id="_data_parameters_6"><a class="anchor" href="#_data_parameters_6"></a>Data parameters</h5>
+<h5 id="_data_parameters_6"><a class="anchor" href="#_data_parameters_6"></a>Data Parameters</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -9983,8 +9983,8 @@ If the search API is called without page and pageSize, by default pageSize will 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Data Parameter</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top"><strong>Data Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -10042,7 +10042,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X GET \
-  https://company.com/campaignmanager/announcement/search?sortBy=name:asc&amp;page=0&amp;pageSize=2\
+  https://yourdomain.com/campaignmanager/announcement/search?sortBy=name:asc&amp;page=0&amp;pageSize=2\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json'</code></pre>
@@ -10060,7 +10060,7 @@ If the search API is called without page and pageSize, by default pageSize will 
                 "sid": "AN3f01da2b10d84f7f92f5b7aaced20a94",
                 "dateUpdated": "2021-03-17T03:38:45+0000",
                 "dateCreated": "2021-03-17T03:38:45+0000",
-                "accountEmail": "cm_bc1_testent3@mxorgtest2.com",
+                "accountEmail": "john.doe@acme.com",
                 "uri": "/campaignmanager/announcement/search/AN3f01da2b10d84f7f92f5b7aaced20a94",
                 "name": "Ann Play",
                 "fileUri": "/campaignmanager/internal/announcement/file/AN3f01da2b10d84f7f92f5b7aaced20a94_1615952325000.wav",
@@ -10110,7 +10110,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_get_single_announcement_resource_uri"><a class="anchor" href="#_get_single_announcement_resource_uri"></a>Get Single Announcement  Resource URI</h4>
+<h4 id="_get_single_announcement_resource_uri"><a class="anchor" href="#_get_single_announcement_resource_uri"></a>Get Single Announcement Resource URI</h4>
 <div class="paragraph">
 <p><strong><code>/campaignmanager/announcement/search/{announementSid}</code></strong></p>
 </div>
@@ -10124,7 +10124,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect3">
 <h4 id="_response_parameters_7"><a class="anchor" href="#_response_parameters_7"></a>Response Parameters</h4>
 <div class="paragraph">
-<p>Search Announcement API will return Error Code and corresponding HTTP Error as mentioned in Common Response Error Code.</p>
+<p>Search Announcement API will return an error code and a corresponding HTTP error as mentioned in the Common Response Error Code section. .</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -10136,11 +10136,11 @@ If the search API is called without page and pageSize, by default pageSize will 
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Error Code</th>
-<th class="tableblock halign-left valign-top">HTTP Status</th>
-<th class="tableblock halign-left valign-top">Error Message</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Category</th>
+<th class="tableblock halign-left valign-top"><strong>Error Code</strong></th>
+<th class="tableblock halign-left valign-top"><strong>HTTP Status</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Error Message</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Category</strong></th>
 </tr>
 </thead>
 <tfoot>
@@ -10164,7 +10164,7 @@ Get Announcement</p></td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X GET \
-  https://company.com/autoattendant/announcement/search/AAEb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/announcement/search/AAEb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</code></pre>
@@ -10181,10 +10181,10 @@ Get Announcement</p></td>
         "dateUpdated": "2020-01-27T06:44:13+0000",
         "dateCreated": "2020-01-27T06:44:13+0000",
         "accountEmail": "jane.doe@company.com",
-        "uri": "/autoattendant/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
+        "uri": "/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
         "name": "Welcome announcement",
         "description": "Announcement made during working hours",
-"fileUri": "/autoattendant/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453000.wav",
+"fileUri": "/campaignmanager/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453000.wav",
         "enterpriseSid": "EN838bcdf35f9d421fad3ab516195b873b"
     },
     "code": 200,
