@@ -9706,7 +9706,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://yourdomain.com/autoattendant/announcement\
+  https://yourdomain.com/campaignmanager/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -9762,7 +9762,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X POST \
-  https://yourdomain.com/autoattendant/announcement\
+  https://yourdomain.com/campaignmanager/announcement\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -10003,7 +10003,7 @@ error occurred while uploading file to s3</p></td>
 <h4 id="_example_14"><a class="anchor" href="#_example_14"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourdomain.com/autoattendant/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
+<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourdomain.com/campaignmanager/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --form 'file=@/Users/adityad/Documents/ANd28fddd7f6184a67aacb2dd6c3c00e28.wav'</code></pre>
@@ -10020,7 +10020,7 @@ error occurred while uploading file to s3</p></td>
         "dateUpdated": "2020-01-27T06:44:13+0000",
         "dateCreated": "2020-01-27T06:44:13+0000",
         "accountEmail": "jane.doe@company.com",
-        "uri": "/autoattendant/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
+        "uri": "/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
         "name": "Sale announcement",
         "description": "Announcement for sale of merchandise",
         "fileUri": "/campaignmanager/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453296.wav",
@@ -10303,7 +10303,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X 'GET' \
 'https://yourdomain.com/campaignmanager/announcement/getAll' \
--H 'accept: /'</code></pre>
+-H 'accept: */*'</code></pre>
 </div>
 </div>
 </div>
@@ -10748,8 +10748,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 <pre class="highlightjs highlight"><code>curl -X GET \
   https://yourdomain.com/campaignmanager/announcement/search?sortBy=name:asc&amp;page=0&amp;pageSize=2\
 --user  ' {your_account_SID}:{your_account_token}' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'</code></pre>
+  -H 'accept: */*'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -10868,7 +10867,7 @@ Get Announcement</p></td>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>curl -X GET \
-  https://yourdomain.com/campaignmanager/announcement/search/AAEb6eb071d21124dbab20b095c25f1274f \
+  https://yourdomain.com/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \</code></pre>
