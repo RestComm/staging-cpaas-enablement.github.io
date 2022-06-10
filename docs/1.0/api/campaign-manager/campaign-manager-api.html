@@ -7254,11 +7254,11 @@ If startTime is not passed, Campaign is scheduled immediately</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fromListSid (string)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of a <code>from</code> numbers list (if using country prefix).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of a <code>from</code> numbers group (if using country prefix).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">toListSid (string)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of a <code>to</code> numbers list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of a <code>to</code> numbers group.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">channel</p></td>
@@ -8427,7 +8427,7 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X DELETE \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://yourdomain.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -8465,7 +8465,7 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_numbers_list"><a class="anchor" href="#_numbers_list"></a>Numbers list</h2>
+<h2 id="_numbers_group"><a class="anchor" href="#_numbers_group"></a>Numbers Group</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_base_resource_uri_14"><a class="anchor" href="#_base_resource_uri_14"></a>Base Resource URI</h3>
@@ -8474,15 +8474,15 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_create_numbers_list_resource_uri"><a class="anchor" href="#_create_numbers_list_resource_uri"></a>Create Numbers List Resource URI</h3>
+<h3 id="_create_numbers_group_resource_uri"><a class="anchor" href="#_create_numbers_group_resource_uri"></a>Create Numbers Group Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_14"><a class="anchor" href="#_supported_operations_14"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP POST</strong>: Create Numbers List</p>
+<p><strong>HTTP POST</strong>: Create Numbers Group</p>
 </div>
 <div class="sect3">
 <h4 id="_request_parameters_10"><a class="anchor" href="#_request_parameters_10"></a>Request Parameters</h4>
@@ -8556,7 +8556,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect3">
 <h4 id="_response_example"><a class="anchor" href="#_response_example"></a>Response Example</h4>
 <div class="paragraph">
-<p>If the NumbersList item was successfully created, the following response is returned.</p>
+<p>If the NumbersGroup item was successfully created, the following response is returned.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -8569,8 +8569,8 @@ Delete Campaign, List Single Campaign</p></td>
      "accountSid": "ACa16b5fe430c826ad859fd6d85349ab73",
      "accountEmail": "mail@gmail.com",
      "uri": "/campaignmanager/numbersGroup/search/NG8eeb901bf85b41e0b20d8edce0f644be",
-     "name": "jane1",
-     "description": "cohen3",
+     "name": "Jane",
+     "description": "Doe",
      "enterpriseSid": "ENaadc0b91cbfa4e94a058126a983cc5f7",
      "status": "ready",
      "groupType": "to_list",
@@ -8671,12 +8671,12 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_delete_existing_numbers_list"><a class="anchor" href="#_delete_existing_numbers_list"></a>Delete Existing Numbers List</h2>
+<h2 id="_delete_existing_numbers_group"><a class="anchor" href="#_delete_existing_numbers_group"></a>Delete Existing Numbers Group</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri"><a class="anchor" href="#_resource_uri"></a>Resource URI</h3>
 <div class="paragraph">
-<p><code>/campaignmanager/numbersLists/{listSid}</code></p>
+<p><code>/campaignmanager/numbersGroup/{listSid}</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -8734,17 +8734,17 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_validations"><a class="anchor" href="#_validations"></a>Validations</h3>
 <div class="paragraph">
-<p>In case the list is being used by future campaign the call will fail</p>
+<p>In case the group is being used by future campaign the call will fail.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_list_existing_numbers_lists"><a class="anchor" href="#_list_existing_numbers_lists"></a>List Existing Numbers Lists</h3>
+<h3 id="_list_existing_numbers_groups"><a class="anchor" href="#_list_existing_numbers_groups"></a>List Existing Numbers Groups</h3>
 
 </div>
 <div class="sect2">
 <h3 id="_resource_uri_2"><a class="anchor" href="#_resource_uri_2"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup</code></strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -8759,7 +8759,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_supported_operations_16"><a class="anchor" href="#_supported_operations_16"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>: Get lists per provided criteria.</p>
+<p><strong>HTTP GET</strong>: Get groups per provided criteria.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8786,7 +8786,7 @@ Delete Campaign, List Single Campaign</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">One of the values from Status Enum (validating,invalid,uploading,ready,failed)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One of the values from Status Enum (validating, invalid, uploading, ready, failed)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">fileType</p></td>
@@ -8826,7 +8826,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">page</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of number lists records to return, starting from 0.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Which page of number groups records to return, starting from 0.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8834,7 +8834,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_response_body_14"><a class="anchor" href="#_response_body_14"></a>Response Body</h3>
 <div class="paragraph">
-<p>The Response Body will carry Code, corresponding message</p>
+<p>The Response Body will carry a code and a corresponding message.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -8860,7 +8860,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">List of "NumbersList" items as described below.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List of "NumbersGroup" items as described below.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8921,18 +8921,18 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_list_a_single_numbers_list"><a class="anchor" href="#_list_a_single_numbers_list"></a>List a Single Numbers List</h2>
+<h2 id="_list_a_single_numbers_group"><a class="anchor" href="#_list_a_single_numbers_group"></a>List a Single Numbers Group</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri_3"><a class="anchor" href="#_resource_uri_3"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists/{listSid}</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup//search/{numbersGroupSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_17"><a class="anchor" href="#_supported_operations_17"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>: Get a list per provided criteria.</p>
+<p><strong>HTTP GET</strong>: Get a singe group per provided criteria.</p>
 </div>
 </div>
 <div class="sect2">
@@ -8950,8 +8950,8 @@ Delete Campaign, List Single Campaign</p></td>
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the list to fetch.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">numbersGroupSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the group to fetch.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -8959,7 +8959,7 @@ Delete Campaign, List Single Campaign</p></td>
 <div class="sect2">
 <h3 id="_response_body_15"><a class="anchor" href="#_response_body_15"></a>Response Body</h3>
 <div class="paragraph">
-<p>The Response Body will carry Code, corresponding message.</p>
+<p>The Response Body will carry a code and a corresponding message.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -8985,7 +8985,7 @@ Delete Campaign, List Single Campaign</p></td>
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers group item.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9019,18 +9019,18 @@ Delete Campaign, List Single Campaign</p></td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_update_numbers_list"><a class="anchor" href="#_update_numbers_list"></a>Update Numbers List</h2>
+<h2 id="_update_numbers_group"><a class="anchor" href="#_update_numbers_group"></a>Update Numbers Group</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri_4"><a class="anchor" href="#_resource_uri_4"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists/{listSid}</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup/{numbersGroupSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_18"><a class="anchor" href="#_supported_operations_18"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP PUT</strong>: Update the description of a list</p>
+<p><strong>HTTP PUT</strong>: Update the description of a group</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -9039,7 +9039,7 @@ Delete Campaign, List Single Campaign</p></td>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the numbers list file is completed the user cannot replace it.Invalid and failed files can be replaced.
+If the numbers group file is completed the user cannot replace it. Invalid and failed files can be replaced.
 </td>
 </tr>
 </table>
@@ -9079,7 +9079,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <div class="sect2">
 <h3 id="_response_body_16"><a class="anchor" href="#_response_body_16"></a>Response Body</h3>
 <div class="paragraph">
-<p>The Response Body will carry Code, corresponding message</p>
+<p>The Response Body will carry a code, and a corresponding message.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9105,7 +9105,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Single numbers list item.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A single numbers group item.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9139,18 +9139,18 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 </div>
 </div>
 <div class="sect1">
-<h2 id="_download_list_content"><a class="anchor" href="#_download_list_content"></a>Download List Content</h2>
+<h2 id="_download_group_content"><a class="anchor" href="#_download_group_content"></a>Download Group Content</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri_5"><a class="anchor" href="#_resource_uri_5"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists/download/{listSid}</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup/download/{numbersGroupSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_19"><a class="anchor" href="#_supported_operations_19"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP GET</strong>: Get the content of the list (the blob) that was saved.This can be used if the user wants to edit the file and re-upload it.</p>
+<p><strong>HTTP GET</strong>: Get the content of the group (the blob) that was saved. This can be used if the user wants to edit the file and re-upload it.</p>
 </div>
 </div>
 <div class="sect2">
@@ -9168,8 +9168,8 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of the list to download.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">numbersGroupSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The sid of the group to download.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9193,12 +9193,12 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 </div>
 </div>
 <div class="sect1">
-<h2 id="_preview_list_content"><a class="anchor" href="#_preview_list_content"></a>Preview List Content</h2>
+<h2 id="_preview_group_content"><a class="anchor" href="#_preview_group_content"></a>Preview Group Content</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri_6"><a class="anchor" href="#_resource_uri_6"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists/preview/{listSid}</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup/preview/{numbersGroupSid}</code></strong></p>
 </div>
 </div>
 <div class="sect2">
@@ -9222,8 +9222,8 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 </thead>
 <tfoot>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">listSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the list to download.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">numbersGroupSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the group to download.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9244,7 +9244,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rowsCount</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">number of lines to get from the numbers list file. default is 10, maximum is 50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number of lines to get from the numbers group file. Default is 10, maximum is 50.</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9252,7 +9252,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <div class="sect2">
 <h3 id="_response_body_18"><a class="anchor" href="#_response_body_18"></a>Response Body</h3>
 <div class="paragraph">
-<p>The Response Body will carry Code, corresponding message</p>
+<p>The Response Body will carry code, corresponding message.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9296,18 +9296,18 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_numbers_lists_names"><a class="anchor" href="#_get_numbers_lists_names"></a>Get Numbers Lists Names</h2>
+<h2 id="_get_numbers_group_names"><a class="anchor" href="#_get_numbers_group_names"></a>Get Numbers Group Names</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_resource_uri_7"><a class="anchor" href="#_resource_uri_7"></a>Resource URI</h3>
 <div class="paragraph">
-<p><strong><code>/campaignmanager/numbersLists/listGroups</code></strong></p>
+<p><strong><code>/campaignmanager/numbersGroup/listGroups</code></strong></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_supported_operations_21"><a class="anchor" href="#_supported_operations_21"></a>Supported Operations</h3>
 <div class="paragraph">
-<p><strong>HTTP POST</strong>: Get a list of groups.Both regular and DND lists.</p>
+<p><strong>HTTP POST</strong>: Get a list of groups. Both regular and DND lists.</p>
 </div>
 </div>
 <div class="sect2">
@@ -9334,7 +9334,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <div class="sect2">
 <h3 id="_response_body_19"><a class="anchor" href="#_response_body_19"></a>Response Body</h3>
 <div class="paragraph">
-<p>The Response Body will carry Code, corresponding message</p>
+<p>The Response Body will carry code, corresponding message.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -9360,7 +9360,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <tfoot>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Map between list type and the names of lists for this type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Map between list type, and the names of lists for this type</p></td>
 </tr>
 </tfoot>
 </table>
@@ -9423,7 +9423,7 @@ If the numbers list file is completed the user cannot replace it.Invalid and fai
 <h2 id="_announcement"><a class="anchor" href="#_announcement"></a>Announcement</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Announcements are used in Voice Campaigns.Communications Providers can create simple play announcements that play an audio file uploaded, or text-to-speech announcements on a behalf of their Business Customers.</p>
+<p>Announcements are used in Voice Campaigns. Communications Providers can create simple play announcements that play an audio file uploaded, or text-to-speech announcements on a behalf of their Business Customers.</p>
 </div>
 <div class="sect2">
 <h3 id="_create_announcement"><a class="anchor" href="#_create_announcement"></a>Create Announcement</h3>

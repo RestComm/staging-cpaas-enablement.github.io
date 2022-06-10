@@ -3352,10 +3352,6 @@
 If startTime is not passed, Campaign is scheduled immediately</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fromPrefix</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The prefix for country code for source/origin address, Campaign Manager application will automatically generate random source address with specific prefix. <code>fromPrefix</code> is mandatory if <code>fromFile</code> parameter is not passed.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">optInListSid (string)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional. The sid of an optIn list.</p></td>
 </tr>
@@ -4618,7 +4614,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X DELETE \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://yourdomain.com/campaignmanager/campaigns/search/CPb6eb071d21124dbab20b095c25f1274f \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
