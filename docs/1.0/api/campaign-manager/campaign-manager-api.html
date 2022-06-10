@@ -9786,7 +9786,7 @@ Language for Text to speech as explained in &lt;say&gt; verb of Core Engine</p><
         "accountEmail": "jane.doe@company.com",
         "uri": "/campaignmanager/announcement/search/AN14075c11fbb84c049702e0e4560498fb",
         "name": "Marketing Announcement",
-        "fileUri": "/campaignmanager/internal/announcement/file/AN14075c11fbb84c049702e0e4560498fb_1616134108629.wav",
+        "fileUri": "/campaignmanager/internal/file/announcement/AN14075c11fbb84c049702e0e4560498fb_1616134108629.wav",
         "enterpriseSid": "EN38347f3735b04741a0c9be689901e6b4",
         "type": "play"
     },
@@ -10003,7 +10003,7 @@ error occurred while uploading file to s3</p></td>
 <h4 id="_example_14"><a class="anchor" href="#_example_14"></a>Example</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourdomain.com/campaignmanager/internal/announcement/file/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
+<pre class="highlightjs highlight"><code>curl --location --request POST 'https://yourdomain.com/campaignmanager/internal/file/announcement/ANd28fddd7f6184a67aacb2dd6c3c00e28' \
 --header 'Content-Type: multipart/form-data' \
 --header 'Authorization: Basic YourAPIKeyValue:YourAPIKeySecret' \
 --form 'file=@/Users/adityad/Documents/ANd28fddd7f6184a67aacb2dd6c3c00e28.wav'</code></pre>
@@ -10023,7 +10023,7 @@ error occurred while uploading file to s3</p></td>
         "uri": "/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
         "name": "Sale announcement",
         "description": "Announcement for sale of merchandise",
-        "fileUri": "/campaignmanager/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453296.wav",
+        "fileUri": "/campaignmanager/file/announcement/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453296.wav",
         "enterpriseSid": "EN838bcdf35f9d421fad3ab516195b873b"
     },
     "code": 200,
@@ -10766,7 +10766,7 @@ If the search API is called without page and pageSize, by default pageSize will 
                 "accountEmail": "john.doe@acme.com",
                 "uri": "/campaignmanager/announcement/search/AN3f01da2b10d84f7f92f5b7aaced20a94",
                 "name": "Sales Announcement",
-                "fileUri": "/campaignmanager/internal/announcement/file/AN3f01da2b10d84f7f92f5b7aaced20a94_1615952325000.wav",
+                "fileUri": "/campaignmanager/internal/file/announcement/AN3f01da2b10d84f7f92f5b7aaced20a94_1615952325000.wav",
                 "enterpriseSid": "ENd3766c7cb2234439b1dfb9f14ca1d80a",
                 "type": "play"
             },
@@ -10823,6 +10823,27 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="paragraph">
 <p><strong>HTTP GET</strong>: Get an Announcement</p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="_request_parameters_18"><a class="anchor" href="#_request_parameters_18"></a>Request Parameters</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Parameter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">announcementSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory. The Sid of the announcement to be retrieved.</p></td>
+</tr>
+</tfoot>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_response_parameters_7"><a class="anchor" href="#_response_parameters_7"></a>Response Parameters</h4>
@@ -10887,7 +10908,7 @@ Get Announcement</p></td>
         "uri": "/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e",
         "name": "Welcome announcement",
         "description": "Announcement made during working hours",
-"fileUri": "/campaignmanager/announcement/file/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453000.wav",
+"fileUri": "/campaignmanager/file/announcement/AN42b3d3e952ff47ecba9d487095a2bc4e_1580107453000.wav",
         "enterpriseSid": "EN838bcdf35f9d421fad3ab516195b873b"
     },
     "code": 200,
