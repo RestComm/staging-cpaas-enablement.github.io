@@ -5280,6 +5280,7 @@
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_console_overview">Console Overview</a></li>
+<li><a href="#_volume">Volume</a></li>
 <li><a href="#_enterprises">Enterprises</a>
 <ul class="sectlevel2">
 <li><a href="#_adding_an_enterprise">Adding an Enterprise</a></li>
@@ -5287,6 +5288,7 @@
 </ul>
 </li>
 <li><a href="#_deleting_an_enterprise">Deleting an Enterprise</a></li>
+<li><a href="#_manage_volume">Manage Volume</a></li>
 <li><a href="#_campaigns">Campaigns</a>
 <ul class="sectlevel2">
 <li><a href="#_campaign_details">Campaign Details</a></li>
@@ -5297,7 +5299,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>CPaaS Campaign Manager Console allows Communications Providers  to create, manage, or delete enterprises (business customers) through their own Restcomm account.</p>
+<p>CPaaS Campaign Manager Console allows Communications Providers to create, manage, or delete enterprises (business customers) through their own Restcomm account.</p>
 </div>
 <div class="paragraph">
 <p>This document contains information for Communications Providers regarding the Campaign Manager Console.</p>
@@ -5311,7 +5313,23 @@
 <p>You can access the Campaign Manager Console by navigating to <code>https://yourdomain.com/campaignmanagerconsole/</code>.</p>
 </div>
 <div class="paragraph">
-<p>The user’s drop-down at the top right corner of the console provides an option to view your account details or sign out. Next to it is a link to visit Documentation.</p>
+<p>The user’s drop-down at the top right corner of the console contains the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Account: Click to view your account details</p>
+</li>
+<li>
+<p>Volume: Click to view volume transactions per Enterprises</p>
+</li>
+<li>
+<p>Sign Out: Click to sign out of the application.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Next to it is a link to visit Documentation.</p>
 </div>
 <div class="imageblock text-center">
 <div class="content">
@@ -5329,6 +5347,73 @@
 <div class="paragraph">
 <p><strong>Enterprise</strong>: Here you can create, manage, and delete enterprises.<br>
 <strong>Campaigns</strong>: Here you can view campaigns created under all the enterprises that were created by this account.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_volume"><a class="anchor" href="#_volume"></a>Volume</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This feature allows you to assign and manage volumes to Enterprises.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assign volume: You can assign volume when you create an enterprise. Enterprises require volume to launch campaigns. The volume is consumed based on the number of campaign recipients and the campaign message length. The unused volumes from a campaign are restored to the Enterprises.</p>
+</li>
+<li>
+<p>Manage volume: You can add or deduct volumes from enterprises thereby having complete control over Enterprises. This also helps in fraud prevention. For example, if an enterprise is compromised, they won’t be able to exceed their Volume quota</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The Volume button displays the volume transactions of all enterprises.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/volume-transactions.png" alt="Volume Transactions">
+</div>
+</div>
+<div class="paragraph">
+<p>Volume transactions can be filtered based on the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start Date: Displays all Volume transactions that took place on or after this date.</p>
+</li>
+<li>
+<p>End Date: Displays all Volume transactions that took place on or before this date.</p>
+</li>
+<li>
+<p>Transaction Sid: Displays the Volume transaction that is associated with the entered transaction Sid value.</p>
+</li>
+<li>
+<p>Type: Displays all Volume transactions based on the type of transaction. The following options are available:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All Types: Displays all volume transactions</p>
+</li>
+<li>
+<p>Reduction: Displays transactions involving volume reductions.</p>
+</li>
+<li>
+<p>Addition: Displays transactions involving volume additions</p>
+</li>
+<li>
+<p>Campaign: Displays transactions of volumes consumed by campaigns</p>
+</li>
+<li>
+<p>Restore: Displays transactions involving volume restorals. This could be because of unused volumes or a canceled campaign.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enterprise Name: Displays Volume transactions of enterprises that match the name entered</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -5439,6 +5524,9 @@ Closed</p>
 </div>
 </li>
 <li>
+<p>Add the amount of volume for the Enterprise.</p>
+</li>
+<li>
 <p>Click Save. The newly created enterprise will be displayed in the Enterprise page.</p>
 </li>
 </ul>
@@ -5527,6 +5615,44 @@ When an enterprise is deleted, the Admin user of that enterprise are CLOSED in <
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_manage_volume"><a class="anchor" href="#_manage_volume"></a>Manage Volume</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/manage-volume.png" alt="manage volume">
+</div>
+</div>
+<div class="paragraph">
+<p>You can manage Volume of Active Enterprises. To add or reduce volume for an enterprise, do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on Manage Volume icon against the enterprise. Manage Volume window appears.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/campaign-manager/manage-volume-screen.png" alt="Manage Volume">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the value Add or Reduce from the Modify Volume drop-down list.</p>
+</li>
+<li>
+<p>Enter a description for the addition or reduction of volume.</p>
+</li>
+<li>
+<p>Click Confirm. You can click Cancel to exit this window.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
