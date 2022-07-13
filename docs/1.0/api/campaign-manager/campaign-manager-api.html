@@ -3872,7 +3872,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#_upload_announcement_resource_uri">Upload Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="#_upload_announcement_file">Upload Announcement</a>
 
             </span>
                 </div>
@@ -5357,6 +5357,112 @@
 </div>
 <article class="doc fix-anchor-links-position">
   <h1>Campaign Manager</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_business_customers">Business Customers</a>
+<ul class="sectlevel2">
+<li><a href="#_business_customer_status">Business Customer Status</a></li>
+<li><a href="#_create_business_customer">Create Business Customer</a></li>
+</ul>
+</li>
+<li><a href="#_users">Users</a>
+<ul class="sectlevel2">
+<li><a href="#_user_role_and_status">User Role and Status</a></li>
+<li><a href="#_get_list_of_users">Get List of Users</a></li>
+<li><a href="#_get_single_user">Get Single User</a></li>
+<li><a href="#_get_users_roles">Get a List of Users Roles</a></li>
+<li><a href="#_campaign">Campaign</a></li>
+<li><a href="#_create_campaign">Create Campaign</a></li>
+<li><a href="#_update_campaign">Update Campaign</a></li>
+<li><a href="#_delete_campaign">Delete Campaign</a></li>
+</ul>
+</li>
+<li><a href="#_numbers_group">Numbers Group</a>
+<ul class="sectlevel2">
+<li><a href="#_base_resource_uri_18">Base Resource URI</a></li>
+<li><a href="#_create_numbers_group_resource_uri">Create Numbers Group Resource URI</a></li>
+<li><a href="#_supported_operations_18">Supported Operations</a></li>
+<li><a href="#_numbers_validation">Numbers Validation</a></li>
+</ul>
+</li>
+<li><a href="#_delete_existing_numbers_group">Delete Existing Numbers Group</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri">Resource URI</a></li>
+<li><a href="#_supported_operations_19">Supported Operations</a></li>
+<li><a href="#_response_body_13">Response Body</a></li>
+<li><a href="#_response_example_2">Response Example</a></li>
+<li><a href="#_validations">Validations</a></li>
+<li><a href="#_list_existing_numbers_groups">List Existing Numbers Groups</a></li>
+<li><a href="#_resource_uri_2">Resource URI</a></li>
+<li><a href="#_example_request_6">Example Request</a></li>
+<li><a href="#_supported_operations_20">Supported Operations</a></li>
+<li><a href="#_request_parameters_11">Request Parameters</a></li>
+<li><a href="#_response_body_14">Response Body</a></li>
+<li><a href="#_response_example_3">Response Example</a></li>
+</ul>
+</li>
+<li><a href="#_list_a_single_numbers_group">List a Single Numbers Group</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri_3">Resource URI</a></li>
+<li><a href="#_supported_operations_21">Supported Operations</a></li>
+<li><a href="#_path_parameters">Path Parameters</a></li>
+<li><a href="#_response_body_15">Response Body</a></li>
+<li><a href="#_response_example_4">Response Example</a></li>
+</ul>
+</li>
+<li><a href="#_update_numbers_group">Update Numbers Group</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri_4">Resource URI</a></li>
+<li><a href="#_supported_operations_22">Supported Operations</a></li>
+<li><a href="#_path_parameters_2">Path Parameters</a></li>
+<li><a href="#_request_example">Request Example</a></li>
+<li><a href="#_response_body_16">Response Body</a></li>
+<li><a href="#_response_example_5">Response Example</a></li>
+</ul>
+</li>
+<li><a href="#_download_group_content">Download Group Content</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri_5">Resource URI</a></li>
+<li><a href="#_supported_operations_23">Supported Operations</a></li>
+<li><a href="#_path_parameters_3">Path Parameters</a></li>
+<li><a href="#_response_body_17">Response Body</a></li>
+<li><a href="#_example_request_7">Example Request</a></li>
+</ul>
+</li>
+<li><a href="#_preview_group_content">Preview Group Content</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri_6">Resource URI</a></li>
+<li><a href="#_supported_operations_24">Supported Operations</a></li>
+<li><a href="#_path_parameters_4">Path Parameters</a></li>
+<li><a href="#_request_parameters_12">Request Parameters</a></li>
+<li><a href="#_response_body_18">Response Body</a></li>
+<li><a href="#_example_request_8">Example Request</a></li>
+</ul>
+</li>
+<li><a href="#_get_numbers_group_names">Get Numbers Group Names</a>
+<ul class="sectlevel2">
+<li><a href="#_resource_uri_7">Resource URI</a></li>
+<li><a href="#_supported_operations_25">Supported Operations</a></li>
+<li><a href="#_request_parameters_13">Request Parameters</a></li>
+<li><a href="#_response_body_19">Response Body</a></li>
+<li><a href="#_response_body_example">Response Body Example</a></li>
+</ul>
+</li>
+<li><a href="#_announcement">Announcement</a>
+<ul class="sectlevel2">
+<li><a href="#_create_announcement">Create Announcement</a></li>
+<li><a href="#_upload_announcement_file">Upload Announcement File</a></li>
+<li><a href="#_update_announcement">Update Announcement</a></li>
+<li><a href="#_get_a_list_of_available_announcements">Get a List of Available Announcements</a></li>
+<li><a href="#_delete_announcement">Delete Announcement</a></li>
+<li><a href="#_get_list_of_announcement">Get List of Announcement</a></li>
+<li><a href="#_get_single_announcement">Get Single Announcement</a></li>
+</ul>
+</li>
+</ul>
+</div>
 <div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
@@ -9944,7 +10050,7 @@ If the numbers group file is completed the user cannot replace it. Invalid and f
 <h2 id="_announcement"><a class="anchor" href="#_announcement"></a>Announcement</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Announcements are used in Voice Campaigns. Communications Providers can create simple play announcements that play an audio file uploaded, or text-to-speech announcements on a behalf of their Business Customers.</p>
+<p>Announcements are used in Voice Campaigns.Communications Providers can create simple play announcements that play an audio file uploaded, or text-to-speech announcements on a behalf of their Business Customers.</p>
 </div>
 <div class="sect2">
 <h3 id="_create_announcement"><a class="anchor" href="#_create_announcement"></a>Create Announcement</h3>
@@ -10332,7 +10438,7 @@ If the creation was successful, you will need to call the Upload Announcement AP
 <div class="sect4">
 <h5 id="_create_announcement_error"><a class="anchor" href="#_create_announcement_error"></a>Create Announcement Error</h5>
 <div class="paragraph">
-<p>If the creation of the announcement fails, below is the response returned. Exact error code and message will depend on error occurred</p>
+<p>If the creation of the announcement fails, below is the response returned.Exact error code and message will depend on error occurred</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -10349,7 +10455,7 @@ If the creation was successful, you will need to call the Upload Announcement AP
 </div>
 </div>
 <div class="sect2">
-<h3 id="_upload_announcement_file"><a class="anchor" href="#_upload_announcement_file"></a>Upload announcement file:</h3>
+<h3 id="_upload_announcement_file"><a class="anchor" href="#_upload_announcement_file"></a>Upload Announcement File</h3>
 <div class="paragraph">
 <p>This API will upload an audio file for the announcement.</p>
 </div>
@@ -11028,7 +11134,7 @@ Get Announcement</p></td>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_get_list_of_announcement"><a class="anchor" href="#_get_list_of_announcement"></a>Get list of Announcement</h3>
+<h3 id="_get_list_of_announcement"><a class="anchor" href="#_get_list_of_announcement"></a>Get List of Announcement</h3>
 <div class="paragraph">
 <p>This endpoint is used to get a list of announcements.</p>
 </div>
