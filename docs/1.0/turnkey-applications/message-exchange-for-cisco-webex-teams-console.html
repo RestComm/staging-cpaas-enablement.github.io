@@ -5365,15 +5365,16 @@
 <li><a href="#_mappings">Mappings</a>
 <ul class="sectlevel2">
 <li><a href="#_adding_an_enterprise">Adding an Enterprise</a></li>
-<li><a href="#_enterprise_mapping_details">Enterprise mapping Details</a></li>
-<li><a href="#_add_a_mapping">Add a mapping</a></li>
+<li><a href="#_enterprise_mapping_details">Enterprise Mapping Details</a></li>
+<li><a href="#_add_a_mapping">Add a Mapping</a></li>
 </ul>
 </li>
+<li><a href="#_provisioning_bot_and_guest_issuer_at_the_communications_provider_level">Provisioning Bot and Guest Issuer at the Communications Provider Level</a></li>
 <li><a href="#_search">Search</a>
 <ul class="sectlevel2">
-<li><a href="#_enterprise_search">Enterprise search</a></li>
-<li><a href="#_mappings_search">Mappings search</a></li>
-<li><a href="#_messages_search">Messages search</a></li>
+<li><a href="#_enterprise_search">Enterprise Search</a></li>
+<li><a href="#_mappings_search">Mappings Search</a></li>
+<li><a href="#_messages_search">Messages Search</a></li>
 </ul>
 </li>
 <li><a href="#_usage_records">Usage Records</a>
@@ -5395,10 +5396,10 @@
 <p>For more details, have a look at <a href="message-exchange-for-cisco-webex-teams-overview.html"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Cisco Webex Teams General Documentation</a></p>
 </div>
 <div class="paragraph">
-<p>This document focuses on the usage of the Resctomm Cisco Webex Teams Console&#8217;s features.</p>
+<p>This document focuses on the usage of the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Cisco Webex Teams Console&#8217;s features.</p>
 </div>
 <div class="paragraph">
-<p>The Webex Teams Console can be accessed from https://&lt;your_domain&gt;/webexconsole/</p>
+<p>The Webex Teams Console can be accessed from <code>https://&lt;your_domain&gt;/webexconsole/</code>.</p>
 </div>
 </div>
 </div>
@@ -5411,16 +5412,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>a number of created enterprises and mappings</p>
+<p>A number of created enterprises and mappings</p>
 </li>
 <li>
-<p>sent and received messages in the last 24 hours within the organisation</p>
+<p>Sent and received messages in the last 24 hours within the organisation</p>
 </li>
 <li>
 <p>30 days enterprises usage report</p>
 </li>
 <li>
-<p>mappings and messages of an organisation</p>
+<p>Mappings and messages of an organisation</p>
 </li>
 </ul>
 </div>
@@ -5484,16 +5485,47 @@ Enterprise name must be unique.
 <p>Once the Enterprise is added, Users can click on Mappings again to list all the Enterprises.Click on the newly added Enterprise to manage Mappings as explained in section below.</p>
 </div>
 <div class="paragraph">
-<p>The <strong>Enterprise Details</strong> button provides details of the Enterprise and also an option to add a Bot Token.</p>
+<p>The <strong>Enterprise Details</strong> button provides details of the Enterprise and also an option to add a Bot and a Guest Issuer.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/cisco-webex-console/adding_a_bot_token.png" alt="Cisco Webex Add a Bot Token">
+<img src="../_images/cisco-webex-console/adding_a_bot_token_and_guest_issuer_button2.png" alt="Cisco Webex Add a Bot Token">
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on <strong>Add Bot Token</strong> and enter the following details:  <br>
+Bot name: Enter a name of the bot                        <br>
+Bot Access Token: This is a mandatory field.              <br>
+Guest Issuer ID: This is an optional field.               <br>
+Guest Issuer Shared Secret: This is an optional field.</p>
+</li>
+<li>
+<p>Click <strong>Done</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/cisco-webex-console/adding_a_bot_token_and_guest_issuer2.png" alt="Cisco Webex Add a Bot Token">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For more information on how to obtain the above field details, refer to the <a href="message-exchange-for-cisco-webex-teams-overview.html"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Cisco Webex Teams General Documentation</a>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enterprise_mapping_details"><a class="anchor" href="#_enterprise_mapping_details"></a>Enterprise mapping Details</h3>
+<h3 id="_enterprise_mapping_details"><a class="anchor" href="#_enterprise_mapping_details"></a>Enterprise Mapping Details</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5517,7 +5549,7 @@ Enterprise name must be unique.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_a_mapping"><a class="anchor" href="#_add_a_mapping"></a>Add a mapping</h3>
+<h3 id="_add_a_mapping"><a class="anchor" href="#_add_a_mapping"></a>Add a Mapping</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -5562,17 +5594,94 @@ Enterprise name must be unique.
 </div>
 </div>
 <div class="sect1">
+<h2 id="_provisioning_bot_and_guest_issuer_at_the_communications_provider_level"><a class="anchor" href="#_provisioning_bot_and_guest_issuer_at_the_communications_provider_level"></a>Provisioning Bot and Guest Issuer at the Communications Provider Level</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Communications Providers can provision a Bot and a Guest Issuer as follows.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <span class="menuseq"><b class="menu">User</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Configuration</b></span> on the top-right corner of the Console as shown on the screenshot below.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/cisco-webex-console/configuration_option2.png" alt="Cnfiguration">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Once you click on <strong>Configuration</strong>, the Webex Bot details page appears.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/cisco-webex-console/add_bot_at_csp_level2.png" alt="Add Bot Token at CSP">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <strong>Add Bot Token</strong> button.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/cisco-webex-console/add_bot_at_csp_level_form2.png" alt="Add Bot Token at CSP level Form">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Provide the following details:  <br>
+Bot name: Enter a name for the bot <br>
+Bot Access Token: This is a mandatory field. <br>
+Guest Issuer ID: This is an optional field.  <br>
+Guest Issuer Shared Secret: This is an optional field.</p>
+</li>
+<li>
+<p>Click <strong>Done</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For more information on how to obtain the above field details, refer to the <a href="message-exchange-for-cisco-webex-teams-overview.html"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Cisco Webex Teams General Documentation</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Done</strong>. The details you provided will be provisioned globally. You can view them by clicking on the eye icon.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_search"><a class="anchor" href="#_search"></a>Search</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_enterprise_search"><a class="anchor" href="#_enterprise_search"></a>Enterprise search</h3>
+<h3 id="_enterprise_search"><a class="anchor" href="#_enterprise_search"></a>Enterprise Search</h3>
 <div class="paragraph">
 <p>The user can perform a search on the enterprises of the organization. Below are the supported filters for enterprise search:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Account Scope:</p>
+<p><strong>Account Scope</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -5588,13 +5697,13 @@ Enterprise name must be unique.
 </div>
 </li>
 <li>
-<p>Start Date: Shows the list of enterprises that were created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the list of enterprises that were created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the list of enterprises that were created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the list of enterprises that were created on or before this date.</p>
 </li>
 <li>
-<p>Name: Shows the list of enterprises whose name are partially or fully match with the given String:</p>
+<p><strong>Name</strong>: Shows the list of enterprises whose name are partially or fully match with the given String:</p>
 </li>
 </ul>
 </div>
@@ -5605,14 +5714,14 @@ Enterprise name must be unique.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mappings_search"><a class="anchor" href="#_mappings_search"></a>Mappings search</h3>
+<h3 id="_mappings_search"><a class="anchor" href="#_mappings_search"></a>Mappings Search</h3>
 <div class="paragraph">
 <p>The user can perform a search on the enterprises of the organization. Below are the supported filters for enterprise search:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Account Scope:</p>
+<p><strong>Account Scope</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -5628,22 +5737,22 @@ Enterprise name must be unique.
 </div>
 </li>
 <li>
-<p>Start Date: Shows the list of mappings that were created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the list of mappings that were created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the list of mappings that were created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the list of mappings that were created on or before this date.</p>
 </li>
 <li>
-<p>Enterprise: Shows the list of mappings that belong to this enterprise.</p>
+<p><strong>Enterprise</strong>: Shows the list of mappings that belong to this enterprise.</p>
 </li>
 <li>
-<p>Name: Shows the list of mappings whose name partially or fully matches the entered string.</p>
+<p><strong>Name</strong>: Shows the list of mappings whose name partially or fully matches the entered string.</p>
 </li>
 <li>
-<p>Number: Shows the list of mappings whose external address partially or fully matches the entered string.</p>
+<p><strong>Number</strong>: Shows the list of mappings whose external address partially or fully matches the entered string.</p>
 </li>
 <li>
-<p>WebexId: Shows the list of mappings whose Webex teams Id  partially or fully match the entered string.</p>
+<p><strong>WebexId</strong>: Shows the list of mappings whose Webex teams Id  partially or fully match the entered string.</p>
 </li>
 </ul>
 </div>
@@ -5654,41 +5763,41 @@ Enterprise name must be unique.
 </div>
 </div>
 <div class="sect2">
-<h3 id="_messages_search"><a class="anchor" href="#_messages_search"></a>Messages search</h3>
+<h3 id="_messages_search"><a class="anchor" href="#_messages_search"></a>Messages Search</h3>
 <div class="paragraph">
 <p>The user can search the messages of the organization by applying below filters.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Start Date: Shows the list of messages created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the list of messages created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the list of messages created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the list of messages created on or before this date.</p>
 </li>
 <li>
-<p>Enterprise:Shows the list of messages that belong to this enterprise.</p>
+<p><strong>Enterprise</strong>: Shows the list of messages that belong to this enterprise.</p>
 </li>
 <li>
-<p>To: Shows the list of messages that are sent to this number or Webex Teams Id</p>
+<p><strong>To</strong>: Shows the list of messages that are sent to this number or Webex Teams Id</p>
 </li>
 <li>
-<p>From: Shows the list of messages that are sent from this number or Webex Teams Id</p>
+<p><strong>From</strong>: Shows the list of messages that are sent from this number or Webex Teams Id</p>
 </li>
 <li>
-<p>Direction: Shows the list of messages of particular direction (INBOUND, OUTBOUND). Inbound means messages coming from mobile to Webex Teams. Outbound means messages sent from Webex Teams to mobile.</p>
+<p><strong>Direction</strong>: Shows the list of messages of particular direction (INBOUND, OUTBOUND). Inbound means messages coming from mobile to Webex Teams. Outbound means messages sent from Webex Teams to mobile.</p>
 </li>
 <li>
-<p>Type: Shows the list of messages of particular type (SMS, MMS). Please note MMS is still not supported.</p>
+<p><strong>Type</strong>: Shows the list of messages of particular type (SMS, MMS). Please note MMS is still not supported.</p>
 </li>
 <li>
-<p>Channel Status:Shows the list of messages with this channel status.</p>
+<p><strong>Channel Status</strong>: Shows the list of messages with this channel status.</p>
 </li>
 <li>
-<p>Channel Error Code:Shows the list of messages with this Channel Error Code.</p>
+<p><strong>Channel Error Code</strong>: Shows the list of messages with this Channel Error Code.</p>
 </li>
 <li>
-<p>Channel Error Message:Shows the list of messages with this Channel error message.</p>
+<p><strong>Channel Error Message</strong>: Shows the list of messages with this Channel error message.</p>
 </li>
 </ul>
 </div>
@@ -5714,7 +5823,7 @@ Enterprise name must be unique.
 <div class="ulist">
 <ul>
 <li>
-<p>Account Scope:</p>
+<p><strong>Account Scope</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -5730,35 +5839,35 @@ Enterprise name must be unique.
 </div>
 </li>
 <li>
-<p>Start Date: Shows the number of enterprises that were created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the number of enterprises that were created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the number of enterprises that were created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the number of enterprises that were created on or before this date.</p>
 </li>
 <li>
-<p>Sub resource:</p>
+<p><strong>Sub resource</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Daily: Shows the number of enterprises created on a daily basis.</p>
+<p><strong>Daily</strong>: Shows the number of enterprises created on a daily basis.</p>
 </li>
 <li>
-<p>Monthly: Shows the number of enterprises created on a monthly basis.</p>
+<p><strong>Monthly</strong>: Shows the number of enterprises created on a monthly basis.</p>
 </li>
 <li>
-<p>Yearly:  Shows the number of enterprises  created on a yearly basis.</p>
+<p><strong>Yearly</strong>:  Shows the number of enterprises  created on a yearly basis.</p>
 </li>
 <li>
-<p>Today:  Shows the number of enterprises created today.</p>
+<p><strong>Today</strong>:  Shows the number of enterprises created today.</p>
 </li>
 <li>
-<p>Yesterday: Shows the number of enterprises created yesterday.</p>
+<p>Y<strong>esterday</strong>: Shows the number of enterprises created yesterday.</p>
 </li>
 <li>
-<p>This Month:  Shows the number of enterprises created this month.</p>
+<p><strong>This Month</strong>:  Shows the number of enterprises created this month.</p>
 </li>
 <li>
-<p>Last Month:  Shows the number of enterprises created last month.</p>
+<p><strong>Last Month</strong>:  Shows the number of enterprises created last month.</p>
 </li>
 </ul>
 </div>
@@ -5779,7 +5888,7 @@ Enterprise name must be unique.
 <div class="ulist">
 <ul>
 <li>
-<p>Account Scope:</p>
+<p><strong>Account Scope</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -5795,38 +5904,38 @@ Enterprise name must be unique.
 </div>
 </li>
 <li>
-<p>Start Date: Shows the number of mappings created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the number of mappings created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the number of mappings created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the number of mappings created on or before this date.</p>
 </li>
 <li>
-<p>Enterprise: Shows the record of mapping that belong to this enterprise.</p>
+<p><strong>Enterprise</strong>: Shows the record of mapping that belong to this enterprise.</p>
 </li>
 <li>
-<p>Sub resource:</p>
+<p><strong>Sub resource</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Daily: Shows the record of mappings on a daily basis.</p>
+<p><strong>Daily</strong>: Shows the record of mappings on a daily basis.</p>
 </li>
 <li>
-<p>Monthly: Shows the record of mappings on a monthly basis.</p>
+<p><strong>Monthly</strong>: Shows the record of mappings on a monthly basis.</p>
 </li>
 <li>
-<p>Yearly: Shows the record of mappings on a yearly basis.</p>
+<p><strong>Yearly</strong>: Shows the record of mappings on a yearly basis.</p>
 </li>
 <li>
-<p>Today: Shows the record of mappings today.</p>
+<p><strong>Today</strong>: Shows the record of mappings today.</p>
 </li>
 <li>
-<p>Yesterday: Shows the record of mappings on yesterday.</p>
+<p><strong>Yesterday</strong>: Shows the record of mappings on yesterday.</p>
 </li>
 <li>
-<p>This Month: Shows the record of mappings this month.</p>
+<p><strong>This Month</strong>: Shows the record of mappings this month.</p>
 </li>
 <li>
-<p>Last Month: Shows the record of mappings last month.</p>
+<p><strong>Last Month</strong>: Shows the record of mappings last month.</p>
 </li>
 </ul>
 </div>
@@ -5847,28 +5956,28 @@ Enterprise name must be unique.
 <div class="ulist">
 <ul>
 <li>
-<p>Start Date: Shows the number of messages created on or after this date.</p>
+<p><strong>Start Date</strong>: Shows the number of messages created on or after this date.</p>
 </li>
 <li>
-<p>End Date: Shows the number of messages created on or before this date.</p>
+<p><strong>End Date</strong>: Shows the number of messages created on or before this date.</p>
 </li>
 <li>
-<p>Enterprise: Shows the number of messages that belong to this enterprise.</p>
+<p><strong>Enterprise</strong>: Shows the number of messages that belong to this enterprise.</p>
 </li>
 <li>
-<p>Direction: Shows the number of messages of a particular direction (INBOUND, OUTBOUND).</p>
+<p><strong>Direction</strong>: Shows the number of messages of a particular direction (INBOUND, OUTBOUND).</p>
 </li>
 <li>
-<p>Type: Shows the number of messages of a particular type (SMS, MMS).</p>
+<p><strong>Type</strong>: Shows the number of messages of a particular type (SMS, MMS).</p>
 </li>
 <li>
-<p>To: Shows the number of messages that are sent to this number.</p>
+<p><strong>To</strong>: Shows the number of messages that are sent to this number.</p>
 </li>
 <li>
-<p>From: Shows the number of messages that are sent from this number.</p>
+<p><strong>From</strong>: Shows the number of messages that are sent from this number.</p>
 </li>
 <li>
-<p>Channel Status: Shows the number of messages with this channel status.</p>
+<p><strong>Channel Status</strong>: Shows the number of messages with this channel status.</p>
 </li>
 </ul>
 </div>
