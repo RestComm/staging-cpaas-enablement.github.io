@@ -5264,8 +5264,8 @@ Channel providers support different capabilities. If a capability is not support
 channel. This parameter contains
 a <a href="messages-api.html#_supported_omnichannel_uris">channel
 URI</a>, relative to the channel in the following format
-"&lt;channelName&gt;:&lt;pstnNumber&gt;". E.g. "sms:+15553XXXXXX" means the e164
-number +15553XXXXXX on the SMS channel.</p></td>
+"&lt;channelName&gt;:&lt;alphanumeric/pstnNumber&gt;". E.g. <code>sms:+15553XXXXXX</code>, means the e164
+number <code>+15553XXXXXX</code> on the SMS channel. Alphanumeric numbers are limited to 11 characters. Accepted characters include both upper and lower case ASCII letters, the digits from 0 to 9, and space: [A-Za-z0-9 ].</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
