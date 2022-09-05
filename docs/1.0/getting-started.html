@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/getting-started.html
     ">
-    <meta name="description" content="Learn how to use the Restcomm Console’s main features to setup your Restcomm Service Provider Account, bring your own carrier, whitelabel the console, create applications, clients, phone numbers and more.">
+    <meta name="description" content="Learn how to use the Restcomm Console to setup your Service Provider Account, bring your own carrier, whitelabel the console, create apps, and more.">
     <meta name="keywords" content="restcomm account, getting started with restcomm, restcomm quick start, restcomm organization, restcomm cpaas, restcomm, cpaas quick start guide, service provider quick start">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../_/img/favicon.png"/>
@@ -3065,18 +3065,24 @@
 <div class="sect2">
 <h3 id="_restcomm_account_settings"><a class="anchor" href="#_restcomm_account_settings"></a>Restcomm Account Settings</h3>
 <div class="paragraph">
-<p>To access your account settings, click on the drop down representing the name of your account then navigate to Account at the top right corner of the window, as shown in the screenshot below. You will be able to:</p>
+<p>To access your account settings, click on the drop down representing the name of your account then navigate to Account at the top right corner of the window, as shown in the screenshot below.You will be able to:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Retrieve your Account SID and Auth Token, which are required in order to use the Restcomm API to place Outbound Calls or send SMS by example.</p>
+<p>Retrieve your <a href="#_restcomm_account_details">Account Details</a>.</p>
 </li>
 <li>
-<p>Retrieve your Account Information such as First Name, Last Name, Email, Role.</p>
+<p>Create <a href="#_restcomm_tags">Tags</a>.</p>
 </li>
 <li>
-<p>Change your Account password</p>
+<p>Retrieve your User Information such as First Name, Last Name, Email, Role, and API key required to use the CPaaS APIs to place Outbound Calls or send SMS by example.</p>
+</li>
+<li>
+<p>Change your User password.</p>
+</li>
+<li>
+<p>Create and manage Users.</p>
 </li>
 <li>
 <p>Create Sub-Accounts.</p>
@@ -3084,11 +3090,176 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>All of the information presented visually under the Restcomm Account Settings is also accessible through the Restcomm Accounts API</p>
+<p>All the information presented visually under the Restcomm Account Settings is also accessible through the Restcomm Management APIs.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="_images/getting-started/account-info.png" alt="Restcomm Console Account Settings">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_restcomm_account_details"><a class="anchor" href="#_restcomm_account_details"></a>Restcomm Account Details</h4>
+<div class="paragraph">
+<p>To view your Account Details navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Account Details</b></span>. You will be presented with a screen that contains information about your Account creation and last update date, as well as your Account SID that you will need in order to use the CPaaS APIs.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/getting-started/account-details.png" alt="Restcomm Console Account Details">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_restcomm_tags"><a class="anchor" href="#_restcomm_tags"></a>Restcomm Tags</h4>
+<div class="paragraph">
+<p>This section lets you create and manage Tags for your Communications Provider CPaaS organization. To create Tags go to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Tags</b></span>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/getting-started/tags.png" alt="Restcomm Console Tags">
+</div>
+</div>
+<div class="paragraph">
+<p>For more detailed information the usage of Tags, please visit the <a href="billing-tags.adoc">Billing Tags documentation</a> section.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_information"><a class="anchor" href="#_user_information"></a>User Information</h4>
+<div class="paragraph">
+<p>To manage your User navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Your User</b></span>. You will be presented with a screen that contains information about your User and API Keys that you will need in order to use the CPaaS APIs.</p>
+</div>
+<div class="sect4">
+<h5 id="_create_a_secondary_api_key"><a class="anchor" href="#_create_a_secondary_api_key"></a>Create a Secondary API Key</h5>
+<div class="paragraph">
+<p>By default, your User has an API key associated with it. To create another API key, click on the <code>Add Key</code> button.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Make sure you store the API Key Secret before you close the pop-up window as this is the only time you can view it.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/add-api-key.png" alt="Add API Key"></span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_delete_an_api_key"><a class="anchor" href="#_delete_an_api_key"></a>Delete an API Key</h5>
+<div class="paragraph">
+<p>Before you delete an API key, you will need to deactivate it first. To do that, click on the <code>Active</code> button below the API key value. Once the key is deactivated, you can safely delete it by clicking on the <code>X</code> button next to it.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/deactivate-an-api-key.png" alt="Deactivate an API Key"></span></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manage_users"><a class="anchor" href="#_manage_users"></a>Manage Users</h4>
+<div class="paragraph">
+<p>Communications Providers can manage their users by going to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Manage Users</b></span>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/manage-users-list.png" alt="Manage Users"></span></p>
+</div>
+<div class="sect4">
+<h5 id="_add_users"><a class="anchor" href="#_add_users"></a>Add Users</h5>
+<div class="paragraph">
+<p>To add User(s) click on the <code>+Add Users</code> button, then enter the details of each one of the users you would like to add. Click <code>Add</code>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/manage-users.png" alt="Manage Users"></span></p>
+</div>
+<div class="paragraph">
+<p>Once the Users are created you will be presented with a screen containing the Console log in URL and their credentials. You also have the option to copy a User&#8217;s password by clicking on the <code>Copy</code> icon next to the password field.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/user-credentials.png" alt="User Credentials"></span></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manage_subaccounts"><a class="anchor" href="#_manage_subaccounts"></a>Manage Subaccounts</h4>
+<div class="paragraph">
+<p>In addition to managing Users, Communications Providers have the opportunity to also manage Subaccounts.</p>
+</div>
+<div class="paragraph">
+<p>To manage your Subaccounts navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Subaccounts</b></span>. You will be presented with a list of all Subaccounts under your organization.</p>
+</div>
+<div class="paragraph">
+<p>To create a Subaccount:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Subaccounts</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">+Add Account</b></span></p>
+</li>
+<li>
+<p>Enter the Admin&#8217;s email address, Name and Role</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When creating a Subaccount, a corresponding Subaccount User is also created, with the Role specified in the Subaccount creation screen.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Role of the Subaccount&#8217;s main User can either be an Administrator or Turnkey Administrator. For more information about the Subaccount Roles and Permissions, please visit the <a href="identity-access-management.adoc">IAM Documentation</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Add Account</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/create-subaccount.png" alt="create subaccount"></span></p>
+</div>
+<div class="paragraph">
+<p>Once the Subaccount is created you will be presented with a screen containing the Console log in URL and their credentials. You also have the option to copy a Subaccount User&#8217;s password by clicking on the <code>Copy</code> icon next to the password field.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/subaccount-creation.png" alt="Subaccount Creation"></span></p>
+</div>
+<div class="sect4">
+<h5 id="_subaccounts_details"><a class="anchor" href="#_subaccounts_details"></a>Subaccounts Details</h5>
+<div class="paragraph">
+<p>To view a Subaccount&#8217;s Details, navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Subaccounts</b></span>, then click on a Subaccount from the list.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/subaccount-details.png" alt="Subaccount Details"></span></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_manage_subaccounts_users"><a class="anchor" href="#_manage_subaccounts_users"></a>Manage Subaccounts Users</h5>
+<div class="paragraph">
+<p>You can manage Subaccount&#8217;s Users in the same manner as managing the Communications Provider Users explained in the <a href="#_manage_users">Manage Users Section</a>,</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_manage_subaccounts_turnkey_applications"><a class="anchor" href="#_manage_subaccounts_turnkey_applications"></a>Manage Subaccounts Turnkey Applications</h5>
+<div class="paragraph">
+<p>Communications Providers can manage the access of Business Customers to the Turnkey Applications, by enabling or disabling those through the Restcomm Console.</p>
+</div>
+<div class="paragraph">
+<p>To manage the Turnkey Applications for a given Subaccount, navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Subaccounts</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Choose a Sub Account from the list</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Turnkey Apps</b></span>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/getting-started/turnkey-applications-access.png" alt="Manage Turnkey Applications Access"></span></p>
+</div>
 </div>
 </div>
 </div>
