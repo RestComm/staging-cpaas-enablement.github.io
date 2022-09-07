@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/getting-started.html
     ">
-    <meta name="description" content="Learn how to use the Restcomm Console’s main features to setup your Restcomm Service Provider Account, bring your own carrier, whitelabel the console, create applications, clients, phone numbers and more.">
+    <meta name="description" content="Learn how to use the Restcomm Console to setup your Service Provider Account, bring your own carrier, whitelabel the console, create apps, and more.">
     <meta name="keywords" content="restcomm account, getting started with restcomm, restcomm quick start, restcomm organization, restcomm cpaas, restcomm, cpaas quick start guide, service provider quick start">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../_/img/favicon.png"/>
@@ -3039,9 +3039,9 @@
 <div class="paragraph">
 <p>To access the login interface, make sure you use the correct Restcomm Organization URL that you have defined when you were registering your Restcomm account (the URL you received in the sign up confirmation email). It should look like https://{mydomain}.com/login</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/login.png" alt="Restcomm Console Log In Interface">
+<a class="image" href="self" target="_blank" rel="noopener"><img src="_images/getting-started/login.png" alt="Restcomm Console Log In Interface" width="70%"></a>
 </div>
 </div>
 </div>
@@ -3050,9 +3050,9 @@
 <div class="paragraph">
 <p>This is the default page you will see after you log in.  Here you can find the latest news about Restcomm, new features announcements,  as well as usage overview of your account activity.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/home.png" alt="Restcomm Console">
+<a class="image" href="/docs/1.0/_images/getting-started/home.png" target="_blank" rel="noopener"><img src="_images/getting-started/home.png" alt="Restcomm Console" width="70%"></a>
 </div>
 </div>
 </div>
@@ -3065,30 +3065,236 @@
 <div class="sect2">
 <h3 id="_restcomm_account_settings"><a class="anchor" href="#_restcomm_account_settings"></a>Restcomm Account Settings</h3>
 <div class="paragraph">
-<p>To access your account settings, click on the drop down representing the name of your account then navigate to Account at the top right corner of the window, as shown in the screenshot below. You will be able to:</p>
+<p>To access your account settings, click on the drop down representing the name of your account then navigate to Account at the top right corner of the window, as shown in the screenshot below.You will be able to:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Retrieve your Account SID and Auth Token, which are required in order to use the Restcomm API to place Outbound Calls or send SMS by example.</p>
+<p>Retrieve your <a href="#_restcomm_account_details">Account Details</a>.</p>
 </li>
 <li>
-<p>Retrieve your Account Information such as First Name, Last Name, Email, Role.</p>
+<p>Create <a href="#_restcomm_tags">Tags</a>.</p>
 </li>
 <li>
-<p>Change your Account password</p>
+<p>Retrieve your <a href="#_user_information">User Information</a> such as First Name, Last Name, Email, Role, and API key required to use the CPaaS APIs to place Outbound Calls or send SMS by example.</p>
 </li>
 <li>
-<p>Create Sub-Accounts.</p>
+<p>Change your User password.</p>
+</li>
+<li>
+<p>Create and <a href="#_manage_users">manage Users</a>.</p>
+</li>
+<li>
+<p>Create <a href="#_manage_subaccounts">Sub Accounts</a>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>All of the information presented visually under the Restcomm Account Settings is also accessible through the Restcomm Accounts API</p>
+<p>All the information presented visually under the Restcomm Account Settings is also accessible through the Restcomm Management APIs.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/account-info.png" alt="Restcomm Console Account Settings" width="80%">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_restcomm_account_details"><a class="anchor" href="#_restcomm_account_details"></a>Restcomm Account Details</h4>
+<div class="paragraph">
+<p>To view your Account Details navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Account Details</b></span>. You will be presented with a screen that contains information about your Account creation and last update date, as well as your Account SID that you will need in order to use the CPaaS APIs.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/account-details.png" alt="Restcomm Console Account Details" width="80%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_restcomm_tags"><a class="anchor" href="#_restcomm_tags"></a>Restcomm Tags</h4>
+<div class="paragraph">
+<p>This section lets you create and manage Tags for your Communications Provider CPaaS organization. To create Tags go to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Tags</b></span>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/tags.png" alt="Restcomm Console Tags" width="80%">
+</div>
+</div>
+<div class="paragraph">
+<p>For more detailed information the usage of Tags, please visit the <a href="billing-tags.adoc">Billing Tags documentation</a> section.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_information"><a class="anchor" href="#_user_information"></a>User Information</h4>
+<div class="paragraph">
+<p>To manage your User navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Your User</b></span>. You will be presented with a screen that contains information about your User and API Keys that you will need in order to use the CPaaS APIs.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/your_user_information.png" alt="Your User Information" width="80%">
+</div>
+</div>
+<div class="sect4">
+<h5 id="_create_a_secondary_api_key"><a class="anchor" href="#_create_a_secondary_api_key"></a>Create a Secondary API Key</h5>
+<div class="paragraph">
+<p>By default, your User has an API key associated with it. To create another API key, click on the <code>Add Key</code> button.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Make sure you store the API Key Secret before you close the pop-up window as this is the only time you can view it.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/add-api-key.png" alt="Add API Key" width="50%">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_delete_an_api_key"><a class="anchor" href="#_delete_an_api_key"></a>Delete an API Key</h5>
+<div class="paragraph">
+<p>Before you delete an API key, you will need to deactivate it first. To do that, click on the <code>Active</code> button below the API key value. Once the key is deactivated, you can safely delete it by clicking on the <code>X</code> button next to it.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/deactivate-an-api-key.png" alt="Deactivate an API Key" width="50%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manage_users"><a class="anchor" href="#_manage_users"></a>Manage Users</h4>
+<div class="paragraph">
+<p>Communications Providers can manage their Users by going to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Manage Users</b></span>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/manage-users-list.png" alt="Manage Users" width="80%">
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_users"><a class="anchor" href="#_add_users"></a>Add Users</h5>
+<div class="paragraph">
+<p>To add User(s) click on the <code>+Add Users</code> button, then enter the details of each one of the users you would like to add. Click <code>Add</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/getting-started/account-info.png" alt="Restcomm Console Account Settings">
+<img src="_images/getting-started/manage-users.png" alt="Manage Users">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the Users are created you will be presented with a screen containing the Console log in URL and their credentials. You also have the option to copy a User&#8217;s password by clicking on the <code>Copy</code> icon next to the password field.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/user-credentials.png" alt="User Credentials" width="50%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_manage_subaccounts"><a class="anchor" href="#_manage_subaccounts"></a>Manage Sub Accounts</h4>
+<div class="paragraph">
+<p>In addition to managing Users, Communications Providers have the opportunity to also manage Sub Accounts.</p>
+</div>
+<div class="paragraph">
+<p>To manage your Sub Accounts navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Subaccounts</b></span>. You will be presented with a list of all Sub Accounts under your organization.</p>
+</div>
+<div class="paragraph">
+<p>To create a Sub Account:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Sub Accounts</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">+Add Account</b></span></p>
+</li>
+<li>
+<p>Enter the Admin&#8217;s email address, Name and Role</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When creating a Sub Account, a corresponding Sub Account User is also created, with the Role specified in the Sub Account creation screen.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The Role of the Sub Account&#8217;s main User can either be an Administrator or Turnkey Administrator. For more information about the Sub Account Roles and Permissions, please visit the <a href="identity-access-management.adoc">IAM Documentation</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Add Account</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/create-subaccount.png" alt="Create a Sub Accoumt" width="80%">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the Sub Account is created you will be presented with a screen containing the Console log in URL and their credentials. You also have the option to copy a Sub Account User&#8217;s password by clicking on the <code>Copy</code> icon next to the password field.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/subaccount-creation.png" alt="Subaccount Creation" width="50%">
+</div>
+</div>
+<div class="sect4">
+<h5 id="_subaccount_details"><a class="anchor" href="#_subaccount_details"></a>Sub Account Details</h5>
+<div class="paragraph">
+<p>To view a Sub Account&#8217;s Details, navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Sub Accounts</b></span>, then click on a Subaccount from the list.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/subaccount-details.png" alt="Subaccount Details" width="70" height="%">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_manage_subaccounts_users"><a class="anchor" href="#_manage_subaccounts_users"></a>Manage Sub Accounts Users</h5>
+<div class="paragraph">
+<p>You can manage Sub Account&#8217;s Users in the same manner as managing the Communications Provider Users explained in the <a href="#_manage_users">Manage Users Section</a>,</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_manage_subaccounts_turnkey_applications"><a class="anchor" href="#_manage_subaccounts_turnkey_applications"></a>Manage Sub Accounts Turnkey Applications</h5>
+<div class="paragraph">
+<p>Communications Providers can manage the access of Business Customers to the Turnkey Applications, by enabling or disabling those through the Restcomm Console.</p>
+</div>
+<div class="paragraph">
+<p>To manage the Turnkey Applications for a given Sub Account, navigate to <span class="menuseq"><b class="menu">Your Account</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Subaccounts</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Choose a Sub Account from the list</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Turnkey Apps</b></span>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/getting-started/turnkey-applications-access.png" alt="Manage Turnkey Applications Access" width="70%">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Communications Providers can also manage programmatically the access of Business Customers to Turnkey Applications using the <a href="api/profile-api.html">Profile API</a>.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -3102,9 +3308,9 @@
 <div class="paragraph">
 <p>This section allows you to create, delete, update and search your Restcomm Applications. When you are first logging into the workspace, you will see two types of applications split in two sections: <code>Your Applications</code> also known as Visual Designer applications and <code>Turnkey Applications</code>.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/applications-list.png" alt="Restcomm Applications">
+<img src="_images/getting-started/applications-list.png" alt="Restcomm Applications" width="80%">
 </div>
 </div>
 </div>
@@ -3121,9 +3327,9 @@
 <div class="paragraph">
 <p>To create a new application, click on the Add New App button on the right corner of the screen.  You will be prompted to choose between three way of creating an application.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/applications-types.png" alt="Restcomm Applications Types">
+<img src="_images/getting-started/applications-types.png" alt="Restcomm Applications Types" width="80%">
 </div>
 </div>
 <div class="ulist">
@@ -3154,9 +3360,9 @@
 <div class="paragraph">
 <p>To start using a Turnkey application, simply click on the <code>Enter</code> button as shown below. You will be redirected to the corresponding Turnkey application web console.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/turnkey-applications-sign-in.png" alt="Turnkey Application Sign In">
+<img src="_images/getting-started/turnkey-applications-sign-in.png" alt="Turnkey Application Sign In" width="80%">
 </div>
 </div>
 <div class="paragraph">
@@ -3169,9 +3375,9 @@
 <div class="paragraph">
 <p>Create, delete, update and search your numbers. When your first log into Restcomm Console, this section is empty. Future updates to the platform will list a set of demo numbers to get you started quickly. This section also allows you to link a Number to an Application created in the previous section.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/numbers-list.png" alt="Restcomm Numbers">
+<img src="_images/getting-started/numbers-list.png" alt="Restcomm Numbers" width="80%">
 </div>
 </div>
 <div class="sect3">
@@ -3187,9 +3393,9 @@ You can register two types of Numbers:</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/numbers-register-sip.png" alt="Register a SIP Number">
+<img src="_images/getting-started/numbers-register-sip.png" alt="Register a SIP Number" width="80%">
 </div>
 </div>
 <div class="ulist">
@@ -3199,9 +3405,9 @@ You can register two types of Numbers:</p>
 </li>
 </ul>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/numbers-register-provider.png" alt="Restcomm Provider Number">
+<img src="_images/getting-started/numbers-register-provider.png" alt="Restcomm Provider Number" width="80%">
 </div>
 </div>
 </div>
@@ -3210,9 +3416,9 @@ You can register two types of Numbers:</p>
 <div class="paragraph">
 <p>Editing a Restcomm Number can be done after a purchase or creation or by clicking on the number in the Numbers list. The screenshot below shows how you can edit a SIP Number but is also applicable for a Provider Number. You can set or update the Voice or SMS Application to which the number is bind to.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/numbers-detail.png" alt="Bind Restcomm Number to an Application">
+<img src="_images/getting-started/numbers-detail.png" alt="Bind Restcomm Number to an Application" width="80%">
 </div>
 </div>
 <div class="paragraph">
@@ -3231,9 +3437,9 @@ You can register two types of Numbers:</p>
 <div class="paragraph">
 <p>In addition to that, you can also set the RCML URL to link to another Application under the advanced list menu. Click on the Advanced link to see more options for both SMS and Voice Applications.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/numbers-detail-advanced.png" alt="Bind Restcomm Number to an Application advanced">
+<img src="_images/getting-started/numbers-detail-advanced.png" alt="Bind Restcomm Number to an Application advanced" width="80%">
 </div>
 </div>
 <div class="ulist">
@@ -3257,9 +3463,9 @@ You can register two types of Numbers:</p>
 <p>Restcomm lets you create, delete, update and search your Restcomm Clients. When you initially start with Restcomm, this section has a default Client which you can use. Its username and password are the same as our Restcomm Account credentials.
 A Restcomm Client is an abstraction for storing credentials related to a typical SIP or WebRTC (using SIP Over Websockets) endpoint that can be uses through traditional SIP Softphone or hardphone or through our Restcomm WebRTC SDKs (Currently in Preview)</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/clients-list.png" alt="Restcomm Clients">
+<img src="_images/getting-started/clients-list.png" alt="Restcomm Clients" width="80%">
 </div>
 </div>
 <div class="sect3">
@@ -3267,9 +3473,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>You can change the Restcomm client password and also attach an application to it (similarly to attaching an application to a number) which will be executed upon any outbound calls done by the Restcomm client.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/clients-detail.png" alt="Update Restcomm Client">
+<img src="_images/getting-started/clients-detail.png" alt="Update Restcomm Client" width="80%">
 </div>
 </div>
 </div>
@@ -3287,9 +3493,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>A list of all calls that have been received or sent by Restcomm. This section will be empty until you make or receive any calls to a Restcomm number.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-calls-list.png" alt="Restcomm Call Logs">
+<img src="_images/getting-started/logs-calls-list.png" alt="Restcomm Call Logs" width="80%">
 </div>
 </div>
 </div>
@@ -3298,9 +3504,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>If you click on any call details in the list, you will be able to see the full details of the call including its status and if there is a recording link to it , that can be downloaded.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-calls-detail.png" alt="Restcomm Logs Call Details">
+<img src="_images/getting-started/logs-calls-detail.png" alt="Restcomm Logs Call Details" width="80%">
 </div>
 </div>
 </div>
@@ -3309,9 +3515,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>A list of all SMS and Messages that have been received or sent by Restcomm. This section will be empty until you make or receive any SMS or Messages to a Restcomm number.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-messages-list.png" alt="Restcomm Message Logs">
+<img src="_images/getting-started/logs-messages-list.png" alt="Restcomm Message Logs" width="80%">
 </div>
 </div>
 </div>
@@ -3320,9 +3526,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>If you click on any message in the list, you will see the full details of the message including its delivery status.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-messages-detail.png" alt="Restcomm Logs Message Details">
+<img src="_images/getting-started/logs-messages-detail.png" alt="Restcomm Logs Message Details" width="80%">
 </div>
 </div>
 </div>
@@ -3334,9 +3540,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>A list of all Recordings (using the Record Verb) that have been received or sent by Restcomm. This section will be empty until you record any calls with Restcomm.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-recordings-list.png" alt="Restcomm Logs Recordings">
+<img src="_images/getting-started/logs-recordings-list.png" alt="Restcomm Logs Recordings" width="80%">
 </div>
 </div>
 <div class="sect2">
@@ -3344,9 +3550,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>If you click on any recording details in the list, you will see the full details of the recording, its  download URL and an option to delete it.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-recordings-detail.png" alt="Restcomm Logs Recordings Details">
+<img src="_images/getting-started/logs-recordings-detail.png" alt="Restcomm Logs Recordings Details" width="80%">
 </div>
 </div>
 </div>
@@ -3355,9 +3561,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>A list of all Notifications received by Restcomm.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-notifications-list.png" alt="Restcomm Logs Notifications">
+<img src="_images/getting-started/logs-notifications-list.png" alt="Restcomm Logs Notifications" width="80%">
 </div>
 </div>
 </div>
@@ -3366,9 +3572,9 @@ A Restcomm Client is an abstraction for storing credentials related to a typical
 <div class="paragraph">
 <p>If you click on any Notification in the list, you will see the full details of the notification including its status code.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock text-center">
 <div class="content">
-<img src="_images/getting-started/logs-notifications-details.png" alt="Restcomm Logs Notifications">
+<img src="_images/getting-started/logs-notifications-details.png" alt="Restcomm Logs Notifications" width="80%">
 </div>
 </div>
 </div>
