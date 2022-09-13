@@ -5179,6 +5179,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00 +0000)</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_ms</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime milliseconds when the record was created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00.123 +0000)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">call_sid</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The call identifier to which the record belongs to.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
@@ -5216,10 +5221,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>account_sid,sip_response_code,uri,date_created,status,call_sid,org_sid,api_version,sid
-"ACab03aae495eb4ca69737aa0d0da73d7f",200,"/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59","Wed, 27 Apr 2022 05:59:57 +0000",held,"ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da","OR55e4cbe945a14edca5bd157b9ee97bcc",2012-04-24,"HD108d5426b29f456eb83c794d6659da59"
-"ACab03aae495eb4ca69737aa0d0da73d7f",480,"/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59","Wed, 27 Apr 2022 05:59:57 +0000",no-answer,"ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da","OR55e4cbe945a14edca5bd157b9ee97bcc",2012-04-24,"HD108d5426b29f456eb83c794d6659da59"
-"ACab03aae495eb4ca69737aa0d0da73d7f",500,"/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59","Wed, 27 Apr 2022 05:59:57 +0000",failed,"ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da","OR55e4cbe945a14edca5bd157b9ee97bcc",2012-04-24,"HD108d5426b29f456eb83c794d6659da59"</code></pre>
+<pre class="highlightjs highlight"><code>account_sid,sip_response_code,uri,date_created,date_created_ms,status,call_sid,org_sid,api_version,sid
+ACab03aae495eb4ca69737aa0d0da73d7f,200,/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59,"Wed, 27 Apr 2022 05:59:57 +0000","Wed, 27 Apr 2022 05:59:57.123 +0000",held,ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da,OR55e4cbe945a14edca5bd157b9ee97bcc,2012-04-24,HD108d5426b29f456eb83c794d6659da59
+ACab03aae495eb4ca69737aa0d0da73d7f,480,/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59,"Wed, 27 Apr 2022 05:59:57 +0000","Wed, 27 Apr 2022 05:59:57.123 +0000",no-answer,ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da,OR55e4cbe945a14edca5bd157b9ee97bcc,2012-04-24,HD108d5426b29f456eb83c794d6659da59
+ACab03aae495eb4ca69737aa0d0da73d7f,500,/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/Holds/HD108d5426b29f456eb83c794d6659da59,"Wed, 27 Apr 2022 05:59:57 +0000","Wed, 27 Apr 2022 05:59:57.123 +0000",failed,ID00000000000031302e302e302e313533-CAd49cd0bd53944828822ab4b96d80a0da,OR55e4cbe945a14edca5bd157b9ee97bcc,2012-04-24,HD108d5426b29f456eb83c794d6659da59</code></pre>
 </div>
 </div>
 </div>
