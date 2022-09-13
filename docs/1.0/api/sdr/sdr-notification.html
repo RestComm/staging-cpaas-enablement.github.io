@@ -5123,7 +5123,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Notification records are generated for any issue happens in incoming or outgoing traffic.</p>
+<p>Notification records are generated for any issue occurred in an incoming or outgoing traffic.</p>
 </div>
 </div>
 </div>
@@ -5141,9 +5141,9 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top"><strong>Field</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Type</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -5160,22 +5160,22 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this notification was created.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Mon, 04 Jul 2022 01:46:26 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Mon, 04 Jul 2022 01:46:26 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created_ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime milliseconds on which this notification was created.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Mon, 04 Jul 2022 01:46:26.123 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime in milliseconds on which this notification was created.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Mon, 04 Jul 2022 01:46:26.123 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_updated</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this notification was last updated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_updated_ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime milliseconds on which this notification was last updated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00.123 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime in milliseconds on which this notification was last updated.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00.123 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
@@ -5189,7 +5189,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">log</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An integer log level corresponding to the type of notification. 0 is ERROR, 1 is WARNING.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An integer log level corresponding to the type of notification. <code>0</code> for an ERROR, and <code>1</code> for a WARNING.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
 </tr>
 <tr>
@@ -5199,47 +5199,47 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">more_info</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">More info about this notification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">More information about this notification.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">message_text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The text for the notification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The text of the notification.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">message_date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this notification message was generated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">message_date_ms</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The datetime milliseconds on which this notification message was generated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: Thu, 01 Jan 2022 00:20:00.123 +0000)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00.123 +0000</code>)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">request_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Url for RCML/Status callback which causing issue</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Url of the RCML/Status callback which is causing an issue.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">request_method</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST method was used by request_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP REST method was used by <code>request_url</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">request_variables</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data was sent to request_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data was sent to <code>request_url</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">response_headers</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Headers from the response generated by request_url server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Headers from the response generated by the <code>request_url</code> server.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">response_body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Body from the response generated by request_url server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Body from the response generated by the <code>request_url</code> server.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 </tr>
 <tr>
