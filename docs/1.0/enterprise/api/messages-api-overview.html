@@ -9,7 +9,7 @@
       /docs/api/messages-api-overview.html
     ">
     <meta name="keywords" content="cpaas management, cpaas management apis">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -74,7 +74,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
               
@@ -231,7 +231,7 @@
               
               
               
-              
+              icomoon3-font-reference-management
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="management-apis-overview.html">Management APIs</a>
@@ -886,7 +886,7 @@
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
-              
+              icomoon3-font-reference-voice
               
               
               
@@ -1602,7 +1602,7 @@
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -1727,7 +1727,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -1760,7 +1760,7 @@
             <span class="nav-flex-item-icon
               
               
-              
+              icomoon3-font-reference-rcml
               
               
               
@@ -2009,7 +2009,7 @@
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -2205,7 +2205,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
             "></span>
@@ -2588,7 +2588,7 @@
               
               
               
-              
+              icomoon3-font-reference-solutions
               
             "></span>
                     <span>
@@ -3230,7 +3230,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -3592,6 +3592,116 @@ Quick Replies, Suggestions</th>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="../_images/check.png" alt="Badge Tick1 outline" width="24" height="24"></span></p></td>
 </tr>
 </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_media_retention"><a class="anchor" href="#_media_retention"></a>Media Retention</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In an A2P scenario, the media content (images, audio, video, etc) is provided by the CPaaS Application, and as such not stored on the CPaaS Service. The content should be publicly accessible, and the retention is managed by the CPaaS Application Developer.</p>
+</div>
+<div class="paragraph">
+<p>In a P2A scenario, the media content is stored by the channel provider, and as such is channel provider dependent. The retention varies per channel provider. The table below describes the retention period per channel provider.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Channel</th>
+<th class="tableblock halign-left valign-top">Retention Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 Days</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WhatsApp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">14 Days</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you need a longer retention period, you can download and manage the content on your infrastructure.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mms_file_size_limits_for_the_major_carriers_in_the_us"><a class="anchor" href="#_mms_file_size_limits_for_the_major_carriers_in_the_us"></a>MMS File Size Limits for the Major Carriers in the US</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Carrier</th>
+<th class="tableblock halign-left valign-top">Long Code</th>
+<th class="tableblock halign-left valign-top">Short Code</th>
+<th class="tableblock halign-left valign-top">Toll-Free</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AT&amp;T</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">525 KB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Verizon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">525 KB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T-Mobile</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">525 KB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sprint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 MB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">525 KB</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">US Cellular</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500 KB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">500 KB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">525 KB</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The file sizes above will generally be passed along to the wireless carriers. However, due to the differences in handsets, file types, and transcoding, we recommend you send attachments no larger than 500 KB to ensure the best chance of delivery.
+</td>
+</tr>
 </table>
 </div>
 </div>

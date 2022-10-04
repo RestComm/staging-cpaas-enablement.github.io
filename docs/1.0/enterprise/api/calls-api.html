@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       /docs/api/calls-api.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -73,7 +73,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
               
@@ -230,7 +230,7 @@
               
               
               
-              
+              icomoon3-font-reference-management
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="management-apis-overview.html">Management APIs</a>
@@ -885,7 +885,7 @@
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
-              
+              icomoon3-font-reference-voice
               
               
               
@@ -1601,7 +1601,7 @@
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -1726,7 +1726,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -1759,7 +1759,7 @@
             <span class="nav-flex-item-icon
               
               
-              
+              icomoon3-font-reference-rcml
               
               
               
@@ -2008,7 +2008,7 @@
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -2204,7 +2204,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
             "></span>
@@ -2587,7 +2587,7 @@
               
               
               
-              
+              icomoon3-font-reference-solutions
               
             "></span>
                     <span>
@@ -3229,7 +3229,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -3352,7 +3352,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">https://$DOMAIN/restcomm/2012-04-24/</span>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">\https://$DOMAIN/restcomm/2012-04-24/</span>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3556,7 +3556,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>http://127.0.0.1:65444/1111?CallSid=ID000000000000003132372e302e302e31-CAc6e378e2e7164c21bef7b9508d89e86e&amp;InstanceId=ID000000000000003132372e302e302e31&amp;AccountSid=ACae6e420f425248d6a26948c17a9e2acf&amp;From=bob&amp;To=%2B1111&amp;CallStatus=ringing&amp;ApiVersion=2012-04-24&amp;Direction=inbound&amp;CallerName=null&amp;ForwardedFrom=null&amp;CallTimestamp=2021-12-15T10%3A29%3A28.539%2B01%3A00&amp;SipHeader_Diversion=%3Ctel%3A%2B19195551002%3E%3Breason%3Duser-busy%3Bscreen%3D%22yes%22%3Bprivacy%3D%22off%22&amp;SipHeader_Diversion=%3Ctel%3A%2B19195551001%3E%3Breason%3Dunconditional%3Bscreen%3D%22yes%22%3Bprivacy%3D%22full%22</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">http://127.0.0.1:65444/1111?CallSid=ID000000000000003132372e302e302e31-CAc6e378e2e7164c21bef7b9508d89e86e&amp;InstanceId=ID000000000000003132372e302e302e31&amp;AccountSid=ACae6e420f425248d6a26948c17a9e2acf&amp;From=bob&amp;To=%2B1111&amp;CallStatus=ringing&amp;ApiVersion=2012-04-24&amp;Direction=inbound&amp;CallerName=null&amp;ForwardedFrom=null&amp;CallTimestamp=2021-12-15T10%3A29%3A28.539%2B01%3A00&amp;SipHeader_Diversion=%3Ctel%3A%2B19195551002%3E%3Breason%3Duser-busy%3Bscreen%3D%22yes%22%3Bprivacy%3D%22off%22&amp;SipHeader_Diversion=%3Ctel%3A%2B19195551001%3E%3Breason%3Dunconditional%3Bscreen%3D%22yes%22%3Bprivacy%3D%22full%22</code></pre>
 </div>
 </div>
 </div>
@@ -4274,7 +4274,7 @@ a &lt;Hangup&gt; or &lt;Reject&gt; tags for, respectively, marking a call as com
 <p>Bob wants to transfer the call to Alice and sends the request to Controller (application server)</p>
 </li>
 <li>
-<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</span></code> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
+<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID">\https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</span></code> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
 </li>
 <li>
 <p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> process this Live Call Modification request and redirects the incoming call to the new RCML application (to the new URL)</p>
@@ -4296,7 +4296,7 @@ a &lt;Hangup&gt; or &lt;Reject&gt; tags for, respectively, marking a call as com
 <p>Will prepare new POST Live Call Modification request for the incoming call to be connected to the new url (that will dial to the conference)</p>
 </li>
 <li>
-<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: - <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</span>` - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
+<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: - <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls">\https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</span>` - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
 </li>
 <li>
 <p>Later application server can create more outgoing call requests, similar to the one above, to invite other clients or sip URLs or PSTN numbers to this conference call</p>
@@ -5542,7 +5542,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre class="highlightjs highlight"><code class="language-none hljs">{
   "page": 0,
   "num_pages": 0,
   "page_size": 50,
@@ -5763,7 +5763,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre class="highlightjs highlight"><code class="language-none hljs">{
   "page": 0,
   "num_pages": 75,
   "page_size": 1,
@@ -5888,7 +5888,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre class="highlightjs highlight"><code class="language-none hljs">{
   "page": 0,
   "num_pages": 44,
   "page_size": 10,
@@ -6089,7 +6089,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre class="highlightjs highlight"><code class="language-none hljs">{
   "page": 0,
   "num_pages": 1,
   "page_size": 50,

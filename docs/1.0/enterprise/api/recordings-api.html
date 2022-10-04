@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       /docs/api/recordings-api.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -73,7 +73,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
               
@@ -230,7 +230,7 @@
               
               
               
-              
+              icomoon3-font-reference-management
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="management-apis-overview.html">Management APIs</a>
@@ -885,7 +885,7 @@
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
-              
+              icomoon3-font-reference-voice
               
               
               
@@ -1601,7 +1601,7 @@
                   data-depth="1">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -1726,7 +1726,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -1759,7 +1759,7 @@
             <span class="nav-flex-item-icon
               
               
-              
+              icomoon3-font-reference-rcml
               
               
               
@@ -2008,7 +2008,7 @@
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -2204,7 +2204,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
               
             "></span>
@@ -2587,7 +2587,7 @@
               
               
               
-              
+              icomoon3-font-reference-solutions
               
             "></span>
                     <span>
@@ -3229,7 +3229,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -3330,11 +3330,11 @@ Although Recording Sids in Recording URLs are essentially long random strings th
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">https://$DOMAIN/restcomm/2012-04-24/</span></code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this account, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">\https://$DOMAIN/restcomm/2012-04-24/</span></code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">FileUri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">https://$DOMAIN/restcomm/2012-04-24/</span></code>. It can be used to access the WAV file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The File URI for this recording, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/">\https://$DOMAIN/restcomm/2012-04-24/</span></code>. It can be used to access the WAV file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S3Uri</p></td>
@@ -3541,7 +3541,7 @@ public class JavaSampleClass {
             "duration":"14.70275",
             "api_version":"2012-04-24",
             "uri":"/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/RE50675909d9c94acda36f0e119b6cb431.json",
-            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
+            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">\https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
         },
         ...
     ]
@@ -3565,7 +3565,7 @@ public class JavaSampleClass {
 </div>
 <div class="paragraph">
 <p>The <strong>&lt;Uri&gt;</strong> holds the http URI that can be used for playback or to download the recorded message.
-Here is how to access the file using http <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav">https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav</span>`</code></p>
+Here is how to access the file using http <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav">\https://$DOMAIN/restcomm/recordings/REb4c03af76cdc4a27aad0d9d759e119bc.wav</span>`</code></p>
 </div>
 </div>
 </div>
@@ -3702,7 +3702,7 @@ public class JavaSampleClass {
             "duration":"14.70275",
             "api_version":"2012-04-24",
             "uri":"/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/Recordings/RE50675909d9c94acda36f0e119b6cb431.json",
-            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
+            "file_uri":"<span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav">\https://$DOMAIN/restcomm/recordings/RE50675909d9c94acda36f0e119b6cb431.wav</span>"
         },
         ...
     ]
@@ -3958,7 +3958,7 @@ public class JavaSampleClass {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>{
+<pre class="highlightjs highlight"><code class="language-none hljs">{
     "page": 0,
     "num_pages": 0,
     "page_size": 1,

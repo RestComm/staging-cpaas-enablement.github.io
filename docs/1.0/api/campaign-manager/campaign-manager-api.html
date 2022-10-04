@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/campaign-manager/campaign-manager-api.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -90,7 +90,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
               
             "></span>
                     <span>
@@ -230,7 +230,7 @@
               
               
               
-              
+              icomoon3-font-reference-management
               
               
               
@@ -1406,7 +1406,7 @@
             <span class="nav-flex-item-icon
               
               
-              
+              icomoon3-font-reference-voice
               
               
               
@@ -2179,7 +2179,7 @@
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
               
-              
+              icomoon3-font-reference-sms
               
               
               
@@ -2330,7 +2330,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="#api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -2367,7 +2367,7 @@
               
               
               
-              
+              icomoon3-font-reference-solutions
               
               
             "></span>
@@ -4241,7 +4241,7 @@
               
               
               
-              
+              icomoon3-font-reference-api
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html">Visual Designer API</a>
@@ -4639,7 +4639,7 @@
               
               
               
-              
+              icomoon3-font-reference-rcml
               
               
               
@@ -5374,7 +5374,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5558,7 +5558,7 @@ throttling available at a given point of time.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>\{\"campaignManager\":\{\"throttle\": \{\"smsPerSecond\":\"10\",
+<pre class="highlightjs highlight"><code class="language-none hljs">\{\"campaignManager\":\{\"throttle\": \{\"smsPerSecond\":\"10\",
 \"callsPerSecond\":\"25\", \"concurrentCalls\":\"5\"}}}</code></pre>
 </div>
 </div>
@@ -7375,7 +7375,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">rcmlUrl</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This URL should return the RCML as explained <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/docs/rcml/overview.html">https://$DOMAIN/docs/rcml/overview.html</span><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional. This URL should return the RCML as explained <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/docs/rcml/overview.html">\https://$DOMAIN/docs/rcml/overview.html</span><br>
 This parameter is needed only if the channel is voice. For Voice either of rcmlUrl or announcementSid should be passed. If both announcementSid and rcmlUrl is passed, announcementSid takes preference.</p></td>
 </tr>
 </tbody>
@@ -7609,7 +7609,7 @@ This parameter is needed only if the channel is voice. For Voice either of rcmlU
 <h5 id="_voice_campaign_example"><a class="anchor" href="#_voice_campaign_example"></a>Voice Campaign Example</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>    "name":"My very first TTS campaign",
+<pre class="highlightjs highlight"><code class="language-none hljs">    "name":"My very first TTS campaign",
     "startTime":"2021-03-18T12:35:46+0530",
     "fromListSid":"The sid of a `from` numbers group",
     "toListSid":"The sid of a `to` numbers group"
@@ -11115,7 +11115,7 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X DELETE \
+<pre class="highlightjs highlight"><code class="language-none hljs">curl -X DELETE \
   https://yourdomain.com/campaignmanager/announcement/AN9701e246abfe4b839bcfad37c228ab67 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'accept: */*'</code></pre>
@@ -11400,7 +11400,7 @@ If the search API is called without page and pageSize, by default pageSize will 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X GET \
+<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
   https://yourdomain.com/campaignmanager/announcement/search?sortBy=name:asc&amp;page=0&amp;pageSize=2\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'accept: */*'</code></pre>
@@ -11542,7 +11542,7 @@ Get Announcement</p></td>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X GET \
+<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
   https://yourdomain.com/campaignmanager/announcement/search/AN42b3d3e952ff47ecba9d487095a2bc4e\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'accept: */*'</code></pre>
