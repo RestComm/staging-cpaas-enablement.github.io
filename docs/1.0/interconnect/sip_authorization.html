@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="SMS SDR - Restcomm Docs"></title>
+    <title data-custom-title="SIP Authorization - Restcomm Docs"></title>
     <link rel="canonical" href="
-      https://dev.restcomm.com/docs/1.0/api/sdr/sdr-sms.html
+      https://dev.restcomm.com/docs/1.0/interconnect/sip_authorization.html
     ">
+    <meta name="description" content="CPaaS SIP Authorization.">
+    <meta name="keywords" content="SIP, JWT.">
     <meta name="generator" content="Antora 2.3.4">
-    <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
-    <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
+    <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
+    <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
     <!-- Not using it for now
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -46,7 +48,7 @@
   <!-- TODO: need to improve the variable used to decide displaying this nav -->
   <nav class="navbar-enterprise">
     <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right">
+      <button class="navigation-toggle icon-custom-font-right" style="visibility: hidden;">
       </button>
       <!--
       <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
@@ -67,13 +69,13 @@
   </nav>
 </header>
 <div class="main-wrapper">
-<div class="navigation-container" data-component="docs" data-version="1.0" >
+<div class="navigation-container" data-component="docs" data-version="1.0"  style="display: none;">
   <aside class="navigation">
     <div class="panels">
   <div class="navigation-menu is-active" data-panel="menu">
     <nav class="nav-menu">
       <!-- Not applicable to our Enterprise docs
-    <h3 class="title"><a href="../../index.html">docs</a></h3>
+    <h3 class="title"><a href="../index.html">docs</a></h3>
     -->
         <ul class="nav-list">
           <ul class="nav-list">
@@ -94,7 +96,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html">API Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html">API Overview</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -114,7 +116,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html#_api_endpoint">API Endpoint</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_api_endpoint">API Endpoint</a>
 
             </span>
                 </div>
@@ -134,7 +136,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html#_authentication">Authentication</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_authentication">Authentication</a>
 
             </span>
                 </div>
@@ -154,7 +156,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html#_requests">Requests</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_requests">Requests</a>
 
             </span>
                 </div>
@@ -174,7 +176,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html#_responses">Responses</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_responses">Responses</a>
 
             </span>
                 </div>
@@ -194,7 +196,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../overview.html#_paging">Paging</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_paging">Paging</a>
 
             </span>
                 </div>
@@ -214,7 +216,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../reasoncodes.html">Reason Codes Dictionary</a>
+              <a class="nav-link nav-flex-item-text" href="../api/reasoncodes.html">Reason Codes Dictionary</a>
 
             </span>
                 </div>
@@ -236,7 +238,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../management-apis-overview.html">Management APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/management-apis-overview.html">Management APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -256,7 +258,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-api.html">Accounts</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html">Accounts</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -276,7 +278,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-api.html#_retrieve_an_account">Retrieve Account</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html#_retrieve_an_account">Retrieve Account</a>
 
             </span>
                 </div>
@@ -296,7 +298,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-api.html#_create_an_account">Create Account</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html#_create_an_account">Create Account</a>
 
             </span>
                 </div>
@@ -316,7 +318,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-api.html#_update_an_account">Update Account</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html#_update_an_account">Update Account</a>
 
             </span>
                 </div>
@@ -336,7 +338,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-api.html#_delete_an_account">Delete Account</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html#_delete_an_account">Delete Account</a>
 
             </span>
                 </div>
@@ -356,7 +358,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../account-roles.html">Account Roles</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-roles.html">Account Roles</a>
 
             </span>
                 </div>
@@ -378,7 +380,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html">Tags</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html">Tags</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -398,7 +400,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html#_create_tag">Create Tag</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html#_create_tag">Create Tag</a>
 
             </span>
                 </div>
@@ -418,7 +420,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html#_update_tag">Update Tag</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html#_update_tag">Update Tag</a>
 
             </span>
                 </div>
@@ -438,7 +440,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html#_get_tags_list">Get Tag list</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html#_get_tags_list">Get Tag list</a>
 
             </span>
                 </div>
@@ -458,7 +460,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html#_get_single_tag_information">Retrieve Tag</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html#_get_single_tag_information">Retrieve Tag</a>
 
             </span>
                 </div>
@@ -478,7 +480,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../tags-api.html#_delete_tag">Delete Tag</a>
+              <a class="nav-link nav-flex-item-text" href="../api/tags-api.html#_delete_tag">Delete Tag</a>
 
             </span>
                 </div>
@@ -500,7 +502,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html">Profiles</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html">Profiles</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -520,7 +522,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_access_control">Access Control</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_access_control">Access Control</a>
 
             </span>
                 </div>
@@ -540,7 +542,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_create_profile">Create Profile</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_create_profile">Create Profile</a>
 
             </span>
                 </div>
@@ -560,7 +562,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_update_profile">Update Profile</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_update_profile">Update Profile</a>
 
             </span>
                 </div>
@@ -580,7 +582,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_unlink_a_profile_from_an_organization">Unlink a Profile from an Account</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_unlink_a_profile_from_an_organization">Unlink a Profile from an Account</a>
 
             </span>
                 </div>
@@ -600,7 +602,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_link_a_profile_to_an_organization">Link a Profile to an Organization</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_link_a_profile_to_an_organization">Link a Profile to an Organization</a>
 
             </span>
                 </div>
@@ -620,7 +622,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_unlink_a_profile_from_an_organization">Unlink a Profile to an Organization</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_unlink_a_profile_from_an_organization">Unlink a Profile to an Organization</a>
 
             </span>
                 </div>
@@ -640,7 +642,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_get_profiles_list">Get Profiles List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_get_profiles_list">Get Profiles List</a>
 
             </span>
                 </div>
@@ -660,7 +662,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_paging">Paging</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_paging">Paging</a>
 
             </span>
                 </div>
@@ -680,7 +682,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_filtering_profile_document_inclusion">Filtering &amp; Profile Document Inclusion</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_filtering_profile_document_inclusion">Filtering &amp; Profile Document Inclusion</a>
 
             </span>
                 </div>
@@ -700,7 +702,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_get_specific_profile_details">Get Profile Details</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_get_specific_profile_details">Get Profile Details</a>
 
             </span>
                 </div>
@@ -720,7 +722,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_get_profile_relationships">Get Profile Relationship</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_get_profile_relationships">Get Profile Relationship</a>
 
             </span>
                 </div>
@@ -740,7 +742,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_get_specific_account_relationship_details">Get Account Relationship</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_get_specific_account_relationship_details">Get Account Relationship</a>
 
             </span>
                 </div>
@@ -760,7 +762,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../profile-api.html#_delete_profile">Delete Profile</a>
+              <a class="nav-link nav-flex-item-text" href="../api/profile-api.html#_delete_profile">Delete Profile</a>
 
             </span>
                 </div>
@@ -782,7 +784,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html">Identity Access Management <strong>Early Access</strong></a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -802,7 +804,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_user_management">User Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_user_management">User Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -822,7 +824,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_create_a_user">Create a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_create_a_user">Create a User</a>
 
             </span>
                 </div>
@@ -842,7 +844,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_update_a_user">Update a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_update_a_user">Update a User</a>
 
             </span>
                 </div>
@@ -862,7 +864,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_retrieve_user_information">Retrieve a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_retrieve_user_information">Retrieve a User</a>
 
             </span>
                 </div>
@@ -882,7 +884,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_delete_a_user">Delete a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_delete_a_user">Delete a User</a>
 
             </span>
                 </div>
@@ -904,7 +906,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_api_keys_management">API Keys Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_api_keys_management">API Keys Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -924,7 +926,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_create_an_api_key">Create an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_create_an_api_key">Create an API Key</a>
 
             </span>
                 </div>
@@ -944,7 +946,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_update_an_api_key">Update an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_update_an_api_key">Update an API Key</a>
 
             </span>
                 </div>
@@ -964,7 +966,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_retrieve_an_api_key">Retrieve an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_retrieve_an_api_key">Retrieve an API Key</a>
 
             </span>
                 </div>
@@ -984,7 +986,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html#_delete_an_api_key">Delete an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_delete_an_api_key">Delete an API Key</a>
 
             </span>
                 </div>
@@ -1008,7 +1010,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../applications-api.html">Applications</a>
+              <a class="nav-link nav-flex-item-text" href="../api/applications-api.html">Applications</a>
 
             </span>
                 </div>
@@ -1028,7 +1030,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../clients-api.html">Clients</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html">Clients</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1048,7 +1050,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../clients-api.html#_create_a_client">Create a Client</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_create_a_client">Create a Client</a>
 
             </span>
                 </div>
@@ -1068,7 +1070,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../clients-api.html#_delete_a_client">Delete a Client</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_delete_a_client">Delete a Client</a>
 
             </span>
                 </div>
@@ -1088,7 +1090,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../clients-api.html#_change_clients_password">Change Client&#8217;s Password</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_change_clients_password">Change Client&#8217;s Password</a>
 
             </span>
                 </div>
@@ -1108,7 +1110,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../clients-api.html#_get_list_of_available_clients">Get a List of Available Clients</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_get_list_of_available_clients">Get a List of Available Clients</a>
 
             </span>
                 </div>
@@ -1130,7 +1132,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1150,7 +1152,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_incomingphonenumber_instance_resource">IncomingPhoneNumber Instance Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_incomingphonenumber_instance_resource">IncomingPhoneNumber Instance Resource</a>
 
             </span>
                 </div>
@@ -1170,7 +1172,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_incomingphonenumbers_list_resource">IncomingPhoneNumbers List Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_incomingphonenumbers_list_resource">IncomingPhoneNumbers List Resource</a>
 
             </span>
                 </div>
@@ -1190,7 +1192,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_local_incomingphonenumber_factory_resource">Local IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_local_incomingphonenumber_factory_resource">Local IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -1210,7 +1212,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_toll_free_incomingphonenumber_factory_resource">Toll-Free IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_toll_free_incomingphonenumber_factory_resource">Toll-Free IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -1230,7 +1232,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_mobile_incomingphonenumber_factory_resource">Mobile IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_mobile_incomingphonenumber_factory_resource">Mobile IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -1250,7 +1252,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_attach_a_phone_number_to_an_application">Attach a phone number to an application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_attach_a_phone_number_to_an_application">Attach a phone number to an application</a>
 
             </span>
                 </div>
@@ -1270,7 +1272,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
 
             </span>
                 </div>
@@ -1290,7 +1292,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_delete_a_phone_number">Delete a phone number</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_delete_a_phone_number">Delete a phone number</a>
 
             </span>
                 </div>
@@ -1310,7 +1312,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_list_of_phone_numbers">List of Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_list_of_phone_numbers">List of Phone Numbers</a>
 
             </span>
                 </div>
@@ -1330,7 +1332,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_incoming_phone_number_regex_support">Incoming Phone Number Regex Support</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_incoming_phone_number_regex_support">Incoming Phone Number Regex Support</a>
 
             </span>
                 </div>
@@ -1352,7 +1354,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../notifications-api.html">Notifications</a>
+              <a class="nav-link nav-flex-item-text" href="../api/notifications-api.html">Notifications</a>
 
             </span>
                 </div>
@@ -1372,7 +1374,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../usage-records-api.html">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/usage-records-api.html">Usage Records</a>
 
             </span>
                 </div>
@@ -1392,7 +1394,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../audit-logs-api.html">Audit Logs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/audit-logs-api.html">Audit Logs</a>
 
             </span>
                 </div>
@@ -1414,7 +1416,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../voice-category.html">Voice APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/voice-category.html">Voice APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1434,7 +1436,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html">Calls</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html">Calls</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1454,7 +1456,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_call_list_resource_uri">Call List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_call_list_resource_uri">Call List Resource URI</a>
 
             </span>
                 </div>
@@ -1474,7 +1476,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_making_a_call_to_a_sip_account">Making a Call</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_making_a_call_to_a_sip_account">Making a Call</a>
 
             </span>
                 </div>
@@ -1494,7 +1496,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_modifying_live_calls">Modifying Live Calls</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_modifying_live_calls">Modifying Live Calls</a>
 
             </span>
                 </div>
@@ -1514,7 +1516,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_examples">Examples</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_examples">Examples</a>
 
             </span>
                 </div>
@@ -1534,7 +1536,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_list_filter">List Filter</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_list_filter">List Filter</a>
 
             </span>
                 </div>
@@ -1554,7 +1556,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../calls-api.html#_paging_information">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1576,7 +1578,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../outgoing-caller-id-api.html">Outgoing Caller ID</a>
+              <a class="nav-link nav-flex-item-text" href="../api/outgoing-caller-id-api.html">Outgoing Caller ID</a>
 
             </span>
                 </div>
@@ -1596,7 +1598,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../conferences-api.html">Conference Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html">Conference Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1616,7 +1618,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../conferences-api.html#_supported_operations">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1636,7 +1638,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../conferences-api.html#_conference_list_resource_uri">Conference List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html#_conference_list_resource_uri">Conference List Resource URI</a>
 
             </span>
                 </div>
@@ -1658,7 +1660,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../participants-api.html">Conference Participants Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/participants-api.html">Conference Participants Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1678,7 +1680,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../participants-api.html#_participant_list_resource_uri">Participants List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/participants-api.html#_participant_list_resource_uri">Participants List Resource URI</a>
 
             </span>
                 </div>
@@ -1700,7 +1702,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../gather-dtmf-api.html">Gather DTMF</a>
+              <a class="nav-link nav-flex-item-text" href="../api/gather-dtmf-api.html">Gather DTMF</a>
 
             </span>
                 </div>
@@ -1720,7 +1722,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../gather-speech-api.html">Gather Speech</a>
+              <a class="nav-link nav-flex-item-text" href="../api/gather-speech-api.html">Gather Speech</a>
 
             </span>
                 </div>
@@ -1740,7 +1742,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../play-api.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="../api/play-api.html">Play</a>
 
             </span>
                 </div>
@@ -1760,7 +1762,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../say-api.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="../api/say-api.html">Say</a>
 
             </span>
                 </div>
@@ -1780,7 +1782,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../holds-api.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="../api/holds-api.html">Hold</a>
 
             </span>
                 </div>
@@ -1800,7 +1802,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../recordings-api.html">Recordings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/recordings-api.html">Recordings</a>
 
             </span>
                 </div>
@@ -1820,7 +1822,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../refer-api.html">Refers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html">Refers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1840,7 +1842,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../refer-api.html#_resource_properties">Resource Properties</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_resource_properties">Resource Properties</a>
 
             </span>
                 </div>
@@ -1860,7 +1862,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../refer-api.html#_supported_operations">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1880,7 +1882,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../refer-api.html#_paging_information">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1902,7 +1904,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../resumes-api.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/resumes-api.html">Resume</a>
 
             </span>
                 </div>
@@ -1922,7 +1924,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../SIP-Refer-Support.html">SIP Refer Support</a>
+              <a class="nav-link nav-flex-item-text" href="../api/SIP-Refer-Support.html">SIP Refer Support</a>
 
             </span>
                 </div>
@@ -1944,7 +1946,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api-overview.html">Messages API - BETA</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api-overview.html">Messages API - BETA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1964,7 +1966,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html">Overview</a>
 
             </span>
                 </div>
@@ -1984,7 +1986,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_channel_identities">Channel Identities</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_channel_identities">Channel Identities</a>
 
             </span>
                 </div>
@@ -2004,7 +2006,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_send_message">Send Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_send_message">Send Message</a>
 
             </span>
                 </div>
@@ -2024,7 +2026,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_status_callback_http_parameters">Status Callback Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_callback_http_parameters">Status Callback Parameters</a>
 
             </span>
                 </div>
@@ -2044,7 +2046,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_status_callback_events">Status Callback Events</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_callback_events">Status Callback Events</a>
 
             </span>
                 </div>
@@ -2064,7 +2066,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_receive_message">Receive Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_receive_message">Receive Message</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2084,7 +2086,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_incoming_message_request_parameters">Incoming Message Request Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_incoming_message_request_parameters">Incoming Message Request Parameters</a>
 
             </span>
                 </div>
@@ -2106,7 +2108,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_get_message_list">Get Message List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_get_message_list">Get Message List</a>
 
             </span>
                 </div>
@@ -2126,7 +2128,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_get_a_single_message_information">Get Single Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_get_a_single_message_information">Get Single Message</a>
 
             </span>
                 </div>
@@ -2146,7 +2148,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_message_attributes">Message Attributes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_message_attributes">Message Attributes</a>
 
             </span>
                 </div>
@@ -2166,7 +2168,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../messages-api.html#_status_description">Status Description</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_description">Status Description</a>
 
             </span>
                 </div>
@@ -2188,7 +2190,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-category.html">SMS APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-category.html">SMS APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2208,7 +2210,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../outgoing-caller-id-api.html">Outgoing Caller ID</a>
+              <a class="nav-link nav-flex-item-text" href="../api/outgoing-caller-id-api.html">Outgoing Caller ID</a>
 
             </span>
                 </div>
@@ -2228,7 +2230,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html">Messages</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html">Messages</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2248,7 +2250,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_send_sms">Send SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_send_sms">Send SMS</a>
 
             </span>
                 </div>
@@ -2268,7 +2270,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_get_sms_list">Get SMS List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_get_sms_list">Get SMS List</a>
 
             </span>
                 </div>
@@ -2288,7 +2290,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_get_single_sms_information">Get single SMS Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_get_single_sms_information">Get single SMS Information</a>
 
             </span>
                 </div>
@@ -2308,7 +2310,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_sms_attributes">SMS Attributes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_sms_attributes">SMS Attributes</a>
 
             </span>
                 </div>
@@ -2330,7 +2332,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../sms-api.html#_sms_specific_error_codes">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -2352,7 +2354,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../email-api.html">Email</a>
+              <a class="nav-link nav-flex-item-text" href="../api/email-api.html">Email</a>
 
             </span>
                 </div>
@@ -2372,7 +2374,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html">Turnkey Apps APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html">Turnkey Apps APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2392,7 +2394,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../microsoft-teams/microsoft-teams-api.html">SMS for Microsoft Teams</a>
+              <a class="nav-link nav-flex-item-text" href="../api/microsoft-teams/microsoft-teams-api.html">SMS for Microsoft Teams</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2412,7 +2414,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../microsoft-teams/microsoft-teams-api.html#_business_customer">Business Customer</a>
+              <a class="nav-link nav-flex-item-text" href="../api/microsoft-teams/microsoft-teams-api.html#_business_customer">Business Customer</a>
 
             </span>
                 </div>
@@ -2432,7 +2434,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../microsoft-teams/microsoft-teams-api.html#_manage_mappings">Manage Mappings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/microsoft-teams/microsoft-teams-api.html#_manage_mappings">Manage Mappings</a>
 
             </span>
                 </div>
@@ -2452,7 +2454,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../microsoft-teams/microsoft-teams-api.html#_bot_details">Bot details</a>
+              <a class="nav-link nav-flex-item-text" href="../api/microsoft-teams/microsoft-teams-api.html#_bot_details">Bot details</a>
 
             </span>
                 </div>
@@ -2472,7 +2474,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../microsoft-teams/microsoft-teams-api.html#_messages">Messages</a>
+              <a class="nav-link nav-flex-item-text" href="../api/microsoft-teams/microsoft-teams-api.html#_messages">Messages</a>
 
             </span>
                 </div>
@@ -2494,7 +2496,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html">Smart 2FA</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html">Smart 2FA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2514,7 +2516,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_send">Sending One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_send">Sending One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2534,7 +2536,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_verify">Verifying One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_verify">Verifying One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2554,7 +2556,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_control">Cancel One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_control">Cancel One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2574,7 +2576,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
 
             </span>
                 </div>
@@ -2594,7 +2596,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_usage_record_one_time_passwords__api_reference">Usage Record One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_usage_record_one_time_passwords__api_reference">Usage Record One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2614,7 +2616,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../turnkey-applications/smart-2fa.html#_limit">Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/smart-2fa.html#_limit">Limit</a>
 
             </span>
                 </div>
@@ -2636,7 +2638,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/overview.html">Message Exchange for Cisco UC-One</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/overview.html">Message Exchange for Cisco UC-One</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2656,7 +2658,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/create-operation.html">Create Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/create-operation.html">Create Operation</a>
 
             </span>
                 </div>
@@ -2676,7 +2678,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/read-operation.html">Read Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/read-operation.html">Read Operation</a>
 
             </span>
                 </div>
@@ -2696,7 +2698,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/update-operation.html">Update Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/update-operation.html">Update Operation</a>
 
             </span>
                 </div>
@@ -2716,7 +2718,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/delete-operation.html">Delete Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/delete-operation.html">Delete Operation</a>
 
             </span>
                 </div>
@@ -2736,7 +2738,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-uc-one/common-response-error-codes.html">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-uc-one/common-response-error-codes.html">Error Codes</a>
 
             </span>
                 </div>
@@ -2758,7 +2760,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-webex-teams/overview.html"> Message Exchange for Cisco Webex Teams</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-webex-teams/overview.html"> Message Exchange for Cisco Webex Teams</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2778,7 +2780,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-webex-teams/overview.html#_create_operation">Create Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-webex-teams/overview.html#_create_operation">Create Operation</a>
 
             </span>
                 </div>
@@ -2798,7 +2800,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-webex-teams/overview.html#_read_operation">Read Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-webex-teams/overview.html#_read_operation">Read Operation</a>
 
             </span>
                 </div>
@@ -2818,7 +2820,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-webex-teams/overview.html#_update_enterprise">Update Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-webex-teams/overview.html#_update_enterprise">Update Operation</a>
 
             </span>
                 </div>
@@ -2838,7 +2840,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../message-exchange-for-cisco-webex-teams/overview.html#_delete_operation">Delete Operation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/message-exchange-for-cisco-webex-teams/overview.html#_delete_operation">Delete Operation</a>
 
             </span>
                 </div>
@@ -2860,7 +2862,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../call-queueing-api.html">Call Queuing</a>
+              <a class="nav-link nav-flex-item-text" href="../api/call-queueing-api.html">Call Queuing</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2880,7 +2882,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../call-queueing-api.html#_create_queuing_api">Create Queue</a>
+              <a class="nav-link nav-flex-item-text" href="../api/call-queueing-api.html#_create_queuing_api">Create Queue</a>
 
             </span>
                 </div>
@@ -2900,7 +2902,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../call-queueing-api.html#_queue_rcml">Queue RCML</a>
+              <a class="nav-link nav-flex-item-text" href="../api/call-queueing-api.html#_queue_rcml">Queue RCML</a>
 
             </span>
                 </div>
@@ -2920,7 +2922,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../call-queueing-api.html#_enqueue_rcml">Enqueue RCML</a>
+              <a class="nav-link nav-flex-item-text" href="../api/call-queueing-api.html#_enqueue_rcml">Enqueue RCML</a>
 
             </span>
                 </div>
@@ -2942,7 +2944,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html">Auto Attendant</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html">Auto Attendant</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2962,7 +2964,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_business_customer_enterprise">Enterprise</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_business_customer_enterprise">Enterprise</a>
 
             </span>
                 </div>
@@ -2982,7 +2984,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_user">User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_user">User</a>
 
             </span>
                 </div>
@@ -3002,7 +3004,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_auto_attendant_system">Auto Attendant System</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_auto_attendant_system">Auto Attendant System</a>
 
             </span>
                 </div>
@@ -3022,7 +3024,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_phone_number">Phone Number</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_phone_number">Phone Number</a>
 
             </span>
                 </div>
@@ -3042,7 +3044,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_announcement">Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_announcement">Announcement</a>
 
             </span>
                 </div>
@@ -3062,7 +3064,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_menu">Menu</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_menu">Menu</a>
 
             </span>
                 </div>
@@ -3082,7 +3084,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_schedule">Schedule</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_schedule">Schedule</a>
 
             </span>
                 </div>
@@ -3102,7 +3104,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_usage_records">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_usage_records">Usage Records</a>
 
             </span>
                 </div>
@@ -3122,7 +3124,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../auto-attendant/auto-attendant-api.html#_single_sign_on">Single Sign On</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant/auto-attendant-api.html#_single_sign_on">Single Sign On</a>
 
             </span>
                 </div>
@@ -3144,7 +3146,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../number-masking-api.html">Number Masking</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html">Number Masking</a>
 
             </span>
                 </div>
@@ -3164,7 +3166,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html">Task Router</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html">Task Router</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3184,7 +3186,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_create_enterprise">Create Enterprise</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_create_enterprise">Create Enterprise</a>
 
             </span>
                 </div>
@@ -3204,7 +3206,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_get_list_of_enterprise">Get a List of Enterprises</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_get_list_of_enterprise">Get a List of Enterprises</a>
 
             </span>
                 </div>
@@ -3224,7 +3226,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_get_single_enterprise">Get Single Enterprise</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_get_single_enterprise">Get Single Enterprise</a>
 
             </span>
                 </div>
@@ -3244,7 +3246,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_delete_enterprise">Delete Enterprise</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_delete_enterprise">Delete Enterprise</a>
 
             </span>
                 </div>
@@ -3264,7 +3266,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_create_user">Create User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_create_user">Create User</a>
 
             </span>
                 </div>
@@ -3284,7 +3286,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_get_list_of_users">Get a List of Users</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_get_list_of_users">Get a List of Users</a>
 
             </span>
                 </div>
@@ -3304,7 +3306,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_get_single_user">Get a Single User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_get_single_user">Get a Single User</a>
 
             </span>
                 </div>
@@ -3324,7 +3326,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_update_user">Update User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_update_user">Update User</a>
 
             </span>
                 </div>
@@ -3344,7 +3346,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../task-router-api.html#_delete_user">Delete user</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html#_delete_user">Delete user</a>
 
             </span>
                 </div>
@@ -3366,7 +3368,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html">Campaign Manager</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html">Campaign Manager</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3386,7 +3388,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_business_customers">Business Customers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_business_customers">Business Customers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3406,7 +3408,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_business_customer_status">Business Customer Status</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_business_customer_status">Business Customer Status</a>
 
             </span>
                 </div>
@@ -3426,7 +3428,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_create_business_customer">Create Business Customer</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_create_business_customer">Create Business Customer</a>
 
             </span>
                 </div>
@@ -3446,7 +3448,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_update_business_customer">Update Business Customer</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_update_business_customer">Update Business Customer</a>
 
             </span>
                 </div>
@@ -3466,7 +3468,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_delete_business_customer">Delete Business Customer</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_delete_business_customer">Delete Business Customer</a>
 
             </span>
                 </div>
@@ -3486,7 +3488,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_list_of_business_customers">Get List of Business Customers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_list_of_business_customers">Get List of Business Customers</a>
 
             </span>
                 </div>
@@ -3506,7 +3508,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_single_business_customer">Get Single Business Customer</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_single_business_customer">Get Single Business Customer</a>
 
             </span>
                 </div>
@@ -3528,7 +3530,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_users">Users</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_users">Users</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3548,7 +3550,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_user_role_and_status">Create User Roles and Status</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_user_role_and_status">Create User Roles and Status</a>
 
             </span>
                 </div>
@@ -3568,7 +3570,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_single_user">Get User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_single_user">Get User</a>
 
             </span>
                 </div>
@@ -3588,7 +3590,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_list_of_users">Get Users List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_list_of_users">Get Users List</a>
 
             </span>
                 </div>
@@ -3608,7 +3610,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_users_roles">Get Users Roles</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_users_roles">Get Users Roles</a>
 
             </span>
                 </div>
@@ -3630,7 +3632,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_numbers_group">Number Groups</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_numbers_group">Number Groups</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3650,7 +3652,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_create_numbers_group_resource_uri">Create Numbers Group</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_create_numbers_group_resource_uri">Create Numbers Group</a>
 
             </span>
                 </div>
@@ -3670,7 +3672,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_numbers_validation">Numbers Validation</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_numbers_validation">Numbers Validation</a>
 
             </span>
                 </div>
@@ -3690,7 +3692,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_delete_existing_numbers_group">Delete Existing Numbers Groups</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_delete_existing_numbers_group">Delete Existing Numbers Groups</a>
 
             </span>
                 </div>
@@ -3710,7 +3712,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_list_existing_numbers_groups">List Existing Numbers Groups</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_list_existing_numbers_groups">List Existing Numbers Groups</a>
 
             </span>
                 </div>
@@ -3730,7 +3732,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_list_a_single_numbers_group">List a Single Numbers Group</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_list_a_single_numbers_group">List a Single Numbers Group</a>
 
             </span>
                 </div>
@@ -3750,7 +3752,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_update_numbers_group">Update Numbers Group</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_update_numbers_group">Update Numbers Group</a>
 
             </span>
                 </div>
@@ -3770,7 +3772,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_download_group_content">Download Group Content</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_download_group_content">Download Group Content</a>
 
             </span>
                 </div>
@@ -3790,7 +3792,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_preview_group_content">Preview Group Content</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_preview_group_content">Preview Group Content</a>
 
             </span>
                 </div>
@@ -3810,7 +3812,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_numbers_group_names">Get Numbers Group Names</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_numbers_group_names">Get Numbers Group Names</a>
 
             </span>
                 </div>
@@ -3832,7 +3834,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_announcement">Announcements</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_announcement">Announcements</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3852,7 +3854,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_create_announcement">Create Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_create_announcement">Create Announcement</a>
 
             </span>
                 </div>
@@ -3872,7 +3874,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_upload_announcement_file">Upload Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_upload_announcement_file">Upload Announcement</a>
 
             </span>
                 </div>
@@ -3892,7 +3894,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_update_announcement">Update Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_update_announcement">Update Announcement</a>
 
             </span>
                 </div>
@@ -3912,7 +3914,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_delete_announcement">Delete Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_delete_announcement">Delete Announcement</a>
 
             </span>
                 </div>
@@ -3932,7 +3934,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_a_list_of_available_announcements">Get list of Announcements</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_a_list_of_available_announcements">Get list of Announcements</a>
 
             </span>
                 </div>
@@ -3952,7 +3954,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_single_announcement">Get Single Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_single_announcement">Get Single Announcement</a>
 
             </span>
                 </div>
@@ -3974,7 +3976,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_campaign">Campaigns</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_campaign">Campaigns</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3994,7 +3996,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_campaign_status">Campaign Status</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_campaign_status">Campaign Status</a>
 
             </span>
                 </div>
@@ -4014,7 +4016,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_create_campaign">Create Campaign</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_create_campaign">Create Campaign</a>
 
             </span>
                 </div>
@@ -4034,7 +4036,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_update_campaign">Update Campaign</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_update_campaign">Update Campaign</a>
 
             </span>
                 </div>
@@ -4054,7 +4056,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_delete_campaign">Delete Campaign</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_delete_campaign">Delete Campaign</a>
 
             </span>
                 </div>
@@ -4074,7 +4076,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_list_of_campaigns">Get List of Campaigns</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_list_of_campaigns">Get List of Campaigns</a>
 
             </span>
                 </div>
@@ -4094,7 +4096,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_get_single_campaign">Get Single Campaign</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_get_single_campaign">Get Single Campaign</a>
 
             </span>
                 </div>
@@ -4114,7 +4116,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_estimate_the_volume_of_the_campaign">Estimate Campaign&#8217;s Volume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_estimate_the_volume_of_the_campaign">Estimate Campaign&#8217;s Volume</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4134,7 +4136,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_text_encoding">Text Encoding</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_text_encoding">Text Encoding</a>
 
             </span>
                 </div>
@@ -4158,7 +4160,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_volume">Volume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_volume">Volume</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4178,7 +4180,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_create_volume">Create Volume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_create_volume">Create Volume</a>
 
             </span>
                 </div>
@@ -4198,7 +4200,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_search_volume">Get Volume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_search_volume">Get Volume</a>
 
             </span>
                 </div>
@@ -4218,7 +4220,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../campaign-manager/campaign-manager-api.html#_search_single_volume_transaction">Get a Single Volume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/campaign-manager/campaign-manager-api.html#_search_single_volume_transaction">Get a Single Volume</a>
 
             </span>
                 </div>
@@ -4244,7 +4246,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html">Visual Designer API</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html">Visual Designer API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4264,7 +4266,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_list_application_templates_from_the_template_gallery">List Application Templates</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_list_application_templates_from_the_template_gallery">List Application Templates</a>
 
             </span>
                 </div>
@@ -4284,7 +4286,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_a_specific_application_template_from_the_template_gallery">:List a Specific Application Template</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_a_specific_application_template_from_the_template_gallery">:List a Specific Application Template</a>
 
             </span>
                 </div>
@@ -4304,7 +4306,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_create_a_visual_designer_application">Create a Visual Designer Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_create_a_visual_designer_application">Create a Visual Designer Application</a>
 
             </span>
                 </div>
@@ -4324,7 +4326,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_application_details">Get Application Details</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_details">Get Application Details</a>
 
             </span>
                 </div>
@@ -4344,7 +4346,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_save_application_changes">Save Application Changes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_save_application_changes">Save Application Changes</a>
 
             </span>
                 </div>
@@ -4364,7 +4366,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_create_application_parameters">Create Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_create_application_parameters">Create Application Parameters</a>
 
             </span>
                 </div>
@@ -4384,7 +4386,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_application_parameters">List Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_parameters">List Application Parameters</a>
 
             </span>
                 </div>
@@ -4404,7 +4406,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_delete_application_parameters">Delete Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_parameters">Delete Application Parameters</a>
 
             </span>
                 </div>
@@ -4424,7 +4426,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_upload_application_media_files">Upload Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_upload_application_media_files">Upload Application Media Files</a>
 
             </span>
                 </div>
@@ -4444,7 +4446,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_a_list_of_application_media_files">List Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_a_list_of_application_media_files">List Application Media Files</a>
 
             </span>
                 </div>
@@ -4464,7 +4466,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_play_an_application_media_file">Play Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_play_an_application_media_file">Play Application Media Files</a>
 
             </span>
                 </div>
@@ -4484,7 +4486,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_delete_application_media_file">Delete Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_media_file">Delete Application Media Files</a>
 
             </span>
                 </div>
@@ -4504,7 +4506,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_application_logs">Get Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_logs">Get Application Logs</a>
 
             </span>
                 </div>
@@ -4524,7 +4526,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_delete_application_logs">Delete Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_logs">Delete Application Logs</a>
 
             </span>
                 </div>
@@ -4544,7 +4546,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_application_settings">Get Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_settings">Get Application Settings</a>
 
             </span>
                 </div>
@@ -4564,7 +4566,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_modify_application_settings">Modify Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_modify_application_settings">Modify Application Settings</a>
 
             </span>
                 </div>
@@ -4584,7 +4586,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_rename_a_visual_designer_application">Rename an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_rename_a_visual_designer_application">Rename an Application</a>
 
             </span>
                 </div>
@@ -4604,7 +4606,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_delete_a_visual_designer_application">Delete an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_a_visual_designer_application">Delete an Application</a>
 
             </span>
                 </div>
@@ -4624,7 +4626,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer-api.html#_get_visual_designer_configuration_details">Get Visual Designer Configuration</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_visual_designer_configuration_details">Get Visual Designer Configuration</a>
 
             </span>
                 </div>
@@ -4646,7 +4648,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/overview.html">RCML</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">RCML</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4666,7 +4668,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/overview.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">Overview</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4686,7 +4688,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/overview.html#_how_wlparamreplacetextmodespsparmtextapplication_nametextrestcommdefaulttextinfer_from_domain_interacts_with_your_application">Interacting with Your Application</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_how_wlparamreplacetextmodespsparmtextapplication_nametextrestcommdefaulttextinfer_from_domain_interacts_with_your_application">Interacting with Your Application</a>
 
             </span>
                 </div>
@@ -4706,7 +4708,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/overview.html#_the_rcml_verbs">RCML Verbs</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_the_rcml_verbs">RCML Verbs</a>
 
             </span>
                 </div>
@@ -4728,7 +4730,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/dial-rcml.html">Dial</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/dial-rcml.html">Dial</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4748,7 +4750,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/client-rcml.html">Client</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/client-rcml.html">Client</a>
 
             </span>
                 </div>
@@ -4768,7 +4770,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/conference-rcml.html">Conference</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/conference-rcml.html">Conference</a>
 
             </span>
                 </div>
@@ -4788,7 +4790,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/number-rcml.html">Number</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/number-rcml.html">Number</a>
 
             </span>
                 </div>
@@ -4808,7 +4810,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/sip-rcml.html">SIP</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sip-rcml.html">SIP</a>
 
             </span>
                 </div>
@@ -4830,7 +4832,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/email-rcml.html">Email</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/email-rcml.html">Email</a>
 
             </span>
                 </div>
@@ -4850,7 +4852,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/gather-rcml.html">Gather</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/gather-rcml.html">Gather</a>
 
             </span>
                 </div>
@@ -4870,7 +4872,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/say-rcml.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/say-rcml.html">Say</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -4890,7 +4892,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/ssml-reference.html">SSML Reference</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/ssml-reference.html">SSML Reference</a>
 
             </span>
                 </div>
@@ -4912,7 +4914,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/play-rcml.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/play-rcml.html">Play</a>
 
             </span>
                 </div>
@@ -4932,7 +4934,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/sms-rcml.html">SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sms-rcml.html">SMS</a>
 
             </span>
                 </div>
@@ -4952,7 +4954,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/message-rcml.html">Message - BETA</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message - BETA</a>
 
             </span>
                 </div>
@@ -4972,7 +4974,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/hold-rcml.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hold-rcml.html">Hold</a>
 
             </span>
                 </div>
@@ -4992,7 +4994,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/resume-rcml.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/resume-rcml.html">Resume</a>
 
             </span>
                 </div>
@@ -5012,7 +5014,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/hangup-rcml.html">Hangup</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hangup-rcml.html">Hangup</a>
 
             </span>
                 </div>
@@ -5032,7 +5034,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/pause-rcml.html">Pause</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/pause-rcml.html">Pause</a>
 
             </span>
                 </div>
@@ -5052,7 +5054,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/redirect-rcml.html">Redirect</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/redirect-rcml.html">Redirect</a>
 
             </span>
                 </div>
@@ -5072,7 +5074,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/record-rcml.html">Record</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/record-rcml.html">Record</a>
 
             </span>
                 </div>
@@ -5092,7 +5094,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/reject-rcml.html">Reject</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/reject-rcml.html">Reject</a>
 
             </span>
                 </div>
@@ -5112,7 +5114,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../rcml/refer-rcml.html">Refer</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/refer-rcml.html">Refer</a>
 
             </span>
                 </div>
@@ -5134,7 +5136,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="session-detail-records-export.html">Session Detail Records (SDRs)</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/session-detail-records-export.html">Session Detail Records (SDRs)</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5154,7 +5156,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-call.html">Call SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-call.html">Call SDR</a>
 
             </span>
                 </div>
@@ -5174,7 +5176,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-conference.html">Conference SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-conference.html">Conference SDR</a>
 
             </span>
                 </div>
@@ -5194,7 +5196,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-gather-dtmf.html">Gather DTMF SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-gather-dtmf.html">Gather DTMF SDR</a>
 
             </span>
                 </div>
@@ -5214,7 +5216,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-gather-speech.html">Gather Speech SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-gather-speech.html">Gather Speech SDR</a>
 
             </span>
                 </div>
@@ -5234,7 +5236,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-hold.html">Hold SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-hold.html">Hold SDR</a>
 
             </span>
                 </div>
@@ -5254,7 +5256,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-play.html">Play SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-play.html">Play SDR</a>
 
             </span>
                 </div>
@@ -5274,7 +5276,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-recording.html">Recording SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-recording.html">Recording SDR</a>
 
             </span>
                 </div>
@@ -5294,7 +5296,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-refer.html">Refer SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-refer.html">Refer SDR</a>
 
             </span>
                 </div>
@@ -5314,7 +5316,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-resume.html">Resume SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-resume.html">Resume SDR</a>
 
             </span>
                 </div>
@@ -5334,13 +5336,13 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-say.html">Say SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-say.html">Say SDR</a>
 
             </span>
                 </div>
                               </li>
               <li id="Message SDR"
-                  class="nav-item is-current-page"
+                  class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -5354,7 +5356,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="sdr-sms.html">Message SDR</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdr/sdr-sms.html">Message SDR</a>
 
             </span>
                 </div>
@@ -5375,7 +5377,7 @@
       <span class="title">docs</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="../../index.html">1.0</a>
+          <a href="../index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -5390,209 +5392,97 @@
 -->
 <div class="toolbar" role="navigation" style="display: none;">
   <button class="navigation-toggle"></button>
-  <a href="../../index.html" class="home-link"></a>
+  <a href="../index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li class="crumb"><a href="../../index.html">docs</a></li>
-    <li class="crumb"><a href="session-detail-records-export.html">CSP:Session Detail Records (SDRs)</a></li>
-    <li class="crumb"><a href="sdr-sms.html">CSP:Message SDR</a></li>
+    <li class="crumb"><a href="../index.html">docs</a></li>
+    <li class="crumb"><a href="sip_authorization.html">SIP Authorization</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>SMS SDR</h1>
-<div id="preamble">
+  <h1>SIP Authorization</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_digest_authentication">Digest Authentication</a></li>
+<li><a href="#_bearer_authentication">Bearer Authentication</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sms records are generated when applications execute the <a href="../../rcml/sms-rcml.html">&lt;SMS&gt;</a> verb.</p>
+<p>When the CPaaS platform receives a request from the SIP protocol client that carries either an Authorization, or
+a Proxy-Authorization header field, the server processes Authentication procedure to verify and identify the remote client.</p>
+</div>
+<div class="paragraph">
+<p>The CPaaS platform supports the following authorization algorithms:
+- <a href="#_digest_authentication">Digest</a>
+- <a href="#_bearer_authentication">Bearer</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_format"><a class="anchor" href="#_format"></a>Format</h2>
+<h2 id="_digest_authentication"><a class="anchor" href="#_digest_authentication"></a>Digest Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>An SMS SDR record comprises the following fields.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Field</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Type</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The record identifier.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The account to which the record belongs to.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">account_friendly_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The friendly name of the Account.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">org_sid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The organization to which the record belongs to.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">org_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The domain name of the Organization which belongs to the Account.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date when the record was created.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: `Thu, 01 Jan 2022 00:20:00 +0000)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime in milliseconds when the record was created.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00.123 +0000</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_updated</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The date when the record was last modified.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00 +0000</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_updated_ms</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The datetime in milliseconds when the record was last modified.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp (format: <code>Thu, 01 Jan 2022 00:20:00.123 +0000</code>)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">from</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The sender ID.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The recipient ID.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message body.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">num_segments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If the message is sent to a PSTN and requires segmentation because of length, this will indicate the number of segments.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sip_status_code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The SIP error code response to the SIP message request.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sip_status_reason</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The SIP response error reason to SIP message request.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The SMS message status: <code>received</code>, <code>sent</code>, <code>delivered</code>, <code>undelivered</code>, <code>failed</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">direction</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message direction: <code>inbound</code>, <code>outbound-call</code>, <code>outbound-api</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">price</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The price of the record.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">price_unit</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unit of the price.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">api_version</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The API version that generated the record.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI that references the SDR record.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">error_code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The internal error code.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">error_message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The internal error message.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.message</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The message explaining the session failure.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.code</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The reason code explaining the session failure. Relates to <code>reason.protocol</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason.protocol</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The protocol that originated the session failure. Relates to <code>reason.code</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">media_list.item_*.url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the media attachment for this SMS message.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">URI</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">media_list.item_*.content_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Content Type of the media attachment for this SMS message.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">media_list_size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Number of media attachments.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">headers.*</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Any custom header associated with this SMS message. May result in multiple columns or none.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_export_example"><a class="anchor" href="#_export_example"></a>Export Example</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following example show the contents of a bulk-exported CSV file with several records:</p>
+<p>The Digest authentication is a simple challenge/response method based on the HTTP protocol. As per <a href="https://www.rfc-editor.org/rfc/rfc2069">RFC 2069</a>, it employs a MD5 hash algorithm
+to encode the username, realm, password, digest URI, and server generated nonce ("number used once") as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>account_sid,price,media_list_size,error_message,date_sent,uri,sip_status_code,from,to,date_updated,date_updated_ms,body,sip_status_reason,date_created,date_created_ms,status,error_code,num_segments,direction,price_unit,org_sid,api_version,sid,reason.message,reason.code,reason.protocol,headers.x-amz-request-id,headers.X-RestComm-AccountSid,headers.X-RestComm-ApiVersion,headers.X-RestComm-ApplicationUrl,headers.X-RestComm-OrganizationSid,headers.X-RestComm-CallSid,headers.x-amz-id-2
-ACab03aae495eb4ca69737aa0d0da73d7f,0.0,0,,,/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/SMS/Messages/SMf83ca76cbbb94fcb9077c848c683b05d,0,900013,900003,"Wed, 27 Apr 2022 19:46:01 +0000","Wed, 27 Apr 2022 19:46:01.123 +0000",SmppInboundMessage1 a616cffc-c1e9-40aa-9199-79b0ed8b9c24,,"Wed, 27 Apr 2022 19:46:01 +0000","Wed, 27 Apr 2022 19:46:01.123 +0000",received,0,1,inbound,USD,OR55e4cbe945a14edca5bd157b9ee97bcc,2012-04-24,SMf83ca76cbbb94fcb9077c848c683b05d,,0,,,,,,,,
-ACab03aae495eb4ca69737aa0d0da73d7f,0.0,0,,,/2012-04-24/Accounts/ACab03aae495eb4ca69737aa0d0da73d7f/SMS/Messages/SM2f3f219fe0d2485d9b9963a3eb7bf46e,200,TestApp-SmppInboundMessage,client:smpp-inbound-client,"Wed, 27 Apr 2022 19:02:04 +0000","Wed, 27 Apr 2022 19:02:04.123 +0000",SmppInboundMessage 0001,OK,"Wed, 27 Apr 2022 19:02:04 +0000","Wed, 27 Apr 2022 19:02:04.123 +0000",delivered,0,1,outbound-call,USD,OR55e4cbe945a14edca5bd157b9ee97bcc,2012-04-24,SM2f3f219fe0d2485d9b9963a3eb7bf46e,,0,,FA17RW8Y3ZC30W7D,ACab03aae495eb4ca69737aa0d0da73d7f,2012-04-24,https://s3.amazonaws.com/synthetic-monitoring/apps/smpp_inbound_message.xml,OR55e4cbe945a14edca5bd157b9ee97bcc,SM68bb2b7b807c4b35a05dddeaf9722222,63Co+ib86aiSUz8WTZpiOw7YelX6RYfjU/rhV6IWkiOxOKW4ZbnyfSSoiVRZmvUINliRMFWsGDk=</code></pre>
+<pre>H1 = MD5 (username : realm : password)
+
+H2 = MD5 (method : digestURI)
+
+Response = MD5 (H1 : nonce : H2)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://www.rfc-editor.org/rfc/rfc2617">RFC 2617</a> added a client generated nonce and quality of protection (QoP) to improve security as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Response = MD5(H1 : nonce : nonceCount : nonceClient : QoP : H2)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can find more detailed information about Digest Authentication in <a href="https://datatracker.ietf.org/doc/html/rfc3261">RFC3261</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bearer_authentication"><a class="anchor" href="#_bearer_authentication"></a>Bearer Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bearer Authentication is authentication base on <a href="https://datatracker.ietf.org/doc/html/rfc7519">RFC7519</a></p>
+</div>
+<div class="paragraph">
+<p>JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
+The claims in a JWT are encoded as a JSON object that is used as the payload of a JSON Web Signature (JWS) structure or
+as the plaintext of a JSON Web Encryption (JWE) structure, enabling the claims to be digitally signed or integrity
+protected with a Message Authentication Code (MAC) and/or encrypted.</p>
+</div>
+<div class="paragraph">
+<p>The CPaaS platform uses Amazon Cognito as a Authentication Server, which provides authentication, authorization, and user
+management. Amazon Cognito Service is available in multiple AWS Regions worldwide. In each Region, Amazon Cognito is distributed
+across multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united
+by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable AWS
+to provide services, including Amazon Cognito, with very high levels of availability and redundancy, while also
+minimizing latency.</p>
+</div>
+<div class="paragraph">
+<p>The following Diagram shows a typical JWT authentication flow:
+1. A User requests JWT from Authentication Server based on Account Sid and Token
+2. The Authentication Server verifies the Account Sid and Token. As a successful result, the Authentication Server returns a valid JWT token.
+3. The User initiates an incoming SIP call and includes <code>Authorization</code> header into the SIP INVITE message.
+4. The CPaaS platform validates the JWT and continues processing the call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/interconnect/JWT_authetication_flow.png" alt="JWT Authentication Flow">
 </div>
 </div>
 </div>
@@ -5650,8 +5540,8 @@ ACab03aae495eb4ca69737aa0d0da73d7f,0.0,0,,,/2012-04-24/Accounts/ACab03aae495eb4c
     <!---->
   </div>
 </footer>
-<script src="../../../../_/js/site.js"></script>
-<script src="../../../../_/js/vendor/highlight.js"></script>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
 <!--
 <script>hljs.initHighlighting()</script>
 -->

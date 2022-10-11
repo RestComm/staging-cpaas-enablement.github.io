@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="The Create operation allows Communication Service Providers (CSP) Account to create MX mappings and new Enterprise names for easy segregation of mappings specific to each enterprise account.">
     <meta name="keywords" content="message exchange create operation, mx create operation">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5376,7 +5376,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5572,7 +5572,7 @@
 <h3 id="_example"><a class="anchor" href="#_example"></a>Example:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
  "name" : "walmart"
 }</code></pre>
 </div>
@@ -5582,7 +5582,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://cloud.restcomm.com/messageexchange/enterprise \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5597,7 +5597,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "EN263d95d2bafa4e4a9e6a5563851cd283",
         "dateUpdated": "2019-10-11T11:11:00+0000",
@@ -5618,7 +5618,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "460",
     "message": "Enterprise name not unique",
     "data": {
@@ -5900,7 +5900,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 <h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
       "name" : "Jane Doe",
      "jabberAddress" : "jane.doe@yourcompany.com",
      "externalAddress" : "157133169432",
@@ -5913,7 +5913,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://cloud.restcomm.com/messageexchange/mappings\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5931,7 +5931,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "XM04f7959a96c34814ba163a4f5c8c7fc1",
         "dateUpdated": "2019-10-11T11:16:02+0000",
@@ -5956,7 +5956,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "465",
     "message": "jabberAddress not unique",
     "data": {
@@ -5975,7 +5975,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://yourcompany.com/messageexchange/mappings\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5994,7 +5994,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "XMcab895c586eb4bd3926c2fa644319698",
         "dateUpdated": "2019-10-11T11:18:24+0000",
@@ -6021,7 +6021,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "465",
     "message": "jabberAddress not unique",
     "data": {
@@ -6350,7 +6350,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 <h3 id="_example_3"><a class="anchor" href="#_example_3"></a>Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
  "name":"mycompany.com",
 "certificate" : " -----BEGIN CERTIFICATE-----.....-----END CERTIFICATE-----"
 
@@ -6362,7 +6362,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://cloud.restcomm.com/messageexchange/domains\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6378,7 +6378,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
        "data": {
         "sid": "DOe334d1141af84ae6b7e44858d1745609",
         "dateUpdated": "2019-10-11T11:25:16+0000",
@@ -6402,7 +6402,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "468",
     "message": "Invalid Certificate",
     "data": {
@@ -6566,7 +6566,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 <h3 id="_example_4"><a class="anchor" href="#_example_4"></a>Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
   "ipAddress": "1.2.3.4"
 }</code></pre>
 </div>
@@ -6576,7 +6576,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST \
+<pre class="highlightjs highlight"><code>curl -X POST \
   https://cloud.restcomm.com/messageexchange/whitelist\
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6591,7 +6591,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "WLc63cf931d5dd4741b54b751a082e8a47",
         "dateUpdated": "2019-10-11T11:02:54+0000",
@@ -6611,7 +6611,7 @@ Number provisioning is asynchronous process. The user can call the create mappin
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
      "code":461,
      "message":"Invalid IPv4 Address”,
      “data”:{

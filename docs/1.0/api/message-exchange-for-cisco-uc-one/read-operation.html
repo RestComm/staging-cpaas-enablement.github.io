@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="The Read operation allows Communication Service Providers (CSP) Account to read Enterprises, Mappings, Messages and retrieve corresponding usage records.">
     <meta name="keywords" content="message exchange read operation, mx read operation, message exchange usage records">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5376,7 +5376,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5679,7 +5679,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/enterprise/search?pageSize=2&amp;page=0 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5691,7 +5691,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -5795,7 +5795,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/enterprise/search/EN86b7850af05a454b95139d59ca420849 \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5807,7 +5807,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "EN86b7850af05a454b95139d59ca420849",
         "dateUpdated": "2019-10-11T06:25:18+0000",
@@ -6091,7 +6091,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/mappings/search \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6103,7 +6103,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -6216,7 +6216,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/mappings/search/XM00009e272d9047dc858549485b0d0e1f \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6228,7 +6228,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "XMcab895c586eb4bd3926c2fa644319698",
         "dateUpdated": "2019-10-11T11:18:25+0000",
@@ -6514,7 +6514,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/domains/search \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6526,7 +6526,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -6631,7 +6631,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/domain/search/DO2cc2c59a709542c0bc0e3b23c9bde034 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6643,7 +6643,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "DO2cc2c59a709542c0bc0e3b23c9bde034",
         "dateUpdated": "2019-10-11T09:06:32+0000",
@@ -6913,7 +6913,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/whitelist/search?pageSize=2&amp;page=0 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6925,7 +6925,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -7027,7 +7027,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/whitelist/search/WLa69f0b446e57437889707e7f9277f6f8 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7039,7 +7039,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "WLa69f0b446e57437889707e7f9277f6f8",
         "dateUpdated": "2019-10-11T11:05:24+0000",
@@ -7363,7 +7363,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/messages/search \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7375,7 +7375,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "result": [
             {
@@ -7510,7 +7510,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/messages/search/MSbf0e4dae2c14824b52fe556171cd773 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7522,7 +7522,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "MSbf0e4ddae2c14824b52fe556171cd773",
         "dateUpdated": "2019-09-24T06:06:35+0000",
@@ -7604,7 +7604,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl-XGET\ https://cloud.restcomm.com/messageexchange/enterprise/usage/records?endDate=2019-07-01&amp;startDate=2019-07-22
+<pre class="highlightjs highlight"><code>curl-XGET\ https://cloud.restcomm.com/messageexchange/enterprise/usage/records?endDate=2019-07-01&amp;startDate=2019-07-22
  \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7616,7 +7616,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Enterprise created",
@@ -7692,7 +7692,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/enterprise/usage/records/daily?endDate=2019-07-01&amp;startDate=2019-07-22 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7704,7 +7704,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Enterprise created",
@@ -7790,7 +7790,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \ https://cloud.restcomm.com/messageexchange/mappings/usage/records?startDate=2019-07-01&amp;endDate=2019-07-22
+<pre class="highlightjs highlight"><code>curl -X GET \ https://cloud.restcomm.com/messageexchange/mappings/usage/records?startDate=2019-07-01&amp;endDate=2019-07-22
  \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7802,7 +7802,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Xmpp mapping created",
@@ -7878,7 +7878,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/mappings/usage/records/daily?startDate=2019-07-21&amp;endDate=2019-07-23 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -7890,7 +7890,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Xmpp mapping created",
@@ -8006,7 +8006,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \ https://cloud.restcomm.com/messageexchange/messages/usage/records?startDate=2019-07-01&amp;endDate=2019-07-22
+<pre class="highlightjs highlight"><code>curl -X GET \ https://cloud.restcomm.com/messageexchange/messages/usage/records?startDate=2019-07-01&amp;endDate=2019-07-22
  \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -8018,7 +8018,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Total Messages",
@@ -8093,7 +8093,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X GET \
+<pre class="highlightjs highlight"><code>curl -X GET \
   https://cloud.restcomm.com/messageexchange/messages/usage/records/daily?startDate=2019-07-21&amp;endDate=2019-07-23 \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -8105,7 +8105,7 @@ endDate, by default endDate is today.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": [
         {
             "description": "Total Messages",
