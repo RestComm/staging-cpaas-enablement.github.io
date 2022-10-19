@@ -5449,7 +5449,7 @@ Response = MD5 (H1 : nonce : H2)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You can find more detailed information about Digest Authentication in <a href="https://datatracker.ietf.org/doc/html/rfc3261">RFC3261</a></p>
+<p>You can find more detailed information about Digest Authentication in <a href="https://datatracker.ietf.org/doc/html/rfc3261">RFC3261</a>.</p>
 </div>
 </div>
 </div>
@@ -5457,7 +5457,7 @@ Response = MD5 (H1 : nonce : H2)</pre>
 <h2 id="_bearer_authentication"><a class="anchor" href="#_bearer_authentication"></a>Bearer Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Bearer Authentication is authentication base on <a href="https://datatracker.ietf.org/doc/html/rfc7519">RFC7519</a></p>
+<p>Bearer Authentication is authentication based on <a href="https://datatracker.ietf.org/doc/html/rfc7519">RFC7519</a>.</p>
 </div>
 <div class="paragraph">
 <p>JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties.
@@ -5474,11 +5474,23 @@ to provide services, including Amazon Cognito, with very high levels of availabi
 minimizing latency.</p>
 </div>
 <div class="paragraph">
-<p>The following Diagram shows a typical JWT authentication flow:
-1. A User requests JWT from Authentication Server based on Account Sid and Token
-2. The Authentication Server verifies the Account Sid and Token. As a successful result, the Authentication Server returns a valid JWT token.
-3. The User initiates an incoming SIP call and includes <code>Authorization</code> header into the SIP INVITE message.
-4. The CPaaS platform validates the JWT and continues processing the call.</p>
+<p>The following Diagram shows a typical JWT authentication flow:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A User requests JWT from Authentication Server based on Account Sid and Token</p>
+</li>
+<li>
+<p>The Authentication Server verifies the Account Sid and Token. As a successful result, the Authentication Server returns a valid JWT token.</p>
+</li>
+<li>
+<p>The User initiates an incoming SIP call and includes <code>Authorization</code> header into the SIP INVITE message.</p>
+</li>
+<li>
+<p>The CPaaS platform validates the JWT and continues processing the call.</p>
+</li>
+</ol>
 </div>
 <div class="imageblock">
 <div class="content">
