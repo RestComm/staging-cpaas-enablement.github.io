@@ -3482,7 +3482,7 @@ Condition should be set to <code>$Digit</code> with value 4. The Action should b
 </div>
 <div class="paragraph">
 <p><strong>01 - Main IVR</strong>
-Simple IVR Collect step to prompt the caller to press the department digit, and delegate the caller to relevant flow module.</p>
+Simple IVR Collect step to prompt the caller to press a department digit, and transfer the caller to a relevant flow module.</p>
 </div>
 <div class="paragraph">
 <p><strong>02.a - Unattended Transfer</strong>
@@ -3490,10 +3490,10 @@ Module with single step that performs call transfer to a specified SIP address.<
 </div>
 <div class="paragraph">
 <p><strong>02.b - Attended Transfer</strong>
-Module that acts as a starting point for Attended flow dynamically, based on user digit selection and the combination of <a href="../visual-designer/Visual-Designer-Usage-Guide.html#_control_verb">Control verb</a>.</p>
+Module that acts as a starting point for Attended flow dynamically, based on a user digit selection and the combination of <a href="../visual-designer/Visual-Designer-Usage-Guide.html#_control_verb">Control verb</a>.</p>
 </div>
 <div class="paragraph">
-<p>For every department we need to add another Control verb that will populate the global variable "selectedDepartment" variable with the corresponding department client.</p>
+<p>For every newly aded department, you need to add another Control verb that will populate the global variable <code>selectedDepartment</code> variable with the corresponding department client.</p>
 </div>
 <div class="paragraph">
 <p>In the case of this template, the department client is exposed as a template parameter. Thus, we can add more departments to this module.</p>
@@ -3505,13 +3505,17 @@ Module that acts as a starting point for Attended flow dynamically, based on use
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-In order to add more departments, the Control step must be duplicated and a new $digit value for evaluation in the "condition" part must be set, and set selectedDepartment variable to new client department in the "Action" part. Don&#8217;t forget to add Digit mapping for the new Digit at "Main IVR" module.
+<div class="paragraph">
+<p>In order to add more departments, the Control step must be duplicated and:
+* a new <code>$digit</code> value for evaluation in the "condition" section must be set
+* <code>selectedDepartment</code> variable must be set to new client department in the "Action" section of the Control verb. Don&#8217;t forget to add Digit mapping for the new Digit at "Main IVR" module.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>At the end of the module, there is a usage of "Hold" verb which will delegate to "Dial Attended Client" module.</p>
+<p>At the end of the module, there is a usage of <code>Hold</code> verb which will let the application proceed to the <code>Dial Attended Client</code> module.</p>
 </div>
 <div class="paragraph">
 <p><strong>03 - Dial Attended Client</strong></p>
@@ -3544,7 +3548,7 @@ The <code>Before Connect</code> property is hidden by default. In order to revea
 <p>This is what will be presented to the attended department call.</p>
 </div>
 <div class="paragraph">
-<p>If 1 is press, the application proceeds to 1Attended Client Accepts1 module, if 2 is pressed, <code>Attended Client Rejects</code> module is executed.</p>
+<p>If 1 is press, the application proceeds to <code>Attended Client Accepts</code> module, if 2 is pressed, <code>Attended Client Rejects</code> module is executed.</p>
 </div>
 <div class="paragraph">
 <p><strong>05.b - Attended Client Rejects </strong></p>
@@ -3557,7 +3561,7 @@ The <code>Before Connect</code> property is hidden by default. In order to revea
 </div>
 <div class="paragraph">
 <p>In this module, we perform the actual merge between the original call, and the attended department which accepted the call.
-We perform Live call modification Rest API request via "External Service" verb.</p>
+We perform Live call modification REST API request via an External Service verb.</p>
 </div>
 <div class="paragraph">
 <p>The REST request structure is as follows:</p>
@@ -3568,7 +3572,7 @@ We perform Live call modification Rest API request via "External Service" verb.<
 </div>
 </div>
 <div class="paragraph">
-<p>First two parameters (apiDomain, accountSID) defined in the template parameters list. The last one (ParentCallSid) is autopopulated internally via Visual Designer logic.</p>
+<p>The first two parameters (apiDomain, accountSID) are defined in the template parameters list. The last one (ParentCallSid) is autopopulated internally via Visual Designer logic.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3577,7 +3581,7 @@ We perform Live call modification Rest API request via "External Service" verb.<
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Do not change or populate this variable yourself
+Do not change or populate this variable yourself.
 </td>
 </tr>
 </table>
@@ -3587,11 +3591,11 @@ Do not change or populate this variable yourself
 </div>
 <div class="paragraph">
 <p><strong>ChildCallMode</strong> = StayConnected
-All call legs will continue to stay connected and process an RCML from an existing URL.<br>
+All call legs will continue to stay connected and process an RCML from an existing URL.+
 <strong>Url</strong>  - that will serve an empty refer RCML response, in our case we serve the RCML by providing full URI to another module, "Implicit Call Transfer".</p>
 </div>
 <div class="paragraph">
-<p>The URI is constructed with 3 parameters:</p>
+<p>The URI is constructed of 3 parameters:</p>
 </div>
 <div class="paragraph">
 <p><code><a href="https://$apiDomain/visual-designer/services/apps/$applicationSID/controller?target=$lcmEmptyReferModuleID" class="bare">https://$apiDomain/visual-designer/services/apps/$applicationSID/controller?target=$lcmEmptyReferModuleID</a></code></p>
@@ -3600,7 +3604,7 @@ All call legs will continue to stay connected and process an RCML from an existi
 <p>The first two parameters (apiDomain, applicationSID) are defined in template parameters list. The last one (lcmEmptyReferModuleID), is assigned one step before the External Service via a Control step.</p>
 </div>
 <div class="paragraph">
-<p>The template assumed that the module Ids will not change during application modification, but if so, the module ID that represents the empty refer RCML should be assigned to <code>lcmEmptyReferModuleID</code>.</p>
+<p>The template assumes that the module Ids will not change during application modification, but if so, the module ID that represents the empty refer RCML should be assigned to <code>lcmEmptyReferModuleID</code>.</p>
 </div>
 <div class="paragraph">
 <p>The module ID could be obtained by hovering over the module tab name.</p>
@@ -3608,7 +3612,7 @@ All call legs will continue to stay connected and process an RCML from an existi
 <div class="sect2">
 <h3 id="_implicit_call_transfer"><a class="anchor" href="#_implicit_call_transfer"></a>Implicit Call Transfer</h3>
 <div class="paragraph">
-<p>This module is for the external service usages. This module output the empty call transfer RCML that the API call for live call modification needs.</p>
+<p>This module is for the External Service usage. It outputs the empty call transfer RCML that the API call for live call modification needs.</p>
 </div>
 </div>
 <div class="sect2">
