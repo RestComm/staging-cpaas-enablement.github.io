@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/tutorials/Voice_Callbacks.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.2">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5381,6 +5381,128 @@
                               </li>
   </ul>
               </li>
+              <li id="Android Getting Started Guide"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Android-Getting-Started-Guide.html">Android Getting Started Guide</a>
+                        <button class="nav-toggle"></button>
+            </span>
+                </div>
+                  <ul class="nav-list">
+              <li id="Android SDK Integration Guide"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Click-to-Call-Overview.html">Android SDK Integration Guide</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Android SDK API Reference"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Android-SDK-API-Reference.html">Android SDK API Reference</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Click to Call"
+                  class="nav-item"
+                  data-depth="2">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Click-to-Call-Overview.html">Click to Call</a>
+
+            </span>
+                </div>
+                              </li>
+  </ul>
+              </li>
+              <li id="iOS Getting Started Guide"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/iOS-Getting-Started-Guide.html">iOS Getting Started Guide</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="iOS SDK Integration Guide"
+                  class="nav-item"
+                  data-depth="1">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+
+            </span>
+                </div>
+                              </li>
   </ul>
   </ul>
     </nav>
@@ -5394,7 +5516,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -5547,7 +5669,7 @@ understands that the call to Bob failed so it can provide RCML that allows to re
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>&lt;Response&gt;
+<pre class="highlightjs highlight"><code class="language-none hljs">&lt;Response&gt;
 &lt;Dial&gt;
     &lt;Client&gt;Carol&lt;/Client&gt;
 &lt;/Dial&gt;
@@ -5751,7 +5873,7 @@ Dial verb itself.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>&lt;Dial&gt;
+<pre class="highlightjs highlight"><code class="language-none hljs">&lt;Dial&gt;
     &lt;Client statusCallback="/notify-me" statusCallbackEvent="initiated,ringing,answered,completed"&gt;
         Bob
     &lt;/Client&gt;
@@ -5793,7 +5915,7 @@ to connect to an RCML application.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>curl -X POST https://www.wlparam:replace[textMode="sps",parmText="application_name",text="Restcomm",defaultText="$INFER_FROM_DOMAIN"].com/wlparam:replace[textMode="sps",parmText="application_name",text="Restcomm",defaultText="$INFER_FROM_DOMAIN"]/2012-04-24/Accounts/AccountSid/Calls.json  \
+<pre class="highlightjs highlight"><code class="language-none hljs">curl -X POST https://www.wlparam:replace[textMode="sps",parmText="application_name",text="Restcomm",defaultText="$INFER_FROM_DOMAIN"].com/wlparam:replace[textMode="sps",parmText="application_name",text="Restcomm",defaultText="$INFER_FROM_DOMAIN"]/2012-04-24/Accounts/AccountSid/Calls.json  \
    -d 'From=alice' \
    -d 'To=client:bob' \
    -d 'Url=https://application-server.com/hello-play.xml' \
@@ -5861,7 +5983,7 @@ document that is executed.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>&lt;Response&gt;
+<pre class="highlightjs highlight"><code class="language-none hljs">&lt;Response&gt;
   &lt;Say&gt;Welcome!&lt;/Say&gt;
   &lt;Dial action="http://appserver.com/action" method="POST"&gt;
     &lt;Client&gt;Bob&lt;/Client&gt;
