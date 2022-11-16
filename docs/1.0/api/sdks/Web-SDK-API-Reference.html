@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/sdks/Web-SDK-API-Reference.html
     ">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5582,7 +5582,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5652,7 +5652,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">register(settings: cPaasJsApi.data.JsSettings): Promise&lt;CPaaSEvents&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>register(settings: cPaasJsApi.data.JsSettings): Promise&lt;CPaaSEvents&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -5663,7 +5663,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">logout(): void;</code></pre>
+<pre class="highlightjs highlight"><code>logout(): void;</code></pre>
 </div>
 </div>
 </div>
@@ -5674,7 +5674,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">exportLogs(): Promise&lt;void&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>exportLogs(): Promise&lt;void&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -5693,7 +5693,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">create(): Promise&lt;string&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>create(): Promise&lt;string&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -5708,7 +5708,7 @@ Failure: On Failure will return an exception with an error description.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">connect(callId: string, callOptions: cpaas.data.JsCallOptions): Promise&lt;cpaas.data.CPaasCall&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>connect(callId: string, callOptions: cpaas.data.JsCallOptions): Promise&lt;cpaas.data.CPaasCall&gt;;</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5741,7 +5741,7 @@ Failure: On Failure will return an exception with an error description.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">call
+<pre class="highlightjs highlight"><code>call
 getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></pre>
 </div>
 </div>
@@ -5771,7 +5771,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">reject(callId: string): void;</code></pre>
+<pre class="highlightjs highlight"><code>reject(callId: string): void;</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5808,7 +5808,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs"> end(): void;</code></pre>
+<pre class="highlightjs highlight"><code> end(): void;</code></pre>
 </div>
 </div>
 </div>
@@ -5819,7 +5819,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">mute(): Promise&lt;boolean&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>mute(): Promise&lt;boolean&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -5830,7 +5830,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">unmute(): Promise&lt;boolean&gt;;</code></pre>
+<pre class="highlightjs highlight"><code>unmute(): Promise&lt;boolean&gt;;</code></pre>
 </div>
 </div>
 </div>
@@ -5847,7 +5847,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">onCallEnd(): cpaas.events.OnCallEnd;</code></pre>
+<pre class="highlightjs highlight"><code>onCallEnd(): cpaas.events.OnCallEnd;</code></pre>
 </div>
 </div>
 </div>
@@ -5858,7 +5858,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">onConnected(): cpaas.events.OnConnected;</code></pre>
+<pre class="highlightjs highlight"><code>onConnected(): cpaas.events.OnConnected;</code></pre>
 </div>
 </div>
 </div>
@@ -5869,7 +5869,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">onConnectionFailure(): cpaas.events.OnConnectionFailure;</code></pre>
+<pre class="highlightjs highlight"><code>onConnectionFailure(): cpaas.events.OnConnectionFailure;</code></pre>
 </div>
 </div>
 </div>
@@ -5880,7 +5880,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">onReconnecting(): cpaas.events.OnReconnecting;</code></pre>
+<pre class="highlightjs highlight"><code>onReconnecting(): cpaas.events.OnReconnecting;</code></pre>
 </div>
 </div>
 </div>
@@ -5891,7 +5891,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">onRinging(): cpaas.events.OnRinging;</code></pre>
+<pre class="highlightjs highlight"><code>onRinging(): cpaas.events.OnRinging;</code></pre>
 </div>
 </div>
 </div>

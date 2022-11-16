@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/sdks/Web-SDK-Integration-Guide.html
     ">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5582,7 +5582,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5716,7 +5716,7 @@ This should be done once in a session. We recommend doing it as soon as you open
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">const cpaasEvents = await cpaasActions.register({
+<pre class="highlightjs highlight"><code>const cpaasEvents = await cpaasActions.register({
     customDomain: "api.your-organization.com",
     accountSid: "xxxxxx",
     accountToken: "xxxxxx",
@@ -5767,7 +5767,7 @@ The steps above must be successfully completed. Failure in any of the above proc
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">callId = await voice.create()
+<pre class="highlightjs highlight"><code>callId = await voice.create()
 call = await voice.connect(callId, callOptions)</code></pre>
 </div>
 </div>
@@ -5778,7 +5778,7 @@ call = await voice.connect(callId, callOptions)</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">call.mute() <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code>call.mute() <i class="conum" data-value="1"></i><b>(1)</b>
 call.unmute() <i class="conum" data-value="2"></i><b>(2)</b>
 call.end() <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
@@ -5811,7 +5811,7 @@ When there is an incoming call event, you can use <code>voice.connect(callId, ca
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">const cpaasEvents = await cpaasActions.register(registrationSettings)
+<pre class="highlightjs highlight"><code>const cpaasEvents = await cpaasActions.register(registrationSettings)
 cpaasEvents.addListener("incomingCall", async (e) =&gt; {...})</code></pre>
 </div>
 </div>
@@ -5820,7 +5820,7 @@ cpaasEvents.addListener("incomingCall", async (e) =&gt; {...})</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">let currentCall;
+<pre class="highlightjs highlight"><code>let currentCall;
 cpaasEvents.addListener("incomingCall", async (e) =&gt; {
     currentCall = await voice.connect(e.callId, {
         audio: true
@@ -5835,7 +5835,7 @@ cpaasEvents.addListener("incomingCall", async (e) =&gt; {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">//ringing event
+<pre class="highlightjs highlight"><code>//ringing event
 call.onRinging.addEventListener(_ =&gt; console.log("ringing on destination"))
 
 //call ended event

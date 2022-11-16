@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/visual-designer/Visual-Designer-Usage-Guide.html
     ">
-    <meta name="generator" content="Antora 3.1.2">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -643,7 +643,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -1288,7 +1288,7 @@ Make sure to only include a single Continue to action in a Control element and a
 <h4 id="_request_example"><a class="anchor" href="#_request_example"></a>Request Example</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">GET /services/simpleGetRequest?name=foo HTTP/1.1
+<pre class="highlightjs highlight"><code>GET /services/simpleGetRequest?name=foo HTTP/1.1
 Host: yourdomain.com
 Response: HTTP/1.1 200 OK</code></pre>
 </div>
@@ -1312,7 +1312,7 @@ Response: HTTP/1.1 200 OK</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">$firstname → name</code></pre>
+<pre class="highlightjs highlight"><code>$firstname → name</code></pre>
 </div>
 </div>
 </div>
@@ -1344,7 +1344,7 @@ Note that the service parameters will be ignored if url-encoded request body is 
 <h4 id="_request_example_2"><a class="anchor" href="#_request_example_2"></a>Request Example</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">POST /services/simplePostRequest HTTP/1.1
+<pre class="highlightjs highlight"><code>POST /services/simplePostRequest HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 firstname=foo&amp;lastname=bar
@@ -1641,7 +1641,7 @@ The <code>To</code> and <code>From</code> fields are using the RCML Dial syntax.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">https://yourdomain.com:443/visual-designer/services/apps/APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/start?from=+12223334444&amp;to=+15556667777&amp;token=yourtoken</code></pre>
+<pre class="highlightjs highlight"><code>https://yourdomain.com:443/visual-designer/services/apps/APXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/start?from=+12223334444&amp;to=+15556667777&amp;token=yourtoken</code></pre>
 </div>
 </div>
 <div class="imageblock">
