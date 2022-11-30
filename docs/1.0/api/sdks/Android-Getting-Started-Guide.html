@@ -5660,10 +5660,18 @@ If you are not familiar with the Restcomm Console yet, please check out the  <a 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_getting_the_cpaas_api_sdk"><a class="anchor" href="#_getting_the_cpaas_api_sdk"></a>Getting the CPaaS API SDK</h2>
+<h2 id="_cpaas_api_sdk_sample_application"><a class="anchor" href="#_cpaas_api_sdk_sample_application"></a>CPaaS API SDK Sample Application</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The CPaaS API SDK is available for download in <a href="">Maven Central</a>.</p>
+<p>You can find our Android SDK sample application in <a href="https://github.com/CPaaSAPI/AndroidSampleApp">Github</a>. Its sample code demonstrates how to integrate the CPaaSAPI SDK with a kotlin application.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_downloading_the_cpaas_api_sdk"><a class="anchor" href="#_downloading_the_cpaas_api_sdk"></a>Downloading the CPaaS API SDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CPaaS API SDK is available for download in Maven Central.</p>
 </div>
 <div class="sect2">
 <h3 id="_maven"><a class="anchor" href="#_maven"></a>Maven</h3>
@@ -5672,17 +5680,18 @@ If you are not familiar with the Restcomm Console yet, please check out the  <a 
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">implementation ("com.cpaasapi.sdk:1.0.0")</code></pre>
 </div>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-To add a permission section!
-</td>
-</tr>
-</table>
+</div>
+<div class="sect2">
+<h3 id="_permissions"><a class="anchor" href="#_permissions"></a>Permissions</h3>
+<div class="paragraph">
+<p>Please add the following permissions to the AndroidManifest.xml</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;
+    &lt;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -5800,25 +5809,37 @@ of the above procedures will prevent the SDK from working properly.
 <h2 id="_starting_a_call"><a class="anchor" href="#_starting_a_call"></a>Starting a call</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To start a call use the <code>CPaaSAPI.startCall(&#8230;&#8203;)</code> method as follows:</p>
+<p>To start a call use the <code>CPaaSAPI.startCall(&#8230;&#8203;)</code> and <code>CPaaSAPI.voice.connect(&#8230;&#8203;)</code> method as follows.</p>
+</div>
+<div class="paragraph">
+<p><code>create():</code> creates and returns a call id which you can use or share with others. <code>connect():</code> starts the actual connection to the call and returns an API call obj.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">val call = CPaaSAPI.startCall(
-    destinationId = destId,
-    callOptions = CallOptions(audio = true))</code></pre>
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    CPaaSAPI.voice.create { createResult -&gt;
+        createResult.onSuccess { callId -&gt;
+            CPaaSAPI.voice.connect(callId, callOptions) { connectResult -&gt;
+                connectResult.onSuccess {  call -&gt;
+                    currentCall = call
+                    // Here you can:
+                    // show call UI
+                    // Start listen to call events: currentCall.eventListener = {...}
+                }
+            }
+        }
+    }</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_call_object"><a class="anchor" href="#_the_call_object"></a>The call Object</h3>
+<h3 id="_the_cpaascall_object"><a class="anchor" href="#_the_cpaascall_object"></a>The CPaaSCall Object</h3>
 <div class="paragraph">
-<p><code>call</code> is an API object that lets you perform actions on an <strong>active
-call</strong> such as muting or ending the call.</p>
+<p>CPaaSCall is an API object that is returned as a result of the <code>connect()</code> method. The CPaaSCall lets you perform actions on an active call such as muting or ending the call.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">call.mute()    <i class="conum" data-value="1"></i><b>(1)</b>
-call.endCall() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+call.endCall() <i class="conum" data-value="2"></i><b>(2)</b>
+call.end() <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -5829,9 +5850,41 @@ call.endCall() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Closes the active cal</td>
+<td>Closes the active call</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Ends the current call</td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_answering_an_incoming_call"><a class="anchor" href="#_answering_an_incoming_call"></a>Answering an Incoming Call</h3>
+<div class="paragraph">
+<p>To answer an incoming call, you need to listen to the <code>CPaaSAPICb.onIncomingCall</code> event. When there is an incoming call event, you can use <code>CPaaSAPI.voice.connect(callId, callOptions)</code> to answer it with, using the given callId.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You should not use the <code>create()</code> method in this case.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>override fun onIncomingCall(
+    callId: String,
+    callerId: String,
+    serviceType: ServiceType) {
+    CPaaSAPI.voice.connect(callId, callOptions)
+}</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -5841,7 +5894,7 @@ call.endCall() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">call.eventListener = object: ICallEvents {
+<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">call.eventListener = object: CPaaSCallEvents {
     override fun onConnected() {
         // call connected you have audio here
     }
@@ -5850,15 +5903,15 @@ call.endCall() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
         // callee got your call, wait for his action (accept/reject)
     }
 
-    override fun onConnectedFailure(reason: Reason) {
+    override fun onConnectedFailure(reason: CPaaSReason) {
         // connection failed, check reason
     }
 
-    override fun onCallEnd(reason: Reason?) {
+    override fun onCallEnd(reason: CPaaSReason) {
         // call end, you can remove call UI
     }
 
-    override fun onReconnecting(reason: Reason) {
+    override fun onReconnecting(reason: CPaaSReason) {
         // call on reconnecting process, show notification for user
     }
 }</code></pre>
