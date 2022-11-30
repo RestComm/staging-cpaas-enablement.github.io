@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-custom-title="Page Not Found - Restcomm Docs"></title>
+    <link rel="stylesheet" href="/docs/_/css/site.css">
   </head>
-  <body class="status-404">
+  <body class="status-404" style="display: none">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -17,26 +20,6 @@
   </nav>
   <!-- TODO: need to improve the variable used to decide displaying this nav -->
 </header>
-<div class="body">
-<div class="navigation-container"  style="display: none;">
-  <aside class="navigation">
-    <div class="panels">
-<div class="navigation-explore is-active" data-panel="explore">
-  <ul class="components">
-    <li class="component">
-      <span class="title">docs</span>
-      <ul class="versions">
-        <li class="version">
-          <a href="#">1.0</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
-    </div>
-  </aside>
-</div>
-
 <div class="main-wrapper">
 <div class="navigation-container"  style="display: none;">
   <aside class="navigation">
@@ -46,8 +29,8 @@
     <li class="component">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version">
-          <a href="#">1.0</a>
+        <li class="version is-latest">
+          <a href="/docs/1.0/index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -57,8 +40,11 @@
   </aside>
 </div>
   <main class="main">
-<div class="toolbar" role="navigation">
-<button class="nav-toggle"></button>
+<!--
+
+-->
+<div class="toolbar" role="navigation" style="display: none;">
+  <button class="navigation-toggle"></button>
   <a href="/docs/1.0/index.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
 </nav>
@@ -75,7 +61,6 @@ If you typed the URL of this page manually, please double check that you entered
 </div>
 </article>
   </main>
-</div>
 </div>
 <script src="/docs/_/js/site.js"></script>
 <script src="/docs/_/js/vendor/highlight.js"></script>
