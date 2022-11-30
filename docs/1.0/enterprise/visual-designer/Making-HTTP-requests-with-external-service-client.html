@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="enterprise-persona">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Accessing HTTP resources with External Service element :: Restcomm Docs</title>
-    <link rel="canonical" href="https://dev.restcomm.com/docs/1.0/enterprise/visual-designer/Making-HTTP-requests-with-external-service-client.html">
-    <meta name="generator" content="Antora 3.1.0">
-    <link rel="stylesheet" href="../../../../_/css/site.css">
-    <script>var uiRootPath = '../../../../_'</script>
-  </head>
-  <body class="article">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
+    <title data-custom-title="Accessing HTTP resources with External Service element - Restcomm Docs"></title>
+    <link rel="canonical" href="
+      /docs/visual-designer/Making-HTTP-requests-with-external-service-client.html
+    ">
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="icon" type="image/png" href=""/>
+    <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
+    <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
+    <!-- Not using it for now
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      </head>
+  <body class="article" style="display: none">
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
@@ -45,14 +54,14 @@
     </div>
   </nav>
 </header>
-<div class="body">
-<div class="nav-container" data-component="docs" data-version="1.0">
-  <aside class="nav">
+<div class="main-wrapper">
+<div class="navigation-container" data-component="docs" data-version="1.0"  style="display: none;">
+  <aside class="navigation">
     <div class="panels">
   <div class="navigation-menu is-active" data-panel="menu">
     <nav class="nav-menu">
       <!-- Not applicable to our Enterprise docs
-    <h3 class="title"><a href="enterprise/visual-designer/Making-HTTP-requests-with-external-service-client.html">docs</a></h3>
+    <h3 class="title"><a href="../../index.html">docs</a></h3>
     -->
         <ul class="nav-list">
           <ul class="nav-list">
@@ -70,7 +79,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">REST API</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html">REST API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -89,7 +98,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html">Overview</a>
 
             </span>
                 </div>
@@ -108,7 +117,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">API Endpoint</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_api_endpoint">API Endpoint</a>
 
             </span>
                 </div>
@@ -127,7 +136,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Authentication</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_authentication">Authentication</a>
 
             </span>
                 </div>
@@ -146,7 +155,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Requests</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_requests">Requests</a>
 
             </span>
                 </div>
@@ -165,7 +174,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Responses</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_responses">Responses</a>
 
             </span>
                 </div>
@@ -184,7 +193,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Paging</a>
+              <a class="nav-link nav-flex-item-text" href="../api/overview.html#_paging">Paging</a>
 
             </span>
                 </div>
@@ -203,7 +212,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Reason Codes Dictionary</a>
+              <a class="nav-link nav-flex-item-text" href="../api/reasoncodes.html">Reason Codes Dictionary</a>
 
             </span>
                 </div>
@@ -224,7 +233,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Management APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/management-apis-overview.html">Management APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -243,7 +252,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Accounts</a>
+              <a class="nav-link nav-flex-item-text" href="../api/account-api.html">Accounts</a>
 
             </span>
                 </div>
@@ -262,7 +271,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Identity Access Management <strong>Early Access</strong></a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-overview.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -281,7 +290,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Identity Access Management Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-overview.html">Identity Access Management Overview</a>
 
             </span>
                 </div>
@@ -300,7 +309,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Identity Access Management API</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html">Identity Access Management API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -319,7 +328,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">User Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_user_management">User Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -338,7 +347,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_create_a_user">Create a User</a>
 
             </span>
                 </div>
@@ -357,7 +366,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Update a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_update_a_user">Update a User</a>
 
             </span>
                 </div>
@@ -376,7 +385,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Retrieve a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_retrieve_user_information">Retrieve a User</a>
 
             </span>
                 </div>
@@ -395,7 +404,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete a User</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_delete_a_user">Delete a User</a>
 
             </span>
                 </div>
@@ -416,7 +425,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">API Keys Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_api_keys_management">API Keys Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -435,7 +444,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_create_an_api_key">Create an API Key</a>
 
             </span>
                 </div>
@@ -454,7 +463,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Update an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_update_an_api_key">Update an API Key</a>
 
             </span>
                 </div>
@@ -473,7 +482,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Retrieve an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_retrieve_an_api_key">Retrieve an API Key</a>
 
             </span>
                 </div>
@@ -492,7 +501,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete an API Key</a>
+              <a class="nav-link nav-flex-item-text" href="../api/identity-access-management-api.html#_delete_an_api_key">Delete an API Key</a>
 
             </span>
                 </div>
@@ -517,7 +526,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Applications</a>
+              <a class="nav-link nav-flex-item-text" href="../api/applications-api.html">Applications</a>
 
             </span>
                 </div>
@@ -536,7 +545,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Clients</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html">Clients</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -555,7 +564,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create a Client</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_create_a_client">Create a Client</a>
 
             </span>
                 </div>
@@ -574,7 +583,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete a Client</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_delete_a_client">Delete a Client</a>
 
             </span>
                 </div>
@@ -593,7 +602,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Change Client&#8217;s Password</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_change_clients_password">Change Client&#8217;s Password</a>
 
             </span>
                 </div>
@@ -612,7 +621,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get a List of Available Clients</a>
+              <a class="nav-link nav-flex-item-text" href="../api/clients-api.html#_get_list_of_available_clients">Get a List of Available Clients</a>
 
             </span>
                 </div>
@@ -633,7 +642,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Incoming Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html">Incoming Phone Numbers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -652,7 +661,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">IncomingPhoneNumber Instance Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Instance_Resource">IncomingPhoneNumber Instance Resource</a>
 
             </span>
                 </div>
@@ -671,7 +680,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">IncomingPhoneNumbers List Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Resource">IncomingPhoneNumbers List Resource</a>
 
             </span>
                 </div>
@@ -690,7 +699,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Local IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Local_IncomingPhoneNumber_Factory_Resource">Local IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -709,7 +718,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Toll-Free IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Toll_Free_IncomingPhoneNumber_Factory_Resource">Toll-Free IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -728,7 +737,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Mobile IncomingPhoneNumber Factory Resource</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Mobile_IncomingPhoneNumber_Factory_Resource">Mobile IncomingPhoneNumber Factory Resource</a>
 
             </span>
                 </div>
@@ -747,7 +756,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Attach a phone number to an application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Attach_phone_number_to_an_app">Attach a phone number to an application</a>
 
             </span>
                 </div>
@@ -766,7 +775,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Enable Incoming MMS for an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
 
             </span>
                 </div>
@@ -785,7 +794,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete a phone number</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Delete_Number">Delete a phone number</a>
 
             </span>
                 </div>
@@ -804,7 +813,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">List of Phone Numbers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_List_Phone_Numbers">List of Phone Numbers</a>
 
             </span>
                 </div>
@@ -823,7 +832,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Incoming Phone Number Regex Support</a>
+              <a class="nav-link nav-flex-item-text" href="../api/incoming-phone-numbers-api.html#IncomingPhoneNumber_Phone_Number_Regex_Support">Incoming Phone Number Regex Support</a>
 
             </span>
                 </div>
@@ -844,7 +853,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Notifications</a>
+              <a class="nav-link nav-flex-item-text" href="../api/notifications-api.html">Notifications</a>
 
             </span>
                 </div>
@@ -863,7 +872,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/usage-records-api.html">Usage Records</a>
 
             </span>
                 </div>
@@ -882,7 +891,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Trace Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/traces-api.html">Trace Records</a>
 
             </span>
                 </div>
@@ -903,7 +912,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Voice</a>
+              <a class="nav-link nav-flex-item-text" href="../api/voice-category.html">Voice</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -922,7 +931,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Calls</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html">Calls</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -941,7 +950,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Call List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_call_list_resource_uri">Call List Resource URI</a>
 
             </span>
                 </div>
@@ -960,7 +969,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Making a Call</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_making_a_call_to_a_sip_account">Making a Call</a>
 
             </span>
                 </div>
@@ -979,7 +988,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Modifying Live Calls</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_modifying_live_calls">Modifying Live Calls</a>
 
             </span>
                 </div>
@@ -998,7 +1007,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Examples</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_examples">Examples</a>
 
             </span>
                 </div>
@@ -1017,7 +1026,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">List Filter</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_list_filter">List Filter</a>
 
             </span>
                 </div>
@@ -1036,7 +1045,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/calls-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1057,7 +1066,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Conference Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html">Conference Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1076,7 +1085,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1095,7 +1104,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Conference List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/conferences-api.html#_conference_list_resource_uri">Conference List Resource URI</a>
 
             </span>
                 </div>
@@ -1116,7 +1125,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Conference Participants Management</a>
+              <a class="nav-link nav-flex-item-text" href="../api/participants-api.html">Conference Participants Management</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1135,7 +1144,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Participants List Resource URI</a>
+              <a class="nav-link nav-flex-item-text" href="../api/participants-api.html#_participant_list_resource_uri">Participants List Resource URI</a>
 
             </span>
                 </div>
@@ -1156,7 +1165,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Gather DTMF</a>
+              <a class="nav-link nav-flex-item-text" href="../api/gather-dtmf-api.html">Gather DTMF</a>
 
             </span>
                 </div>
@@ -1175,7 +1184,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Gather Speech</a>
+              <a class="nav-link nav-flex-item-text" href="../api/gather-speech-api.html">Gather Speech</a>
 
             </span>
                 </div>
@@ -1194,7 +1203,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="../api/say-api.html">Say</a>
 
             </span>
                 </div>
@@ -1213,7 +1222,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="../api/play-api.html">Play</a>
 
             </span>
                 </div>
@@ -1232,7 +1241,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="../api/holds-api.html">Hold</a>
 
             </span>
                 </div>
@@ -1251,7 +1260,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Recordings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/recordings-api.html">Recordings</a>
 
             </span>
                 </div>
@@ -1270,7 +1279,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Refers</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html">Refers</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1289,7 +1298,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Resource Properties</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_resource_properties">Resource Properties</a>
 
             </span>
                 </div>
@@ -1308,7 +1317,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Supported Operations</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_supported_operations">Supported Operations</a>
 
             </span>
                 </div>
@@ -1327,7 +1336,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Paging Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/refer-api.html#_paging_information">Paging Information</a>
 
             </span>
                 </div>
@@ -1348,7 +1357,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="../api/resumes-api.html">Resume</a>
 
             </span>
                 </div>
@@ -1367,7 +1376,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">SIP Refer Support</a>
+              <a class="nav-link nav-flex-item-text" href="../api/SIP-Refer-Support.html">SIP Refer Support</a>
 
             </span>
                 </div>
@@ -1388,7 +1397,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Messages API - BETA</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api-overview.html">Messages API - BETA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1407,7 +1416,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html">Overview</a>
 
             </span>
                 </div>
@@ -1426,7 +1435,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Channel Identities</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_channel_identities">Channel Identities</a>
 
             </span>
                 </div>
@@ -1445,7 +1454,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Send Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_send_message">Send Message</a>
 
             </span>
                 </div>
@@ -1464,7 +1473,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Status Callback Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_callback_http_parameters">Status Callback Parameters</a>
 
             </span>
                 </div>
@@ -1483,7 +1492,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Status Callback Events</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_callback_events">Status Callback Events</a>
 
             </span>
                 </div>
@@ -1502,7 +1511,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Receive Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_receive_message">Receive Message</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1521,7 +1530,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Incoming Message Request Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_incoming_message_request_parameters">Incoming Message Request Parameters</a>
 
             </span>
                 </div>
@@ -1542,7 +1551,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Message List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_get_message_list">Get Message List</a>
 
             </span>
                 </div>
@@ -1561,7 +1570,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Single Message</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_get_a_single_message_information">Get Single Message</a>
 
             </span>
                 </div>
@@ -1580,7 +1589,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Message Attributes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_message_attributes">Message Attributes</a>
 
             </span>
                 </div>
@@ -1599,7 +1608,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Status Description</a>
+              <a class="nav-link nav-flex-item-text" href="../api/messages-api.html#_status_description">Status Description</a>
 
             </span>
                 </div>
@@ -1620,7 +1629,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-category.html">SMS</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1639,7 +1648,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Messages</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html">Messages</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1658,7 +1667,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Send SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_send_sms">Send SMS</a>
 
             </span>
                 </div>
@@ -1677,7 +1686,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get SMS List</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_get_sms_list">Get SMS List</a>
 
             </span>
                 </div>
@@ -1696,7 +1705,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get single SMS Information</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_get_single_sms_information">Get single SMS Information</a>
 
             </span>
                 </div>
@@ -1715,7 +1724,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">SMS Attributes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_sms_attributes">SMS Attributes</a>
 
             </span>
                 </div>
@@ -1736,7 +1745,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Error Codes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sms-api.html#_sms_specific_error_codes">Error Codes</a>
 
             </span>
                 </div>
@@ -1757,7 +1766,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Email</a>
+              <a class="nav-link nav-flex-item-text" href="../api/email-api.html">Email</a>
 
             </span>
                 </div>
@@ -1776,7 +1785,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">RCML</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">RCML</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1795,7 +1804,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Overview</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html">Overview</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1814,7 +1823,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Interacting with Your Application</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_how_wlparamreplacetextmodespsparmtextapplication_nametextcpaasdefaulttextinfer_from_domain_interacts_with_your_application">Interacting with Your Application</a>
 
             </span>
                 </div>
@@ -1833,7 +1842,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">RCML Verbs</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/overview.html#_the_rcml_verbs">RCML Verbs</a>
 
             </span>
                 </div>
@@ -1854,7 +1863,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Dial</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/dial-rcml.html">Dial</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -1873,7 +1882,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Client</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/client-rcml.html">Client</a>
 
             </span>
                 </div>
@@ -1892,7 +1901,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Conference</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/conference-rcml.html">Conference</a>
 
             </span>
                 </div>
@@ -1911,7 +1920,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Number</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/number-rcml.html">Number</a>
 
             </span>
                 </div>
@@ -1930,7 +1939,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">SIP</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sip-rcml.html">SIP</a>
 
             </span>
                 </div>
@@ -1951,7 +1960,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Email</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/email-rcml.html">Email</a>
 
             </span>
                 </div>
@@ -1970,7 +1979,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Gather</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/gather-rcml.html">Gather</a>
 
             </span>
                 </div>
@@ -1989,7 +1998,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Say</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/say-rcml.html">Say</a>
 
             </span>
                 </div>
@@ -2008,7 +2017,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Play</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/play-rcml.html">Play</a>
 
             </span>
                 </div>
@@ -2027,7 +2036,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">SMS</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/sms-rcml.html">SMS</a>
 
             </span>
                 </div>
@@ -2046,7 +2055,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Message - Beta</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/message-rcml.html">Message - Beta</a>
 
             </span>
                 </div>
@@ -2065,7 +2074,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Hold</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hold-rcml.html">Hold</a>
 
             </span>
                 </div>
@@ -2084,7 +2093,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Resume</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/resume-rcml.html">Resume</a>
 
             </span>
                 </div>
@@ -2103,7 +2112,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Hangup</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/hangup-rcml.html">Hangup</a>
 
             </span>
                 </div>
@@ -2122,7 +2131,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Pause</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/pause-rcml.html">Pause</a>
 
             </span>
                 </div>
@@ -2141,7 +2150,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Redirect</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/redirect-rcml.html">Redirect</a>
 
             </span>
                 </div>
@@ -2160,7 +2169,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Record</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/record-rcml.html">Record</a>
 
             </span>
                 </div>
@@ -2179,7 +2188,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Reject</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/reject-rcml.html">Reject</a>
 
             </span>
                 </div>
@@ -2198,7 +2207,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Refer</a>
+              <a class="nav-link nav-flex-item-text" href="../rcml/refer-rcml.html">Refer</a>
 
             </span>
                 </div>
@@ -2219,7 +2228,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Visual Designer API</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html">Visual Designer API</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2238,7 +2247,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">List Application Templates</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_list_application_templates_from_the_template_gallery">List Application Templates</a>
 
             </span>
                 </div>
@@ -2257,7 +2266,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">:List a Specific Application Template</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_a_specific_application_template_from_the_template_gallery">:List a Specific Application Template</a>
 
             </span>
                 </div>
@@ -2276,7 +2285,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create a Visual Designer Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_create_a_visual_designer_application">Create a Visual Designer Application</a>
 
             </span>
                 </div>
@@ -2295,7 +2304,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Application Details</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_details">Get Application Details</a>
 
             </span>
                 </div>
@@ -2314,7 +2323,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Save Application Changes</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_save_application_changes">Save Application Changes</a>
 
             </span>
                 </div>
@@ -2333,7 +2342,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_create_application_parameters">Create Application Parameters</a>
 
             </span>
                 </div>
@@ -2352,7 +2361,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">List Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_parameters">List Application Parameters</a>
 
             </span>
                 </div>
@@ -2371,7 +2380,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete Application Parameters</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_parameters">Delete Application Parameters</a>
 
             </span>
                 </div>
@@ -2390,7 +2399,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Upload Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_upload_application_media_files">Upload Application Media Files</a>
 
             </span>
                 </div>
@@ -2409,7 +2418,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">List Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_a_list_of_application_media_files">List Application Media Files</a>
 
             </span>
                 </div>
@@ -2428,7 +2437,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Play Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_play_an_application_media_file">Play Application Media Files</a>
 
             </span>
                 </div>
@@ -2447,7 +2456,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete Application Media Files</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_media_file">Delete Application Media Files</a>
 
             </span>
                 </div>
@@ -2466,7 +2475,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_logs">Get Application Logs</a>
 
             </span>
                 </div>
@@ -2485,7 +2494,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete Application Logs</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_application_logs">Delete Application Logs</a>
 
             </span>
                 </div>
@@ -2504,7 +2513,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_application_settings">Get Application Settings</a>
 
             </span>
                 </div>
@@ -2523,7 +2532,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Modify Application Settings</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_modify_application_settings">Modify Application Settings</a>
 
             </span>
                 </div>
@@ -2542,7 +2551,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Rename an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_rename_a_visual_designer_application">Rename an Application</a>
 
             </span>
                 </div>
@@ -2561,7 +2570,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete an Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_delete_a_visual_designer_application">Delete an Application</a>
 
             </span>
                 </div>
@@ -2580,7 +2589,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get Visual Designer Configuration</a>
+              <a class="nav-link nav-flex-item-text" href="../api/visual-designer-api.html#_get_visual_designer_configuration_details">Get Visual Designer Configuration</a>
 
             </span>
                 </div>
@@ -2601,7 +2610,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Turnkey Apps APIs</a>
+              <a class="nav-link nav-flex-item-text" href="../turnkey-applications/index.html">Turnkey Apps APIs</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2620,7 +2629,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Smart 2FA</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html">Smart 2FA</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2639,7 +2648,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Sending One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_send">Sending One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2658,7 +2667,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Verifying One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_verify">Verifying One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2677,7 +2686,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Cancel One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_control">Cancel One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2696,7 +2705,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Session Detail Record (SDR)</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_session_detail_record_sdr">Session Detail Record (SDR)</a>
 
             </span>
                 </div>
@@ -2715,7 +2724,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get list of One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_list_of_one_time_passwords__api_reference">Get list of One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2734,7 +2743,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get a Single One-Time Password</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_single_one_time_passwords__api_reference">Get a Single One-Time Password</a>
 
             </span>
                 </div>
@@ -2753,7 +2762,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Usage Record One-Time Passwords</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_usage_record_one_time_passwords__api_reference">Usage Record One-Time Passwords</a>
 
             </span>
                 </div>
@@ -2772,7 +2781,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Common Response Error Code</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_common_response_error_code">Common Response Error Code</a>
 
             </span>
                 </div>
@@ -2791,7 +2800,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_limit">Limit</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2810,7 +2819,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Create Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_create_limit">Create Limit</a>
 
             </span>
                 </div>
@@ -2829,7 +2838,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Update Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_update_limit">Update Limit</a>
 
             </span>
                 </div>
@@ -2848,7 +2857,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Delete Limit</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_delete_limit">Delete Limit</a>
 
             </span>
                 </div>
@@ -2867,7 +2876,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Get List of Limits</a>
+              <a class="nav-link nav-flex-item-text" href="../tutorials/Smart-2FA.html#_get_list_of_limits">Get List of Limits</a>
 
             </span>
                 </div>
@@ -2890,7 +2899,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Call Queuing</a>
+              <a class="nav-link nav-flex-item-text" href="../api/call-queueing-api.html">Call Queuing</a>
 
             </span>
                 </div>
@@ -2909,7 +2918,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Auto Attendant</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html">Auto Attendant</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -2928,7 +2937,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Users</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_users">Users</a>
 
             </span>
                 </div>
@@ -2947,7 +2956,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Announcement</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_announcement">Announcement</a>
 
             </span>
                 </div>
@@ -2966,7 +2975,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Auto Attendant System</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_auto_attendant_system">Auto Attendant System</a>
 
             </span>
                 </div>
@@ -2985,7 +2994,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Menu</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_menu">Menu</a>
 
             </span>
                 </div>
@@ -3004,7 +3013,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Schedule</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_schedule">Schedule</a>
 
             </span>
                 </div>
@@ -3023,7 +3032,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Phone Number</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_phone_number">Phone Number</a>
 
             </span>
                 </div>
@@ -3042,7 +3051,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_usage_records">Usage Records</a>
 
             </span>
                 </div>
@@ -3061,7 +3070,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Third Party Integration</a>
+              <a class="nav-link nav-flex-item-text" href="../api/auto-attendant-api.html#_third_party_integration">Third Party Integration</a>
 
             </span>
                 </div>
@@ -3082,7 +3091,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Number Masking</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html">Number Masking</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3101,7 +3110,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Application</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_application">Application</a>
 
             </span>
                 </div>
@@ -3120,7 +3129,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Mask Number Pool</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_masked_numbers">Mask Number Pool</a>
 
             </span>
                 </div>
@@ -3139,7 +3148,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Context</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_context">Context</a>
 
             </span>
                 </div>
@@ -3158,7 +3167,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Participants</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_participants">Participants</a>
 
             </span>
                 </div>
@@ -3177,7 +3186,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Interactions</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_interactions">Interactions</a>
 
             </span>
                 </div>
@@ -3196,7 +3205,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Usage Records</a>
+              <a class="nav-link nav-flex-item-text" href="../api/number-masking-api.html#_usage_records">Usage Records</a>
 
             </span>
                 </div>
@@ -3217,7 +3226,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../visual-designer/Making-HTTP-requests-with-external-service-client.html">Task Router</a>
+              <a class="nav-link nav-flex-item-text" href="../api/task-router-api.html">Task Router</a>
 
             </span>
                 </div>
@@ -3238,7 +3247,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Server-Side Helper Libraries (SDKs)</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/index.html">Server-Side Helper Libraries (SDKs)</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3257,7 +3266,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Click to Call</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Click-to-Call-Overview.html">Click to Call</a>
 
             </span>
                 </div>
@@ -3276,7 +3285,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Android Getting Started Guide</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Android-Getting-Started-Guide.html">Android Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3295,7 +3304,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Android SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Android-SDK-Integration-Guide.html">Android SDK Integration Guide</a>
 
             </span>
                 </div>
@@ -3314,7 +3323,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Android SDK API Reference</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Android-SDK-API-Reference.html">Android SDK API Reference</a>
 
             </span>
                 </div>
@@ -3335,7 +3344,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">iOS Getting Started Guide</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/iOS-Getting-Started-Guide.html">iOS Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3354,7 +3363,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
 
             </span>
                 </div>
@@ -3375,7 +3384,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3394,7 +3403,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../../visual-designer/Making-HTTP-requests-with-external-service-client.html">Web SDK API Reference</a>
+              <a class="nav-link nav-flex-item-text" href="../api/sdks/Web-SDK-API-Reference.html">Web SDK API Reference</a>
 
             </span>
                 </div>
@@ -3418,8 +3427,8 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
-          <a href="enterprise/visual-designer/Making-HTTP-requests-with-external-service-client.html">1.0</a>
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
         </li>
       </ul>
     </li>
@@ -3428,22 +3437,20 @@
     </div>
   </aside>
 </div>
-<main class="article">
-<div class="toolbar" role="navigation">
-<button class="nav-toggle"></button>
+  <main class="main">
+<!--
+
+-->
+<div class="toolbar" role="navigation" style="display: none;">
+  <button class="navigation-toggle"></button>
   <a href="../../index.html" class="home-link"></a>
-<nav class="breadcrumbs" aria-label="breadcrumbs">
+<nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">docs</a></li>
-    <li><a href="Making-HTTP-requests-with-external-service-client.html">Accessing HTTP resources with External Service element</a></li>
+    <li class="crumb"><a href="../../index.html">docs</a></li>
+    <li class="crumb"><a href="Making-HTTP-requests-with-external-service-client.html">Accessing HTTP resources with External Service element</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://bitbucket.org/telestax/documentation/src/HEAD/modules/enterprise/pages/visual-designer/Making-HTTP-requests-with-external-service-client.adoc">Edit this Page</a></div>
-  </div>
-  <div class="content">
-<aside class="toc sidebar" data-title="Contents" data-levels="2">
-  <div class="toc-menu"></div>
-</aside>
+</div>
 <article class="doc fix-anchor-links-position">
   <h1>Accessing HTTP resources with External Service element</h1>
 <div id="preamble">
@@ -3661,8 +3668,7 @@
 </div>
 </div>
 </article>
-  </div>
-</main>
+  </main>
 </div>
 <footer class="footer">
   <div class="footer-container">
