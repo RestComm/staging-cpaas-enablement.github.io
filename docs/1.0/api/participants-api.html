@@ -19,7 +19,54 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-      </head>
+    <header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
+           it won't break if we change playbook configuration
+      <a class="navbar-item header-logo-link" href="/docs">
+      -->
+      <a class="navbar-item header-logo-link" href="/docs/">
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- TODO: Bring back when we integrate with searching facilities
+        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
+        -->
+        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
+        <div class="navbar-item">
+          <span>
+            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- TODO: need to improve the variable used to decide displaying this nav -->
+  <nav class="navbar-enterprise">
+    <div class="navbar-enterprise-button-container">
+      <button class="navigation-toggle icon-custom-font-right">
+      </button>
+      <!--
+      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
+      -->
+      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
+      </button>
+    </div>
+    <div class="navbar-enterprise-container">
+
+
+
+        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
+        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
+        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
+
+
+    </div>
+  </nav>
+</header>
+  </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -5784,18 +5831,18 @@ Not supported</p>
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-69 is-active" onclick="openLanguage('Curl', 69)">Curl</button>
-        <button class="sample-code-button scsIndex-69" onclick="openLanguage('Nodejs', 69)">Nodejs</button>
-        <button class="sample-code-button scsIndex-69" onclick="openLanguage('Python', 69)">Python</button>
-        <button class="sample-code-button scsIndex-69" onclick="openLanguage('Java', 69)">Java</button>
+        <button class="sample-code-button scsIndex-161 is-active" onclick="openLanguage('Curl', 161)">Curl</button>
+        <button class="sample-code-button scsIndex-161" onclick="openLanguage('Nodejs', 161)">Nodejs</button>
+        <button class="sample-code-button scsIndex-161" onclick="openLanguage('Python', 161)">Python</button>
+        <button class="sample-code-button scsIndex-161" onclick="openLanguage('Java', 161)">Java</button>
       </div>
-      <div id="Curl-69" class="sample-language-69">
+      <div id="Curl-161" class="sample-language-161">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.xml  \
    -d 'Mute=true' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-69" class="sample-language-69" style="display:none">
+      <div id="Nodejs-161" class="sample-language-161" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -5819,7 +5866,7 @@ request.({
 });
 </code></pre>
       </div>
-      <div id="Python-69" class="sample-language-69" style="display:none">
+      <div id="Python-161" class="sample-language-161" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 from urllib.parse import urlencode
@@ -5850,7 +5897,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-69" class="sample-language-69" style="display:none">
+      <div id="Java-161" class="sample-language-161" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -5886,18 +5933,18 @@ public class JavaSampleClass {
 </code></pre>
       </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-70 is-active" onclick="openLanguage('Curl', 70)">Curl</button>
-        <button class="sample-code-button scsIndex-70" onclick="openLanguage('Nodejs', 70)">Nodejs</button>
-        <button class="sample-code-button scsIndex-70" onclick="openLanguage('Python', 70)">Python</button>
-        <button class="sample-code-button scsIndex-70" onclick="openLanguage('Java', 70)">Java</button>
+        <button class="sample-code-button scsIndex-162 is-active" onclick="openLanguage('Curl', 162)">Curl</button>
+        <button class="sample-code-button scsIndex-162" onclick="openLanguage('Nodejs', 162)">Nodejs</button>
+        <button class="sample-code-button scsIndex-162" onclick="openLanguage('Python', 162)">Python</button>
+        <button class="sample-code-button scsIndex-162" onclick="openLanguage('Java', 162)">Java</button>
       </div>
-      <div id="Curl-70" class="sample-language-70">
+      <div id="Curl-162" class="sample-language-162">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Conferences/CONFERENCE_SID/Participants/CALL_SID.xml  \
    -d 'Mute=false' \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-70" class="sample-language-70" style="display:none">
+      <div id="Nodejs-162" class="sample-language-162" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -5921,7 +5968,7 @@ request.({
 });
 </code></pre>
       </div>
-      <div id="Python-70" class="sample-language-70" style="display:none">
+      <div id="Python-162" class="sample-language-162" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 from urllib.parse import urlencode
@@ -5952,7 +5999,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-70" class="sample-language-70" style="display:none">
+      <div id="Java-162" class="sample-language-162" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
