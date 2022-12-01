@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="Secure online transactions, account sign-ins, mobile apps, websites and more by providing smart 2FA with One-Time Passwords to your users.">
     <meta name="keywords" content="2fa, two-factor authentication, secure online transactions, otp, one-time passwords, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;Restcomm&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} two-factor authentication">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5584,7 +5584,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -5857,7 +5857,7 @@
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/send">\https://$DOMAIN/2fa/send</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/send">https://$DOMAIN/2fa/send</span> \
 --user  '\{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -6035,7 +6035,7 @@
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/verify">\https://$DOMAIN/2fa/verify</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/verify">https://$DOMAIN/2fa/verify</span> \
   --user  '\{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -6179,7 +6179,7 @@
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/cancel">\https://$DOMAIN/2fa/cancel</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/cancel">https://$DOMAIN/2fa/cancel</span> \
   --user  '\{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -6439,7 +6439,7 @@ This allows to filter OTP sent to specific country code.</p></td>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/search">\https://$DOMAIN/2fa/search</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/search">https://$DOMAIN/2fa/search</span> \
   --user  '\{your_account_SID}:\{your_account_token}' \
   -d '{  "pageSize": "2", "page":"0", "status":"success", "sortBy":"DateCreated:asc"}'</pre>
 </div>
@@ -6689,7 +6689,7 @@ public class JavaSampleClass {
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/search/OTPabc2128918293123413216549879">\https://$DOMAIN/2fa/search/OTPabc2128918293123413216549879</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/search/OTPabc2128918293123413216549879">https://$DOMAIN/2fa/search/OTPabc2128918293123413216549879</span> \
   --user  '\{your_account_SID}:\{your_account_token}'</pre>
 </div>
 </div>
@@ -6837,7 +6837,7 @@ This allows to filter Usage records sent to specific country code.</p></td>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records?startTime=2020-03-16T18:30:00.000Z&amp;endTime=2020-03-19T13:21:37.778Z">\https://$DOMAIN/2fa/usage/records?startTime=2020-03-16T18:30:00.000Z&amp;endTime=2020-03-19T13:21:37.778Z</span> \</pre>
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records?startTime=2020-03-16T18:30:00.000Z&amp;endTime=2020-03-19T13:21:37.778Z">https://$DOMAIN/2fa/usage/records?startTime=2020-03-16T18:30:00.000Z&amp;endTime=2020-03-19T13:21:37.778Z</span> \</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -6867,7 +6867,7 @@ This allows to filter Usage records sent to specific country code.</p></td>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records">\https://$DOMAIN/2fa/usage/records</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records">https://$DOMAIN/2fa/usage/records</span> \
   --user  '\{your_account_SID}:\{your_account_token}'
     -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -6906,7 +6906,7 @@ This allows to filter Usage records sent to specific country code.</p></td>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X POST \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records">\https://$DOMAIN/2fa/usage/records</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records">https://$DOMAIN/2fa/usage/records</span> \
   --user  '\{your_account_SID}:\{your_account_token}'
     -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
@@ -7002,7 +7002,7 @@ This allows to filter Usage records sent to specific country code.</p></td>
 <div class="listingblock">
 <div class="content">
 <pre>curl -X GET \
-  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records/daily">\https://$DOMAIN/2fa/usage/records/daily</span> \
+  <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/2fa/usage/records/daily">https://$DOMAIN/2fa/usage/records/daily</span> \
   --user  '\{your_account_SID}:\{your_account_token}'</pre>
 </div>
 </div>
