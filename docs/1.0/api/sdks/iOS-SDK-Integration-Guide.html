@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/sdks/iOS-SDK-Integration-Guide.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -5582,7 +5582,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5659,7 +5659,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>let settings = CPaaSAPISettings(
+<pre class="highlightjs highlight"><code class="language-none hljs">let settings = CPaaSAPISettings(
             customDomain: "domain",
             accountSid: "sid",
             accountToken: "token",
@@ -5714,7 +5714,7 @@ The previous steps must be successfully completed. Failure in any of the above p
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self)
+<pre class="highlightjs highlight"><code class="language-none hljs">CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self)
 CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self) //A second invocation will have no effect</code></pre>
 </div>
 </div>
@@ -5727,7 +5727,7 @@ CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self) //A second invoca
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>let call = CPaaSAPI.shared.startCall(
+<pre class="highlightjs highlight"><code class="language-none hljs">let call = CPaaSAPI.shared.startCall(
             destinationId: destinationID,
             callOptions: CallOptions(audio: true))</code></pre>
 </div>
@@ -5737,7 +5737,7 @@ CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self) //A second invoca
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>call.mute() <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="highlightjs highlight"><code class="language-none hljs">call.mute() <i class="conum" data-value="1"></i><b>(1)</b>
 call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 </div>
@@ -5764,7 +5764,7 @@ call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onIncomingCall(call: ICall) {
+<pre class="highlightjs highlight"><code class="language-none hljs">func onIncomingCall(call: ICall) {
     //Save the call object
     call.joinCall()
 }</code></pre>
@@ -5781,7 +5781,7 @@ call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>call.eventListener = self
+<pre class="highlightjs highlight"><code class="language-none hljs">call.eventListener = self
 
 extension CLASS_NAME: ICallEvents {
 
