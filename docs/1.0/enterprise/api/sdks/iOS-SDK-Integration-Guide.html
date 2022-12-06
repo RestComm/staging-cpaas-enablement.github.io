@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- In order to avoid flashing of wrong brand we keep the title empty at first and then fill it dynamically -->
-    <title data-custom-title="CPaaS iOS SDK Integration Guide - Restcomm Docs"></title>
+    <title data-custom-title="CPaaS iOS SDK API Reference - Restcomm Docs"></title>
     <link rel="canonical" href="
       /docs/api/sdks/iOS-SDK-Integration-Guide.html
     ">
@@ -3349,8 +3349,8 @@
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="iOSSDKIntegrationGuide"
-                  class="nav-item is-current-page"
+              <li id="iOSSDKAPIReference"
+                  class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
             <span class="nav-flex-item-icon
@@ -3363,14 +3363,14 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-API-Reference.html">iOS SDK API Reference</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="WebSDKIntegrationGuide"
+              <li id="WebSDKGettingStartedGuide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -3384,7 +3384,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3447,14 +3447,12 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../../../index.html">docs</a></li>
-    <li class="crumb"><a href="index.html">Enterprise:Server-Side Helper Libraries (SDKs)</a></li>
-    <li class="crumb"><a href="iOS-Getting-Started-Guide.html">Enterprise:iOS Getting Started Guide</a></li>
-    <li class="crumb"><a href="iOS-SDK-Integration-Guide.html">Enterprise:iOS SDK Integration Guide</a></li>
+    <li class="crumb"><a href="iOS-SDK-Integration-Guide.html">CPaaS iOS SDK API Reference</a></li>
   </ul>
 </nav>
 </div>
 <article class="doc fix-anchor-links-position">
-  <h1>CPaaS iOS SDK Integration Guide</h1>
+  <h1>CPaaS iOS SDK API Reference</h1>
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
 <div class="sectionbody">
@@ -3464,28 +3462,71 @@
 <div class="sect2">
 <h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h3>
 <div class="paragraph">
-<p>Before you get started, make sure you have the following prerequisites:<br>
-1. Xcode v.12.0+<br>
-2. iOS v.13.0+</p>
+<p>Before you get started, make sure you have the following prerequisites.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_restcomm_account_and_authentication_parameters"><a class="anchor" href="#_restcomm_account_and_authentication_parameters"></a>Restcomm Account and Authentication Parameters</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To add a Click-To-Call capability to your application, you will need an active Restcomm Account.</p>
+</li>
+<li>
+<p>After you sign up with Restcomm, you can find your <em>Account SID</em> and <em>Auth Token</em> by navigating to <em>Your profile -&#8594; Account</em> in the Restcomm Console.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you are not familiar with the Restcomm Console yet, please check out the  <a href="../../getting-started.html">Restcomm Getting Started Guide</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_platform_prerequisites"><a class="anchor" href="#_platform_prerequisites"></a>Platform Prerequisites</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Xcode v.12.0+<br></p>
+</li>
+<li>
+<p>iOS v.13.0+</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cpaas_api_sdk_sample_application"><a class="anchor" href="#_cpaas_api_sdk_sample_application"></a>CPaaS API SDK Sample Application</h3>
+<div class="paragraph">
+<p>You can find our sample application on <a href="https://github.com/CPaaSAPI/iOSSampleApp">GitHub</a>.
+Its sample code demonstrates how to integrate the CPaaSAPI SDK with a swift application.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_downloading_the_cpaas_ios_sdk"><a class="anchor" href="#_downloading_the_cpaas_ios_sdk"></a>Downloading the CPaaS iOS SDK</h3>
 <div class="paragraph">
-<p>The CPaaS API iOS SDK is available for download <a href="">here</a>.</p>
+<p>The CPaaS API iOS SDK is available for download <a href="https://github.com/CPaaSAPI/iOSSampleApp/tree/main/CPaaSAPIiOSSampleApp/CpaaSAPI.framework">here</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="_manual_install"><a class="anchor" href="#_manual_install"></a>Manual Install</h4>
+<h4 id="_manual_installation"><a class="anchor" href="#_manual_installation"></a>Manual Installation</h4>
 <div class="paragraph">
 <p>You can install the SDK manually by following the steps below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="">Download</a> CPaaSAPI.framework and WebRTC.framework and unpack them in your project.</p>
+<p>Unpack CPaaSAPI.framework, WebRTC.framework, and _AWSMobileClient.framework in your project.</p>
 </li>
 <li>
-<p>Drag and drop CPaaSAPI.framework and WebRTC.framework onto the <strong>Frameworks, Libraries, and Embedded Content</strong> section that is located in Xcode <strong>General</strong> tab.</p>
+<p>Drag and drop these files onto the <strong>Frameworks, Libraries, and Embedded Content</strong> section that is located in Xcode <strong>General</strong> tab.</p>
 </li>
 <li>
 <p>Ensure that "Copy items if needed" is checked and press Finish.</p>
@@ -3494,6 +3535,37 @@
 <p>Ensure that "Embed &amp; Sign" is selected.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_pod_installation"><a class="anchor" href="#_pod_installation"></a>Pod Installation</h4>
+<div class="paragraph">
+<p>The CPaaSAPI SDK for iOS can be integrated using cocoapods by specifying the following in your podfile:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>target 'Your project target' do
+pod 'CpaaSAPI_iOS'
+end</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_permissions"><a class="anchor" href="#_permissions"></a>Permissions</h4>
+<div class="paragraph">
+<p>Add the following permission to your application info.plist:
+<strong>Privacy - Microphone Usage Description</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_importing_the_framework"><a class="anchor" href="#_importing_the_framework"></a>Importing the Framework</h4>
+<div class="paragraph">
+<p>To import the framework add the following to your application.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>import CPaaSAPI</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -3505,19 +3577,19 @@
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>let settings = CPaaSAPISettings(
-            customDomain: "domain",
-            accountSid: "sid",
-            accountToken: "token",
-            appSid: "sid12345",
-            clientId: "foobar22",
-            PNSToken: "pns55555",
-            BaseURL: "https://cpaas.dev:3000")
+            customDomain: "api.your-organization.com",
+            accountSid: "xxxxxxx",
+            authToken: "xxxxxxx",
+            appSid: "xxxxxxx",
+            clientId: "xxxxxxx",
+            PNSToken: "xxxxxxx",
+            baseURL: "https://xxxxxxx.com")
 
 CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self)
 
-extension CLASS_NAME: CPaaSAPICb {
+extension &lt;CLASS_NAME&gt;: CPaaSAPICb {
 
-    func onIncomingCall(call: ICall) {
+    func onIncomingCall(callId: String, callerId: String, serviceType: ServiceType) {
         //TODO: - Listening to incoming calls
     }
 
@@ -3526,6 +3598,27 @@ extension CLASS_NAME: CPaaSAPICb {
     }
 }</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>CLASS_NAME</code> stands for the class you will receive the callback to.<br></p>
+</li>
+<li>
+<p>This should be done once in a session. You should do it as soon as the application opens. It will save you time during the call connection.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_authorization_and_web_socket_connection"><a class="anchor" href="#_authorization_and_web_socket_connection"></a>Authorization and Web Socket Connection</h4>
@@ -3554,36 +3647,47 @@ The previous steps must be successfully completed. Failure in any of the above p
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>To start using the SDK you will need to invoke the <code>.register()</code> method by running the following script. This can only be done once. A second invocation will take no effect on the SDK.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code>CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self)
-CPaaSAPI.shared.register(settings: settings, cpaasAPICb: self) //A second invocation will have no effect</code></pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_starting_a_call"><a class="anchor" href="#_starting_a_call"></a>Starting a call</h3>
 <div class="paragraph">
-<p>To initiate a call simply call <strong>CPaaSAPI.shared.startCall(&#8230;&#8203;)</strong>. &lt;br&gt;</p>
+<p>To initiate a call simply call <strong>CPaaSAPI.voice.create(&#8230;&#8203;)</strong> and <strong>CPaaSAPI.voice.connect(&#8230;&#8203;)</strong>.</p>
+</div>
+<div class="paragraph">
+<p><strong>create()</strong>: creates and returns a call id which you can use or share with others<br>
+<strong>connect()</strong>: starts the actual connection to the call and returns a CPaaSCall obj</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>let call = CPaaSAPI.shared.startCall(
-            destinationId: destinationID,
-            callOptions: CallOptions(audio: true))</code></pre>
+<pre class="highlightjs highlight"><code>CPaaSAPI.shared.voice.create { createResult in
+    createResult.fold { callId in
+        CPaaSAPI.shared.voice.connect(callId: callId, callOptions: callOptions) { connectResult in
+            connectResult.fold { newCall in
+                self.call = newCall
+                // Here you can:
+                // show call UI
+                // Start listen to call events: newCall.eventListener = self
+            } onFailure: { callStartError in
+                print("Failed connecting to call: \(callStartError.debugDescription)")
+            }
+        }
+    } onFailure: { error in
+        print("Failed to create call - not registered")
+    }
+}</code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_the_cpaascall_object"><a class="anchor" href="#_the_cpaascall_object"></a>The CPaaSCall Object</h4>
 <div class="paragraph">
-<p><code>call</code> is an API object that lets you perform actions on the active call such as muting or putting it on hold.</p>
+<p><code>CPaaSCall</code> is an API object that returns as a result of the <code>connect()</code> method. It lets you perform actions on the active call such as muting or putting it on hold.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code>call.mute() <i class="conum" data-value="1"></i><b>(1)</b>
-call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
+call.unmute() <i class="conum" data-value="2"></i><b>(2)</b>
+call.hold() <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -3594,9 +3698,14 @@ call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Unmutes the current call</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
 <td>Puts the current call on hold</td>
 </tr>
 </table>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -3605,22 +3714,51 @@ call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <p>To answer an incoming call, you need to listen to the <code>onIncomingCall</code> callback.</p>
 </div>
 <div class="paragraph">
-<p>When there is an incoming call, you can use the  <code>call</code> object to accept it and call <code>call.join()</code> to join it.</p>
+<p>When there is an incoming call, you can use the  <code>callId</code> object to accept or reject the call.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You should not use the <code>create()</code> method in this case.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onIncomingCall(call: ICall) {
-    //Save the call object
-    call.joinCall()
+<pre class="highlightjs highlight"><code>func onIncomingCall(callId: String, callerId: String, serviceType: ServiceType) {
+    //accept the call
+    CPaaSAPI.shared.voice.connect(callId: callId, callOptions: callOptions) { connectResult in
+            connectResult.fold { newCall in
+                self.call = newCall
+                // Here you can:
+                // show call UI
+                // Start listen to call events: newCall.eventListener = self
+            } onFailure: { callStartError in
+                print("Failed connecting to call: \(callStartError.debugDescription)")
+            }
+        }
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>When working with callKit you will want to first <code><code>reportNewIncomingCall</code></code> and then call <code><code>joinCall()</code></code> or <code><code>rejectCall()</code></code> depending on the <code><code>CXCallAction</code></code>.</p>
+<p>You can reject the call as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>CPaaSAPI.shared.voice.reject(callId: callId)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When working with callKit you will want to first <code><code>reportNewIncomingCall</code></code> and then call <code><code>connect</code></code> or <code><code>reject</code></code> depending on the <code><code>CXCallAction</code></code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_listening_to_call_events"><a class="anchor" href="#_listening_to_call_events"></a>Listening to call events</h3>
+<h3 id="_listening_to_call_events"><a class="anchor" href="#_listening_to_call_events"></a>Listening to Call Events</h3>
 <div class="paragraph">
 <p>You can listen to various call events such as: call connected, call ringing, connection failed, call ended, call reconnecting.</p>
 </div>
@@ -3628,7 +3766,7 @@ call.hold() <i class="conum" data-value="2"></i><b>(2)</b></code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code>call.eventListener = self
 
-extension CLASS_NAME: ICallEvents {
+extension CLASS_NAME: CPaaSCallEvents {
 
     func onRinging() {
         // callee got your call, wait for his action (accept/reject)
@@ -3638,15 +3776,15 @@ extension CLASS_NAME: ICallEvents {
         // call connected you have audio here
     }
 
-    func onCallEnd(reason: Reason?) {
+    func onCallEnd(reason: CPaaSReason) {
         // call end, you can remove call UI
     }
 
-    func onConnectedFailure(reason: Reason) {
+    func onConnectedFailure(reason: CPaaSReason) {
         // connection failed, check reason
     }
 
-    func onReconnecting(reason: Reason) {
+    func onReconnecting(reason: CPaaSReason) {
         // call on reconnecting process, show notification for user
     }
 }</code></pre>

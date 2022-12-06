@@ -3349,7 +3349,7 @@
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="iOSSDKIntegrationGuide"
+              <li id="iOSSDKAPIReference"
                   class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
@@ -3363,14 +3363,14 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-API-Reference.html">iOS SDK API Reference</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="WebSDKIntegrationGuide"
+              <li id="WebSDKGettingStartedGuide"
                   class="nav-item is-current-page"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -3384,7 +3384,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3448,7 +3448,7 @@
   <ul>
     <li class="crumb"><a href="../../../index.html">docs</a></li>
     <li class="crumb"><a href="index.html">Enterprise:Server-Side Helper Libraries (SDKs)</a></li>
-    <li class="crumb"><a href="Web-SDK-Integration-Guide.html">Enterprise:Web SDK Integration Guide</a></li>
+    <li class="crumb"><a href="Web-SDK-Integration-Guide.html">Enterprise:Web SDK Getting Started Guide</a></li>
   </ul>
 </nav>
 </div>
@@ -3467,14 +3467,14 @@ The CPaaSAPI SDK exposes voice services that allow you to have a call with a CPa
 <h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_account_and_authentication_parameters"><a class="anchor" href="#_account_and_authentication_parameters"></a>Account and Authentication Parameters</h3>
+<h3 id="_restcomm_account_and_authentication_parameters"><a class="anchor" href="#_restcomm_account_and_authentication_parameters"></a>Restcomm Account and Authentication Parameters</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>To add a Click-To-Call capability to your application, you need an active <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> account.</p>
+<p>To add a Click-To-Call capability to your application, you need an active Restcomm account.</p>
 </li>
 <li>
-<p>After you sign up with <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span>, you can find your <em>Account SID</em> and <em>Auth Token</em> by navigating to <em>Your profile -&#8594; Account</em> in the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Console.</p>
+<p>After you sign up with Restcomm, you can find your <em>Account SID</em> and <em>Auth Token</em> by navigating to <em>Your profile -&#8594; Account</em> in the Restcomm Console.</p>
 </li>
 </ol>
 </div>
@@ -3485,7 +3485,7 @@ The CPaaSAPI SDK exposes voice services that allow you to have a call with a CPa
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you are not familiar with the <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Console yet, please check out the  <a href="../../getting-started.html"><span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> Getting Started Guide</a>
+If you are not familiar with the Restcomm Console yet, please check out the  <a href="../../getting-started.html">Restcomm Getting Started Guide</a>
 </td>
 </tr>
 </table>
@@ -3512,7 +3512,7 @@ This sample code demonstrate how to integrate the CPaaSAPI SDK to an application
 <h3 id="_downloading_from_npm"><a class="anchor" href="#_downloading_from_npm"></a>Downloading from NPM</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">npm i cpaas-api</code></pre>
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">npm i -S @cpaassdk/cpaas-sdk</code></pre>
 </div>
 </div>
 </div>
@@ -3680,12 +3680,24 @@ cpaasEvents.addListener("incomingCall", async (e) =&gt; {
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>//ringing event
+<pre class="highlightjs highlight"><code><i class="conum" data-value="1"></i><b>(1)</b>
 call.onRinging.addEventListener(_ =&gt; console.log("ringing on destination"))
 
-//call ended event
+<i class="conum" data-value="2"></i><b>(2)</b>
 call.onCallEnd.addEventListener(event =&gt; console.log("call has ended", event.CPaaSReason ))</code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Ringing event</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Call ended event&gt;</td>
+</tr>
+</table>
 </div>
 </div>
 </div>

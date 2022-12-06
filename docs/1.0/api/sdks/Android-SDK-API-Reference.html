@@ -4309,26 +4309,6 @@
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="Android SDK Integration Guide"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="Android-SDK-Integration-Guide.html">Android SDK Integration Guide</a>
-
-            </span>
-                </div>
-                              </li>
               <li id="Android SDK API Reference"
                   class="nav-item is-current-page"
                   data-depth="3">
@@ -4351,7 +4331,7 @@
                               </li>
   </ul>
               </li>
-              <li id="iOS Getting Started Guide"
+              <li id="iOS SDK Getting Started  Guide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4366,12 +4346,12 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-Getting-Started-Guide.html">iOS Getting Started Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Getting Started  Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="iOS SDK Integration Guide"
+              <li id="iOS SDK API Reference"
                   class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
@@ -4386,14 +4366,14 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK API Reference</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="Web SDK Integration Guide"
+              <li id="Web SDK Getting Started Guide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4408,7 +4388,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5614,7 +5594,7 @@
 <h2 id="_main_objects"><a class="anchor" href="#_main_objects"></a>Main Objects</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Android SDK is using the following main object:</p>
+<p>The Android SDK is using the following main objects:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -5623,7 +5603,7 @@
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top"><strong>Property</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
 <th class="tableblock halign-left valign-top"><strong>Description</strong></th>
 </tr>
 </thead>
@@ -5633,16 +5613,12 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Main API object.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startCall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">An object used to call a destination.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IVoice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voice Service that allow you to have a call with CPaaS application or receiving a call from a CPaaS application.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Call</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A call object that contains all call-related operations.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CPaaSAPISettings</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Settings required when making requests to the API.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPaaSCall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Preform Actions on an active call</p></td>
 </tr>
 </tbody>
 </table>
@@ -5652,227 +5628,15 @@
 <h2 id="_the_cpaasapi_object"><a class="anchor" href="#_the_cpaasapi_object"></a>The CPaaSApi Object</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_functions"><a class="anchor" href="#_functions"></a>Functions</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Property</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Returns</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">register</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this method to initialize the API. Can be called once per page load.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">startCall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this method to start a call.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ICall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">logout</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this method to logout.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">updateInitParams</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use this method to update credentials.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">getExistingCall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns an existing Call by <code>callId</code> or <code>null</code> if the call doesn&#8217;t exists.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ICall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">getFileLogProvider</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns local file log provider object that holds the log file.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CPaaSAPILogFileProvider</p></td>
-</tr>
-</tbody>
-</table>
+<h3 id="_register"><a class="anchor" href="#_register"></a>register</h3>
+<div class="paragraph">
+<p>To start using the SDK you should register the SDK by using this function.</p>
 </div>
-<div class="sect2">
-<h3 id="_properties"><a class="anchor" href="#_properties"></a>Properties</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Property</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ICall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Represents an outgoing call.</p></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun register(settings: CPaaSAPISettings, appContext: Context, cpaasAPICb: CPaaSAPICb)</code></pre>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_the_icall_object_api_icall"><a class="anchor" href="#_the_icall_object_api_icall"></a>The ICall Object (api.ICall)</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_functions_2"><a class="anchor" href="#_functions_2"></a>Functions</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Property</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Arguments</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Returns</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">eventListener</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets call events listener.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ICallEvents?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">getCallId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns this call id.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">getDestinationId</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns call destination id.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">isHold</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns whether this call is hold.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">isMute</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Returns whether you are on mute.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean?</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">endCall</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Closes the active call.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">rejectCall</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rejects the incoming call.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">joinCall</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Accepts this incoming call by joining it.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Completion</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mutes yourself.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">unMute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Completion</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">UnMutes yourself.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hold</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Holds the user media exchange.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resume</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resumes the user media exchange.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Void</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_the_cpaasapisettings_object_settings"><a class="anchor" href="#_the_cpaasapisettings_object_settings"></a>The CPaaSAPISettings object (Settings)</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Property</strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customDomain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your custom Domain</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Restcomm identifier of the Account where the event happened</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountToken</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The authorization token for this account. This should not be shared</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">appSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The application unique identifier for a specific account</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Client unique identifier. used for authentication (by Cognito)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BaseURL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your Base URL</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WS URL</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_events"><a class="anchor" href="#_events"></a>Events</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_registration_events"><a class="anchor" href="#_registration_events"></a>Registration Events</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -5886,8 +5650,530 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onIncomingCall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A call object that contains all call-related operations.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">settings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPaaSAPISettings object contains parameters needed for registration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appContext</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android application context</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpaasAPICb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CPaaSAPICb is a listener for a general events</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_logout"><a class="anchor" href="#_logout"></a>logout</h3>
+<div class="paragraph">
+<p>This will clear all objects and unregister from receiving further incoming call</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun logout(appContext: Context)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appContext</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android application context</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_getfileloguri"><a class="anchor" href="#_getfileloguri"></a>getFileLogUri</h3>
+<div class="paragraph">
+<p>Call this when you want to get the log file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun getFileLogUri(appContext: Context, result: (CPaaSResult&lt;File, FileNotExistError&gt;) -&gt; Unit)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appContext</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Android application context</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This parameter is of type CPaaSResult that will return a log file if the request was successful or a FileNotExistError if something went wrong.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_voice"><a class="anchor" href="#_voice"></a>voice</h3>
+<div class="paragraph">
+<p>This interface of type IVoice is your entry point to all voice relevant methods.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>var voice: IVoice</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ivoice"><a class="anchor" href="#_ivoice"></a>IVoice</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This interface is your entry point for handling all voice relevant methods.</p>
+</div>
+<div class="sect2">
+<h3 id="_create"><a class="anchor" href="#_create"></a>create</h3>
+<div class="paragraph">
+<p>Creates a callId that can be used to start a call or share it with others</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun create(result: (CPaaSResult&lt;String, CallStartError.NotRegisteredError&gt;) -&gt; Unit)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This parameter is of type CPaaSResult that will return a callId if the request was successful or a CallStartError if something went wrong.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_connect"><a class="anchor" href="#_connect"></a>connect</h3>
+<div class="paragraph">
+<p>Call this when you want to start or join a call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun connect(callId: String, callOptions: CallOptions, result: (CPaaSResult&lt;CPaaSCall, CallStartError&gt;) -&gt; Unit)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">callId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The callId of the call, this id can be retrieved from create, incomingCall or from sharing
+callOptions	This parameter is of type CallOptions to configure some settings when starting the call</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">result</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This parameter is of type CPaaSResult that will return a CPaaSCall if the request was successful or a CallStartError if something went wrong.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_reject"><a class="anchor" href="#_reject"></a>reject</h3>
+<div class="paragraph">
+<p>Use this when you want to reject an incoming call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun reject(callId: String)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">callId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The callId of the call you want to reject</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_getexistingcall"><a class="anchor" href="#_getexistingcall"></a>getExistingCall</h3>
+<div class="paragraph">
+<p>Returns an existing CPaaSCall by callId or null if the call doesn&#8217;t exists.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun getExistingCall(callId: String): CPaaSCall?</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">callId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The callId of the call you want to retrieve.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpaascall"><a class="anchor" href="#_cpaascall"></a>CPaaSCall</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A CPaaSCall object that contains all active call-related actions.</p>
+</div>
+<div class="sect2">
+<h3 id="_endcall"><a class="anchor" href="#_endcall"></a>endCall</h3>
+<div class="paragraph">
+<p>Closes the active call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun endCall()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getcallid"><a class="anchor" href="#_getcallid"></a>getCallId</h3>
+<div class="paragraph">
+<p>Returns this call id.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun getCallId(): String</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mute"><a class="anchor" href="#_mute"></a>mute</h3>
+<div class="paragraph">
+<p>Mutes yourself, will return a closure with a Boolean to determine if the operation was successful.</p>
+</div>
+<div class="paragraph">
+<p>fun mute(completion: (success: Boolean) &#8594; Unit)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_unmute"><a class="anchor" href="#_unmute"></a>unMute</h3>
+<div class="paragraph">
+<p>UnMutes yourself, will return a closure with a Boolean to determine if the operation was successful.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun unMute(completion: (success: Boolean) -&gt; Unit)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eventlistener"><a class="anchor" href="#_eventlistener"></a>eventListener</h3>
+<div class="paragraph">
+<p>This interface of type CPaaSCallEvents should be set to receive events on the call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var eventListener: CPaaSCallEvents?</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_helper_objects"><a class="anchor" href="#_helper_objects"></a>Helper Objects</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_cpaascallevents"><a class="anchor" href="#_cpaascallevents"></a>CPaaSCallEvents</h3>
+<div class="paragraph">
+<p>The CPaaSCall supports listening to various call events such as: call connected, call ringing, connection failed, call ended and call reconnecting. use it via CPaaSCall.eventListener</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_oncallend"><a class="anchor" href="#_oncallend"></a>onCallEnd</h3>
+<div class="paragraph">
+<p>The call ended and you can remove the call UI.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onCallEnd(reason: CPaaSReason)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onconnected"><a class="anchor" href="#_onconnected"></a>onConnected</h3>
+<div class="paragraph">
+<p>The call is connected and you have open channel for sending and receiving audio.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onConnected()</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onconnectedfailure"><a class="anchor" href="#_onconnectedfailure"></a>onConnectedFailure</h3>
+<div class="paragraph">
+<p>The connection failed. You can check the failure reason.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onConnectedFailure(reason: CPaaSReason)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onreconnecting"><a class="anchor" href="#_onreconnecting"></a>onReconnecting</h3>
+<div class="paragraph">
+<p>The call is in a process of reconnecting and you can show a notification to the user.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onReconnecting(reason: CPaaSReason)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onringing"><a class="anchor" href="#_onringing"></a>onRinging</h3>
+<div class="paragraph">
+<p>The Callee received your call. You have to wait for them to accept or reject the call.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onRinging()</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpaasapisettings"><a class="anchor" href="#_cpaasapisettings"></a>CPaaSAPISettings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This class has all parameters needed for registration</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun init(customDomain: String, accountSid: String, authToken: String, appSid: String, clientId: String, PNSToken: String, baseURL: String)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">customDomain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The base domain of your CPaaS organization relative to api.your-company.com</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A string that uniquely identifies this account.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">authToken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The secret authorization token for this account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">appSid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string that uniquely identifies this application.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clientId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The string that uniquely identifies this client.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PNSToken</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Push notification server token</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">baseURL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Base AWS URL. Parameters can be taken from <a href="../overview.html#_authentication">here</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_calloptions"><a class="anchor" href="#_calloptions"></a>CallOptions</h3>
+<div class="paragraph">
+<p>This object is used when connecting to a call, you can determine the beginning status of the call with this.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">audio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can determine if the call will start with the user muted or not</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_cpaasresult"><a class="anchor" href="#_cpaasresult"></a>CPaaSResult</h3>
+<div class="paragraph">
+<p>An Object for receiving asynchronous results</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onsuccess"><a class="anchor" href="#_onsuccess"></a>onSuccess</h3>
+<div class="paragraph">
+<p>If the operation was successful this closure will be invoked with the parameter that was set at declaration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onSuccess(action: (value: T) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_onfailure"><a class="anchor" href="#_onfailure"></a>onFailure</h3>
+<div class="paragraph">
+<p>If the operation failed this closure will be invoked with the error type that was set at declaration.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onFailure(action: (exception: TException) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fold"><a class="anchor" href="#_fold"></a>fold</h3>
+<div class="paragraph">
+<p>With this method you will listen to onSuccess and onFailure closures in same method.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun fold(onSuccess: (value: T) -&gt; Unit, onFailure: (exception: TException) -&gt; Unit): Unit?</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isSuccess</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can ask CPaaSResult if the operation succeeded</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">isFailure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can ask CPaaSResult if the operation failed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpaasapicb"><a class="anchor" href="#_cpaasapicb"></a>CPaaSAPICb</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You set this CallBack obj on registration method, it will add a listener for a general events.</p>
+</div>
+<div class="sect2">
+<h3 id="_onincomingcall"><a class="anchor" href="#_onincomingcall"></a>onIncomingCall</h3>
+<div class="paragraph">
+<p>Called when there is an incoming call</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onIncomingCall(callId: String, callerId: String, serviceType: ServiceType)</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">callId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The id that identifies the call</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">callerId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The caller id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">serviceType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The ServiceType of call you received, this will be needed to respond with correct API</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">onRegistrationComplete</p></td>
@@ -5895,9 +6181,11 @@
 </tr>
 </tbody>
 </table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>fun onRegistrationComplete(success: Boolean)</code></pre>
 </div>
-<div class="sect2">
-<h3 id="_call_events"><a class="anchor" href="#_call_events"></a>Call Events</h3>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -5911,30 +6199,32 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onConnected</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The call is connected and you are receiving audio.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onRinging</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Callee received your call. You have to wait for them to accept or reject the call.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onConnectedFailure</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The connection failed. You can check the failure reason.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onCallEnd</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The call ended and you can remove the call UI.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">onReconnecting</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The call is in a process of reconnecting and you can show a notification to the user.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">success</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Determine if the registration was successful</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Even if registration was successful you should continue listening to this event as it may still fail for various reasons.
+</td>
+</tr>
+</table>
 </div>
-<div class="sect2">
-<h3 id="_connected_failure_reasons"><a class="anchor" href="#_connected_failure_reasons"></a>Connected Failure Reasons</h3>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpaasreason"><a class="anchor" href="#_cpaasreason"></a>CPaaSReason</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The reason why a call ended, failed or is in reconnecting process.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -5948,11 +6238,120 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">reason</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The reason why a call failed. Possible values include:  &lt;br/&gt;    <code>BUSY</code>, <code>REJECT</code>, <code>BAD_REQUEST</code>, <code>UNAUTHORIZED</code>, <code>NOT_FOUND</code>, <code>GONE,RTP_LOST</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">busy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server issue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">reject</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">User reject the call</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">badRequest</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Missing parameters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unauthorized</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is an issue with your token, please check that your account was set correctly and parameters were passed correctly</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">notFound</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server issue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gone</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server issue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeOut</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Failed to receive response from the server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rtpLost</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The rtp was lost, we are trying to reconnect</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Call ended as result of a network issue</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byUser</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When the user requested to end the call</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byServer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">When the callee ended the call</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_servicetype"><a class="anchor" href="#_servicetype"></a>ServiceType</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When receiving an incoming call, you can know with this enum the type of the call and which API should be referenced.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Name</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">We are in a voice call, you should use CPaaSAPI.voice to connect or reject the call</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cpaas_error"><a class="anchor" href="#_cpaas_error"></a>CPaaS Error</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To assist you in getting back on track if you run into problems, we&#8217;ve given the following Errors Information. This information can also be helpful for submitting logs and providing details to CPaaS Support.</p>
+</div>
+<div class="sect2">
+<h3 id="_callstarterror"><a class="anchor" href="#_callstarterror"></a>CallStartError</h3>
+<div class="paragraph">
+<p>Errors that can be returned as failure to connect().</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connectionerror"><a class="anchor" href="#_connectionerror"></a>ConnectionError</h3>
+<div class="paragraph">
+<p>Can&#8217;t connect to this callId. Unexpected connection issue prevent the call from being established.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_microphonepermissionerror"><a class="anchor" href="#_microphonepermissionerror"></a>MicrophonePermissionError</h3>
+<div class="paragraph">
+<p>Microphone access denied. You should encourage the user to grant Microphone permissions.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_notregisterederror"><a class="anchor" href="#_notregisterederror"></a>NotRegisteredError</h3>
+<div class="paragraph">
+<p>Call cannot be initiated without registration. can be solved by registering.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_callalreadyexisterror"><a class="anchor" href="#_callalreadyexisterror"></a>CallAlreadyExistError</h3>
+<div class="paragraph">
+<p>This callId has already been connected. there is already a CPaaSCall object that represents this call.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_filenotexisterror"><a class="anchor" href="#_filenotexisterror"></a>FileNotExistError</h3>
+<div class="paragraph">
+<p>Error that can be returned as failure to getFileLogUri() and indicates that the required file does not exist.</p>
+</div>
 </div>
 </div>
 </div>

@@ -3349,7 +3349,7 @@
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="iOSSDKIntegrationGuide"
+              <li id="iOSSDKAPIReference"
                   class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
@@ -3363,14 +3363,14 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-API-Reference.html">iOS SDK API Reference</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="WebSDKIntegrationGuide"
+              <li id="WebSDKGettingStartedGuide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -3384,7 +3384,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -3448,7 +3448,7 @@
   <ul>
     <li class="crumb"><a href="../../../index.html">docs</a></li>
     <li class="crumb"><a href="index.html">Enterprise:Server-Side Helper Libraries (SDKs)</a></li>
-    <li class="crumb"><a href="Web-SDK-Integration-Guide.html">Enterprise:Web SDK Integration Guide</a></li>
+    <li class="crumb"><a href="Web-SDK-Integration-Guide.html">Enterprise:Web SDK Getting Started Guide</a></li>
     <li class="crumb"><a href="Web-SDK-API-Reference.html">Enterprise:Web SDK API Reference</a></li>
   </ul>
 </nav>
@@ -3471,21 +3471,21 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[cpaas](#api)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpaas</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Root namespace for cpaas-api library</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[Voice](#voice)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voice</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Voice Service that allow you to have a call with CPaaS application or receiving a call from a CPaaS application.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">[Call](#call)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Call</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Preform Actions on an active call</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_a_nameapiacpaasapi"><a class="anchor" href="#_a_nameapiacpaasapi"></a>&lt;a name="api"&gt;&lt;/a&gt;CPaasAPI</h3>
+<h3 id="_cpaasapi"><a class="anchor" href="#_cpaasapi"></a>CPaasAPI</h3>
 <div class="paragraph">
 <p>CPaaSAPI is your entry point to the CPaaSAPI SDK.</p>
 </div>
@@ -3515,7 +3515,7 @@
 <div class="sect2">
 <h3 id="_exportlogs"><a class="anchor" href="#_exportlogs"></a>exportLogs</h3>
 <div class="paragraph">
-<p>download latest log file</p>
+<p>You can download the latest available log file as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3526,7 +3526,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_namevoiceavoice_object"><a class="anchor" href="#_a_namevoiceavoice_object"></a>&lt;a name="voice"&gt;&lt;/a&gt;Voice Object</h2>
+<h2 id="_voice_object"><a class="anchor" href="#_voice_object"></a>Voice Object</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This interface is your entry point for handling all voice relevant methods.</p>
@@ -3545,11 +3545,11 @@
 <div class="sect2">
 <h3 id="_connect"><a class="anchor" href="#_connect"></a>connect</h3>
 <div class="paragraph">
-<p>Call this when you want to start or join a [call](#call). &lt;br/&gt;</p>
+<p>Call this when you want to start or join a call.</p>
 </div>
 <div class="paragraph">
-<p>Success: Call object will be return &lt;br/&gt;
-Failure: On Failure will return an exception with an error description.</p>
+<p>Success: If successful, a Call object will be returned,<br>
+Failure: If failed, an exception with an error description will be returned.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3582,7 +3582,7 @@ Failure: On Failure will return an exception with an error description.</p>
 <div class="sect2">
 <h3 id="_getexistingcall"><a class="anchor" href="#_getexistingcall"></a>getExistingCall</h3>
 <div class="paragraph">
-<p>Returns an existing CPaaSCall by callId or null if the call doesn&#8217;t exists.</p>
+<p>Returns an existing CPaaSCall by <code>callId</code> or <code>null</code> if the call doesn&#8217;t exist.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3612,7 +3612,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 <div class="sect2">
 <h3 id="_reject"><a class="anchor" href="#_reject"></a>reject</h3>
 <div class="paragraph">
-<p>Use this when you want to reject an incoming call.</p>
+<p>Rejects an incoming call.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3641,7 +3641,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </div>
 </div>
 <div class="sect1">
-<h2 id="_a_namecallacall_object"><a class="anchor" href="#_a_namecallacall_object"></a>&lt;a name="call"&gt;&lt;/a&gt;Call Object</h2>
+<h2 id="_call_object"><a class="anchor" href="#_call_object"></a>Call Object</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A Call object that contains all active call-related actions.</p>
@@ -3765,7 +3765,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The <span class="sps-text non-sps-link" data-orig-text="CPaaS" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">CPaaS</span> identifier of the Account where the event happened</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The Restcomm identifier of the Account where the event happened</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">authToken</p></td>
@@ -3790,7 +3790,7 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 </tbody>
 </table>
 <div class="paragraph">
-<p>The arameters can be taken from <a href="../overview.html#_authentication">here</a></p>
+<p>The parameters can be taken from <a href="../api/overview.html#_authentication">here</a></p>
 </div>
 </div>
 <div class="sect2">
@@ -3898,10 +3898,6 @@ getExistingCall(callId: string): Nullable&lt;cpaas.data.CPaasCall&gt;;</code></p
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">voice</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">We are in a voice call, you should use CPaaSAPI.voice to connect or reject the call</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">video</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">TBD</p></td>
 </tr>
 </tbody>
 </table>

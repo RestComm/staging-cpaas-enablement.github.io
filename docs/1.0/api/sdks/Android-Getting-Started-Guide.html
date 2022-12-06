@@ -4309,26 +4309,6 @@
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="Android SDK Integration Guide"
-                  class="nav-item"
-                  data-depth="3">
-                <div class="nav-flex-container">
-            <span class="nav-flex-item-icon
-              
-              
-              
-              
-              
-              
-              
-              
-            "></span>
-                    <span>
-              <a class="nav-link nav-flex-item-text" href="Android-SDK-Integration-Guide.html">Android SDK Integration Guide</a>
-
-            </span>
-                </div>
-                              </li>
               <li id="Android SDK API Reference"
                   class="nav-item"
                   data-depth="3">
@@ -4351,7 +4331,7 @@
                               </li>
   </ul>
               </li>
-              <li id="iOS Getting Started Guide"
+              <li id="iOS SDK Getting Started  Guide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4366,12 +4346,12 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-Getting-Started-Guide.html">iOS Getting Started Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Getting Started  Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
                   <ul class="nav-list">
-              <li id="iOS SDK Integration Guide"
+              <li id="iOS SDK API Reference"
                   class="nav-item"
                   data-depth="3">
                 <div class="nav-flex-container">
@@ -4386,14 +4366,14 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="iOS-SDK-Integration-Guide.html">iOS SDK API Reference</a>
 
             </span>
                 </div>
                               </li>
   </ul>
               </li>
-              <li id="Web SDK Integration Guide"
+              <li id="Web SDK Getting Started Guide"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -4408,7 +4388,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Integration Guide</a>
+              <a class="nav-link nav-flex-item-text" href="Web-SDK-Integration-Guide.html">Web SDK Getting Started Guide</a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5688,7 +5668,7 @@ If you are not familiar with the Restcomm Console yet, please check out the  <a 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-kotlin hljs" data-lang="kotlin">    &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;
+<pre class="highlightjs highlight"><code>    &lt;uses-permission android:name="android.permission.RECORD_AUDIO" /&gt;
     &lt;uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /&gt;
     &lt;uses-permission android:name="android.permission.INTERNET" /&gt;</code></pre>
 </div>
@@ -5740,44 +5720,6 @@ This should be done only once during a session.
 )</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top"><strong>Property </strong></th>
-<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">customDomain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your custom Domain. For example: <code>yourcompany.com</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Restcomm identifier of the Account where the event happened.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountToken</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The authorization token for this account. This should not be shared.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">appSid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Application&#8217;s unique identifier for a specific account.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clientId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The Client&#8217;s unique identifier. used for authentication (by Cognito).</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">BaseURL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Your Base URL</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect2">
 <h3 id="_authorization_and_web_socket_connection"><a class="anchor" href="#_authorization_and_web_socket_connection"></a>Authorization and Web Socket Connection</h3>
 <div class="paragraph">
@@ -5809,7 +5751,7 @@ of the above procedures will prevent the SDK from working properly.
 <h2 id="_starting_a_call"><a class="anchor" href="#_starting_a_call"></a>Starting a call</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To start a call use the <code>CPaaSAPI.startCall(&#8230;&#8203;)</code> and <code>CPaaSAPI.voice.connect(&#8230;&#8203;)</code> method as follows.</p>
+<p>To start a call use the <code>CPaaSAPI.voice.create(&#8230;&#8203;)</code> and <code>CPaaSAPI.voice.connect(&#8230;&#8203;)</code> method as follows.</p>
 </div>
 <div class="paragraph">
 <p><code>create():</code> creates and returns a call id which you can use or share with others. <code>connect():</code> starts the actual connection to the call and returns an API call obj.</p>
@@ -5822,8 +5764,8 @@ of the above procedures will prevent the SDK from working properly.
                 connectResult.onSuccess {  call -&gt;
                     currentCall = call
                     // Here you can:
-                    // show call UI
-                    // Start listen to call events: currentCall.eventListener = {...}
+                    // show a call UI
+                    // Start listening to call events: currentCall.eventListener = {...}
                 }
             }
         }
@@ -5833,7 +5775,7 @@ of the above procedures will prevent the SDK from working properly.
 <div class="sect2">
 <h3 id="_the_cpaascall_object"><a class="anchor" href="#_the_cpaascall_object"></a>The CPaaSCall Object</h3>
 <div class="paragraph">
-<p>CPaaSCall is an API object that is returned as a result of the <code>connect()</code> method. The CPaaSCall lets you perform actions on an active call such as muting or ending the call.</p>
+<p><code>CPaaSCall</code> is an API object that is returned as a result of the <code>connect()</code> method. The CPaaSCall lets you perform actions on an active call such as muting or ending the call.</p>
 </div>
 <div class="listingblock">
 <div class="content">
