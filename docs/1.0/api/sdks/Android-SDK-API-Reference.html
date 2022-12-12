@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/sdks/Android-SDK-API-Reference.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -17,7 +17,54 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-      </head>
+    <header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
+           it won't break if we change playbook configuration
+      <a class="navbar-item header-logo-link" href="/docs">
+      -->
+      <a class="navbar-item header-logo-link" href="/docs/">
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- TODO: Bring back when we integrate with searching facilities
+        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
+        -->
+        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
+        <div class="navbar-item">
+          <span>
+            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- TODO: need to improve the variable used to decide displaying this nav -->
+  <nav class="navbar-enterprise">
+    <div class="navbar-enterprise-button-container">
+      <button class="navigation-toggle icon-custom-font-right">
+      </button>
+      <!--
+      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
+      -->
+      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
+      </button>
+    </div>
+    <div class="navbar-enterprise-container">
+
+
+
+        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
+        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
+        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
+
+
+    </div>
+  </nav>
+</header>
+  </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -5582,7 +5629,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5654,7 +5701,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun register(settings: CPaaSAPISettings, appContext: Context, cpaasAPICb: CPaaSAPICb)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun register(settings: CPaaSAPISettings, appContext: Context, cpaasAPICb: CPaaSAPICb)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5691,7 +5738,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun logout(appContext: Context)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun logout(appContext: Context)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5720,7 +5767,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun getFileLogUri(appContext: Context, result: (CPaaSResult&lt;File, FileNotExistError&gt;) -&gt; Unit)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun getFileLogUri(appContext: Context, result: (CPaaSResult&lt;File, FileNotExistError&gt;) -&gt; Unit)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5753,7 +5800,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>var voice: IVoice</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">var voice: IVoice</code></pre>
 </div>
 </div>
 </div>
@@ -5772,7 +5819,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun create(result: (CPaaSResult&lt;String, CallStartError.NotRegisteredError&gt;) -&gt; Unit)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun create(result: (CPaaSResult&lt;String, CallStartError.NotRegisteredError&gt;) -&gt; Unit)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5801,7 +5848,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun connect(callId: String, callOptions: CallOptions, result: (CPaaSResult&lt;CPaaSCall, CallStartError&gt;) -&gt; Unit)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun connect(callId: String, callOptions: CallOptions, result: (CPaaSResult&lt;CPaaSCall, CallStartError&gt;) -&gt; Unit)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5835,7 +5882,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun reject(callId: String)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun reject(callId: String)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5864,7 +5911,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun getExistingCall(callId: String): CPaaSCall?</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun getExistingCall(callId: String): CPaaSCall?</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -5901,7 +5948,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun endCall()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun endCall()</code></pre>
 </div>
 </div>
 </div>
@@ -5912,7 +5959,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun getCallId(): String</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun getCallId(): String</code></pre>
 </div>
 </div>
 </div>
@@ -5932,7 +5979,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun unMute(completion: (success: Boolean) -&gt; Unit)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun unMute(completion: (success: Boolean) -&gt; Unit)</code></pre>
 </div>
 </div>
 </div>
@@ -5965,7 +6012,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onCallEnd(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onCallEnd(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -5976,7 +6023,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onConnected()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onConnected()</code></pre>
 </div>
 </div>
 </div>
@@ -5987,7 +6034,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onConnectedFailure(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onConnectedFailure(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -5998,7 +6045,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onReconnecting(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onReconnecting(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -6009,7 +6056,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onRinging()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onRinging()</code></pre>
 </div>
 </div>
 </div>
@@ -6023,7 +6070,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun init(customDomain: String, accountSid: String, authToken: String, appSid: String, clientId: String, PNSToken: String, baseURL: String)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun init(customDomain: String, accountSid: String, authToken: String, appSid: String, clientId: String, PNSToken: String, baseURL: String)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -6105,7 +6152,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onSuccess(action: (value: T) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onSuccess(action: (value: T) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -6116,7 +6163,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onFailure(action: (exception: TException) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onFailure(action: (exception: TException) -&gt; Unit): CPaaSResult&lt;T,TException&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -6127,7 +6174,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun fold(onSuccess: (value: T) -&gt; Unit, onFailure: (exception: TException) -&gt; Unit): Unit?</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun fold(onSuccess: (value: T) -&gt; Unit, onFailure: (exception: TException) -&gt; Unit): Unit?</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -6168,7 +6215,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onIncomingCall(callId: String, callerId: String, serviceType: ServiceType)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onIncomingCall(callId: String, callerId: String, serviceType: ServiceType)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -6203,7 +6250,7 @@ callOptions	This parameter is of type CallOptions to configure some settings whe
 </table>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>fun onRegistrationComplete(success: Boolean)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">fun onRegistrationComplete(success: Boolean)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
