@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       /docs/api/sdks/iOS-SDK-API-Reference.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -17,7 +17,42 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-      </head>
+    <header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
+           it won't break if we change playbook configuration
+      <a class="navbar-item header-logo-link" href="/docs">
+      -->
+      <a class="navbar-item header-logo-link" href="/docs/">
+      </a>
+    </div>
+  </nav>
+  <!-- TODO: need to improve the variable used to decide displaying this nav -->
+  <nav class="navbar-enterprise">
+    <div class="navbar-enterprise-button-container">
+      <button class="navigation-toggle icon-custom-font-right">
+      </button>
+      <!--
+      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
+      -->
+      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
+      </button>
+    </div>
+    <div class="navbar-enterprise-container">
+
+
+
+        <a class="navbar-enterprise-item" id="Reference" href="/docs/api/overview.html">Reference</a>
+        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/turnkey-applications/index.html">Turnkey Applications</a>
+        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/tutorials/index.html">Tutorials</a>
+        <a class="navbar-enterprise-item" id="VisualDesigner" href="/docs/visual-designer/index.html">Visual Designer</a>
+
+
+    </div>
+  </nav>
+</header>
+  </head>
   <body class="article" style="display: none">
 <header class="header">
   <nav class="navbar">
@@ -3427,7 +3462,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../../index.html">1.0</a>
         </li>
       </ul>
@@ -3505,7 +3540,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func register(settings: CPaaSAPISettings, cpaasAPICb: CPaaSAPICb)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func register(settings: CPaaSAPISettings, cpaasAPICb: CPaaSAPICb)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3537,7 +3572,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func logout()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func logout()</code></pre>
 </div>
 </div>
 </div>
@@ -3548,7 +3583,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func getFilePath() -&gt; URL?</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func getFilePath() -&gt; URL?</code></pre>
 </div>
 </div>
 </div>
@@ -3559,7 +3594,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>var voice: IVoice { get }</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">var voice: IVoice { get }</code></pre>
 </div>
 </div>
 </div>
@@ -3578,7 +3613,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func create(result: @escaping (CPaaSResult&lt;NSString, CallStartError.NotRegisteredError&gt;) -&gt; Void)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func create(result: @escaping (CPaaSResult&lt;NSString, CallStartError.NotRegisteredError&gt;) -&gt; Void)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3644,7 +3679,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func reject(callId: String)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func reject(callId: String)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3672,7 +3707,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func getExistingCall(callId: String) -&gt; CPaaSCall?</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func getExistingCall(callId: String) -&gt; CPaaSCall?</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3710,7 +3745,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func endCall()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func endCall()</code></pre>
 </div>
 </div>
 </div>
@@ -3721,7 +3756,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func getCallId() -&gt; String</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func getCallId() -&gt; String</code></pre>
 </div>
 </div>
 </div>
@@ -3732,7 +3767,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func mute(completion: @escaping (KotlinBoolean) -&gt; Void)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func mute(completion: @escaping (KotlinBoolean) -&gt; Void)</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -3755,7 +3790,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func unMute(completion: @escaping (KotlinBoolean) -&gt; Void)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func unMute(completion: @escaping (KotlinBoolean) -&gt; Void)</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -3778,7 +3813,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>var eventListener: CPaaSCallEvents? { get set }</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">var eventListener: CPaaSCallEvents? { get set }</code></pre>
 </div>
 </div>
 </div>
@@ -3799,7 +3834,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onCallEnd(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onCallEnd(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -3810,7 +3845,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onConnected()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onConnected()</code></pre>
 </div>
 </div>
 </div>
@@ -3821,7 +3856,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onConnectedFailure(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onConnectedFailure(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -3832,7 +3867,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onReconnecting(reason: CPaaSReason)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onReconnecting(reason: CPaaSReason)</code></pre>
 </div>
 </div>
 </div>
@@ -3843,7 +3878,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onRinging()</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onRinging()</code></pre>
 </div>
 </div>
 </div>
@@ -3855,7 +3890,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>init(customDomain: String, accountSid: String, authToken: String, appSid: String, clientId: String, PNSToken: String, baseURL: String)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">init(customDomain: String, accountSid: String, authToken: String, appSid: String, clientId: String, PNSToken: String, baseURL: String)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3937,7 +3972,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onSuccess(action: @escaping (T?) -&gt; Void) -&gt; CPaaSResult&lt;T, TException&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onSuccess(action: @escaping (T?) -&gt; Void) -&gt; CPaaSResult&lt;T, TException&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3948,7 +3983,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onFailure(action: @escaping (TException?) -&gt; Void) -&gt; CPaaSResult&lt;T, TException&gt;</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onFailure(action: @escaping (TException?) -&gt; Void) -&gt; CPaaSResult&lt;T, TException&gt;</code></pre>
 </div>
 </div>
 </div>
@@ -3959,7 +3994,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func fold(onSuccess: @escaping (T?) -&gt; Void, onFailure: @escaping (TException?) -&gt; Void) -&gt; KotlinUnit?</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func fold(onSuccess: @escaping (T?) -&gt; Void, onFailure: @escaping (TException?) -&gt; Void) -&gt; KotlinUnit?</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -3998,7 +4033,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onIncomingCall(callId: String, callerId: String, serviceType: ServiceType)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onIncomingCall(callId: String, callerId: String, serviceType: ServiceType)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -4035,7 +4070,7 @@ KotlinBoolean is the way kotlin converts its boolean for iOS, you can use it wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code>func onRegistrationComplete(success: Bool)</code></pre>
+<pre class="highlightjs highlight"><code class="language-none hljs">func onRegistrationComplete(success: Bool)</code></pre>
 </div>
 </div>
 <table class="tableblock frame-all grid-all stretch">

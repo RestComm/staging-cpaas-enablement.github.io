@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/calls-api.html
     ">
-    <meta name="generator" content="Antora 2.3.4">
+    <meta name="generator" content="Antora 3.1.0">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -17,7 +17,54 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-      </head>
+    <header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
+           it won't break if we change playbook configuration
+      <a class="navbar-item header-logo-link" href="/docs">
+      -->
+      <a class="navbar-item header-logo-link" href="/docs/">
+      </a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <!-- TODO: Bring back when we integrate with searching facilities
+        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
+        -->
+        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
+        <div class="navbar-item">
+          <span>
+            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- TODO: need to improve the variable used to decide displaying this nav -->
+  <nav class="navbar-enterprise">
+    <div class="navbar-enterprise-button-container">
+      <button class="navigation-toggle icon-custom-font-right">
+      </button>
+      <!--
+      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
+      -->
+      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
+      </button>
+    </div>
+    <div class="navbar-enterprise-container">
+
+
+
+        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
+        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
+        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
+
+
+    </div>
+  </nav>
+</header>
+  </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -5562,7 +5609,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -6607,7 +6654,7 @@ a &lt;Hangup&gt; or &lt;Reject&gt; tags for, respectively, marking a call as com
 <p>Bob wants to transfer the call to Alice and sends the request to Controller (application server)</p>
 </li>
 <li>
-<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</span></code> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
+<p>Application server: - Prepares new RCML with a given URL: http://app.server/CallToAlice that using Dial will dial to Alice - Uses Live Call Modification prepares a new POST request: <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID">\https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls/YOUR_CALL_SID</span></code> - in the POST requests adds the following parameters: Url=http://app.server/CallToAlice</p>
 </li>
 <li>
 <p><span class="sps-text non-sps-link" data-orig-text="Restcomm" data-parm-text="application_name" data-default-text="$INFER_FROM_DOMAIN">Restcomm</span> process this Live Call Modification request and redirects the incoming call to the new RCML application (to the new URL)</p>
@@ -6629,7 +6676,7 @@ a &lt;Hangup&gt; or &lt;Reject&gt; tags for, respectively, marking a call as com
 <p>Will prepare new POST Live Call Modification request for the incoming call to be connected to the new url (that will dial to the conference)</p>
 </li>
 <li>
-<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: - <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls">https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</span>` - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
+<p>Will then prepare new outgoing call request, using the Calls Rest API that will connect Bob to the conference application URL: - <span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls">\https://$DOMAIN/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Calls</span>` - will pass the following parameters: <strong>From</strong>=INCOMING_CALL_ID <strong>To</strong>=client:bob <strong>Url</strong>=CONFERENCE_APPLICATION_URL</p>
 </li>
 <li>
 <p>Later application server can create more outgoing call requests, similar to the one above, to invite other clients or sip URLs or PSTN numbers to this conference call</p>
