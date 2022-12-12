@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="The Update operation allows Communication Service Providers (CSP) Account to update existing Enterprise records.">
     <meta name="keywords" content="message exchange update operation, mx update operation">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -19,54 +19,7 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <header class="header">
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
-           it won't break if we change playbook configuration
-      <a class="navbar-item header-logo-link" href="/docs">
-      -->
-      <a class="navbar-item header-logo-link" href="/docs/">
-      </a>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <!-- TODO: Bring back when we integrate with searching facilities
-        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
-        -->
-        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
-        <div class="navbar-item">
-          <span>
-            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- TODO: need to improve the variable used to decide displaying this nav -->
-  <nav class="navbar-enterprise">
-    <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right">
-      </button>
-      <!--
-      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
-      -->
-      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
-      </button>
-    </div>
-    <div class="navbar-enterprise-container">
-
-
-
-        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
-        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
-        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
-
-
-    </div>
-  </nav>
-</header>
-  </head>
+      </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -1320,6 +1273,26 @@
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Enable Incoming WhatsApp for an Application"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="../incoming-phone-numbers-api.html#_enable_whatsapp_p2a_for_an_application">Enable Incoming WhatsApp for an Application</a>
 
             </span>
                 </div>
@@ -5611,7 +5584,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -5758,7 +5731,7 @@
 <h3 id="_example"><a class="anchor" href="#_example"></a>Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "name" : "Kohl"
 }</code></pre>
 </div>
@@ -5768,7 +5741,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X PUT \
+<pre class="highlightjs highlight"><code>curl -X PUT \
   https://cloud.restcomm.com/messageexchange/enterprise/MXEb6eb071d21124dbab20b095c25f1274f \
 --user  ' \{your_account_SID}:\{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5783,7 +5756,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "EN263d95d2bafa4e4a9e6a5563851cd283",
         "dateUpdated": "2019-10-11T11:12:23+0000",
@@ -5804,7 +5777,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "460",
     "message": "Enterprise name not unique",
     "data": {
@@ -5953,7 +5926,7 @@
 <h3 id="_example_2"><a class="anchor" href="#_example_2"></a>Example</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "name" : "Jane Doe New"
 }</code></pre>
 </div>
@@ -5963,7 +5936,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X PUT \
+<pre class="highlightjs highlight"><code>curl -X PUT \
 https://cloud.restcomm.com/messageexchange/mappings/XM00009e272d9047dc858549485b0d0e1f  \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -5979,7 +5952,7 @@ https://cloud.restcomm.com/messageexchange/mappings/XM00009e272d9047dc858549485b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "XM04f7959a96c34814ba163a4f5c8c7fc1",
         "dateUpdated": "2019-10-11T11:19:54+0000",
@@ -6003,7 +5976,7 @@ https://cloud.restcomm.com/messageexchange/mappings/XM00009e272d9047dc858549485b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "474",
     "message": "Domain Id not found",
     "data": {
@@ -6132,7 +6105,7 @@ https://cloud.restcomm.com/messageexchange/mappings/XM00009e272d9047dc858549485b
 <h3 id="_example_3"><a class="anchor" href="#_example_3"></a>Example:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
 	"name":"mycompanynew.com"
 }
 
@@ -6153,7 +6126,7 @@ curl -X PUT \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "DOe334d1141af84ae6b7e44858d1745609",
         "dateUpdated": "2019-10-11T11:28:17+0000",
@@ -6175,7 +6148,7 @@ curl -X PUT \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
   "errorCode": "468",
   "message": "Invalid Certificate",
   "data": {
@@ -6300,7 +6273,7 @@ curl -X PUT \
 <h3 id="_example_4"><a class="anchor" href="#_example_4"></a>Example:</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
   "ipAddress": "4.3.2.1"
 }</code></pre>
 </div>
@@ -6310,7 +6283,7 @@ curl -X PUT \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">curl -X PUT \
+<pre class="highlightjs highlight"><code>curl -X PUT \
   https://cloud.restcomm.com/messageexchange/whitelist/WL9fc6143123d048579f7d5b5d76572e1d \
 --user  ' {your_account_SID}:{your_account_token}' \
   -H 'Cache-Control: no-cache' \
@@ -6325,7 +6298,7 @@ curl -X PUT \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "data": {
         "sid": "WL98fbe024c1c34794a4034646db503627",
         "dateUpdated": "2019-10-11T11:07:16+0000",
@@ -6345,7 +6318,7 @@ curl -X PUT \
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-none hljs">{
+<pre class="highlightjs highlight"><code>{
     "errorCode": "461",
     "message": "Invalid IPv4 Address",
     "data": {

@@ -10,7 +10,7 @@
     ">
     <meta name="description" content="A Message represents an inbound or outbound omnichannel message. Using this API you can do things like:">
     <meta name="keywords" content="send omnichannel message, omnichannel message api, #{&quot;spsParm&quot;:&quot;application_name&quot;,&quot;rcText&quot;:&quot;CPaaS&quot;,&quot;defaultText&quot;:&quot;$INFER_FROM_DOMAIN&quot;} omnichannel message api, omnichannel message rest api">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -19,54 +19,7 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <header class="header">
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
-           it won't break if we change playbook configuration
-      <a class="navbar-item header-logo-link" href="/docs">
-      -->
-      <a class="navbar-item header-logo-link" href="/docs/">
-      </a>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <!-- TODO: Bring back when we integrate with searching facilities
-        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
-        -->
-        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
-        <div class="navbar-item">
-          <span>
-            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- TODO: need to improve the variable used to decide displaying this nav -->
-  <nav class="navbar-enterprise">
-    <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right">
-      </button>
-      <!--
-      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
-      -->
-      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
-      </button>
-    </div>
-    <div class="navbar-enterprise-container">
-
-
-
-        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
-        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
-        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
-
-
-    </div>
-  </nav>
-</header>
-  </head>
+      </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -1320,6 +1273,26 @@
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Enable Incoming WhatsApp for an Application"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_whatsapp_p2a_for_an_application">Enable Incoming WhatsApp for an Application</a>
 
             </span>
                 </div>
@@ -5611,7 +5584,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -5677,6 +5650,9 @@ In order to use the Messages API you need to open a support ticket for your acco
 <li>
 <p>"sms:&lt;Number in e164 format&gt;"</p>
 </li>
+<li>
+<p>"whatsapp:&lt;Number in e164 format&gt;"</p>
+</li>
 </ul>
 </div>
 </div>
@@ -5734,7 +5710,7 @@ number +15553XXXXXX on the SMS channel.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Text body of the message. On some channels some
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Optional) Text body/caption of the message. On some channels some
 restrictions may exist related to length of messages and splitting of
 long messages.</p></td>
 </tr>
@@ -5760,7 +5736,7 @@ The default method is GET.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">media_list.url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP URL pointing to the media attachment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The HTTP URL pointing to the media attachment, <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">DataURI</a> or <a href="https://en.wikipedia.org/wiki/Geo_URI_scheme">GeoURI</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">media_list.content_type</p></td>
@@ -5777,7 +5753,7 @@ The default method is GET.</p></td>
 <h4 id="_example_request"><a class="anchor" href="#_example_request"></a>Example Request</h4>
 <div class="listingblock">
 <div class="content">
-<pre>curl -X POST <a href="https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages" class="bare">https://company.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages</a>  \
+<pre>curl -X POST <a href="https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages" class="bare">https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages</a>  \
 -d 'from=mms:+19876XXXXXX' \
 -d 'to=mms:+13216XXXXXX' \
 -d 'body=Test Message' \
@@ -5805,6 +5781,189 @@ The default method is GET.</p></td>
   "uri":"/api/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SM5dd70f7ea54e47f1a49749debeec3f7f.json",
   "media_list": [{"url":"https://example.com/image.jpeg","content-type":"image/jpeg"}]
 }</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_an_image_request"><a class="anchor" href="#_send_an_image_request"></a>Send An Image Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "body" : "this is image caption", \
+    "media_list": [ \
+        { \
+            "url": "https://server.com/image.jpg", \
+            "content_type": "image/jpg" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_an_audio_request"><a class="anchor" href="#_send_an_audio_request"></a>Send An Audio Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "https://server.com/audio.mp3", \
+            "content_type": "audio/mp3" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_a_video_request"><a class="anchor" href="#_send_a_video_request"></a>Send A video Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "body" : "this is video caption", \
+    "media_list": [ \
+        { \
+            "url": "https://server.com/video.mp4", \
+            "content_type": "audio/mp4" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_a_sticker_request"><a class="anchor" href="#_send_a_sticker_request"></a>Send A Sticker Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "https://server.com/sticker.webp", \
+            "content_type": "image/webp" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_a_document_request"><a class="anchor" href="#_send_a_document_request"></a>Send A Document Request</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "body": "pdf_file_name.pdf"
+    "media_list": [ \
+        { \
+            "url": "https://server.com/document.pdf", \
+            "content_type": "application/pdf" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_a_vcard_contact_is_stored_in_datauri_format_as_normal_media_url_with_required_content_typeapplicationvcardjson_parameter"><a class="anchor" href="#_send_a_vcard_contact_is_stored_in_datauri_format_as_normal_media_url_with_required_content_typeapplicationvcardjson_parameter"></a>Send a <a href="https://en.wikipedia.org/wiki/VCard">VCard</a> Contact is stored in <a href="https://en.wikipedia.org/wiki/Data_URI_scheme">DataURI</a> format as normal media url with required <strong>"content-type":"application/vcard+json"</strong> parameter.</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "{"url":"data:text/plain,[\"vcard\",[[\"version\",{},\"text\",\"4.0\"],[\"fn\",{},\"text\",\"SimonPerreault\"],[\"n\",{},\"text\",[\"Perreault\",\"Simon\",\"\",\"\",[\"ing.jr\",\"M.Sc.\"]]],[\"bday\",{},\"date-and-or-time\",\"--02-03\"],[\"org\",{\"type\":\"work\"},\"text\",\"Viagenie\"],[\"adr\",{\"type\":\"work\"},\"text\",[\"\",\"SuiteD2-630\",\"2875Laurier\",\"Quebec\",\"QC\",\"G1V2M2\",\"Canada\"]],[\"tel\",{\"type\":[\"work\",\"voice\"],\"pref\":\"1\"},\"uri\",\"tel:+1-418-656-9254;ext=102\"],[\"tel\",{\"type\":[\"work\",\"cell\",\"voice\",\"video\",\"text\"]},\"uri\",\"tel:+1-418-262-6501\"],[\"email\",{\"type\":\"work\"},\"text\",\"simon.perreault@viagenie.ca\"],[\"url\",{\"type\":\"home\"},\"uri\",\"http:\/\/nomis80.org\"]]]", \
+            "content_type": "application/vcard+json" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_a_location_is_stored_in_geouri_format_as_normal_media_url_with_required_content_typegeolocgeouri_parameter"><a class="anchor" href="#_send_a_location_is_stored_in_geouri_format_as_normal_media_url_with_required_content_typegeolocgeouri_parameter"></a>Send a location is stored in <a href="https://en.wikipedia.org/wiki/Geo_URI_scheme">GeoURI</a> format as normal media url with required <strong>"content-type":"geoloc/geouri"</strong> parameter.</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "geo:37.786971,-122.399677", \
+            "content_type": "geoloc/geouri" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_whatsapp_interactive_content_as_normal_media_url_with_required_content_typeapplicationwhatsapp_interactivejson_parameter"><a class="anchor" href="#_send_whatsapp_interactive_content_as_normal_media_url_with_required_content_typeapplicationwhatsapp_interactivejson_parameter"></a>Send whatsapp interactive content as normal media url with required <strong>"content-type":"application/whatsapp-interactive+json"</strong> parameter.</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "{"url":"data:text/plain,{\"subType\":\"buttons\",\"components\":{\"header\":{\"type\":\"text\",\"text\":\"Yourrequestisqueued\"},\"body\":{\"type\":\"text\",\"text\":\"Howwouldyourateyourbotexperience\"},\"footer\":{\"type\":\"text\",\"text\":\"Yourservicebot\"},\"buttons\":[{\"type\":\"reply\",\"reply\":{\"payload\":\"987298-40980jvkdm9-234234234\",\"title\":\"Poor\"}},{\"type\":\"reply\",\"reply\":{\"payload\":\"987298-dsfgjlkhgdf-dg09u834334\",\"title\":\"OK\"}},{\"type\":\"reply\",\"reply\":{\"payload\":\"9080923445nlkj\u00DF0_g\u00DF0923845083245dfg\",\"title\":\"Good\"}}]}}", \
+            "content_type": "application/application-interactive+json" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_send_whatsapp_interactive_in_template_content_as_normal_media_url_with_required_content_typeapplicationwhatsapp_templatejson_parameter"><a class="anchor" href="#_send_whatsapp_interactive_in_template_content_as_normal_media_url_with_required_content_typeapplicationwhatsapp_templatejson_parameter"></a>Send whatsapp interactive in template content as normal media url with required <strong>"content-type":"application/whatsapp-template+json"</strong> parameter.</h4>
+<div class="listingblock">
+<div class="content">
+<pre>curl -X POST https://company.com/api/2012-04-24/Accounts/ACCOUNT_SID/Messages  \
+-H 'Content-Type: application/json' \
+-d '{ \
+    "from": "whatsapp:+19876XXXXXX", \
+    "to": "whatsapp:+13216XXXXXX", \
+    "media_list": [ \
+        { \
+            "url": "{"url":"data:text/plain,{\"templateId\":\"string\",\"templateLanguage\":\"string\",\"components\":{\"header\":[{\"type\":\"text\",\"text\":\"string\",\"example\":{\"text\":\"JohnDoe\"}}],\"body\":[{\"type\":\"text\",\"text\":\"string\",\"example\":{\"texts\":[\"JohnDoe\",\"OrderID123\"]}}],\"button\":[{\"type\":\"quick_reply\",\"index\":0,\"payload\":\"string\"}]}}", \
+            "content_type": "application/application-template+json" \
+        } \
+    ] \
+}' \
+-u 'YourAccountSid:YourAuthToken'</pre>
 </div>
 </div>
 </div>
@@ -6231,17 +6390,17 @@ You will need to use a URL encoded format when specifying the phone number prefi
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-58 is-active" onclick="openLanguage('Curl', 58)">Curl</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Nodejs', 58)">Nodejs</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Python', 58)">Python</button>
-        <button class="sample-code-button scsIndex-58" onclick="openLanguage('Java', 58)">Java</button>
+        <button class="sample-code-button scsIndex-59 is-active" onclick="openLanguage('Curl', 59)">Curl</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Nodejs', 59)">Nodejs</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Python', 59)">Python</button>
+        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Java', 59)">Java</button>
       </div>
-      <div id="Curl-58" class="sample-language-58">
+      <div id="Curl-59" class="sample-language-59">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?To=mms:%2B1%25  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-58" class="sample-language-58" style="display:none">
+      <div id="Nodejs-59" class="sample-language-59" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -6260,7 +6419,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-58" class="sample-language-58" style="display:none">
+      <div id="Python-59" class="sample-language-59" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -6280,7 +6439,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-58" class="sample-language-58" style="display:none">
+      <div id="Java-59" class="sample-language-59" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -6460,17 +6619,17 @@ public class JavaSampleClass {
 <div class="sect3">
 <h4 id="_example_request_3"><a class="anchor" href="#_example_request_3"></a>Example Request</h4>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-59 is-active" onclick="openLanguage('Curl', 59)">Curl</button>
-        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Nodejs', 59)">Nodejs</button>
-        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Python', 59)">Python</button>
-        <button class="sample-code-button scsIndex-59" onclick="openLanguage('Java', 59)">Java</button>
+        <button class="sample-code-button scsIndex-60 is-active" onclick="openLanguage('Curl', 60)">Curl</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Nodejs', 60)">Nodejs</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Python', 60)">Python</button>
+        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Java', 60)">Java</button>
       </div>
-      <div id="Curl-59" class="sample-language-59">
+      <div id="Curl-60" class="sample-language-60">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages?From=sms:+19876XXXXXX&To=sms:+13216XXXXXX&StartTime=2018-05-30&EndTime=2018-06-09&Page=0&PageSize=10&SortBy=DateCreated:asc  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-59" class="sample-language-59" style="display:none">
+      <div id="Nodejs-60" class="sample-language-60" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -6489,7 +6648,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-59" class="sample-language-59" style="display:none">
+      <div id="Python-60" class="sample-language-60" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -6509,7 +6668,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-59" class="sample-language-59" style="display:none">
+      <div id="Java-60" class="sample-language-60" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -6587,17 +6746,17 @@ public class JavaSampleClass {
 <div class="sect2">
 <h3 id="_example_request_4"><a class="anchor" href="#_example_request_4"></a>Example Request</h3>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-60 is-active" onclick="openLanguage('Curl', 60)">Curl</button>
-        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Nodejs', 60)">Nodejs</button>
-        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Python', 60)">Python</button>
-        <button class="sample-code-button scsIndex-60" onclick="openLanguage('Java', 60)">Java</button>
+        <button class="sample-code-button scsIndex-61 is-active" onclick="openLanguage('Curl', 61)">Curl</button>
+        <button class="sample-code-button scsIndex-61" onclick="openLanguage('Nodejs', 61)">Nodejs</button>
+        <button class="sample-code-button scsIndex-61" onclick="openLanguage('Python', 61)">Python</button>
+        <button class="sample-code-button scsIndex-61" onclick="openLanguage('Java', 61)">Java</button>
       </div>
-      <div id="Curl-60" class="sample-language-60">
+      <div id="Curl-61" class="sample-language-61">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/Messages/MESSAGE_SID  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-60" class="sample-language-60" style="display:none">
+      <div id="Nodejs-61" class="sample-language-61" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -6618,7 +6777,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-60" class="sample-language-60" style="display:none">
+      <div id="Python-61" class="sample-language-61" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -6640,7 +6799,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-60" class="sample-language-60" style="display:none">
+      <div id="Java-61" class="sample-language-61" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

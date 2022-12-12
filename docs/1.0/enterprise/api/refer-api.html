@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       /docs/api/refer-api.html
     ">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href=""/>
     <link rel="stylesheet" href="../../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -17,42 +17,7 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <header class="header">
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
-           it won't break if we change playbook configuration
-      <a class="navbar-item header-logo-link" href="/docs">
-      -->
-      <a class="navbar-item header-logo-link" href="/docs/">
-      </a>
-    </div>
-  </nav>
-  <!-- TODO: need to improve the variable used to decide displaying this nav -->
-  <nav class="navbar-enterprise">
-    <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right">
-      </button>
-      <!--
-      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
-      -->
-      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
-      </button>
-    </div>
-    <div class="navbar-enterprise-container">
-
-
-
-        <a class="navbar-enterprise-item" id="Reference" href="/docs/api/overview.html">Reference</a>
-        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/turnkey-applications/index.html">Turnkey Applications</a>
-        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/tutorials/index.html">Tutorials</a>
-        <a class="navbar-enterprise-item" id="VisualDesigner" href="/docs/visual-designer/index.html">Visual Designer</a>
-
-
-    </div>
-  </nav>
-</header>
-  </head>
+      </head>
   <body class="article" style="display: none">
 <header class="header">
   <nav class="navbar">
@@ -811,6 +776,25 @@
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="EnableIncomingWhatsAppforanApplication"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="incoming-phone-numbers-api.html#_enable_whatsapp_p2a_for_an_application">Enable Incoming WhatsApp for an Application</a>
 
             </span>
                 </div>
@@ -3462,7 +3446,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../../index.html">1.0</a>
         </li>
       </ul>
@@ -3582,7 +3566,7 @@ The Refers API endpoint supports JSON output only.
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">uri</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this Refer record, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm">\https://$DOMAIN/restcomm</span></code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URI for this Refer record, relative to <code><span class="non-sps-text non-sps-link" data-orig-text="https://$DOMAIN/restcomm">https://$DOMAIN/restcomm</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3618,17 +3602,17 @@ The Refers API endpoint supports JSON output only.
       }
       </script>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-178 is-active" onclick="openLanguage('Curl', 178)">Curl</button>
-        <button class="sample-code-button scsIndex-178" onclick="openLanguage('Nodejs', 178)">Nodejs</button>
-        <button class="sample-code-button scsIndex-178" onclick="openLanguage('Python', 178)">Python</button>
-        <button class="sample-code-button scsIndex-178" onclick="openLanguage('Java', 178)">Java</button>
+        <button class="sample-code-button scsIndex-180 is-active" onclick="openLanguage('Curl', 180)">Curl</button>
+        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Nodejs', 180)">Nodejs</button>
+        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Python', 180)">Python</button>
+        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Java', 180)">Java</button>
       </div>
-      <div id="Curl-178" class="sample-language-178">
+      <div id="Curl-180" class="sample-language-180">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers/RFc377eb0e657e415383de087ab38797db  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-178" class="sample-language-178" style="display:none">
+      <div id="Nodejs-180" class="sample-language-180" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3647,7 +3631,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-178" class="sample-language-178" style="display:none">
+      <div id="Python-180" class="sample-language-180" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3667,7 +3651,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-178" class="sample-language-178" style="display:none">
+      <div id="Java-180" class="sample-language-180" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -3740,17 +3724,17 @@ public class JavaSampleClass {
 <h2 id="_getting_a_list_of_refer_records"><a class="anchor" href="#_getting_a_list_of_refer_records"></a>Getting a List of Refer Records</h2>
 <div class="sectionbody">
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-179 is-active" onclick="openLanguage('Curl', 179)">Curl</button>
-        <button class="sample-code-button scsIndex-179" onclick="openLanguage('Nodejs', 179)">Nodejs</button>
-        <button class="sample-code-button scsIndex-179" onclick="openLanguage('Python', 179)">Python</button>
-        <button class="sample-code-button scsIndex-179" onclick="openLanguage('Java', 179)">Java</button>
+        <button class="sample-code-button scsIndex-181 is-active" onclick="openLanguage('Curl', 181)">Curl</button>
+        <button class="sample-code-button scsIndex-181" onclick="openLanguage('Nodejs', 181)">Nodejs</button>
+        <button class="sample-code-button scsIndex-181" onclick="openLanguage('Python', 181)">Python</button>
+        <button class="sample-code-button scsIndex-181" onclick="openLanguage('Java', 181)">Java</button>
       </div>
-      <div id="Curl-179" class="sample-language-179">
+      <div id="Curl-181" class="sample-language-181">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-179" class="sample-language-179" style="display:none">
+      <div id="Nodejs-181" class="sample-language-181" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3769,7 +3753,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-179" class="sample-language-179" style="display:none">
+      <div id="Python-181" class="sample-language-181" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3789,7 +3773,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-179" class="sample-language-179" style="display:none">
+      <div id="Java-181" class="sample-language-181" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -3905,17 +3889,17 @@ Parameters are case-sensitive.
 <p>The example below will return Refer records that have been initiated from this CallSid.</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-180 is-active" onclick="openLanguage('Curl', 180)">Curl</button>
-        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Nodejs', 180)">Nodejs</button>
-        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Python', 180)">Python</button>
-        <button class="sample-code-button scsIndex-180" onclick="openLanguage('Java', 180)">Java</button>
+        <button class="sample-code-button scsIndex-182 is-active" onclick="openLanguage('Curl', 182)">Curl</button>
+        <button class="sample-code-button scsIndex-182" onclick="openLanguage('Nodejs', 182)">Nodejs</button>
+        <button class="sample-code-button scsIndex-182" onclick="openLanguage('Python', 182)">Python</button>
+        <button class="sample-code-button scsIndex-182" onclick="openLanguage('Java', 182)">Java</button>
       </div>
-      <div id="Curl-180" class="sample-language-180">
+      <div id="Curl-182" class="sample-language-182">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Refers?CallSid=IDbb44ef8c2ebf4d4599d0378a2a8a2ea8-CAd9e08ede8b604e739ba7d0bd477fdf49  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-180" class="sample-language-180" style="display:none">
+      <div id="Nodejs-182" class="sample-language-182" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -3934,7 +3918,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-180" class="sample-language-180" style="display:none">
+      <div id="Python-182" class="sample-language-182" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -3954,7 +3938,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-180" class="sample-language-180" style="display:none">
+      <div id="Java-182" class="sample-language-182" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;

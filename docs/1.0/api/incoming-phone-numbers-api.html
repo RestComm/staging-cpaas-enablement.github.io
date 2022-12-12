@@ -8,7 +8,7 @@
     <link rel="canonical" href="
       https://dev.restcomm.com/docs/1.0/api/incoming-phone-numbers-api.html
     ">
-    <meta name="generator" content="Antora 3.1.0">
+    <meta name="generator" content="Antora 2.3.4">
     <link rel="icon" type="image/png" href="../../../_/img/favicon.png"/>
     <link rel="stylesheet" href="../../../_/css/site.css" title="antora-stylesheet">
     <!-- Right now for demo purposes I'm using google icons, but once we finalize design might be different -->
@@ -17,54 +17,7 @@
           rel="stylesheet">
     -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <header class="header">
-  <nav class="navbar">
-    <div class="navbar-brand">
-      <!-- TODO: we could simplify to this after reverse proxy changes are rolled out, but we need to make sure that
-           it won't break if we change playbook configuration
-      <a class="navbar-item header-logo-link" href="/docs">
-      -->
-      <a class="navbar-item header-logo-link" href="/docs/">
-      </a>
-    </div>
-    <div id="topbar-nav" class="navbar-menu">
-      <div class="navbar-end">
-        <!-- TODO: Bring back when we integrate with searching facilities
-        <a class="navbar-item" href="#"><i class="material-icons">search</i></a>
-        -->
-        <a class="navbar-item" href="https://cloud.restcomm.com/#/login">Sign in</a>
-        <div class="navbar-item">
-          <span>
-            <a id="signup" class="button" href="https://cloud.restcomm.com/#/signup">Sign up</a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- TODO: need to improve the variable used to decide displaying this nav -->
-  <nav class="navbar-enterprise">
-    <div class="navbar-enterprise-button-container">
-      <button class="navigation-toggle icon-custom-font-right">
-      </button>
-      <!--
-      <span class="icon-custom-font-x"><span class="icon-custom-font-back-hamburger"><span class="icon-custom-font-left"><span class="icon-custom-font-right">
-      -->
-      <button class="navbar-enterprise-burger icon-custom-font-back-hamburger">
-      </button>
-    </div>
-    <div class="navbar-enterprise-container">
-
-
-
-        <a class="navbar-enterprise-item" id="Reference" href="/docs/1.0/api/overview.html">Reference</a>
-        <a class="navbar-enterprise-item" id="TurnkeyApplications" href="/docs/1.0/visual-designer/index.html">Visual Designer</a>
-        <a class="navbar-enterprise-item" id="Tutorials" href="/docs/1.0/tutorials/index.html">Tutorials</a>
-
-
-    </div>
-  </nav>
-</header>
-  </head>
+      </head>
   <body class="article" >
 <header class="header">
   <nav class="navbar">
@@ -1318,6 +1271,26 @@
             "></span>
                     <span>
               <a class="nav-link nav-flex-item-text" href="#_enable_mms_p2a_for_an_application">Enable Incoming MMS for an Application</a>
+
+            </span>
+                </div>
+                              </li>
+              <li id="Enable Incoming WhatsApp for an Application"
+                  class="nav-item"
+                  data-depth="3">
+                <div class="nav-flex-container">
+            <span class="nav-flex-item-icon
+              
+              
+              
+              
+              
+              
+              
+              
+            "></span>
+                    <span>
+              <a class="nav-link nav-flex-item-text" href="#_enable_whatsapp_p2a_for_an_application">Enable Incoming WhatsApp for an Application</a>
 
             </span>
                 </div>
@@ -5609,7 +5582,7 @@
     <li class="component is-current">
       <span class="title">docs</span>
       <ul class="versions">
-        <li class="version is-current">
+        <li class="version is-current is-latest">
           <a href="../index.html">1.0</a>
         </li>
       </ul>
@@ -6893,6 +6866,141 @@ public class JavaSampleClass {
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_enable_whatsapp_p2a_for_an_application"><a class="anchor" href="#_enable_whatsapp_p2a_for_an_application"></a>Enable Incoming Whatsapp for an Application</h3>
+<div class="paragraph">
+<p>As part of the <a href="messages-api.html">Omnichannel Messaging API</a>, you may create an IncomingPhoneNumber to trigger your application from
+various Messaging Channels. The number will be created as a SIP, and the Phone Number property will correspond to the <a href="messages-api.html#_channel_identities">Omnichannel URI</a>.
+When a new message is received from the Channel network, the SMS Url will trigger your application.
+You can create multiple IncomingPhoneNumbers matching different Omnichannel URIs, and trigger the same application.</p>
+</div>
+<div class="sect3">
+<h4 id="_sending_an_whatsapp"><a class="anchor" href="#_sending_an_whatsapp"></a>Sending an Whatsapp</h4>
+      <div class="sample-code-bar">
+        <button class="sample-code-button scsIndex-54 is-active" onclick="openLanguage('Curl', 54)">Curl</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Nodejs', 54)">Nodejs</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Python', 54)">Python</button>
+        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Java', 54)">Java</button>
+      </div>
+      <div id="Curl-54" class="sample-language-54">
+        <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X POST https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/IncomingPhoneNumbers.json  \
+   -d 'PhoneNumber=whatsapp:+12345678' \
+   -d 'SmsUrl=https://mycompany.restcomm.com/restcomm/demos/echo.xml' \
+   -d 'isSIP=true' \
+   -u 'YourAccountSid:YourAuthToken'
+</code></pre>
+      </div>
+      <div id="Nodejs-54" class="sample-language-54" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
+
+// Provide your Account Sid and Auth Token from your Console Account page
+const ACCOUNT_SID = 'my_ACCOUNT_SID';
+const AUTH_TOKEN = 'my_AUTH_TOKEN';
+
+request.({
+      method: 'POST',
+      url: 'https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/IncomingPhoneNumbers.json',
+      auth: { 'user': ACCOUNT_SID, 'pass': AUTH_TOKEN },
+      form: {
+         'PhoneNumber': 'whatsapp:+12345678',
+         'SmsUrl': 'https://mycompany.restcomm.com/restcomm/demos/echo.xml',
+         'isSIP': 'true'
+      }
+   },
+   function (error, response, body) {
+      // Add your business logic below; status can be found at 'response.statusCode' and response body at 'body'
+      ...
+});
+</code></pre>
+      </div>
+      <div id="Python-54" class="sample-language-54" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
+from base64 import b64encode
+from urllib.parse import urlencode
+
+# Provide your Account Sid and Auth Token from your Console Account page
+ACCOUNT_SID = 'my_ACCOUNT_SID'
+AUTH_TOKEN = 'my_AUTH_TOKEN'
+
+userAndPass = b64encode(bytes(ACCOUNT_SID + ':' + AUTH_TOKEN, 'utf-8')).decode("ascii")
+headers = { 'Authorization' : 'Basic %s' %  userAndPass,
+    'Content-type': 'application/x-www-form-urlencoded',
+    'Accept': 'text/plain' }
+
+# Update POST parameters accordingly
+params = urlencode({
+   'PhoneNumber': 'whatsapp:+12345678',
+   'SmsUrl': 'https://mycompany.restcomm.com/restcomm/demos/echo.xml',
+   'isSIP': 'true'
+})
+
+conn = HTTPSConnection('mycompany.restcomm.com')
+conn.request("POST", '/restcomm/2012-04-24/Accounts/' + ACCOUNT_SID + '/IncomingPhoneNumbers.json',
+      params, headers=headers)
+res = conn.getresponse()
+
+# Add your business logic below; status can be found at 'res.status', reason at 'res.reason' and response body can be retrieved with res.read()
+...
+</code></pre>
+      </div>
+      <div id="Java-54" class="sample-language-54" style="display:none">
+        <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
+import java.util.Base64;
+
+public class JavaSampleClass {
+   // Provide your Account Sid and Auth Token from your Console Account page
+   public static final String ACCOUNT_SID = "my_ACCOUNT_SID";
+   public static final String AUTH_TOKEN = "my_AUTH_TOKEN";
+
+
+   public static void main(String[] args) throws Exception {
+      String userAndPass = ACCOUNT_SID + ':' + AUTH_TOKEN;
+      String encoded = Base64.getEncoder().encodeToString(userAndPass.getBytes());
+
+      URL url = new URL(("https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/" + ACCOUNT_SID + "/IncomingPhoneNumbers.json");
+      HttpsURLConnection conn = (HttpsURLConnection)url.openConnection();
+      conn.setRequestProperty("Authorization", "Basic " + encoded);
+      conn.setRequestMethod("POST");
+      conn.setDoOutput(true);
+      DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+
+      // Update POST parameters accordingly
+      os.writeBytes("PhoneNumber=whatsapp:+12345678&" +
+        "SmsUrl=https://mycompany.restcomm.com/restcomm/demos/echo.xml&" +
+        "isSIP=true");
+      os.close();
+
+      // Add your business logic below; response code can be obtained from 'conn.getResponseCode()' and input stream from 'conn.getInputStream()'
+      ...
+  }
+}
+</code></pre>
+      </div>
+</div>
+<div class="sect3">
+<h4 id="_example_response_2"><a class="anchor" href="#_example_response_2"></a>Example Response</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>{
+  "sid": "PNdd7a0a0248244615978bd5781598e5eb",
+  "account_sid": "ACae6e420f425248d6a26948c17a9e2acf",
+  "friendly_name": "WhatsapApp",
+  "phone_number": "whatsapp:+12345678",
+  "sms_url": "https://yourcompany.com/restcomm/demos/echo.xml",
+  "sms_method": "POST",
+  "voice_fallback_method": "POST",
+  "status_callback_method": "POST",
+  "voice_caller_id_lookup": false,
+  "date_created": "2013-10-04T17:42:02.500-06:00",
+  "date_updated": "2013-10-04T17:42:02.500-06:00",
+  "api_version": "2012-04-24",
+  "uri": "/restcomm/2012-04-24/Accounts/ACae6e420f425248d6a26948c17a9e2acf/IncomingPhoneNumbers/PNdd7a0a0248244615978bd5781598e5eb.json"</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -6902,17 +7010,17 @@ public class JavaSampleClass {
 <p>You have to get the SID of the phone and use curl to delete as follows</p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-54 is-active" onclick="openLanguage('Curl', 54)">Curl</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Nodejs', 54)">Nodejs</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Python', 54)">Python</button>
-        <button class="sample-code-button scsIndex-54" onclick="openLanguage('Java', 54)">Java</button>
+        <button class="sample-code-button scsIndex-55 is-active" onclick="openLanguage('Curl', 55)">Curl</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Nodejs', 55)">Nodejs</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Python', 55)">Python</button>
+        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Java', 55)">Java</button>
       </div>
-      <div id="Curl-54" class="sample-language-54">
+      <div id="Curl-55" class="sample-language-55">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X DELETE https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/IncomingPhoneNumbers/PHONENUMBER_SID.json  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-54" class="sample-language-54" style="display:none">
+      <div id="Nodejs-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -6933,7 +7041,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-54" class="sample-language-54" style="display:none">
+      <div id="Python-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -6955,7 +7063,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-54" class="sample-language-54" style="display:none">
+      <div id="Java-55" class="sample-language-55" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
@@ -6992,17 +7100,17 @@ public class JavaSampleClass {
 <p>Gets all numbers created using <strong>IncomingPhoneNumbers.json</strong></p>
 </div>
       <div class="sample-code-bar">
-        <button class="sample-code-button scsIndex-55 is-active" onclick="openLanguage('Curl', 55)">Curl</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Nodejs', 55)">Nodejs</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Python', 55)">Python</button>
-        <button class="sample-code-button scsIndex-55" onclick="openLanguage('Java', 55)">Java</button>
+        <button class="sample-code-button scsIndex-56 is-active" onclick="openLanguage('Curl', 56)">Curl</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Nodejs', 56)">Nodejs</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Python', 56)">Python</button>
+        <button class="sample-code-button scsIndex-56" onclick="openLanguage('Java', 56)">Java</button>
       </div>
-      <div id="Curl-55" class="sample-language-55">
+      <div id="Curl-56" class="sample-language-56">
         <pre class="highlightjs highlight"><code class="language-console hljs samplecode-container" data-lang="console">curl -X GET https://mycompany.restcomm.com/restcomm/2012-04-24/Accounts/ACCOUNT_SID/IncomingPhoneNumbers.json  \
    -u 'YourAccountSid:YourAuthToken'
 </code></pre>
       </div>
-      <div id="Nodejs-55" class="sample-language-55" style="display:none">
+      <div id="Nodejs-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-javascript hljs samplecode-container" data-lang="javascript">const request = require('request');
 
 // Provide your Account Sid and Auth Token from your Console Account page
@@ -7021,7 +7129,7 @@ request({
 );
 </code></pre>
       </div>
-      <div id="Python-55" class="sample-language-55" style="display:none">
+      <div id="Python-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-python hljs samplecode-container" data-lang="python">from http.client import HTTPSConnection
 from base64 import b64encode
 
@@ -7041,7 +7149,7 @@ res = conn.getresponse()
 ...
 </code></pre>
       </div>
-      <div id="Java-55" class="sample-language-55" style="display:none">
+      <div id="Java-56" class="sample-language-56" style="display:none">
         <pre class="highlightjs highlight"><code class="language-java hljs samplecode-container" data-lang="java">import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.*;
