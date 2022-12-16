@@ -814,7 +814,7 @@
                               </li>
   </ul>
               </li>
-              <li id="Identity Access Management <strong>BETA</strong>"
+              <li id="Identity Access Management <strong>Early Access</strong>"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -829,7 +829,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html">Identity Access Management <strong>BETA</strong></a>
+              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5808,8 +5808,8 @@ The steps above must be successfully completed. Failure in any of the above proc
 <h2 id="_starting_a_call"><a class="anchor" href="#_starting_a_call"></a>Starting a Call</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To initiate a call simply call <strong>voice.create()</strong>. and <strong>voice.connect(&#8230;&#8203;)</strong>. &lt;br/&gt;
-<code>create()</code>: creates and returns a call id that you can use or share with others
+<p>To initiate a call simply call <strong>voice.create()</strong>. and <strong>voice.connect(&#8230;&#8203;)</strong>.<br>
+<code>create()</code>: creates and returns a call id that you can use or share with others.<br>
 <code>connect()</code>: starts the actual connection to the call and returns an api call obj.</p>
 </div>
 <div class="listingblock">
@@ -5817,6 +5817,18 @@ The steps above must be successfully completed. Failure in any of the above proc
 <pre class="highlightjs highlight"><code class="language-none hljs">callId = await voice.create()
 call = await voice.connect(callId, callOptions)</code></pre>
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Destination is optional for a P2A/A2P, but is mandatory for a P2P use case. If specified, it shall be a valid string without special characters. For example, <code>var callOptions = CallOptions(audio = true, destination = destId)</code>.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_the_call_object"><a class="anchor" href="#_the_call_object"></a>The Call Object</h3>

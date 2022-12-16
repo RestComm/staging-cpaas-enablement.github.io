@@ -292,7 +292,7 @@
             </span>
                 </div>
                               </li>
-              <li id="IdentityAccessManagement<strong>BETA</strong>"
+              <li id="IdentityAccessManagement<strong>EarlyAccess</strong>"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -306,7 +306,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="identity-access-management-overview.html">Identity Access Management <strong>BETA</strong></a>
+              <a class="nav-link nav-flex-item-text" href="identity-access-management-overview.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5310,6 +5310,18 @@ If the search API is called without page and pageSize, by default pageSize will 
 <div class="sect1">
 <h2 id="_masked_numbers"><a class="anchor" href="#_masked_numbers"></a>Masked Numbers</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All cases that apply to phone numbers are relevant also to WebRTC endpoint.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>For Number Masking to work you have to associate at least one phone number with an application.Once a number is added to the application, it is called a masked number.All added numbers go into a masked number pool associated with a given application.Once a phone number is associated with an application, it cannot be assigned to another one.</p>
 </div>
@@ -6380,6 +6392,18 @@ If search API is called without page and pageSize, by default pageSize will be 1
 <div class="sect1">
 <h2 id="_context"><a class="anchor" href="#_context"></a>Context</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Context may consist of mixed participants (PSTN -&#8594; PSTN, webRTC &#8594; webRTC, webRTC &#8594; PSTN, PSTN &#8594; webRTC).
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>A Context is a single instance of two individuals communicating. It belongs to an Application and maps two Participants. A Context can be set for example between Taxi Driver and Customer and it can be active till a predefined period of time or can be deactivated upon request via API call.</p>
 </div>
@@ -7496,6 +7520,18 @@ If search API is called without page and pageSize, by default pageSize will be 1
 <div class="sect1">
 <h2 id="_participants"><a class="anchor" href="#_participants"></a>Participants</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+All cases that apply to phone numbers are relevant also to WebRTC endpoint.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>A Participant is a single individual communicating in a Context.There is a limit of two Participants per Context.</p>
 </div>
@@ -7775,6 +7811,22 @@ The Masked Phone Number specified must already be added to the Masked Number poo
   "contextSid": "NMCb6eb071d21124dbab20b095c25f8932x",
   "participantPhoneNumber": "15713316943"
 }</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Example for WebRTC endpoint</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "contextSid": "NMCb6eb071d21124dbab20b095c25f8932x",
+  "participantPhoneNumber": "client:v8",
+  "maskPhoneNumber": "client:v12"
+}</pre>
 </div>
 </div>
 <div class="paragraph">

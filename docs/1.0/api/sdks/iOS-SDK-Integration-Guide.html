@@ -814,7 +814,7 @@
                               </li>
   </ul>
               </li>
-              <li id="Identity Access Management <strong>BETA</strong>"
+              <li id="Identity Access Management <strong>Early Access</strong>"
                   class="nav-item"
                   data-depth="2">
                 <div class="nav-flex-container">
@@ -829,7 +829,7 @@
               
             "></span>
                     <span>
-              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html">Identity Access Management <strong>BETA</strong></a>
+              <a class="nav-link nav-flex-item-text" href="../identity-access-management-api.html">Identity Access Management <strong>Early Access</strong></a>
                         <button class="nav-toggle"></button>
             </span>
                 </div>
@@ -5858,8 +5858,20 @@ The previous steps must be successfully completed. Failure in any of the above p
 <p>To initiate a call simply call <strong>CPaaSAPI.voice.create(&#8230;&#8203;)</strong> and <strong>CPaaSAPI.voice.connect(&#8230;&#8203;)</strong>.</p>
 </div>
 <div class="paragraph">
-<p><strong>create()</strong>: creates and returns a call id which you can use or share with others<br>
-<strong>connect()</strong>: starts the actual connection to the call and returns a CPaaSCall obj</p>
+<p><strong>create()</strong>: creates and returns a call id which you can use or share with others.<br>
+<strong>connect()</strong>: starts the actual connection to the call and returns a CPaaSCall obj.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Destination is optional for a P2A/A2P, but is mandatory for a P2P use case. If specified, it shall be a valid string without special characters. For example, <code>var callOptions = CallOptions(audio = true, destination = destId)</code>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
